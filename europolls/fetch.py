@@ -13,6 +13,7 @@ import time
 import urllib.parse
 import urllib.request
 from pathlib import Path
+from urllib.error import HTTPError
 
 import yaml
 
@@ -38,18 +39,37 @@ def _title_for(country: str, cycle: str, cfg: dict) -> str | None:
     return pattern.format(cycle=cycle) if pattern else None
 
 
-def _fetch_page(title: str, lang: str = "en") -> dict | None:
+def _fetch_page(title: str, lang: str = "en", max_retries: int = 6) -> dict | None:
+    """Fetch a Wikipedia article's wikitext via the parse API.
+
+    Retries with exponential backoff on HTTP 429 (rate limit) and 503; CI
+    runs hit Wikipedia faster than locally and were silently losing whole
+    countries' fetches to a single 429 burst. Honours Retry-After when
+    present.
+    """
     api = (
         f"https://{lang}.wikipedia.org/w/api.php?action=parse&page="
         + urllib.parse.quote(title)
         + "&prop=wikitext|revid&format=json&formatversion=2&redirects=true"
     )
     req = urllib.request.Request(api, headers={"User-Agent": UA})
-    with urllib.request.urlopen(req, timeout=30) as r:
-        data = json.load(r)
-    if "error" in data:
-        return None
-    return data["parse"]
+    delay = 1.0
+    for attempt in range(max_retries):
+        try:
+            with urllib.request.urlopen(req, timeout=30) as r:
+                data = json.load(r)
+            if "error" in data:
+                return None
+            return data["parse"]
+        except HTTPError as e:
+            if e.code in (429, 503) and attempt < max_retries - 1:
+                wait = float(e.headers.get("Retry-After", delay))
+                print(f"      [{e.code}] retry in {wait:.1f}s")
+                time.sleep(wait)
+                delay = min(delay * 2, 30.0)
+                continue
+            raise
+    return None
 
 
 def _election_title_from(polling_title: str) -> str | None:
