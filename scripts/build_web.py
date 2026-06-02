@@ -184,6 +184,15 @@ def main() -> None:
             sub = sub[~sub["party_short"].isin(drop_exact)]
         for rx in drop_regex:
             sub = sub[~sub["party_short"].astype(str).str.contains(rx, regex=True, na=False)]
+        # Flag coalition aggregates per countries.yaml. parse.py applies this
+        # to raw labels at parse time (only effective when build_all.py reruns);
+        # we re-apply here against the post-alias canonical names so the flag
+        # is consistent regardless of which step ran last.
+        coal_shorts = set(countries_cfg.get(country, {}).get("coalition_shorts") or [])
+        coal_shorts_lc = {str(s).lower() for s in coal_shorts}
+        if coal_shorts_lc:
+            mask = sub["party_short"].astype(str).str.lower().isin(coal_shorts_lc)
+            sub.loc[mask, "is_coalition"] = True
 
         # Compute summary: n polls, date span, top parties by observation count.
         n_polls = len(sub.drop_duplicates(["polldate_mid", "pollster"]))

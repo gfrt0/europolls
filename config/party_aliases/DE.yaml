@@ -10,3 +10,27 @@ aliases:
   "Grünen":        "Grüne"
   "CDU/CSU":       "Union"
   "Free Voters":   "FW"
+
+  # --- Coalition simulations (folded to press shorthand) ---
+  "SPD Grüne FDP":    "Ampel"           # SPD–Grüne–FDP traffic-light coalition
+  "SPDGrüneFDP":      "Ampel"
+  "Union Grüne FDP":  "Jamaika"         # Union–Grüne–FDP
+  "SPD Union":        "GroKo"           # Union–SPD grand coalition
+  "UnionSPD":         "GroKo"
+  "UnionGrüne":       "Schwarz-Grün"    # Union–Grüne
+  "SPD Grüne":        "Rot-Grün"        # SPD–Grüne
+  "SPD Grüne Linke":  "Rot-Rot-Grün"    # SPD–Grüne–Linke (R2G)
+  "SPDGrüneLinke":    "Rot-Rot-Grün"
+  "UnionFDP":         "Schwarz-Gelb"    # Union–FDP
+  "SPD FDP":          "Rot-Gelb"        # SPD–FDP
+  "SPD Union FDP":    "Deutschland"     # Union–SPD–FDP (Deutschlandkoalition)
+  "UnionSPDGrüne":    "Kenia"           # Union–SPD–Grüne
+  "UnionSPDLinke":    "Union–SPD–Linke"
+  "UnionAfD":         "Union–AfD"
+
+drop:
+  # Leader+party concatenations from chancellor-preference polls
+  - "MerzUnion"
+  - "WeidelAfD"
+  - "KlingbeilSPD"
+  - "Liste Palmer"          # one-off micro-list, single observation

@@ -13,7 +13,17 @@
 IT:
   title_for_cycle: "Opinion polling for the {cycle} Italian general election"
   title_current:   "Opinion polling for the next Italian general election"
-  coalition_shorts: [cdl, cdx, "casa delle libertà", centre-left, centre-right, csx, unione]
+  coalition_shorts:
+    - cdl
+    - cdx
+    - "casa delle libertà"
+    - centre-left
+    - centre-right
+    - csx
+    - unione
+    - "Coalitions"          # Wikipedia table-section header
+    - "A–IV"                # Calenda+Renzi alliance 2022
+    - "+E–A"                # +Europa+Azione 2022 list
   wide_parties: [PD, M5S, FdI, FI, Lega, AVS, "+E", IV, A, PdL, SEL, LeU, UdC, NCD, SC, IdV, NM, Italexit, Art.1, EV]
   cycles:
     current: 2026
@@ -26,6 +36,34 @@ IT:
 DE:
   title_for_cycle: "Opinion polling for the {cycle} German federal election"
   title_current:   "Opinion polling for the next German federal election"
+  # Coalition simulation columns. Lists both raw Wikipedia variants (so parse.py
+  # tags them) and canonical post-alias names (so build_web.py tags after fold).
+  coalition_shorts:
+    - "SPD Grüne FDP"
+    - "SPDGrüneFDP"
+    - "Ampel"                       # canonical: SPD–Grüne–FDP
+    - "Union Grüne FDP"
+    - "Jamaika"                     # canonical: Union–Grüne–FDP
+    - "SPD Union"
+    - "UnionSPD"
+    - "GroKo"                       # canonical: Union–SPD
+    - "UnionGrüne"
+    - "Schwarz-Grün"                # canonical: Union–Grüne
+    - "SPD Grüne"
+    - "Rot-Grün"                    # canonical: SPD–Grüne
+    - "SPD Grüne Linke"
+    - "SPDGrüneLinke"
+    - "Rot-Rot-Grün"                # canonical: SPD–Grüne–Linke
+    - "UnionFDP"
+    - "Schwarz-Gelb"                # canonical: Union–FDP
+    - "SPD FDP"
+    - "Rot-Gelb"                    # canonical: SPD–FDP
+    - "SPD Union FDP"
+    - "Deutschland"                 # canonical: Union–SPD–FDP
+    - "UnionSPDGrüne"
+    - "Kenia"                       # canonical: Union–SPD–Grüne
+    - "UnionSPDLinke"
+    - "UnionAfD"
   wide_parties: [Union, SPD, Grüne, FDP, Linke, AfD, BSW, CSU]
   cycles:
     current: 2026
@@ -93,6 +131,7 @@ FR_LEG:
 PT:
   title_for_cycle: "Opinion polling for the {cycle} Portuguese legislative election"
   title_current:   "Opinion polling for the next Portuguese legislative election"
+  coalition_shorts: ["PSD/CDS", "PSD–CDS", "PSD/CDSIL", "PSD–CDS–IL"]
   wide_parties: [PS, PSD, CH, IL, BE, CDU, L, PAN, CDS]
   cycles:
     current: 2026
@@ -118,6 +157,11 @@ NL:
 BE:
   title_for_cycle: "Opinion polling for the {cycle} Belgian federal election"
   title_current:   "Opinion polling for the next Belgian federal election"
+  # BE polls publish heavy coalition + ideology aggregates because individual-
+  # party shares aren't meaningful in a 12+ party fragmented system.
+  coalition_shorts:
+    - "Coalitions"
+    - "Ideologies"
   wide_parties: ["N-VA", VB, "CD&V", Vooruit, Groen, "Open Vld", MR, PS, Ecolo, cdH, "PVDA-PTB", LE]
   cycles:
     current: 2026
@@ -140,6 +184,15 @@ SE:
 DK:
   title_for_cycle: "Opinion polling for the {cycle} Danish general election"
   title_current:   "Opinion polling for the next Danish general election"
+  # Bloc politics is constitutional convention in DK; almost every poll
+  # publishes Blue (V+O+I+C+K) and Red (A+B+F+Ø) totals.
+  coalition_shorts:
+    - "Blue"
+    - "Red"
+    - "Blue   (V+O+I+C+K)"
+    - "Red   (A+B+F+Ø)"
+    - "Red   (A+B+F+Ø+Å)"
+    - "Blocs"
   wide_parties: [A, V, O, B, F, C, "Ø", I, "Å", D, M, Q, Æ]
   cycles:
     current: 2026
@@ -151,6 +204,7 @@ DK:
 FI:
   title_for_cycle: "Opinion polling for the {cycle} Finnish parliamentary election"
   title_current:   "Opinion polling for the next Finnish parliamentary election"
+  coalition_shorts: ["Gov.", "Opp.", "Government", "Opposition"]
   wide_parties: [KESK, KOK, SDP, PS, VIHR, VAS, KD, SFP, Liike]
   cycles:
     current: 2026
@@ -200,6 +254,17 @@ IE:
 AT:
   title_for_cycle: "Opinion polling for the {cycle} Austrian legislative election"
   title_current:   "Opinion polling for the next Austrian legislative election"
+  # Coalition-feasibility columns added by Wikipedia editors (post-hoc sums,
+  # not pollster-reported). Em-dash format already canonical in raw labels.
+  coalition_shorts:
+    - "ÖVP–FPÖ"
+    - "ÖVP–SPÖ"
+    - "ÖVP–Grüne"
+    - "ÖVP–Grüne–NEOS"
+    - "SPÖ–Grüne–NEOS"
+    - "SPÖ–FPÖ"
+    - "SPÖ–Grüne"
+    - "ÖVP–NEOS"
   wide_parties: ["ÖVP", "SPÖ", "FPÖ", Grüne, NEOS, BIER, KPÖ, PILZ]
   cycles:
     current: 2026

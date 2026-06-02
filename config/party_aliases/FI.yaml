@@ -1,5 +1,10 @@
 # Finland — leader-approval columns are interleaved with vote intentions
-# on the polling page; drop them.
+# on the polling page; drop them. Gov./Opp. aggregates are tagged as
+# coalitions in countries.yaml.
+
+aliases:
+  "Gov.":  "Government"
+  "Opp.":  "Opposition"
 
 drop:
   - "Juha Sipilä"

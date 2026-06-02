@@ -1,7 +1,22 @@
 # Denmark — single-letter party codes are already canonical. Folds the
-# 'Blue (V+O+I+C+K)' bloc-aggregate variants into shorter labels.
+# 'Blue (V+O+I+C+K)' bloc-aggregate variants into shorter labels. The
+# Blue/Red bloc rows are flagged as coalitions via countries.yaml.
 
 aliases:
   "Blue   (V+O+I+C+K)":  "Blue"
   "Red   (A+B+F+Ø)":     "Red"
   "Red   (A+B+F+Ø+Å)":   "Red"
+
+drop:
+  # Leader+party concatenations
+  - "Pape PoulsenC"
+  - "Elleman-JensenV"
+  - "FrederiksenA"
+  - "Løkke RasmussenM"
+  - "VanopslaghI"
+  - "Olsen DyhrF"
+  - "VermundD"
+  - "Carsten NielsenB"
+  - "MesserschmidtO"
+  - "SiddiqueQ"
+  - "KarlsmoseK"
