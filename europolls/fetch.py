@@ -141,7 +141,12 @@ def fetch_country(country: str, cycles: list[str], countries: dict | None = None
         }, indent=2))
         marker = "✓" if source_kind == "polling_article" else "↪"
         print(f"  {marker} {cycle:<10} {len(wt):>7} chars  revid={parse['revid']}  ({used_title})")
-        time.sleep(0.5)
+        # Courtesy throttle. Wikipedia's anonymous rate limit kicks in around
+        # ~200 req/min; CI's network proximity to MW infra means the actual
+        # cadence is faster than our nominal sleep, so be conservative. The
+        # full sweep is ~170 articles × 1.5s ≈ 4-5 min, dominated by API
+        # latency, so the extra throttle barely shows in CI wall time.
+        time.sleep(1.5)
 
 
 def main() -> None:
