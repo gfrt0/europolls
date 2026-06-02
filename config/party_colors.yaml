@@ -236,3 +236,28 @@ CY:
 
 LU:
   Others:    AAAAAA
+
+NO:
+  Ap:      D2122F   # Arbeiderpartiet (Labour)
+  H:       0064B0   # Høyre (Conservative)
+  FrP:     191970   # Fremskrittspartiet (Progress)
+  Sp:      006A33   # Senterpartiet (Centre)
+  SV:      9F1B1B   # Sosialistisk Venstreparti (Socialist Left)
+  R:       8B0000   # Rødt (Red)
+  V:       3CB371   # Venstre (Liberal)
+  KrF:     FFD700   # Kristelig Folkeparti (Christian Democrats)
+  MDG:     578C30   # Miljøpartiet De Grønne (Greens)
+  INP:     2E6FDB   # Industri- og Næringspartiet (Industry & Business)
+  Others:  AAAAAA
+
+IS:
+  D:       0F3D7E   # Sjálfstæðisflokkurinn (Independence)
+  B:       4E9D2D   # Framsóknarflokkurinn (Progressive)
+  S:       EF1C27   # Samfylkingin (Social Democratic)
+  V:       407E3D   # Vinstri grænir (Left-Green)
+  P:       3D2682   # Píratar (Pirate)
+  C:       FF7900   # Viðreisn (Reform)
+  F:       FFD700   # Flokkur fólksins (People's)
+  M:       802A2A   # Miðflokkurinn (Centre)
+  J:       B71C1C   # Sósíalistaflokkurinn (Socialist)
+  Others:  AAAAAA
