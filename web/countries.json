@@ -1,7 +1,7 @@
 [
   {
     "code": "UK",
-    "n_polls": 5266,
+    "n_polls": 5193,
     "n_party_obs": 35221,
     "span_start": "2005-05-05",
     "span_end": "2026-05-31",
@@ -16,6 +16,17 @@
       "PC",
       "Brx",
       "BNP"
+    ],
+    "wide_parties": [
+      "Con",
+      "Lab",
+      "LD",
+      "Grn",
+      "SNP",
+      "UKIP",
+      "BNP",
+      "PC",
+      "Chg"
     ]
   },
   {
@@ -35,11 +46,34 @@
       "+E",
       "IV",
       "A"
+    ],
+    "wide_parties": [
+      "PD",
+      "M5S",
+      "FdI",
+      "FI",
+      "Lega",
+      "LN",
+      "AVS",
+      "+E",
+      "IV",
+      "A",
+      "PdL",
+      "SEL",
+      "LeU",
+      "UdC",
+      "NCD",
+      "SC",
+      "IdV",
+      "NM",
+      "Italexit",
+      "Art.1",
+      "EV"
     ]
   },
   {
     "code": "DE",
-    "n_polls": 4422,
+    "n_polls": 4421,
     "n_party_obs": 39945,
     "span_start": "2009-09-27",
     "span_end": "2026-05-30",
@@ -54,11 +88,21 @@
       "BSW",
       "CDU",
       "Abs.|Abstention"
+    ],
+    "wide_parties": [
+      "Union",
+      "SPD",
+      "Gr\u00fcne",
+      "FDP",
+      "Linke",
+      "AfD",
+      "BSW",
+      "CSU"
     ]
   },
   {
     "code": "ES",
-    "n_polls": 2898,
+    "n_polls": 2881,
     "n_party_obs": 30157,
     "span_start": "2004-03-14",
     "span_end": "2026-12-31",
@@ -67,31 +111,64 @@
       "PSOE",
       "PNV",
       "Vox",
+      "Cs",
       "EH Bildu",
       "ERC",
       "BNG",
       "Podemos",
+      "Sumar"
+    ],
+    "wide_parties": [
+      "PP",
+      "PSOE",
+      "Vox",
       "Sumar",
-      "CiU"
+      "Cs",
+      "Podemos",
+      "UPyD",
+      "ERC",
+      "PNV",
+      "EH Bildu",
+      "IU",
+      "Junts",
+      "CCa",
+      "BNG",
+      "CUP"
     ]
   },
   {
     "code": "GR",
-    "n_polls": 1368,
+    "n_polls": 1366,
     "n_party_obs": 11809,
     "span_start": "2007-09-16",
     "span_end": "2026-05-28",
     "top_parties": [
       "KKE",
       "ND",
-      "PASOK",
       "SYRIZA",
+      "PASOK",
       "EL",
       "XA",
       "PE",
       "LAOS",
       "OP",
       "ANEL"
+    ],
+    "wide_parties": [
+      "ND",
+      "SYRIZA",
+      "PASOK",
+      "KINAL",
+      "KKE",
+      "MeRA25",
+      "XA",
+      "DIMAR",
+      "EL",
+      "ANEL",
+      "LAOS",
+      "Potami",
+      "NIKI",
+      "FL"
     ]
   },
   {
@@ -105,12 +182,24 @@
       "M",
       "Above threshold",
       "Overall",
-      "S",
-      "C",
       "V",
+      "SD",
+      "S",
       "KD",
       "MP",
-      "L"
+      "C"
+    ],
+    "wide_parties": [
+      "S",
+      "M",
+      "SD",
+      "V",
+      "C",
+      "MP",
+      "KD",
+      "L",
+      "Fp",
+      "Fi"
     ]
   },
   {
@@ -130,6 +219,16 @@
       "JETZT",
       "KP\u00d6",
       "Rendi-Wagner/KernSP\u00d6"
+    ],
+    "wide_parties": [
+      "\u00d6VP",
+      "SP\u00d6",
+      "FP\u00d6",
+      "Gr\u00fcne",
+      "NEOS",
+      "BIER",
+      "KP\u00d6",
+      "PILZ"
     ]
   },
   {
@@ -149,6 +248,17 @@
       "PSD/CDS",
       "Pedro Passos Coelho's cabinet",
       "PAN"
+    ],
+    "wide_parties": [
+      "PS",
+      "PSD",
+      "CH",
+      "IL",
+      "BE",
+      "CDU",
+      "L",
+      "PAN",
+      "CDS\u2013PP"
     ]
   },
   {
@@ -168,7 +278,8 @@
       "MacronEM",
       "FillonLR",
       "Dupont-AignanDLF"
-    ]
+    ],
+    "wide_parties": []
   },
   {
     "code": "NL",
@@ -177,16 +288,35 @@
     "span_start": "2016-03-03",
     "span_end": "2026-05-23",
     "top_parties": [
-      "CDA",
       "CU",
       "D66",
-      "PvdD",
-      "SP",
+      "CDA",
       "PVV",
       "VVD",
+      "PvdD",
+      "SP",
       "SGP",
       "50+",
       "FvD"
+    ],
+    "wide_parties": [
+      "VVD",
+      "PVV",
+      "GL\u2013PvdA",
+      "CDA",
+      "D66",
+      "GL",
+      "PvdA",
+      "SP",
+      "BBB",
+      "NSC",
+      "FvD",
+      "JA21",
+      "CU",
+      "SGP",
+      "PvdD",
+      "Volt",
+      "DENK"
     ]
   },
   {
@@ -206,6 +336,21 @@
       "\u00c5",
       "\u00d8",
       "I"
+    ],
+    "wide_parties": [
+      "A",
+      "V",
+      "O",
+      "B",
+      "F",
+      "C",
+      "\u00d8",
+      "I",
+      "\u00c5",
+      "D",
+      "M",
+      "Q",
+      "\u00c6"
     ]
   },
   {
@@ -225,6 +370,16 @@
       "Others",
       "SFP",
       "LIIK"
+    ],
+    "wide_parties": [
+      "KESK",
+      "KOK",
+      "SDP",
+      "PS",
+      "VIHR",
+      "VAS",
+      "KD",
+      "SFP"
     ]
   },
   {
@@ -235,8 +390,8 @@
     "span_end": "2026-05-30",
     "top_parties": [
       "FF",
-      "GP",
       "FG",
+      "GP",
       "SF",
       "Lab",
       "SD",
@@ -244,6 +399,17 @@
       "Aon",
       "O/I|Others/IndependentsThe figure for 'Others/Independents' is the remainder when all others are removed. As with all such calculations, the figure shown may be slightly inaccurate due to rounding effects.",
       "S\u2013PBP"
+    ],
+    "wide_parties": [
+      "FF",
+      "FG",
+      "SF",
+      "Lab",
+      "GP",
+      "S\u2013PBP",
+      "Aon",
+      "II",
+      "IA"
     ]
   },
   {
@@ -263,6 +429,24 @@
       "FN",
       "DVG",
       "PS"
+    ],
+    "wide_parties": [
+      "RN",
+      "LFI",
+      "NFP",
+      "ENS",
+      "LR",
+      "PS",
+      "EELV",
+      "MoDem",
+      "UMP",
+      "NC",
+      "LREM",
+      "REC",
+      "DVD",
+      "DVG",
+      "NUPES",
+      "PCF"
     ]
   },
   {
@@ -272,16 +456,20 @@
     "span_start": "2013-03-09",
     "span_end": "2022-03-24",
     "top_parties": [
-      "Others",
       "PL",
+      "Others",
       "PN",
       "AD",
       "PD",
+      "Don'tknow",
       "MPM",
       "Notvoting",
-      "Don'tknow",
       "Neither / None",
-      "Don't know"
+      "DeliaPN"
+    ],
+    "wide_parties": [
+      "PL",
+      "PN"
     ]
   },
   {
@@ -294,13 +482,28 @@
       "Coalitions",
       "Ideologies",
       "Others",
+      "NVA",
+      "cd&v",
+      "Open Vld",
       "Groen",
-      "MR",
-      "Ecolo",
       "D\u00e9FI",
-      "PS",
+      "Ecolo",
+      "PS"
+    ],
+    "wide_parties": [
       "VB",
-      "Open Vld"
+      "cd&v",
+      "Vooruit",
+      "sp.a",
+      "Groen",
+      "Open Vld",
+      "MR",
+      "PS",
+      "Ecolo",
+      "cdH",
+      "PVDA",
+      "PTB",
+      "LE"
     ]
   },
   {
@@ -320,6 +523,7 @@
       "Other",
       "EliadesIndependent",
       "ProtopapasIndependent"
-    ]
+    ],
+    "wide_parties": []
   }
 ]

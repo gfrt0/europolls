@@ -14,6 +14,7 @@ IT:
   title_for_cycle: "Opinion polling for the {cycle} Italian general election"
   title_current:   "Opinion polling for the next Italian general election"
   coalition_shorts: [cdl, cdx, "casa delle libertà", centre-left, centre-right, csx, unione]
+  wide_parties: [PD, M5S, FdI, FI, Lega, LN, AVS, "+E", IV, A, PdL, SEL, LeU, UdC, NCD, SC, IdV, NM, Italexit, Art.1, EV]
   cycles:
     current: 2026
     "2022": 2022
@@ -25,6 +26,7 @@ IT:
 DE:
   title_for_cycle: "Opinion polling for the {cycle} German federal election"
   title_current:   "Opinion polling for the next German federal election"
+  wide_parties: [Union, SPD, Grüne, FDP, Linke, AfD, BSW, CSU]
   cycles:
     current: 2026
     "2025": 2025
@@ -36,6 +38,7 @@ DE:
 ES:
   title_for_cycle: "Opinion polling for the {cycle} Spanish general election"
   title_current:   "Opinion polling for the next Spanish general election"
+  wide_parties: [PP, PSOE, Vox, Sumar, Cs, Podemos, UPyD, ERC, PNV, "EH Bildu", IU, Junts, CCa, BNG, CUP]
   cycles:
     current: 2026
     "2023": 2023
@@ -53,6 +56,7 @@ ES:
 UK:
   title_for_cycle: "Opinion polling for the {cycle} United Kingdom general election"
   title_current:   "Opinion polling for the next United Kingdom general election"
+  wide_parties: [Con, Lab, LD, Grn, Ref, SNP, UKIP, BXP, BNP, PC, Chg]
   cycles:
     current: 2026
     "2024": 2024
@@ -62,8 +66,11 @@ UK:
     "2010": 2010
 
 FR:
+  # Presidential page is candidate-keyed; "parties" here are actually leading
+  # candidates of the main French parties.
   title_for_cycle: "Opinion polling for the {cycle} French presidential election"
   title_current:   "Opinion polling for the next French presidential election"
+  wide_parties: ["Le Pen", Sarkozy, Macron, Mélenchon, Bayrou, Fillon, Hollande, Royal, Hamon, Pécresse, Zemmour, Hidalgo, Jadot, Roussel]
   cycles:
     current: 2026
     "2022": 2022
@@ -74,6 +81,7 @@ FR:
 FR_LEG:
   title_for_cycle: "Opinion polling for the {cycle} French legislative election"
   title_current:   "Opinion polling for the next French legislative election"
+  wide_parties: [RN, LFI, NFP, ENS, LR, PS, EELV, MoDem, UMP, NC, LREM, "REC", DVD, DVG, NUPES, PCF]
   cycles:
     current: 2026
     "2024": 2024
@@ -85,6 +93,7 @@ FR_LEG:
 PT:
   title_for_cycle: "Opinion polling for the {cycle} Portuguese legislative election"
   title_current:   "Opinion polling for the next Portuguese legislative election"
+  wide_parties: [PS, PSD, CH, IL, BE, CDU, L, PAN, CDS, "CDS–PP"]
   cycles:
     current: 2026
     "2024": 2024
@@ -97,6 +106,7 @@ PT:
 NL:
   title_for_cycle: "Opinion polling for the {cycle} Dutch general election"
   title_current:   "Opinion polling for the next Dutch general election"
+  wide_parties: [VVD, PVV, "GL–PvdA", CDA, D66, GL, PvdA, SP, BBB, NSC, FvD, JA21, CU, SGP, PvdD, Volt, DENK]
   cycles:
     current: 2026
     "2023": 2023
@@ -108,6 +118,7 @@ NL:
 BE:
   title_for_cycle: "Opinion polling for the {cycle} Belgian federal election"
   title_current:   "Opinion polling for the next Belgian federal election"
+  wide_parties: ["N-VA", VB, "cd&v", Vooruit, "sp.a", Groen, "Open Vld", MR, PS, Ecolo, cdH, PVDA, PTB, LE]
   cycles:
     current: 2026
     "2024": 2024
@@ -118,6 +129,7 @@ BE:
 SE:
   title_for_cycle: "Opinion polling for the {cycle} Swedish general election"
   title_current:   "Opinion polling for the next Swedish general election"
+  wide_parties: [S, M, SD, V, C, MP, KD, L, Fp, Fi]
   cycles:
     current: 2026
     "2022": 2022
@@ -128,6 +140,7 @@ SE:
 DK:
   title_for_cycle: "Opinion polling for the {cycle} Danish general election"
   title_current:   "Opinion polling for the next Danish general election"
+  wide_parties: [A, V, O, B, F, C, "Ø", I, "Å", D, M, Q, Æ]
   cycles:
     current: 2026
     "2022": 2022
@@ -138,6 +151,7 @@ DK:
 FI:
   title_for_cycle: "Opinion polling for the {cycle} Finnish parliamentary election"
   title_current:   "Opinion polling for the next Finnish parliamentary election"
+  wide_parties: [KESK, KOK, SDP, PS, VIHR, VAS, KD, SFP, Liike]
   cycles:
     current: 2026
     "2023": 2023
@@ -148,6 +162,7 @@ FI:
 GR:
   title_for_cycle: "Opinion polling for the {cycle} Greek legislative election"
   title_current:   "Opinion polling for the next Greek legislative election"
+  wide_parties: [ND, SYRIZA, PASOK, KINAL, KKE, MeRA25, XA, DIMAR, EL, ANEL, LAOS, Potami, NIKI, Spartans, FL]
   cycles:
     current: 2026
     "2023-May":
@@ -174,6 +189,7 @@ GR:
 IE:
   title_for_cycle: "Opinion polling for the {cycle} Irish general election"
   title_current:   "Opinion polling for the next Irish general election"
+  wide_parties: [FF, FG, SF, Lab, GP, "S-PBP", "S–PBP", "PBP-S", SocDem, Aon, II, IA]
   cycles:
     current: 2026
     "2024": 2024
@@ -184,6 +200,7 @@ IE:
 AT:
   title_for_cycle: "Opinion polling for the {cycle} Austrian legislative election"
   title_current:   "Opinion polling for the next Austrian legislative election"
+  wide_parties: ["ÖVP", "SPÖ", "FPÖ", Grüne, NEOS, BIER, KPÖ, PILZ]
   cycles:
     current: 2026
     "2024": 2024
@@ -203,6 +220,7 @@ LU:
 CY:
   title_for_cycle: "Opinion polling for the {cycle} Cypriot legislative election"
   title_current:   "Opinion polling for the next Cypriot legislative election"
+  wide_parties: [Christodoulides, Mavroyiannis, Neofytou, Demetriades, Colocassides]
   cycles:
     current: 2026
     "2021": 2021
@@ -215,6 +233,7 @@ CY:
 MT:
   title_for_cycle: "Opinion polling for the {cycle} Maltese general election"
   title_current:   "Opinion polling for the next Maltese general election"
+  wide_parties: [PL, PN, ADPD]
   cycles:
     current: 2026
     "2022": 2022

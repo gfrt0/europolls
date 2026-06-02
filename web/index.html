@@ -94,6 +94,23 @@
     border: 1px solid var(--border); border-radius: 4px;
     width: 220px;
   }
+  .view-toggle {
+    display: inline-flex; gap: 0; border: 1px solid var(--border);
+    border-radius: 4px; overflow: hidden;
+  }
+  .view-toggle button {
+    font: inherit; padding: 4px 10px; background: var(--bg-soft);
+    border: none; cursor: pointer; color: var(--fg);
+  }
+  .view-toggle button.active {
+    background: var(--accent); color: #fff; font-weight: 600;
+  }
+
+  /* Wide-table party color dot in header */
+  .party-head .dot {
+    display: inline-block; width: 8px; height: 8px;
+    border-radius: 50%; margin-right: 4px; vertical-align: -1px;
+  }
 
   /* Table */
   #table { font-size: 12.5px; min-height: 240px; }
@@ -168,7 +185,11 @@
 <div class="party-toggles" id="party-toggles"></div>
 
 <div class="table-controls">
-  <input type="search" id="search" placeholder="filter pollster / party…">
+  <div class="view-toggle">
+    <button id="view-wide" class="active">Wide (one poll per row)</button>
+    <button id="view-long">Long (party-level)</button>
+  </div>
+  <input type="search" id="search" placeholder="filter pollster…">
   <span class="loading" id="poll-count" style="padding:0;"></span>
 </div>
 
@@ -221,11 +242,13 @@
 
 const STATE = {
   country: null,
-  polls: null,         // current country's poll array
+  polls: null,         // current country's poll array (long format)
+  wide: null,          // current country's wide pivot (cached)
   colors: null,        // global color map
   countries: null,     // index
   visibleParties: new Set(),
   table: null,
+  view: "wide",        // "wide" | "long"
 };
 
 const COUNTRY_NAMES = {
@@ -309,14 +332,45 @@ async function selectCountry(code) {
 
   document.getElementById("poll-count").textContent = "loading…";
   STATE.polls = await fetch(`polls_${code}.json`).then(r => r.json());
+  STATE.wide = buildWide(STATE.polls, summary.wide_parties || []);
   document.getElementById("poll-count").textContent =
-    `${STATE.polls.length.toLocaleString()} party-poll rows`;
+    `${STATE.wide.length.toLocaleString()} polls · ${STATE.polls.length.toLocaleString()} party-poll rows`;
 
   // Default-visible parties: top 8 by obs count (excluding coalition aggregates).
   STATE.visibleParties = new Set(summary.top_parties.slice(0, 8));
   renderToggles(summary);
   renderPlot();
   renderTable();
+}
+
+// Build wide-format poll rows: one row per unique (date, pollster) combo,
+// columns = the curated wide_parties + "Other" (sum of other parties' shares).
+function buildWide(polls, wideParties) {
+  const wideSet = new Set(wideParties);
+  const byPoll = new Map(); // key="date|pollster" -> row
+  for (const r of polls) {
+    if (r.c) continue; // skip coalition aggregates
+    const key = r.d + "|" + r.p;
+    let row = byPoll.get(key);
+    if (!row) {
+      row = { d: r.d, p: r.p, n: r.n, _other: 0 };
+      byPoll.set(key, row);
+    }
+    if (wideSet.has(r.k)) {
+      // If a party appears twice (after normalization), take the higher value.
+      if (row[r.k] == null || r.v > row[r.k]) row[r.k] = r.v;
+    } else {
+      row._other += r.v;
+    }
+  }
+  const out = Array.from(byPoll.values());
+  // Round Other to 1dp and drop the field if it's negligible (< 0.5).
+  for (const r of out) {
+    r.Other = r._other >= 0.5 ? Math.round(r._other * 10) / 10 : null;
+    delete r._other;
+  }
+  out.sort((a, b) => b.d.localeCompare(a.d));
+  return out;
 }
 
 function renderToggles(summary) {
@@ -387,6 +441,20 @@ function renderPlot() {
   }, { responsive: true, displaylogo: false });
 }
 
+// View toggle wiring
+document.getElementById("view-wide").onclick = () => {
+  STATE.view = "wide";
+  document.getElementById("view-wide").classList.add("active");
+  document.getElementById("view-long").classList.remove("active");
+  renderTable();
+};
+document.getElementById("view-long").onclick = () => {
+  STATE.view = "long";
+  document.getElementById("view-long").classList.add("active");
+  document.getElementById("view-wide").classList.remove("active");
+  renderTable();
+};
+
 // Caveats modal wiring
 document.getElementById("caveats-link").onclick = (e) => {
   e.preventDefault();
@@ -408,6 +476,22 @@ document.addEventListener("keydown", (e) => {
 
 function renderTable() {
   if (STATE.table) STATE.table.destroy();
+  if (STATE.view === "wide") renderWideTable();
+  else renderLongTable();
+  document.getElementById("search").oninput = (e) => {
+    const q = e.target.value.toLowerCase();
+    if (STATE.view === "wide") {
+      STATE.table.setFilter("p", "like", q);
+    } else {
+      STATE.table.setFilter([[
+        { field: "p", type: "like", value: q },
+        { field: "k", type: "like", value: q },
+      ]]);
+    }
+  };
+}
+
+function renderLongTable() {
   STATE.table = new Tabulator("#table", {
     data: STATE.polls,
     layout: "fitColumns",
@@ -415,7 +499,8 @@ function renderTable() {
     pagination: false,
     columns: [
       { title: "Date", field: "d", width: 95, sorter: "string" },
-      { title: "Pollster", field: "p", widthGrow: 1.5 },
+      { title: "Pollster", field: "p", width: 150,
+        formatter: cell => { const v = cell.getValue() || ""; return v.length > 22 ? `<span title="${v}">${v.slice(0, 22)}…</span>` : v; } },
       { title: "n", field: "n", hozAlign: "right", width: 70,
         formatter: cell => { const v = cell.getValue(); return v == null ? "" : v.toLocaleString(); } },
       { title: "Party", field: "k", width: 90,
@@ -431,13 +516,51 @@ function renderTable() {
     ],
     initialSort: [{ column: "d", dir: "desc" }],
   });
-  document.getElementById("search").oninput = (e) => {
-    const q = e.target.value.toLowerCase();
-    STATE.table.setFilter([[
-      { field: "p", type: "like", value: q },
-      { field: "k", type: "like", value: q },
-    ]]);
-  };
+}
+
+function renderWideTable() {
+  const summary = STATE.countries.find(c => c.code === STATE.country);
+  const wideParties = (summary.wide_parties || []);
+  if (wideParties.length === 0) {
+    document.getElementById("table").innerHTML =
+      "<div class='loading'>No curated wide-table parties for this country yet — switch to Long view.</div>";
+    STATE.table = null;
+    return;
+  }
+  const cols = [
+    { title: "Date", field: "d", width: 95, sorter: "string", frozen: true },
+    { title: "Pollster", field: "p", width: 140, frozen: true,
+      formatter: cell => { const v = cell.getValue() || ""; return v.length > 20 ? `<span title="${v}">${v.slice(0, 20)}…</span>` : v; } },
+    { title: "n", field: "n", hozAlign: "right", width: 60,
+      formatter: cell => { const v = cell.getValue(); return v == null ? "" : v.toLocaleString(); } },
+  ];
+  for (const party of wideParties) {
+    const color = getColor(STATE.country, party);
+    cols.push({
+      title: `<span class="party-head"><span class="dot" style="background:${color}"></span>${party}</span>`,
+      field: party,
+      hozAlign: "right",
+      width: 62,
+      headerSort: true,
+      formatter: cell => cell.getValue() == null ? "" : cell.getValue().toFixed(1),
+    });
+  }
+  cols.push({
+    title: "Other",
+    field: "Other",
+    hozAlign: "right",
+    width: 62,
+    formatter: cell => cell.getValue() == null ? "" : cell.getValue().toFixed(1),
+  });
+
+  STATE.table = new Tabulator("#table", {
+    data: STATE.wide,
+    layout: "fitData",
+    height: "360px",
+    pagination: false,
+    columns: cols,
+    initialSort: [{ column: "d", dir: "desc" }],
+  });
 }
 
 loadIndex();
