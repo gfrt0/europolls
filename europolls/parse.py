@@ -47,28 +47,39 @@ def is_date_header(h: str) -> bool:
     n = _norm(h)
     if not n:
         return False
-    if "update" in n or "publi" in n:
+    if "update" in n:
+        return False
+    # 'publication' is the article's pub date and not the poll date — skip.
+    # But standalone 'Published' on older election-article tables (LU 2013)
+    # IS the poll's release date, so allow it.
+    if "publication" in n:
         return False
     if any(k in n for k in (
         "fieldwork", "dateconducted", "datesconducted", "administered",
         "polldate", "enddate", "dateofpoll", "polldate", "fieldperiod",
         "lastdateofpolling", "lastdate", "periodofpolling",
-        "releasedate",  # IS 2016 election-article fallback uses 'Release date'
+        "releasedate",       # IS 2016 election-article fallback
+        "pollingperiod",     # NO 2013, some FI cycles
     )):
         return True
-    return n in {"date", "dates"}
+    return n in {"date", "dates", "published"}
 
 
 def is_pollster_header(h: str) -> bool:
     n = _norm(h)
     if not n:
         return False
+    # Standalone 'Source' is the pollster column on some older election-article
+    # tables (IS 2009 etc.); a column containing 'result' is not.
+    if n == "source":
+        return True
     return any(k in n for k in (
         "pollster", "pollingfirm", "pollinghouse",
         "pollingorganisation", "pollingorganization",
         "organisation", "organization", "company",
-        "pollsource", "pollingsource",  # 'Poll source' etc. (DK style)
-        "institute",  # IS 2016 election-article fallback uses 'Institute'
+        "pollsource", "pollingsource",
+        "institute",       # IS 2016 election-article fallback
+        "agency",          # AT 2013 'Agency/Source'
     )) and "result" not in n
 
 
@@ -112,7 +123,7 @@ def _load_countries() -> dict:
             cycles_norm[cycle_id] = spec["year"] if isinstance(spec, dict) else int(spec)
         out[country] = {
             "cycles": cycles_norm,
-            "coalition_shorts_lc": set(cfg.get("coalition_shorts", []) or []),
+            "coalition_shorts_lc": {str(s).lower() for s in (cfg.get("coalition_shorts") or [])},
         }
     return out
 
@@ -210,11 +221,21 @@ def _heading_depth(h: str) -> int:
     return len(m.group(1)) if m else 2
 
 
+_PRESIDENTIAL_HEADING_RE = re.compile(
+    r"^={2,4}\s*[^=\n]*?[Pp]residen[a-z]*[^=\n]*?\s*={2,4}\s*$",
+    re.MULTILINE,
+)
+
+
 def _polling_section_spans(wikitext: str) -> list[tuple[int, int]]:
     """Return a list of (start, end) byte ranges in wikitext that fall under a
     polling-related section heading. Each range runs from the end of the
     matched heading to the next heading at the same or shallower level.
     Used only when reading an election-article fallback page.
+
+    Sub-spans whose own heading mentions 'president' / 'presidential' are
+    excluded — they leak presidential-race polling into parliamentary cycles
+    (seen on BG 2021-Nov: Radev approval polls at 60-87%).
     """
     if not _POLLING_HEADING_RE.search(wikitext):
         return []
@@ -229,7 +250,32 @@ def _polling_section_spans(wikitext: str) -> list[tuple[int, int]]:
             if _heading_depth(h2.group(0)) <= depth:
                 end = h2.start()
                 break
-        spans.append((h.end(), end))
+        # Within this polling-section, find any presidential subsection and
+        # carve out its [start, end) range to exclude.
+        presidential_holes: list[tuple[int, int]] = []
+        for ph in headings[i + 1:]:
+            ph_start = ph.start()
+            if ph_start >= end:
+                break
+            if not _PRESIDENTIAL_HEADING_RE.match(wikitext, ph_start):
+                continue
+            pdepth = _heading_depth(ph.group(0))
+            phend = end
+            for h3 in headings:
+                if h3.start() <= ph_start:
+                    continue
+                if _heading_depth(h3.group(0)) <= pdepth:
+                    phend = h3.start()
+                    break
+            presidential_holes.append((ph_start, phend))
+        # Emit the polling section minus the presidential holes.
+        cur = h.end()
+        for ph_start, ph_end in presidential_holes:
+            if ph_start > cur:
+                spans.append((cur, ph_start))
+            cur = ph_end
+        if cur < end:
+            spans.append((cur, end))
     return spans
 
 

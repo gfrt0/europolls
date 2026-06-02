@@ -414,6 +414,9 @@ HR:
 BG:
   title_for_cycle: "Opinion polling for the {cycle} Bulgarian parliamentary election"
   title_current:   "Opinion polling for the next Bulgarian parliamentary election"
+  # 'Total' is the BG 2014 article's sum-of-known-parties aggregate column,
+  # treated as a coalition so it's filtered out of the chart / wide table.
+  coalition_shorts: ["Total"]
   wide_parties: [GERB, "PP-DB", "DPS", BSP, ITN, "Vazrazhdane", DB, PP]
   cycles:
     current: 2028

@@ -142,12 +142,21 @@ MONTHS = {m.lower(): i for i, m in enumerate(
      "September","October","November","December"], start=0)}
 # Above is wrong: rebuild properly.
 MONTHS = {}
-for i, name in enumerate([
-    ("Jan", "January"), ("Feb", "February"), ("Mar", "March"), ("Apr", "April"),
-    ("May", "May"),     ("Jun", "June"),     ("Jul", "July"),  ("Aug", "August"),
-    ("Sep", "September"), ("Oct", "October"), ("Nov", "November"), ("Dec", "December"),
+for i, names in enumerate([
+    ("Jan", "January"),
+    ("Feb", "February"),
+    ("Mar", "March"),
+    ("Apr", "April"),
+    ("May", "May"),
+    ("Jun", "June"),
+    ("Jul", "July"),
+    ("Aug", "August"),
+    ("Sep", "Sept", "September"),       # DE 2009 uses "18 Sept" abbreviation
+    ("Oct", "October"),
+    ("Nov", "November"),
+    ("Dec", "December"),
 ], start=1):
-    for n in name:
+    for n in names:
         MONTHS[n.lower()] = i
 
 
@@ -252,8 +261,15 @@ def parse_fieldwork(cell: str, default_year: int) -> FieldworkDates:
     if not s:
         return FieldworkDates(None, None)
 
-    # Normalize en-dash / em-dash to hyphen.
-    s = s.replace("–", "-").replace("—", "-").strip()
+    # Normalize various Unicode dashes to ASCII hyphen.
+    #   – U+2013 en-dash
+    #   — U+2014 em-dash
+    #   − U+2212 minus sign (LU 2023 TNS uses this)
+    #   ‒ U+2012 figure dash
+    #   ― U+2015 horizontal bar
+    for ch in ("–", "—", "−", "‒", "―"):
+        s = s.replace(ch, "-")
+    s = s.strip()
 
     # Case A: "17 Aug-9 Sep" or "17 Aug-9 Sep 2022"  — months on both sides
     m = re.match(r"(\d{1,2})\s+([A-Za-z]+)\s*-\s*(\d{1,2})\s+([A-Za-z]+)(?:\s+(\d{4}))?$", s)
@@ -273,13 +289,53 @@ def parse_fieldwork(cell: str, default_year: int) -> FieldworkDates:
         if mn:
             return FieldworkDates(_to_iso(int(d1), mn, year), _to_iso(int(d2), mn, year))
 
-    # Case C: "9 Sep" or "9 Sep 2022"  — single date
-    m = re.match(r"(\d{1,2})\s+([A-Za-z]+)(?:\s+(\d{4}))?$", s)
+    # Case C: "9 Sep" or "9 Sep 2022" or "6 Mar 11" — single date with optional
+    # 2- or 4-digit year. 2-digit year: <50 → 20YY, ≥50 → 19YY.
+    m = re.match(r"(\d{1,2})\s+([A-Za-z]+)(?:\s+(\d{2,4}))?$", s)
     if m:
         d, mo, y = m.groups()
         year = int(y) if y else default_year
+        if year < 100:
+            year += 2000 if year < 50 else 1900
         mn = MONTHS.get(mo.lower())
         if mn:
+            iso = _to_iso(int(d), mn, year)
+            return FieldworkDates(iso, iso)
+
+    # Case C': "September 2009" / "Feb 2015" — month + 4-digit year. Day=15
+    # so it sorts mid-month. Unambiguous; accepts full month names.
+    m = re.match(r"([A-Za-z]+)\.?\s+(\d{4})$", s)
+    if m:
+        mo, y = m.groups()
+        mn = MONTHS.get(mo.lower())
+        if mn:
+            iso = _to_iso(15, mn, int(y))
+            return FieldworkDates(iso, iso)
+
+    # Case C'': "Jan 11" / "Dec 14" — month abbreviation + 2-digit year suffix.
+    # Restricted to 3-4 letter abbreviations because "October 13" is genuinely
+    # ambiguous (Oct 13th vs Oct 2013) and old SI/IS articles use the former.
+    m = re.match(r"([A-Za-z]{3,4})\.?\s+(\d{2})$", s)
+    if m:
+        mo, y = m.groups()
+        mn = MONTHS.get(mo.lower())
+        if mn:
+            year = int(y)
+            year += 2000 if year < 50 else 1900
+            iso = _to_iso(15, mn, year)
+            return FieldworkDates(iso, iso)
+
+    # Case C'': "October 13, 2008" — US-style month-day-year. Requires the
+    # comma to disambiguate from the month+year reading above (e.g. "Jan 11"
+    # which the month+year branch picks up as Jan 2011, not Jan 11th).
+    m = re.match(r"([A-Za-z]+)\s+(\d{1,2})\s*,\s*(\d{2,4})$", s)
+    if m:
+        mo, d, y = m.groups()
+        mn = MONTHS.get(mo.lower())
+        if mn and int(d) <= 31:
+            year = int(y)
+            if year < 100:
+                year += 2000 if year < 50 else 1900
             iso = _to_iso(int(d), mn, year)
             return FieldworkDates(iso, iso)
 
@@ -305,6 +361,13 @@ def parse_fieldwork(cell: str, default_year: int) -> FieldworkDates:
         if y1 < 100: y1 += 2000 if y1 < 50 else 1900
         if y2 < 100: y2 += 2000 if y2 < 50 else 1900
         return FieldworkDates(_to_iso(d1, m1, y1), _to_iso(d2, m2, y2))
+
+    # Case F': LU 2013 range 'DD.MM-DD.MM.YYYY' — year on the end-date only.
+    m = re.match(r"(\d{1,2})\.(\d{1,2})\s*-\s*(\d{1,2})\.(\d{1,2})\.(\d{2,4})$", s)
+    if m:
+        d1, mo1, d2, mo2, y = (int(m[i]) for i in (1, 2, 3, 4, 5))
+        if y < 100: y += 2000 if y < 50 else 1900
+        return FieldworkDates(_to_iso(d1, mo1, y), _to_iso(d2, mo2, y))
 
     # Case G: full date range with explicit years, '29 Dec 2017-2 Jan 2018'.
     m = re.match(
