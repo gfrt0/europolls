@@ -284,8 +284,17 @@ def main() -> None:
     countries_summary.sort(key=lambda r: -r["n_polls"])
     (WEB / "countries.json").write_text(json.dumps(countries_summary, indent=2))
     (WEB / "colors.json").write_text(json.dumps(colors_raw, indent=2))
+
+    # Cache-buster: build identifier consumed by index.html so all JSON
+    # asset URLs get a ?v=<build> suffix that changes every deploy. Prefer
+    # the GitHub commit SHA when available (stable, short), else a UTC
+    # timestamp. version.json itself is fetched with cache: 'no-store'.
+    import os, datetime
+    build = os.environ.get("GITHUB_SHA", "")[:12] or datetime.datetime.utcnow().strftime("%Y%m%d%H%M%S")
+    (WEB / "version.json").write_text(json.dumps({"build": build}))
     print(f"\nwrote countries.json ({len(countries_summary)} entries)")
     print(f"wrote colors.json")
+    print(f"wrote version.json (build={build})")
 
 
 if __name__ == "__main__":

@@ -7,6 +7,7 @@ data/processed/
 # Per-country web JSON: rebuilt by CI from data/processed/.
 # (countries.json + colors.json are tiny and committed for fast first paint.)
 web/polls_*.json
+web/version.json
 
 # Build / cache / venv artifacts
 __pycache__/

@@ -301,8 +301,18 @@ function smoothSeries(rows, party) {
 }
 
 async function loadIndex() {
-  STATE.colors = await fetch("colors.json").then(r => r.json());
-  STATE.countries = await fetch("countries.json").then(r => r.json());
+  // Cache-buster: fetch version.json with cache: 'no-store' so we always see
+  // the latest build id, then append ?v=<build> to every asset URL. This
+  // guarantees a fresh fetch after each deploy without waiting on the
+  // GitHub Pages 10-minute max-age window to expire.
+  let v = "";
+  try {
+    const ver = await fetch(`version.json?cb=${Date.now()}`, { cache: "no-store" }).then(r => r.json());
+    v = ver.build || "";
+  } catch (_) { /* fall back to no buster */ }
+  STATE.cacheBust = v ? `?v=${v}` : "";
+  STATE.colors = await fetch(`colors.json${STATE.cacheBust}`).then(r => r.json());
+  STATE.countries = await fetch(`countries.json${STATE.cacheBust}`).then(r => r.json());
 
   const tabs = document.getElementById("country-tabs");
   tabs.innerHTML = "";
@@ -331,7 +341,7 @@ async function selectCountry(code) {
     `<span>top parties: ${summary.top_parties.slice(0, 8).join(", ")}</span>`;
 
   document.getElementById("poll-count").textContent = "loading…";
-  STATE.polls = await fetch(`polls_${code}.json`).then(r => r.json());
+  STATE.polls = await fetch(`polls_${code}.json${STATE.cacheBust || ""}`).then(r => r.json());
   STATE.wide = buildWide(STATE.polls, summary.wide_parties || []);
   document.getElementById("poll-count").textContent =
     `${STATE.wide.length.toLocaleString()} polls · ${STATE.polls.length.toLocaleString()} party-poll rows`;
