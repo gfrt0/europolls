@@ -139,31 +139,31 @@ def _has_date_and_pollster(headers: list[str]) -> bool:
 
 
 def _resolve_header(rows: list[list[str]]) -> tuple[list[str], list[list[str]]] | None:
-    """Detect the real header row(s)."""
+    """Detect the real header row(s).
+
+    Three cases handled:
+
+    1. Single-row header (the common case) — row 0 contains both a date and
+       a pollster column; rows 1+ are data.
+
+    2. Header in row 1 — row 0 is a section caption or artifact, row 1 has
+       the meta columns.
+
+    3. Multi-row header (the merged-cell case) — row 0 has meta columns plus
+       group labels for the party region ('Parties', 'Government', 'Opposition'
+       or per-column ?px image / link= artifacts). One or more subsequent
+       header rows refine the party labels until the actual party shorts
+       appear (IS 2024 has 4 such rows). Detected by: row 0 has date+pollster,
+       AND the next row's meta cells repeat row 0's meta cell values rather
+       than being data. The effective party label per column is the deepest
+       non-empty value across the header span; meta columns use row 0.
+    """
     if not rows:
         return None
     h0 = [strip_wikitext(c) for c in rows[0]]
 
     if _has_date_and_pollster(h0):
-        if len(rows) >= 2:
-            h1 = [strip_wikitext(c) for c in rows[1]]
-            artifact_party_cells = sum(
-                1 for c in h0
-                if c and not is_meta_header(c) and (
-                    c.lower().endswith("px") or c.lower().startswith("link=") or c == ""
-                )
-            )
-            if artifact_party_cells >= 2:
-                merged = [
-                    h0[i] if is_meta_header(h0[i]) or _is_party_col_meaningful(h0[i])
-                    else h1[i] if i < len(h1) and h1[i]
-                    else h0[i]
-                    for i in range(len(h0))
-                ]
-                data = [r for r in rows[2:] if r and [strip_wikitext(c) for c in r] != h0]
-                return merged, data
-        data = [r for r in rows[1:] if r and [strip_wikitext(c) for c in r] != h0]
-        return h0, data
+        return _resolve_with_meta_header(rows, h0)
 
     if len(rows) >= 2:
         h1 = [strip_wikitext(c) for c in rows[1]]
@@ -172,6 +172,54 @@ def _resolve_header(rows: list[list[str]]) -> tuple[list[str], list[list[str]]] 
             data = [r for r in rows[2:] if r and [strip_wikitext(c) for c in r] != h1]
             return merged, data
     return None
+
+
+def _resolve_with_meta_header(
+    rows: list[list[str]], h0: list[str],
+) -> tuple[list[str], list[list[str]]]:
+    """Given row 0 confirmed to be a meta-bearing header, find how many
+    subsequent rows are also part of the (multi-row) header by checking
+    whether their meta cells repeat h0's meta values. Build the effective
+    header by taking the deepest non-empty cell per column.
+    """
+    meta_indices = [i for i, c in enumerate(h0) if is_meta_header(c)]
+    header_depth = 1
+    for r in rows[1:]:
+        if not r:
+            break
+        rh = [strip_wikitext(c) for c in r]
+        # A row counts as part of the header if every meta column either
+        # repeats h0's value or is empty. Empty cells are artefacts of
+        # vertical cell-spanning in the underlying wikitable.
+        if all(
+            i < len(rh) and (rh[i] == h0[i] or rh[i] == "")
+            for i in meta_indices
+        ):
+            header_depth += 1
+        else:
+            break
+
+    if header_depth == 1:
+        # Standard single-row header.
+        data = [r for r in rows[1:] if r and [strip_wikitext(c) for c in r] != h0]
+        return h0, data
+
+    # Multi-row header: pick the deepest non-empty cell per column, except
+    # for meta columns where row 0 is canonical.
+    merged: list[str] = []
+    for i in range(len(h0)):
+        if i in meta_indices:
+            merged.append(h0[i])
+            continue
+        value = h0[i]
+        for ri in range(header_depth):
+            if ri < len(rows) and i < len(rows[ri]):
+                cell = strip_wikitext(rows[ri][i])
+                if cell:
+                    value = cell
+        merged.append(value)
+    data = [r for r in rows[header_depth:] if r and [strip_wikitext(c) for c in r] != h0]
+    return merged, data
 
 
 def _is_party_col_meaningful(h: str) -> bool:
