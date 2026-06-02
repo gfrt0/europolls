@@ -47,26 +47,39 @@ def is_date_header(h: str) -> bool:
     n = _norm(h)
     if not n:
         return False
-    if "update" in n or "publi" in n:
+    if "update" in n:
+        return False
+    # 'publication' is the article's pub date and not the poll date — skip.
+    # But standalone 'Published' on older election-article tables (LU 2013)
+    # IS the poll's release date, so allow it.
+    if "publication" in n:
         return False
     if any(k in n for k in (
         "fieldwork", "dateconducted", "datesconducted", "administered",
         "polldate", "enddate", "dateofpoll", "polldate", "fieldperiod",
         "lastdateofpolling", "lastdate", "periodofpolling",
+        "releasedate",       # IS 2016 election-article fallback
+        "pollingperiod",     # NO 2013, some FI cycles
     )):
         return True
-    return n in {"date", "dates"}
+    return n in {"date", "dates", "published"}
 
 
 def is_pollster_header(h: str) -> bool:
     n = _norm(h)
     if not n:
         return False
+    # Standalone 'Source' is the pollster column on some older election-article
+    # tables (IS 2009 etc.); a column containing 'result' is not.
+    if n == "source":
+        return True
     return any(k in n for k in (
         "pollster", "pollingfirm", "pollinghouse",
         "pollingorganisation", "pollingorganization",
         "organisation", "organization", "company",
-        "pollsource", "pollingsource",  # 'Poll source' etc. (DK style)
+        "pollsource", "pollingsource",
+        "institute",       # IS 2016 election-article fallback
+        "agency",          # AT 2013 'Agency/Source'
     )) and "result" not in n
 
 
@@ -110,7 +123,7 @@ def _load_countries() -> dict:
             cycles_norm[cycle_id] = spec["year"] if isinstance(spec, dict) else int(spec)
         out[country] = {
             "cycles": cycles_norm,
-            "coalition_shorts_lc": set(cfg.get("coalition_shorts", []) or []),
+            "coalition_shorts_lc": {str(s).lower() for s in (cfg.get("coalition_shorts") or [])},
         }
     return out
 
@@ -191,6 +204,81 @@ def _year_for_table(wikitext: str, table_start: int, fallback: int) -> int:
     return fallback
 
 
+# Section-heading patterns that indicate a polling subsection on an
+# election article. Used only when source_kind == "election_article" to
+# avoid sucking in results / candidate / nominee tables from the same
+# page. Match level 2-4 headings whose text contains 'poll' or 'opinion'.
+_POLLING_HEADING_RE = re.compile(
+    r"^(={2,4})\s*([^=\n]*?(?:[Oo]pinion poll|[Pp]olling|[Pp]olls|[Pp]oll)[^=\n]*?)\s*={2,4}\s*$",
+    re.MULTILINE,
+)
+_ANY_HEADING_RE = re.compile(r"^={2,4}\s*[^=\n]+?\s*={2,4}\s*$", re.MULTILINE)
+
+
+def _heading_depth(h: str) -> int:
+    """Number of leading '=' characters on a Wikipedia heading line."""
+    m = re.match(r"^(={2,4})", h)
+    return len(m.group(1)) if m else 2
+
+
+_PRESIDENTIAL_HEADING_RE = re.compile(
+    r"^={2,4}\s*[^=\n]*?[Pp]residen[a-z]*[^=\n]*?\s*={2,4}\s*$",
+    re.MULTILINE,
+)
+
+
+def _polling_section_spans(wikitext: str) -> list[tuple[int, int]]:
+    """Return a list of (start, end) byte ranges in wikitext that fall under a
+    polling-related section heading. Each range runs from the end of the
+    matched heading to the next heading at the same or shallower level.
+    Used only when reading an election-article fallback page.
+
+    Sub-spans whose own heading mentions 'president' / 'presidential' are
+    excluded — they leak presidential-race polling into parliamentary cycles
+    (seen on BG 2021-Nov: Radev approval polls at 60-87%).
+    """
+    if not _POLLING_HEADING_RE.search(wikitext):
+        return []
+    headings = list(_ANY_HEADING_RE.finditer(wikitext))
+    spans: list[tuple[int, int]] = []
+    for i, h in enumerate(headings):
+        if not _POLLING_HEADING_RE.match(wikitext, h.start()):
+            continue
+        depth = _heading_depth(h.group(0))
+        end = len(wikitext)
+        for h2 in headings[i + 1:]:
+            if _heading_depth(h2.group(0)) <= depth:
+                end = h2.start()
+                break
+        # Within this polling-section, find any presidential subsection and
+        # carve out its [start, end) range to exclude.
+        presidential_holes: list[tuple[int, int]] = []
+        for ph in headings[i + 1:]:
+            ph_start = ph.start()
+            if ph_start >= end:
+                break
+            if not _PRESIDENTIAL_HEADING_RE.match(wikitext, ph_start):
+                continue
+            pdepth = _heading_depth(ph.group(0))
+            phend = end
+            for h3 in headings:
+                if h3.start() <= ph_start:
+                    continue
+                if _heading_depth(h3.group(0)) <= pdepth:
+                    phend = h3.start()
+                    break
+            presidential_holes.append((ph_start, phend))
+        # Emit the polling section minus the presidential holes.
+        cur = h.end()
+        for ph_start, ph_end in presidential_holes:
+            if ph_start > cur:
+                spans.append((cur, ph_start))
+            cur = ph_end
+        if cur < end:
+            spans.append((cur, end))
+    return spans
+
+
 def parse_cycle(country: str, cycle: str, default_year: int, coalition_lc: set[str]) -> list[dict]:
     cycle_dir = RAW_ROOT / country / cycle
     wikitext = (cycle_dir / "article.wikitext").read_text()
@@ -199,13 +287,29 @@ def parse_cycle(country: str, cycle: str, default_year: int, coalition_lc: set[s
     article_revid = src_meta["revid"]
     article_lang = src_meta.get("lang", "en")
     article_url_rev = f"https://{article_lang}.wikipedia.org/w/index.php?oldid={article_revid}"
+    source_kind = src_meta.get("source_kind", "polling_article")
 
     parsed = wtp.parse(wikitext)
     out: list[dict] = []
     skipped_tables = 0
     skipped_rows = 0
 
+    # For election-article fallbacks, only consider wikitables that live
+    # inside a section whose heading mentions polls/polling. If no such
+    # section exists, no tables are emitted for this cycle.
+    polling_spans: list[tuple[int, int]] | None = None
+    if source_kind == "election_article":
+        polling_spans = _polling_section_spans(wikitext)
+        if not polling_spans:
+            print(f"  {country} {cycle:<10} (election-article fallback, no polling section found)")
+            return out
+
     for ti, table in enumerate(parsed.tables):
+        if polling_spans is not None:
+            ts = table.span[0]
+            if not any(s <= ts < e for s, e in polling_spans):
+                skipped_tables += 1
+                continue
         table_year = _year_for_table(wikitext, table.span[0], default_year)
         try:
             rows = table.data()

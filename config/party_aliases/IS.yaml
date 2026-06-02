@@ -1,0 +1,15 @@
+# Iceland — drop merged-header artefacts that leak through on the IS 2024
+# election-article fallback. The polling table there uses a top-row 'Parties'
+# group label spanning the individual party columns; the current row-flatten
+# logic in parse.py emits 'Parties' as the party_short for each cell. Fixing
+# the multi-row header detection is a follow-up; for now just drop the rows
+# so they don't appear in the chart as a single super-party.
+
+drop:
+  - "Parties"
+  - "Resp.|Response rate"
+  - "Blocs"
+
+aliases:
+  # Norway also uses these letters; Iceland's V is the Left-Green movement
+  # (vs Norway's Venstre/Liberals) — both keep their per-country canonical.

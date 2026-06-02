@@ -2,7 +2,7 @@ name: deploy-pages
 
 on:
   push:
-    branches: [master]
+    branches: ['**']
     paths-ignore: ['README.md', 'LICENSE', 'LICENSE-DATA', '.gitignore']
   schedule:
     # Refresh polling data once a week (Mondays 06:00 UTC).
@@ -14,8 +14,9 @@ permissions:
   pages: write
   id-token: write
 
+# Per-ref concurrency so a branch build doesn't cancel a master build.
 concurrency:
-  group: pages
+  group: pages-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
@@ -38,12 +39,24 @@ jobs:
       - name: Build web JSON
         run: python scripts/build_web.py
 
+      # Always upload polls_long.csv so we can inspect a branch's data
+      # without re-running the pipeline locally. 30-day retention.
+      - name: Upload polls_long.csv
+        uses: actions/upload-artifact@v4
+        with:
+          name: polls_long-${{ github.ref_name }}-${{ github.sha }}
+          path: data/processed/polls_long.csv
+          retention-days: 30
+
+      # Pages artifact + deploy only on master.
       - name: Upload Pages artifact
+        if: github.ref == 'refs/heads/master'
         uses: actions/upload-pages-artifact@v3
         with:
           path: web
 
   deploy:
+    if: github.ref == 'refs/heads/master'
     needs: build
     runs-on: ubuntu-latest
     environment:
