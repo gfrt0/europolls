@@ -1,0 +1,353 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Europolls — opinion polling for the EU and UK</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link href="https://unpkg.com/tabulator-tables@6.3.0/dist/css/tabulator_simple.min.css" rel="stylesheet">
+<style>
+  :root {
+    --fg: #1a1a1a;
+    --muted: #666;
+    --border: #d8d8d8;
+    --bg-soft: #f8f8f8;
+    --bg-chip: #f0f0f0;
+    --accent: #d6a000;
+  }
+  * { box-sizing: border-box; }
+  body {
+    font: 13px/1.4 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    color: var(--fg);
+    margin: 0;
+    padding: 10px 14px 14px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  h1 { font-size: 18px; margin: 0 0 2px; }
+  .sub { color: var(--muted); margin-bottom: 10px; font-size: 12.5px; }
+  .sub a { color: var(--muted); }
+
+  /* Country tabs */
+  .country-tabs {
+    display: flex; flex-wrap: wrap; gap: 6px;
+    margin-bottom: 10px;
+  }
+  .country-tab {
+    font: inherit;
+    background: var(--bg-chip);
+    border: 1px solid var(--border);
+    padding: 4px 9px;
+    border-radius: 14px;
+    cursor: pointer;
+    color: var(--fg);
+    user-select: none;
+    line-height: 1.3;
+  }
+  .country-tab:hover { background: #e8e8e8; }
+  .country-tab.active {
+    background: #fef7e0;
+    border-color: var(--accent);
+    font-weight: 600;
+  }
+  .country-tab .n { color: var(--muted); font-weight: 400; font-size: 11.5px; margin-left: 4px; }
+  .country-tab.active .n { color: #8c6c00; }
+
+  /* Country info row */
+  .country-info {
+    display: flex; gap: 18px; font-size: 12.5px; color: var(--muted);
+    margin: 6px 0 8px;
+    flex-wrap: wrap;
+  }
+  .country-info b { color: var(--fg); font-weight: 600; }
+
+  /* Plot */
+  #plot { width: 100%; height: 360px; margin-bottom: 8px; }
+
+  /* Party toggles */
+  .party-toggles {
+    display: flex; flex-wrap: wrap; gap: 5px;
+    margin-bottom: 10px; font-size: 12px;
+  }
+  .party-toggle {
+    cursor: pointer; user-select: none;
+    padding: 2px 7px;
+    border: 1px solid var(--border);
+    border-radius: 11px;
+    background: var(--bg-chip);
+    display: inline-flex; align-items: center; gap: 5px;
+  }
+  .party-toggle .dot {
+    width: 9px; height: 9px; border-radius: 50%;
+    display: inline-block;
+  }
+  .party-toggle.off { opacity: 0.4; }
+  .party-toggle:hover { background: #e8e8e8; }
+
+  /* Controls */
+  .table-controls {
+    display: flex; gap: 10px; align-items: center; flex-wrap: wrap;
+    margin-bottom: 6px;
+  }
+  .table-controls input[type="search"] {
+    font: inherit; padding: 4px 8px;
+    border: 1px solid var(--border); border-radius: 4px;
+    width: 220px;
+  }
+
+  /* Table */
+  #table { font-size: 12.5px; min-height: 240px; }
+  .tabulator { border: 1px solid var(--border); }
+  .tabulator .tabulator-header .tabulator-col {
+    background: var(--bg-soft); font-weight: 600;
+  }
+  .num { font-variant-numeric: tabular-nums; text-align: right; }
+
+  /* Loading state */
+  .loading { color: var(--muted); padding: 24px; text-align: center; }
+
+  /* Footer */
+  .footer {
+    margin-top: 18px; padding-top: 12px;
+    border-top: 1px solid var(--border);
+    font-size: 11.5px; color: var(--muted);
+  }
+  .footer a { color: var(--muted); }
+</style>
+</head>
+<body>
+
+<h1>Europolls <span style="color:var(--muted); font-size:13.5px; font-weight:400;">— opinion polling for the EU and UK</span></h1>
+<div class="sub">
+  Wikipedia-direct dataset, 17 country codes, ~270k poll-party observations 2002-2026.
+  <a href="https://github.com/gfrt0/europolls">source · CSV releases</a>
+</div>
+
+<div class="country-tabs" id="country-tabs">
+  <span class="loading" style="padding:0;">loading…</span>
+</div>
+
+<div class="country-info" id="country-info"></div>
+
+<div id="plot"></div>
+
+<div class="party-toggles" id="party-toggles"></div>
+
+<div class="table-controls">
+  <input type="search" id="search" placeholder="filter pollster / party…">
+  <span class="loading" id="poll-count" style="padding:0;"></span>
+</div>
+
+<div id="table"></div>
+
+<div class="footer">
+  Built from English-Wikipedia "Opinion polling for the … election" articles via the
+  <a href="https://github.com/gfrt0/europolls">europolls</a> pipeline. Data is CC-BY-SA 4.0,
+  inherited from Wikipedia. Each poll-party row carries a pinned <code>?oldid=&lt;revid&gt;</code>
+  permalink to the source article and the URL of the original poll publication.
+  Italian scrape validated against the official government register (sondaggipoliticoelettorali.it)
+  at ~93% within ±0.5 pp.
+</div>
+
+<script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+<script src="https://unpkg.com/tabulator-tables@6.3.0/dist/js/tabulator.min.js"></script>
+<script>
+"use strict";
+
+const STATE = {
+  country: null,
+  polls: null,         // current country's poll array
+  colors: null,        // global color map
+  countries: null,     // index
+  visibleParties: new Set(),
+  table: null,
+};
+
+const COUNTRY_NAMES = {
+  IT: "Italy", UK: "United Kingdom", DE: "Germany", ES: "Spain",
+  GR: "Greece", SE: "Sweden", PT: "Portugal", FR: "France (pres.)",
+  AT: "Austria", NL: "Netherlands", DK: "Denmark", FI: "Finland",
+  BE: "Belgium", FR_LEG: "France (legisl.)", IE: "Ireland", MT: "Malta",
+  CY: "Cyprus",
+};
+
+// Deterministic color fallback for parties not in colors.json.
+function fallbackColor(s) {
+  let h = 0;
+  for (let i = 0; i < s.length; i++) h = (h * 31 + s.charCodeAt(i)) | 0;
+  const hue = Math.abs(h) % 360;
+  return `hsl(${hue}, 55%, 45%)`;
+}
+
+function getColor(country, party) {
+  const cc = STATE.colors?.[country];
+  if (cc && cc[party]) return "#" + cc[party];
+  return fallbackColor(party);
+}
+
+// 30-day centered rolling mean per party series, plus 7-day points for the scatter.
+function smoothSeries(rows, party) {
+  const sorted = rows
+    .filter(r => r.k === party && !r.c)
+    .map(r => ({ date: r.d, v: r.v }))
+    .sort((a, b) => a.date.localeCompare(b.date));
+  if (sorted.length === 0) return { points: [], smoothed: [] };
+
+  // Convert dates to integers (days since first poll) for fast windowed mean.
+  const first = new Date(sorted[0].date).getTime();
+  const day = 86400000;
+  for (const r of sorted) {
+    r.t = (new Date(r.date).getTime() - first) / day;
+  }
+
+  const WINDOW = 21; // days half-window for the smoother
+  const smoothed = sorted.map(r => {
+    let s = 0, n = 0;
+    for (const o of sorted) {
+      if (Math.abs(o.t - r.t) <= WINDOW) { s += o.v; n++; }
+    }
+    return { x: r.date, y: s / n };
+  });
+
+  return { points: sorted.map(r => ({ x: r.date, y: r.v })), smoothed };
+}
+
+async function loadIndex() {
+  STATE.colors = await fetch("colors.json").then(r => r.json());
+  STATE.countries = await fetch("countries.json").then(r => r.json());
+
+  const tabs = document.getElementById("country-tabs");
+  tabs.innerHTML = "";
+  for (const c of STATE.countries) {
+    const btn = document.createElement("button");
+    btn.className = "country-tab";
+    btn.dataset.country = c.code;
+    btn.innerHTML = `${COUNTRY_NAMES[c.code] || c.code} <span class="n">${c.n_polls.toLocaleString()}</span>`;
+    btn.onclick = () => selectCountry(c.code);
+    tabs.appendChild(btn);
+  }
+  // Default to Italy.
+  selectCountry(STATE.countries.find(c => c.code === "IT") ? "IT" : STATE.countries[0].code);
+}
+
+async function selectCountry(code) {
+  STATE.country = code;
+  for (const btn of document.querySelectorAll(".country-tab")) {
+    btn.classList.toggle("active", btn.dataset.country === code);
+  }
+  const summary = STATE.countries.find(c => c.code === code);
+  document.getElementById("country-info").innerHTML =
+    `<span><b>${summary.n_polls.toLocaleString()}</b> polls</span>` +
+    `<span><b>${summary.n_party_obs.toLocaleString()}</b> party-poll observations</span>` +
+    `<span><b>${summary.span_start}</b> → <b>${summary.span_end}</b></span>` +
+    `<span>top parties: ${summary.top_parties.slice(0, 8).join(", ")}</span>`;
+
+  document.getElementById("poll-count").textContent = "loading…";
+  STATE.polls = await fetch(`polls_${code}.json`).then(r => r.json());
+  document.getElementById("poll-count").textContent =
+    `${STATE.polls.length.toLocaleString()} party-poll rows`;
+
+  // Default-visible parties: top 8 by obs count (excluding coalition aggregates).
+  STATE.visibleParties = new Set(summary.top_parties.slice(0, 8));
+  renderToggles(summary);
+  renderPlot();
+  renderTable();
+}
+
+function renderToggles(summary) {
+  const wrap = document.getElementById("party-toggles");
+  wrap.innerHTML = "";
+  // Collect all parties in this country sorted by obs count.
+  const counts = {};
+  for (const r of STATE.polls) {
+    if (r.c) continue;
+    counts[r.k] = (counts[r.k] || 0) + 1;
+  }
+  const sorted = Object.entries(counts).sort((a, b) => b[1] - a[1]);
+  for (const [party, n] of sorted) {
+    const el = document.createElement("span");
+    el.className = "party-toggle" + (STATE.visibleParties.has(party) ? "" : " off");
+    el.dataset.party = party;
+    el.innerHTML = `<span class="dot" style="background:${getColor(STATE.country, party)}"></span>${party} <span style="color:var(--muted)">${n}</span>`;
+    el.onclick = () => {
+      if (STATE.visibleParties.has(party)) STATE.visibleParties.delete(party);
+      else STATE.visibleParties.add(party);
+      el.classList.toggle("off");
+      renderPlot();
+    };
+    wrap.appendChild(el);
+  }
+}
+
+function renderPlot() {
+  const traces = [];
+  for (const party of STATE.visibleParties) {
+    const { points, smoothed } = smoothSeries(STATE.polls, party);
+    if (smoothed.length === 0) continue;
+    const color = getColor(STATE.country, party);
+    // Raw points: small dots, low opacity
+    traces.push({
+      x: points.map(p => p.x), y: points.map(p => p.y),
+      mode: "markers", type: "scatter", name: party,
+      legendgroup: party, showlegend: false,
+      marker: { size: 3, color, opacity: 0.18 },
+      hovertemplate: `${party}: %{y:.1f}%<br>%{x}<extra></extra>`,
+    });
+    // Smoothed line
+    traces.push({
+      x: smoothed.map(p => p.x), y: smoothed.map(p => p.y),
+      mode: "lines", type: "scatter", name: party,
+      legendgroup: party,
+      line: { color, width: 2 },
+      hovertemplate: `${party} smoothed: %{y:.1f}%<br>%{x}<extra></extra>`,
+    });
+  }
+  Plotly.newPlot("plot", traces, {
+    margin: { l: 38, r: 14, t: 8, b: 36 },
+    xaxis: { type: "date", showgrid: false },
+    yaxis: { title: "% vote intention", rangemode: "tozero", gridcolor: "#eee" },
+    legend: { orientation: "h", yanchor: "bottom", y: 1.02, xanchor: "right", x: 1, font: { size: 11 } },
+    hovermode: "closest",
+    plot_bgcolor: "#fff",
+    paper_bgcolor: "#fff",
+  }, { responsive: true, displaylogo: false });
+}
+
+function renderTable() {
+  if (STATE.table) STATE.table.destroy();
+  STATE.table = new Tabulator("#table", {
+    data: STATE.polls,
+    layout: "fitColumns",
+    height: "360px",
+    pagination: false,
+    columns: [
+      { title: "Date", field: "d", width: 95, sorter: "string" },
+      { title: "Pollster", field: "p", widthGrow: 1.5 },
+      { title: "n", field: "n", hozAlign: "right", width: 70,
+        formatter: cell => { const v = cell.getValue(); return v == null ? "" : v.toLocaleString(); } },
+      { title: "Party", field: "k", width: 90,
+        formatter: cell => {
+          const party = cell.getValue();
+          const color = getColor(STATE.country, party);
+          return `<span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:${color};margin-right:5px;vertical-align:-1px;"></span>${party}`;
+        } },
+      { title: "Share %", field: "v", hozAlign: "right", width: 90,
+        formatter: cell => cell.getValue() == null ? "" : cell.getValue().toFixed(1) },
+      { title: "Coal.", field: "c", hozAlign: "center", width: 65,
+        formatter: cell => cell.getValue() ? "✓" : "" },
+    ],
+    initialSort: [{ column: "d", dir: "desc" }],
+  });
+  document.getElementById("search").oninput = (e) => {
+    const q = e.target.value.toLowerCase();
+    STATE.table.setFilter([[
+      { field: "p", type: "like", value: q },
+      { field: "k", type: "like", value: q },
+    ]]);
+  };
+}
+
+loadIndex();
+</script>
+</body>
+</html>

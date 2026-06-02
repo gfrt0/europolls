@@ -1,0 +1,325 @@
+[
+  {
+    "code": "UK",
+    "n_polls": 5266,
+    "n_party_obs": 35221,
+    "span_start": "2005-05-05",
+    "span_end": "2026-05-31",
+    "top_parties": [
+      "Con",
+      "LD",
+      "Lab",
+      "Grn",
+      "Others",
+      "UKIP",
+      "SNP",
+      "PC",
+      "Brx",
+      "BNP"
+    ]
+  },
+  {
+    "code": "IT",
+    "n_polls": 5034,
+    "n_party_obs": 51014,
+    "span_start": "2005-01-19",
+    "span_end": "2026-05-29",
+    "top_parties": [
+      "M5S",
+      "Others",
+      "PD",
+      "FdI",
+      "FI",
+      "Lega",
+      "LN",
+      "+E",
+      "IV",
+      "A"
+    ]
+  },
+  {
+    "code": "DE",
+    "n_polls": 4422,
+    "n_party_obs": 39945,
+    "span_start": "2009-09-27",
+    "span_end": "2026-05-30",
+    "top_parties": [
+      "SPD",
+      "FDP",
+      "Gr\u00fcne",
+      "Linke",
+      "Others",
+      "AfD",
+      "Union",
+      "BSW",
+      "CDU",
+      "Abs.|Abstention"
+    ]
+  },
+  {
+    "code": "ES",
+    "n_polls": 2898,
+    "n_party_obs": 30157,
+    "span_start": "2004-03-14",
+    "span_end": "2026-12-31",
+    "top_parties": [
+      "PP",
+      "PSOE",
+      "PNV",
+      "Vox",
+      "EH Bildu",
+      "ERC",
+      "BNG",
+      "Podemos",
+      "Sumar",
+      "CiU"
+    ]
+  },
+  {
+    "code": "GR",
+    "n_polls": 1368,
+    "n_party_obs": 11809,
+    "span_start": "2007-09-16",
+    "span_end": "2026-05-28",
+    "top_parties": [
+      "KKE",
+      "ND",
+      "PASOK",
+      "SYRIZA",
+      "EL",
+      "XA",
+      "PE",
+      "LAOS",
+      "OP",
+      "ANEL"
+    ]
+  },
+  {
+    "code": "SE",
+    "n_polls": 1247,
+    "n_party_obs": 15490,
+    "span_start": "2010-09-19",
+    "span_end": "2026-05-20",
+    "top_parties": [
+      "Parties",
+      "M",
+      "Above threshold",
+      "Overall",
+      "S",
+      "C",
+      "V",
+      "KD",
+      "MP",
+      "L"
+    ]
+  },
+  {
+    "code": "AT",
+    "n_polls": 873,
+    "n_party_obs": 7223,
+    "span_start": "2013-09-29",
+    "span_end": "2026-05-18",
+    "top_parties": [
+      "Others",
+      "\u00d6VP",
+      "NEOS",
+      "SP\u00d6",
+      "FP\u00d6",
+      "Gr\u00fcne",
+      "Kurz\u00d6VP",
+      "JETZT",
+      "KP\u00d6",
+      "Rendi-Wagner/KernSP\u00d6"
+    ]
+  },
+  {
+    "code": "PT",
+    "n_polls": 831,
+    "n_party_obs": 8496,
+    "span_start": "2005-02-20",
+    "span_end": "2026-05-19",
+    "top_parties": [
+      "PS",
+      "BE",
+      "CDU",
+      "Ant\u00f3nio Costa's cabinet",
+      "O|Others",
+      "CDS\u2013PP",
+      "PSD",
+      "PSD/CDS",
+      "Pedro Passos Coelho's cabinet",
+      "PAN"
+    ]
+  },
+  {
+    "code": "FR",
+    "n_polls": 822,
+    "n_party_obs": 14787,
+    "span_start": "2002-05-05",
+    "span_end": "2022-04-24",
+    "top_parties": [
+      "Le PenFN",
+      "SarkozyUMP",
+      "ArthaudLO",
+      "HollandePS",
+      "PoutouNPA",
+      "BayrouMoDem",
+      "RoyalPS",
+      "MacronEM",
+      "FillonLR",
+      "Dupont-AignanDLF"
+    ]
+  },
+  {
+    "code": "NL",
+    "n_polls": 618,
+    "n_party_obs": 11810,
+    "span_start": "2016-03-03",
+    "span_end": "2026-05-23",
+    "top_parties": [
+      "CDA",
+      "CU",
+      "D66",
+      "PvdD",
+      "SP",
+      "PVV",
+      "VVD",
+      "SGP",
+      "50+",
+      "FvD"
+    ]
+  },
+  {
+    "code": "DK",
+    "n_polls": 453,
+    "n_party_obs": 6937,
+    "span_start": "2015-06-18",
+    "span_end": "2026-05-29",
+    "top_parties": [
+      "Blocs",
+      "A",
+      "B",
+      "C",
+      "F",
+      "O",
+      "V",
+      "\u00c5",
+      "\u00d8",
+      "I"
+    ]
+  },
+  {
+    "code": "FI",
+    "n_polls": 372,
+    "n_party_obs": 4001,
+    "span_start": "2011-04-17",
+    "span_end": "2026-05-04",
+    "top_parties": [
+      "KOK",
+      "PS",
+      "VIHR",
+      "VAS",
+      "SDP",
+      "KD",
+      "KESK",
+      "Others",
+      "SFP",
+      "LIIK"
+    ]
+  },
+  {
+    "code": "IE",
+    "n_polls": 307,
+    "n_party_obs": 2952,
+    "span_start": "2016-02-26",
+    "span_end": "2026-05-30",
+    "top_parties": [
+      "FF",
+      "GP",
+      "FG",
+      "SF",
+      "Lab",
+      "SD",
+      "PBP\u2013S",
+      "Aon",
+      "O/I|Others/IndependentsThe figure for 'Others/Independents' is the remainder when all others are removed. As with all such calculations, the figure shown may be slightly inaccurate due to rounding effects.",
+      "S\u2013PBP"
+    ]
+  },
+  {
+    "code": "FR_LEG",
+    "n_polls": 243,
+    "n_party_obs": 4466,
+    "span_start": "2002-06-09",
+    "span_end": "2024-07-07",
+    "top_parties": [
+      "Others",
+      "NFP",
+      "NUPES",
+      "DVD",
+      "Abs.|Abstention",
+      "DIV",
+      "MoDem",
+      "FN",
+      "DVG",
+      "PS"
+    ]
+  },
+  {
+    "code": "MT",
+    "n_polls": 104,
+    "n_party_obs": 992,
+    "span_start": "2013-03-09",
+    "span_end": "2022-03-24",
+    "top_parties": [
+      "Others",
+      "PL",
+      "PN",
+      "AD",
+      "PD",
+      "MPM",
+      "Notvoting",
+      "Don'tknow",
+      "Neither / None",
+      "Don't know"
+    ]
+  },
+  {
+    "code": "BE",
+    "n_polls": 94,
+    "n_party_obs": 6707,
+    "span_start": "2014-05-25",
+    "span_end": "2024-06-09",
+    "top_parties": [
+      "Coalitions",
+      "Ideologies",
+      "Others",
+      "Groen",
+      "MR",
+      "Ecolo",
+      "D\u00e9FI",
+      "PS",
+      "VB",
+      "Open Vld"
+    ]
+  },
+  {
+    "code": "CY",
+    "n_polls": 46,
+    "n_party_obs": 651,
+    "span_start": "2022-05-11",
+    "span_end": "2023-02-05",
+    "top_parties": [
+      "ChristodoulidesIndependent-DIKO, EDEK, DIPA, KA",
+      "MavroyiannisIndependent-AKEL, GC",
+      "NeofytouDISY",
+      "ChristofidesNW",
+      "ChristouELAM",
+      "ColocassidesIndependent",
+      "DemetriadesIndependent-FFC",
+      "Other",
+      "EliadesIndependent",
+      "ProtopapasIndependent"
+    ]
+  }
+]
