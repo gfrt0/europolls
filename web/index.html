@@ -289,13 +289,21 @@ function smoothSeries(rows, party) {
   }
 
   const WINDOW = 21; // days half-window for the smoother
-  const smoothed = sorted.map(r => {
+  const GAP_DAYS = 120; // break the line if no neighbours within this span
+  const smoothed = [];
+  for (let i = 0; i < sorted.length; i++) {
+    const r = sorted[i];
     let s = 0, n = 0;
     for (const o of sorted) {
       if (Math.abs(o.t - r.t) <= WINDOW) { s += o.v; n++; }
     }
-    return { x: r.date, y: s / n };
-  });
+    smoothed.push({ x: r.date, y: s / n });
+    // If the next point is more than GAP_DAYS away, insert a null to break
+    // the line so Plotly doesn't draw across multi-year inter-cycle gaps.
+    if (i + 1 < sorted.length && (sorted[i + 1].t - r.t) > GAP_DAYS) {
+      smoothed.push({ x: r.date, y: null });
+    }
+  }
 
   return { points: sorted.map(r => ({ x: r.date, y: r.v })), smoothed };
 }
@@ -428,6 +436,7 @@ function renderPlot() {
       mode: "lines", type: "scatter", name: party,
       legendgroup: party,
       line: { color, width: 2 },
+      connectgaps: false,
       hovertemplate: `${party} smoothed: %{y:.1f}%<br>%{x}<extra></extra>`,
     });
   }

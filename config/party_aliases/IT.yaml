@@ -1,7 +1,30 @@
 # Italy — Wikipedia uses both 'Lega' (post-2018 brand) and 'LN' (Lega Nord);
-# same party. UdC has multiple casings. UDC = UdC.
+# same party. UdC has multiple casings. UDC = UdC. 2013-era full English
+# labels ("Five Star Movement", "Italy. Common Good") are folded into the
+# successor short codes for cross-cycle continuity.
 # (For partyfacts_id harmonization see config/party_mappings/IT.yaml.)
+#
+# Deliberately NOT folded:
+#   FI vs PdL — Forza Italia (pre-2009, post-2013) and Popolo della Libertà
+#               (2009-2013) are legally distinct parties with separate
+#               partyfacts ids, even though both centre on Berlusconi's
+#               coalition. Wikipedia treats them separately; we keep them
+#               separate too. Toggle PdL on with FI to see the combined
+#               vote share visually.
+#   PdL/FI    — Wikipedia's 2013 transition-period column. Could be folded
+#               into FI, but it captures a genuine cross-table ambiguity;
+#               kept as its own label for now.
 
 aliases:
-  "LN":   "Lega"
-  "UDC":  "UdC"
+  "LN":                    "Lega"
+  "UDC":                   "UdC"
+  "Five Star Movement":    "M5S"
+  "Italy. Common Good":    "PD"           # 2013 Bersani PD-led list
+  "Ulivo/PD":              "PD"           # 2007-08 Olive Tree → PD transition
+  "Ulivo":                 "PD"           # Olive Tree (1995-2007) predecessor
+  "With Monti for Italy":  "SC"           # 2013 Monti list = Civic Choice
+  "Civil Revolution":      "RC"           # 2013 Ingroia list (partyfacts 2277)
+  "SEL/SI":                "SI"           # SEL→SI transition pair
+  "Centre-right coalition": "CDX"          # alt label for the CDX coalition
+  "Centre-right":          "CDX"
+  "Centre-left":           "CSX"
