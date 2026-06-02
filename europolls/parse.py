@@ -253,8 +253,15 @@ def parse_cycle(country: str, cycle: str, default_year: int, coalition_lc: set[s
                 except ValueError:
                     mid = None
 
-            for pi, pshort in party_cols:
-                share = parse_share(row[pi])
+            # Sanity gate: if any party cell in this row exceeds 100, it's a
+            # seat-projection table (UK MRP polls forecast seat counts up to
+            # ~650, not vote shares). Drop the whole row.
+            row_shares = [parse_share(row[pi]) for pi, _ in party_cols]
+            if any(s is not None and s > 100 for s in row_shares):
+                skipped_rows += 1
+                continue
+
+            for (pi, pshort), share in zip(party_cols, row_shares):
                 if share is None:
                     continue
                 is_coal = pshort.lower() in coalition_lc
