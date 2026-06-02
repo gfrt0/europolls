@@ -339,6 +339,22 @@ def parse_fieldwork(cell: str, default_year: int) -> FieldworkDates:
             iso = _to_iso(int(d), mn, year)
             return FieldworkDates(iso, iso)
 
+    # Case C''': "October 13" / "November 19" / "June 5" — full or 4-letter
+    # month name + day, no year. Common on older election-article polling
+    # tables where the article's own cycle year is implicit (SI 2011 uses
+    # this throughout). Restricted to ≥4 letter spellings so 3-letter
+    # abbreviations stay with the 2-digit-year-suffix branch above (which
+    # reads 'Jan 11' as Jan 2011). The 4-letter cutoff covers June/July
+    # while leaving May ambiguous (rare; if it shows up it'll fall through
+    # to the previous 'May 13 → May 2013' year reading).
+    m = re.match(r"([A-Za-z]{4,})\s+(\d{1,2})$", s)
+    if m:
+        mo, d = m.groups()
+        mn = MONTHS.get(mo.lower())
+        if mn and 1 <= int(d) <= 31:
+            iso = _to_iso(int(d), mn, default_year)
+            return FieldworkDates(iso, iso)
+
     # Case D: ISO already.
     m = re.match(r"(\d{4})-(\d{1,2})-(\d{1,2})$", s)
     if m:
