@@ -142,6 +142,7 @@ The presentation layer (chart and tables on the [live site](https://gfrt0.github
 
 ## Roadmap
 
+- **`<ref>`-footnote URL extraction.** The current `source_url` column captures the poll's external link only when Wikipedia writes inline `[url Pollster]` markup (~69% of rows). Articles that cite via `<ref name="...">{{cite web|url=...}}</ref>` footnotes — notably ES, LV, IE (0%), and partially GR/NL/FI — lose their citations because the parser strips `<ref>` blocks as HTML tags before URL extraction. Adding a pre-strip pass that finds `<ref>` adjacent to the pollster cell and pulls URLs from the citation template would meaningfully bump coverage.
 - Long-tail wide-parties curation across the newly-added Central/Eastern European and Baltic countries — the lists are first-pass guesses that haven't been hand-validated.
 - Cross-dataset joins beyond Italy: `partyfacts_id` mapping files for the other 31 countries (`config/party_mappings/{CC}.yaml`).
 - Twelve fallback cycles still produce zero rows because the election article uses chart-only polling sections, transposed party-row layouts, or no polling section at all — see the per-cycle list at the end of `docs/ADDING_A_COUNTRY.md`. Most need either a different data source or a structural parser change.
