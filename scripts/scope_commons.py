@@ -154,11 +154,16 @@ def en_articles_using(file_title: str) -> list[str]:
 
 
 def classify_article(title: str) -> tuple[str | None, str | None, bool]:
-    """Return (country_adjective, year, is_dedicated_polling_article)."""
-    m = RX_POLLING.match(title)
+    """Return (country_adjective, year, is_dedicated_polling_article).
+
+    Globalusage returns titles with underscores ('Opinion_polling_for_the…');
+    normalise to spaces before pattern-matching.
+    """
+    norm = title.replace("_", " ")
+    m = RX_POLLING.match(norm)
     if m:
         return m.group("rest"), m.group("year"), True
-    m = RX_ELECTION.match(title)
+    m = RX_ELECTION.match(norm)
     if m:
         return m.group("rest"), m.group("year"), False
     return None, None, False
