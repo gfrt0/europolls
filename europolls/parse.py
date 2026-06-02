@@ -53,6 +53,7 @@ def is_date_header(h: str) -> bool:
         "fieldwork", "dateconducted", "datesconducted", "administered",
         "polldate", "enddate", "dateofpoll", "polldate", "fieldperiod",
         "lastdateofpolling", "lastdate", "periodofpolling",
+        "releasedate",  # IS 2016 election-article fallback uses 'Release date'
     )):
         return True
     return n in {"date", "dates"}
@@ -67,6 +68,7 @@ def is_pollster_header(h: str) -> bool:
         "pollingorganisation", "pollingorganization",
         "organisation", "organization", "company",
         "pollsource", "pollingsource",  # 'Poll source' etc. (DK style)
+        "institute",  # IS 2016 election-article fallback uses 'Institute'
     )) and "result" not in n
 
 
