@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>Europolls — opinion polling for the EU and UK</title>
+<title>Europolls — a database of opinion polls</title>
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <link href="https://unpkg.com/tabulator-tables@6.3.0/dist/css/tabulator_simple.min.css" rel="stylesheet">
 <style>
@@ -28,30 +28,19 @@
   .sub { color: var(--muted); margin-bottom: 10px; font-size: 12.5px; }
   .sub a { color: var(--muted); }
 
-  /* Country tabs */
-  .country-tabs {
-    display: flex; flex-wrap: wrap; gap: 6px;
-    margin-bottom: 10px;
-  }
-  .country-tab {
+  /* Country selector dropdown */
+  .country-select {
     font: inherit;
     background: var(--bg-chip);
     border: 1px solid var(--border);
-    padding: 4px 9px;
-    border-radius: 14px;
-    cursor: pointer;
+    padding: 3px 8px;
+    border-radius: 4px;
     color: var(--fg);
-    user-select: none;
-    line-height: 1.3;
+    cursor: pointer;
+    max-width: 240px;
   }
-  .country-tab:hover { background: #e8e8e8; }
-  .country-tab.active {
-    background: #fef7e0;
-    border-color: var(--accent);
-    font-weight: 600;
-  }
-  .country-tab .n { color: var(--muted); font-weight: 400; font-size: 11.5px; margin-left: 4px; }
-  .country-tab.active .n { color: #8c6c00; }
+  .country-select:hover { background: #e8e8e8; }
+  .country-select:focus { outline: 2px solid var(--accent); outline-offset: -1px; }
 
   /* Country info row */
   .country-info {
@@ -135,7 +124,7 @@
 
   /* Header right-side actions */
   .header-row { display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
-  .header-actions { display: flex; gap: 14px; align-items: baseline; font-size: 13px; }
+  .header-actions { display: flex; gap: 12px; align-items: center; font-size: 13px; }
   .header-actions a { color: var(--muted); cursor: pointer; }
   .header-actions a:hover { color: #0a58ca; }
 
@@ -164,18 +153,14 @@
 <body>
 
 <div class="header-row">
-  <h1>Europolls <span style="color:var(--muted); font-size:13.5px; font-weight:400;">— opinion polling for the EU and UK</span></h1>
+  <h1>Europolls <span style="color:var(--muted); font-size:13.5px; font-weight:400;">— a database of opinion polls</span></h1>
   <div class="header-actions">
+    <select id="country-select" class="country-select" aria-label="Select country">
+      <option value="">loading…</option>
+    </select>
     <a href="#" id="caveats-link">ⓘ Limits &amp; cautions</a>
     <a href="https://github.com/gfrt0/europolls" target="_blank">GitHub</a>
   </div>
-</div>
-<div class="sub">
-  Wikipedia-direct dataset, 17 country codes, ~270k poll-party observations 2002-2026.
-</div>
-
-<div class="country-tabs" id="country-tabs">
-  <span class="loading" style="padding:0;">loading…</span>
 </div>
 
 <div class="country-info" id="country-info"></div>
@@ -322,25 +307,27 @@ async function loadIndex() {
   STATE.colors = await fetch(`colors.json${STATE.cacheBust}`).then(r => r.json());
   STATE.countries = await fetch(`countries.json${STATE.cacheBust}`).then(r => r.json());
 
-  const tabs = document.getElementById("country-tabs");
-  tabs.innerHTML = "";
-  for (const c of STATE.countries) {
-    const btn = document.createElement("button");
-    btn.className = "country-tab";
-    btn.dataset.country = c.code;
-    btn.innerHTML = `${COUNTRY_NAMES[c.code] || c.code} <span class="n">${c.n_polls.toLocaleString()}</span>`;
-    btn.onclick = () => selectCountry(c.code);
-    tabs.appendChild(btn);
+  const sel = document.getElementById("country-select");
+  sel.innerHTML = "";
+  // Sort dropdown options alphabetically by country name for easier scanning.
+  const sortedCountries = [...STATE.countries].sort((a, b) =>
+    (COUNTRY_NAMES[a.code] || a.code).localeCompare(COUNTRY_NAMES[b.code] || b.code)
+  );
+  for (const c of sortedCountries) {
+    const opt = document.createElement("option");
+    opt.value = c.code;
+    opt.textContent = `${COUNTRY_NAMES[c.code] || c.code} (${c.n_polls.toLocaleString()})`;
+    sel.appendChild(opt);
   }
+  sel.onchange = (e) => selectCountry(e.target.value);
   // Default to Italy.
   selectCountry(STATE.countries.find(c => c.code === "IT") ? "IT" : STATE.countries[0].code);
 }
 
 async function selectCountry(code) {
   STATE.country = code;
-  for (const btn of document.querySelectorAll(".country-tab")) {
-    btn.classList.toggle("active", btn.dataset.country === code);
-  }
+  const sel = document.getElementById("country-select");
+  if (sel.value !== code) sel.value = code;
   const summary = STATE.countries.find(c => c.code === code);
   document.getElementById("country-info").innerHTML =
     `<span><b>${summary.n_polls.toLocaleString()}</b> polls</span>` +
