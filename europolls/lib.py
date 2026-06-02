@@ -108,8 +108,21 @@ def strip_wikitext(cell: str) -> str:
 
 
 def parse_share(cell: str) -> float | None:
-    """Parse a single polling-share cell ('21.5', '21,5%', ''') into float."""
-    s = strip_wikitext(cell).replace(",", ".").replace("%", "").strip()
+    """Parse a single polling-share cell ('21.5', '21,5%', ''') into float.
+
+    Tolerates a trailing parenthetical seat count ('20.4%(31)' on NL 2010,
+    '25.2%(46.9%)¤' on MT 2013, '34.8% (62)' on SK 2012) and a few
+    miscellaneous trailing markers (¤, asterisks, footnote daggers).
+    """
+    s = strip_wikitext(cell)
+    # Strip trailing footnote / marker characters FIRST so a closing paren
+    # adjacent to one doesn't block the parens-suffix strip below.
+    s = re.sub(r"[¤*†‡§]+\s*$", "", s).strip()
+    # Drop any '(...)' suffix — Wikipedia tables sometimes append a seat
+    # projection or absolute count alongside the percentage. '25.2%(46.9%)'
+    # → '25.2%'.
+    s = re.sub(r"\s*\([^)]*\)\s*$", "", s).strip()
+    s = s.replace(",", ".").replace("%", "").strip()
     if not s or s in {"–", "—", "-", "?", "N/A"}:
         return None
     try:
