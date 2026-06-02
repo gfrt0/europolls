@@ -1,0 +1,7 @@
+# Denmark — single-letter party codes are already canonical. Folds the
+# 'Blue (V+O+I+C+K)' bloc-aggregate variants into shorter labels.
+
+aliases:
+  "Blue   (V+O+I+C+K)":  "Blue"
+  "Red   (A+B+F+Ø)":     "Red"
+  "Red   (A+B+F+Ø+Å)":   "Red"

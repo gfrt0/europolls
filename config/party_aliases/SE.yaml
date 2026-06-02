@@ -1,0 +1,9 @@
+# Sweden — Wikipedia mixes uppercase (M, S, V, C, KD, MP, L, SD) with
+# title-case (Sd, Mp, Fp, Kd). Mode-winner grouping already folds these,
+# but we encode the canonical form explicitly for stability.
+
+aliases:
+  "Sd":  "SD"
+  "Mp":  "MP"
+  "Fp":  "L"     # Folkpartiet renamed to Liberalerna in 2015
+  "Kd":  "KD"

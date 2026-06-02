@@ -1,0 +1,5 @@
+# Netherlands — GL/PvdA and GL–PvdA are the same joint list; Denk casing.
+
+aliases:
+  "GL/PvdA":   "GL–PvdA"
+  "Denk":      "DENK"

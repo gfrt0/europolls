@@ -503,15 +503,15 @@ function renderLongTable() {
         formatter: cell => { const v = cell.getValue() || ""; return v.length > 22 ? `<span title="${v}">${v.slice(0, 22)}…</span>` : v; } },
       { title: "n", field: "n", hozAlign: "right", width: 70,
         formatter: cell => { const v = cell.getValue(); return v == null ? "" : v.toLocaleString(); } },
-      { title: "Party", field: "k", width: 90,
+      { title: "Party", field: "k", width: 90, headerSort: false,
         formatter: cell => {
           const party = cell.getValue();
           const color = getColor(STATE.country, party);
           return `<span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:${color};margin-right:5px;vertical-align:-1px;"></span>${party}`;
         } },
-      { title: "Share %", field: "v", hozAlign: "right", width: 90,
+      { title: "Share %", field: "v", hozAlign: "right", width: 90, headerSort: false,
         formatter: cell => cell.getValue() == null ? "" : cell.getValue().toFixed(1) },
-      { title: "Coal.", field: "c", hozAlign: "center", width: 65,
+      { title: "Coal.", field: "c", hozAlign: "center", width: 65, headerSort: false,
         formatter: cell => cell.getValue() ? "✓" : "" },
     ],
     initialSort: [{ column: "d", dir: "desc" }],
@@ -541,7 +541,7 @@ function renderWideTable() {
       field: party,
       hozAlign: "right",
       width: 62,
-      headerSort: true,
+      headerSort: false,
       formatter: cell => cell.getValue() == null ? "" : cell.getValue().toFixed(1),
     });
   }
@@ -550,6 +550,7 @@ function renderWideTable() {
     field: "Other",
     hozAlign: "right",
     width: 62,
+    headerSort: false,
     formatter: cell => cell.getValue() == null ? "" : cell.getValue().toFixed(1),
   });
 

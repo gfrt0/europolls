@@ -1,0 +1,11 @@
+# Spain — Ciudadanos has cycled through C's / Cs / CS / CS spellings;
+# Podemos coalition names alternate between Unidos and Unidas; UPyD / UPYD
+# is the same party.
+
+aliases:
+  "C's":             "Cs"
+  "CS":              "Cs"
+  "Unidos Podemos":  "Unidas Podemos"
+  "UPYD":            "UPyD"
+  "CC":              "CCa"
+  "IU":              "IU–LV"

@@ -1,0 +1,14 @@
+# Austria — party_short variant → canonical mapping for the web view.
+#
+# Wikipedia interleaves abbreviations (ÖVP, SPÖ) with full English names
+# ("Austrian People's Party") and leader+party concatenations ("KurzÖVP",
+# "Rendi-Wagner/KernSPÖ"). This file folds the obvious ones; leader-tagged
+# columns from satisfaction polls are intentionally left alone.
+
+aliases:
+  "Austrian People's Party":        "ÖVP"
+  "Social Democratic Party of Austria": "SPÖ"
+  "Freedom Party of Austria":       "FPÖ"
+  "The Greens (Austria)":           "Grüne"
+  "NEOS (Austria)":                 "NEOS"
+  "Communist Party of Austria":     "KPÖ"

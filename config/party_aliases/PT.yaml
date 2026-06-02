@@ -1,0 +1,7 @@
+# Portugal — PSD/CDS pre-election coalition, leader-tagged satisfaction
+# columns kept as separate entities (they're not vote intention).
+
+aliases:
+  "PSD/CDS":    "PSD–CDS"
+  "CDS–PP":     "CDS"
+  "PassosCoelho": "PSD"

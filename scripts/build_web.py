@@ -36,7 +36,31 @@ def normalize_pollster(name) -> str:
     s = re.sub(r"\s+(for|fur|für|per|de)\s+.*$", "", s, flags=re.IGNORECASE)
     # Drop company suffixes.
     s = re.sub(r"\b(s\.r\.l\.?|srl|s\.p\.a\.?|spa|gmbh|ltd|institut)\b\.?", "", s, flags=re.IGNORECASE)
+    # Strip trailing footnote markers ('*', '**', ' †').
+    s = re.sub(r"\s*[\*†‡]+\s*$", "", s)
     return s.strip().rstrip(",").strip()
+
+
+def mode_winner_canonical(series: pd.Series) -> dict:
+    """Group values by case/whitespace-collapsed key, pick the highest-count
+    variant as canonical. Returns {variant → canonical}."""
+    def key(s: str) -> str:
+        return re.sub(r"[^a-z0-9]", "", str(s).lower()) if s else ""
+    counts = series.value_counts()
+    groups: dict[str, list[tuple[str, int]]] = {}
+    for variant, n in counts.items():
+        if pd.isna(variant):
+            continue
+        k = key(variant)
+        if not k:
+            continue
+        groups.setdefault(k, []).append((variant, n))
+    canonical: dict[str, str] = {}
+    for k, variants in groups.items():
+        winner = max(variants, key=lambda x: x[1])[0]
+        for v, _ in variants:
+            canonical[v] = winner
+    return canonical
 
 
 def normalize_party_shorts(series: pd.Series) -> pd.Series:
@@ -73,8 +97,25 @@ ROOT = Path(__file__).resolve().parents[1]
 LONG_CSV = ROOT / "data" / "processed" / "polls_long.csv"
 COLORS_YAML = ROOT / "config" / "party_colors.yaml"
 COUNTRIES_YAML = ROOT / "config" / "countries.yaml"
+POLLSTER_ALIASES_YAML = ROOT / "config" / "pollster_aliases.yaml"
+PARTY_ALIASES_DIR = ROOT / "config" / "party_aliases"
 WEB = ROOT / "web"
 WEB.mkdir(exist_ok=True)
+
+
+def load_pollster_aliases() -> dict[str, str]:
+    if not POLLSTER_ALIASES_YAML.exists():
+        return {}
+    data = yaml.safe_load(POLLSTER_ALIASES_YAML.read_text()) or {}
+    return data.get("aliases", {}) or {}
+
+
+def load_party_aliases(country: str) -> dict[str, str]:
+    path = PARTY_ALIASES_DIR / f"{country}.yaml"
+    if not path.exists():
+        return {}
+    data = yaml.safe_load(path.read_text()) or {}
+    return data.get("aliases", {}) or {}
 
 
 def main() -> None:
@@ -90,6 +131,13 @@ def main() -> None:
 
     # Normalize pollster names (strip commissioner/parenthetical suffixes).
     df["pollster"] = df["pollster"].apply(normalize_pollster)
+    # Mode-winner case/whitespace folding (Yougov → YouGov, etc.), then
+    # manual cross-country alias mapping (Techne → Tecnè, etc.).
+    pollster_canon = mode_winner_canonical(df["pollster"])
+    df["pollster"] = df["pollster"].map(lambda v: pollster_canon.get(v, v))
+    pollster_aliases = load_pollster_aliases()
+    if pollster_aliases:
+        df["pollster"] = df["pollster"].map(lambda v: pollster_aliases.get(v, v))
 
     colors_raw = yaml.safe_load(COLORS_YAML.read_text())
     countries_cfg = yaml.safe_load(COUNTRIES_YAML.read_text())
@@ -99,6 +147,10 @@ def main() -> None:
         sub = sub.copy()
         # Normalize party_short variants within the country.
         sub["party_short"] = normalize_party_shorts(sub["party_short"])
+        # Apply per-country manual alias map (e.g. 'Freedom Party of Austria'→'FPÖ').
+        country_aliases = load_party_aliases(country)
+        if country_aliases:
+            sub["party_short"] = sub["party_short"].map(lambda v: country_aliases.get(v, v))
 
         # Compute summary: n polls, date span, top parties by observation count.
         n_polls = len(sub.drop_duplicates(["polldate_mid", "pollster"]))

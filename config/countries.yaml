@@ -14,7 +14,7 @@ IT:
   title_for_cycle: "Opinion polling for the {cycle} Italian general election"
   title_current:   "Opinion polling for the next Italian general election"
   coalition_shorts: [cdl, cdx, "casa delle libertà", centre-left, centre-right, csx, unione]
-  wide_parties: [PD, M5S, FdI, FI, Lega, LN, AVS, "+E", IV, A, PdL, SEL, LeU, UdC, NCD, SC, IdV, NM, Italexit, Art.1, EV]
+  wide_parties: [PD, M5S, FdI, FI, Lega, AVS, "+E", IV, A, PdL, SEL, LeU, UdC, NCD, SC, IdV, NM, Italexit, Art.1, EV]
   cycles:
     current: 2026
     "2022": 2022
@@ -38,7 +38,7 @@ DE:
 ES:
   title_for_cycle: "Opinion polling for the {cycle} Spanish general election"
   title_current:   "Opinion polling for the next Spanish general election"
-  wide_parties: [PP, PSOE, Vox, Sumar, Cs, Podemos, UPyD, ERC, PNV, "EH Bildu", IU, Junts, CCa, BNG, CUP]
+  wide_parties: [PP, PSOE, Vox, Sumar, Cs, Podemos, "Unidas Podemos", UPyD, ERC, PNV, "EH Bildu", "IU–LV", Junts, CCa, BNG, CUP]
   cycles:
     current: 2026
     "2023": 2023
@@ -56,7 +56,7 @@ ES:
 UK:
   title_for_cycle: "Opinion polling for the {cycle} United Kingdom general election"
   title_current:   "Opinion polling for the next United Kingdom general election"
-  wide_parties: [Con, Lab, LD, Grn, Ref, SNP, UKIP, BXP, BNP, PC, Chg]
+  wide_parties: [Con, Lab, LD, Grn, Brx, SNP, UKIP, BNP, PC, Chg]
   cycles:
     current: 2026
     "2024": 2024
@@ -93,7 +93,7 @@ FR_LEG:
 PT:
   title_for_cycle: "Opinion polling for the {cycle} Portuguese legislative election"
   title_current:   "Opinion polling for the next Portuguese legislative election"
-  wide_parties: [PS, PSD, CH, IL, BE, CDU, L, PAN, CDS, "CDS–PP"]
+  wide_parties: [PS, PSD, CH, IL, BE, CDU, L, PAN, CDS]
   cycles:
     current: 2026
     "2024": 2024
@@ -118,7 +118,7 @@ NL:
 BE:
   title_for_cycle: "Opinion polling for the {cycle} Belgian federal election"
   title_current:   "Opinion polling for the next Belgian federal election"
-  wide_parties: ["N-VA", VB, "cd&v", Vooruit, "sp.a", Groen, "Open Vld", MR, PS, Ecolo, cdH, PVDA, PTB, LE]
+  wide_parties: ["N-VA", VB, "CD&V", Vooruit, Groen, "Open Vld", MR, PS, Ecolo, cdH, "PVDA-PTB", LE]
   cycles:
     current: 2026
     "2024": 2024
@@ -129,7 +129,7 @@ BE:
 SE:
   title_for_cycle: "Opinion polling for the {cycle} Swedish general election"
   title_current:   "Opinion polling for the next Swedish general election"
-  wide_parties: [S, M, SD, V, C, MP, KD, L, Fp, Fi]
+  wide_parties: [S, M, SD, V, C, MP, KD, L, Fi]
   cycles:
     current: 2026
     "2022": 2022
@@ -189,7 +189,7 @@ GR:
 IE:
   title_for_cycle: "Opinion polling for the {cycle} Irish general election"
   title_current:   "Opinion polling for the next Irish general election"
-  wide_parties: [FF, FG, SF, Lab, GP, "S-PBP", "S–PBP", "PBP-S", SocDem, Aon, II, IA]
+  wide_parties: [FF, FG, SF, Lab, GP, "PBP–S", SocDem, Aon, II, IA]
   cycles:
     current: 2026
     "2024": 2024

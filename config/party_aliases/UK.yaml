@@ -1,0 +1,8 @@
+# United Kingdom — Greens appear as Grn / Green; Reform/Brexit/RB are the
+# same successor party (Brexit Party → Reform UK in 2021).
+
+aliases:
+  "Green":  "Grn"
+  "RB":     "Brx"
+  "Reform": "Brx"
+  "Ref":    "Brx"

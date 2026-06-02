@@ -1,0 +1,12 @@
+# Germany — fold Union/CDU/CSU split-outs into 'Union' (which is the
+# vote-intention column used in nearly every poll). 'Die Linke' → 'Linke',
+# 'Grünen' → 'Grüne', 'Free Voters' → 'FW'.
+# Concatenated coalition strings ('SPD Grüne Linke', 'UnionFDP', etc.) are
+# left untouched — the heuristic in build_web.py drops them from the
+# wide-table view but keeps them in the long view for completeness.
+
+aliases:
+  "Die Linke":     "Linke"
+  "Grünen":        "Grüne"
+  "CDU/CSU":       "Union"
+  "Free Voters":   "FW"

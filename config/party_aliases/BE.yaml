@@ -1,0 +1,11 @@
+# Belgium — fold the most common spelling/casing variants.
+# Note: sp.a renamed to Vooruit in 2021 — folded for continuity.
+# PVDA-PTB and PTB-PVDA are the same joint Walloon/Flemish list.
+
+aliases:
+  "cd&v":          "CD&V"
+  "NVA":           "N-VA"
+  "OpenVld":       "Open Vld"
+  "sp.a":          "Vooruit"
+  "PTB-PVDA":      "PVDA-PTB"
+  "Vlaams Belang": "VB"

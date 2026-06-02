@@ -1,0 +1,68 @@
+# Cross-country pollster name canonicalization.
+#
+# Applied AFTER normalize_pollster() (which already strips commissioner
+# suffixes, trailing 'for X', and corporate-form tokens) and AFTER
+# case-collapsed mode-winner grouping. Use this file ONLY for non-trivial
+# variants the regex/case rules don't catch:
+#   - alternate spellings ("Techne" vs "Tecnè")
+#   - alternate company names that should be folded for cross-cycle continuity
+#   - footnote artefacts surviving the regex
+#
+# Two firms that share a brand but operate independently in different
+# countries (e.g. Ipsos vs Ipsos MORI, Kantar vs Kantar Public vs TNS Sofres)
+# are kept SEPARATE — same brand ≠ same poll-shop.
+
+aliases:
+  # --- Spelling / typography ---
+  "Techne": "Tecnè"
+  "Tecné": "Tecnè"
+  "Peil.nl": "Peil"
+  "Yougov": "YouGov"
+  "Ipsos Mori": "Ipsos MORI"
+  "Ipsos-MORI": "Ipsos MORI"
+  "Ipsos-Mori": "Ipsos MORI"
+  "Harris-Interactive": "Harris Interactive"
+  "Sigma Dos": "SigmaDos"
+  "Demos & Pi": "Demos&Pi"
+  "Scenari Politici": "ScenariPolitici"
+  "Savanta ComRes": "Savanta"
+  "SavantaComRes": "Savanta"
+  "TNS-BMRB": "TNS BMRB"
+  "Analisi Politica": "AnalisiPolitica"
+  "Bidimedia": "BiDiMedia"
+  "BidiMedia": "BiDiMedia"
+  "Find Out Now": "FindOutNow"
+  "FocalData": "Focaldata"
+  "Invymark": "InvyMark"
+  "Prorata": "ProRata"
+  "RealPolls": "Real Polls"
+  "SyM Consulting": "SYM Consulting"
+  "Akonsult": "AKonsult"
+  "EMG Different": "EMG"
+  "Emg Different": "EMG"
+  "pollytix": "Pollytix"
+  "Youtrend": "YouTrend"
+  "Unique research": "Unique Research"
+  "Kantar Public": "Kantar"
+  "Kantar TNS": "Kantar"
+  "TNS Sofres": "Kantar"   # Sofres/TNS-Sofres → Kantar after 2018 rebrand
+  "TNS Gallup": "Kantar"
+  "TNS Demoscopia": "Kantar"
+  "TNS NIPO": "Kantar"
+  "TNS": "Kantar"
+
+  # --- Election-result placeholders → single canonical bucket ---
+  "Election Results": "Election results"
+  "Election results": "Election results"
+  "General Election": "Election results"
+  "General election": "Election results"
+  "Federal elections": "Election results"
+  "FederalElections": "Election results"
+  "Local Elections": "Election results"
+  "Local elections": "Election results"
+  "Regional Election": "Election results"
+  "Regional election": "Election results"
+  "EP Election": "Election results"
+  "EP election": "Election results"
+  "European Election": "Election results"
+  "European election": "Election results"

@@ -1,0 +1,7 @@
+# Italy — Wikipedia uses both 'Lega' (post-2018 brand) and 'LN' (Lega Nord);
+# same party. UdC has multiple casings. UDC = UdC.
+# (For partyfacts_id harmonization see config/party_mappings/IT.yaml.)
+
+aliases:
+  "LN":   "Lega"
+  "UDC":  "UdC"

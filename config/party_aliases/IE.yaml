@@ -1,0 +1,9 @@
+# Ireland — fold PBP–S / S–PBP / S-PBP and the verbose 'Others/Independents'
+# columns whose Wikipedia footnote text leaks into the header.
+
+aliases:
+  "S–PBP":  "PBP–S"
+  "S-PBP":  "PBP–S"
+  "O/I|Others/IndependentsThe figure for 'Others/Independents' is the remainder when all others are removed. As with all such calculations, the figure shown may be slightly inaccurate due to rounding effects.": "Others/Independents"
+  "O/I|Others/IndependentsThis column includes figures for Independents 4 Change and Aontú when available.": "Others/Independents"
+  'O/I|Others/IndependentsThe figure for "Others and Independents" is the remainder when all others are removed. As with all such calculations, the figure shown may be slightly inaccurate due to rounding effects.': "Others/Independents"
