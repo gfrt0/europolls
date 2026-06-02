@@ -305,7 +305,7 @@ MT:
     "2017": 2017
     "2013": 2013
 
-NO:
+"NO":
   title_for_cycle: "Opinion polling for the {cycle} Norwegian parliamentary election"
   title_current:   "Opinion polling for the next Norwegian parliamentary election"
   # Curate after first parse — first-pass guess based on 2021/2025 seat order.
@@ -332,3 +332,150 @@ IS:
     "2016": 2016
     "2013": 2013
     "2009": 2009
+
+PL:
+  title_for_cycle: "Opinion polling for the {cycle} Polish parliamentary election"
+  title_current:   "Opinion polling for the next Polish parliamentary election"
+  wide_parties: [PiS, KO, PO, Konfederacja, Lewica, "Polska2050", PSL, RP, Nowoczesna]
+  cycles:
+    current: 2027
+    "2023": 2023
+    "2019": 2019
+    "2015": 2015
+    "2011": 2011
+    "2007": 2007
+
+CZ:
+  title_for_cycle: "Opinion polling for the {cycle} Czech legislative election"
+  title_current:   "Opinion polling for the next Czech legislative election"
+  wide_parties: [ANO, ODS, SPOLU, Piráti, STAN, SPD, "ČSSD", KSČM, TOP09, KDU-ČSL]
+  cycles:
+    current: 2029
+    "2025": 2025
+    "2021": 2021
+    "2017": 2017
+    "2013": 2013
+    "2010": 2010
+
+HU:
+  title_for_cycle: "Opinion polling for the {cycle} Hungarian parliamentary election"
+  title_current:   "Opinion polling for the next Hungarian parliamentary election"
+  wide_parties: [Fidesz, Tisza, DK, Jobbik, MSZP, "Momentum", LMP, Mi Hazánk]
+  cycles:
+    current: 2026
+    "2022": 2022
+    "2018": 2018
+    "2014": 2014
+    "2010": 2010
+
+RO:
+  title_for_cycle: "Opinion polling for the {cycle} Romanian legislative election"
+  title_current:   "Opinion polling for the next Romanian legislative election"
+  wide_parties: [PSD, PNL, USR, AUR, "UDMR", PMP, ALDE]
+  cycles:
+    current: 2028
+    "2024": 2024
+    "2020": 2020
+    "2016": 2016
+    "2012": 2012
+
+SK:
+  title_for_cycle: "Opinion polling for the {cycle} Slovak parliamentary election"
+  title_current:   "Opinion polling for the next Slovak parliamentary election"
+  wide_parties: ["SMER-SD", PS, "Hlas-SD", "OĽaNO", "SaS", "KDH", "SNS", Republika]
+  cycles:
+    current: 2028
+    "2023": 2023
+    "2020": 2020
+    "2016": 2016
+    "2012": 2012
+
+SI:
+  title_for_cycle: "Opinion polling for the {cycle} Slovenian parliamentary election"
+  title_current:   "Opinion polling for the next Slovenian parliamentary election"
+  wide_parties: [GS, SDS, SD, Levica, NSi, SLS, SMC, DeSUS]
+  cycles:
+    current: 2026
+    "2022": 2022
+    "2018": 2018
+    "2014": 2014
+    "2011": 2011
+
+HR:
+  title_for_cycle: "Opinion polling for the {cycle} Croatian parliamentary election"
+  title_current:   "Opinion polling for the next Croatian parliamentary election"
+  wide_parties: [HDZ, SDP, Most, "DP", "Možemo!", HSS, HNS, IDS]
+  cycles:
+    current: 2028
+    "2024": 2024
+    "2020": 2020
+    "2016": 2016
+
+BG:
+  title_for_cycle: "Opinion polling for the {cycle} Bulgarian parliamentary election"
+  title_current:   "Opinion polling for the next Bulgarian parliamentary election"
+  wide_parties: [GERB, "PP-DB", "DPS", BSP, ITN, "Vazrazhdane", DB, PP]
+  cycles:
+    current: 2028
+    "2024-Oct":
+      year: 2024
+      title: "Opinion polling for the October 2024 Bulgarian parliamentary election"
+    "2024-Jun":
+      year: 2024
+      title: "Opinion polling for the June 2024 Bulgarian parliamentary election"
+    "2023": 2023
+    "2022": 2022
+    "2021-Nov":
+      year: 2021
+      title: "Opinion polling for the November 2021 Bulgarian parliamentary election"
+    "2021-Jul":
+      year: 2021
+      title: "Opinion polling for the July 2021 Bulgarian parliamentary election"
+    "2021-Apr":
+      year: 2021
+      title: "Opinion polling for the April 2021 Bulgarian parliamentary election"
+    "2017": 2017
+    "2014": 2014
+
+CH:
+  title_for_cycle: "Opinion polling for the {cycle} Swiss federal election"
+  title_current:   "Opinion polling for the next Swiss federal election"
+  wide_parties: [SVP, SP, FDP, "Die Mitte", GPS, GLP, CVP, BDP, EVP]
+  cycles:
+    current: 2027
+    "2023": 2023
+    "2019": 2019
+    "2015": 2015
+
+EE:
+  title_for_cycle: "Opinion polling for the {cycle} Estonian parliamentary election"
+  title_current:   "Opinion polling for the next Estonian parliamentary election"
+  wide_parties: [RE, EKRE, KE, "Isamaa", SDE, E200, EER]
+  cycles:
+    current: 2027
+    "2023": 2023
+    "2019": 2019
+    "2015": 2015
+    "2011": 2011
+
+LV:
+  title_for_cycle: "Opinion polling for the {cycle} Latvian parliamentary election"
+  title_current:   "Opinion polling for the next Latvian parliamentary election"
+  wide_parties: [JV, ZZS, "Saskaņa", NA, "AS", "Stabilitātei", "Progresīvie"]
+  cycles:
+    current: 2026
+    "2022": 2022
+    "2018": 2018
+    "2014": 2014
+    "2011": 2011
+
+LT:
+  title_for_cycle: "Opinion polling for the {cycle} Lithuanian parliamentary election"
+  title_current:   "Opinion polling for the next Lithuanian parliamentary election"
+  wide_parties: [LSDP, "TS-LKD", LVŽS, LRLS, DP, LP, "Nemuno aušra"]
+  cycles:
+    current: 2028
+    "2024": 2024
+    "2020": 2020
+    "2016": 2016
+    "2012": 2012

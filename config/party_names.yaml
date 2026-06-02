@@ -261,6 +261,126 @@ MT:
   PN:    "Partit Nazzjonalista (Nationalist Party)"
   ADPD:  "Alternattiva Demokratika – Partit Demokratiku (Green)"
 
+PL:
+  PiS:           "Prawo i Sprawiedliwość (Law and Justice)"
+  KO:            "Koalicja Obywatelska (Civic Coalition)"
+  PO:            "Platforma Obywatelska (Civic Platform)"
+  Konfederacja:  "Konfederacja Wolność i Niepodległość"
+  Lewica:        "Lewica (The Left, SLD+Razem+Wiosna)"
+  "Polska2050":  "Polska 2050 (Hołownia)"
+  PSL:           "Polskie Stronnictwo Ludowe (People's Party)"
+  Nowoczesna:    "Nowoczesna (.Modern)"
+  RP:            "Ruch Palikota (Palikot's Movement)"
+
+CZ:
+  ANO:        "ANO 2011 (Babiš)"
+  ODS:        "Občanská demokratická strana (Civic Democrats)"
+  SPOLU:      "SPOLU coalition (ODS+TOP09+KDU-ČSL)"
+  Piráti:     "Česká pirátská strana (Pirates)"
+  STAN:       "Starostové a nezávislí (Mayors and Independents)"
+  SPD:        "Svoboda a přímá demokracie (Freedom and Direct Democracy)"
+  "ČSSD":     "Česká strana sociálně demokratická"
+  KSČM:       "Komunistická strana Čech a Moravy"
+  TOP09:      "TOP 09"
+  KDU-ČSL:    "Křesťanská a demokratická unie – Československá strana lidová"
+
+HU:
+  Fidesz:      "Fidesz – Magyar Polgári Szövetség"
+  Tisza:       "TISZA – Tisztelet és Szabadság Pártja (Magyar)"
+  DK:          "Demokratikus Koalíció (Gyurcsány)"
+  Jobbik:      "Jobbik – Konzervatívok"
+  MSZP:        "Magyar Szocialista Párt (Socialists)"
+  "Momentum":  "Momentum Mozgalom"
+  LMP:         "Lehet Más a Politika (Politics Can Be Different / Greens)"
+  "Mi Hazánk": "Mi Hazánk Mozgalom (Our Homeland Movement)"
+
+RO:
+  PSD:    "Partidul Social Democrat"
+  PNL:    "Partidul Național Liberal"
+  USR:    "Uniunea Salvați România (Save Romania Union)"
+  AUR:    "Alianța pentru Unirea Românilor (Alliance for the Union of Romanians)"
+  UDMR:   "Uniunea Democrată Maghiară din România (Hungarian minority)"
+  PMP:    "Partidul Mișcarea Populară"
+  ALDE:   "Alianța Liberalilor și Democraților"
+
+SK:
+  "SMER-SD":  "Smer – sociálna demokracia (Fico)"
+  PS:         "Progresívne Slovensko"
+  "Hlas-SD":  "Hlas – sociálna demokracia (Pellegrini)"
+  "OĽaNO":    "Obyčajní ľudia a nezávislé osobnosti (Ordinary People)"
+  "SaS":      "Sloboda a Solidarita (Freedom and Solidarity)"
+  "KDH":      "Kresťanskodemokratické hnutie (Christian Democrats)"
+  "SNS":      "Slovenská národná strana"
+  Republika:  "Hnutie Republika"
+
+SI:
+  GS:     "Gibanje Svoboda (Freedom Movement, Golob)"
+  SDS:    "Slovenska demokratska stranka (Janša)"
+  SD:     "Socialni demokrati"
+  Levica: "Levica (The Left)"
+  NSi:    "Nova Slovenija – krščanski demokrati"
+  SLS:    "Slovenska ljudska stranka (People's Party)"
+  SMC:    "Stranka modernega centra (Modern Centre, ex-Cerar)"
+  DeSUS:  "Demokratična stranka upokojencev Slovenije (Pensioners)"
+
+HR:
+  HDZ:        "Hrvatska demokratska zajednica (Croatian Democratic Union)"
+  SDP:        "Socijaldemokratska partija Hrvatske"
+  Most:       "Most (Bridge)"
+  "DP":       "Domovinski pokret (Homeland Movement)"
+  "Možemo!":  "Možemo! (We Can!, green-left)"
+  HSS:        "Hrvatska seljačka stranka (Peasant Party)"
+  HNS:        "Hrvatska narodna stranka (People's Party)"
+  IDS:        "Istarski demokratski sabor (Istrian Democratic Assembly)"
+
+BG:
+  GERB:           "GERB (Citizens for European Development of Bulgaria, Borisov)"
+  "PP-DB":        "PP–DB joint list (We Continue the Change + Democratic Bulgaria)"
+  "DPS":          "Движение за права и свободи (Movement for Rights and Freedoms)"
+  BSP:            "Българска социалистическа партия (Socialists)"
+  ITN:            "Има такъв народ (There Is Such a People, Trifonov)"
+  "Vazrazhdane":  "Възраждане (Revival, far-right)"
+  DB:             "Демократична България (Democratic Bulgaria)"
+  PP:             "Продължаваме промяната (We Continue the Change)"
+
+CH:
+  SVP:         "Schweizerische Volkspartei (Swiss People's Party)"
+  SP:          "Sozialdemokratische Partei der Schweiz (Social Democrats)"
+  FDP:         "FDP. Die Liberalen"
+  "Die Mitte": "Die Mitte (The Centre, 2021 CVP+BDP merger)"
+  GPS:         "Grüne Partei der Schweiz"
+  GLP:         "Grünliberale Partei (Green Liberals)"
+  CVP:         "Christlichdemokratische Volkspartei (Christian Democrats, → Die Mitte)"
+  BDP:         "Bürgerlich-Demokratische Partei (Conservative Democrats, → Die Mitte)"
+  EVP:         "Evangelische Volkspartei (Evangelical People's Party)"
+
+EE:
+  RE:        "Eesti Reformierakond (Reform Party, Kallas)"
+  EKRE:      "Eesti Konservatiivne Rahvaerakond (Conservative People's Party)"
+  KE:        "Eesti Keskerakond (Centre Party)"
+  "Isamaa":  "Erakond Isamaa (Pro Patria)"
+  SDE:       "Sotsiaaldemokraatlik Erakond"
+  E200:      "Eesti 200"
+  EER:       "Erakond Eestimaa Rohelised (Greens)"
+
+LV:
+  JV:               "Jaunā Vienotība (New Unity)"
+  ZZS:              "Zaļo un Zemnieku savienība (Union of Greens and Farmers)"
+  "Saskaņa":        "Saskaņa (Harmony, Russian-minority left)"
+  NA:               "Nacionālā apvienība (National Alliance)"
+  "AS":             "Apvienotais saraksts (United List)"
+  "Stabilitātei":   "Par Stabilitāti!"
+  "Progresīvie":    "Progresīvie (Progressives)"
+
+LT:
+  LSDP:           "Lietuvos socialdemokratų partija (Social Democrats)"
+  "TS-LKD":       "Tėvynės sąjunga – Lietuvos krikščionys demokratai (Homeland Union)"
+  LVŽS:           "Lietuvos valstiečių ir žaliųjų sąjunga (Farmers and Greens)"
+  LRLS:           "Lietuvos Respublikos liberalų sąjūdis (Liberals' Movement)"
+  DP:             "Darbo partija (Labour Party)"
+  LP:             "Laisvės partija (Freedom Party)"
+  "Nemuno aušra": "Nemuno aušra (Dawn of Nemunas)"
+
 # Generic / cross-country buckets — same name everywhere.
 _generic:
   Others:      "Other parties (aggregate)"

@@ -261,3 +261,134 @@ IS:
   M:       802A2A   # Miðflokkurinn (Centre)
   J:       B71C1C   # Sósíalistaflokkurinn (Socialist)
   Others:  AAAAAA
+
+PL:
+  PiS:           ED1B34   # Prawo i Sprawiedliwość (Law & Justice)
+  KO:            FF7900   # Koalicja Obywatelska (Civic Coalition)
+  PO:            FF7900   # Platforma Obywatelska (Civic Platform, KO predecessor)
+  Konfederacja:  092E5E   # Konfederacja Wolność i Niepodległość
+  Lewica:        E10019   # Lewica (The Left)
+  "Polska2050":  FFCD00   # Polska 2050 (Hołownia)
+  PSL:           007749   # Polskie Stronnictwo Ludowe (People's Party)
+  Nowoczesna:    009FD4   # Nowoczesna (Modern)
+  Others:        AAAAAA
+
+CZ:
+  ANO:        2B2F77   # ANO 2011 (YES, Babiš)
+  ODS:        034EA2   # Občanská demokratická strana (Civic Democrats)
+  SPOLU:      034EA2   # SPOLU coalition (ODS+TOP09+KDU-ČSL)
+  Piráti:     000000   # Česká pirátská strana (Pirates)
+  STAN:       6C2F86   # Starostové a nezávislí (Mayors)
+  SPD:        7F1C1F   # Svoboda a přímá demokracie (Freedom & Direct Democracy)
+  "ČSSD":     F29400   # Česká strana sociálně demokratická
+  KSČM:       C30000   # Komunistická strana Čech a Moravy
+  TOP09:      682A8B   # TOP 09
+  KDU-ČSL:    FFCC00   # Křesťanská a demokratická unie
+  Others:     AAAAAA
+
+HU:
+  Fidesz:     F47C20   # Fidesz – Magyar Polgári Szövetség
+  Tisza:      0066CC   # TISZA – Tisztelet és Szabadság Pártja (Magyar Péter)
+  DK:         005FAF   # Demokratikus Koalíció (Gyurcsány)
+  Jobbik:     6D8E3C   # Jobbik – Konzervatívok
+  MSZP:       E10019   # Magyar Szocialista Párt
+  "Momentum": 7C39B5   # Momentum Mozgalom
+  LMP:        7AB800   # Lehet Más a Politika (Politics Can Be Different)
+  "Mi Hazánk": 005A2D   # Mi Hazánk Mozgalom (Our Homeland)
+  Others:     AAAAAA
+
+RO:
+  PSD:    EF1C27   # Partidul Social Democrat
+  PNL:    FFE600   # Partidul Național Liberal
+  USR:    003DA5   # Uniunea Salvați România (Save Romania Union)
+  AUR:    1F2D6F   # Alianța pentru Unirea Românilor
+  UDMR:   006633   # Uniunea Democrată Maghiară din România
+  PMP:    1262A6   # Partidul Mișcarea Populară
+  ALDE:   00A1DE   # Alianța Liberalilor și Democraților
+  Others: AAAAAA
+
+SK:
+  "SMER-SD":  E2231A   # Smer – sociálna demokracia
+  PS:         00B0F0   # Progresívne Slovensko
+  "Hlas-SD":  003D8F   # Hlas – sociálna demokracia
+  "OĽaNO":    97BF0D   # Obyčajní ľudia a nezávislé osobnosti
+  "SaS":      006FB7   # Sloboda a Solidarita
+  "KDH":      FED002   # Kresťanskodemokratické hnutie
+  "SNS":      154A8E   # Slovenská národná strana
+  Republika:  802A2A   # Hnutie Republika
+  Others:     AAAAAA
+
+SI:
+  GS:     3E97D1   # Gibanje Svoboda (Freedom Movement)
+  SDS:    006D33   # Slovenska demokratska stranka
+  SD:     E10019   # Socialni demokrati
+  Levica: D2122F   # Levica (The Left)
+  NSi:    0066B3   # Nova Slovenija – krščanski demokrati
+  SLS:    DEAB29   # Slovenska ljudska stranka
+  SMC:    FFD700   # Stranka modernega centra
+  DeSUS:  B05923   # Demokratična stranka upokojencev Slovenije
+  Others: AAAAAA
+
+HR:
+  HDZ:        0A559E   # Hrvatska demokratska zajednica
+  SDP:        E10019   # Socijaldemokratska partija Hrvatske
+  Most:       1E50A2   # Most (Bridge)
+  "DP":       3C5A93   # Domovinski pokret (Homeland Movement)
+  "Možemo!":  4E9D2D   # Možemo! – politička platforma
+  HSS:        E07F0C   # Hrvatska seljačka stranka (Peasant Party)
+  HNS:        1B7C9E   # Hrvatska narodna stranka (People's Party)
+  IDS:        2B97DA   # Istarski demokratski sabor
+  Others:     AAAAAA
+
+BG:
+  GERB:           004990   # GERB
+  "PP-DB":        14296F   # PP–DB joint list
+  "DPS":          0B53A0   # Движение за права и свободи (DPS)
+  BSP:            E10019   # Българска социалистическа партия
+  ITN:            FFC845   # Има такъв народ (There Is Such a People)
+  "Vazrazhdane":  035231   # Възраждане
+  DB:             0F4E92   # Демократична България
+  PP:             3C8E2C   # Продължаваме промяната
+  Others:         AAAAAA
+
+CH:
+  SVP:         287F40   # Schweizerische Volkspartei
+  SP:          E10019   # Sozialdemokratische Partei
+  FDP:         1F4F8F   # FDP. Die Liberalen
+  "Die Mitte": F18601   # Die Mitte (Centre, ex-CVP/BDP)
+  GPS:         7AB800   # Grüne Partei der Schweiz
+  GLP:         B8E600   # Grünliberale Partei
+  CVP:         F18601   # Christlichdemokratische Volkspartei (Die Mitte predecessor)
+  BDP:         FFE100   # Bürgerlich-Demokratische Partei (Die Mitte predecessor)
+  EVP:         9B6B2F   # Evangelische Volkspartei
+  Others:      AAAAAA
+
+EE:
+  RE:        FFCD00   # Eesti Reformierakond (Reform)
+  EKRE:      183B7C   # Eesti Konservatiivne Rahvaerakond
+  KE:        1F8B4C   # Eesti Keskerakond (Centre)
+  "Isamaa":  005EAA   # Erakond Isamaa (Pro Patria)
+  SDE:       E10019   # Sotsiaaldemokraatlik Erakond
+  E200:      8A2BE2   # Eesti 200
+  EER:       4CAF50   # Erakond Eestimaa Rohelised (Greens)
+  Others:    AAAAAA
+
+LV:
+  JV:               902B2B   # Jaunā Vienotība (New Unity)
+  ZZS:              4E9D2D   # Zaļo un Zemnieku savienība (Greens & Farmers)
+  "Saskaņa":        E10019   # Saskaņa (Harmony)
+  NA:               861E2E   # Nacionālā apvienība (National Alliance)
+  "AS":             D2B41A   # Apvienotais saraksts (United List)
+  "Stabilitātei":   2B5A7A   # Par Stabilitāti!
+  "Progresīvie":    1C9A4B   # Progresīvie (Progressives)
+  Others:           AAAAAA
+
+LT:
+  LSDP:           E10019   # Lietuvos socialdemokratų partija
+  "TS-LKD":       006633   # Tėvynės sąjunga – Lietuvos krikščionys demokratai
+  LVŽS:           4CAF50   # Lietuvos valstiečių ir žaliųjų sąjunga (Farmers & Greens)
+  LRLS:           FFC845   # Lietuvos Respublikos liberalų sąjūdis
+  DP:             0066CC   # Darbo partija (Labour)
+  LP:             FF7F00   # Laisvės partija (Freedom Party)
+  "Nemuno aušra": 8B0000   # Nemuno aušra (Dawn of Nemunas)
+  Others:         AAAAAA
