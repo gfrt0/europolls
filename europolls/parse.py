@@ -95,12 +95,21 @@ _COUNTRIES_YAML = ROOT / "config" / "countries.yaml"
 
 
 def _load_countries() -> dict:
+    """Load countries.yaml; normalize cycles to {cycle: default_year}.
+
+    A cycle value is either:
+      - int           — the cycle's default fallback year
+      - {year, title?} — explicit override; we just take `year`
+    """
     with _COUNTRIES_YAML.open() as f:
         raw = _yaml.safe_load(f)
     out = {}
     for country, cfg in raw.items():
+        cycles_norm: dict[str, int] = {}
+        for cycle_id, spec in (cfg.get("cycles") or {}).items():
+            cycles_norm[cycle_id] = spec["year"] if isinstance(spec, dict) else int(spec)
         out[country] = {
-            "cycles": cfg.get("cycles", {}),
+            "cycles": cycles_norm,
             "coalition_shorts_lc": set(cfg.get("coalition_shorts", []) or []),
         }
     return out

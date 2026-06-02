@@ -23,7 +23,7 @@ MAP_DIR = ROOT / "config" / "party_mappings"
 def load_mapping(country: str) -> dict:
     path = MAP_DIR / f"{country}.yaml"
     if not path.exists():
-        raise SystemExit(f"no mapping file at {path}")
+        raise FileNotFoundError(f"no mapping file at {path}")
     with path.open() as f:
         return yaml.safe_load(f)["mappings"]
 
@@ -34,7 +34,7 @@ def harmonize(country: str) -> None:
 
     in_files = sorted(IN_DIR.glob(f"{country}_*.csv"))
     if not in_files:
-        raise SystemExit(f"no input files for {country} in {IN_DIR}")
+        raise FileNotFoundError(f"no input files for {country} in {IN_DIR}")
 
     n_in = 0
     n_drop = 0

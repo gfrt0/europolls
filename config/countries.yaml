@@ -1,163 +1,222 @@
+# Per-country fetch + parse config.
+#
+# Per country:
+#   title_for_cycle: pattern for non-`current` cycle pages. Uses {cycle} placeholder.
+#   title_current:   pattern for the "next election" page (`current` cycle).
+#   coalition_shorts: party_short labels that are coalition aggregates, not parties.
+#   cycles: cycle_id → either
+#       year (int)                 — simple case; title built from title_for_cycle
+#       {year, title} (mapping)    — explicit title override (for multi-election years etc.)
+#
+# A cycle whose article doesn't exist on Wikipedia is silently skipped during fetch.
+
 IT:
+  title_for_cycle: "Opinion polling for the {cycle} Italian general election"
+  title_current:   "Opinion polling for the next Italian general election"
+  coalition_shorts: [cdl, cdx, "casa delle libertà", centre-left, centre-right, csx, unione]
   cycles:
     current: 2026
-    '2022': 2022
-    '2018': 2018
-    '2013': 2013
-    '2008': 2008
-    '2006': 2006
-  coalition_shorts:
-  - "casa delle libert\xE0"
-  - cdl
-  - cdx
-  - centre-left
-  - centre-right
-  - csx
-  - unione
+    "2022": 2022
+    "2018": 2018
+    "2013": 2013
+    "2008": 2008
+    "2006": 2006
+
 DE:
+  title_for_cycle: "Opinion polling for the {cycle} German federal election"
+  title_current:   "Opinion polling for the next German federal election"
   cycles:
     current: 2026
-    '2025': 2025
-    '2021': 2021
-    '2017': 2017
-    '2013': 2013
-    '2009': 2009
-  coalition_shorts: []
+    "2025": 2025
+    "2021": 2021
+    "2017": 2017
+    "2013": 2013
+    "2009": 2009
+
 ES:
+  title_for_cycle: "Opinion polling for the {cycle} Spanish general election"
+  title_current:   "Opinion polling for the next Spanish general election"
   cycles:
     current: 2026
-    '2023': 2023
-    '2019': 2019
-    2019a: 2019
-    '2016': 2016
-    '2015': 2015
-    '2011': 2011
-    '2008': 2008
-  coalition_shorts: []
+    "2023": 2023
+    "2019":
+      year: 2019
+      title: "Opinion polling for the November 2019 Spanish general election"
+    "2019a":
+      year: 2019
+      title: "Opinion polling for the April 2019 Spanish general election"
+    "2016": 2016
+    "2015": 2015
+    "2011": 2011
+    "2008": 2008
+
 UK:
+  title_for_cycle: "Opinion polling for the {cycle} United Kingdom general election"
+  title_current:   "Opinion polling for the next United Kingdom general election"
   cycles:
     current: 2026
-    '2024': 2024
-    '2019': 2019
-    '2017': 2017
-    '2015': 2015
-    '2010': 2010
-  coalition_shorts: []
+    "2024": 2024
+    "2019": 2019
+    "2017": 2017
+    "2015": 2015
+    "2010": 2010
+
 FR:
+  title_for_cycle: "Opinion polling for the {cycle} French presidential election"
+  title_current:   "Opinion polling for the next French presidential election"
   cycles:
     current: 2026
-    '2022': 2022
-    '2017': 2017
-    '2012': 2012
-    '2007': 2007
-  coalition_shorts: []
+    "2022": 2022
+    "2017": 2017
+    "2012": 2012
+    "2007": 2007
+
 FR_LEG:
+  title_for_cycle: "Opinion polling for the {cycle} French legislative election"
+  title_current:   "Opinion polling for the next French legislative election"
   cycles:
     current: 2026
-    '2024': 2024
-    '2022': 2022
-    '2017': 2017
-    '2012': 2012
-    '2007': 2007
-  coalition_shorts: []
+    "2024": 2024
+    "2022": 2022
+    "2017": 2017
+    "2012": 2012
+    "2007": 2007
+
 PT:
+  title_for_cycle: "Opinion polling for the {cycle} Portuguese legislative election"
+  title_current:   "Opinion polling for the next Portuguese legislative election"
   cycles:
     current: 2026
-    '2024': 2024
-    '2022': 2022
-    '2019': 2019
-    '2015': 2015
-    '2011': 2011
-    '2009': 2009
-  coalition_shorts: []
+    "2024": 2024
+    "2022": 2022
+    "2019": 2019
+    "2015": 2015
+    "2011": 2011
+    "2009": 2009
+
 NL:
+  title_for_cycle: "Opinion polling for the {cycle} Dutch general election"
+  title_current:   "Opinion polling for the next Dutch general election"
   cycles:
     current: 2026
-    '2023': 2023
-    '2021': 2021
-    '2017': 2017
-    '2012': 2012
-    '2010': 2010
-  coalition_shorts: []
+    "2023": 2023
+    "2021": 2021
+    "2017": 2017
+    "2012": 2012
+    "2010": 2010
+
 BE:
+  title_for_cycle: "Opinion polling for the {cycle} Belgian federal election"
+  title_current:   "Opinion polling for the next Belgian federal election"
   cycles:
     current: 2026
-    '2024': 2024
-    '2019': 2019
-    '2014': 2014
-    '2010': 2010
-  coalition_shorts: []
+    "2024": 2024
+    "2019": 2019
+    "2014": 2014
+    "2010": 2010
+
 SE:
+  title_for_cycle: "Opinion polling for the {cycle} Swedish general election"
+  title_current:   "Opinion polling for the next Swedish general election"
   cycles:
     current: 2026
-    '2022': 2022
-    '2018': 2018
-    '2014': 2014
-    '2010': 2010
-  coalition_shorts: []
+    "2022": 2022
+    "2018": 2018
+    "2014": 2014
+    "2010": 2010
+
 DK:
+  title_for_cycle: "Opinion polling for the {cycle} Danish general election"
+  title_current:   "Opinion polling for the next Danish general election"
   cycles:
     current: 2026
-    '2022': 2022
-    '2019': 2019
-    '2015': 2015
-    '2011': 2011
-  coalition_shorts: []
+    "2022": 2022
+    "2019": 2019
+    "2015": 2015
+    "2011": 2011
+
 FI:
+  title_for_cycle: "Opinion polling for the {cycle} Finnish parliamentary election"
+  title_current:   "Opinion polling for the next Finnish parliamentary election"
   cycles:
     current: 2026
-    '2023': 2023
-    '2019': 2019
-    '2015': 2015
-    '2011': 2011
-  coalition_shorts: []
+    "2023": 2023
+    "2019": 2019
+    "2015": 2015
+    "2011": 2011
+
 GR:
+  title_for_cycle: "Opinion polling for the {cycle} Greek legislative election"
+  title_current:   "Opinion polling for the next Greek legislative election"
   cycles:
     current: 2026
-    2023-May: 2023
-    2023-Jun: 2023
-    '2019': 2019
-    2015-Jan: 2015
-    2015-Sep: 2015
-    2012-May: 2012
-    2012-Jun: 2012
-    '2009': 2009
-  coalition_shorts: []
+    "2023-May":
+      year: 2023
+      title: "Opinion polling for the May 2023 Greek legislative election"
+    "2023-Jun":
+      year: 2023
+      title: "Opinion polling for the June 2023 Greek legislative election"
+    "2019": 2019
+    "2015-Jan":
+      year: 2015
+      title: "Opinion polling for the January 2015 Greek legislative election"
+    "2015-Sep":
+      year: 2015
+      title: "Opinion polling for the September 2015 Greek legislative election"
+    "2012-May":
+      year: 2012
+      title: "Opinion polling for the May 2012 Greek legislative election"
+    "2012-Jun":
+      year: 2012
+      title: "Opinion polling for the June 2012 Greek legislative election"
+    "2009": 2009
+
 IE:
+  title_for_cycle: "Opinion polling for the {cycle} Irish general election"
+  title_current:   "Opinion polling for the next Irish general election"
   cycles:
     current: 2026
-    '2024': 2024
-    '2020': 2020
-    '2016': 2016
-    '2011': 2011
-  coalition_shorts: []
+    "2024": 2024
+    "2020": 2020
+    "2016": 2016
+    "2011": 2011
+
 AT:
+  title_for_cycle: "Opinion polling for the {cycle} Austrian legislative election"
+  title_current:   "Opinion polling for the next Austrian legislative election"
   cycles:
     current: 2026
-    '2024': 2024
-    '2019': 2019
-    '2017': 2017
-    '2013': 2013
-  coalition_shorts: []
+    "2024": 2024
+    "2019": 2019
+    "2017": 2017
+    "2013": 2013
+
 LU:
+  title_for_cycle: "Opinion polling for the {cycle} Luxembourg general election"
+  title_current:   "Opinion polling for the next Luxembourg general election"
   cycles:
     current: 2026
-    '2023': 2023
-    '2018': 2018
-    '2013': 2013
-  coalition_shorts: []
+    "2023": 2023
+    "2018": 2018
+    "2013": 2013
+
 CY:
+  title_for_cycle: "Opinion polling for the {cycle} Cypriot legislative election"
+  title_current:   "Opinion polling for the next Cypriot legislative election"
   cycles:
     current: 2026
-    '2021': 2021
-    '2016': 2016
-    '2011': 2011
-    2023-pres: 2023
-  coalition_shorts: []
+    "2021": 2021
+    "2016": 2016
+    "2011": 2011
+    "2023-pres":
+      year: 2023
+      title: "Opinion polling for the 2023 Cypriot presidential election"
+
 MT:
+  title_for_cycle: "Opinion polling for the {cycle} Maltese general election"
+  title_current:   "Opinion polling for the next Maltese general election"
   cycles:
     current: 2026
-    '2022': 2022
-    '2017': 2017
-    '2013': 2013
-  coalition_shorts: []
+    "2022": 2022
+    "2017": 2017
+    "2013": 2013
