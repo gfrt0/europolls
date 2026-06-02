@@ -1,0 +1,236 @@
+# Adding a country to Europolls
+
+A step-by-step recipe for extending Europolls to a new country (e.g. Norway, Switzerland, Iceland, Czechia, Hungary, Poland, Slovenia, Croatia, Romania, Bulgaria, Estonia, Latvia, Lithuania, or any of the others listed at https://en.wikipedia.org/wiki/Category:Opinion_polling_by_country).
+
+You're done when:
+- The country appears as a tab on https://gfrt0.github.io/europolls/
+- Its top parties match what you'd expect from a glance at the source Wikipedia article
+- The wide-table view shows clean party columns
+- The chart shows colored lines per party
+
+The whole process is **3 config files + (optionally) one HTML constant** — no Python edits required for a typical addition.
+
+---
+
+## Step 1 — find the Wikipedia article naming convention
+
+For each EU/euro-adjacent country, English Wikipedia uses a consistent article title for opinion polling:
+
+> "Opinion polling for the {YEAR} {Adjective} {election_type} election"
+
+Examples (test these by pasting into the Wikipedia search bar):
+- Norway: `Opinion polling for the 2025 Norwegian parliamentary election`
+- Switzerland: `Opinion polling for the 2023 Swiss federal election`
+- Iceland: `Opinion polling for the 2024 Icelandic parliamentary election`
+- Poland: `Opinion polling for the 2023 Polish parliamentary election`
+- Hungary: `Opinion polling for the 2026 Hungarian parliamentary election`
+- Czechia: `Opinion polling for the 2025 Czech parliamentary election`
+
+The "next" cycle (post-most-recent-election) is at:
+
+> "Opinion polling for the next {Adjective} {election_type} election"
+
+For each candidate country, write down:
+1. The exact adjective Wikipedia uses (Norwegian / Swiss / Icelandic / Polish / Hungarian / Czech / …).
+2. The election type word (parliamentary / federal / legislative / general).
+3. The years of the **last 4–5 elections**. The article only exists for actual past elections (and the upcoming one).
+
+If a country has had **two elections in a single year** (Greece 2012, 2015, 2023; Spain 2019), use cycle IDs like `2023-May` / `2023-Jun` and supply explicit titles per cycle — see Greece's entry in `config/countries.yaml` for the template.
+
+If a country has **separate presidential and parliamentary** pages (France presidential vs FR_LEG legislative), pick the parliamentary one (it's what feeds into cabinet politics).
+
+---
+
+## Step 2 — add the country to `config/countries.yaml`
+
+Use this template:
+
+```yaml
+# CC = ISO2 code (Wikipedia uses the country adjective rather than ISO codes,
+# but we key by ISO2 for the dataset.)
+CC:
+  title_for_cycle: "Opinion polling for the {cycle} ADJECTIVE ELECTION_TYPE election"
+  title_current:   "Opinion polling for the next ADJECTIVE ELECTION_TYPE election"
+  # Optional. List of party_short labels that should be treated as coalition
+  # aggregates rather than individual parties. Lower-case.
+  coalition_shorts: []
+  # The wide-table column set. Curate this list AFTER a first parse pass
+  # (see Step 5). Sort by historical importance.
+  wide_parties: [PartyA, PartyB, PartyC]
+  cycles:
+    current: 2026                       # fallback year for "current" cycle
+    "YYYY": YYYY                        # past elections; cycle_id = year string,
+                                        # value = year int (same year)
+    # ...
+    # Multi-election year? Use explicit title overrides:
+    "YYYY-MonthA":
+      year: YYYY
+      title: "Opinion polling for the Month A YYYY ADJECTIVE ELECTION_TYPE election"
+    "YYYY-MonthB":
+      year: YYYY
+      title: "Opinion polling for the Month B YYYY ADJECTIVE ELECTION_TYPE election"
+```
+
+**Concrete example — Norway:**
+
+```yaml
+NO:
+  title_for_cycle: "Opinion polling for the {cycle} Norwegian parliamentary election"
+  title_current:   "Opinion polling for the next Norwegian parliamentary election"
+  wide_parties: [Ap, H, FrP, Sp, SV, R, V, KrF, MDG, INP]
+  cycles:
+    current: 2029
+    "2025": 2025
+    "2021": 2021
+    "2017": 2017
+    "2013": 2013
+```
+
+**Concrete example — Poland (with single-year 2007/2011/2015 etc.):**
+
+```yaml
+PL:
+  title_for_cycle: "Opinion polling for the {cycle} Polish parliamentary election"
+  title_current:   "Opinion polling for the next Polish parliamentary election"
+  wide_parties: [PiS, KO, PO, Konfederacja, Lewica, "Polska2050", PSL, RP, Nowoczesna]
+  cycles:
+    current: 2027
+    "2023": 2023
+    "2019": 2019
+    "2015": 2015
+    "2011": 2011
+    "2007": 2007
+```
+
+---
+
+## Step 3 — add party colors in `config/party_colors.yaml`
+
+Each party gets a hex color (no `#`). Wikipedia uses standard party colors documented at e.g. https://en.wikipedia.org/wiki/Template:Political_party (search "Norwegian political parties color" or similar).
+
+```yaml
+NO:
+  Ap:      D2122F   # Labour
+  H:       0064B0   # Conservatives
+  FrP:     191970   # Progress
+  Sp:      006A33   # Centre
+  SV:      9F1B1B   # Socialist Left
+  R:       8B0000   # Red
+  V:       5BAD3A   # Liberal
+  KrF:     0067B3   # Christian Democrats
+  MDG:     578C30   # Greens
+  INP:     2E6FDB   # Industry & Business
+  Others:  AAAAAA
+```
+
+Long-tail parties without an explicit color get a deterministic hash-based fallback in JS, so undocumented parties will still render.
+
+---
+
+## Step 4 — register the country's display name in `web/index.html`
+
+Find the `COUNTRY_NAMES` constant near the top of the `<script>` block and add an entry:
+
+```js
+const COUNTRY_NAMES = {
+  IT: "Italy",
+  // ...
+  NO: "Norway",          // <- add this
+  PL: "Poland",
+};
+```
+
+This controls the human-readable label on the country tab.
+
+---
+
+## Step 5 — first-pass build and curation
+
+Locally:
+
+```bash
+# Fetch this one country to verify the titles resolve
+python -m europolls.fetch NO  # 'all' to do every country
+
+# Parse it
+python -m europolls.parse NO
+
+# Inspect the long output
+python - <<EOF
+import pandas as pd
+df = pd.read_csv("data/processed/polls_long.csv", low_memory=False)
+sub = df[df.country == "NO"]
+print(f"NO rows: {len(sub):,}, parties: {sub.party_short.nunique()}")
+print(sub.groupby("party_short").size().sort_values(ascending=False).head(20))
+EOF
+```
+
+Use this to **populate `wide_parties`**: pick the parties that show up consistently across cycles, in roughly seat-share order. Leave one-shot or seat-projection oddities out — they fall into the "Other" bucket automatically.
+
+Rule of thumb: 8–14 wide_parties per country is the sweet spot.
+
+For comparison:
+- DE has 8 (Union, SPD, Grüne, FDP, Linke, AfD, BSW, CSU)
+- IT has 21 (Italian parties churn more than most)
+- UK has 9 (two-party plus minor regional plus historical UKIP/BNP)
+- MT has 2 (PL/PN — the Maltese duopoly)
+
+---
+
+## Step 6 — verify locally, then push
+
+```bash
+# Pivot wides + concat polls_long
+python scripts/build_all.py --skip-fetch     # if you've already fetched
+
+# Build web JSON
+python scripts/build_web.py
+
+# Open web/index.html in a browser, switch to the new country tab,
+# check that the chart looks sensible and the wide table is clean.
+```
+
+When happy:
+
+```bash
+git add config/countries.yaml config/party_colors.yaml web/index.html
+git commit -m "Add NO (Norway) to coverage"
+git push
+```
+
+CI will rebuild the page on the live URL within ~3 minutes.
+
+---
+
+## Known patterns and pitfalls
+
+### Multi-election years
+Greece has had two elections in a single year (May/June 2012, January/September 2015, May/June 2023). Same for Spain in 2019 (April + November). Use explicit per-cycle titles — see Greece in `config/countries.yaml`. The parser supports any cycle ID string.
+
+### Semi-presidential countries
+For France, presidential polls drown out legislative polls. We keep both — `FR` for presidential, `FR_LEG` for legislative — and route to the relevant one depending on the analysis. Other semi-presidential countries (Portugal, Finland, Austria for federal) usually have only the parliamentary article, which is what you want.
+
+### Federated / regional countries
+Belgium has regional Flanders/Wallonia polls in addition to federal. We use only the federal page (`{cycle} Belgian federal election`). Same logic for Germany (federal not state) and Spain (general not autonomous).
+
+### Stub pages
+Some "Opinion polling for the next X election" articles are stubs — Wikipedia editors haven't created them yet. The fetcher prints `✗` and moves on; nothing breaks. Once the article exists, your next CI run will pick it up automatically. No code changes needed.
+
+### Wide-parties tweaking after the fact
+The `wide_parties` list lives in `config/countries.yaml` and is loaded fresh on every build. If a new party emerges (e.g. Germany's BSW in 2024, Portugal's CH), add it and re-deploy.
+
+### Color exhaustion
+Most countries have ≤15 politically active parties. If your `wide_parties` list exceeds ~14, the table gets too wide for desktop screens. Tighten the list to the politically relevant ones; the rest still appears in the chart's party-toggle row.
+
+---
+
+## Quick reference — what each config file controls
+
+| File | Purpose |
+|---|---|
+| `config/countries.yaml` | Per-country: Wikipedia title patterns, list of cycles, coalition labels, wide-table column set |
+| `config/party_colors.yaml` | Per-country: party hex colors for the chart and the table dots |
+| `config/party_mappings/{CC}.yaml` | (Optional, advanced) Per-country `party_short` → `partyfacts_id` for cross-dataset joins. Only Italy has this currently. |
+| `web/index.html` | `COUNTRY_NAMES` constant — human-readable label per ISO2 code |
+
+That's it. Adding a country is ~40 lines of YAML + one JS constant.

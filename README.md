@@ -103,6 +103,11 @@ Outputs land under:
 - `data/processed/polls_long.csv` — single concatenated long file
 - `data/interim/harmonized/{COUNTRY}_long_harmonized.csv` — `partyfacts_id`-augmented
 
+## Extending coverage
+
+Adding a new country takes ~40 lines of YAML + one JS constant.
+See [`docs/ADDING_A_COUNTRY.md`](docs/ADDING_A_COUNTRY.md) for a step-by-step recipe with concrete templates (Norway, Poland) and known pitfalls. Candidates beyond the EU-17+UK are listed at [Wikipedia's opinion-polling-by-country category](https://en.wikipedia.org/wiki/Category:Opinion_polling_by_country).
+
 ## Citation
 
 > Forte, G. (2026). *Europolls: a Wikipedia-direct opinion polling dataset for the European Union and the United Kingdom*. https://github.com/gfrt0/europolls
