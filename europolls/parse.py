@@ -58,8 +58,10 @@ def is_date_header(h: str) -> bool:
         "fieldwork", "dateconducted", "datesconducted", "administered",
         "polldate", "enddate", "dateofpoll", "polldate", "fieldperiod",
         "lastdateofpolling", "lastdate", "periodofpolling",
-        "releasedate",       # IS 2016 election-article fallback
+        "releasedate",       # IS 2016
+        "released",          # MT 2013 'Date(s) Released'
         "pollingperiod",     # NO 2013, some FI cycles
+        "surveydate",        # HU 2014 'Survey dates'
     )):
         return True
     return n in {"date", "dates", "published"}
@@ -79,7 +81,9 @@ def is_pollster_header(h: str) -> bool:
         "organisation", "organization", "company",
         "pollsource", "pollingsource",
         "institute",       # IS 2016 election-article fallback
+        "institution",     # CH 2015 election-article fallback
         "agency",          # AT 2013 'Agency/Source'
+        "newspaper",       # BE 2014 election-article fallback
     )) and "result" not in n
 
 
