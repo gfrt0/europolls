@@ -24,6 +24,7 @@ import time
 from pathlib import Path
 from urllib.parse import quote
 from urllib.request import Request, urlopen
+from urllib.error import HTTPError, URLError
 import json
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -44,14 +45,36 @@ RX_POLLING = re.compile(
 RX_ELECTION = re.compile(r"^(?P<year>\d{4})(?:[ -]\w+)? (?P<rest>.+? election)$")
 
 
-def api_get(params: dict) -> dict:
-    """Issue a GET to Commons' MediaWiki API and return the parsed JSON."""
+def api_get(params: dict, max_retries: int = 6) -> dict:
+    """Issue a GET to Commons' MediaWiki API and return parsed JSON.
+
+    Retries with exponential backoff on HTTP 429 (rate limit) or 503.
+    Re-raises any other error after final retry.
+    """
     params = {**params, "format": "json", "formatversion": 2}
     qs = "&".join(f"{k}={quote(str(v))}" for k, v in params.items())
     url = f"{COMMONS_API}?{qs}"
     req = Request(url, headers={"User-Agent": USER_AGENT})
-    with urlopen(req, timeout=30) as resp:
-        return json.loads(resp.read())
+    delay = 1.0
+    for attempt in range(max_retries):
+        try:
+            with urlopen(req, timeout=30) as resp:
+                return json.loads(resp.read())
+        except HTTPError as e:
+            if e.code in (429, 503) and attempt < max_retries - 1:
+                wait = float(e.headers.get("Retry-After", delay))
+                print(f"    [{e.code}] retry in {wait:.1f}s")
+                time.sleep(wait)
+                delay *= 2
+                continue
+            raise
+        except URLError:
+            if attempt < max_retries - 1:
+                time.sleep(delay)
+                delay *= 2
+                continue
+            raise
+    raise RuntimeError("unreachable")  # pragma: no cover
 
 
 def iter_category_members(cat: str, types=("file", "subcat")) -> list[dict]:
@@ -68,7 +91,7 @@ def iter_category_members(cat: str, types=("file", "subcat")) -> list[dict]:
         out.extend(data.get("query", {}).get("categorymembers", []))
         if "continue" in data:
             cont = data["continue"].get("cmcontinue")
-            time.sleep(0.2)
+            time.sleep(0.4)
         else:
             return out
 
@@ -91,8 +114,23 @@ def all_files_under(root_cat: str) -> list[tuple[str, str]]:
     return pairs
 
 
+CACHE_DIR = OUT_DIR / "globalusage_cache"
+CACHE_DIR.mkdir(parents=True, exist_ok=True)
+
+
+def _cache_path(file_title: str) -> Path:
+    safe = re.sub(r"[^A-Za-z0-9._-]+", "_", file_title)[:200]
+    return CACHE_DIR / f"{safe}.json"
+
+
 def en_articles_using(file_title: str) -> list[str]:
-    """List English-Wikipedia articles that embed this Commons file."""
+    """List English-Wikipedia articles that embed this Commons file.
+
+    Cached on disk by file title so reruns are essentially free.
+    """
+    cache = _cache_path(file_title)
+    if cache.exists():
+        return json.loads(cache.read_text())
     out, cont = [], None
     while True:
         params = {
@@ -109,8 +147,9 @@ def en_articles_using(file_title: str) -> list[str]:
                     out.append(u["title"])
         if "continue" in data:
             cont = data["continue"].get("gucontinue")
-            time.sleep(0.15)
+            time.sleep(0.4)
         else:
+            cache.write_text(json.dumps(out))
             return out
 
 
@@ -155,7 +194,7 @@ def main() -> None:
         })
         if i % 25 == 0:
             print(f"  ...{i}/{len(pairs)}")
-        time.sleep(0.1)
+        time.sleep(0.3)
 
     out_path = OUT_DIR / "commons_polls.csv"
     with out_path.open("w", newline="") as f:
