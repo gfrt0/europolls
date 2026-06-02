@@ -68,9 +68,65 @@ def step_concat_long() -> None:
     long = pd.concat(dfs, ignore_index=True)
     if "_table_idx" in long.columns:
         long = long.drop(columns=["_table_idx"])
+
+    raw_count = len(long)
+    long = _dedup_polls(long)
+    dropped = raw_count - len(long)
+
     out = ROOT / "data" / "processed" / "polls_long.csv"
     long.to_csv(out, index=False)
-    print(f"  wrote {len(long):,} rows × {len(long.columns)} cols -> {out.relative_to(ROOT)}")
+    print(f"  wrote {len(long):,} rows × {len(long.columns)} cols "
+          f"(deduped {dropped:,} of {raw_count:,}) -> {out.relative_to(ROOT)}")
+
+
+def _dedup_polls(long: pd.DataFrame) -> pd.DataFrame:
+    """Collapse duplicate poll-party rows.
+
+    A duplicate is two rows sharing (country, polldate_mid, pollster,
+    party_short). Two sources:
+      1. Wikipedia editors copy each prior election's result into the next
+         cycle's polling article as a baseline (cross-cycle dup).
+      2. Some polling articles list the same poll in multiple wikitables —
+         'Voting intention', 'Bloc support', 'Latest polls' (within-cycle dup).
+
+    Keep one row per key, preferring the cycle whose election year is
+    closest to the poll's mid-date year — that's the 'canonical' article
+    for the poll. Ties broken by larger sample_size (more reliable), then
+    by higher wiki_revid (more recent edit). Undated rows are passed
+    through untouched (no key to dedup on).
+    """
+    if long.empty:
+        return long
+
+    # Split: undated rows can't be deduped on date; keep them as-is.
+    has_date = long["polldate_mid"].notna()
+    undated = long[~has_date]
+    dated = long[has_date].copy()
+
+    # Compute the 'cycle year' for each row from its cycle string. Use the
+    # cycle's leading 4-digit year ('2024', '2021-Nov', 'current' is special).
+    def _cycle_year(c: object) -> int:
+        s = str(c)
+        if s[:4].isdigit():
+            return int(s[:4])
+        # 'current' or other non-year-prefixed cycle: place far in the future
+        # so it loses to any concrete cycle in the proximity tiebreaker.
+        return 9999
+
+    dated["_cycle_year"] = dated["cycle"].map(_cycle_year)
+    poll_year = pd.to_datetime(dated["polldate_mid"], errors="coerce").dt.year
+    dated["_year_dist"] = (dated["_cycle_year"] - poll_year).abs()
+    # Tiebreakers: prefer larger sample, newer revid.
+    dated["_neg_sample"] = -pd.to_numeric(dated["sample_size"], errors="coerce").fillna(0)
+    dated["_neg_revid"] = -pd.to_numeric(dated["wiki_revid"], errors="coerce").fillna(0)
+    dated = dated.sort_values(
+        ["_year_dist", "_neg_sample", "_neg_revid"], kind="stable",
+    )
+    key = ["country", "polldate_mid", "pollster", "party_short"]
+    dated = dated.drop_duplicates(subset=key, keep="first")
+    dated = dated.drop(columns=["_cycle_year", "_year_dist", "_neg_sample", "_neg_revid"])
+
+    return pd.concat([dated, undated], ignore_index=True)
 
 
 def step_harmonize() -> None:
