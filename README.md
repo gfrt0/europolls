@@ -108,6 +108,12 @@ Outputs land under:
 Adding a new country takes ~40 lines of YAML + one JS constant.
 See [`docs/ADDING_A_COUNTRY.md`](docs/ADDING_A_COUNTRY.md) for a step-by-step recipe with concrete templates (Norway, Poland) and known pitfalls. Candidates beyond the EU-17+UK are listed at [Wikipedia's opinion-polling-by-country category](https://en.wikipedia.org/wiki/Category:Opinion_polling_by_country).
 
+## Roadmap
+
+- **SVG-fallback poll discovery.** [Wikimedia Commons' opinion-polls category](https://commons.wikimedia.org/wiki/Category:Opinion_polls_by_country) catalogues SVG poll charts. Each chart's File page links to the Wikipedia article it accompanies — typically the **election article itself** (e.g. [`2016 Icelandic parliamentary election`](https://en.wikipedia.org/wiki/2016_Icelandic_parliamentary_election), [`2016 Cypriot legislative election`](https://en.wikipedia.org/wiki/2016_Cypriot_legislative_election)), not a dedicated `Opinion polling for the…` article. These election articles host structurally identical polling wikitables that the current pipeline ignores. Tracked on the `opinionpollsbycountry` branch.
+- Long-tail wide-parties curation across the newly-added Central/Eastern European and Baltic countries.
+- Cross-dataset joins beyond Italy: `partyfacts_id` mapping files for the other 30+ countries (`config/party_mappings/{CC}.yaml`).
+
 ## Citation
 
 > Forte, G. (2026). *Europolls: a Wikipedia-direct opinion polling dataset for the European Union and the United Kingdom*. https://github.com/gfrt0/europolls
