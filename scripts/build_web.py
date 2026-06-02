@@ -118,6 +118,26 @@ def load_party_aliases(country: str) -> dict[str, str]:
     return data.get("aliases", {}) or {}
 
 
+def load_party_drops(country: str) -> tuple[set, list]:
+    """Return (exact-match drop set, list of compiled regex patterns)."""
+    path = PARTY_ALIASES_DIR / f"{country}.yaml"
+    if not path.exists():
+        return set(), []
+    data = yaml.safe_load(path.read_text()) or {}
+    exact = set(data.get("drop", []) or [])
+    regex_patterns = [re.compile(p) for p in (data.get("drop_regex", []) or [])]
+    return exact, regex_patterns
+
+
+def load_meta_aliases() -> dict[str, str]:
+    """Cross-country meta-label normalization (don't know / abstain / etc.)."""
+    path = PARTY_ALIASES_DIR / "_meta.yaml"
+    if not path.exists():
+        return {}
+    data = yaml.safe_load(path.read_text()) or {}
+    return data.get("aliases", {}) or {}
+
+
 def main() -> None:
     if not LONG_CSV.exists():
         raise SystemExit(f"missing {LONG_CSV.relative_to(ROOT)}; run scripts/build_all.py first")
@@ -143,14 +163,27 @@ def main() -> None:
     countries_cfg = yaml.safe_load(COUNTRIES_YAML.read_text())
 
     countries_summary = []
+    meta_aliases = load_meta_aliases()
     for country, sub in df.groupby("country"):
         sub = sub.copy()
+        # Cross-country meta-label normalization first (Don't know / Abstain /
+        # Others / Neither) so per-country case-collapsing doesn't fragment them.
+        if meta_aliases:
+            sub["party_short"] = sub["party_short"].map(lambda v: meta_aliases.get(v, v))
         # Normalize party_short variants within the country.
         sub["party_short"] = normalize_party_shorts(sub["party_short"])
         # Apply per-country manual alias map (e.g. 'Freedom Party of Austria'→'FPÖ').
         country_aliases = load_party_aliases(country)
         if country_aliases:
             sub["party_short"] = sub["party_short"].map(lambda v: country_aliases.get(v, v))
+        # Drop rows whose party_short matches the country's drop list — used for
+        # leader-approval columns, cabinet-rating columns, and other non-vote-
+        # intention labels that leak into Wikipedia's polling tables.
+        drop_exact, drop_regex = load_party_drops(country)
+        if drop_exact:
+            sub = sub[~sub["party_short"].isin(drop_exact)]
+        for rx in drop_regex:
+            sub = sub[~sub["party_short"].astype(str).str.contains(rx, regex=True, na=False)]
 
         # Compute summary: n polls, date span, top parties by observation count.
         n_polls = len(sub.drop_duplicates(["polldate_mid", "pollster"]))

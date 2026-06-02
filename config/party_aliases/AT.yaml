@@ -12,3 +12,18 @@ aliases:
   "The Greens (Austria)":           "Grüne"
   "NEOS (Austria)":                 "NEOS"
   "Communist Party of Austria":     "KPÖ"
+
+# Leader+party concatenations from chancellor-preference satisfaction polls
+# (e.g. 'KurzÖVP' = Kurz-as-candidate via the ÖVP). Distinct from voting
+# intention; drop from the long-table / chart.
+drop:
+  - "KurzÖVP"
+  - "Rendi-Wagner/KernSPÖ"
+  - "Hofer/StracheFPÖ"
+  - "KoglerGrüne"
+  - "Meinl-Reisinger/StrolzNEOS"
+  - "Rendi-WagnerSPÖ"
+  - "Meinl-ReisingerNEOS"
+  - "HoferFPÖ"
+  - "StracheHC"
+  - "Other/None"

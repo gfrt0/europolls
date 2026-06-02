@@ -7,3 +7,14 @@ aliases:
   "Mp":  "MP"
   "Fp":  "L"     # Folkpartiet renamed to Liberalerna in 2015
   "Kd":  "KD"
+
+# Leader-approval columns ('Ulf Kristersson (M)' etc.) and meta-aggregate
+# columns ('Parties', 'Above threshold', 'Overall', 'Percentage', 'Seats').
+drop_regex:
+  - " \\([A-Z]+\\)$"   # leader (PARTY) approval columns
+drop:
+  - "Parties"
+  - "Above threshold"
+  - "Overall"
+  - "Percentage"
+  - "Seats"

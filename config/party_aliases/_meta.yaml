@@ -1,0 +1,44 @@
+# Cross-country meta-label normalization.
+#
+# Applied to every country BEFORE the per-country party_aliases/{COUNTRY}.yaml.
+# Folds the many wordings Wikipedia uses for the same non-party bucket so the
+# chart toggles and table don't show four near-identical "don't know" lines.
+
+aliases:
+  # --- Don't know / no opinion / undecided ---
+  "Don'tknow":                      "Don't know"
+  "Don't Know":                     "Don't know"
+  "Don't  Know":                    "Don't know"
+  "Don't  know":                    "Don't know"
+  "Don't know/no answer":           "Don't know"
+  "NO|No Opinion":                  "Don't know"
+  "Noopinion":                      "Don't know"
+  "No opinion":                     "Don't know"
+  "Not sure":                       "Don't know"
+  "N/B/NO|Neither/Both/No opinion": "Don't know"
+  "Other / Don't Know":             "Don't know"
+
+  # --- Abstention / would not vote / spoilt / refused ---
+  "Abs.|Abstention":          "Abstain"
+  "Abs.|Abstention/blank/null vote/don't know": "Abstain"
+  "Abstention":               "Abstain"
+  "Notvoting":                "Abstain"
+  "Would not vote":           "Abstain"
+  "Would not vote/refused":   "Abstain"
+  "No vote":                  "Abstain"
+  "Noreply":                  "Abstain"
+  "No reply":                 "Abstain"
+  "Refused":                  "Abstain"
+
+  # --- Others bucket ---
+  "Other":                    "Others"
+  "Oth.":                     "Others"
+  "Others/Abroad":            "Others"
+  "Oth.|Others":              "Others"
+  "O|Other":                  "Others"
+  "O|Others":                 "Others"
+
+  # --- Neither / none ---
+  "Neither / None":           "Neither"
+  "None of these":            "Neither"
+  "N|Neither":                "Neither"

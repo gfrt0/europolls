@@ -1,0 +1,17 @@
+# Finland — leader-approval columns are interleaved with vote intentions
+# on the polling page; drop them.
+
+drop:
+  - "Juha Sipilä"
+  - "Petteri Orpo"
+  - "Antti Rinne"
+  - "Jussi Halla-aho"
+  - "Li Andersson"
+  - "Pekka Haavisto"
+  - "Sampo Terho"
+  - "Touko Aalto"
+  - "Sari Essayah"
+  - "Paavo Väyrynen"
+  - "Timo Soini"
+  - "Ville Niinistö"
+  - "Anna-Maja Henriksson"

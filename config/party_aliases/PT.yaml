@@ -1,7 +1,36 @@
-# Portugal — PSD/CDS pre-election coalition, leader-tagged satisfaction
-# columns kept as separate entities (they're not vote intention).
+# Portugal — PSD/CDS pre-election coalition; leader-tagged and cabinet-
+# approval columns dropped (they're satisfaction polling, not vote intention).
 
 aliases:
-  "PSD/CDS":    "PSD–CDS"
-  "CDS–PP":     "CDS"
+  "PSD/CDS":      "PSD–CDS"
+  "CDS–PP":       "CDS"
   "PassosCoelho": "PSD"
+  "JoséSócrates": "PS"
+  "FerreiraLeite": "PSD"
+
+drop_regex:
+  - "'s cabinet$"           # 'António Costa's cabinet', etc. — approval polls
+  - "^Both"                 # 'Both', 'Both/O|Other' — approval-poll bucket
+  - "Debate com"            # Wikipedia image-caption junk leaked into a header
+
+drop:
+  - "António Costa"
+  - "Luís Montenegro"
+  - "André Ventura"
+  - "Rui Rio"
+  - "Inês Sousa Real"
+  - "Nuno Melo"
+  - "Paulo Raimundo"
+  - "Rui Tavares"
+  - "Pedro Passos Coelho"
+  - "Catarina Martins"
+  - "Pedro Nuno Santos"
+  - "Mariana Mortágua"
+  - "Pedro Santana Lopes"
+  - "José Luís Carneiro"
+  - "Marta Temido"
+  - "Fernando Medina"
+  - "Duarte Cordeiro"
+  - "Élvio Sousa"
+  - "Costa"
+  - "Seguro"

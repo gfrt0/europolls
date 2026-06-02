@@ -6,3 +6,16 @@ aliases:
   "RB":     "Brx"
   "Reform": "Brx"
   "Ref":    "Brx"
+
+# Leader-approval columns that leak into the vote-intention tables on
+# Wikipedia's UK polling pages. Not vote shares.
+drop:
+  - "Jeremy Corbyn"
+  - "Theresa May"
+  - "Tim Farron"
+  - "David Cameron"
+  - "Paul Nuttall"
+  - "Boris Johnson"
+  - "George Osborne"
+  - "Milton(Ind)"
+  - "Lord Ashcroft"
