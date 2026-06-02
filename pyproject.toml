@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "europolls"
+version = "0.1.0"
+description = "Wikipedia-direct opinion polling dataset for the EU and UK."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Giuseppe Forte" }]
+keywords = ["opinion polling", "elections", "European Union", "voting intention", "Wikipedia"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Topic :: Sociology",
+    "Topic :: Scientific/Engineering :: Information Analysis",
+]
+dependencies = [
+    "wikitextparser>=0.55",
+    "pandas>=2.0",
+    "pyyaml>=6.0",
+    "requests>=2.30",
+]
+
+[project.urls]
+Homepage = "https://github.com/gfrt0/europolls"
+Repository = "https://github.com/gfrt0/europolls"
+
+[tool.setuptools.packages.find]
+include = ["europolls*"]

@@ -1,0 +1,163 @@
+IT:
+  cycles:
+    current: 2026
+    '2022': 2022
+    '2018': 2018
+    '2013': 2013
+    '2008': 2008
+    '2006': 2006
+  coalition_shorts:
+  - "casa delle libert\xE0"
+  - cdl
+  - cdx
+  - centre-left
+  - centre-right
+  - csx
+  - unione
+DE:
+  cycles:
+    current: 2026
+    '2025': 2025
+    '2021': 2021
+    '2017': 2017
+    '2013': 2013
+    '2009': 2009
+  coalition_shorts: []
+ES:
+  cycles:
+    current: 2026
+    '2023': 2023
+    '2019': 2019
+    2019a: 2019
+    '2016': 2016
+    '2015': 2015
+    '2011': 2011
+    '2008': 2008
+  coalition_shorts: []
+UK:
+  cycles:
+    current: 2026
+    '2024': 2024
+    '2019': 2019
+    '2017': 2017
+    '2015': 2015
+    '2010': 2010
+  coalition_shorts: []
+FR:
+  cycles:
+    current: 2026
+    '2022': 2022
+    '2017': 2017
+    '2012': 2012
+    '2007': 2007
+  coalition_shorts: []
+FR_LEG:
+  cycles:
+    current: 2026
+    '2024': 2024
+    '2022': 2022
+    '2017': 2017
+    '2012': 2012
+    '2007': 2007
+  coalition_shorts: []
+PT:
+  cycles:
+    current: 2026
+    '2024': 2024
+    '2022': 2022
+    '2019': 2019
+    '2015': 2015
+    '2011': 2011
+    '2009': 2009
+  coalition_shorts: []
+NL:
+  cycles:
+    current: 2026
+    '2023': 2023
+    '2021': 2021
+    '2017': 2017
+    '2012': 2012
+    '2010': 2010
+  coalition_shorts: []
+BE:
+  cycles:
+    current: 2026
+    '2024': 2024
+    '2019': 2019
+    '2014': 2014
+    '2010': 2010
+  coalition_shorts: []
+SE:
+  cycles:
+    current: 2026
+    '2022': 2022
+    '2018': 2018
+    '2014': 2014
+    '2010': 2010
+  coalition_shorts: []
+DK:
+  cycles:
+    current: 2026
+    '2022': 2022
+    '2019': 2019
+    '2015': 2015
+    '2011': 2011
+  coalition_shorts: []
+FI:
+  cycles:
+    current: 2026
+    '2023': 2023
+    '2019': 2019
+    '2015': 2015
+    '2011': 2011
+  coalition_shorts: []
+GR:
+  cycles:
+    current: 2026
+    2023-May: 2023
+    2023-Jun: 2023
+    '2019': 2019
+    2015-Jan: 2015
+    2015-Sep: 2015
+    2012-May: 2012
+    2012-Jun: 2012
+    '2009': 2009
+  coalition_shorts: []
+IE:
+  cycles:
+    current: 2026
+    '2024': 2024
+    '2020': 2020
+    '2016': 2016
+    '2011': 2011
+  coalition_shorts: []
+AT:
+  cycles:
+    current: 2026
+    '2024': 2024
+    '2019': 2019
+    '2017': 2017
+    '2013': 2013
+  coalition_shorts: []
+LU:
+  cycles:
+    current: 2026
+    '2023': 2023
+    '2018': 2018
+    '2013': 2013
+  coalition_shorts: []
+CY:
+  cycles:
+    current: 2026
+    '2021': 2021
+    '2016': 2016
+    '2011': 2011
+    2023-pres: 2023
+  coalition_shorts: []
+MT:
+  cycles:
+    current: 2026
+    '2022': 2022
+    '2017': 2017
+    '2013': 2013
+  coalition_shorts: []

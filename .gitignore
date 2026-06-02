@@ -1,0 +1,25 @@
+# All data dirs are reproducible artifacts — recreate via `scripts/build_all.py`.
+# Snapshots ship as GitHub Release assets, not via git.
+data/raw/
+data/interim/
+data/processed/
+
+# Build / cache / venv artifacts
+__pycache__/
+*.pyc
+*.tmp.*
+.venv/
+*.egg-info/
+build/
+dist/
+
+# Editor
+.vscode/
+.idea/
+*.swp
+
+# Session logs (per-machine notes)
+session_logs/
+
+# Misc
+.DS_Store
