@@ -258,6 +258,17 @@ function getColor(country, party) {
   return fallbackColor(party);
 }
 
+function getPartyName(country, party) {
+  const nc = STATE.partyNames?.[country];
+  return nc?.[party] || "";
+}
+
+// Escape a string for safe use inside an HTML attribute value (title=).
+function escAttr(s) {
+  return String(s || "").replace(/&/g, "&amp;").replace(/"/g, "&quot;")
+    .replace(/</g, "&lt;").replace(/>/g, "&gt;");
+}
+
 // 30-day centered rolling mean per party series, plus 7-day points for the scatter.
 function smoothSeries(rows, party) {
   const sorted = rows
@@ -306,6 +317,8 @@ async function loadIndex() {
   STATE.cacheBust = v ? `?v=${v}` : "";
   STATE.colors = await fetch(`colors.json${STATE.cacheBust}`).then(r => r.json());
   STATE.countries = await fetch(`countries.json${STATE.cacheBust}`).then(r => r.json());
+  STATE.partyNames = await fetch(`party_names.json${STATE.cacheBust}`)
+    .then(r => r.ok ? r.json() : {}).catch(() => ({}));
 
   const sel = document.getElementById("country-select");
   sel.innerHTML = "";
@@ -392,6 +405,8 @@ function renderToggles(summary) {
     const el = document.createElement("span");
     el.className = "party-toggle" + (STATE.visibleParties.has(party) ? "" : " off");
     el.dataset.party = party;
+    const name = getPartyName(STATE.country, party);
+    if (name) el.title = name;
     el.innerHTML = `<span class="dot" style="background:${getColor(STATE.country, party)}"></span>${party} <span style="color:var(--muted)">${n}</span>`;
     el.onclick = () => {
       if (STATE.visibleParties.has(party)) STATE.visibleParties.delete(party);
@@ -513,7 +528,9 @@ function renderLongTable() {
         formatter: cell => {
           const party = cell.getValue();
           const color = getColor(STATE.country, party);
-          return `<span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:${color};margin-right:5px;vertical-align:-1px;"></span>${party}`;
+          const name = getPartyName(STATE.country, party);
+          const titleAttr = name ? ` title="${escAttr(name)}"` : "";
+          return `<span${titleAttr} style="cursor:help;"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:${color};margin-right:5px;vertical-align:-1px;"></span>${party}</span>`;
         } },
       { title: "Share %", field: "v", hozAlign: "right", width: 90, headerSort: false,
         formatter: cell => cell.getValue() == null ? "" : cell.getValue().toFixed(1) },
@@ -542,8 +559,10 @@ function renderWideTable() {
   ];
   for (const party of wideParties) {
     const color = getColor(STATE.country, party);
+    const name = getPartyName(STATE.country, party);
+    const titleAttr = name ? ` title="${escAttr(name)}"` : "";
     cols.push({
-      title: `<span class="party-head"><span class="dot" style="background:${color}"></span>${party}</span>`,
+      title: `<span class="party-head" style="cursor:help;"${titleAttr}><span class="dot" style="background:${color}"></span>${party}</span>`,
       field: party,
       hozAlign: "right",
       width: 62,

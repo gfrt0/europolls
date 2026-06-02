@@ -99,6 +99,7 @@ COLORS_YAML = ROOT / "config" / "party_colors.yaml"
 COUNTRIES_YAML = ROOT / "config" / "countries.yaml"
 POLLSTER_ALIASES_YAML = ROOT / "config" / "pollster_aliases.yaml"
 PARTY_ALIASES_DIR = ROOT / "config" / "party_aliases"
+PARTY_NAMES_YAML = ROOT / "config" / "party_names.yaml"
 WEB = ROOT / "web"
 WEB.mkdir(exist_ok=True)
 
@@ -326,6 +327,21 @@ def main() -> None:
     countries_summary.sort(key=lambda r: -r["n_polls"])
     (WEB / "countries.json").write_text(json.dumps(countries_summary, indent=2))
     (WEB / "colors.json").write_text(json.dumps(colors_raw, indent=2))
+
+    # Party names lookup for tooltips. Merges _generic (Others / Don't know /
+    # Abstain / Neither) into every country, with country-specific entries
+    # winning if a key collides.
+    if PARTY_NAMES_YAML.exists():
+        names_raw = yaml.safe_load(PARTY_NAMES_YAML.read_text()) or {}
+        generic = names_raw.pop("_generic", {}) or {}
+        names_out = {}
+        for cc, mapping in names_raw.items():
+            merged = dict(generic)
+            merged.update(mapping or {})
+            names_out[cc] = merged
+        (WEB / "party_names.json").write_text(json.dumps(names_out))
+        print(f"wrote party_names.json ({len(names_out)} countries, "
+              f"{sum(len(v) for v in names_out.values())} entries)")
 
     # Cache-buster: build identifier consumed by index.html so all JSON
     # asset URLs get a ?v=<build> suffix that changes every deploy. Prefer
