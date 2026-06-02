@@ -200,12 +200,25 @@ def parse_opdrts(cell: str) -> FieldworkDates | None:
     return FieldworkDates(_to_iso(d1, prev_m, prev_y), _to_iso(d2, mn, y))
 
 
+# {{Dts|format=dmy|YYYY|MM|DD|abbr=on}} — Wikipedia's sortable-date template.
+# Allow named parameters before AND after the numeric Y/M/D triplet, and accept
+# the family of aliases ({{dts}}, {{date table sorting}}, {{dts/yhm}}). The
+# template can carry |abbr=, |fmt=, |format=, |hrec=, |y=, |err= etc.
+_NAMED_PARAM = r"(?:\|[a-z][a-z0-9_]*=[^|}]*)*"
 DTS_RE = re.compile(
-    r"\{\{\s*dts\s*(?:\|format=\w+)?\s*\|\s*(\d{4})\s*\|\s*(\d{1,2})\s*\|\s*(\d{1,2})\s*\}\}",
+    r"\{\{\s*(?:dts|date table sorting|dts/[a-z]+)\s*"
+    + _NAMED_PARAM +
+    r"\s*\|\s*(\d{4})\s*\|\s*(\d{1,2})\s*\|\s*(\d{1,2})\s*"
+    + _NAMED_PARAM +
+    r"\s*\}\}",
     re.IGNORECASE,
 )
 DTS_ISO_RE = re.compile(
-    r"\{\{\s*dts\s*(?:\|format=\w+)?\s*\|\s*(\d{4})-(\d{1,2})-(\d{1,2})\s*\}\}",
+    r"\{\{\s*(?:dts|date table sorting|dts/[a-z]+)\s*"
+    + _NAMED_PARAM +
+    r"\s*\|\s*(\d{4})-(\d{1,2})-(\d{1,2})\s*"
+    + _NAMED_PARAM +
+    r"\s*\}\}",
     re.IGNORECASE,
 )
 
