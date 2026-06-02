@@ -13,18 +13,16 @@ from __future__ import annotations
 import csv
 import json
 import re
-import sys
 from pathlib import Path
 
 import wikitextparser as wtp
 
-ROOT = Path(__file__).resolve().parents[1]
-sys.path.insert(0, str(ROOT / "data" / "scripts"))
-
-from europolls.lib import (  # noqa: E402
-    parse_share, parse_sample, parse_fieldwork, header_party_short,
+from europolls.lib import (
+    parse_share, parse_sample, parse_fieldwork,
     strip_wikitext, extract_external_url,
 )
+
+ROOT = Path(__file__).resolve().parents[1]
 
 RAW_ROOT = ROOT / "data" / "raw"
 OUT_ROOT = ROOT / "data" / "interim"

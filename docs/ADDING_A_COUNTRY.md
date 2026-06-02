@@ -8,7 +8,9 @@ You're done when:
 - The wide-table view shows clean party columns
 - The chart shows colored lines per party
 
-The whole process is **3 config files + (optionally) one HTML constant** — no Python edits required for a typical addition.
+The whole process is **3 config files + (optionally) one HTML constant** — no Python edits required for a typical addition. Optional alias / drop / coalition / tooltip-name config can be added incrementally as Wikipedia table quirks surface.
+
+**YAML gotcha:** if your ISO2 code is `NO` (Norway), quote it as `"NO":` in YAML — unquoted it parses as boolean `False` and the entire country block is silently dropped at config load.
 
 ---
 
@@ -216,6 +218,14 @@ Belgium has regional Flanders/Wallonia polls in addition to federal. We use only
 ### Stub pages
 Some "Opinion polling for the next X election" articles are stubs — Wikipedia editors haven't created them yet. The fetcher prints `✗` and moves on; nothing breaks. Once the article exists, your next CI run will pick it up automatically. No code changes needed.
 
+### Election-article fallback
+When a cycle's dedicated `Opinion polling for the YYYY X election` returns 404, the fetcher automatically retries against the bare election article (`YYYY Adjective X election`) and parses any wikitable under its `Opinion polls` / `Polling` section heading. `source.json` records `source_kind: election_article` for these. This covers ~12k poll-party rows across cycles where the dedicated article doesn't exist (mostly older cycles, plus smaller countries like BG, LT, LU).
+
+The fetcher logs the fallback hop with a `↪` marker (vs `✓` for direct hits). Election articles often have polling sections too short to host a wikitable (CY 2011, CZ 2025, RO 2024 — the section is a one-paragraph link to an SVG chart). These produce zero rows; nothing breaks.
+
+### Fallback contamination
+Election articles can host polling subsections for separate races (e.g. BG 2021-Nov has presidential polling for Rumen Radev inside the `Opinion polls` section). The parser carves out any subsection whose heading mentions `president` / `presidential`. If a similar pattern appears for other contests (regional, EP, etc.) on a country you're adding, surface it as a `drop:` entry in `config/party_aliases/{CC}.yaml`.
+
 ### Wide-parties tweaking after the fact
 The `wide_parties` list lives in `config/countries.yaml` and is loaded fresh on every build. If a new party emerges (e.g. Germany's BSW in 2024, Portugal's CH), add it and re-deploy.
 
@@ -228,9 +238,24 @@ Most countries have ≤15 politically active parties. If your `wide_parties` lis
 
 | File | Purpose |
 |---|---|
-| `config/countries.yaml` | Per-country: Wikipedia title patterns, list of cycles, coalition labels, wide-table column set |
+| `config/countries.yaml` | Per-country: Wikipedia title patterns, list of cycles, coalition labels (raw + post-alias), wide-table column set |
 | `config/party_colors.yaml` | Per-country: party hex colors for the chart and the table dots |
-| `config/party_mappings/{CC}.yaml` | (Optional, advanced) Per-country `party_short` → `partyfacts_id` for cross-dataset joins. Only Italy has this currently. |
+| `config/party_names.yaml` | Per-country: full party names used for the hover tooltips on the chart and tables |
+| `config/pollster_aliases.yaml` | Global pollster-name canonicalization (Techne → Tecnè, TNS Sofres → Kantar, etc.) plus footnote-marker stripping |
+| `config/party_aliases/{CC}.yaml` | Per-country `aliases:` (variant → canonical), `drop:` (exact-match leader/cabinet column drops), `drop_regex:` (pattern-match drops). `_meta.yaml` holds cross-country folds for Don't-know / Abstain / Others / Neither |
+| `config/party_mappings/{CC}.yaml` | (Optional, advanced) Per-country `party_short` → `partyfacts_id` for cross-dataset joins. Only Italy currently has this |
 | `web/index.html` | `COUNTRY_NAMES` constant — human-readable label per ISO2 code |
 
-That's it. Adding a country is ~40 lines of YAML + one JS constant.
+That's it. Adding a country is ~50 lines of YAML + one JS constant.
+
+## Twelve cycles that currently produce zero rows
+
+These cycles fetch successfully but don't yield wikitable-parseable data. Listed for transparency; each needs either a different data source or a structural parser change.
+
+| Cycle | Why it's empty |
+|---|---|
+| LV 2011, LV 2014, NO 2005 | Election article has no polling section |
+| CY 2011, CZ 2025, RO 2024, SE 2010 | Polling section is chart-only / no wikitable |
+| NO 2013 | Only coalition-aggregate tables (bloc / gov vs opp) |
+| NL 2010, SK 2012 | Transposed layout — parties as rows, dates as columns |
+| LT 2012, LT 2016 | Group-label header without a meta column to anchor multi-row detection |

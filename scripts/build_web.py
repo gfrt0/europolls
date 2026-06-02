@@ -13,7 +13,9 @@ Includes party/pollster normalization to fold variants of the same entity.
 """
 from __future__ import annotations
 
+import datetime
 import json
+import os
 import re
 import sys
 from collections import Counter
@@ -347,8 +349,8 @@ def main() -> None:
     # asset URLs get a ?v=<build> suffix that changes every deploy. Prefer
     # the GitHub commit SHA when available (stable, short), else a UTC
     # timestamp. version.json itself is fetched with cache: 'no-store'.
-    import os, datetime
-    build = os.environ.get("GITHUB_SHA", "")[:12] or datetime.datetime.utcnow().strftime("%Y%m%d%H%M%S")
+    build = os.environ.get("GITHUB_SHA", "")[:12] or \
+        datetime.datetime.now(datetime.timezone.utc).strftime("%Y%m%d%H%M%S")
     (WEB / "version.json").write_text(json.dumps({"build": build}))
     print(f"\nwrote countries.json ({len(countries_summary)} entries)")
     print(f"wrote colors.json")

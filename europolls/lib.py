@@ -148,13 +148,7 @@ class FieldworkDates:
     end: str | None
 
 
-# Italian month name → number (English Wikipedia uses English names).
-MONTHS = {m.lower(): i for i, m in enumerate(
-    ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec",
-     "January","February","March","April","May","June","July","August",
-     "September","October","November","December"], start=0)}
-# Above is wrong: rebuild properly.
-MONTHS = {}
+MONTHS: dict[str, int] = {}
 for i, names in enumerate([
     ("Jan", "January"),
     ("Feb", "February"),
@@ -175,14 +169,6 @@ for i, names in enumerate([
 
 def _to_iso(day: int, month: int, year: int) -> str:
     return f"{year:04d}-{month:02d}-{day:02d}"
-
-
-_DATE_RANGE_RE = re.compile(
-    r"(?P<d1>\d{1,2})(?:[-–—]\s?(?P<d2_only>\d{1,2}))?\s*"  # day or day-day
-    r"(?P<m1>[A-Za-z]+)?\s*"
-    r"(?:[-–—]\s*(?P<d2>\d{1,2})\s+(?P<m2>[A-Za-z]+))?\s*"
-    r"(?P<y>\d{4})?"
-)
 
 
 OPDRTS_RE = re.compile(
@@ -413,27 +399,3 @@ def parse_fieldwork(cell: str, default_year: int) -> FieldworkDates:
     return FieldworkDates(None, None)
 
 
-def header_party_short(header_cell: str) -> str:
-    """Extract the party short-name from a header cell with wikilink markup.
-
-    '[[Five Star Movement|M5S]]'    -> 'M5S'
-    '[[Brothers of Italy|FdI]]'     -> 'FdI'
-    'Others'                        -> 'Others'
-    '[[Lega (political party)|Lega]]' -> 'Lega'
-    """
-    return strip_wikitext(header_cell)
-
-
-# Columns we systematically ignore for the party-share long file.
-META_COLS = {
-    "polling firm", "pollster",
-    "administered", "fieldwork date", "date",
-    "updated", "publication",
-    "sample size", "sample",
-    "lead", "majority",
-    "mode",
-}
-
-
-def is_party_column(header: str) -> bool:
-    return header.strip().lower() not in META_COLS
