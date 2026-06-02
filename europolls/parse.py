@@ -191,6 +191,46 @@ def _year_for_table(wikitext: str, table_start: int, fallback: int) -> int:
     return fallback
 
 
+# Section-heading patterns that indicate a polling subsection on an
+# election article. Used only when source_kind == "election_article" to
+# avoid sucking in results / candidate / nominee tables from the same
+# page. Match level 2-4 headings whose text contains 'poll' or 'opinion'.
+_POLLING_HEADING_RE = re.compile(
+    r"^(={2,4})\s*([^=\n]*?(?:[Oo]pinion poll|[Pp]olling|[Pp]olls|[Pp]oll)[^=\n]*?)\s*={2,4}\s*$",
+    re.MULTILINE,
+)
+_ANY_HEADING_RE = re.compile(r"^={2,4}\s*[^=\n]+?\s*={2,4}\s*$", re.MULTILINE)
+
+
+def _heading_depth(h: str) -> int:
+    """Number of leading '=' characters on a Wikipedia heading line."""
+    m = re.match(r"^(={2,4})", h)
+    return len(m.group(1)) if m else 2
+
+
+def _polling_section_spans(wikitext: str) -> list[tuple[int, int]]:
+    """Return a list of (start, end) byte ranges in wikitext that fall under a
+    polling-related section heading. Each range runs from the end of the
+    matched heading to the next heading at the same or shallower level.
+    Used only when reading an election-article fallback page.
+    """
+    if not _POLLING_HEADING_RE.search(wikitext):
+        return []
+    headings = list(_ANY_HEADING_RE.finditer(wikitext))
+    spans: list[tuple[int, int]] = []
+    for i, h in enumerate(headings):
+        if not _POLLING_HEADING_RE.match(wikitext, h.start()):
+            continue
+        depth = _heading_depth(h.group(0))
+        end = len(wikitext)
+        for h2 in headings[i + 1:]:
+            if _heading_depth(h2.group(0)) <= depth:
+                end = h2.start()
+                break
+        spans.append((h.end(), end))
+    return spans
+
+
 def parse_cycle(country: str, cycle: str, default_year: int, coalition_lc: set[str]) -> list[dict]:
     cycle_dir = RAW_ROOT / country / cycle
     wikitext = (cycle_dir / "article.wikitext").read_text()
@@ -199,13 +239,29 @@ def parse_cycle(country: str, cycle: str, default_year: int, coalition_lc: set[s
     article_revid = src_meta["revid"]
     article_lang = src_meta.get("lang", "en")
     article_url_rev = f"https://{article_lang}.wikipedia.org/w/index.php?oldid={article_revid}"
+    source_kind = src_meta.get("source_kind", "polling_article")
 
     parsed = wtp.parse(wikitext)
     out: list[dict] = []
     skipped_tables = 0
     skipped_rows = 0
 
+    # For election-article fallbacks, only consider wikitables that live
+    # inside a section whose heading mentions polls/polling. If no such
+    # section exists, no tables are emitted for this cycle.
+    polling_spans: list[tuple[int, int]] | None = None
+    if source_kind == "election_article":
+        polling_spans = _polling_section_spans(wikitext)
+        if not polling_spans:
+            print(f"  {country} {cycle:<10} (election-article fallback, no polling section found)")
+            return out
+
     for ti, table in enumerate(parsed.tables):
+        if polling_spans is not None:
+            ts = table.span[0]
+            if not any(s <= ts < e for s, e in polling_spans):
+                skipped_tables += 1
+                continue
         table_year = _year_for_table(wikitext, table.span[0], default_year)
         try:
             rows = table.data()

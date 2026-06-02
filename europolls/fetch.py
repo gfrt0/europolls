@@ -52,6 +52,23 @@ def _fetch_page(title: str, lang: str = "en") -> dict | None:
     return data["parse"]
 
 
+def _election_title_from(polling_title: str) -> str | None:
+    """Derive the election-article title from the dedicated polling title.
+
+    'Opinion polling for the 2016 Icelandic parliamentary election' →
+        '2016 Icelandic parliamentary election'
+    'Opinion polling for the next Polish parliamentary election' → None
+        (no election article yet for unscheduled future cycles).
+    """
+    prefix = "Opinion polling for the "
+    if not polling_title.startswith(prefix):
+        return None
+    rest = polling_title[len(prefix):]
+    if rest.startswith("next "):
+        return None
+    return rest
+
+
 def fetch_country(country: str, cycles: list[str], countries: dict | None = None) -> None:
     countries = countries or _load_countries()
     cfg = countries.get(country)
@@ -73,18 +90,37 @@ def fetch_country(country: str, cycles: list[str], countries: dict | None = None
         except Exception as e:
             print(f"  ! {cycle:<10} fetch failed for {title!r}: {e}")
             continue
+        source_kind = "polling_article"
+        used_title = title
+        if parse is None:
+            # Fallback: the dedicated polling article doesn't exist. Try the
+            # election article itself — many smaller cycles (e.g. IS 2016,
+            # CY 2016, LT, LU) host the polling table directly on the
+            # election page under an '== Opinion polls ==' section.
+            fb = _election_title_from(title)
+            if fb:
+                try:
+                    parse = _fetch_page(fb)
+                except Exception as e:
+                    print(f"  ! {cycle:<10} fallback fetch failed for {fb!r}: {e}")
+                    parse = None
+                if parse is not None:
+                    used_title = fb
+                    source_kind = "election_article"
         if parse is None:
             print(f"  ✗ {cycle:<10} no page found ({title})")
             continue
         wt = parse["wikitext"]
         (cycle_dir / "article.wikitext").write_text(wt)
         (cycle_dir / "source.json").write_text(json.dumps({
-            "title": title,
+            "title": used_title,
             "revid": parse["revid"],
             "fetched_iso": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
             "lang": "en",
+            "source_kind": source_kind,
         }, indent=2))
-        print(f"  ✓ {cycle:<10} {len(wt):>7} chars  revid={parse['revid']}  ({title})")
+        marker = "✓" if source_kind == "polling_article" else "↪"
+        print(f"  {marker} {cycle:<10} {len(wt):>7} chars  revid={parse['revid']}  ({used_title})")
         time.sleep(0.5)
 
 
