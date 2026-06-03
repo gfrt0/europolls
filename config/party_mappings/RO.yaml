@@ -96,9 +96,7 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Partidul Naţional Liberal — The 'BolojanPNL' label strongly suggests a connection
-    to the 'Partidul Naţional Liberal' (PNL), with 'Bolojan' likely referring to a
-    prominent figure within the party.
+  notes: Partidul Naţional Liberal — The 'BolojanPNL' label strongly suggests a connection to the 'Partidul Naţional Liberal' (PNL), with 'Bolojan' likely referring to a prominent figure within the party.
 - party_short: CDNPP
   partyfacts_id: 4002
   source: partyfacts_external
@@ -122,9 +120,7 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Partidul Naţional Liberal — The 'CiucuPNL' label strongly suggests a connection
-    to the 'Partidul Naţional Liberal' (PNL), with 'Ciucu' likely referring to a candidate
-    or faction within the party.
+  notes: Partidul Naţional Liberal — The 'CiucuPNL' label strongly suggests a connection to the 'Partidul Naţional Liberal' (PNL), with 'Ciucu' likely referring to a candidate or faction within the party.
 - party_short: CPR
   partyfacts_id: 5773
   source: partyfacts_external
@@ -142,16 +138,13 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Partidul Poporului – Dan Diaconescu — The party short label 'DanInd.' strongly
-    suggests a connection to 'Dan Diaconescu', which is present in the candidate list
-    as 'Partidul Poporului – Dan Diaconescu'.
+  notes: Partidul Poporului – Dan Diaconescu — The party short label 'DanInd.' strongly suggests a connection to 'Dan Diaconescu', which is present in the candidate list as 'Partidul Poporului – Dan Diaconescu'.
 - party_short: Disapproval
   partyfacts_id: null
   source: gemini_no_match
   confidence: null
   is_coalition: false
-  notes: The label 'Disapproval' does not correspond to any political party in the
-    provided list for Romania, and likely represents a sentiment rather than a party.
+  notes: The label 'Disapproval' does not correspond to any political party in the provided list for Romania, and likely represents a sentiment rather than a party.
 - party_short: DP
   partyfacts_id: 1715
   source: partyfacts_external
@@ -163,18 +156,13 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Alianţa România Dreaptă — The party short label 'DREPT' is a direct and strong
-    match for 'Alianţa România Dreaptă' (Right Romania Alliance), which has 'Dreaptă'
-    in its name and 'ARD' as its short label, indicating a clear connection.
+  notes: Alianţa România Dreaptă — The party short label 'DREPT' is a direct and strong match for 'Alianţa România Dreaptă' (Right Romania Alliance), which has 'Dreaptă' in its name and 'ARD' as its short label, indicating a clear connection.
 - party_short: DungaciuAUR
   partyfacts_id: 8983
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Alianșa pentru Unirea Românilor — The party label 'DungaciuAUR' clearly indicates
-    a connection to 'AUR', and the most recent and relevant 'AUR' entry is 'Alianșa
-    pentru Unirea Românilor' (ID 8983), which is active in 2024, aligning with the
-    poll date of 2026.
+  notes: Alianșa pentru Unirea Românilor — The party label 'DungaciuAUR' clearly indicates a connection to 'AUR', and the most recent and relevant 'AUR' entry is 'Alianșa pentru Unirea Românilor' (ID 8983), which is active in 2024, aligning with the poll date of 2026.
 - party_short: EMP
   partyfacts_id: 916
   source: partyfacts_external
@@ -240,9 +228,7 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Uniunea Salvați România — The 'USR' in 'FritzUSR' strongly suggests a direct
-    match to 'Uniunea Salvați România' (ID 5969), with 'Fritz' likely being a candidate's
-    name or a specific faction within the party.
+  notes: Uniunea Salvați România — The 'USR' in 'FritzUSR' strongly suggests a direct match to 'Uniunea Salvați România' (ID 5969), with 'Fritz' likely being a candidate's name or a specific faction within the party.
 - party_short: FRN
   partyfacts_id: 6767
   source: partyfacts_external
@@ -275,12 +261,12 @@ mappings:
   notes: ''
 - party_short: GavrilăPOT
   partyfacts_id: null
-  source: gemini_no_match
+  source: null
   confidence: null
   is_coalition: false
-  notes: The party abbreviation 'GavrilăPOT' does not match any of the provided Party
-    Facts entries for Romania, and appears to be a new or very minor party not yet
-    cataloged.
+  notes: '''GavrilăPOT'' — individual candidate column. Not party vote intention.'
+  drop: true
+  drop_reason: individual_candidate
 - party_short: GDC
   partyfacts_id: 477
   source: partyfacts_external
@@ -289,11 +275,12 @@ mappings:
   notes: ''
 - party_short: GeorgescuInd.
   partyfacts_id: null
-  source: gemini_no_match
+  source: null
   confidence: null
   is_coalition: false
-  notes: The label 'GeorgescuInd.' indicates an independent candidate named Georgescu,
-    which does not match any party in the provided Party Facts list.
+  notes: '''GeorgescuInd.'' — individual candidate column. Not party vote intention.'
+  drop: true
+  drop_reason: individual_candidate
 - party_short: GPMN
   partyfacts_id: 916
   source: partyfacts_external
@@ -305,9 +292,7 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Partidul Socialist Democrat — The label 'GrindeanuPSD' clearly indicates
-    a connection to the Social Democratic Party (PSD), with 'Grindeanu' likely referring
-    to a prominent figure within the party.
+  notes: Partidul Socialist Democrat — The label 'GrindeanuPSD' clearly indicates a connection to the Social Democratic Party (PSD), with 'Grindeanu' likely referring to a prominent figure within the party.
 - party_short: GRP
   partyfacts_id: 1305
   source: partyfacts_external
@@ -358,19 +343,18 @@ mappings:
   notes: ''
 - party_short: Is Romania going on a good path/direction?
   partyfacts_id: null
-  source: gemini_no_match
+  source: null
   confidence: null
   is_coalition: false
-  notes: The provided party short label is a question, not a party name or abbreviation,
-    and does not match any of the candidate Party Facts entries.
+  notes: '''Is Romania going on a good path/direction?'' — parse artifact column. Not party vote intention.'
+  drop: true
+  drop_reason: parse_artifact
 - party_short: KelemenUDMR
   partyfacts_id: 1105
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Uniunea Democrată Maghiară din România — The 'KelemenUDMR' label clearly
-    refers to the Democratic Union of Hungarians in Romania (UDMR), with Kelemen likely
-    being a prominent figure associated with the party.
+  notes: Uniunea Democrată Maghiară din România — The 'KelemenUDMR' label clearly refers to the Democratic Union of Hungarians in Romania (UDMR), with Kelemen likely being a prominent figure associated with the party.
 - party_short: LA
   partyfacts_id: 7161
   source: partyfacts_external
@@ -395,7 +379,6 @@ mappings:
   confidence: high
   is_coalition: false
   notes: 'Wikipedia article: ''The Right Alternative / M10''. Verified absent from Party Facts (no matching entry in core or external datasets). PF may add an id when next refreshed.'
-
 - party_short: MER
   partyfacts_id: 1511
   source: partyfacts_external
@@ -833,16 +816,13 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: PRO România — The party short label 'PontaPRO' strongly suggests a connection
-    to 'PRO România', especially given the common 'PRO' element and the name 'Ponta'
-    often associated with the party's founder, Victor Ponta.
+  notes: PRO România — The party short label 'PontaPRO' strongly suggests a connection to 'PRO România', especially given the common 'PRO' element and the name 'Ponta' often associated with the party's founder, Victor Ponta.
 - party_short: POT
   partyfacts_id: null
   source: verified_not_in_pf
   confidence: high
   is_coalition: false
   notes: 'Wikipedia article: ''Party of Young People''. Verified absent from Party Facts (no matching entry in core or external datasets). PF may add an id when next refreshed.'
-
 - party_short: PP
   partyfacts_id: 5449
   source: partyfacts_external
@@ -932,9 +912,7 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Partidul Național Liberal — The label 'PredoiuPNL' clearly indicates a candidate
-    from the National Liberal Party (PNL), which is a direct match to Party Facts
-    ID 481.
+  notes: Partidul Național Liberal — The label 'PredoiuPNL' clearly indicates a candidate from the National Liberal Party (PNL), which is a direct match to Party Facts ID 481.
 - party_short: PRM
   partyfacts_id: 1305
   source: partyfacts_external
@@ -1054,10 +1032,7 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: true
-  notes: Partidul Socialist Democrat — The label 'PSD–UNPR–PC' clearly indicates a
-    coalition, with PSD (Partidul Socialist Democrat) being the dominant party, and
-    UNPR (Uniunea Naţională pentru Progresul României) and PC (Partidul Conservator)
-    as junior partners, all of which are present in the candidate list.
+  notes: Partidul Socialist Democrat — The label 'PSD–UNPR–PC' clearly indicates a coalition, with PSD (Partidul Socialist Democrat) being the dominant party, and UNPR (Uniunea Naţională pentru Progresul României) and PC (Partidul Conservator) as junior partners, all of which are present in the candidate list.
 - party_short: PSM
   partyfacts_id: 1217
   source: partyfacts_external
@@ -1202,22 +1177,18 @@ mappings:
   confidence: high
   is_coalition: false
   notes: 'Wikipedia article: ''Health Education Nature Sustainability Party''. Verified absent from Party Facts (no matching entry in core or external datasets). PF may add an id when next refreshed.'
-
 - party_short: SimionAUR
   partyfacts_id: 8983
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Alianța pentru Unirea Românilor — The 'SimionAUR' label directly incorporates
-    'AUR', and Party Facts ID 8983 'Alianța pentru Unirea Românilor' is a recent and
-    active party with 'AUR' in its short label, making it the most direct match.
+  notes: Alianța pentru Unirea Românilor — The 'SimionAUR' label directly incorporates 'AUR', and Party Facts ID 8983 'Alianța pentru Unirea Românilor' is a recent and active party with 'AUR' in its short label, making it the most direct match.
 - party_short: SOS
   partyfacts_id: null
   source: verified_not_in_pf
   confidence: high
   is_coalition: false
   notes: 'Wikipedia article: ''S.O.S. Romania''. Verified absent from Party Facts (no matching entry in core or external datasets). PF may add an id when next refreshed.'
-
 - party_short: UDM / UDMR / UNDR
   partyfacts_id: 1105
   source: partyfacts_external
@@ -1322,8 +1293,9 @@ mappings:
   notes: ''
 - party_short: ȘoșoacăSOS
   partyfacts_id: null
-  source: gemini_no_match
+  source: null
   confidence: null
   is_coalition: false
-  notes: The party 'SOS România' (S.O.S. Romania) is a new party founded in 2022 by
-    Diana Iovanovici Șoșoacă, and is not present in the provided Party Facts entries.
+  notes: '''ȘoșoacăSOS'' — individual candidate column. Not party vote intention.'
+  drop: true
+  drop_reason: individual_candidate

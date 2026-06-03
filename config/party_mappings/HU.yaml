@@ -45,11 +45,12 @@ mappings:
   notes: ''
 - party_short: Botka
   partyfacts_id: null
-  source: gemini_no_match
+  source: null
   confidence: null
   is_coalition: false
-  notes: The label 'Botka' refers to a candidate, not a party, and there is no clear
-    party suffix to match to a Party Facts ID.
+  notes: '''Botka'' — individual candidate column. Not party vote intention.'
+  drop: true
+  drop_reason: individual_candidate
 - party_short: CEN
   partyfacts_id: 1779
   source: partyfacts_external
@@ -85,9 +86,7 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Párbeszéd — The partyfacts entry with ID 3115 has 'Párbeszéd' as its name
-    and 'Dialogue' as its English name, which is a direct match to the provided party-short
-    label.
+  notes: Párbeszéd — The partyfacts entry with ID 3115 has 'Párbeszéd' as its name and 'Dialogue' as its English name, which is a direct match to the provided party-short label.
 - party_short: DK
   partyfacts_id: 469
   source: partyfacts_external
@@ -105,9 +104,7 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Demokratikus Koalícío — Klara Dobrev is a prominent politician and MEP from
-    the Democratic Coalition (DK) party in Hungary. The polling data likely refers
-    to her as a leading figure of the party.
+  notes: Demokratikus Koalícío — Klara Dobrev is a prominent politician and MEP from the Democratic Coalition (DK) party in Hungary. The polling data likely refers to her as a leading figure of the party.
 - party_short: E14
   partyfacts_id: 2458
   source: partyfacts_external
@@ -125,10 +122,7 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: true
-  notes: Együtt 2014 – Párbeszéd Magyarországért Választási Szövetség — The partyfacts
-    entry 2458 'E14-PM' directly matches the provided short label 'E14–PM' and its
-    name 'Együtt 2014 – Párbeszéd Magyarországért Választási Szövetség' indicates
-    it is an electoral alliance, consistent with the polling context dates.
+  notes: Együtt 2014 – Párbeszéd Magyarországért Választási Szövetség — The partyfacts entry 2458 'E14-PM' directly matches the provided short label 'E14–PM' and its name 'Együtt 2014 – Párbeszéd Magyarországért Választási Szövetség' indicates it is an electoral alliance, consistent with the polling context dates.
 - party_short: EBP
   partyfacts_id: 7419
   source: partyfacts_external
@@ -171,7 +165,6 @@ mappings:
   confidence: high
   is_coalition: false
   notes: 'Wikipedia article: ''United for Hungary''. Verified absent from Party Facts (no matching entry in core or external datasets). PF may add an id when next refreshed.'
-
 - party_short: EP
   partyfacts_id: 5126
   source: partyfacts_external
@@ -207,9 +200,7 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Momentum Mozgalom — András Fekete-Győr is a prominent leader of the Momentum
-    Movement, and the polling data aligns with the party's performance during the
-    specified period.
+  notes: Momentum Mozgalom — András Fekete-Győr is a prominent leader of the Momentum Movement, and the polling data aligns with the party's performance during the specified period.
 - party_short: Fi+KDNP
   partyfacts_id: 6366
   source: partyfacts_external
@@ -377,9 +368,7 @@ mappings:
   source: gemini_no_match
   confidence: null
   is_coalition: false
-  notes: The party short label 'Fodor' does not match any of the provided Party Facts
-    entries for Hungary, and there is no clear indication of a party with this name
-    or a similar abbreviation in the list.
+  notes: The party short label 'Fodor' does not match any of the provided Party Facts entries for Hungary, and there is no clear indication of a party with this name or a similar abbreviation in the list.
 - party_short: FP
   partyfacts_id: 6815
   source: partyfacts_external
@@ -391,9 +380,7 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Demokratikus Koalícío — Ferenc Gyurcsány is the leader of the Democratic
-    Coalition (DK), and the polling data aligns with DK's performance in the given
-    period.
+  notes: Demokratikus Koalícío — Ferenc Gyurcsány is the leader of the Democratic Coalition (DK), and the polling data aligns with DK's performance in the given period.
 - party_short: HDF
   partyfacts_id: 1697
   source: partyfacts_external
@@ -417,17 +404,13 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Magyar Szocialista Párt — The Party Facts entry with ID 1408 directly matches
-    the English name 'Hungarian Socialist Party' and the Hungarian name 'Magyar Szocialista
-    Párt', which is a direct translation of the provided party-short label.
+  notes: Magyar Szocialista Párt — The Party Facts entry with ID 1408 directly matches the English name 'Hungarian Socialist Party' and the Hungarian name 'Magyar Szocialista Párt', which is a direct translation of the provided party-short label.
 - party_short: Hungarian Socialist Party Dialogue
   partyfacts_id: 3948
   source: gemini_high
   confidence: high
   is_coalition: true
-  notes: Magyar Szocialista Párt — The party label 'Hungarian Socialist Party Dialogue'
-    directly matches the Party Facts entry 'MSZP+P (-2020)' with the English name
-    'Hungarian Socialist Party + Dialogue', indicating a coalition.
+  notes: Magyar Szocialista Párt — The party label 'Hungarian Socialist Party Dialogue' directly matches the Party Facts entry 'MSZP+P (-2020)' with the English name 'Hungarian Socialist Party + Dialogue', indicating a coalition.
 - party_short: HVK
   partyfacts_id: 1323
   source: partyfacts_external
@@ -469,16 +452,13 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: independent (Independent) — The partyfacts entry with ID 2719 explicitly
-    states 'independent (Independent)' which is a direct match for 'Independent'.
+  notes: independent (Independent) — The partyfacts entry with ID 2719 explicitly states 'independent (Independent)' which is a direct match for 'Independent'.
 - party_short: Jakab
   partyfacts_id: 42
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Jobbik Magyarországért Mozgalom — Péter Jakab was the leader of Jobbik from
-    2020 to 2022, and the polling data falls within this period, indicating 'Jakab'
-    refers to Jobbik.
+  notes: Jobbik Magyarországért Mozgalom — Péter Jakab was the leader of Jobbik from 2020 to 2022, and the polling data falls within this period, indicating 'Jakab' refers to Jobbik.
 - party_short: JOB
   partyfacts_id: 42
   source: partyfacts_external
@@ -514,9 +494,7 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Párbeszéd — Gergely Karácsony is a prominent figure and co-leader of the
-    Párbeszéd party, making it the most likely match for the 'Karácsony' label in
-    Hungarian polls.
+  notes: Párbeszéd — Gergely Karácsony is a prominent figure and co-leader of the Párbeszéd party, making it the most likely match for the 'Karácsony' label in Hungarian polls.
 - party_short: KDNP
   partyfacts_id: 1412
   source: partyfacts_external
@@ -564,8 +542,7 @@ mappings:
   source: gemini_no_match
   confidence: null
   is_coalition: false
-  notes: The label 'Left, Liberal' is a generic ideological description and does not
-    directly correspond to any specific party in the provided list of Hungarian parties.
+  notes: The label 'Left, Liberal' is a generic ideological description and does not directly correspond to any specific party in the provided list of Hungarian parties.
 - party_short: LMP
   partyfacts_id: 1650
   source: partyfacts_external
@@ -595,9 +572,7 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: true
-  notes: Fidesz - Magyar Polgári Szövetség / Kereszténydemokrata Néppárt — The polling
-    data shows a very high vote share, which is consistent with the Fidesz-KDNP alliance,
-    and 'Magyar' is part of Fidesz's full name.
+  notes: Fidesz - Magyar Polgári Szövetség / Kereszténydemokrata Néppárt — The polling data shows a very high vote share, which is consistent with the Fidesz-KDNP alliance, and 'Magyar' is part of Fidesz's full name.
 - party_short: MDF
   partyfacts_id: 1697
   source: partyfacts_external
@@ -825,9 +800,7 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Mindenki Magyarországa Mozgalom — Márki-Zay is the surname of Péter Márki-Zay,
-    the leader of the Mindenki Magyarországa Mozgalom (Everybody's Hungary Movement),
-    which is a direct match to Party Facts ID 2721.
+  notes: Mindenki Magyarországa Mozgalom — Márki-Zay is the surname of Péter Márki-Zay, the leader of the Mindenki Magyarországa Mozgalom (Everybody's Hungary Movement), which is a direct match to Party Facts ID 2721.
 - party_short: NEP
   partyfacts_id: 6029
   source: partyfacts_external
@@ -839,9 +812,7 @@ mappings:
   source: gemini_no_match
   confidence: null
   is_coalition: false
-  notes: The party short label 'Net' does not match any of the provided Party Facts
-    entries for Hungary, and the polling context does not provide enough information
-    to infer a match.
+  notes: The party short label 'Net' does not match any of the provided Party Facts entries for Hungary, and the polling context does not provide enough information to infer a match.
 - party_short: NMP
   partyfacts_id: 6819
   source: partyfacts_external
@@ -913,9 +884,7 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: true
-  notes: Fidesz - Magyar Polgári Szövetség / Kereszténydemokrata Néppárt — 'Orbán'
-    refers to Viktor Orbán, the leader of the Fidesz-KDNP coalition, which is the
-    dominant political force in Hungary and aligns with the provided polling data.
+  notes: Fidesz - Magyar Polgári Szövetség / Kereszténydemokrata Néppárt — 'Orbán' refers to Viktor Orbán, the leader of the Fidesz-KDNP coalition, which is the dominant political force in Hungary and aligns with the provided polling data.
 - party_short: Other
   partyfacts_id: 1843
   source: partyfacts_external
@@ -927,16 +896,13 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: '- (Other) — The label ''Other / Don''t Know'' directly corresponds to the
-    Party Facts entry for ''Other'' with a short label of ''Other''.'
+  notes: '- (Other) — The label ''Other / Don''t Know'' directly corresponds to the Party Facts entry for ''Other'' with a short label of ''Other''.'
 - party_short: Other/Don't Know
   partyfacts_id: 1843
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Other — The label 'Other/Don't Know' directly corresponds to the Party Facts
-    entry for 'Other' (id=1843), which is a common category for miscellaneous or undecided
-    votes in polls.
+  notes: Other — The label 'Other/Don't Know' directly corresponds to the Party Facts entry for 'Other' (id=1843), which is a common category for miscellaneous or undecided votes in polls.
 - party_short: Others
   partyfacts_id: 1843
   source: partyfacts_external
@@ -954,9 +920,7 @@ mappings:
   source: manual_review
   confidence: high
   is_coalition: false
-  notes: Párbeszéd Magyarországért (Dialogue for Hungary), 2013-, PF id 3115.
-    Single-letter ballot label 'P'; confirmed via raw wikitext context grep
-    surfacing Párbeszéd alongside Jobbik and DK in 2018-2022 polls.
+  notes: Párbeszéd Magyarországért (Dialogue for Hungary), 2013-, PF id 3115. Single-letter ballot label 'P'; confirmed via raw wikitext context grep surfacing Párbeszéd alongside Jobbik and DK in 2018-2022 polls.
 - party_short: PDP
   partyfacts_id: 7256
   source: partyfacts_external
@@ -992,8 +956,7 @@ mappings:
   source: gemini_no_match
   confidence: null
   is_coalition: false
-  notes: The party label 'someone else' is a generic placeholder and does not correspond
-    to any specific party in the provided list.
+  notes: The party label 'someone else' is a generic placeholder and does not correspond to any specific party in the provided list.
 - party_short: SP
   partyfacts_id: 6813
   source: partyfacts_external
@@ -1023,10 +986,7 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Lehet Más a Politika — The party 'Lehet Más a Politika' (LMP) is commonly
-    referred to as 'LMP' or 'Szél' in Hungarian political discourse, with 'Szél' being
-    a direct reference to its co-chair and prominent figure, Bernadett Szél, during
-    the period of the polling data.
+  notes: Lehet Más a Politika — The party 'Lehet Más a Politika' (LMP) is commonly referred to as 'LMP' or 'Szél' in Hungarian political discourse, with 'Szél' being a direct reference to its co-chair and prominent figure, Bernadett Szél, during the period of the polling data.
 - party_short: tech
   partyfacts_id: 3032
   source: partyfacts_external
@@ -1035,20 +995,16 @@ mappings:
   notes: ''
 - party_short: TISZA
   partyfacts_id: null
-  source: gemini_no_match
-  confidence: null
+  source: verified_not_in_pf
+  confidence: high
   is_coalition: false
-  notes: The party 'TISZA' is not present in the provided list of candidate Party
-    Facts entries for Hungary.
+  notes: Tisztelet és Szabadság Pártja (Respect and Freedom Party), 2024-, Magyar Péter's party. Not yet in Party Facts.
 - party_short: Together
   partyfacts_id: 2458
   source: gemini_high
   confidence: high
   is_coalition: true
-  notes: Együtt 2014 – Párbeszéd Magyarországért Választási Szövetség — The partyfacts
-    entry 2458 'Együtt 2014 – Párbeszéd Magyarországért Választási Szövetség' directly
-    translates to 'Together 2014 -Dialogue for Hungary Electoral Alliance', which
-    is a perfect semantic match for 'Together' and aligns with the polling dates.
+  notes: Együtt 2014 – Párbeszéd Magyarországért Választási Szövetség — The partyfacts entry 2458 'Együtt 2014 – Párbeszéd Magyarországért Választási Szövetség' directly translates to 'Together 2014 -Dialogue for Hungary Electoral Alliance', which is a perfect semantic match for 'Together' and aligns with the polling dates.
 - party_short: UDNP
   partyfacts_id: 1412
   source: partyfacts_external
@@ -1084,19 +1040,16 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Jobbik Magyarországért Mozgalom — Gábor Vona was the leader of Jobbik, and
-    the polling data aligns with Jobbik's performance during that period.
+  notes: Jobbik Magyarországért Mozgalom — Gábor Vona was the leader of Jobbik, and the polling data aligns with Jobbik's performance during that period.
 - party_short: VP
   partyfacts_id: 184
   source: partyfacts_external
   confidence: null
   is_coalition: false
   notes: ''
-- party_short: Would You rather have Péter Márki-Zay or someone else become the Prime
-    Minister of Hungary?
+- party_short: Would You rather have Péter Márki-Zay or someone else become the Prime Minister of Hungary?
   partyfacts_id: 2721
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Mindenki Magyarországa Mozgalom — Péter Márki-Zay is the leader of the Mindenki
-    Magyarországa Mozgalom (Everybody's Hungary Movement), making this a direct match.
+  notes: Mindenki Magyarországa Mozgalom — Péter Márki-Zay is the leader of the Mindenki Magyarországa Mozgalom (Everybody's Hungary Movement), making this a direct match.

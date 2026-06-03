@@ -75,10 +75,12 @@ mappings:
   notes: The abbreviation 'AWP' does not match any of the provided Party Facts entries for the UK, and the 2019 general election vote share of 1.1% suggests it is a distinct, albeit minor, party not listed.
 - party_short: BGPV
   partyfacts_id: null
-  source: gemini_no_match
+  source: null
   confidence: null
   is_coalition: false
-  notes: The abbreviation 'BGPV' does not match any of the provided Party Facts entries for the UK, and the polling context does not offer enough information to infer a match.
+  notes: '''BGPV'' — parse artifact column. Not party vote intention.'
+  drop: true
+  drop_reason: parse_artifact
 - party_short: Birkenhead Social Justice
   partyfacts_id: 2966
   source: partyfacts_external

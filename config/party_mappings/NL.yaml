@@ -30,9 +30,7 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: 50Plus — The party short label '50 Plus' is an exact match to the Party Facts
-    entry for '50PLUS' (id=714), and the polling dates fall within the party's active
-    period.
+  notes: 50Plus — The party short label '50 Plus' is an exact match to the Party Facts entry for '50PLUS' (id=714), and the polling dates fall within the party's active period.
 - party_short: 50+
   partyfacts_id: 714
   source: partyfacts_external
@@ -254,15 +252,13 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Beweging DENK — The partyfacts entry with ID 5856 has the short label 'DENK'
-    and the name 'Beweging DENK', which is a direct and strong match for 'Denk'.
+  notes: Beweging DENK — The partyfacts entry with ID 5856 has the short label 'DENK' and the name 'Beweging DENK', which is a direct and strong match for 'Denk'.
 - party_short: DNA
   partyfacts_id: null
   source: gemini_no_match
   confidence: null
   is_coalition: false
-  notes: The abbreviation 'DNA' does not match any of the provided Party Facts entries
-    for the Netherlands.
+  notes: The abbreviation 'DNA' does not match any of the provided Party Facts entries for the Netherlands.
 - party_short: DS
   partyfacts_id: 921
   source: partyfacts_external
@@ -383,7 +379,6 @@ mappings:
   confidence: high
   is_coalition: false
   notes: 'Wikipedia article: ''GroenLinks–Labour Party''. Verified absent from Party Facts (no matching entry in core or external datasets). PF may add an id when next refreshed.'
-
 - party_short: GPV
   partyfacts_id: 1602
   source: partyfacts_external
@@ -551,9 +546,7 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: other — The label 'Oth.Mostly Pirate Party, Denk, VNL, FvD and sometimes
-    undefined' clearly indicates a collection of 'other' parties, making Party Facts
-    ID 1850 ('other') the best match.
+  notes: other — The label 'Oth.Mostly Pirate Party, Denk, VNL, FvD and sometimes undefined' clearly indicates a collection of 'other' parties, making Party Facts ID 1850 ('other') the best match.
 - party_short: Other
   partyfacts_id: 1850
   source: partyfacts_external
@@ -607,15 +600,13 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Nieuw Sociaal Contract — The 'Pieter Omtzigt List' is the informal name for
-    the 'Nieuw Sociaal Contract' party, founded by Pieter Omtzigt in 2023, which is
-    a direct match to Party Facts ID 9348.
+  notes: Nieuw Sociaal Contract — The 'Pieter Omtzigt List' is the informal name for the 'Nieuw Sociaal Contract' party, founded by Pieter Omtzigt in 2023, which is a direct match to Party Facts ID 9348.
 - party_short: Pirate
   partyfacts_id: null
-  source: gemini_no_match
-  confidence: null
+  source: verified_not_in_pf
+  confidence: high
   is_coalition: false
-  notes: There is no Party Facts entry that matches 'Pirate'.
+  notes: Piratenpartij (Pirate Party Netherlands), 2006-. Not in Party Facts core (pf=2841 in PF for NL is the 1-percent technical placeholder).
 - party_short: PP
   partyfacts_id: 2841
   source: partyfacts_external

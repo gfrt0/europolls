@@ -183,11 +183,12 @@ mappings:
   notes: ''
 - party_short: Independents
   partyfacts_id: null
-  source: gemini_no_match
+  source: null
   confidence: null
   is_coalition: false
-  notes: The label 'Independents' refers to candidates not affiliated with any party,
-    and thus cannot be matched to a specific Party Facts ID.
+  notes: '''Independents'' — individual candidate column. Not party vote intention.'
+  drop: true
+  drop_reason: individual_candidate
 - party_short: JL
   partyfacts_id: 1026
   source: partyfacts_external
@@ -505,9 +506,7 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Lietuvos lenkų rinkimų akcija — The party short label 'LLRA−KŠS' is a direct
-    match to 'LLRA' (Election Action of Lithuania's Poles) with an added suffix, indicating
-    it is likely the same party or a close variant.
+  notes: Lietuvos lenkų rinkimų akcija — The party short label 'LLRA−KŠS' is a direct match to 'LLRA' (Election Action of Lithuania's Poles) with an added suffix, indicating it is likely the same party or a close variant.
 - party_short: LLS
   partyfacts_id: 1357
   source: partyfacts_external
@@ -717,9 +716,7 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Lietuvos žalioji partija — The abbreviation 'LŽP' directly matches the short
-    label 'LZP' for 'Lietuvos žalioji partija' (Lithuanian Green Party) in the Party
-    Facts data, and the timeframes align with the polling data.
+  notes: Lietuvos žalioji partija — The abbreviation 'LŽP' directly matches the short label 'LZP' for 'Lietuvos žalioji partija' (Lithuanian Green Party) in the Party Facts data, and the timeframes align with the polling data.
 - party_short: MKDS
   partyfacts_id: 8392
   source: partyfacts_external
@@ -804,7 +801,6 @@ mappings:
   confidence: high
   is_coalition: false
   notes: 'Wikipedia article: ''Dawn of Nemunas''. Verified absent from Party Facts (no matching entry in core or external datasets). PF may add an id when next refreshed.'
-
 - party_short: PTIT
   partyfacts_id: 237
   source: partyfacts_external
@@ -990,9 +986,7 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Tėvynės sąjunga — The abbreviation 'TS–LKD' strongly matches 'TS-LK' (Tėvynės
-    sąjunga / Homeland Union) from the candidate list, with 'LKD' likely referring
-    to the Lithuanian Christian Democrats, which merged with Homeland Union in 2008.
+  notes: Tėvynės sąjunga — The abbreviation 'TS–LKD' strongly matches 'TS-LK' (Tėvynės sąjunga / Homeland Union) from the candidate list, with 'LKD' likely referring to the Lithuanian Christian Democrats, which merged with Homeland Union in 2008.
 - party_short: TT
   partyfacts_id: 237
   source: partyfacts_external

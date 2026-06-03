@@ -1165,10 +1165,10 @@ mappings:
   notes: ''
 - party_short: Stačilo!
   partyfacts_id: null
-  source: gemini_no_match
-  confidence: null
+  source: verified_not_in_pf
+  confidence: high
   is_coalition: false
-  notes: The party 'Stačilo!' is not present in the provided list of Party Facts entries for the Czech Republic.
+  notes: Stačilo! (Enough!), 2024- Czech left-wing electoral coalition (KSČM+SOCDEM successors). Not yet in Party Facts.
 - party_short: STRANA ZELENYCH
   partyfacts_id: 1554
   source: partyfacts_external

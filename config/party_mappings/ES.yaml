@@ -36,7 +36,7 @@ mappings:
   source: verified_not_in_pf
   confidence: high
   is_coalition: false
-  notes: 'Adelante Andalucía (2021-), Andalusian left coalition (Anticapitalistas-led splinter from the 2018 Podemos-IU bloc). Not in Party Facts.'
+  notes: Adelante Andalucía (2021-), Andalusian left coalition (Anticapitalistas-led splinter from the 2018 Podemos-IU bloc). Not in Party Facts.
 - party_short: Ag
   partyfacts_id: 4599
   source: partyfacts_external
@@ -96,10 +96,7 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: true
-  notes: Euskal Herria Bildu — The label 'AmaiurEH Bildu' directly combines 'Amaiur'
-    and 'EH Bildu', and 'Euskal Herria Bildu' (ID 5668) is a strong match for 'EH
-    Bildu' and has a relevant date range, while 'Amaiur' (ID 1671) is also present
-    as a separate entity, indicating a likely coalition or evolution.
+  notes: Euskal Herria Bildu — The label 'AmaiurEH Bildu' directly combines 'Amaiur' and 'EH Bildu', and 'Euskal Herria Bildu' (ID 5668) is a strong match for 'EH Bildu' and has a relevant date range, while 'Amaiur' (ID 1671) is also present as a separate entity, indicating a likely coalition or evolution.
 - party_short: AN
   partyfacts_id: 7464
   source: partyfacts_external
@@ -195,8 +192,7 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Partido Popular — José María Aznar was a prominent leader of the Partido
-    Popular (PP), making 'Aznar's party' a direct reference to the PP.
+  notes: Partido Popular — José María Aznar was a prominent leader of the Partido Popular (PP), making 'Aznar's party' a direct reference to the PP.
 - party_short: Bai
   partyfacts_id: 611
   source: partyfacts_external
@@ -247,12 +243,10 @@ mappings:
   notes: ''
 - party_short: C'sPodemos
   partyfacts_id: null
-  source: gemini_no_match
-  confidence: null
+  source: verified_not_in_pf
+  confidence: high
   is_coalition: false
-  notes: The label 'C'sPodemos' appears to be a combination of 'Ciudadanos' (C's)
-    and 'Podemos', indicating a coalition or alliance that is not explicitly listed
-    in the provided Party Facts entries as a single entity.
+  notes: Ciudadanos+Podemos coalition-preference column. No PF coalition-level id.
 - party_short: C-NE
   partyfacts_id: 2539
   source: partyfacts_external
@@ -300,8 +294,7 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Coalición Canaria — The abbreviation 'CCa' is a direct match for 'Coalición
-    Canaria' (Party Facts ID 81), which is a well-known party in Spain.
+  notes: Coalición Canaria — The abbreviation 'CCa' is a direct match for 'Coalición Canaria' (Party Facts ID 81), which is a well-known party in Spain.
 - party_short: Cca-PNC
   partyfacts_id: 81
   source: partyfacts_external
@@ -319,9 +312,7 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: true
-  notes: Coalición Canaria — The abbreviation 'CC–NCa' clearly indicates a coalition
-    led by Coalición Canaria (CC), which is present in the candidate list with ID
-    81.
+  notes: Coalición Canaria — The abbreviation 'CC–NCa' clearly indicates a coalition led by Coalición Canaria (CC), which is present in the candidate list with ID 81.
 - party_short: CD
   partyfacts_id: 4019
   source: partyfacts_external
@@ -339,9 +330,7 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Convergència Democràtica | Junts per Catalunya — The abbreviation 'CDCDiL'
-    strongly suggests 'Convergència Democràtica de Catalunya' (CDC), which is part
-    of the Party Facts entry 4795 'Convergència Democràtica | Junts per Catalunya'.
+  notes: Convergència Democràtica | Junts per Catalunya — The abbreviation 'CDCDiL' strongly suggests 'Convergència Democràtica de Catalunya' (CDC), which is part of the Party Facts entry 4795 'Convergència Democràtica | Junts per Catalunya'.
 - party_short: CDC|JxCat
   partyfacts_id: 4795
   source: partyfacts_external
@@ -539,10 +528,7 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Converg&#232;ncia Democr&#224;tica | Junts per Catalunya — The abbreviation
-    'DiL CDC' directly matches 'CDC' in the Party Facts entry for 'Converg&#232;ncia
-    Democr&#224;tica | Junts per Catalunya', and the timeframes align with the polling
-    data.
+  notes: Converg&#232;ncia Democr&#224;tica | Junts per Catalunya — The abbreviation 'DiL CDC' directly matches 'CDC' in the Party Facts entry for 'Converg&#232;ncia Democr&#224;tica | Junts per Catalunya', and the timeframes align with the polling data.
 - party_short: DL
   partyfacts_id: 4019
   source: partyfacts_external
@@ -569,10 +555,10 @@ mappings:
   notes: ''
 - party_short: E+
   partyfacts_id: null
-  source: gemini_no_match
-  confidence: null
+  source: verified_not_in_pf
+  confidence: high
   is_coalition: false
-  notes: No clear match for 'E+' in the provided Party Facts entries.
+  notes: España Vaciada+ (Empty Spain expansion). Not in PF.
 - party_short: EA
   partyfacts_id: 1324
   source: partyfacts_external
@@ -740,22 +726,19 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: true
-  notes: Esquerra Republicana de Catalunya — ERC–CatSí is a coalition led by Esquerra
-    Republicana de Catalunya (ERC), which is a direct match to Party Facts ID 848.
+  notes: Esquerra Republicana de Catalunya — ERC–CatSí is a coalition led by Esquerra Republicana de Catalunya (ERC), which is a direct match to Party Facts ID 848.
 - party_short: ERC–Sobiranistes
   partyfacts_id: 848
   source: gemini_high
   confidence: high
   is_coalition: true
-  notes: Esquerra Republicana de Catalunya — ERC is the dominant party in the 'ERC–Sobiranistes'
-    coalition, and its ID is available in the candidate list.
+  notes: Esquerra Republicana de Catalunya — ERC is the dominant party in the 'ERC–Sobiranistes' coalition, and its ID is available in the candidate list.
 - party_short: Errejón's party
   partyfacts_id: 8395
   source: gemini_high
   confidence: high
   is_coalition: true
-  notes: Más País-Equo — Errejón's party refers to Más País, which often ran in coalition
-    with Equo, and the polling data aligns with the timeframe of Más País's activity.
+  notes: Más País-Equo — Errejón's party refers to Más País, which often ran in coalition with Equo, and the polling data aligns with the timeframe of Más País's activity.
 - party_short: etc
   partyfacts_id: 1839
   source: partyfacts_external
@@ -767,8 +750,7 @@ mappings:
   source: verified_not_in_pf
   confidence: high
   is_coalition: false
-  notes: 'España Vaciada / Empty Spain (Revuelta de la España Vaciada), 2023-. Not
-    in Party Facts. Confirmed via wikitext: [[File:Revuelta de la España Vaciada.png|link=Empty Spain|EV]].'
+  notes: 'España Vaciada / Empty Spain (Revuelta de la España Vaciada), 2023-. Not in Party Facts. Confirmed via wikitext: [[File:Revuelta de la España Vaciada.png|link=Empty Spain|EV]].'
 - party_short: FAC
   partyfacts_id: 9087
   source: partyfacts_external
@@ -1074,16 +1056,13 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: true
-  notes: Partido Communista | Izquierda Unida — IU–LV is a coalition, with IU (Izquierda
-    Unida) being the dominant member, which is represented by Party Facts ID 247 (PCE|IU).
+  notes: Partido Communista | Izquierda Unida — IU–LV is a coalition, with IU (Izquierda Unida) being the dominant member, which is represented by Party Facts ID 247 (PCE|IU).
 - party_short: IU–UPeC
   partyfacts_id: 247
   source: gemini_high
   confidence: high
   is_coalition: true
-  notes: Partido Communista | Izquierda Unida — The abbreviation 'IU–UPeC' strongly
-    suggests 'Izquierda Unida' (IU) and 'Unidad Popular en Comú' (UPeC), with IU being
-    the dominant and historically significant party, matching Party Facts ID 247.
+  notes: Partido Communista | Izquierda Unida — The abbreviation 'IU–UPeC' strongly suggests 'Izquierda Unida' (IU) and 'Unidad Popular en Comú' (UPeC), with IU being the dominant and historically significant party, matching Party Facts ID 247.
 - party_short: JUNTS
   partyfacts_id: 7421
   source: partyfacts_external
@@ -1095,9 +1074,7 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Junts per Catalunya — The party short label 'Junts' directly matches 'Junts
-    per Catalunya' (ID 7421) which is also known as 'Together for Catalonia' and has
-    a relevant date range.
+  notes: Junts per Catalunya — The party short label 'Junts' directly matches 'Junts per Catalunya' (ID 7421) which is also known as 'Together for Catalonia' and has a relevant date range.
 - party_short: JuntsxCat
   partyfacts_id: 7421
   source: partyfacts_external
@@ -1127,9 +1104,7 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Junts per Catalunya — The party short label 'JxCatJunts' is a direct match
-    to 'JuntsxCat' (Junts per Catalunya) in the Party Facts entries, which is a common
-    abbreviation for the party.
+  notes: Junts per Catalunya — The party short label 'JxCatJunts' is a direct match to 'JuntsxCat' (Junts per Catalunya) in the Party Facts entries, which is a common abbreviation for the party.
 - party_short: L
   partyfacts_id: 366
   source: partyfacts_external
@@ -1153,9 +1128,7 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Partido Communista | Izquierda Unida — The term 'Left' in Spanish politics
-    often refers to Izquierda Unida (United Left), which is represented by Party Facts
-    ID 247, and the polling data aligns with a significant left-wing party.
+  notes: Partido Communista | Izquierda Unida — The term 'Left' in Spanish politics often refers to Izquierda Unida (United Left), which is represented by Party Facts ID 247, and the polling data aligns with a significant left-wing party.
 - party_short: Left Alliance
   partyfacts_id: 4019
   source: partyfacts_external
@@ -1221,10 +1194,7 @@ mappings:
   source: verified_not_in_pf
   confidence: high
   is_coalition: true
-  notes: Navarra Suma (NA+) electoral coalition of UPN + PP + Ciudadanos for Navarra,
-    2019-. PF has no coalition-level id; dominant member UPN (pf 722) is recoverable
-    via the YAML notes but not exposed in partyfacts_id to avoid silently
-    overcounting UPN on downstream joins.
+  notes: Navarra Suma (NA+) electoral coalition of UPN + PP + Ciudadanos for Navarra, 2019-. PF has no coalition-level id; dominant member UPN (pf 722) is recoverable via the YAML notes but not exposed in partyfacts_id to avoid silently overcounting UPN on downstream joins.
 - party_short: Na+
   partyfacts_id: 4019
   source: partyfacts_external
@@ -1284,16 +1254,13 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Other parties — The party short label 'Other/None' directly matches the Party
-    Facts entry for 'Other parties' (id=1839).
+  notes: Other parties — The party short label 'Other/None' directly matches the Party Facts entry for 'Other parties' (id=1839).
 - party_short: Other/None/Not care
   partyfacts_id: 1839
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Other parties — The label 'Other/None/Not care' directly corresponds to the
-    'Other parties' entry in Party Facts, which is a common category for miscellaneous
-    votes.
+  notes: Other parties — The label 'Other/None/Not care' directly corresponds to the 'Other parties' entry in Party Facts, which is a common category for miscellaneous votes.
 - party_short: Others/Indep.
   partyfacts_id: 1839
   source: partyfacts_external
@@ -1413,10 +1380,7 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: true
-  notes: Convergència Democràtica | Junts per Catalunya — The party short label 'PDeCATJxCat'
-    is a clear combination of 'PDeCAT' and 'JxCat', which directly matches the 'CDC|JxCat'
-    entry (ID 4795) in Party Facts, indicating a coalition or evolution between these
-    two entities.
+  notes: Convergència Democràtica | Junts per Catalunya — The party short label 'PDeCATJxCat' is a clear combination of 'PDeCAT' and 'JxCat', which directly matches the 'CDC|JxCat' entry (ID 4795) in Party Facts, indicating a coalition or evolution between these two entities.
 - party_short: PDP
   partyfacts_id: 206
   source: partyfacts_external
@@ -1524,32 +1488,25 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Partido Popular — The label 'PP (Cristina Cifuentes)' clearly indicates the
-    'Partido Popular' (PP), with Cristina Cifuentes being a prominent figure within
-    the party, and the polling context aligns with the party's activity.
+  notes: Partido Popular — The label 'PP (Cristina Cifuentes)' clearly indicates the 'Partido Popular' (PP), with Cristina Cifuentes being a prominent figure within the party, and the polling context aligns with the party's activity.
 - party_short: PP (Mariano Rajoy)
   partyfacts_id: 441
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Partido Popular — The party short label 'PP' directly matches the Party Facts
-    entry for 'Partido Popular' (ID 441), and Mariano Rajoy was a prominent leader
-    of this party during the specified polling period.
+  notes: Partido Popular — The party short label 'PP' directly matches the Party Facts entry for 'Partido Popular' (ID 441), and Mariano Rajoy was a prominent leader of this party during the specified polling period.
 - party_short: PP (Pablo Casado)
   partyfacts_id: 441
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Partido Popular — The label 'PP (Pablo Casado)' clearly refers to the Partido
-    Popular, with Pablo Casado being a former leader of the party.
+  notes: Partido Popular — The label 'PP (Pablo Casado)' clearly refers to the Partido Popular, with Pablo Casado being a former leader of the party.
 - party_short: PP (Soraya Sáenz de Santamaría)
   partyfacts_id: 441
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Partido Popular — The party short label 'PP' directly matches 'Partido Popular'
-    (ID 441), and Soraya Sáenz de Santamaría was a prominent figure within the party,
-    confirming the match.
+  notes: Partido Popular — The party short label 'PP' directly matches 'Partido Popular' (ID 441), and Soraya Sáenz de Santamaría was a prominent figure within the party, confirming the match.
 - party_short: PP / PDP
   partyfacts_id: 441
   source: partyfacts_external
@@ -1573,49 +1530,43 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Partido Popular — PPC's is a common abbreviation for Partido Popular de Cataluña,
-    which is the Catalan branch of the Partido Popular (PP).
+  notes: Partido Popular — PPC's is a common abbreviation for Partido Popular de Cataluña, which is the Catalan branch of the Partido Popular (PP).
 - party_short: PPCs
   partyfacts_id: 441
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Partido Popular — The 'PPCs' abbreviation likely refers to the 'Partido Popular
-    de Catalunya', which is the Catalan branch of the national 'Partido Popular' (PP),
-    making ID 441 the best match.
+  notes: Partido Popular — The 'PPCs' abbreviation likely refers to the 'Partido Popular de Catalunya', which is the Catalan branch of the national 'Partido Popular' (PP), making ID 441 the best match.
 - party_short: PPCsVox
   partyfacts_id: null
   source: verified_not_in_pf
   confidence: high
   is_coalition: true
-  notes: 'PP+Ciudadanos+Vox right-bloc coalition-preference column. No PF coalition id.'
+  notes: PP+Ciudadanos+Vox right-bloc coalition-preference column. No PF coalition id.
 - party_short: PPPSOE
   partyfacts_id: null
   source: verified_not_in_pf
   confidence: high
   is_coalition: true
-  notes: 'PP+PSOE Grand Coalition preference column. No PF coalition id.'
+  notes: PP+PSOE Grand Coalition preference column. No PF coalition id.
 - party_short: PPPSOEC's
   partyfacts_id: null
   source: verified_not_in_pf
   confidence: high
   is_coalition: true
-  notes: 'PP+PSOE+Ciudadanos coalition-preference column. No PF coalition id.'
+  notes: PP+PSOE+Ciudadanos coalition-preference column. No PF coalition id.
 - party_short: PPPSOECs
   partyfacts_id: null
-  source: gemini_no_match
-  confidence: null
+  source: verified_not_in_pf
+  confidence: high
   is_coalition: false
-  notes: The abbreviation 'PPPSOECs' appears to be a concatenation of multiple party
-    abbreviations (PP, PSOE, Cs), indicating a coalition or aggregate that does not
-    directly map to a single Party Facts ID in the provided list.
+  notes: PP+PSOE+Ciudadanos coalition-preference column. No PF coalition-level id.
 - party_short: PPVox
   partyfacts_id: 3218
   source: gemini_high
   confidence: high
   is_coalition: true
-  notes: Vox — The label 'PPVox' is a clear concatenation of 'PP' (Partido Popular)
-    and 'Vox', indicating a coalition or alliance, with Vox being a prominent component.
+  notes: Vox — The label 'PPVox' is a clear concatenation of 'PP' (Partido Popular) and 'Vox', indicating a coalition or alliance, with Vox being a prominent component.
 - party_short: PR
   partyfacts_id: 7108
   source: partyfacts_external
@@ -1723,70 +1674,49 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Partido Socialista Obrero Español — The party short label 'PSOE' directly
-    matches the Party Facts entry for 'Partido Socialista Obrero Español', with the
-    name in parentheses likely referring to a leader at the time.
+  notes: Partido Socialista Obrero Español — The party short label 'PSOE' directly matches the Party Facts entry for 'Partido Socialista Obrero Español', with the name in parentheses likely referring to a leader at the time.
 - party_short: PSOE (Carme Chacón)
   partyfacts_id: 1338
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Partido Socialista Obrero Español — The label 'PSOE (Carme Chacón)' clearly
-    indicates the Spanish Socialist Workers' Party (PSOE), with Carme Chacón likely
-    being a prominent candidate or leader at the time of the polls.
+  notes: Partido Socialista Obrero Español — The label 'PSOE (Carme Chacón)' clearly indicates the Spanish Socialist Workers' Party (PSOE), with Carme Chacón likely being a prominent candidate or leader at the time of the polls.
 - party_short: PSOE (José Bono)
   partyfacts_id: 1338
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Partido Socialista Obrero Español — The party short label 'PSOE' directly
-    matches the Party Facts entry for 'Partido Socialista Obrero Español', and the
-    additional name 'José Bono' likely refers to a candidate or faction within the
-    party, not a separate entity or coalition.
+  notes: Partido Socialista Obrero Español — The party short label 'PSOE' directly matches the Party Facts entry for 'Partido Socialista Obrero Español', and the additional name 'José Bono' likely refers to a candidate or faction within the party, not a separate entity or coalition.
 - party_short: PSOE (José Luis Rodríguez Zapatero)
   partyfacts_id: 1338
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Partido Socialista Obrero Español — The party short label 'PSOE' directly
-    matches the Party Facts entry for 'Partido Socialista Obrero Español', and the
-    candidate name 'José Luis Rodríguez Zapatero' is consistent with the party's leadership
-    during the specified period.
+  notes: Partido Socialista Obrero Español — The party short label 'PSOE' directly matches the Party Facts entry for 'Partido Socialista Obrero Español', and the candidate name 'José Luis Rodríguez Zapatero' is consistent with the party's leadership during the specified period.
 - party_short: PSOE (Patxi López)
   partyfacts_id: 1338
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Partido Socialista Obrero Español — The label 'PSOE (Patxi López)' clearly
-    indicates the Spanish Socialist Workers' Party (PSOE), with Patxi López likely
-    referring to a specific leader or faction within the party at the time of the
-    poll.
+  notes: Partido Socialista Obrero Español — The label 'PSOE (Patxi López)' clearly indicates the Spanish Socialist Workers' Party (PSOE), with Patxi López likely referring to a specific leader or faction within the party at the time of the poll.
 - party_short: PSOE (Pedro Sánchez)
   partyfacts_id: 1338
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Partido Socialista Obrero Español — The party short label 'PSOE' directly
-    matches the Party Facts entry for 'Partido Socialista Obrero Español', and the
-    additional candidate name 'Pedro Sánchez' refers to a prominent leader of this
-    party, not a separate entity or coalition.
+  notes: Partido Socialista Obrero Español — The party short label 'PSOE' directly matches the Party Facts entry for 'Partido Socialista Obrero Español', and the additional candidate name 'Pedro Sánchez' refers to a prominent leader of this party, not a separate entity or coalition.
 - party_short: PSOE (Susana Díaz)
   partyfacts_id: 1338
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Partido Socialista Obrero Español — The label 'PSOE (Susana Díaz)' clearly
-    indicates the Spanish Socialist Workers’ Party (PSOE), with Susana Díaz likely
-    being a prominent figure or faction leader within the party at the time of the
-    polls.
+  notes: Partido Socialista Obrero Español — The label 'PSOE (Susana Díaz)' clearly indicates the Spanish Socialist Workers’ Party (PSOE), with Susana Díaz likely being a prominent figure or faction leader within the party at the time of the polls.
 - party_short: PSOE Errejón's party
   partyfacts_id: 1338
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Partido Socialista Obrero Español — The label clearly indicates 'PSOE' as
-    the primary party, with 'Errejón's party' likely referring to a candidate or a
-    minor alliance, but PSOE remains the core entity.
+  notes: Partido Socialista Obrero Español — The label clearly indicates 'PSOE' as the primary party, with 'Errejón's party' likely referring to a candidate or a minor alliance, but PSOE remains the core entity.
 - party_short: PSOE(CA)
   partyfacts_id: 1338
   source: partyfacts_external
@@ -1810,63 +1740,49 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Partido Socialista Obrero Español — The abbreviation 'PSOEC's' is a clear
-    derivative of 'PSOE', which stands for 'Partido Socialista Obrero Español', a
-    major party in Spain.
+  notes: Partido Socialista Obrero Español — The abbreviation 'PSOEC's' is a clear derivative of 'PSOE', which stands for 'Partido Socialista Obrero Español', a major party in Spain.
 - party_short: PSOECs
   partyfacts_id: 1338
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Partido Socialista Obrero Español — The 'PSOECs' abbreviation is a clear
-    variant of 'PSOE', which stands for 'Partido Socialista Obrero Español', a major
-    party in Spain.
+  notes: Partido Socialista Obrero Español — The 'PSOECs' abbreviation is a clear variant of 'PSOE', which stands for 'Partido Socialista Obrero Español', a major party in Spain.
 - party_short: PSOEPodemos
   partyfacts_id: null
   source: verified_not_in_pf
   confidence: high
   is_coalition: true
-  notes: 'PSOE+Podemos coalition-preference column (not vote intention for a single party). No PF coalition id.'
+  notes: PSOE+Podemos coalition-preference column (not vote intention for a single party). No PF coalition id.
 - party_short: PSOEPodemosC's
   partyfacts_id: null
-  source: gemini_no_match
-  confidence: null
+  source: verified_not_in_pf
+  confidence: high
   is_coalition: false
-  notes: This is a clear coalition of three distinct parties (PSOE, Podemos, and Ciudadanos)
-    that does not correspond to any single Party Facts ID, nor is there a dominant
-    member to match.
+  notes: PSOE+Podemos+Ciudadanos coalition-preference column. No PF coalition-level id.
 - party_short: PSOEPP
   partyfacts_id: null
   source: gemini_no_match
   confidence: null
   is_coalition: false
-  notes: The abbreviation 'PSOEPP' appears to be a combination of 'PSOE' and 'PP',
-    indicating a potential coalition or joint list that is not explicitly listed in
-    the provided Party Facts entries.
+  notes: The abbreviation 'PSOEPP' appears to be a combination of 'PSOE' and 'PP', indicating a potential coalition or joint list that is not explicitly listed in the provided Party Facts entries.
 - party_short: PSOEUP
   partyfacts_id: 1338
   source: gemini_high
   confidence: high
   is_coalition: true
-  notes: Partido Socialista Obrero Español — The abbreviation 'PSOEUP' likely represents
-    a coalition or alliance where PSOE is the dominant member, as indicated by the
-    high vote shares in the polling data and the presence of 'PSOE' in the abbreviation.
+  notes: Partido Socialista Obrero Español — The abbreviation 'PSOEUP' likely represents a coalition or alliance where PSOE is the dominant member, as indicated by the high vote shares in the polling data and the presence of 'PSOE' in the abbreviation.
 - party_short: PSOEUPCs
   partyfacts_id: 1338
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Partido Socialista Obrero Español — The abbreviation 'PSOEUPCs' appears to
-    be a concatenation of 'PSOE' and 'UPCs', where 'PSOE' is the dominant part and
-    'UPCs' is likely a typo or a less significant element, making PSOE the best match.
+  notes: Partido Socialista Obrero Español — The abbreviation 'PSOEUPCs' appears to be a concatenation of 'PSOE' and 'UPCs', where 'PSOE' is the dominant part and 'UPCs' is likely a typo or a less significant element, making PSOE the best match.
 - party_short: PSOEUPIndep.
   partyfacts_id: 1338
   source: gemini_high
   confidence: high
   is_coalition: true
-  notes: Partido Socialista Obrero Español — The abbreviation 'PSOEUPIndep.' clearly
-    indicates a coalition led by PSOE, with 'UP' likely referring to 'Unidos Podemos'
-    (Podemos + IU) and 'Indep.' for independents, making PSOE the dominant member.
+  notes: Partido Socialista Obrero Español — The abbreviation 'PSOEUPIndep.' clearly indicates a coalition led by PSOE, with 'UP' likely referring to 'Unidos Podemos' (Podemos + IU) and 'Indep.' for independents, making PSOE the dominant member.
 - party_short: PSP
   partyfacts_id: 1687
   source: partyfacts_external
@@ -1956,9 +1872,7 @@ mappings:
   source: verified_not_in_pf
   confidence: high
   is_coalition: false
-  notes: 'Sumar (Movimiento Sumar) — left-wing platform founded by Yolanda Díaz, 2023-.
-    Verified absent from partyfacts.herokuapp.com/data/partycodes/?country=ESP as
-    of 2026-06; most recent Spanish entry is ''Se Acabó La Fiesta'' (2024).'
+  notes: Sumar (Movimiento Sumar) — left-wing platform founded by Yolanda Díaz, 2023-. Verified absent from partyfacts.herokuapp.com/data/partycodes/?country=ESP as of 2026-06; most recent Spanish entry is 'Se Acabó La Fiesta' (2024).
 - party_short: TE
   partyfacts_id: 2538
   source: partyfacts_external
@@ -2012,17 +1926,13 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: true
-  notes: Podemos + Izquierda Unida (Unidos Podemos) — The Party Facts entry 7656 explicitly
-    mentions 'Unidos Podemos' as a coalition of 'Podemos + Izquierda Unida', which
-    directly matches the 'Unidas Podemos' label and the polling context dates.
+  notes: Podemos + Izquierda Unida (Unidos Podemos) — The Party Facts entry 7656 explicitly mentions 'Unidos Podemos' as a coalition of 'Podemos + Izquierda Unida', which directly matches the 'Unidas Podemos' label and the polling context dates.
 - party_short: Unidos Podemos
   partyfacts_id: 7656
   source: gemini_high
   confidence: high
   is_coalition: true
-  notes: Podemos + Izquierda Unida (Unidos Podemos) — The Party Facts entry 7656 explicitly
-    mentions 'Unidos Podemos' as a coalition of Podemos and Izquierda Unida, matching
-    the provided short label and polling context.
+  notes: Podemos + Izquierda Unida (Unidos Podemos) — The Party Facts entry 7656 explicitly mentions 'Unidos Podemos' as a coalition of Podemos and Izquierda Unida, matching the provided short label and polling context.
 - party_short: unknown
   partyfacts_id: 2928
   source: partyfacts_external

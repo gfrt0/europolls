@@ -41,6 +41,8 @@ mappings:
   "Not vote":                         { drop: true, drop_reason: abstention }
   "Abst.":                            { drop: true, drop_reason: abstention }   # SI variant
   "NOTA":                             { drop: true, drop_reason: abstention }   # BG: 'None of the Above' ballot option
+  "N|None":                          { drop: true, drop_reason: abstention }   # PT
+  "Yes":                             { drop: true, drop_reason: abstention }   # PL
   "None of the above":                { drop: true, drop_reason: abstention }   # BG variant
   "None":                             { drop: true, drop_reason: abstention }   # SI/DE/CH literal "None"
   "None ofthe above":                 { drop: true, drop_reason: abstention }   # BG typo variant

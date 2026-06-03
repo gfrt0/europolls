@@ -351,10 +351,12 @@ mappings:
   notes: ''
 - party_short: Jerónimo de Sousa
   partyfacts_id: null
-  source: gemini_no_match
+  source: null
   confidence: null
   is_coalition: false
-  notes: Jerónimo de Sousa is a candidate's name, not a party abbreviation, and no party in the list directly corresponds to this name or a party he is known to lead that is present in the list.
+  notes: '''Jerónimo de Sousa'' — individual candidate column. Not party vote intention.'
+  drop: true
+  drop_reason: individual_candidate
 - party_short: Jorge Moreira da Silva
   partyfacts_id: null
   source: gemini_no_match

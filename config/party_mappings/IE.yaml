@@ -21,10 +21,12 @@ mappings:
   notes: ''
 - party_short: 100%R
   partyfacts_id: null
-  source: gemini_no_match
+  source: null
   confidence: null
   is_coalition: false
-  notes: No party in the provided list matches '100%R'.
+  notes: '''100%R'' — parse artifact column. Not party vote intention.'
+  drop: true
+  drop_reason: parse_artifact
 - party_short: A
   partyfacts_id: 8642
   source: partyfacts_external
@@ -165,16 +167,20 @@ mappings:
   notes: The party short label 'Cronin' does not match any of the provided Party Facts entries, and there is no clear indication of it being a candidate's name combined with a party abbreviation.
 - party_short: Cubbard
   partyfacts_id: null
-  source: gemini_no_match
+  source: null
   confidence: null
   is_coalition: false
-  notes: The party 'Cubbard' does not appear in the provided list of Party Facts entries for Ireland, and there are no obvious semantic matches or abbreviations that would link it to an existing party.
+  notes: '''Cubbard'' — individual candidate column. Not party vote intention.'
+  drop: true
+  drop_reason: individual_candidate
 - party_short: D Healy-Rae
   partyfacts_id: null
-  source: gemini_no_match
+  source: null
   confidence: null
   is_coalition: false
-  notes: The party label 'D Healy-Rae' refers to an independent candidate, not a political party listed in the provided Party Facts entries.
+  notes: '''D Healy-Rae'' — individual candidate column. Not party vote intention.'
+  drop: true
+  drop_reason: individual_candidate
 - party_short: D-PRB
   partyfacts_id: 3954
   source: partyfacts_external
@@ -183,10 +189,12 @@ mappings:
   notes: ''
 - party_short: D. Healy-Rae
   partyfacts_id: null
-  source: gemini_no_match
+  source: null
   confidence: null
   is_coalition: false
-  notes: D. Healy-Rae refers to Danny Healy-Rae, an independent politician, not a party listed in Party Facts.
+  notes: '''D. Healy-Rae'' — individual candidate column. Not party vote intention.'
+  drop: true
+  drop_reason: individual_candidate
 - party_short: DDI
   partyfacts_id: 3209
   source: partyfacts_external
@@ -557,16 +565,20 @@ mappings:
   notes: ''
 - party_short: M Healy-Rae
   partyfacts_id: null
-  source: gemini_no_match
+  source: null
   confidence: null
   is_coalition: false
-  notes: The party label 'M Healy-Rae' refers to an independent candidate, Michael Healy-Rae, and does not correspond to any of the listed Party Facts entries for established parties.
+  notes: '''M Healy-Rae'' — individual candidate column. Not party vote intention.'
+  drop: true
+  drop_reason: individual_candidate
 - party_short: M. Healy-Rae
   partyfacts_id: null
-  source: gemini_no_match
+  source: null
   confidence: null
   is_coalition: false
-  notes: The label 'M. Healy-Rae' refers to an individual candidate, Michael Healy-Rae, who is an independent politician, and does not correspond to any of the listed party facts entries.
+  notes: '''M. Healy-Rae'' — individual candidate column. Not party vote intention.'
+  drop: true
+  drop_reason: individual_candidate
 - party_short: Marginof error
   partyfacts_id: null
   source: null
@@ -577,10 +589,12 @@ mappings:
   drop_reason: parse_artifact
 - party_short: McConnell
   partyfacts_id: null
-  source: gemini_no_match
+  source: null
   confidence: null
   is_coalition: false
-  notes: The label 'McConnell' appears to be a candidate's name and does not correspond to any party in the provided Party Facts list for Ireland.
+  notes: '''McConnell'' — individual candidate column. Not party vote intention.'
+  drop: true
+  drop_reason: individual_candidate
 - party_short: Micheál Martin
   partyfacts_id: null
   source: null

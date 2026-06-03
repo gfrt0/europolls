@@ -2377,10 +2377,10 @@ mappings:
   notes: Parti Socialiste — The 'PS' abbreviation directly matches 'Parti Socialiste' (ID 1478) and the timeframes align with the polling data.
 - party_short: PS/FI/DVG
   partyfacts_id: null
-  source: gemini_no_match
-  confidence: null
-  is_coalition: false
-  notes: The label 'PS/FI/DVG' represents a coalition of multiple parties (Socialist Party, La France Insoumise, and various left-wing parties), and there is no single dominant party to map it to among the provided Party Facts entries.
+  source: verified_not_in_pf
+  confidence: high
+  is_coalition: true
+  notes: PS+France Insoumise+DVG joint constituency ticket. No coalition-level PF id.
 - party_short: PS/LE
   partyfacts_id: 1478
   source: gemini_high
@@ -2389,10 +2389,10 @@ mappings:
   notes: Parti Socialiste — The 'PS/LE' abbreviation clearly indicates a coalition led by the Parti Socialiste (PS), which is a direct match in the Party Facts data.
 - party_short: PS/PCF/LV
   partyfacts_id: null
-  source: gemini_no_match
-  confidence: null
-  is_coalition: false
-  notes: The label 'PS/PCF/LV' represents a coalition of multiple parties (Socialist Party, French Communist Party, and The Greens), and there is no single dominant party ID to match it to in the provided list.
+  source: verified_not_in_pf
+  confidence: high
+  is_coalition: true
+  notes: PS+PCF+Lutte Verts joint constituency ticket. No coalition-level PF id.
 - party_short: PÉ
   partyfacts_id: 8921
   source: gemini_high

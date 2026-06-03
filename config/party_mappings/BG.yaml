@@ -43,7 +43,6 @@ mappings:
   confidence: high
   is_coalition: false
   notes: 'Wikipedia article: ''Alliance for Rights and Freedoms''. Verified absent from Party Facts (no matching entry in core or external datasets). PF may add an id when next refreshed.'
-
 - party_short: ATA
   partyfacts_id: 1793
   source: partyfacts_external
@@ -361,16 +360,13 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Tsentũr – Svoboda i dostoĭnstvo — The Party Facts entry with ID 4095, 'Tsentũr
-    – Svoboda i dostoĭnstvo', directly translates to 'Centre – Freedom and Dignity'
-    and is the only entry containing 'Center' or 'Centre' in its name or English translation.
+  notes: Tsentũr – Svoboda i dostoĭnstvo — The Party Facts entry with ID 4095, 'Tsentũr – Svoboda i dostoĭnstvo', directly translates to 'Centre – Freedom and Dignity' and is the only entry containing 'Center' or 'Centre' in its name or English translation.
 - party_short: Certain undecided turnout
   partyfacts_id: null
   source: gemini_no_match
   confidence: null
   is_coalition: false
-  notes: The party short label 'Certain undecided turnout' does not correspond to
-    any political party, but rather to a polling category.
+  notes: The party short label 'Certain undecided turnout' does not correspond to any political party, but rather to a polling category.
 - party_short: CfB
   partyfacts_id: 757
   source: partyfacts_external
@@ -472,10 +468,7 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: true
-  notes: Dvizhenie za Prava i Svobodi — The 'DPS' part of the abbreviation clearly
-    matches 'Dvizhenie za Prava i Svobodi' (Movement for Rights and Freedoms), and
-    'NN' likely indicates a coalition or alliance with another entity, making it a
-    coalition.
+  notes: Dvizhenie za Prava i Svobodi — The 'DPS' part of the abbreviation clearly matches 'Dvizhenie za Prava i Svobodi' (Movement for Rights and Freedoms), and 'NN' likely indicates a coalition or alliance with another entity, making it a coalition.
 - party_short: DS
   partyfacts_id: 5133
   source: partyfacts_external
@@ -571,17 +564,13 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: true
-  notes: Grazhdani za Evropeysko Razvitie na Balgariya — GERB–SDS is a known electoral
-    alliance in Bulgaria, with GERB being the dominant party, and SDS (Union of Democratic
-    Forces) being a junior partner. The provided Party Facts ID for GERB is 760.
+  notes: Grazhdani za Evropeysko Razvitie na Balgariya — GERB–SDS is a known electoral alliance in Bulgaria, with GERB being the dominant party, and SDS (Union of Democratic Forces) being a junior partner. The provided Party Facts ID for GERB is 760.
 - party_short: GERB—SDS
   partyfacts_id: 760
   source: manual_review
   confidence: high
   is_coalition: false
-  notes: 'GERB-SDS electoral coalition (recognized in PF as a single entity, id 760
-    — confirmed via poppa name_short ''GERB-SDS''). Reported as a single bloc in
-    polls.'
+  notes: GERB-SDS electoral coalition (recognized in PF as a single entity, id 760 — confirmed via poppa name_short 'GERB-SDS'). Reported as a single bloc in polls.
 - party_short: GN
   partyfacts_id: 2024
   source: partyfacts_external
@@ -671,16 +660,13 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Izpravi se! — The 'IS' in 'IS.BG' strongly matches the 'IS' short label of
-    'Izpravi se!' (Stand up!), and the polling data falls within its active period.
+  notes: Izpravi se! — The 'IS' in 'IS.BG' strongly matches the 'IS' short label of 'Izpravi se!' (Stand up!), and the polling data falls within its active period.
 - party_short: IS.BG/Levitsata!
   partyfacts_id: 8991
   source: gemini_high
   confidence: high
   is_coalition: true
-  notes: Izpravi se! — The 'IS' in the short label 'IS.BG/Levitsata!' strongly suggests
-    a match with 'Izpravi se!' (ID 8991), and 'Levitsata!' (The Left!) indicates a
-    coalition with a left-wing party.
+  notes: Izpravi se! — The 'IS' in the short label 'IS.BG/Levitsata!' strongly suggests a match with 'Izpravi se!' (ID 8991), and 'Levitsata!' (The Left!) indicates a coalition with a left-wing party.
 - party_short: ISBG
   partyfacts_id: 8991
   source: partyfacts_external
@@ -692,16 +678,13 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Izpravi se! — The short label 'IsBg' is a clear abbreviation for 'Izpravi
-    se! Balgariya' (Stand up! Bulgaria), which is represented by Party Facts ID 8991
-    'IS' (Izpravi se!).
+  notes: Izpravi se! — The short label 'IsBg' is a clear abbreviation for 'Izpravi se! Balgariya' (Stand up! Bulgaria), which is represented by Party Facts ID 8991 'IS' (Izpravi se!).
 - party_short: ISMV
   partyfacts_id: 8991
   source: manual_review
   confidence: high
   is_coalition: false
-  notes: Izpravi se! Mutri van! ('Stand Up! Mafia Out!'), PF id 8991 — confirmed via
-    PF reverse lookup against ess/prtc name_english.
+  notes: Izpravi se! Mutri van! ('Stand Up! Mafia Out!'), PF id 8991 — confirmed via PF reverse lookup against ess/prtc name_english.
 - party_short: ITN
   partyfacts_id: 8992
   source: partyfacts_external
@@ -798,7 +781,6 @@ mappings:
   confidence: high
   is_coalition: false
   notes: 'Wikipedia article: ''The Left (Bulgaria)''. Verified absent from Party Facts (no matching entry in core or external datasets). PF may add an id when next refreshed.'
-
 - party_short: LC
   partyfacts_id: 6753
   source: partyfacts_external
@@ -810,18 +792,13 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: true
-  notes: Koalitsiya za Balgariya | Demokratichna Levitsa — The 'Left' label strongly
-    suggests a connection to 'Demokratichna Levitsa' (Democratic Left), which is part
-    of the 'Koalitsiya za Balgariya' (Coalition for Bulgaria) in the Party Facts data.
+  notes: Koalitsiya za Balgariya | Demokratichna Levitsa — The 'Left' label strongly suggests a connection to 'Demokratichna Levitsa' (Democratic Left), which is part of the 'Koalitsiya za Balgariya' (Coalition for Bulgaria) in the Party Facts data.
 - party_short: Left Union
   partyfacts_id: 1665
   source: gemini_high
   confidence: high
   is_coalition: true
-  notes: Koalitsiya za Balgariya | Demokratichna Levitsa — The 'Left Union' is a direct
-    translation of 'Demokratichna Levitsa' (Democratic Left), which is part of the
-    'Koalitsiya za Balgariya' (Coalition for Bulgaria), a known left-wing coalition
-    in Bulgaria.
+  notes: Koalitsiya za Balgariya | Demokratichna Levitsa — The 'Left Union' is a direct translation of 'Demokratichna Levitsa' (Democratic Left), which is part of the 'Koalitsiya za Balgariya' (Coalition for Bulgaria), a known left-wing coalition in Bulgaria.
 - party_short: LIDER
   partyfacts_id: 265
   source: partyfacts_external
@@ -857,9 +834,7 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Moral, edinstvo, chest — The partyfacts entry 9812 has the short label 'MEČ/Sword'
-    and the name 'Moral, edinstvo, chest', which is a direct match for 'MECh' and
-    the polling context indicates it is a new party in 2024.
+  notes: Moral, edinstvo, chest — The partyfacts entry 9812 has the short label 'MEČ/Sword' and the name 'Moral, edinstvo, chest', which is a direct match for 'MECh' and the polling context indicates it is a new party in 2024.
 - party_short: MEČ/Sword
   partyfacts_id: 9812
   source: partyfacts_external
@@ -973,23 +948,19 @@ mappings:
   source: gemini_no_match
   confidence: null
   is_coalition: false
-  notes: The label 'None of the above' is a generic option in polls and does not correspond
-    to an actual political party, therefore no match can be made.
+  notes: The label 'None of the above' is a generic option in polls and does not correspond to an actual political party, therefore no match can be made.
 - party_short: None ofthe above
   partyfacts_id: null
   source: gemini_no_match
   confidence: null
   is_coalition: false
-  notes: The label 'None of the above' indicates a protest vote or an option for voters
-    who do not support any of the listed parties, and does not correspond to an actual
-    political party.
+  notes: The label 'None of the above' indicates a protest vote or an option for voters who do not support any of the listed parties, and does not correspond to an actual political party.
 - party_short: NOTA
   partyfacts_id: null
   source: gemini_no_match
   confidence: null
   is_coalition: false
-  notes: NOTA is an abbreviation for 'None of the Above' or 'No Opinion/No Answer'
-    and does not correspond to a specific political party.
+  notes: NOTA is an abbreviation for 'None of the Above' or 'No Opinion/No Answer' and does not correspond to a specific political party.
 - party_short: NP
   partyfacts_id: 6746
   source: partyfacts_external
@@ -1091,9 +1062,7 @@ mappings:
   source: gemini_no_match
   confidence: null
   is_coalition: false
-  notes: The label 'Others / None' explicitly indicates that it represents votes for
-    parties not individually listed or for no party, and therefore does not correspond
-    to a single Party Facts ID.
+  notes: The label 'Others / None' explicitly indicates that it represents votes for parties not individually listed or for no party, and therefore does not correspond to a single Party Facts ID.
 - party_short: Others/Indep.
   partyfacts_id: 1835
   source: partyfacts_external
@@ -1159,9 +1128,7 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: true
-  notes: Prodalzhavame promyanata — The 'PP–DB' abbreviation represents a coalition
-    between 'Prodalzhavame promyanata' (PP) and 'Demokratichna Bulgaria' (DB), with
-    PP being the dominant member and having a matching Party Facts ID.
+  notes: Prodalzhavame promyanata — The 'PP–DB' abbreviation represents a coalition between 'Prodalzhavame promyanata' (PP) and 'Demokratichna Bulgaria' (DB), with PP being the dominant member and having a matching Party Facts ID.
 - party_short: PS
   partyfacts_id: 2635
   source: partyfacts_external
@@ -1222,14 +1189,12 @@ mappings:
   confidence: high
   is_coalition: false
   notes: 'Wikipedia article: ''Blue Bulgaria''. Verified absent from Party Facts (no matching entry in core or external datasets). PF may add an id when next refreshed.'
-
 - party_short: SBG
   partyfacts_id: null
   source: verified_not_in_pf
   confidence: high
   is_coalition: false
   notes: 'Wikipedia article: ''Solidary Bulgaria''. Verified absent from Party Facts (no matching entry in core or external datasets). PF may add an id when next refreshed.'
-
 - party_short: SDS
   partyfacts_id: 482
   source: partyfacts_external
@@ -1298,11 +1263,12 @@ mappings:
   notes: ''
 - party_short: Turnout range
   partyfacts_id: null
-  source: gemini_no_match
+  source: null
   confidence: null
   is_coalition: false
-  notes: The label 'Turnout range' does not correspond to any political party; it
-    appears to be a polling-related metric.
+  notes: '''Turnout range'' — parse artifact column. Not party vote intention.'
+  drop: true
+  drop_reason: parse_artifact
 - party_short: UDF
   partyfacts_id: 1183
   source: partyfacts_external
@@ -1332,8 +1298,7 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Vazrazhdane — The short label 'Vaz' is a direct abbreviation of 'Vazrazhdane',
-    and the polling data aligns with a currently active party.
+  notes: Vazrazhdane — The short label 'Vaz' is a direct abbreviation of 'Vazrazhdane', and the polling data aligns with a currently active party.
 - party_short: Vazrazhdane
   partyfacts_id: 5862
   source: partyfacts_external
@@ -1345,17 +1310,13 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Velichie — The short label 'Vel' is a clear abbreviation for 'Velichie',
-    and the Party Facts entry for 'Velichie' (id=9811) is a perfect match, especially
-    given its recent founding year (2024) which aligns with the polling data.
+  notes: Velichie — The short label 'Vel' is a clear abbreviation for 'Velichie', and the Party Facts entry for 'Velichie' (id=9811) is a perfect match, especially given its recent founding year (2024) which aligns with the polling data.
 - party_short: Velich
   partyfacts_id: 9811
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Velichie — The party short label 'Velich' is a direct abbreviation of 'Velichie',
-    which is present in the candidate Party Facts entries with a matching ID and recent
-    activity.
+  notes: Velichie — The party short label 'Velich' is a direct abbreviation of 'Velichie', which is present in the candidate Party Facts entries with a matching ID and recent activity.
 - party_short: Velichie
   partyfacts_id: 9811
   source: partyfacts_external
@@ -1409,8 +1370,7 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Da Bulgaria! — The party short label 'Yes!' directly translates to 'Da!'
-    in Bulgarian, which is the beginning of the party name 'Da Bulgaria!' (Yes, Bulgaria!).
+  notes: Da Bulgaria! — The party short label 'Yes!' directly translates to 'Da!' in Bulgarian, which is the beginning of the party name 'Da Bulgaria!' (Yes, Bulgaria!).
 - party_short: Z
   partyfacts_id: 5104
   source: partyfacts_external

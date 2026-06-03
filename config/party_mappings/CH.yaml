@@ -69,10 +69,12 @@ mappings:
   notes: ''
 - party_short: AmherdDM/LC
   partyfacts_id: null
-  source: gemini_no_match
+  source: null
   confidence: null
   is_coalition: false
-  notes: The party abbreviation 'AmherdDM/LC' does not semantically match any of the provided Party Facts entries for Switzerland. It appears to be a candidate-party combination, but the party part 'DM/LC' is not found.
+  notes: '''AmherdDM/LC'' — individual candidate column. Not party vote intention.'
+  drop: true
+  drop_reason: individual_candidate
 - party_short: Andrey
   partyfacts_id: null
   source: gemini_no_match
@@ -105,10 +107,12 @@ mappings:
   notes: ''
 - party_short: Baume-SchneiderSP/PS
   partyfacts_id: null
-  source: gemini_no_match
+  source: null
   confidence: null
   is_coalition: false
-  notes: The party label 'Baume-SchneiderSP/PS' appears to be a candidate name combined with a party abbreviation, but neither 'SP' nor 'PS' alone are present in the provided Party Facts entries for Switzerland, and the full string does not match any entry.
+  notes: '''Baume-SchneiderSP/PS'' — individual candidate column. Not party vote intention.'
+  drop: true
+  drop_reason: individual_candidate
 - party_short: BDP
   partyfacts_id: 1415
   source: partyfacts_external
@@ -129,10 +133,12 @@ mappings:
   notes: ''
 - party_short: BersetSP/PS
   partyfacts_id: null
-  source: gemini_no_match
+  source: null
   confidence: null
   is_coalition: false
-  notes: The party short label 'BersetSP/PS' contains 'SP/PS' which is a common abbreviation for the Social Democratic Party, but no such party is listed in the provided Party Facts entries for Switzerland.
+  notes: '''BersetSP/PS'' — individual candidate column. Not party vote intention.'
+  drop: true
+  drop_reason: individual_candidate
 - party_short: Bertschy
   partyfacts_id: null
   source: gemini_no_match
@@ -147,22 +153,28 @@ mappings:
   notes: ''
 - party_short: BinderDM
   partyfacts_id: null
-  source: gemini_no_match
+  source: null
   confidence: null
   is_coalition: false
-  notes: The party short label 'BinderDM' does not match any of the provided Party Facts entries for Switzerland, and the polling context does not provide enough information to infer a match.
+  notes: '''BinderDM'' — individual candidate column. Not party vote intention.'
+  drop: true
+  drop_reason: individual_candidate
 - party_short: BischofDM
   partyfacts_id: null
-  source: gemini_no_match
+  source: null
   confidence: null
   is_coalition: false
-  notes: The party abbreviation 'BischofDM' does not clearly match any of the provided Party Facts entries for Switzerland, and it appears to be a candidate-party combination where the party part is not identifiable from the list.
+  notes: '''BischofDM'' — individual candidate column. Not party vote intention.'
+  drop: true
+  drop_reason: individual_candidate
 - party_short: BogiqiPS/SP
   partyfacts_id: null
-  source: gemini_no_match
+  source: null
   confidence: null
   is_coalition: false
-  notes: The provided party short label 'BogiqiPS/SP' does not clearly match any of the candidate Party Facts entries, even after attempting to strip a potential candidate name.
+  notes: '''BogiqiPS/SP'' — individual candidate column. Not party vote intention.'
+  drop: true
+  drop_reason: individual_candidate
 - party_short: Bourgeoiscouncil
   partyfacts_id: 9024
   source: gemini_high
@@ -207,10 +219,12 @@ mappings:
   notes: ''
 - party_short: Center-left+1Right−1
   partyfacts_id: null
-  source: gemini_no_match
+  source: null
   confidence: null
   is_coalition: false
-  notes: The party label 'Center-left+1Right−1' indicates a composite or aggregate of multiple parties, likely representing a political bloc rather than a single party, and does not match any specific party in the provided list.
+  notes: '''Center-left+1Right−1'' — parse artifact column. Not party vote intention.'
+  drop: true
+  drop_reason: parse_artifact
 - party_short: Center-leftcoalition
   partyfacts_id: null
   source: gemini_no_match
@@ -231,10 +245,12 @@ mappings:
   notes: ''
 - party_short: CorayInd.
   partyfacts_id: null
-  source: gemini_no_match
+  source: null
   confidence: null
   is_coalition: false
-  notes: The party 'CorayInd.' appears to be a candidate-led independent list, and there is no matching party in the provided Party Facts entries.
+  notes: '''CorayInd.'' — individual candidate column. Not party vote intention.'
+  drop: true
+  drop_reason: individual_candidate
 - party_short: CSP
   partyfacts_id: 1122
   source: partyfacts_external
@@ -381,10 +397,12 @@ mappings:
   notes: ''
 - party_short: EnglerDM
   partyfacts_id: null
-  source: gemini_no_match
+  source: null
   confidence: null
   is_coalition: false
-  notes: The provided party facts entries do not contain any party that matches 'EnglerDM' or a clear component of it, and the polling data does not offer further clues for a match.
+  notes: '''EnglerDM'' — individual candidate column. Not party vote intention.'
+  drop: true
+  drop_reason: individual_candidate
 - party_short: etc
   partyfacts_id: 1964
   source: partyfacts_external
@@ -543,10 +561,12 @@ mappings:
   notes: ''
 - party_short: GiezendannerSVP
   partyfacts_id: null
-  source: gemini_no_match
+  source: null
   confidence: null
   is_coalition: false
-  notes: The party 'GiezendannerSVP' is not found in the provided Party Facts entries for Switzerland, and the 'SVP' suffix does not clearly map to any of the given options, especially considering the provided Party Facts entries for 'SVP' are from 1984-1996, while the polling data is recent.
+  notes: '''GiezendannerSVP'' — individual candidate column. Not party vote intention.'
+  drop: true
+  drop_reason: individual_candidate
 - party_short: GLP
   partyfacts_id: 1759
   source: partyfacts_external
@@ -567,10 +587,12 @@ mappings:
   notes: Gr9cnliberale Partei der Schweiz – Parti Vert-Lib9cral — The abbreviation 'GLP' clearly refers to the Green Liberal Party (Gr9cnliberale Partei der Schweiz), and the '+1DM−1' indicates a coalition or alliance with other parties.
 - party_short: GLP+1FDP−1
   partyfacts_id: null
-  source: gemini_no_match
+  source: null
   confidence: null
   is_coalition: false
-  notes: The label 'GLP+1FDP−1' indicates a coalition or aggregate of parties, and there is no single Party Facts ID that represents this specific combination.
+  notes: '''GLP+1FDP−1'' — parse artifact column. Not party vote intention.'
+  drop: true
+  drop_reason: parse_artifact
 - party_short: GLP+1SP−1
   partyfacts_id: 1759
   source: gemini_high
@@ -745,10 +767,12 @@ mappings:
   notes: The party short label 'Herzog' does not match any of the provided Party Facts entries for Switzerland.
 - party_short: Häberli-KollerDM
   partyfacts_id: null
-  source: gemini_no_match
+  source: null
   confidence: null
   is_coalition: false
-  notes: The party short label 'Häberli-KollerDM' does not clearly match any of the provided Party Facts entries, even after considering the candidate-party suffix pattern.
+  notes: '''Häberli-KollerDM'' — individual candidate column. Not party vote intention.'
+  drop: true
+  drop_reason: individual_candidate
 - party_short: Häsler
   partyfacts_id: null
   source: gemini_no_match
@@ -787,10 +811,12 @@ mappings:
   notes: The label 'Jositsch' appears to be a candidate's name, and there is no party in the provided list that matches this name or a clear party abbreviation within-cut party abbreviation within it.
 - party_short: JositschSP
   partyfacts_id: null
-  source: gemini_no_match
+  source: null
   confidence: null
   is_coalition: false
-  notes: The party short label 'JositschSP' appears to be a candidate-party combination, but there is no clear match for 'SP' in the provided Party Facts entries for Switzerland, and the candidate 'Jositsch' is not a party.
+  notes: '''JositschSP'' — individual candidate column. Not party vote intention.'
+  drop: true
+  drop_reason: individual_candidate
 - party_short: JostEVP/PEV
   partyfacts_id: 1123
   source: gemini_high
@@ -841,10 +867,12 @@ mappings:
   notes: ''
 - party_short: KutterDM
   partyfacts_id: null
-  source: gemini_no_match
+  source: null
   confidence: null
   is_coalition: false
-  notes: The party label 'KutterDM' does not semantically match any of the provided Party Facts entries for Switzerland, and the polling data does not provide enough context to infer a match.
+  notes: '''KutterDM'' — individual candidate column. Not party vote intention.'
+  drop: true
+  drop_reason: individual_candidate
 - party_short: KälinGrüne
   partyfacts_id: 1006
   source: gemini_high
@@ -865,10 +893,12 @@ mappings:
   notes: ''
 - party_short: L. HessDM/LC
   partyfacts_id: null
-  source: gemini_no_match
+  source: null
   confidence: null
   is_coalition: false
-  notes: The provided party short label 'L. HessDM/LC' does not clearly match any of the candidate Party Facts entries, and the vote shares suggest a party that is not present in the provided list.
+  notes: '''L. HessDM/LC'' — individual candidate column. Not party vote intention.'
+  drop: true
+  drop_reason: individual_candidate
 - party_short: LAB
   partyfacts_id: 669
   source: partyfacts_external
@@ -1011,10 +1041,12 @@ mappings:
   notes: The party short label 'Maillard' does not correspond to any of the provided Party Facts entries for Switzerland, and appears to be a candidate's name rather than a party abbreviation.
 - party_short: MaretLC/DM
   partyfacts_id: null
-  source: gemini_no_match
+  source: null
   confidence: null
   is_coalition: false
-  notes: The provided party short label 'MaretLC/DM' does not semantically match any of the candidate Party Facts entries for Switzerland.
+  notes: '''MaretLC/DM'' — individual candidate column. Not party vote intention.'
+  drop: true
+  drop_reason: individual_candidate
 - party_short: MASS-VOLL
   partyfacts_id: null
   source: gemini_no_match
@@ -1113,10 +1145,12 @@ mappings:
   notes: The label 'Neither' indicates a preference for no party, which does not correspond to any specific political party in the provided Party Facts entries.
 - party_short: Neo
   partyfacts_id: null
-  source: gemini_no_match
+  source: null
   confidence: null
   is_coalition: false
-  notes: The party abbreviation 'Neo' does not semantically match any of the provided Party Facts entries for Switzerland, and the provided poll data does not offer enough context to infer a match.
+  notes: '''Neo'' — parse artifact column. Not party vote intention.'
+  drop: true
+  drop_reason: parse_artifact
 - party_short: Net
   partyfacts_id: null
   source: gemini_no_match
@@ -1321,10 +1355,12 @@ mappings:
   notes: The party short label 'Pulver' does not match any of the provided Party Facts entries for Switzerland.
 - party_short: PulverG/V
   partyfacts_id: null
-  source: gemini_no_match
+  source: null
   confidence: null
   is_coalition: false
-  notes: The party short label 'PulverG/V' does not semantically match any of the provided Party Facts entries for Switzerland, and the polling data suggests it is a contemporary party not listed.
+  notes: '''PulverG/V'' — individual candidate column. Not party vote intention.'
+  drop: true
+  drop_reason: individual_candidate
 - party_short: PVL
   partyfacts_id: 1759
   source: gemini_high
@@ -1369,10 +1405,12 @@ mappings:
   notes: ''
 - party_short: RiederLC/DM
   partyfacts_id: null
-  source: gemini_no_match
+  source: null
   confidence: null
   is_coalition: false
-  notes: The party abbreviation 'RiederLC/DM' does not match any of the provided Party Facts entries for Switzerland, and the polling context does not provide enough information to infer a match.
+  notes: '''RiederLC/DM'' — individual candidate column. Not party vote intention.'
+  drop: true
+  drop_reason: individual_candidate
 - party_short: RM
   partyfacts_id: 1646
   source: partyfacts_external
@@ -1381,10 +1419,12 @@ mappings:
   notes: ''
 - party_short: RothSP
   partyfacts_id: null
-  source: gemini_no_match
+  source: null
   confidence: null
   is_coalition: false
-  notes: The 'RothSP' abbreviation does not directly match any of the provided Party Facts entries for Switzerland, and there is no clear dominant party to infer a match.
+  notes: '''RothSP'' — individual candidate column. Not party vote intention.'
+  drop: true
+  drop_reason: individual_candidate
 - party_short: RutzSVP
   partyfacts_id: 308
   source: gemini_high
@@ -1399,10 +1439,12 @@ mappings:
   notes: The party short label 'Ryser' does not match any of the provided Party Facts entries for Switzerland, and there is no obvious candidate prefix to strip.
 - party_short: RöstiSVP/UDC
   partyfacts_id: null
-  source: gemini_no_match
+  source: null
   confidence: null
   is_coalition: false
-  notes: The provided Party Facts entries do not contain a match for 'RöstiSVP/UDC'. The 'SVP/UDC' part of the label strongly suggests the Swiss People's Party (Schweizerische Volkspartei/Union Démocratique du Centre), but no entry with this abbreviation is present in the candidate list.
+  notes: '''RöstiSVP/UDC'' — individual candidate column. Not party vote intention.'
+  drop: true
+  drop_reason: individual_candidate
 - party_short: S
   partyfacts_id: 8653
   source: partyfacts_external
@@ -1465,10 +1507,12 @@ mappings:
   notes: ''
 - party_short: Someoneelse
   partyfacts_id: null
-  source: gemini_no_match
+  source: null
   confidence: null
   is_coalition: false
-  notes: The party short label 'Someoneelse' does not match any of the provided Party Facts entries for Switzerland.
+  notes: '''Someoneelse'' — parse artifact column. Not party vote intention.'
+  drop: true
+  drop_reason: parse_artifact
 - party_short: SommarugaSP/PS
   partyfacts_id: null
   source: gemini_no_match
@@ -1653,10 +1697,12 @@ mappings:
   notes: ''
 - party_short: WasserfallenSP/PS
   partyfacts_id: null
-  source: gemini_no_match
+  source: null
   confidence: null
   is_coalition: false
-  notes: The party short label 'WasserfallenSP/PS' includes 'SP/PS' which is a common abbreviation for the Social Democratic Party of Switzerland, but no such party is listed in the provided Party Facts entries for CH with a matching ID and relevant date range.
+  notes: '''WasserfallenSP/PS'' — individual candidate column. Not party vote intention.'
+  drop: true
+  drop_reason: individual_candidate
 - party_short: Weichelt
   partyfacts_id: null
   source: gemini_no_match

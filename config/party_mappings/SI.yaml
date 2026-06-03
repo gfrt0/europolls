@@ -369,10 +369,10 @@ mappings:
   notes: Matjaž Nemec is a candidate name, not a party abbreviation, and there is no clear party suffix to match in the provided list.
 - party_short: MI!
   partyfacts_id: null
-  source: gemini_no_match
-  confidence: null
+  source: verified_not_in_pf
+  confidence: high
   is_coalition: false
-  notes: The abbreviation 'MI!' does not semantically match any of the provided Party Facts entries for Slovenia.
+  notes: MI! (small Slovenian party). Not in Party Facts.
 - party_short: N.SI
   partyfacts_id: 1618
   source: partyfacts_external

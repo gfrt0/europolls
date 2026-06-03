@@ -18,25 +18,19 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Konservative Folkeparti — The party short label 'Conservative People's Party
-    (C)' directly matches the English name 'Conservative People’s Party' and the short
-    name 'KF' for Party Facts ID 536.
+  notes: Konservative Folkeparti — The party short label 'Conservative People's Party (C)' directly matches the English name 'Conservative People’s Party' and the short name 'KF' for Party Facts ID 536.
 - party_short: '''''''Danish People''s Party (O)'''''''
   partyfacts_id: 1022
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Dansk Folkeparti — The party name 'Danish People's Party' directly matches
-    the English name of Party Facts ID 1022, 'Danish People's Party', and the timeframes
-    are consistent with the polling data.
+  notes: Dansk Folkeparti — The party name 'Danish People's Party' directly matches the English name of Party Facts ID 1022, 'Danish People's Party', and the timeframes are consistent with the polling data.
 - party_short: '''''''Socialist People''s Party (F)'''''''
   partyfacts_id: 329
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Socialistisk Folkparti — The party short label 'Socialist People's Party
-    (F)' directly matches the English name 'Socialist Peoples Party' and the short
-    label 'SF' (F is the party letter in Denmark) for Party Facts ID 329.
+  notes: Socialistisk Folkparti — The party short label 'Socialist People's Party (F)' directly matches the English name 'Socialist Peoples Party' and the short label 'SF' (F is the party letter in Denmark) for Party Facts ID 329.
 - party_short: A
   partyfacts_id: 4070
   source: partyfacts_external
@@ -78,23 +72,19 @@ mappings:
   source: gemini_no_match
   confidence: null
   is_coalition: false
-  notes: The term 'Blocs' likely refers to a political bloc or alliance rather than
-    a single party, and no specific party in the provided list matches this abbreviation.
+  notes: The term 'Blocs' likely refers to a political bloc or alliance rather than a single party, and no specific party in the provided list matches this abbreviation.
 - party_short: Blue
   partyfacts_id: null
   source: gemini_no_match
   confidence: null
   is_coalition: false
-  notes: There is no party in the provided list that matches 'Blue' or any common
-    Danish political party associated with 'Blue' as a short label.
+  notes: There is no party in the provided list that matches 'Blue' or any common Danish political party associated with 'Blue' as a short label.
 - party_short: Blue   (V+O+I+C+K)
   partyfacts_id: null
   source: gemini_no_match
   confidence: null
   is_coalition: false
-  notes: The label 'Blue (V+O+I+C+K)' represents a coalition of multiple parties,
-    and there is no single dominant party or direct match in the provided Party Facts
-    entries.
+  notes: The label 'Blue (V+O+I+C+K)' represents a coalition of multiple parties, and there is no single dominant party or direct match in the provided Party Facts entries.
 - party_short: Bo
   partyfacts_id: 1901
   source: partyfacts_external
@@ -112,8 +102,7 @@ mappings:
   source: gemini_no_match
   confidence: null
   is_coalition: false
-  notes: The party short label 'Carsten NielsenB' does not match any of the provided
-    Party Facts entries, even after attempting to strip a potential candidate name.
+  notes: The party short label 'Carsten NielsenB' does not match any of the provided Party Facts entries, even after attempting to strip a potential candidate name.
 - party_short: CC
   partyfacts_id: 1676
   source: partyfacts_external
@@ -137,9 +126,7 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Kristeligt Folkparti — The party short label 'Christian Democrats (K)' directly
-    corresponds to 'Kristeligt Folkparti' (Christian Peoples Party) with the short
-    label 'KRF' and the 'K' in the provided label.
+  notes: Kristeligt Folkparti — The party short label 'Christian Democrats (K)' directly corresponds to 'Kristeligt Folkparti' (Christian Peoples Party) with the short label 'KRF' and the 'K' in the provided label.
 - party_short: COM
   partyfacts_id: 277
   source: partyfacts_external
@@ -265,9 +252,7 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Enhedslisten - De Rød-Grønne — The 'E' abbreviation strongly suggests 'Enhedslisten
-    - De Rød-Grønne' (Red-Green Unity List), especially given the 2019 election result
-    of 18.6% which aligns with their performance.
+  notes: Enhedslisten - De Rød-Grønne — The 'E' abbreviation strongly suggests 'Enhedslisten - De Rød-Grønne' (Red-Green Unity List), especially given the 2019 election result of 18.6% which aligns with their performance.
 - party_short: EL
   partyfacts_id: 1527
   source: partyfacts_external
@@ -279,9 +264,7 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Venstre — The label 'Elleman-JensenV' clearly refers to Venstre, with 'Elleman-Jensen'
-    likely indicating a leader or prominent figure associated with the party, and
-    'V' being its common abbreviation.
+  notes: Venstre — The label 'Elleman-JensenV' clearly refers to Venstre, with 'Elleman-Jensen' likely indicating a leader or prominent figure associated with the party, and 'V' being its common abbreviation.
 - party_short: En - O
   partyfacts_id: 1527
   source: partyfacts_external
@@ -371,9 +354,7 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Socialdemokratiet — The label 'FrederiksenA' likely refers to Mette Frederiksen,
-    the leader of the Social Democrats (S), with 'A' being a common abbreviation for
-    the party in Denmark.
+  notes: Socialdemokratiet — The label 'FrederiksenA' likely refers to Mette Frederiksen, the leader of the Social Democrats (S), with 'A' being a common abbreviation for the party in Denmark.
 - party_short: FRI
   partyfacts_id: 1601
   source: partyfacts_external
@@ -403,9 +384,7 @@ mappings:
   source: gemini_no_match
   confidence: null
   is_coalition: false
-  notes: The label 'Government' does not refer to a specific political party but rather
-    to the ruling administration, which can be composed of multiple parties or a single
-    party, and therefore cannot be matched to a single Party Facts ID.
+  notes: The label 'Government' does not refer to a specific political party but rather to the ruling administration, which can be composed of multiple parties or a single party, and therefore cannot be matched to a single Party Facts ID.
 - party_short: GP
   partyfacts_id: 1134
   source: partyfacts_external
@@ -447,9 +426,7 @@ mappings:
   source: manual_review
   confidence: high
   is_coalition: false
-  notes: Inuit Ataqatigiit (Community of the People), Greenlandic socialist party
-    1976-. PF id 5531 (PF country=GRL but the party holds seats in the Danish
-    Folketing, hence DK polling coverage). Confirmed via Wikipedia wikilink.
+  notes: Inuit Ataqatigiit (Community of the People), Greenlandic socialist party 1976-. PF id 5531 (PF country=GRL but the party holds seats in the Danish Folketing, hence DK polling coverage). Confirmed via Wikipedia wikilink.
 - party_short: indep
   partyfacts_id: 2658
   source: partyfacts_external
@@ -509,9 +486,7 @@ mappings:
   source: gemini_no_match
   confidence: null
   is_coalition: false
-  notes: The party abbreviation 'KarlsmoseK' does not match any of the provided Party
-    Facts entries, and appears to be a candidate-specific label rather than a recognized
-    party.
+  notes: The party abbreviation 'KarlsmoseK' does not match any of the provided Party Facts entries, and appears to be a candidate-specific label rather than a recognized party.
 - party_short: KD
   partyfacts_id: 53
   source: partyfacts_external
@@ -619,9 +594,7 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Ny-Liberal Alliance — The party 'Liberal Alliance (I)' is a direct match
-    to 'Ny-Liberal Alliance' (New-Liberal Alliance) with ID 212, which is the former
-    name of the Liberal Alliance party in Denmark.
+  notes: Ny-Liberal Alliance — The party 'Liberal Alliance (I)' is a direct match to 'Ny-Liberal Alliance' (New-Liberal Alliance) with ID 212, which is the former name of the Liberal Alliance party in Denmark.
 - party_short: LP-V
   partyfacts_id: 1204
   source: partyfacts_external
@@ -651,9 +624,7 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Moderaterne — The party short label 'Løkke RasmussenM' clearly refers to
-    the 'Moderaterne' party, which is also known as 'The Moderates' and was founded
-    by Lars Løkke Rasmussen.
+  notes: Moderaterne — The party short label 'Løkke RasmussenM' clearly refers to the 'Moderaterne' party, which is also known as 'The Moderates' and was founded by Lars Løkke Rasmussen.
 - party_short: M
   partyfacts_id: 9063
   source: partyfacts_external
@@ -665,9 +636,7 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Dansk Folkeparti — Messerschmidt is a prominent figure in Dansk Folkeparti
-    (Danish People's Party), and the 'O' likely refers to the party's leader or a
-    specific faction within it.
+  notes: Dansk Folkeparti — Messerschmidt is a prominent figure in Dansk Folkeparti (Danish People's Party), and the 'O' likely refers to the party's leader or a specific faction within it.
 - party_short: MG
   partyfacts_id: 2658
   source: partyfacts_external
@@ -721,10 +690,7 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Frie Gr%c3%b8nne %e2%80%93 Danmarks nye venstrefl%c3%b8jsparti — The party
-    'Frie Gr%c3%b8nne %e2%80%93 Danmarks nye venstrefl%c3%b8jsparti' has the short
-    label 'Q' and was active in 2023, which aligns with the recent polling data for
-    'NQ' given the similarity in the abbreviation and recent activity.
+  notes: Frie Gr%c3%b8nne %e2%80%93 Danmarks nye venstrefl%c3%b8jsparti — The party 'Frie Gr%c3%b8nne %e2%80%93 Danmarks nye venstrefl%c3%b8jsparti' has the short label 'Q' and was active in 2023, which aligns with the recent polling data for 'NQ' given the similarity in the abbreviation and recent activity.
 - party_short: NS
   partyfacts_id: 1913
   source: partyfacts_external
@@ -748,14 +714,13 @@ mappings:
   source: gemini_no_match
   confidence: null
   is_coalition: false
-  notes: The party abbreviation 'Olsen DyhrF' does not match any of the provided Party
-    Facts entries for Denmark, even after considering potential candidate name prefixes.
+  notes: The party abbreviation 'Olsen DyhrF' does not match any of the provided Party Facts entries for Denmark, even after considering potential candidate name prefixes.
 - party_short: Opposition
   partyfacts_id: null
   source: null
   confidence: null
   is_coalition: false
-  notes: 'Government-vs-opposition aggregate column. Not a single party.'
+  notes: Government-vs-opposition aggregate column. Not a single party.
   drop: true
   drop_reason: total
 - party_short: Other / Don't Know
@@ -763,8 +728,7 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: other — The label 'Other / Don't Know' directly corresponds to the Party
-    Facts entry for 'other' (id=1858).
+  notes: other — The label 'Other / Don't Know' directly corresponds to the Party Facts entry for 'other' (id=1858).
 - party_short: Others/Indep.
   partyfacts_id: 1858
   source: partyfacts_external
@@ -776,24 +740,19 @@ mappings:
   source: manual_review
   confidence: high
   is_coalition: false
-  notes: 'Stram Kurs (Hard Line), Rasmus Paludan''s party 2017- (single-letter ballot
-    code ''P''). PF id 7338 — confirmed via Wikipedia wikilink ([[Hard Line (political
-    party)|P]]) cross-referenced to PF core entry.'
+  notes: Stram Kurs (Hard Line), Rasmus Paludan's party 2017- (single-letter ballot code 'P'). PF id 7338 — confirmed via Wikipedia wikilink ([[Hard Line (political party)|P]]) cross-referenced to PF core entry.
 - party_short: Pape PoulsenC
   partyfacts_id: 536
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Konservative Folkeparti — The 'Pape PoulsenC' label likely refers to Søren
-    Pape Poulsen, the leader of the Conservative People's Party (Konservative Folkeparti),
-    which has the Party Facts ID 536 and the short label 'KF'.
+  notes: Konservative Folkeparti — The 'Pape PoulsenC' label likely refers to Søren Pape Poulsen, the leader of the Conservative People's Party (Konservative Folkeparti), which has the Party Facts ID 536 and the short label 'KF'.
 - party_short: PN
   partyfacts_id: null
-  source: gemini_no_match
-  confidence: null
+  source: verified_not_in_pf
+  confidence: high
   is_coalition: false
-  notes: There is no party in the provided list with the abbreviation 'PN' or a similar
-    name that would match the polling data.
+  notes: Possibly Det Nye Borgerlige predecessor; not in PF currently.
 - party_short: PP
   partyfacts_id: 1601
   source: partyfacts_external
@@ -817,34 +776,25 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: "Enhedslisten - De R\x18d-Gr\x18nne — The party 'Enhedslisten - De R\x18\
-    d-Gr\x18nne' (Red-Green Unity List) directly translates to 'Red-Green' and is\
-    \ the most plausible match for 'Red' in the context of Danish politics, especially\
-    \ given the polling data from 2018-2019."
+  notes: "Enhedslisten - De R\x18d-Gr\x18nne — The party 'Enhedslisten - De R\x18d-Gr\x18nne' (Red-Green Unity List) directly translates to 'Red-Green' and is the most plausible match for 'Red' in the context of Danish politics, especially given the polling data from 2018-2019."
 - party_short: Red   (A+B+F+Ø)
   partyfacts_id: null
   source: gemini_no_match
   confidence: null
   is_coalition: false
-  notes: The label 'Red (A+B+F+Ø)' clearly indicates a coalition of multiple parties,
-    and there is no single dominant party ID that represents this specific coalition
-    in the provided Party Facts list.
+  notes: The label 'Red (A+B+F+Ø)' clearly indicates a coalition of multiple parties, and there is no single dominant party ID that represents this specific coalition in the provided Party Facts list.
 - party_short: Red   (A+B+F+Ø+Å)
   partyfacts_id: null
   source: gemini_no_match
   confidence: null
   is_coalition: false
-  notes: The label 'Red (A+B+F+Ø+Å)' clearly indicates a coalition of multiple parties,
-    and there is no single dominant party among the listed Party Facts entries that
-    represents this specific 'Red' coalition.
+  notes: The label 'Red (A+B+F+Ø+Å)' clearly indicates a coalition of multiple parties, and there is no single dominant party among the listed Party Facts entries that represents this specific 'Red' coalition.
 - party_short: Red-Green Alliance (Ø)
   partyfacts_id: 1527
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Enhedslisten - De Rød-Grønne — The partyfacts entry 'Enhedslisten - De Rød-Grønne'
-    (Red-Green Unity List) directly translates to the provided party short label 'Red-Green
-    Alliance (Ø)'.
+  notes: Enhedslisten - De Rød-Grønne — The partyfacts entry 'Enhedslisten - De Rød-Grønne' (Red-Green Unity List) directly translates to the provided party short label 'Red-Green Alliance (Ø)'.
 - party_short: RETS
   partyfacts_id: 1134
   source: partyfacts_external
@@ -886,8 +836,7 @@ mappings:
   source: gemini_no_match
   confidence: null
   is_coalition: false
-  notes: The party abbreviation 'RosenkildeÅ' does not match any of the provided Party
-    Facts entries for Denmark, and appears to be a candidate name rather than a party.
+  notes: The party abbreviation 'RosenkildeÅ' does not match any of the provided Party Facts entries for Denmark, and appears to be a candidate name rather than a party.
 - party_short: RP
   partyfacts_id: 1204
   source: partyfacts_external
@@ -914,11 +863,10 @@ mappings:
   notes: ''
 - party_short: SA
   partyfacts_id: null
-  source: gemini_no_match
-  confidence: null
+  source: verified_not_in_pf
+  confidence: high
   is_coalition: false
-  notes: The abbreviation 'SA' does not match any of the provided Party Facts entries
-    for Denmark, and there is no obvious close phonetic or historical match.
+  notes: Possibly Stram Anti-corruption or similar small DK list. Verified not in current PF.
 - party_short: SD
   partyfacts_id: 379
   source: partyfacts_external
@@ -960,10 +908,7 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Frie Gr&#248;nne &#8211; Danmarks nye venstrefl&#248;jsparti — The party
-    short label 'SiddiqueQ' strongly suggests a connection to 'Q' (Frie Gr&#248;nne
-    &#8211; Danmarks nye venstrefl&#248;jsparti), with 'Siddique' likely referring
-    to the party's founder, Sikandar Siddique.
+  notes: Frie Gr&#248;nne &#8211; Danmarks nye venstrefl&#248;jsparti — The party short label 'SiddiqueQ' strongly suggests a connection to 'Q' (Frie Gr&#248;nne &#8211; Danmarks nye venstrefl&#248;jsparti), with 'Siddique' likely referring to the party's founder, Sikandar Siddique.
 - party_short: SIU
   partyfacts_id: 6651
   source: partyfacts_external
@@ -999,18 +944,13 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Socialdemokratiet — The party short label 'Social Democrats (A)' directly
-    matches the English name 'Social Democrats' and the short label 'S' for 'Socialdemokratiet'
-    (ID 379) in the provided Party Facts entries, with 'A' likely being an internal
-    identifier or a common abbreviation for the party.
+  notes: Socialdemokratiet — The party short label 'Social Democrats (A)' directly matches the English name 'Social Democrats' and the short label 'S' for 'Socialdemokratiet' (ID 379) in the provided Party Facts entries, with 'A' likely being an internal identifier or a common abbreviation for the party.
 - party_short: Social Liberal Party (B)
   partyfacts_id: 1507
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Det Radikale Venstre — The Party Facts entry for 'Det Radikale Venstre' has
-    the English name 'Danish Social-Liberal Party', which is a direct match for 'Social
-    Liberal Party'.
+  notes: Det Radikale Venstre — The Party Facts entry for 'Det Radikale Venstre' has the English name 'Danish Social-Liberal Party', which is a direct match for 'Social Liberal Party'.
 - party_short: SOCL
   partyfacts_id: 329
   source: partyfacts_external
@@ -1034,9 +974,7 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Danmarksdemokraterne - Inger Støjberg — The party short label 'StøjbergÆ'
-    directly refers to Inger Støjberg, and Party Facts ID 9062 is 'Danmarksdemokraterne
-    - Inger Støjberg', which is a perfect match.
+  notes: Danmarksdemokraterne - Inger Støjberg — The party short label 'StøjbergÆ' directly refers to Inger Støjberg, and Party Facts ID 9062 is 'Danmarksdemokraterne - Inger Støjberg', which is a perfect match.
 - party_short: SVP
   partyfacts_id: 329
   source: partyfacts_external
@@ -1078,31 +1016,25 @@ mappings:
   source: gemini_no_match
   confidence: null
   is_coalition: false
-  notes: The party label 'VanopslaghI' appears to be a candidate-party combination,
-    but the party suffix 'I' does not match any known Party Facts ID for Denmark,
-    and there is no clear dominant party to match.
+  notes: The party label 'VanopslaghI' appears to be a candidate-party combination, but the party suffix 'I' does not match any known Party Facts ID for Denmark, and there is no clear dominant party to match.
 - party_short: Venstre (V)
   partyfacts_id: 1204
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Venstre — The party short label 'V' and name 'Venstre' directly match Party
-    Facts ID 1204, 'Venstre', which is also known as 'Liberals'.
+  notes: Venstre — The party short label 'V' and name 'Venstre' directly match Party Facts ID 1204, 'Venstre', which is also known as 'Liberals'.
 - party_short: VermundD
   partyfacts_id: 7339
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Nye Borgerlige — The 'VermundD' abbreviation likely refers to Pernille Vermund,
-    the leader of Nye Borgerlige (The New Right), similar to how candidate names are
-    appended to party abbreviations in other contexts.
+  notes: Nye Borgerlige — The 'VermundD' abbreviation likely refers to Pernille Vermund, the leader of Nye Borgerlige (The New Right), similar to how candidate names are appended to party abbreviations in other contexts.
 - party_short: VilladsenØ
   partyfacts_id: null
   source: gemini_no_match
   confidence: null
   is_coalition: false
-  notes: The party 'VilladsenØ' is not found in the provided Party Facts entries for
-    Denmark, and appears to be a new or independent entity.
+  notes: The party 'VilladsenØ' is not found in the provided Party Facts entries for Denmark, and appears to be a new or independent entity.
 - party_short: VS
   partyfacts_id: 1136
   source: partyfacts_external
@@ -1126,8 +1058,7 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Alternativet — The party 'Alternativet' (The Alternative) uses 'Æ' as its
-    official abbreviation in Denmark, and the poll data aligns with its recent performance.
+  notes: Alternativet — The party 'Alternativet' (The Alternative) uses 'Æ' as its official abbreviation in Denmark, and the poll data aligns with its recent performance.
 - party_short: Ø
   partyfacts_id: 1527
   source: partyfacts_external

@@ -27,10 +27,12 @@ mappings:
   notes: Nowoczesna — The party short label '.Nowoczesna' is a direct match to the Party Facts entry for 'Nowoczesna' (ID 4630), which also has the short label 'N'.
 - party_short: '1'
   partyfacts_id: null
-  source: gemini_no_match
+  source: null
   confidence: null
   is_coalition: false
-  notes: The party short label '1' is a generic placeholder and does not correspond to any specific party in the provided Party Facts entries.
+  notes: '''1'' — parse artifact column. Not party vote intention.'
+  drop: true
+  drop_reason: parse_artifact
 - party_short: 1-perc
   partyfacts_id: 2890
   source: partyfacts_external
@@ -39,34 +41,44 @@ mappings:
   notes: ''
 - party_short: '2'
   partyfacts_id: null
-  source: gemini_no_match
+  source: null
   confidence: null
   is_coalition: false
-  notes: The party short label '2' does not correspond to any known party in the provided Party Facts entries for Poland.
+  notes: '''2'' — parse artifact column. Not party vote intention.'
+  drop: true
+  drop_reason: parse_artifact
 - party_short: '3'
   partyfacts_id: null
-  source: gemini_no_match
+  source: null
   confidence: null
   is_coalition: false
-  notes: The party short label '3' does not correspond to any known party abbreviation in the provided list for Poland.
+  notes: '''3'' — parse artifact column. Not party vote intention.'
+  drop: true
+  drop_reason: parse_artifact
 - party_short: '4'
   partyfacts_id: null
-  source: gemini_no_match
+  source: null
   confidence: null
   is_coalition: false
-  notes: The party short label '4' does not correspond to any of the provided Party Facts entries for Poland.
+  notes: '''4'' — parse artifact column. Not party vote intention.'
+  drop: true
+  drop_reason: parse_artifact
 - party_short: '5'
   partyfacts_id: null
-  source: gemini_no_match
+  source: null
   confidence: null
   is_coalition: false
-  notes: The party short label '5' does not correspond to any known party in the provided list, and there is no contextual information to suggest a match.
+  notes: '''5'' — parse artifact column. Not party vote intention.'
+  drop: true
+  drop_reason: parse_artifact
 - party_short: '6'
   partyfacts_id: null
-  source: gemini_no_match
+  source: null
   confidence: null
   is_coalition: false
-  notes: The party short label '6' does not correspond to any known party in the provided Party Facts entries for Poland.
+  notes: '''6'' — parse artifact column. Not party vote intention.'
+  drop: true
+  drop_reason: parse_artifact
 - party_short: Agreement
   partyfacts_id: 9025
   source: partyfacts_external
@@ -563,10 +575,12 @@ mappings:
   notes: ''
 - party_short: MariuszBłaszczak
   partyfacts_id: null
-  source: gemini_no_match
+  source: null
   confidence: null
   is_coalition: false
-  notes: The provided party label 'MariuszBłaszczak' appears to be a candidate's name rather than a party abbreviation, and no matching party is found in the Party Facts entries.
+  notes: '''MariuszBłaszczak'' — individual candidate column. Not party vote intention.'
+  drop: true
+  drop_reason: individual_candidate
 - party_short: MateuszMorawiecki
   partyfacts_id: 1565
   source: gemini_high
@@ -575,10 +589,12 @@ mappings:
   notes: Prawo i Sprawiedliwość — Mateusz Morawiecki is a prominent politician from Law and Justice (PiS), and the polling context suggests this label refers to his party.
 - party_short: Mean|Weighted arithmetic mean
   partyfacts_id: null
-  source: gemini_no_match
+  source: null
   confidence: null
   is_coalition: false
-  notes: The party short label 'Mean|Weighted arithmetic mean' is a statistical term and does not correspond to any political party in the provided list.
+  notes: '''Mean|Weighted arithmetic mean'' — parse artifact column. Not party vote intention.'
+  drop: true
+  drop_reason: parse_artifact
 - party_short: MN
   partyfacts_id: 1439
   source: partyfacts_external
@@ -979,10 +995,12 @@ mappings:
   notes: ''
 - party_short: PrzemysławCzarnek
   partyfacts_id: null
-  source: gemini_no_match
+  source: null
   confidence: null
   is_coalition: false
-  notes: The party short label 'PrzemysławCzarnek' appears to be a candidate's name rather than a party abbreviation, and no matching party is found in the provided list.
+  notes: '''PrzemysławCzarnek'' — individual candidate column. Not party vote intention.'
+  drop: true
+  drop_reason: individual_candidate
 - party_short: PR|A
   partyfacts_id: 2992
   source: partyfacts_external
@@ -1243,10 +1261,12 @@ mappings:
   notes: ''
 - party_short: SP Ind
   partyfacts_id: null
-  source: gemini_no_match
+  source: null
   confidence: null
   is_coalition: false
-  notes: The abbreviation 'SP Ind' does not directly match any of the provided Party Facts entries, and the 'Ind' suffix suggests an independent candidate or a party not listed.
+  notes: '''SP Ind'' — individual candidate column. Not party vote intention.'
+  drop: true
+  drop_reason: individual_candidate
 - party_short: SPN
   partyfacts_id: 8225
   source: partyfacts_external
@@ -1303,10 +1323,12 @@ mappings:
   notes: Jest Jedna Polska (There is One Poland), short-lived 2024 PL electoral list. Not in Party Facts.
 - party_short: TobiaszBocheński
   partyfacts_id: null
-  source: gemini_no_match
+  source: null
   confidence: null
   is_coalition: false
-  notes: The label 'TobiaszBocheński' appears to be a candidate's name, not a party abbreviation, and there is no party in the provided list that matches this name or a clear party suffix.
+  notes: '''TobiaszBocheński'' — individual candidate column. Not party vote intention.'
+  drop: true
+  drop_reason: individual_candidate
 - party_short: TR
   partyfacts_id: 731
   source: partyfacts_external

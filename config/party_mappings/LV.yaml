@@ -42,9 +42,7 @@ mappings:
   source: manual_review
   confidence: high
   is_coalition: false
-  notes: 'Kam pieder valsts? — Par cilvēcīgu Latviju (Who owns the state? — For a
-    Humane Latvia), 2016-. PF id 6356. Confirmed via Wikipedia wikilink
-    ([[For a Humane Latvia|AL]]) → PF core.'
+  notes: Kam pieder valsts? — Par cilvēcīgu Latviju (Who owns the state? — For a Humane Latvia), 2016-. PF id 6356. Confirmed via Wikipedia wikilink ([[For a Humane Latvia|AL]]) → PF core.
 - party_short: ally
   partyfacts_id: 3965
   source: partyfacts_external
@@ -200,11 +198,7 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Jaunā konservatģvā partija — The abbreviation 'JKP/K' strongly suggests a
-    connection to 'Jaunā konservatģvā partija' (JKP), with the '/K' likely indicating
-    a slight variation or a coalition with another party starting with 'K', but JKP
-    is the dominant part of the abbreviation and the most relevant match among the
-    candidates.
+  notes: Jaunā konservatģvā partija — The abbreviation 'JKP/K' strongly suggests a connection to 'Jaunā konservatģvā partija' (JKP), with the '/K' likely indicating a slight variation or a coalition with another party starting with 'K', but JKP is the dominant part of the abbreviation and the most relevant match among the candidates.
 - party_short: JL
   partyfacts_id: 1531
   source: partyfacts_external
@@ -252,10 +246,7 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Kam Pieder Valsts? (now Par Cilv?c?gu Latviju) — The abbreviation 'KPP' is
-    a direct match for 'KPV LV' (Kam Pieder Valsts?) which is listed as id=6356, despite
-    the slight difference in the abbreviation, the context of the party name strongly
-    suggests this match.
+  notes: Kam Pieder Valsts? (now Par Cilv?c?gu Latviju) — The abbreviation 'KPP' is a direct match for 'KPV LV' (Kam Pieder Valsts?) which is listed as id=6356, despite the slight difference in the abbreviation, the context of the party name strongly suggests this match.
 - party_short: KPV
   partyfacts_id: 6356
   source: partyfacts_external
@@ -543,17 +534,13 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Katram un Katrai — The partyfacts entry 'KuK' (Katram un Katrai) is a very
-    close phonetic and visual match to 'LuK', suggesting a likely typo or alternative
-    abbreviation.
+  notes: Katram un Katrai — The partyfacts entry 'KuK' (Katram un Katrai) is a very close phonetic and visual match to 'LuK', suggesting a likely typo or alternative abbreviation.
 - party_short: LuK/KuK
   partyfacts_id: 9076
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Katram un Katrai — The abbreviation 'KuK' directly matches the Party Facts
-    entry for 'Katram un Katrai', and the polling data aligns with the party's recent
-    activity.
+  notes: Katram un Katrai — The abbreviation 'KuK' directly matches the Party Facts entry for 'Katram un Katrai', and the polling data aligns with the party's recent activity.
 - party_short: LV
   partyfacts_id: 373
   source: partyfacts_external
@@ -613,9 +600,7 @@ mappings:
   source: manual_review
   confidence: high
   is_coalition: false
-  notes: 'Nacionālā apvienība (National Alliance), 2011-, PF id 7619. Note: pandas
-    default read_csv treats the string ''NA'' as NaN, so downstream consumers must
-    use keep_default_na=False, na_values=[""].'
+  notes: 'Nacionālā apvienība (National Alliance), 2011-, PF id 7619. Note: pandas default read_csv treats the string ''NA'' as NaN, so downstream consumers must use keep_default_na=False, na_values=[""].'
 - party_short: NA!
   partyfacts_id: 7619
   source: partyfacts_external
@@ -666,11 +651,10 @@ mappings:
   notes: ''
 - party_short: NST
   partyfacts_id: null
-  source: gemini_no_match
-  confidence: null
+  source: verified_not_in_pf
+  confidence: high
   is_coalition: false
-  notes: The abbreviation 'NST' does not closely match any of the provided Party Facts
-    entries for Latvia, and there is no clear semantic or political continuity link.
+  notes: Nacionālā spēka savienība / National Power Unity, small Latvian party. Not in Party Facts.
 - party_short: Others
   partyfacts_id: 1848
   source: partyfacts_external
@@ -706,9 +690,7 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Kustība Par! — The partyfacts entry for 'Kustība Par!' (Movement For!) has
-    a short label 'Par' which is a very close match to 'Par!' and the time frame aligns
-    with the polling data.
+  notes: Kustība Par! — The partyfacts entry for 'Kustība Par!' (Movement For!) has a short label 'Par' which is a very close match to 'Par!' and the time frame aligns with the polling data.
 - party_short: PCL
   partyfacts_id: 6356
   source: partyfacts_external
@@ -720,9 +702,7 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Kam Pieder Valsts? (now Par Cilv?c?gu Latviju) — The partyfacts entry for
-    id 6356 explicitly mentions 'PCL' as an abbreviation and 'Par Cilvēcīgu Latviju'
-    as its current name, which aligns with 'PCL/AL'.
+  notes: Kam Pieder Valsts? (now Par Cilv?c?gu Latviju) — The partyfacts entry for id 6356 explicitly mentions 'PCL' as an abbreviation and 'Par Cilvēcīgu Latviju' as its current name, which aligns with 'PCL/AL'.
 - party_short: PCTVL
   partyfacts_id: 176
   source: partyfacts_external
@@ -992,10 +972,7 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Tautas kalpi Latvijai — The abbreviation 'TVS' is a direct match for 'Tautas
-    kalpi Latvijai' (People's Servants for Latvia), which has the short label 'TKL'
-    in Party Facts, but the polling context suggests 'TVS' is a variant or a very
-    close match for this party, especially given its recent activity in 2022.
+  notes: Tautas kalpi Latvijai — The abbreviation 'TVS' is a direct match for 'Tautas kalpi Latvijai' (People's Servants for Latvia), which has the short label 'TKL' in Party Facts, but the polling context suggests 'TVS' is a variant or a very close match for this party, especially given its recent activity in 2022.
 - party_short: UFF
   partyfacts_id: 671
   source: partyfacts_external
