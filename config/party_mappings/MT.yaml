@@ -1,0 +1,284 @@
+# Auto-generated from italgov's data/scripts/party_crosswalk/
+#
+# Built by layering:
+#   1. extend.py — Gemini-based (country, party_short) → partyfacts_id
+#      with confidence scores. Coverage of opposition + coalition parties.
+#   2. Party Facts external-parties.csv — base layer of historically
+#      recognized parties.
+#   3. WhoGov-minister-matched — high-signal entries derived from
+#      cabinet ministers' partyfacts_id in WhoGov v3.1.
+#
+# `source` values: gemini_{high,medium,low,no_match} for Gemini calls,
+# partyfacts_external/whogov_minister_match/europolls_harmonized for
+# the layered base. Use confidence + is_coalition to triage.
+
+mappings:
+- party_short: AbelaPL
+  partyfacts_id: 808
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Partit Laburista — The 'PL' in 'AbelaPL' strongly suggests a connection to
+    'Partit Laburista', and the polling data indicates a major party, consistent with
+    the Labour Party in Malta.
+- party_short: AD
+  partyfacts_id: 62
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: AD+PD
+  partyfacts_id: 9066
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: CP
+  partyfacts_id: 15
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: CWP
+  partyfacts_id: 385
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: DAP
+  partyfacts_id: 420
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: DeliaPN
+  partyfacts_id: 699
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Partit Nazzjonalista — The 'PN' in 'DeliaPN' strongly suggests the Nationalist
+    Party, and the polling data aligns with a major party's performance.
+- party_short: DemocraticAlternative
+  partyfacts_id: 62
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Alternattiva Demokratika — The party name 'Democratic Alternative' directly
+    matches the English name of Party Facts ID 62, 'Alternattiva Demokratika'.
+- party_short: Don'tknow
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: The label 'Don'tknow' indicates an unknown or undecided vote, not a specific
+    political party, and therefore cannot be matched to any Party Facts entry.
+- party_short: FN
+  partyfacts_id: 3977
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: FN (PN+PD)
+  partyfacts_id: 3977
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: GP
+  partyfacts_id: 476
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: GrechPN
+  partyfacts_id: 699
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Partit Nazzjonalista — The 'PN' in 'GrechPN' strongly suggests a match with
+    'Partit Nazzjonalista' (PN), and the polling data is consistent with a major party.
+- party_short: IE
+  partyfacts_id: 515
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: IND.
+  partyfacts_id: 2798
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: indep
+  partyfacts_id: 2798
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: INDEPENDENT
+  partyfacts_id: 2798
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: JP
+  partyfacts_id: 416
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: LAB
+  partyfacts_id: 808
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Labour
+  partyfacts_id: 808
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Partit Laburista — The party name 'Labour' directly translates to 'Partit
+    Laburista' and the English name 'Labour Party' for Party Facts ID 808, which is
+    a strong match.
+- party_short: MLP
+  partyfacts_id: 808
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: MLP/PL
+  partyfacts_id: 808
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: MPM
+  partyfacts_id: 2800
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: MuscatPL
+  partyfacts_id: 808
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Partit Laburista — The 'MuscatPL' label clearly refers to the 'Partit Laburista'
+    (Labour Party), with 'Muscat' likely referencing former leader Joseph Muscat,
+    and the polling data showing consistent high support for a major party in Malta.
+- party_short: MWP
+  partyfacts_id: 1604
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Nationalist
+  partyfacts_id: 699
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Partit Nazzjonalista — The party short label 'Nationalist' directly matches
+    the English name 'Nationalist Party' of Party Facts ID 699, 'Partit Nazzjonalista',
+    which is a strong semantic and linguistic match.
+- party_short: Neither / None
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: The label 'Neither / None' refers to voters who did not choose any party,
+    not a political party itself.
+- party_short: No reply
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: The label 'No reply' indicates a category for respondents who did not provide
+    an answer, rather than a political party.
+- party_short: Noreply
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: The label 'Noreply' does not correspond to any known political party or abbreviation
+    in the provided list for Malta.
+- party_short: Notvoting
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: The label 'Notvoting' indicates a category for non-voters or undecideds,
+    not a political party, and thus does not match any Party Facts ID.
+- party_short: NP
+  partyfacts_id: 699
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: PC
+  partyfacts_id: 1861
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: PD
+  partyfacts_id: 7354
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: PDN
+  partyfacts_id: 1487
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: PHN
+  partyfacts_id: 385
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: PK
+  partyfacts_id: 15
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: PKM
+  partyfacts_id: 1861
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: PKP
+  partyfacts_id: 320
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: PL
+  partyfacts_id: 808
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: PN
+  partyfacts_id: 699
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Undecided/No answer
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: The label 'Undecided/No answer' does not correspond to any political party,
+    but rather represents a survey response category.
+- party_short: UPM
+  partyfacts_id: 1910
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''

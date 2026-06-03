@@ -1,0 +1,1073 @@
+# Auto-generated from italgov's data/scripts/party_crosswalk/
+#
+# Built by layering:
+#   1. extend.py — Gemini-based (country, party_short) → partyfacts_id
+#      with confidence scores. Coverage of opposition + coalition parties.
+#   2. Party Facts external-parties.csv — base layer of historically
+#      recognized parties.
+#   3. WhoGov-minister-matched — high-signal entries derived from
+#      cabinet ministers' partyfacts_id in WhoGov v3.1.
+#
+# `source` values: gemini_{high,medium,low,no_match} for Gemini calls,
+# partyfacts_external/whogov_minister_match/europolls_harmonized for
+# the layered base. Use confidence + is_coalition to triage.
+
+mappings:
+- party_short: ' ILP'
+  partyfacts_id: 234
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: 1-perc
+  partyfacts_id: 2966
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: A
+  partyfacts_id: 1477
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Alba
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: The 'Alba' party is not present in the provided list of Party Facts entries
+    for the UK.
+- party_short: All
+  partyfacts_id: 1477
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Alliance
+  partyfacts_id: 1477
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: AN IND
+  partyfacts_id: 3198
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: AP
+  partyfacts_id: 1477
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: APNI
+  partyfacts_id: 1477
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: AWP
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: The abbreviation 'AWP' does not match any of the provided Party Facts entries
+    for the UK, and the 2019 general election vote share of 1.1% suggests it is a
+    distinct, albeit minor, party not listed.
+- party_short: BGPV
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: The abbreviation 'BGPV' does not match any of the provided Party Facts entries
+    for the UK, and the polling context does not offer enough information to infer
+    a match.
+- party_short: Birkenhead Social Justice
+  partyfacts_id: 2966
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: BNP
+  partyfacts_id: 855
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Boris Johnson
+  partyfacts_id: 1567
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Conservative Party — Boris Johnson was a prominent leader of the Conservative
+    Party during the polling period, and the polling data aligns with Conservative
+    Party performance.
+- party_short: BP
+  partyfacts_id: 7364
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: BREXIT
+  partyfacts_id: 7364
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: BRX
+  partyfacts_id: 7364
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Brx
+  partyfacts_id: 7364
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Brexit Party / Reform — The 'Brx' abbreviation directly matches the 'BRX
+    / Reform' short label for Party Facts ID 7364, which is the Brexit Party / Reform.
+- party_short: BRX / Reform
+  partyfacts_id: 7364
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: C
+  partyfacts_id: 4557
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: C-P
+  partyfacts_id: 6374
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Change UK
+  partyfacts_id: 7365
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: ChangeUK
+  partyfacts_id: 7365
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Chg
+  partyfacts_id: 7365
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Change UK — The short label 'Chg' is a clear abbreviation for 'Change UK',
+    which is present in the candidate list with a matching ID and relevant time frame.
+- party_short: CNL
+  partyfacts_id: 1567
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: CoLab
+  partyfacts_id: 4034
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: CoLib
+  partyfacts_id: 2123
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Comm
+  partyfacts_id: 116
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: CON
+  partyfacts_id: 1567
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Con
+  partyfacts_id: 1567
+  source: whogov_minister_match
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Con(reg)
+  partyfacts_id: 1841
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Con-18
+  partyfacts_id: 1567
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Con.
+  partyfacts_id: 1567
+  source: whogov_minister_match
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: CONS
+  partyfacts_id: 1567
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Conservative
+  partyfacts_id: 1567
+  source: whogov_minister_match
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Conservative Party
+  partyfacts_id: 1567
+  source: whogov_minister_match
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: CONSERVATIVES
+  partyfacts_id: 1567
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Conservatives
+  partyfacts_id: 1567
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: CoPA
+  partyfacts_id: 4885
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: CPGB
+  partyfacts_id: 116
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: CTG'
+  partyfacts_id: 2966
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: CUK
+  partyfacts_id: 7365
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: CYMRU
+  partyfacts_id: 1002
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: David Cameron
+  partyfacts_id: 1567
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Conservative Party — David Cameron was the leader of the Conservative Party
+    during the specified polling period, and the vote shares align with a major party.
+- party_short: Don't  Know
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: The party short label 'Don't Know' indicates an undecided voter response,
+    not an actual political party.
+- party_short: Don't Know
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: The label 'Don't Know' indicates an undecided voter response, not a political
+    party, and therefore cannot be matched to any Party Facts ID.
+- party_short: DUP
+  partyfacts_id: 335
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: ED
+  partyfacts_id: 1675
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: etc
+  partyfacts_id: 1841
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: EuCon
+  partyfacts_id: 164
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Gauke(Ind)
+  partyfacts_id: 2964
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: independent — The label 'Gauke(Ind)' clearly indicates an independent candidate,
+    and Party Facts ID 2964 corresponds to 'independent'.
+- party_short: George Osborne
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: George Osborne is an individual politician, not a party, and there is no
+    party in the candidate list that matches this label.
+- party_short: GP
+  partyfacts_id: 1794
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: GP-NI
+  partyfacts_id: 8240
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: GPEW
+  partyfacts_id: 1794
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: GPNI
+  partyfacts_id: 8240
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Green Party in Northern Ireland — The abbreviation 'GPNI' directly matches
+    'GP-NI' which stands for 'Green Party in Northern Ireland' in the candidate list,
+    and the polling data is consistent with a minor party.
+- party_short: GR
+  partyfacts_id: 1794
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: GREEN
+  partyfacts_id: 1794
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Green
+  partyfacts_id: 1794
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: GREENS
+  partyfacts_id: 1794
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Greens
+  partyfacts_id: 1794
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Grieve(Ind)
+  partyfacts_id: 2964
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: independent — The label 'Grieve(Ind)' clearly indicates an independent candidate,
+    which directly matches the 'independent' entry in Party Facts.
+- party_short: GRN
+  partyfacts_id: 1794
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Grn
+  partyfacts_id: 1794
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Green Party of England and Wales — The abbreviation 'Grn' strongly suggests
+    'Green' and the Green Party of England and Wales (GPEW) is the most fitting candidate,
+    with polling data aligning with its presence.
+- party_short: GYF
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: The abbreviation 'GYF' does not match any of the provided Party Facts entries
+    for the UK, and there is no obvious phonetic or semantic similarity to suggest
+    a match.
+- party_short: HRL
+  partyfacts_id: 3680
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: IE
+  partyfacts_id: 3198
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: IKHHC
+  partyfacts_id: 8654
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: ILP
+  partyfacts_id: 234
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: IN
+  partyfacts_id: 2050
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: indep
+  partyfacts_id: 2964
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: INDEPENDENT
+  partyfacts_id: 2964
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Independent
+  partyfacts_id: 2964
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: INP
+  partyfacts_id: 2119
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Jeremy Corbyn
+  partyfacts_id: 1516
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Labour Party — Jeremy Corbyn was the leader of the Labour Party during the
+    period of the polls, and the vote shares align with Labour's performance at the
+    time.
+- party_short: LAB
+  partyfacts_id: 1516
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Lab
+  partyfacts_id: 1516
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Lab(reg)
+  partyfacts_id: 1841
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Lab.
+  partyfacts_id: 1516
+  source: whogov_minister_match
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: LABOUR
+  partyfacts_id: 1516
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Labour
+  partyfacts_id: 1516
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Labour Party
+  partyfacts_id: 1516
+  source: whogov_minister_match
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Law(Ind)
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: The label 'Law(Ind)' likely refers to an independent candidate named Law,
+    which does not correspond to a specific party in the provided Party Facts list.
+- party_short: LD
+  partyfacts_id: 1388
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: LDEM
+  partyfacts_id: 1388
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: LDP
+  partyfacts_id: 1388
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: LIB
+  partyfacts_id: 1388
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Lib
+  partyfacts_id: 540
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: LIB DEMS
+  partyfacts_id: 1388
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Lib Dems
+  partyfacts_id: 1388
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Lib/Dems
+  partyfacts_id: 1388
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: LibDem
+  partyfacts_id: 1388
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: LibDems
+  partyfacts_id: 1388
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Liberal
+  partyfacts_id: 540
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Liberal Democrat
+  partyfacts_id: 1388
+  source: whogov_minister_match
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: LibU
+  partyfacts_id: 2120
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: LP
+  partyfacts_id: 540
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: LUP
+  partyfacts_id: 2120
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Majority / lead
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: The label 'Majority / lead' does not refer to a specific political party
+    but rather to a polling outcome or a general political status, and thus cannot
+    be matched to a Party Facts ID.
+- party_short: Milton(Ind)
+  partyfacts_id: 2964
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: independent — The label 'Milton(Ind)' clearly indicates an independent candidate,
+    and 'indep' (id=2964) is the Party Facts entry for 'independent'.
+- party_short: N
+  partyfacts_id: 1623
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Na
+  partyfacts_id: 1623
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: NDP
+  partyfacts_id: 2121
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: NF
+  partyfacts_id: 1140
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: NILP
+  partyfacts_id: 8757
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: NIWC
+  partyfacts_id: 8272
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: NLab
+  partyfacts_id: 2122
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Nlab
+  partyfacts_id: 2122
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: NLO
+  partyfacts_id: 2122
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: NLP
+  partyfacts_id: 141
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: NLP — LG
+  partyfacts_id: 2123
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: NLP-LG
+  partyfacts_id: 2123
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: NN
+  partyfacts_id: 2964
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: NO2EU
+  partyfacts_id: 1965
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: None of these
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: The label 'None of these' indicates a preference for no party, not an actual
+    political party.
+- party_short: Not sure
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: The party label 'Not sure' indicates an undecided voter, not an actual political
+    party, so there is no matching Party Facts ID.
+- party_short: NP
+  partyfacts_id: 1623
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Other
+  partyfacts_id: 1841
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: other
+  partyfacts_id: 1841
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: P
+  partyfacts_id: 1794
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Paul Nuttall
+  partyfacts_id: 601
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: United Kingdom Independence Party — Paul Nuttall was the leader of UKIP during
+    the period of the polling data, and the vote shares align with UKIP's performance
+    at the time.
+- party_short: PC
+  partyfacts_id: 1002
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: PCy
+  partyfacts_id: 1002
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: PLAID
+  partyfacts_id: 1002
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Plaid
+  partyfacts_id: 1002
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: PlaidCymru
+  partyfacts_id: 1002
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: PO
+  partyfacts_id: 8360
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: PUP
+  partyfacts_id: 8758
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: PW
+  partyfacts_id: 1002
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: R
+  partyfacts_id: 1082
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: R.UK
+  partyfacts_id: 7364
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: RB
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: The abbreviation 'RB' does not clearly match any of the provided Party Facts
+    entries for the UK, and the polling data does not offer enough context to infer
+    a match.
+- party_short: Referendum
+  partyfacts_id: 825
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Reform
+  partyfacts_id: 7364
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: RES
+  partyfacts_id: 1082
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: RESPECT
+  partyfacts_id: 1082
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Respect
+  partyfacts_id: 1082
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: RP
+  partyfacts_id: 825
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: SDLP
+  partyfacts_id: 762
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: SDP
+  partyfacts_id: 957
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: SDP/LP
+  partyfacts_id: 762
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: SF
+  partyfacts_id: 963
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: SGP
+  partyfacts_id: 6687
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: SLD
+  partyfacts_id: 1388
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: SLP
+  partyfacts_id: 1277
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: SNP
+  partyfacts_id: 986
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: SNP / PC
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: This is a coalition of two parties, SNP and Plaid Cymru, and there is no
+    single Party Facts ID for this specific coalition.
+- party_short: SNP-PC
+  partyfacts_id: 986
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Spk
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: The abbreviation 'Spk' does not match any of the provided Party Facts entries
+    for the UK, and there is no obvious phonetic or semantic similarity to suggest
+    a match.
+- party_short: SSP
+  partyfacts_id: 2966
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: The Independents
+  partyfacts_id: 2966
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Theresa May
+  partyfacts_id: 1567
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Conservative Party — Theresa May was the leader of the Conservative Party
+    during the period of the polls, so the label refers to her party.
+- party_short: Tim Farron
+  partyfacts_id: 1388
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Liberal Democrats — Tim Farron was the leader of the Liberal Democrats during
+    the period of the polls, and the label 'Tim Farron' refers to the Liberal Democrats
+    party.
+- party_short: Tories
+  partyfacts_id: 8732
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: TORY
+  partyfacts_id: 1567
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: TUV
+  partyfacts_id: 2966
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: U
+  partyfacts_id: 1841
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: UKIP
+  partyfacts_id: 601
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: UKUP
+  partyfacts_id: 8263
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: UNION
+  partyfacts_id: 601
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: UP
+  partyfacts_id: 1366
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: UPUP
+  partyfacts_id: 2966
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: UUP
+  partyfacts_id: 1366
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: UUUC
+  partyfacts_id: 1262
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: W
+  partyfacts_id: 6221
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Would not vote/refused
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: The label 'Would not vote/refused' indicates a non-voting or undecided category,
+    not an actual political party, so there is no Party Facts ID match.
+- party_short: WP
+  partyfacts_id: 8360
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: WPB
+  partyfacts_id: 8360
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Páirtí na nOibrithe — The short label 'WPB' is a very close match to 'WP'
+    for 'Páirtí na nOibrithe' (Workers' Party of Ireland), which is a plausible party
+    in the UK context given its historical presence.
+- party_short: YP
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: The abbreviation 'YP' does not match any of the provided Party Facts entries
+    for the UK, and there is no obvious party name that 'YP' would abbreviate to among
+    the candidates.

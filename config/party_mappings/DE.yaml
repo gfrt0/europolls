@@ -1,0 +1,1254 @@
+# Auto-generated from italgov's data/scripts/party_crosswalk/
+#
+# Built by layering:
+#   1. extend.py — Gemini-based (country, party_short) → partyfacts_id
+#      with confidence scores. Coverage of opposition + coalition parties.
+#   2. Party Facts external-parties.csv — base layer of historically
+#      recognized parties.
+#   3. WhoGov-minister-matched — high-signal entries derived from
+#      cabinet ministers' partyfacts_id in WhoGov v3.1.
+#
+# `source` values: gemini_{high,medium,low,no_match} for Gemini calls,
+# partyfacts_external/whogov_minister_match/europolls_harmonized for
+# the layered base. Use confidence + is_coalition to triage.
+
+mappings:
+- party_short: 90/Greens
+  partyfacts_id: 1816
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Abs.|Abstention
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: The label 'Abs.|Abstention' refers to abstentions or 'none of the above'
+    votes, which is not a political party and therefore cannot be matched to a Party
+    Facts ID.
+- party_short: ADF
+  partyfacts_id: 1723
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: AFD
+  partyfacts_id: 1976
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: AfD
+  partyfacts_id: 1976
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Alliance90/Greens
+  partyfacts_id: 1816
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Alliance90/The Greens
+  partyfacts_id: 1816
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: B'90
+  partyfacts_id: 865
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: B90/GR
+  partyfacts_id: 865
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: B90/Gr
+  partyfacts_id: 1816
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: B90/Gr-BB
+  partyfacts_id: 865
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: B90/GRU
+  partyfacts_id: 1816
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: B90/Gru
+  partyfacts_id: 1816
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: B90/Grue
+  partyfacts_id: 1816
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: B90/GRUENE
+  partyfacts_id: 1816
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: B90/Grüne
+  partyfacts_id: 1816
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: BBB
+  partyfacts_id: 2068
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: BFB
+  partyfacts_id: 2702
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: BGRUE
+  partyfacts_id: 1816
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: BHE
+  partyfacts_id: 1010
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: BLAU
+  partyfacts_id: 2702
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: BP
+  partyfacts_id: 61
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: BSW
+  partyfacts_id: 9646
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: BVP
+  partyfacts_id: 1825
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: BWB
+  partyfacts_id: 2702
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: CDU
+  partyfacts_id: 1375
+  source: whogov_minister_match
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: CDU+CSU
+  partyfacts_id: 211
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: CDU-CSU
+  partyfacts_id: 211
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: CDU/C
+  partyfacts_id: 211
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: CDU/CSU
+  partyfacts_id: 211
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: CDU/CSU/FDP
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: The label 'CDU/CSU/FDP' represents a coalition of three distinct parties,
+    and there is no single Party Facts ID that represents this specific alliance.
+- party_short: CDU/CSU/GREENS
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: The label 'CDU/CSU/GREENS' represents a coalition of three distinct parties,
+    and there is no single Party Facts ID that encompasses this specific combination.
+- party_short: CDU/CSU/SPD
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: The label 'CDU/CSU/SPD' represents a coalition of three distinct parties,
+    and there is no single Party Facts ID that encompasses this specific alliance.
+- party_short: CDUCSU
+  partyfacts_id: 211
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: CNAG
+  partyfacts_id: 2702
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: CNBL
+  partyfacts_id: 1831
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: CSP
+  partyfacts_id: 8723
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: CSU
+  partyfacts_id: 1731
+  source: whogov_minister_match
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: CSVD
+  partyfacts_id: 2070
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: DA-FVP
+  partyfacts_id: 1152
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: DA/FVP
+  partyfacts_id: 1152
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: DDP
+  partyfacts_id: 1826
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: DDP/DStP
+  partyfacts_id: 1826
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: DFP
+  partyfacts_id: 2108
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: DFU
+  partyfacts_id: 24
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: DHP
+  partyfacts_id: 1883
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: DIE LINKE
+  partyfacts_id: 1545
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Die Linke
+  partyfacts_id: 1545
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: PDS | Die Linke — The party 'Die Linke' is explicitly mentioned as part of
+    'PDS | Die Linke' (ID 1545), which is a direct and strong match.
+- party_short: DIE PARTEI
+  partyfacts_id: 6126
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: DIE/LINKE
+  partyfacts_id: 1545
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Die/PARTEI
+  partyfacts_id: 6126
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: dieBasis
+  partyfacts_id: 8993
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: DieTier
+  partyfacts_id: 749
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: DKP
+  partyfacts_id: 2125
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: DL
+  partyfacts_id: 1545
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: DLVH
+  partyfacts_id: 2702
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: DNVP
+  partyfacts_id: 1830
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Don't Know
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: The party-short label 'Don't Know' does not correspond to any political party
+    and is a common response in polls for undecided voters.
+- party_short: DP
+  partyfacts_id: 1502
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: DRP
+  partyfacts_id: 1151
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: DSP
+  partyfacts_id: 2072
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: DSTP
+  partyfacts_id: 1826
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: DSU
+  partyfacts_id: 1895
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: DtVP
+  partyfacts_id: 2114
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: DVP
+  partyfacts_id: 1827
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: DVU
+  partyfacts_id: 695
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: DZ
+  partyfacts_id: 1798
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: DZP
+  partyfacts_id: 1798
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: etc
+  partyfacts_id: 1895
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Fam
+  partyfacts_id: 2702
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: FAMILIE
+  partyfacts_id: 2702
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: FDP
+  partyfacts_id: 573
+  source: whogov_minister_match
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Fischer
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: The label 'Fischer' likely refers to a candidate's name rather than a party
+    abbreviation, and there is no party in the provided list that matches this label.
+- party_short: FKP-DRP
+  partyfacts_id: 2076
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: FPD
+  partyfacts_id: 573
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Fr
+  partyfacts_id: 270
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Free Voters
+  partyfacts_id: 1090
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Freie Wähler — The party 'Freie Wähler' (Free Voters) with ID 1090 directly
+    matches the 'Free Voters' label and has a relevant time frame.
+- party_short: FREIE WAHLER
+  partyfacts_id: 1090
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: FU
+  partyfacts_id: 61
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: FV
+  partyfacts_id: 1929
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: FVP
+  partyfacts_id: 2113
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: FW
+  partyfacts_id: 1090
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: G
+  partyfacts_id: 1816
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Gabriel
+  partyfacts_id: 383
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Sozialdemokratische Partei Deutschlands — Sigmar Gabriel was a prominent
+    leader of the SPD during the specified polling period, making 'Gabriel' a likely
+    shorthand for the SPD in German polls.
+- party_short: GB-BHE
+  partyfacts_id: 1010
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: GB/BHE
+  partyfacts_id: 1010
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: GBHE
+  partyfacts_id: 1010
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: GDP
+  partyfacts_id: 1031
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: GR
+  partyfacts_id: 10
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Grau
+  partyfacts_id: 1652
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: GRAUE
+  partyfacts_id: 1652
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Green
+  partyfacts_id: 1816
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: GreenDE
+  partyfacts_id: 1816
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: GREENS
+  partyfacts_id: 1816
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Greens
+  partyfacts_id: 1816
+  source: whogov_minister_match
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Greens/90
+  partyfacts_id: 865
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Grue
+  partyfacts_id: 10
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: GRUENE
+  partyfacts_id: 10
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: GRUN
+  partyfacts_id: 10
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: GRUNE
+  partyfacts_id: 1816
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: GRUNEN
+  partyfacts_id: 1816
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Grunen
+  partyfacts_id: 1816
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: GRÜ
+  partyfacts_id: 1816
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: GRÜNE
+  partyfacts_id: 1816
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Grüne
+  partyfacts_id: 1816
+  source: whogov_minister_match
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Grünen
+  partyfacts_id: 1816
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Bündnis 90 / Die Grünen — The party short label 'Grünen' is a direct and
+    common abbreviation for 'Bündnis 90 / Die Grünen', and the polling data falls
+    within the party's active years.
+- party_short: Gršne
+  partyfacts_id: 10
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: GR‹
+  partyfacts_id: 10
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: GVP
+  partyfacts_id: 845
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: INDEPENDENT
+  partyfacts_id: 2700
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: independent
+  partyfacts_id: 2700
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: KlingbeilSPD
+  partyfacts_id: 383
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Sozialdemokratische Partei Deutschlands — The 'KlingbeilSPD' label clearly
+    indicates the 'SPD' (Sozialdemokratische Partei Deutschlands) as the core party,
+    with 'Klingbeil' likely referring to a prominent figure within the party.
+- party_short: KPD
+  partyfacts_id: 1135
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: KVP
+  partyfacts_id: 2702
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Künast
+  partyfacts_id: 1816
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Bündnis 90 / Die Grünen — Renate Künast is a prominent German politician
+    from Alliance 90/The Greens, and the polling context of 27% in 2011 aligns with
+    the party's performance around that time.
+- party_short: L-PDS
+  partyfacts_id: 86
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: LBT
+  partyfacts_id: 2702
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Lean
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: The party abbreviation 'Lean' does not match any of the provided Party Facts
+    entries for Germany.
+- party_short: Left
+  partyfacts_id: 1545
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Likely
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: The party short label 'Likely' does not correspond to any known political
+    party in the provided list for Germany.
+- party_short: LINKE
+  partyfacts_id: 1545
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Linke
+  partyfacts_id: 1545
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Liste Palmer
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: The party 'Liste Palmer' is a local political list associated with Boris
+    Palmer, not a national party in the provided Party Facts list.
+- party_short: LKR
+  partyfacts_id: 2702
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: LV
+  partyfacts_id: 2109
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: LVP
+  partyfacts_id: 1831
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Merkel
+  partyfacts_id: 211
+  source: gemini_high
+  confidence: high
+  is_coalition: true
+  notes: Christlich Demokratische Union / Christlich Soziale Union — Merkel was the
+    leader of the CDU and Chancellor of Germany, so 'Merkel' in a polling context
+    refers to the CDU/CSU alliance.
+- party_short: MerzUnion
+  partyfacts_id: 211
+  source: gemini_high
+  confidence: high
+  is_coalition: true
+  notes: Christlich Demokratische Union / Christlich Soziale Union — 'MerzUnion' refers
+    to the CDU/CSU alliance, led by Friedrich Merz, which is represented by Party
+    Facts ID 211.
+- party_short: MLPD
+  partyfacts_id: 2702
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: NAZI
+  partyfacts_id: 1893
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: NLP
+  partyfacts_id: 2110
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: NN
+  partyfacts_id: 2700
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: NPD
+  partyfacts_id: 1723
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: NR
+  partyfacts_id: 1151
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: NSDAP
+  partyfacts_id: 1893
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: ODP
+  partyfacts_id: 7345
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Other
+  partyfacts_id: 1895
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Others
+  partyfacts_id: 1895
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: PARTEI
+  partyfacts_id: 6126
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: PDS
+  partyfacts_id: 86
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: PDS/LINKE
+  partyfacts_id: 1545
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: PDS/Linke
+  partyfacts_id: 1545
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: PDS|Li
+  partyfacts_id: 1545
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Pi
+  partyfacts_id: 1287
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Pirat
+  partyfacts_id: 1287
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: PIRATEN
+  partyfacts_id: 1287
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Piraten
+  partyfacts_id: 1287
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Pirates
+  partyfacts_id: 1287
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: RDMW
+  partyfacts_id: 1828
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: REP
+  partyfacts_id: 720
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Rep
+  partyfacts_id: 720
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Republikaner
+  partyfacts_id: 720
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Safe
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: The party abbreviation 'Safe' does not semantically match any of the provided
+    Party Facts entries for Germany.
+- party_short: Schil
+  partyfacts_id: 2702
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: SDAP
+  partyfacts_id: 383
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: SPD
+  partyfacts_id: 383
+  source: whogov_minister_match
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: SPD FDP
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: The label 'SPD FDP' represents a combination of two distinct parties, SPD
+    and FDP, indicating a coalition rather than a single party, and there is no single
+    dominant party to match.
+- party_short: SPD Grüne
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: This is a coalition of two distinct parties, SPD and Grüne, and there is
+    no single Party Facts ID that represents this specific coalition.
+- party_short: SPD Grüne FDP
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: The label 'SPD Grüne FDP' represents a coalition of three distinct parties,
+    and there is no single Party Facts ID that represents this specific coalition.
+- party_short: SPD Grüne Linke
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: 'The label ''SPD Grüne Linke'' clearly indicates a coalition of three distinct
+    parties: SPD, Grüne, and Linke, which is not represented by a single Party Facts
+    ID.'
+- party_short: SPD Union
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: The label 'SPD Union' refers to a coalition of two parties, SPD and Union
+    (CDU/CSU), and no single Party Facts ID represents this specific coalition.
+- party_short: SPD Union FDP
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: The label 'SPD Union FDP' represents a combination of three distinct parties
+    (SPD, CDU/CSU, FDP) and does not correspond to a single Party Facts ID, even as
+    a dominant member of a coalition.
+- party_short: SPD/GREENS
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: The label 'SPD/GREENS' indicates a coalition of two distinct parties, SPD
+    and Greens, which is not directly represented by a single Party Facts ID in the
+    provided list.
+- party_short: SPD/GREENS/LINKE
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: This is a coalition of three distinct parties, and there is no single Party
+    Facts ID that represents this specific coalition.
+- party_short: SPDGrüneLinke
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: The label 'SPDGrüneLinke' represents a coalition of three distinct parties
+    (SPD, Greens, and Linke), which is not directly matched by a single Party Facts
+    ID.
+- party_short: SSW
+  partyfacts_id: 50
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Steinbrück
+  partyfacts_id: 383
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Sozialdemokratische Partei Deutschlands — Peer Steinbrück was the lead candidate
+    for the SPD in the 2013 German federal election, and the poll results align with
+    typical SPD performance during that period.
+- party_short: Steinmeier
+  partyfacts_id: 383
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Sozialdemokratische Partei Deutschlands — Frank-Walter Steinmeier is a prominent
+    member of the SPD, and the polling context aligns with SPD's historical performance.
+- party_short: The Left
+  partyfacts_id: 1545
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: PDS | Die Linke — The party label 'The Left' directly translates to 'Die
+    Linke' in German, and Party Facts ID 1545 explicitly includes 'Die Linke' in its
+    name and English translation, covering the relevant time period.
+- party_short: Tier
+  partyfacts_id: 749
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: TIERSCHUTZ
+  partyfacts_id: 749
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: TIERSCHUTZPARTEI
+  partyfacts_id: 749
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Tierschutzpartei
+  partyfacts_id: 749
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Trittin
+  partyfacts_id: 1816
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Bündnis 90 / Die Grünen — Jürgen Trittin was a prominent politician of Bündnis
+    90 / Die Grünen, and the polling context date of 2011-04-19 aligns with his active
+    period within the party.
+- party_short: Union
+  partyfacts_id: 211
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Union Grüne FDP
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: The label 'Union Grüne FDP' clearly indicates a coalition of multiple parties
+    (CDU/CSU, Greens, FDP) rather than a single party, and there is no single dominant
+    party to map to.
+- party_short: UnionAfD
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: The label 'UnionAfD' appears to be a coalition or aggregate of 'Union' (CDU/CSU)
+    and 'AfD', but there is no single Party Facts ID for this specific combination,
+    and no dominant member can be identified without further context.
+- party_short: UnionFDP
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: The label 'UnionFDP' clearly indicates a coalition between 'Union' (CDU/CSU)
+    and 'FDP', but there is no single Party Facts ID for this specific coalition.
+- party_short: UnionGrüne
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: The label 'UnionGrüne' suggests a coalition or aggregate of 'Union' (CDU/CSU)
+    and 'Grüne' (Alliance 90/The Greens), which is not a single party in the provided
+    list.
+- party_short: UnionSPD
+  partyfacts_id: 211
+  source: gemini_high
+  confidence: high
+  is_coalition: true
+  notes: Christlich Demokratische Union / Christlich Soziale Union — UnionSPD is a
+    common abbreviation for the CDU/CSU (Union) and SPD coalition in Germany, and
+    Party Facts ID 211 represents the CDU/CSU alliance.
+- party_short: UnionSPDGrüne
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: The label 'UnionSPDGrüne' clearly indicates a coalition of multiple parties
+    (Union, SPD, and Grüne), which is not represented by a single Party Facts ID in
+    the provided list.
+- party_short: UnionSPDLinke
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: The party-short label 'UnionSPDLinke' appears to be a concatenation of multiple
+    party abbreviations (Union, SPD, Linke), indicating it represents a coalition
+    or aggregate of parties rather than a single party, and no single dominant party
+    can be identified from the provided list.
+- party_short: USPD
+  partyfacts_id: 1884
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: VRP
+  partyfacts_id: 2107
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: WAV
+  partyfacts_id: 735
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: WDM
+  partyfacts_id: 1828
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: WeidelAfD
+  partyfacts_id: 1976
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Alternative für Deutschland — The 'WeidelAfD' label clearly refers to the
+    'Alternative für Deutschland' (AfD) party, with 'Weidel' likely indicating a prominent
+    figure associated with the party, and the polling data aligns with AfD's recent
+    performance.
+- party_short: WP
+  partyfacts_id: 1828
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Z
+  partyfacts_id: 1798
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: ZENTRUM
+  partyfacts_id: 1798
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Zentrum
+  partyfacts_id: 1798
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: ÖDP
+  partyfacts_id: 7345
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: КПГ
+  partyfacts_id: 1135
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: НДП
+  partyfacts_id: 1826
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: НСДПГ
+  partyfacts_id: 1884
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: ПДС
+  partyfacts_id: 86
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''

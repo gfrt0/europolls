@@ -1,0 +1,1920 @@
+# Auto-generated from italgov's data/scripts/party_crosswalk/
+#
+# Built by layering:
+#   1. extend.py — Gemini-based (country, party_short) → partyfacts_id
+#      with confidence scores. Coverage of opposition + coalition parties.
+#   2. Party Facts external-parties.csv — base layer of historically
+#      recognized parties.
+#   3. WhoGov-minister-matched — high-signal entries derived from
+#      cabinet ministers' partyfacts_id in WhoGov v3.1.
+#
+# `source` values: gemini_{high,medium,low,no_match} for Gemini calls,
+# partyfacts_external/whogov_minister_match/europolls_harmonized for
+# the layered base. Use confidence + is_coalition to triage.
+
+mappings:
+- party_short: 1-perc
+  partyfacts_id: 2939
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: A
+  partyfacts_id: 4489
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: A/FPS
+  partyfacts_id: 1311
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: AddorUDC/SVP
+  partyfacts_id: 308
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Schweizerische Volkspartei — The party short label 'AddorUDC/SVP' clearly
+    indicates the 'UDC/SVP' party, which corresponds to Party Facts ID 308, 'Schweizerische
+    Volkspartei'.
+- party_short: Aebischer
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: The party short label 'Aebischer' appears to be a candidate's name, and there
+    is no party in the provided list that matches this name or a clear party abbreviation
+    within it.
+- party_short: AG
+  partyfacts_id: 1201
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: AL
+  partyfacts_id: 8184
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: AlpigerPS/SP
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: The party 'AlpigerPS/SP' is not found in the provided Party Facts entries
+    for Switzerland, and the polling data is too recent for the listed historical
+    parties.
+- party_short: ALTGR
+  partyfacts_id: 1201
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: AmherdDM/LC
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: The party abbreviation 'AmherdDM/LC' does not semantically match any of the
+    provided Party Facts entries for Switzerland. It appears to be a candidate-party
+    combination, but the party part 'DM/LC' is not found.
+- party_short: Andrey
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: The party label 'Andrey' does not match any of the provided Party Facts entries
+    for Switzerland, and there is no obvious candidate or party suffix to strip.
+- party_short: AnkliFDP
+  partyfacts_id: 360
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: FDP.Die Liberalen/PLR.Les Libéraux-Radicaux — The party short label 'AnkliFDP'
+    strongly suggests a connection to the 'FDP' (FDP.The Liberals) party, and the
+    vote shares are consistent with a major party in Switzerland.
+- party_short: AP
+  partyfacts_id: 1311
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: ASP
+  partyfacts_id: 31
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: AUTO
+  partyfacts_id: 1311
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Baume-SchneiderSP/PS
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: The party label 'Baume-SchneiderSP/PS' appears to be a candidate name combined
+    with a party abbreviation, but neither 'SP' nor 'PS' alone are present in the
+    provided Party Facts entries for Switzerland, and the full string does not match
+    any entry.
+- party_short: BDP
+  partyfacts_id: 1415
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: BDP / PBD
+  partyfacts_id: 1415
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: BDP/PBD
+  partyfacts_id: 1415
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: BersetSP/PS
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: The party short label 'BersetSP/PS' contains 'SP/PS' which is a common abbreviation
+    for the Social Democratic Party, but no such party is listed in the provided Party
+    Facts entries for Switzerland.
+- party_short: Bertschy
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: The party short label 'Bertschy' does not match any of the provided Party
+    Facts entries for Switzerland, and it appears to be a candidate's name rather
+    than a party abbreviation.
+- party_short: BGB
+  partyfacts_id: 4489
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: BinderDM
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: The party short label 'BinderDM' does not match any of the provided Party
+    Facts entries for Switzerland, and the polling context does not provide enough
+    information to infer a match.
+- party_short: BischofDM
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: The party abbreviation 'BischofDM' does not clearly match any of the provided
+    Party Facts entries for Switzerland, and it appears to be a candidate-party combination
+    where the party part is not identifiable from the list.
+- party_short: BogiqiPS/SP
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: The provided party short label 'BogiqiPS/SP' does not clearly match any of
+    the candidate Party Facts entries, even after attempting to strip a potential
+    candidate name.
+- party_short: Bourgeoiscouncil
+  partyfacts_id: 9024
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Die Mitte — The term 'Bourgeoiscouncil' strongly suggests 'The Centre' (Die
+    Mitte), which is a recent party formed from a merger of the Christian Democratic
+    People's Party and the Conservative Democratic Party, both of which are bourgeois
+    parties.
+- party_short: BurkartFDP
+  partyfacts_id: 360
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: FDP.Die Liberalen/PLR.Les Libéraux-Radicaux — The 'FDP' in 'BurkartFDP' strongly
+    suggests a connection to 'FDP.Die Liberalen/PLR.Les Libéraux-Radicaux', and the
+    polling data aligns with a major party in Switzerland.
+- party_short: Bäumle
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: The party label 'Bäumle' does not directly match any of the provided Party
+    Facts entries for Switzerland, and it is likely a candidate's name rather than
+    a party abbreviation.
+- party_short: CassisFDP/PLR
+  partyfacts_id: 360
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: FDP.Die Liberalen/PLR.Les Libéraux-Radicaux — The party short label 'FDP/PLR'
+    is explicitly present in the input, and 'Cassis' likely refers to a prominent
+    member or leader, not a separate party.
+- party_short: CC
+  partyfacts_id: 1808
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: CD
+  partyfacts_id: 1808
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: CDPP
+  partyfacts_id: 1808
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Center-left+1Right−1
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: The party label 'Center-left+1Right−1' indicates a composite or aggregate
+    of multiple parties, likely representing a political bloc rather than a single
+    party, and does not match any specific party in the provided list.
+- party_short: Center-leftcoalition
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: The label 'Center-leftcoalition' indicates a coalition, but there is no clear
+    dominant party or direct match in the provided Party Facts entries for Switzerland.
+- party_short: Center-rightcoalition
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: The label 'Center-rightcoalition' indicates a coalition, but there is no
+    specific party in the provided list that represents this coalition, nor is there
+    a dominant member to match.
+- party_short: Centre
+  partyfacts_id: 9024
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: CorayInd.
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: The party 'CorayInd.' appears to be a candidate-led independent list, and
+    there is no matching party in the provided Party Facts entries.
+- party_short: CSP
+  partyfacts_id: 1122
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: CsP
+  partyfacts_id: 1122
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: CsP-PCS
+  partyfacts_id: 1122
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: CSP/PCS
+  partyfacts_id: 1122
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: CVP
+  partyfacts_id: 1808
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: CVP / PDC
+  partyfacts_id: 1808
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: CVP-PDC
+  partyfacts_id: 1808
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: CVP/PDC
+  partyfacts_id: 1808
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: CVP/PVC
+  partyfacts_id: 1808
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: DACH
+  partyfacts_id: 1201
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: DEM
+  partyfacts_id: 114
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: DessimozLV/G
+  partyfacts_id: 1759
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Grünliberale Partei der Schweiz – Parti Vert-Libéral — The 'LV/G' in the
+    short label strongly suggests a match with 'GPL-PVL' (Grünliberale Partei der
+    Schweiz – Parti Vert-Libéral), which is the Green Liberal Party.
+- party_short: DG
+  partyfacts_id: 114
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: DM
+  partyfacts_id: 9024
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Die Mitte — The 'DM' abbreviation is a direct match for 'Die Mitte' (The
+    Centre), which is a recent party formed in 2019 and aligns with the polling dates.
+- party_short: DM-LC
+  partyfacts_id: 9024
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: DM/AdC
+  partyfacts_id: 9024
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Die Mitte — The 'DM/AdC' abbreviation, with vote shares around 25% in recent
+    elections, strongly corresponds to 'Die Mitte' (The Centre), which was formed
+    in 2019 and has similar electoral performance.
+- party_short: DM/LC
+  partyfacts_id: 9024
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Die Mitte — The abbreviation 'DM/LC' is a direct match for 'Die Mitte' (The
+    Centre), which is a recent party formed in 2019 and aligns with the polling dates.
+- party_short: DP
+  partyfacts_id: 114
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: EAG
+  partyfacts_id: 4023
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: EDU
+  partyfacts_id: 631
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: EDU / UDF
+  partyfacts_id: 631
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: EDU-UDF
+  partyfacts_id: 631
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: EDU/UDF
+  partyfacts_id: 631
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: EK
+  partyfacts_id: 4516
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: EnglerDM
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: The provided party facts entries do not contain any party that matches 'EnglerDM'
+    or a clear component of it, and the polling data does not offer further clues
+    for a match.
+- party_short: etc
+  partyfacts_id: 1964
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: EV
+  partyfacts_id: 1123
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: EVP
+  partyfacts_id: 1123
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: EVP / PEP
+  partyfacts_id: 1123
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: EVP-PEP
+  partyfacts_id: 1123
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: EVP-PEV
+  partyfacts_id: 1123
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: EVP/PEV
+  partyfacts_id: 1123
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: FDP
+  partyfacts_id: 360
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: FDP / PLR
+  partyfacts_id: 1231
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: FDP-PLR
+  partyfacts_id: 360
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: FDP-PRD
+  partyfacts_id: 360
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: FDP/PLR
+  partyfacts_id: 1231
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: FDP/PRD
+  partyfacts_id: 360
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: FDU
+  partyfacts_id: 631
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Fehr
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: The party short label 'Fehr' does not match any of the provided Party Facts
+    entries for Switzerland, and it is likely a candidate's name rather than a party
+    abbreviation.
+- party_short: FGA
+  partyfacts_id: 1201
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: FGr
+  partyfacts_id: 1201
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: FGr-ASF
+  partyfacts_id: 1201
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: FischerGLP
+  partyfacts_id: 1759
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Grünliberale Partei der Schweiz – Parti Vert-Libéral — The 'GLP' in 'FischerGLP'
+    strongly suggests the Green Liberal Party, and the polling data aligns with the
+    party's performance.
+- party_short: FL
+  partyfacts_id: 2938
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: FPS
+  partyfacts_id: 1311
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: FPS/PSL
+  partyfacts_id: 1311
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: FREE
+  partyfacts_id: 1311
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Funiciello
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: The party label 'Funiciello' does not match any of the provided Party Facts
+    entries for Switzerland, and it appears to be a candidate's name rather than a
+    party abbreviation, with no clear party suffix to identify a match.
+- party_short: G
+  partyfacts_id: 1006
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: GA
+  partyfacts_id: 1201
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: GiezendannerSVP
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: The party 'GiezendannerSVP' is not found in the provided Party Facts entries
+    for Switzerland, and the 'SVP' suffix does not clearly map to any of the given
+    options, especially considering the provided Party Facts entries for 'SVP' are
+    from 1984-1996, while the polling data is recent.
+- party_short: GLP
+  partyfacts_id: 1759
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: GLP / PVL
+  partyfacts_id: 1759
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: GLP+1DM−1
+  partyfacts_id: 1759
+  source: gemini_high
+  confidence: high
+  is_coalition: true
+  notes: Gr9cnliberale Partei der Schweiz – Parti Vert-Lib9cral — The abbreviation
+    'GLP' clearly refers to the Green Liberal Party (Gr9cnliberale Partei der Schweiz),
+    and the '+1DM−1' indicates a coalition or alliance with other parties.
+- party_short: GLP+1FDP−1
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: The label 'GLP+1FDP−1' indicates a coalition or aggregate of parties, and
+    there is no single Party Facts ID that represents this specific combination.
+- party_short: GLP+1SP−1
+  partyfacts_id: 1759
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Gr9cnliberale Partei der Schweiz – Parti Vert-Lib9cral — The abbreviation
+    'GLP' strongly matches 'Gr9cnliberale Partei der Schweiz – Parti Vert-Lib9cral'
+    (Green Liberal Party) with ID 1759, and the additional characters likely represent
+    a polling-specific modifier rather than a separate party.
+- party_short: GLP/PVL
+  partyfacts_id: 1759
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Grünliberale Partei der Schweiz – Parti Vert-Libéral — The party short label
+    'GLP/PVL' directly matches the 'GPL-PVL' short label of Party Facts ID 1759, which
+    is the Green Liberal Party of Switzerland.
+- party_short: GLP/VL
+  partyfacts_id: 1759
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Glättli
+  partyfacts_id: 1006
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Grüne Partei der Schweiz/Parti écologiste suisse — Balthasar Glättli is a
+    prominent figure and current co-president of the Green Party of Switzerland, making
+    'Glättli' a likely metonym for the party.
+- party_short: GmürDM
+  partyfacts_id: 9024
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Die Mitte — The polling data for 'GmürDM' aligns with the vote shares and
+    recent election dates for 'Die Mitte' (The Centre), which was formed in 2021 from
+    a merger of the CVP/PDC and BDP/PBD.
+- party_short: GPL
+  partyfacts_id: 1759
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: GPL-PVL
+  partyfacts_id: 1759
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: GPL/PVL
+  partyfacts_id: 1759
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: GPS
+  partyfacts_id: 1006
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: GPS / PES
+  partyfacts_id: 1006
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: GPS/PES
+  partyfacts_id: 1006
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: GREEN
+  partyfacts_id: 1006
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Greens
+  partyfacts_id: 1006
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Grossen
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: There is no Party Facts entry that matches 'Grossen' in the provided list
+    for Switzerland.
+- party_short: GrossenGLP/PVL
+  partyfacts_id: 1759
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Grünliberale Partei der Schweiz – Parti Vert-Libéral — The party short label
+    'GrossenGLP/PVL' directly matches the 'GPL-PVL' short label and name 'Grünliberale
+    Partei der Schweiz – Parti Vert-Libéral' from the candidate list, indicating a
+    strong match.
+- party_short: GRU
+  partyfacts_id: 1382
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Grue
+  partyfacts_id: 1006
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Gruene
+  partyfacts_id: 1006
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Grüne
+  partyfacts_id: 1006
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Grüne Partei der Schweiz/Parti écologiste suisse — The party short label
+    'Grüne' directly matches the 'Grüne Partei der Schweiz/Parti écologiste suisse'
+    (Green Party of Switzerland) with ID 1006, and the vote shares are consistent
+    with a major party.
+- party_short: Grüne+1DM−1
+  partyfacts_id: 1006
+  source: gemini_high
+  confidence: high
+  is_coalition: true
+  notes: Grüne Partei der Schweiz/Parti écologiste suisse — The label 'Grüne+1DM−1'
+    clearly indicates a coalition led by the Green Party, which is represented by
+    Party Facts ID 1006.
+- party_short: Grüne+1FDP−1
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: The label 'Grüne+1FDP−1' indicates a coalition or aggregate of parties, but
+    it is not a direct match to a single party in the provided list, and the '+1'
+    and '-1' suggest a dynamic or calculated aggregate rather than a fixed coalition.
+- party_short: Grüne+1GLP+1SP−1,FDP−1
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: The party short label 'Grüne+1GLP+1SP−1,FDP−1' indicates a complex coalition
+    or aggregate of multiple parties with vote share adjustments, which does not directly
+    map to a single Party Facts ID.
+- party_short: Grüne+1SP−1
+  partyfacts_id: 1006
+  source: gemini_high
+  confidence: high
+  is_coalition: true
+  notes: Grüne Partei der Schweiz/Parti écologiste suisse — The party short label
+    'Grüne+1SP−1' clearly indicates a coalition led by the Green Party (Grüne) with
+    some affiliation to the Social Democratic Party (SP), making the Green Party the
+    dominant member.
+- party_short: Grüne/Verdi/Verda
+  partyfacts_id: 1006
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Grüne Partei der Schweiz/Parti écologiste suisse — The party short label
+    'Grüne/Verdi/Verda' directly translates to 'Greens' in multiple languages, which
+    strongly matches the 'Grüne Partei der Schweiz/Parti écologiste suisse' (Green
+    Party of Switzerland) with ID 1006, and the polling data aligns with its activity
+    period.
+- party_short: Grüne/Verts
+  partyfacts_id: 1006
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: GuggerEVP
+  partyfacts_id: 1123
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Evangelische Volkspartei der Schweiz/Parti Evangélique Suisse — The 'EVP'
+    in 'GuggerEVP' strongly suggests a direct match with the 'Evangelische Volkspartei
+    der Schweiz/Parti Evangélique Suisse' (EVP/PEV), and the polling data is consistent
+    with a party of this size.
+- party_short: HallerSVP
+  partyfacts_id: 308
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Schweizerische Volkspartei — The 'HallerSVP' label clearly indicates a candidate
+    (Haller) associated with the 'SVP' party. The Party Facts entry with ID 308, 'Schweizerische
+    Volkspartei' (Swiss Peoples Party), has the short label 'SPP', which is a common
+    abbreviation for SVP in English contexts, and the vote shares align with a major
+    party in Switzerland.
+- party_short: Herzog
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: The party short label 'Herzog' does not match any of the provided Party Facts
+    entries for Switzerland.
+- party_short: Häberli-KollerDM
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: The party short label 'Häberli-KollerDM' does not clearly match any of the
+    provided Party Facts entries, even after considering the candidate-party suffix
+    pattern.
+- party_short: Häsler
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: The label 'Häsler' does not match any of the provided Party Facts entries
+    for Switzerland, suggesting it might be a candidate's name or a new party not
+    yet in the list.
+- party_short: ImarkSVP
+  partyfacts_id: 308
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Schweizerische Volkspartei — The 'ImarkSVP' label strongly suggests a candidate
+    (Imark) associated with the 'SVP' party, which is the 'Schweizerische Volkspartei'
+    (Swiss People's Party).
+- party_short: INDEP
+  partyfacts_id: 1194
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Jans
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: The party abbreviation 'Jans' does not semantically match any of the provided
+    Party Facts entries for Switzerland.
+- party_short: JansenPVL/GLP
+  partyfacts_id: 1759
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Grünliberale Partei der Schweiz – Parti Vert-Libéral — The party short label
+    'JansenPVL/GLP' directly matches the 'GPL-PVL' short label and 'Grünliberale Partei
+    der Schweiz – Parti Vert-Libéral' name of Party Facts ID 1759, which is the Green
+    Liberal Party.
+- party_short: Jositsch
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: The label 'Jositsch' appears to be a candidate's name, and there is no party
+    in the provided list that matches this name or a clear party abbreviation within-cut
+    party abbreviation within it.
+- party_short: JositschSP
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: The party short label 'JositschSP' appears to be a candidate-party combination,
+    but there is no clear match for 'SP' in the provided Party Facts entries for Switzerland,
+    and the candidate 'Jositsch' is not a party.
+- party_short: JostEVP/PEV
+  partyfacts_id: 1123
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Evangelische Volkspartei der Schweiz/Parti Evangélique Suisse — The party
+    short label 'JostEVP/PEV' directly contains 'EVP/PEV', which is the short label
+    for 'Evangelische Volkspartei der Schweiz/Parti Evangélique Suisse' (ID 1123).
+- party_short: K
+  partyfacts_id: 669
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Keller-SutterFDP/PLR
+  partyfacts_id: 360
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: FDP.Die Liberalen/PLR.Les Libéraux-Radicaux — The party short label 'FDP/PLR'
+    is a direct match to the Party Facts entry for 'FDP.Die Liberalen/PLR.Les Libéraux-Radicaux',
+    with 'Keller-Sutter' likely referring to a prominent member or leader.
+- party_short: KK/CVP
+  partyfacts_id: 1808
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: KKCVP
+  partyfacts_id: 1808
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: KP
+  partyfacts_id: 8183
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: KP/PdA
+  partyfacts_id: 669
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: KPS
+  partyfacts_id: 8183
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: KutterDM
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: The party label 'KutterDM' does not semantically match any of the provided
+    Party Facts entries for Switzerland, and the polling data does not provide enough
+    context to infer a match.
+- party_short: KälinGrüne
+  partyfacts_id: 1006
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Grüne Partei der Schweiz/Parti écologiste suisse — The party short label
+    'KälinGrüne' strongly suggests a connection to the 'Grüne Partei der Schweiz'
+    (Green Party of Switzerland), and the vote shares are consistent with a major
+    party.
+- party_short: KünzliGLP
+  partyfacts_id: 1759
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Grünliberale Partei der Schweiz – Parti Vert-Libéral — The 'GLP' in 'KünzliGLP'
+    strongly suggests the Green Liberal Party, and the polling data aligns with their
+    performance.
+- party_short: L
+  partyfacts_id: 444
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: L. HessDM/LC
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: The provided party short label 'L. HessDM/LC' does not clearly match any
+    of the candidate Party Facts entries, and the vote shares suggest a party that
+    is not present in the provided list.
+- party_short: LAB
+  partyfacts_id: 669
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: LC
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: The abbreviation 'LC' does not appear in the provided list of Party Facts
+    entries for Switzerland, and there are no obvious close matches or continuity
+    candidates.
+- party_short: LC/DM
+  partyfacts_id: 9024
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Die Mitte — The party 'LC/DM' is a common abbreviation for 'Die Mitte' (The
+    Centre) in Switzerland, which was formed in 2021 from the merger of CVP/PDC and
+    BDP/PBD, and the provided polling data aligns with its electoral performance.
+- party_short: LdT
+  partyfacts_id: 1661
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: LDU
+  partyfacts_id: 1194
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: LdU
+  partyfacts_id: 1194
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: LdU-ADI
+  partyfacts_id: 1194
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: LdU/AdI
+  partyfacts_id: 1194
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: LEGA
+  partyfacts_id: 1661
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Lega
+  partyfacts_id: 1661
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: LeupiGrüne
+  partyfacts_id: 1006
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Grüne Partei der Schweiz/Parti écologiste suisse — The 'Grüne' in 'LeupiGrüne'
+    strongly suggests a match with the Green Party of Switzerland (GPS/PES), and the
+    polling data aligns with a major party.
+- party_short: LeutholdGLP
+  partyfacts_id: 1759
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Grünliberale Partei der Schweiz – Parti Vert-Libéral — The 'GLP' in 'LeutholdGLP'
+    strongly suggests a match with the 'Grünliberale Partei der Schweiz – Parti Vert-Libéral'
+    (Green Liberal Party), and the polling data falls within its active period.
+- party_short: Levrat
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: The label 'Levrat' appears to be a candidate's name, not a party abbreviation,
+    and there is no clear party suffix or direct match in the provided Party Facts
+    entries.
+- party_short: LF/PEB
+  partyfacts_id: 1543
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: LIB
+  partyfacts_id: 444
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: LM
+  partyfacts_id: 4380
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: LP
+  partyfacts_id: 1759
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: LPS
+  partyfacts_id: 444
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: LPS / PLS
+  partyfacts_id: 444
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: LPS/PLS
+  partyfacts_id: 444
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: LU
+  partyfacts_id: 1194
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Magicformula
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: The party label 'Magicformula' does not match any of the provided Party Facts
+    entries for Switzerland, and there is no obvious abbreviation or name similarity
+    to suggest a match.
+- party_short: Maillard
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: The party short label 'Maillard' does not correspond to any of the provided
+    Party Facts entries for Switzerland, and appears to be a candidate's name rather
+    than a party abbreviation.
+- party_short: MaretLC/DM
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: The provided party short label 'MaretLC/DM' does not semantically match any
+    of the candidate Party Facts entries for Switzerland.
+- party_short: MASS-VOLL
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: The party 'MASS-VOLL' is a new party founded in 2023 and is not present in
+    the provided Party Facts entries.
+- party_short: MaurerSVP/UDC
+  partyfacts_id: 308
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Schweizerische Volkspartei — The party abbreviation 'SVP/UDC' clearly points
+    to the 'Schweizerische Volkspartei' (Swiss People's Party), and 'Maurer' is likely
+    a candidate prefix.
+- party_short: Mazzone
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: The party short label 'Mazzone' does not match any of the provided Party
+    Facts entries for Switzerland.
+- party_short: MCG
+  partyfacts_id: 8176
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: MCR
+  partyfacts_id: 8176
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Meyer
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: The party short label 'Meyer' does not match any of the provided Party Facts
+    entries for Switzerland.
+- party_short: Moser
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: The party short label 'Moser' does not match any of the provided Party Facts
+    entries for Switzerland.
+- party_short: MoserGLP
+  partyfacts_id: 1759
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Grünliberale Partei der Schweiz – Parti Vert-Libéral — The 'GLP' in 'MoserGLP'
+    strongly suggests the Green Liberal Party, and the polling data aligns with the
+    performance of the Green Liberal Party in recent Swiss elections.
+- party_short: MüllerFDP
+  partyfacts_id: 360
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: FDP.Die Liberalen/PLR.Les Libéraux-Radicaux — The 'FDP' in 'MüllerFDP' strongly
+    suggests a connection to 'FDP.Die Liberalen/PLR.Les Libéraux-Radicaux' (ID 360),
+    and the polling data falls within its active period.
+- party_short: NA-AN
+  partyfacts_id: 1819
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: NA-SD
+  partyfacts_id: 1819
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: NAFD
+  partyfacts_id: 1819
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: NantermodPLR/FDP
+  partyfacts_id: 360
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: FDP.Die Liberalen/PLR.Les Libéraux-Radicaux — The party short label 'NantermodPLR/FDP'
+    clearly indicates a connection to 'PLR/FDP', which matches Party Facts ID 360,
+    'FDP.Die Liberalen/PLR.Les Libéraux-Radicaux', and the polling data falls within
+    its active period.
+- party_short: NAPF
+  partyfacts_id: 1819
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: NA|SD
+  partyfacts_id: 1819
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Neither
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: The label 'Neither' indicates a preference for no party, which does not correspond
+    to any specific political party in the provided Party Facts entries.
+- party_short: Neo
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: The party abbreviation 'Neo' does not semantically match any of the provided
+    Party Facts entries for Switzerland, and the provided poll data does not offer
+    enough context to infer a match.
+- party_short: Net
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: There is no Party Facts entry that semantically matches 'Net' in the provided
+    list for Switzerland.
+- party_short: Neukom
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: The party abbreviation 'Neukom' does not match any of the provided Party
+    Facts entries for Switzerland.
+- party_short: 'No'
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: The party short label 'No' does not correspond to any of the provided candidate
+    Party Facts entries for Switzerland.
+- party_short: NoGLP
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: The abbreviation 'NoGLP' does not match any of the provided Party Facts entries,
+    and there is no obvious candidate to infer a match.
+- party_short: NoGreen
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: The label 'NoGreen' does not correspond to any specific party in the provided
+    list, and likely represents an anti-Green sentiment rather than a party itself.
+- party_short: Nordmann
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: The party short label 'Nordmann' does not match any of the provided Party
+    Facts entries for Switzerland, and there is no obvious abbreviation or name similarity
+    to suggest a match.
+- party_short: Notspecified
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: The party label 'Notspecified' clearly indicates that the party was not specified
+    in the poll, and therefore cannot be matched to any specific party in the Party
+    Facts database.
+- party_short: Nussbaumer
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: The party label 'Nussbaumer' appears to be a candidate's name and does not
+    match any of the provided Party Facts entries for Switzerland.
+- party_short: Others
+  partyfacts_id: 1964
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: PA
+  partyfacts_id: 1311
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: ParmelinSVP/UDC
+  partyfacts_id: 308
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Schweizerische Volkspartei — The party short label 'ParmelinSVP/UDC' clearly
+    indicates the Swiss People's Party (SVP/UDC), with 'Parmelin' likely referring
+    to a candidate, matching Party Facts ID 308.
+- party_short: PDA
+  partyfacts_id: 669
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: PdA
+  partyfacts_id: 669
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: PdA / PST
+  partyfacts_id: 669
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: PdA-PST
+  partyfacts_id: 669
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: PdA/PST
+  partyfacts_id: 669
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Pda/PST
+  partyfacts_id: 669
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: PdAS/PdTS
+  partyfacts_id: 669
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: PDC
+  partyfacts_id: 1808
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: PL
+  partyfacts_id: 444
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: PLR
+  partyfacts_id: 360
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: FDP.Die Liberalen/PLR.Les Libéraux-Radicaux — The Party Facts entry with
+    ID 360 explicitly includes 'PLR' in its short label and name, and the time frame
+    aligns with the polling data.
+- party_short: PLR/FDP
+  partyfacts_id: 360
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: FDP.Die Liberalen/PLR.Les Libéraux-Radicaux — The partyfacts entry 360 'FDP.Die
+    Liberalen/PLR.Les Libéraux-Radicaux' has the short label 'FDP/PLR' which is a
+    direct match to 'PLR/FDP' and the time range covers the polling data.
+- party_short: POCH
+  partyfacts_id: 121
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: PortmannGLP
+  partyfacts_id: 1759
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Grünliberale Partei der Schweiz – Parti Vert-Libéral — The 'GLP' in 'PortmannGLP'
+    strongly suggests the Green Liberal Party, which is present in the candidate list
+    with ID 1759 and has a matching short label 'GPL-PVL'.
+- party_short: POS
+  partyfacts_id: 121
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: PPP
+  partyfacts_id: 1123
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: PRD
+  partyfacts_id: 360
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: PS
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: The provided Party Facts entries do not contain a party with the exact short
+    label 'PS' that aligns with the polling data's timeframe and vote share, and there
+    is no clear semantic match among the available options.
+- party_short: PS/SP
+  partyfacts_id: 29
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: PSA
+  partyfacts_id: 31
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: PSS
+  partyfacts_id: 29
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Pult
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: The party abbreviation 'Pult' does not match any of the provided Party Facts
+    entries for Switzerland.
+- party_short: Pulver
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: The party short label 'Pulver' does not match any of the provided Party Facts
+    entries for Switzerland.
+- party_short: PulverG/V
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: The party short label 'PulverG/V' does not semantically match any of the
+    provided Party Facts entries for Switzerland, and the polling data suggests it
+    is a contemporary party not listed.
+- party_short: PVL
+  partyfacts_id: 1759
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Grünliberale Partei der Schweiz – Parti Vert-Libéral — The Party Facts entry
+    1759 has 'GPL-PVL' as its short label, which directly contains 'PVL' and the name
+    'Grünliberale Partei der Schweiz – Parti Vert-Libéral' translates to Green Liberal
+    Party, matching the abbreviation.
+- party_short: PVL/GLP
+  partyfacts_id: 1759
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Grünliberale Partei der Schweiz – Parti Vert-Libéral — The abbreviation 'PVL/GLP'
+    directly matches the 'GPL-PVL' short label and the name 'Grünliberale Partei der
+    Schweiz – Parti Vert-Libéral' (Green Liberal Party) from the Party Facts entry,
+    and the dates align with the polling context.
+- party_short: R
+  partyfacts_id: 360
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: RADDEM
+  partyfacts_id: 360
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: RB
+  partyfacts_id: 1646
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: RD
+  partyfacts_id: 360
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: REP
+  partyfacts_id: 1646
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: RiederLC/DM
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: The party abbreviation 'RiederLC/DM' does not match any of the provided Party
+    Facts entries for Switzerland, and the polling context does not provide enough
+    information to infer a match.
+- party_short: RM
+  partyfacts_id: 1646
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: RothSP
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: The 'RothSP' abbreviation does not directly match any of the provided Party
+    Facts entries for Switzerland, and there is no clear dominant party to infer a
+    match.
+- party_short: RutzSVP
+  partyfacts_id: 308
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Schweizerische Volkspartei — The 'RutzSVP' label clearly indicates a candidate
+    'Rutz' associated with the 'SVP' party, which is the 'Schweizerische Volkspartei'
+    (Swiss People's Party).
+- party_short: Ryser
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: The party short label 'Ryser' does not match any of the provided Party Facts
+    entries for Switzerland, and there is no obvious candidate prefix to strip.
+- party_short: RöstiSVP/UDC
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: The provided Party Facts entries do not contain a match for 'RöstiSVP/UDC'.
+    The 'SVP/UDC' part of the label strongly suggests the Swiss People's Party (Schweizerische
+    Volkspartei/Union Démocratique du Centre), but no entry with this abbreviation
+    is present in the candidate list.
+- party_short: S
+  partyfacts_id: 8653
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: S. HessFDP/PLR
+  partyfacts_id: 360
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: FDP.Die Liberalen/PLR.Les Libéraux-Radicaux — The party short label 'FDP/PLR'
+    is a direct match to Party Facts ID 360, and the additional text 'S. Hess' likely
+    refers to a specific candidate or regional affiliation rather than a distinct
+    party.
+- party_short: SalzmannPVL/GLP
+  partyfacts_id: 1759
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Grünliberale Partei der Schweiz – Parti Vert-Libéral — The 'PVL/GLP' in the
+    short label directly matches the short label 'GPL-PVL' and the name 'Grünliberale
+    Partei der Schweiz – Parti Vert-Libéral' (Green Liberal Party) from the candidate
+    list, and the vote shares are consistent with a single party.
+- party_short: SalzmannSVP/UDC
+  partyfacts_id: 308
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Schweizerische Volkspartei — The party short label 'SVP/UDC' clearly refers
+    to the Swiss People's Party, which is represented by Party Facts ID 308.
+- party_short: SauterFDP
+  partyfacts_id: 360
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: FDP.Die Liberalen/PLR.Les Libéraux-Radicaux — The 'SauterFDP' label likely
+    refers to a candidate named Sauter from the FDP party, which is a strong match
+    for 'FDP/PLR' (id=360) given the polling context and the common practice of prefixing
+    candidate names to party abbreviations.
+- party_short: SchmidFDP
+  partyfacts_id: 360
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: FDP.Die Liberalen/PLR.Les Libéraux-Radicaux — The party short label 'SchmidFDP'
+    strongly suggests a connection to FDP, and FDP.The Liberals (id=360) is the most
+    relevant and active FDP party in the candidate list, with a continuous presence
+    through the polling dates.
+- party_short: SD
+  partyfacts_id: 1819
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: SD/DS
+  partyfacts_id: 1819
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: SDEM
+  partyfacts_id: 29
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: SMPFP
+  partyfacts_id: 1311
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Someoneelse
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: The party short label 'Someoneelse' does not match any of the provided Party
+    Facts entries for Switzerland.
+- party_short: SommarugaSP/PS
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: The provided Party Facts entries do not contain a party that matches 'SP/PS'
+    or 'Sozialdemokratische Partei der Schweiz/Parti socialiste suisse' which is the
+    likely full name for 'SP/PS'.
+- party_short: SP
+  partyfacts_id: 29
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: SP / PS
+  partyfacts_id: 29
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: SP-PS
+  partyfacts_id: 29
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: SP/PS
+  partyfacts_id: 29
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: SPBP
+  partyfacts_id: 29
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: SpiriAufrecht
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: The party 'SpiriAufrecht' does not appear in the provided list of candidate
+    Party Facts entries for Switzerland, and its name does not semantically match
+    any existing entries.
+- party_short: SPP
+  partyfacts_id: 308
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: SpringGrüne
+  partyfacts_id: 1006
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Grüne Partei der Schweiz/Parti écologiste suisse — The term 'SpringGrüne'
+    is a clear reference to the Green Party, and the polling data aligns with the
+    Green Party of Switzerland (GPS/PES) which has ID 1006.
+- party_short: SPS
+  partyfacts_id: 29
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: SPS/PSS
+  partyfacts_id: 29
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: SRB
+  partyfacts_id: 1646
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: SS
+  partyfacts_id: 8653
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: StarkSVP
+  partyfacts_id: 308
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Schweizerische Volkspartei — The 'SVP' in 'StarkSVP' strongly suggests a
+    match with 'Schweizerische Volkspartei' (Swiss People's Party), and the polling
+    data aligns with a major party.
+- party_short: StuderEVP
+  partyfacts_id: 1123
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Evangelische Volkspartei der Schweiz/Parti Evangélique Suisse — The 'EVP'
+    in 'StuderEVP' strongly suggests a match with the 'Evangelische Volkspartei der
+    Schweiz/Parti Evangélique Suisse' (EVP/PEV), and the vote shares are consistent
+    with a single party.
+- party_short: SuterSP
+  partyfacts_id: 29
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Sozialdemokratische Partei — The 'SuterSP' label strongly suggests a candidate
+    'Suter' associated with the 'SP' party, which is likely the 'Sozialdemokratische
+    Partei' (Social Democratic Party).
+- party_short: SVP
+  partyfacts_id: 308
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: SVP / UDC
+  partyfacts_id: 308
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: SVP-UDC
+  partyfacts_id: 308
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: SVP/UDC
+  partyfacts_id: 308
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: tech
+  partyfacts_id: 3086
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: TICI
+  partyfacts_id: 1311
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: TL
+  partyfacts_id: 1661
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: UDC
+  partyfacts_id: 308
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: UDC/SVP
+  partyfacts_id: 308
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Schweizerische Volkspartei — The abbreviation 'UDC/SVP' directly corresponds
+    to 'Schweizerische Volkspartei' (Swiss People's Party), which is also known as
+    SVP in German and UDC in French, and the polling data aligns with its historical
+    performance.
+- party_short: unknown
+  partyfacts_id: 2938
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Verts
+  partyfacts_id: 1006
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Grüne Partei der Schweiz/Parti écologiste suisse — The short label 'Verts'
+    is the French translation of 'Greens', which directly corresponds to the 'Grüne
+    Partei der Schweiz/Parti écologiste suisse' (Green Party of Switzerland) with
+    Party Facts ID 1006, and the vote shares are consistent with a major party.
+- party_short: Verts/Grüne
+  partyfacts_id: 1006
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Grüne Partei der Schweiz/Parti écologiste suisse — The party short label
+    'Verts/Grüne' directly translates to 'Greens' in French and German, which is a
+    clear match for 'Grüne Partei der Schweiz/Parti écologiste suisse' (Green Party
+    of Switzerland) with ID 1006, and the vote shares are consistent with a major
+    party.
+- party_short: VietzeFDP
+  partyfacts_id: 360
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: FDP.Die Liberalen/PLR.Les Libéraux-Radicaux — The 'FDP' in 'VietzeFDP' strongly
+    suggests a match with 'FDP.Die Liberalen/PLR.Les Libéraux-Radicaux' (ID 360),
+    which is a major party in Switzerland.
+- party_short: VP
+  partyfacts_id: 7220
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: WasserfallenSP/PS
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: The party short label 'WasserfallenSP/PS' includes 'SP/PS' which is a common
+    abbreviation for the Social Democratic Party of Switzerland, but no such party
+    is listed in the provided Party Facts entries for CH with a matching ID and relevant
+    date range.
+- party_short: Weichelt
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: The party short label 'Weichelt' does not match any of the provided Party
+    Facts entries for Switzerland, and it is likely a candidate's name rather than
+    a party abbreviation.
+- party_short: Wermuth
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: The party label 'Wermuth' does not correspond to any of the provided Party
+    Facts entries for Switzerland.
+- party_short: WettsteinGrüne
+  partyfacts_id: 1006
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Grüne Partei der Schweiz/Parti écologiste suisse — The 'Grüne' in the short
+    label strongly suggests a match with the 'Green Party of Switzerland', and the
+    vote shares are consistent with a major party.
+- party_short: 'Yes'
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: The party short label 'Yes' does not match any of the provided Party Facts
+    entries for Switzerland.
+- party_short: Zopfi
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: The party abbreviation 'Zopfi' does not semantically match any of the provided
+    Party Facts entries for Switzerland.

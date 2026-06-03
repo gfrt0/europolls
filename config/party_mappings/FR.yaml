@@ -1,0 +1,2381 @@
+# Auto-generated from italgov's data/scripts/party_crosswalk/
+#
+# Built by layering:
+#   1. extend.py — Gemini-based (country, party_short) → partyfacts_id
+#      with confidence scores. Coverage of opposition + coalition parties.
+#   2. Party Facts external-parties.csv — base layer of historically
+#      recognized parties.
+#   3. WhoGov-minister-matched — high-signal entries derived from
+#      cabinet ministers' partyfacts_id in WhoGov v3.1.
+#
+# `source` values: gemini_{high,medium,low,no_match} for Gemini calls,
+# partyfacts_external/whogov_minister_match/europolls_harmonized for
+# the layered base. Use confidence + is_coalition to triage.
+
+mappings:
+- party_short: (nominee)NPA
+  partyfacts_id: 6684
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Nouveau Parti anticapitaliste — The party short label 'NPA' directly matches
+    the Party Facts entry for 'Nouveau Parti anticapitaliste' (ID 6684).
+- party_short: 1-perc
+  partyfacts_id: 2536
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Abs.|Abstention
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: The label 'Abs.|Abstention' refers to abstention from voting, which is not
+    a political party and therefore does not match any Party Facts ID.
+- party_short: AC
+  partyfacts_id: 1177
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: AD
+  partyfacts_id: 3159
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: AGIR
+  partyfacts_id: 9132
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Agir
+  partyfacts_id: 9132
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Alliot-MarieNF
+  partyfacts_id: 433
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Front National / Rassemblement National — The label 'Alliot-MarieNF' combines
+    the candidate's name Alliot-Marie with the party abbreviation 'NF', which strongly
+    suggests a match with 'Front National'.
+- party_short: Alliot-MarieUMP
+  partyfacts_id: 1595
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: "Union pour un mouvement populaire | Les R\x18epubli\x18cains — The abbreviation\
+    \ 'Alliot-MarieUMP' clearly refers to the UMP party, with 'Alliot-Marie' likely\
+    \ indicating a specific candidate or faction within the party, and the UMP ID\
+    \ is a direct match."
+- party_short: ally
+  partyfacts_id: 3933
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: ALP
+  partyfacts_id: 3105
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: AO
+  partyfacts_id: 2536
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: AP
+  partyfacts_id: 1898
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: AR
+  partyfacts_id: 2689
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: ARS
+  partyfacts_id: 3181
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: ArthaudLO
+  partyfacts_id: 617
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Lutte ouvrière — The party short label 'ArthaudLO' directly references 'LO'
+    (Lutte ouvrière), which is a clear match for Party Facts ID 617.
+- party_short: AsselineauUPR
+  partyfacts_id: 7344
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Union Populaire Républicaine — The party short label 'AsselineauUPR' directly
+    contains 'UPR', which matches the 'Union Populaire Républicaine' (id=7344) in
+    the candidate list, and Asselineau is the founder of UPR.
+- party_short: AubryPS
+  partyfacts_id: 1478
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Parti Socialiste — The 'PS' in 'AubryPS' clearly refers to the Parti Socialiste,
+    and Martine Aubry was a prominent leader of the party during the polling period.
+- party_short: AutainPCF
+  partyfacts_id: 1251
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Parti communiste français — The 'PCF' in 'AutainPCF' strongly indicates the
+    'Parti communiste français', and the 'Autain' likely refers to a prominent figure
+    associated with the party.
+- party_short: BayrouMoDem
+  partyfacts_id: 496
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: BayrouUDF
+  partyfacts_id: 213
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Union pour la Démocratie Française — The 'BayrouUDF' label clearly refers
+    to François Bayrou's leadership of the Union for French Democracy (UDF), which
+    is directly matched by Party Facts ID 213, and the polling dates align with UDF's
+    active period.
+- party_short: BertrandLR
+  partyfacts_id: 8168
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Les Républicains — The 'BertrandLR' label refers to Xavier Bertrand, a prominent
+    figure within 'Les Républicains' (LR), and the polling data aligns with LR's performance
+    during that period.
+- party_short: BesancenotLCR
+  partyfacts_id: 1506
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Ligue communiste r&#233;volutionnaire — The party short label 'BesancenotLCR'
+    directly references 'LCR', which matches 'Ligue communiste r&#233;volutionnaire'
+    (ID 1506) in the candidate list, and the polling dates fall within its active
+    period.
+- party_short: BesancenotLCR/NPA
+  partyfacts_id: 6684
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Nouveau Parti anticapitaliste — The label 'BesancenotLCR/NPA' directly references
+    the 'LCR' (Ligue communiste révolutionnaire) and 'NPA' (Nouveau Parti anticapitaliste),
+    with the NPA being the successor to the LCR and active during the polling context,
+    making it the best match.
+- party_short: BesancenotNPA
+  partyfacts_id: 6684
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Nouveau Parti anticapitaliste — The party short label 'BesancenotNPA' directly
+    references 'NPA' (Nouveau Parti anticapitaliste) and Besancenot was a prominent
+    figure of this party.
+- party_short: BorlooPR
+  partyfacts_id: 14
+  source: gemini_medium
+  confidence: medium
+  is_coalition: false
+  notes: Parti radical-socialiste  — The 'BorlooPR' label likely refers to Jean-Louis
+    Borloo and the Parti Radical, which is represented by Party Facts ID 14 (PR).
+- party_short: BorlooPR/UMP
+  partyfacts_id: 1595
+  source: gemini_high
+  confidence: high
+  is_coalition: true
+  notes: "Union pour un mouvement populaire | Les R\x18publicains — The label 'BorlooPR/UMP'\
+    \ clearly indicates a coalition involving the UMP, which is a direct match to\
+    \ Party Facts ID 1595, and Borloo's party (Parti Radical), which was allied with\
+    \ UMP during the specified period."
+- party_short: BoutinPCD
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: The party short label 'BoutinPCD' likely refers to Christine Boutin and her
+    party, the Parti Chrétien-Démocrate (PCD), which is not present in the provided
+    Party Facts entries.
+- party_short: BovéSE
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: The 'BovéSE' abbreviation likely refers to José Bové, a candidate in the
+    2007 French presidential election, but the 'SE' suffix does not clearly map to
+    any known party in the provided Party Facts entries for France, and no party with
+    'SE' in its short name or a similar name is listed.
+- party_short: BraouezecPCF
+  partyfacts_id: 1251
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Parti communiste français — The 'PCF' in the label directly matches 'Parti
+    communiste français' (French Communist Party) in the candidate list, and the additional
+    'Braouezec' likely refers to a candidate or faction within the party.
+- party_short: BuffetPCF
+  partyfacts_id: 1251
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Parti communiste français — The 'BuffetPCF' label strongly suggests the French
+    Communist Party, and the polling context aligns with the party's activity during
+    that period.
+- party_short: C
+  partyfacts_id: 4626
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: C-FR
+  partyfacts_id: 4626
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: CD
+  partyfacts_id: 399
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: CD & CR
+  partyfacts_id: 737
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: CDP
+  partyfacts_id: 288
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: CDS
+  partyfacts_id: 3155
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: CheminadeS&P
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: The party 'Solidarité et Progrès' (S&P) led by Jacques Cheminade is not present
+    in the provided Party Facts entries for France.
+- party_short: ChevènementMRC
+  partyfacts_id: 3156
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Mouvement des citoyens — The abbreviation 'ChevènementMRC' directly refers
+    to Jean-Pierre Chevènement's party, the Mouvement des citoyens (MDC), which later
+    became the Mouvement Républicain et Citoyen (MRC), and Party Facts ID 3156 corresponds
+    to MDC with a relevant time frame.
+- party_short: ChiracUMP
+  partyfacts_id: 1595
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Union pour un mouvement populaire | Les Républicains — ChiracUMP clearly
+    refers to the UMP (Union for a Popular Movement), which was founded by Jacques
+    Chirac and is represented by Party Facts ID 1595, active during the polling context
+    dates.
+- party_short: Chjama
+  partyfacts_id: 2536
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: CL
+  partyfacts_id: 2536
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: CNI
+  partyfacts_id: 1629
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: CNIP
+  partyfacts_id: 1629
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Communist
+  partyfacts_id: 1251
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Communists
+  partyfacts_id: 433
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Con
+  partyfacts_id: 6505
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: CONS
+  partyfacts_id: 1629
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: CopéLR
+  partyfacts_id: 1595
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Union pour un mouvement populaire | Les Républicains — The 'Copé' in 'CopéLR'
+    refers to Jean-François Copé, a prominent figure in the UMP (Union for a Popular
+    Movement), which later became Les Républicains (LR), making ID 1595 the most appropriate
+    match.
+- party_short: CopéUMP
+  partyfacts_id: 1595
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Union pour un mouvement populaire | Les Républicains — CopéUMP refers to
+    Jean-François Copé, a prominent figure within the UMP (Union for a Popular Movement),
+    which is directly matched by Party Facts ID 1595.
+- party_short: CPNT
+  partyfacts_id: 1313
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: CR
+  partyfacts_id: 6422
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: D
+  partyfacts_id: 1776
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: d-centre
+  partyfacts_id: 9133
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: d-d
+  partyfacts_id: 1776
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: d-droite
+  partyfacts_id: 1776
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: d-eco
+  partyfacts_id: 8657
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: d-g
+  partyfacts_id: 126
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: d-gauche
+  partyfacts_id: 126
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: D[M]
+  partyfacts_id: 5746
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: DCF / PSC
+  partyfacts_id: 2536
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: DelanoëPS
+  partyfacts_id: 1478
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Parti Socialiste — The 'DelanoëPS' label clearly refers to the 'Parti Socialiste'
+    (PS), with 'Delanoë' likely indicating a specific leader or faction within the
+    party at the time of the polls.
+- party_short: DIFE / RPR
+  partyfacts_id: 509
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: DIV
+  partyfacts_id: 1898
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: DL
+  partyfacts_id: 4364
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: DLF
+  partyfacts_id: 3207
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: DLR
+  partyfacts_id: 3207
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: DLR / DLF
+  partyfacts_id: 3207
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: DLR/DLF
+  partyfacts_id: 3207
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: DLR|DLF
+  partyfacts_id: 3207
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: DM
+  partyfacts_id: 496
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: DP
+  partyfacts_id: 3107
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: droite
+  partyfacts_id: 1776
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: DuflotEE/LV
+  partyfacts_id: 5650
+  source: gemini_high
+  confidence: high
+  is_coalition: true
+  notes: "Europe \x17cologie Les Verts — The 'EE/LV' in the short label strongly suggests\
+    \ 'Europe \x17cologie Les Verts', and the polling dates align with its activity\
+    \ period."
+- party_short: DuflotEELV
+  partyfacts_id: 5650
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Europe Écologie Les Verts — The abbreviation 'DuflotEELV' clearly refers
+    to Europe Écologie Les Verts (EELV), with Duflot likely being a prominent figure
+    associated with the party during the polling period.
+- party_short: Dupont-AignanDLF
+  partyfacts_id: 3207
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Debout la république / Debout la France — The party short label 'Dupont-AignanDLF'
+    directly references 'DLF' which matches the Party Facts entry for 'Debout la république
+    / Debout la France' (id=3207), and the name 'Dupont-Aignan' is the leader of this
+    party.
+- party_short: Dupont-AignanDLR
+  partyfacts_id: 3207
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Debout la république / Debout la France — The party short label 'Dupont-AignanDLR'
+    directly references 'DLR', which is a known abbreviation for 'Debout la république
+    / Debout la France' (Party Facts ID 3207).
+- party_short: DVD
+  partyfacts_id: 2688
+  source: whogov_minister_match
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: DVE
+  partyfacts_id: 8657
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: DVG
+  partyfacts_id: 2688
+  source: whogov_minister_match
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: E
+  partyfacts_id: 1108
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: EC
+  partyfacts_id: 5857
+  source: whogov_minister_match
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: ECO
+  partyfacts_id: 5953
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Ecology Generation
+  partyfacts_id: 1273
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: EELV
+  partyfacts_id: 5650
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: EELV17
+  partyfacts_id: 5650
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: EM
+  partyfacts_id: 5857
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: EmmanuelliPS
+  partyfacts_id: 1478
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Parti Socialiste — The label 'EmmanuelliPS' clearly indicates the 'Parti
+    Socialiste' (PS), with 'Emmanuelli' likely referring to a candidate or leader
+    associated with the party.
+- party_short: EN.RAD / MRG / PRG
+  partyfacts_id: 1783
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Ensemble
+  partyfacts_id: 2536
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: ERD
+  partyfacts_id: 3159
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: etc
+  partyfacts_id: 1898
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: EUROPE ECOLOGIE
+  partyfacts_id: 5650
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: ex-dro
+  partyfacts_id: 452
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: ex-gau
+  partyfacts_id: 1594
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: exg
+  partyfacts_id: 1594
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: extremegauche
+  partyfacts_id: 1594
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: EÉLV
+  partyfacts_id: 1108
+  source: whogov_minister_match
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: FabiusPS
+  partyfacts_id: 1478
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Parti Socialiste — The 'FabiusPS' label clearly indicates a connection to
+    the 'Parti Socialiste' (PS), with 'Fabius' likely referring to Laurent Fabius,
+    a prominent figure within the party during the polling period.
+- party_short: FDG
+  partyfacts_id: 4363
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: FdG
+  partyfacts_id: 4363
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: FG
+  partyfacts_id: 4363
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: FI
+  partyfacts_id: 5858
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: FI/LFI
+  partyfacts_id: 5858
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: FillonLR
+  partyfacts_id: 8168
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Les Républicains — The 'FillonLR' label refers to François Fillon, who was
+    the presidential candidate for Les Républicains (LR) in the 2017 election, which
+    aligns with the polling context.
+- party_short: FillonUMP
+  partyfacts_id: 1595
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Union pour un mouvement populaire | Les Républicains — The 'UMP' in 'FillonUMP'
+    directly refers to the 'Union for a Popular Movement', which is Party Facts ID
+    1595, and the polling dates align with its active period.
+- party_short: FN
+  partyfacts_id: 433
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: FN / RN
+  partyfacts_id: 433
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: FN/RN
+  partyfacts_id: 433
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: FNRI
+  partyfacts_id: 1246
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: FR
+  partyfacts_id: 4626
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: G
+  partyfacts_id: 1083
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: G/s
+  partyfacts_id: 7342
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: GAUL
+  partyfacts_id: 1083
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: GD
+  partyfacts_id: 1083
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: GE
+  partyfacts_id: 1273
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: GE++
+  partyfacts_id: 1273
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: GECOLO
+  partyfacts_id: 1273
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: GK
+  partyfacts_id: 1629
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: GR
+  partyfacts_id: 3160
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: GRad
+  partyfacts_id: 1594
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: GREENS
+  partyfacts_id: 1108
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: GRep
+  partyfacts_id: 3160
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Gs
+  partyfacts_id: 7342
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: GSR
+  partyfacts_id: 1594
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: GuainoLR
+  partyfacts_id: 8168
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Les R&#233;publicains — The 'LR' in 'GuainoLR' strongly suggests a connection
+    to 'Les R&#233;publicains', and the polling data falls within its active period.
+- party_short: GÉ
+  partyfacts_id: 1273
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: H
+  partyfacts_id: 9134
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: HamonPS
+  partyfacts_id: 1478
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Parti Socialiste — The 'HamonPS' label clearly refers to Benoît Hamon's candidacy
+    for the Socialist Party (PS) in the 2017 presidential election, making Party Facts
+    ID 1478 the correct match.
+- party_short: Hollande
+  partyfacts_id: 1478
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Parti Socialiste — François Hollande was a prominent member of the Socialist
+    Party (Parti Socialiste) and was their candidate in the 2012 presidential election,
+    making 'Hollande' a direct reference to the PS during that period.
+- party_short: HollandePS
+  partyfacts_id: 1478
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Horizons
+  partyfacts_id: 9134
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: HulotSE
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: The 'HulotSE' abbreviation likely refers to Nicolas Hulot and his 'Solidarité
+    Écologique' movement, which is not present in the provided Party Facts list.
+- party_short: IND
+  partyfacts_id: 1629
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Ind
+  partyfacts_id: 2688
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Ind.
+  partyfacts_id: 2688
+  source: whogov_minister_match
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: INDEPENDENT
+  partyfacts_id: 2688
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Inseme
+  partyfacts_id: 2536
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: IR
+  partyfacts_id: 1246
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: IR|DL
+  partyfacts_id: 1246
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: JadotEELV
+  partyfacts_id: 5650
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Europe Écologie Les Verts — The 'EELV' in 'JadotEELV' directly matches the
+    'Europe Écologie Les Verts' party, and Yannick Jadot was a prominent candidate
+    for this party.
+- party_short: JolyEE
+  partyfacts_id: 5650
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Europe Écologie Les Verts — Eva Joly was the presidential candidate for Europe
+    Écologie Les Verts (EELV) in 2012, and the 'EE' in 'JolyEE' strongly suggests
+    a connection to Europe Écologie, which merged with Les Verts to form EELV in 2010,
+    matching the polling date.
+- party_short: JolyEELV
+  partyfacts_id: 5650
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Europe Écologie Les Verts — The 'EELV' in 'JolyEELV' directly matches 'Europe
+    Écologie Les Verts' (id=5650), and Eva Joly was their presidential candidate in
+    2012, aligning with the polling data.
+- party_short: JolyEELV/EE
+  partyfacts_id: 5650
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Europe Écologie Les Verts — The abbreviation 'JolyEELV/EE' directly references
+    'EELV' (Europe Écologie Les Verts), which is a clear match in the candidate list,
+    and the polls are within the party's active years.
+- party_short: JospinPS
+  partyfacts_id: 1478
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Parti Socialiste — The 'JospinPS' label clearly refers to the Socialist Party
+    (PS), with 'Jospin' likely indicating Lionel Jospin, a prominent figure of the
+    party during the period of the polling data.
+- party_short: JuppéLR
+  partyfacts_id: 1595
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: "Union pour un mouvement populaire | Les R\x14publicains — The 'LR' in 'JuppéLR'\
+    \ strongly suggests Les R\x14publicains, and the polling dates align with the\
+    \ party's activity period."
+- party_short: JuppéUMP
+  partyfacts_id: 1595
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Union pour un mouvement populaire | Les Républicains — The 'JuppéUMP' label
+    clearly refers to the UMP party, with 'Juppé' likely indicating a specific faction
+    or leader within it, and Party Facts ID 1595 corresponds to UMP.
+- party_short: L
+  partyfacts_id: 5858
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: L'AE / RPF / MPF
+  partyfacts_id: 509
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: LA FRANCE INSOUMISE
+  partyfacts_id: 5858
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: LA REPUBLIQUE EN MARCHE
+  partyfacts_id: 5857
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: LaguillerLO
+  partyfacts_id: 617
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Lutte ouvrière — The 'LaguillerLO' abbreviation strongly suggests a connection
+    to Lutte ouvrière (LO), especially given Arlette Laguiller's prominent role as
+    their presidential candidate during the polling period.
+- party_short: LangPS
+  partyfacts_id: 1478
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Parti Socialiste — The 'LangPS' label likely refers to the Parti Socialiste
+    (PS), with 'Lang' possibly indicating a specific faction or leader within the
+    party, given the polling context and the PS's historical presence.
+- party_short: LAREM
+  partyfacts_id: 5857
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: LaREM
+  partyfacts_id: 5857
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: LaREM/RE
+  partyfacts_id: 5857
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: LassalleMoDem
+  partyfacts_id: 496
+  source: gemini_high
+  confidence: high
+  is_coalition: true
+  notes: Mouvement démocrate — The label 'LassalleMoDem' clearly indicates a coalition
+    or alliance involving 'MoDem', which is a direct match to Party Facts ID 496,
+    with 'Lassalle' likely referring to a candidate or another party in the alliance.
+- party_short: LassalleRésistons!
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: The party 'Résistons!' led by Jean Lassalle is not present in the provided
+    Party Facts entries.
+- party_short: LCR
+  partyfacts_id: 1506
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: LD
+  partyfacts_id: 4364
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Le MaireLR
+  partyfacts_id: 8168
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Les Républicains — The 'LR' in 'Le MaireLR' strongly suggests 'Les Républicains',
+    and the polling dates align with the party's activity period.
+- party_short: Le Pen
+  partyfacts_id: 433
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Front National / Rassemblement National — The 'Le Pen' label strongly refers
+    to Marine Le Pen, who was the leader of the Front National (later Rassemblement
+    National) during the 2017 election period, and the polling data aligns with the
+    party's performance at that time.
+- party_short: Le PenFN
+  partyfacts_id: 433
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Front National / Rassemblement National — The 'Le PenFN' abbreviation strongly
+    suggests the 'Front National' (FN), which is a direct match to Party Facts ID
+    433, especially given the polling data spans periods when the party was led by
+    a Le Pen.
+- party_short: Le PenRN
+  partyfacts_id: 433
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Front National / Rassemblement National — The 'Le PenRN' label directly references
+    'RN' (Rassemblement National), which is explicitly part of the Party Facts entry
+    for ID 433, and the 'Le Pen' part refers to the party's prominent leader, indicating
+    a strong match.
+- party_short: LepageCap21
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: The party 'Cap21' is not present in the provided Party Facts entries for
+    France.
+- party_short: LES VERTS
+  partyfacts_id: 1108
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: LFI
+  partyfacts_id: 5858
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: LO
+  partyfacts_id: 617
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: LO / LCR
+  partyfacts_id: 617
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: LO-LCR
+  partyfacts_id: 1506
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: LO/NPA
+  partyfacts_id: 6684
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: LP
+  partyfacts_id: 6712
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: LR
+  partyfacts_id: 5857
+  source: whogov_minister_match
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: LREM
+  partyfacts_id: 5857
+  source: whogov_minister_match
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: LREMMoDem
+  partyfacts_id: 496
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: LV
+  partyfacts_id: 1108
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Macron
+  partyfacts_id: 5857
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: La République En Marche! | Renaissance — The 'Macron' label clearly refers
+    to Emmanuel Macron's party, La République En Marche! (now Renaissance), which
+    was founded in 2017, matching the polling data timeframe.
+- party_short: MacronDVG
+  partyfacts_id: 5857
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: La République En Marche! | Renaissance — MacronDVG refers to Emmanuel Macron's
+    party, La République En Marche! (now Renaissance), and the DVG (divers gauche)
+    indicates a left-leaning independent or miscellaneous candidate associated with
+    his movement.
+- party_short: MacronEM
+  partyfacts_id: 5857
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: La République En Marche! | Renaissance — The 'MacronEM' label clearly refers
+    to Emmanuel Macron's party, 'La République En Marche!', which is represented by
+    Party Facts ID 5857.
+- party_short: MacronLREM
+  partyfacts_id: 5857
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: La République En Marche! | Renaissance — The party short label 'LREM' directly
+    matches 'REM|R' which stands for 'La République En Marche! | Renaissance', and
+    the 'Macron' prefix clearly indicates the party of Emmanuel Macron.
+- party_short: MacronPS
+  partyfacts_id: 5857
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: La République En Marche! | Renaissance — MacronPS refers to Emmanuel Macron's
+    party, which is La République En Marche! (now Renaissance), and the polling data
+    aligns with its founding period.
+- party_short: MAJ
+  partyfacts_id: 3157
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: MamèreLV
+  partyfacts_id: 1108
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Les Verts — Noel Mamère was a prominent figure of Les Verts (The Greens)
+    in France, and the 'LV' in the abbreviation clearly refers to this party, which
+    existed during the polling period.
+- party_short: MarchandiseLP
+  partyfacts_id: 3105
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Action libérale populaire — The party short label 'MarchandiseLP' strongly
+    suggests 'Action libérale populaire' (ALP) when considering the 'LP' suffix, and
+    the 'Marchandise' prefix is likely a candidate name.
+- party_short: MartinNPA
+  partyfacts_id: 6684
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Nouveau Parti anticapitaliste — The 'NPA' in 'MartinNPA' directly matches
+    the 'NPA' short label of 'Nouveau Parti anticapitaliste' (New Anticapitalist Party),
+    and the polling context falls within its active years.
+- party_short: MC
+  partyfacts_id: 3156
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: MCA
+  partyfacts_id: 2536
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: MDC
+  partyfacts_id: 3156
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: MDC/PR
+  partyfacts_id: 3156
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: MEI
+  partyfacts_id: 2536
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: MelenchonLFI
+  partyfacts_id: 5858
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: MF
+  partyfacts_id: 364
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: MGRS
+  partyfacts_id: 1783
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: ML
+  partyfacts_id: 126
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: MN
+  partyfacts_id: 1634
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: MNR
+  partyfacts_id: 1634
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: MODEM
+  partyfacts_id: 496
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: MoDem
+  partyfacts_id: 213
+  source: whogov_minister_match
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: MontebourgPS
+  partyfacts_id: 1478
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Parti Socialiste — The 'PS' in 'MontebourgPS' strongly indicates the Socialist
+    Party, and Arnaud Montebourg was a prominent figure within the PS.
+- party_short: MorinNC
+  partyfacts_id: 1255
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Nouveau centre — The 'MorinNC' abbreviation strongly suggests 'Nouveau Centre',
+    especially given the polling context dates which align with the party's active
+    period.
+- party_short: MP
+  partyfacts_id: 3157
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: MPF
+  partyfacts_id: 364
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: MR
+  partyfacts_id: 14
+  source: whogov_minister_match
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: MR-CSA
+  partyfacts_id: 1783
+  source: whogov_minister_match
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: MR-PR-CSA
+  partyfacts_id: 14
+  source: whogov_minister_match
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: MRC
+  partyfacts_id: 3156
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: MRG
+  partyfacts_id: 1783
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: MRP
+  partyfacts_id: 737
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: MélenchonFG
+  partyfacts_id: 4363
+  source: gemini_high
+  confidence: high
+  is_coalition: true
+  notes: Front de gauche — The 'FG' in 'MélenchonFG' clearly refers to Front de Gauche
+    (Left Front), which was led by Jean-Luc Mélenchon, and the poll dates align with
+    its existence.
+- party_short: MélenchonFI
+  partyfacts_id: 5858
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: La France Insoumise — MélenchonFI clearly refers to Jean-Luc Mélenchon's
+    party, La France Insoumise (LFI), which is a direct match in the candidate list.
+- party_short: MélenchonPS
+  partyfacts_id: 1478
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Parti Socialiste — The label 'MélenchonPS' is a candidate-party combination,
+    where 'PS' refers to the Socialist Party, and Jean-Luc Mélenchon was a prominent
+    figure associated with the left, though he later founded La France Insoumise.
+    Given the 2006 poll date, it is highly likely to refer to the Socialist Party
+    (PS).
+- party_short: NC
+  partyfacts_id: 1255
+  source: whogov_minister_match
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: NCE
+  partyfacts_id: 1255
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: NF
+  partyfacts_id: 433
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: NihousCPNT
+  partyfacts_id: 1313
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Chasse, pêche, nature et traditions — The 'CPNT' part of the short label
+    directly matches the 'Chasse, pêche, nature et traditions' party, and 'Nihous'
+    likely refers to Frédéric Nihous, a prominent figure of the party.
+- party_short: NKMLR
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: The party abbreviation 'NKMLR' does not match any of the provided Party Facts
+    entries for France, and no obvious candidate or party name prefix/suffix can be
+    identified.
+- party_short: NN
+  partyfacts_id: 2688
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: No vote
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: The label 'No vote' indicates a non-voting option, not a political party.
+- party_short: NPA
+  partyfacts_id: 6684
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: NUPES
+  partyfacts_id: 3933
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: OG
+  partyfacts_id: 2689
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Other
+  partyfacts_id: 1898
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: OTHER FAR-LEFT
+  partyfacts_id: 1594
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: OTHER LEFT
+  partyfacts_id: 126
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: OTHER RIGHT
+  partyfacts_id: 1776
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Others/Indep.
+  partyfacts_id: 1898
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: PA
+  partyfacts_id: 7343
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: PARTI ANIMALISTE
+  partyfacts_id: 7343
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: PAYS
+  partyfacts_id: 1629
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: PC
+  partyfacts_id: 1251
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: PCF
+  partyfacts_id: 1251
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: PCF / GU / PCR
+  partyfacts_id: 509
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: PCF/FdG
+  partyfacts_id: 1251
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: PCI
+  partyfacts_id: 1898
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: PDM
+  partyfacts_id: 399
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: PDP
+  partyfacts_id: 3107
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: PE
+  partyfacts_id: 8921
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: PeillonPS
+  partyfacts_id: 1478
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Parti Socialiste — The 'PS' in 'PeillonPS' strongly indicates the 'Parti
+    Socialiste', and the polling context aligns with the party's activity around 2017.
+- party_short: PFN
+  partyfacts_id: 1383
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: PG
+  partyfacts_id: 8359
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: PinelPRG
+  partyfacts_id: 1783
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Parti radical de gauche — The 'PRG' in 'PinelPRG' directly matches 'Parti
+    radical de gauche' (Radical Party of the Left), and the polling dates fall within
+    its active period.
+- party_short: PNC
+  partyfacts_id: 2536
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: POc
+  partyfacts_id: 2536
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: POUJ
+  partyfacts_id: 1580
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: PoutouNPA
+  partyfacts_id: 6684
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Nouveau Parti anticapitaliste — The abbreviation 'PoutouNPA' directly references
+    'NPA' (Nouveau Parti anticapitaliste), and Philippe Poutou is a prominent figure
+    and presidential candidate for this party, making the match highly confident.
+- party_short: PR
+  partyfacts_id: 14
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: PR / DL
+  partyfacts_id: 4364
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Presidential...
+  partyfacts_id: 3933
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: PRG
+  partyfacts_id: 1783
+  source: whogov_minister_match
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: PRG-CSA
+  partyfacts_id: 1783
+  source: whogov_minister_match
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: PRL
+  partyfacts_id: 1473
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: PRS
+  partyfacts_id: 3102
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: PRV
+  partyfacts_id: 14
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: PS
+  partyfacts_id: 1478
+  source: whogov_minister_match
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: PS/MRG
+  partyfacts_id: 3933
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: PSD
+  partyfacts_id: 6689
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: PSdF
+  partyfacts_id: 2536
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: PSF
+  partyfacts_id: 4862
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: PSU
+  partyfacts_id: 912
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: PT
+  partyfacts_id: 2536
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: PUS
+  partyfacts_id: 1898
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: PÉ
+  partyfacts_id: 1108
+  source: whogov_minister_match
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: R
+  partyfacts_id: 14
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: R!
+  partyfacts_id: 9064
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: RAD
+  partyfacts_id: 14
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Rad
+  partyfacts_id: 14
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Rad.
+  partyfacts_id: 14
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Radical
+  partyfacts_id: 14
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: RAIS
+  partyfacts_id: 3108
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: RDA
+  partyfacts_id: 14
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: RdG
+  partyfacts_id: 1783
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: RE
+  partyfacts_id: 5857
+  source: whogov_minister_match
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: RE (LREM)
+  partyfacts_id: 5857
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: RE-TdP
+  partyfacts_id: 5857
+  source: whogov_minister_match
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: REC
+  partyfacts_id: 9064
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Reconq
+  partyfacts_id: 9064
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Reconquete
+  partyfacts_id: 9064
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: REF
+  partyfacts_id: 167
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: REM
+  partyfacts_id: 5857
+  source: whogov_minister_match
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: REM|R
+  partyfacts_id: 5857
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Rep
+  partyfacts_id: 4628
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: RepG
+  partyfacts_id: 3160
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: RepG + RadI
+  partyfacts_id: 3933
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: RF
+  partyfacts_id: 8042
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: RG
+  partyfacts_id: 3159
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: RGR
+  partyfacts_id: 1662
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: RI
+  partyfacts_id: 1246
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: RIAS
+  partyfacts_id: 3181
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: RM / RO
+  partyfacts_id: 8221
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: RN
+  partyfacts_id: 433
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: RoyalPS
+  partyfacts_id: 1478
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Parti Socialiste — The polling context evidence and the 'RoyalPS' label strongly
+    suggest a combination of candidate Ségolène Royal and the Socialist Party (PS).
+- party_short: RP
+  partyfacts_id: 4627
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: RPF
+  partyfacts_id: 1083
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: RPR
+  partyfacts_id: 509
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: RPR+UDF
+  partyfacts_id: 3024
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: RPR/UDF
+  partyfacts_id: 3933
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: RS
+  partyfacts_id: 3181
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: RSP
+  partyfacts_id: 14
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: S
+  partyfacts_id: 1478
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: s.e. (Ind)
+  partyfacts_id: 2688
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Sarkozy
+  partyfacts_id: 1595
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Union pour un mouvement populaire | Les Républicains — Nicolas Sarkozy was
+    the leader of the UMP (Union for a Popular Movement) during the 2012 elections,
+    and the polling data aligns with the UMP's performance.
+- party_short: SarkozyLR
+  partyfacts_id: 1595
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Union pour un mouvement populaire | Les Républicains — The label 'SarkozyLR'
+    directly references Nicolas Sarkozy, who was a prominent figure in the UMP (Union
+    for a Popular Movement) which later rebranded to Les Républicains (LR), matching
+    Party Facts ID 1595, and the polling dates align with this party's activity.
+- party_short: SarkozyUMP
+  partyfacts_id: 1595
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: SchivardiPOI
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: The party 'SchivardiPOI' is not found in the provided Party Facts entries
+    for France, and 'POI' is not a clear abbreviation for any of the listed parties.
+- party_short: SchivardiPT
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: The party abbreviation 'SchivardiPT' likely refers to a candidate-party combination,
+    but 'PT' does not match any known Party Facts ID for France, and the candidate
+    Schivardi is not associated with any listed party.
+- party_short: SE
+  partyfacts_id: 2688
+  source: whogov_minister_match
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: SEIO
+  partyfacts_id: 4785
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: SF
+  partyfacts_id: 6418
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: SFIO
+  partyfacts_id: 4785
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: SI
+  partyfacts_id: 2688
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: SOC
+  partyfacts_id: 1478
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: SOCIALISTE
+  partyfacts_id: 1478
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Strauss-KahnPS
+  partyfacts_id: 1478
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Parti Socialiste — The 'PS' in the label clearly refers to the Parti Socialiste,
+    and Strauss-Kahn was a prominent figure within the party during the polling period.
+- party_short: TapiePRG
+  partyfacts_id: 1783
+  source: gemini_high
+  confidence: high
+  is_coalition: true
+  notes: Parti radical de gauche — The 'TapiePRG' label clearly indicates a coalition
+    involving the 'Parti radical de gauche' (PRG), with Tapie likely referring to
+    Bernard Tapie, a prominent figure who led a list in the 2010 regional elections
+    that included the PRG.
+- party_short: TaubiraPRG
+  partyfacts_id: 1783
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Parti radical de gauche — The 'PRG' in 'TaubiraPRG' directly matches 'Parti
+    radical de gauche' (ID 1783), and Christiane Taubira was a prominent figure associated
+    with this party.
+- party_short: tech
+  partyfacts_id: 3024
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: UC
+  partyfacts_id: 1898
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: UDB
+  partyfacts_id: 2536
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: UDCA
+  partyfacts_id: 1580
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: UDF
+  partyfacts_id: 213
+  source: whogov_minister_match
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: UDF / UDF-FD / UDF-PPDF /
+  partyfacts_id: 213
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: UDF-MOUVEMENT DEMOCRATE
+  partyfacts_id: 213
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: UDFCDS
+  partyfacts_id: 3155
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: UDFPR
+  partyfacts_id: 1246
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: UDFRAD
+  partyfacts_id: 213
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: UDF|MD
+  partyfacts_id: 213
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: UDI
+  partyfacts_id: 3229
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: UDI-MODEM
+  partyfacts_id: 3229
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: UDIMODEM
+  partyfacts_id: 3229
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: UDR
+  partyfacts_id: 8041
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: UDSR
+  partyfacts_id: 2470
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: UEM
+  partyfacts_id: 2689
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: UFD
+  partyfacts_id: 2537
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: UMP
+  partyfacts_id: 1595
+  source: whogov_minister_match
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: UMP-FRS, PCD
+  partyfacts_id: 1595
+  source: whogov_minister_match
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: UMP-PRV
+  partyfacts_id: 1595
+  source: whogov_minister_match
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: UMP|LR
+  partyfacts_id: 1595
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Union for a ...
+  partyfacts_id: 3933
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Union of Left
+  partyfacts_id: 3933
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: unknown
+  partyfacts_id: 2689
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: UNR
+  partyfacts_id: 5514
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Unser
+  partyfacts_id: 2536
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: UPC
+  partyfacts_id: 2536
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: UPR
+  partyfacts_id: 7344
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: UR
+  partyfacts_id: 3159
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: UR/AD
+  partyfacts_id: 3159
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: UR[M]
+  partyfacts_id: 5745
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: URD
+  partyfacts_id: 4626
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: URS
+  partyfacts_id: 3102
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: US
+  partyfacts_id: 6638
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: USR
+  partyfacts_id: 6638
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: V
+  partyfacts_id: 1108
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: VallsPS
+  partyfacts_id: 1478
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Parti Socialiste — The 'VallsPS' label clearly indicates a connection to
+    the 'Parti Socialiste' (PS), with 'Valls' likely referring to Manuel Valls, a
+    prominent figure within the party during the polling period.
+- party_short: VEC
+  partyfacts_id: 5650
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: VERTS
+  partyfacts_id: 1108
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Verts
+  partyfacts_id: 1108
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: VillepinRS
+  partyfacts_id: 3102
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Parti républicain socialiste — The 'VillepinRS' label likely refers to a
+    candidate (Villepin) associated with the 'RS' party, which matches the 'Parti
+    républicain socialiste' (Republican Socialist Party) in Party Facts.
+- party_short: VillepinRS/UMP
+  partyfacts_id: 1595
+  source: gemini_high
+  confidence: high
+  is_coalition: true
+  notes: Union pour un mouvement populaire | Les Républicains — The label 'VillepinRS/UMP'
+    clearly indicates a coalition or alliance involving UMP, which is a direct match
+    to Party Facts ID 1595, and 'VillepinRS' likely refers to Dominique de Villepin's
+    'République Solidaire' which allied with UMP.
+- party_short: VillepinUMP
+  partyfacts_id: 1595
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Union pour un mouvement populaire | Les R&#233;publicains — The 'VillepinUMP'
+    label clearly refers to the UMP (Union for a Popular Movement), with 'Villepin'
+    likely indicating a faction or leader within the party, making Party Facts ID
+    1595 the best match.
+- party_short: VilliersMPF
+  partyfacts_id: 364
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Mouvement pour la France — The 'VilliersMPF' abbreviation directly references
+    Philippe de Villiers and the 'Mouvement pour la France' (MF), which is a clear
+    match to Party Facts ID 364.
+- party_short: VoynetLV
+  partyfacts_id: 1108
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Les Verts — Dominique Voynet was a prominent figure of Les Verts (The Greens),
+    and the 'LV' in the abbreviation clearly refers to this party, which existed during
+    the polling period.
+- party_short: Walwari
+  partyfacts_id: 1783
+  source: whogov_minister_match
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: YadeLFQO
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: The party short label 'YadeLFQO' does not resemble any of the provided Party
+    Facts entries for France, even after considering candidate-party concatenations
+    or common abbreviations.
+- party_short: Écologistes !
+  partyfacts_id: 1108
+  source: whogov_minister_match
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: СФИО
+  partyfacts_id: 4785
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''

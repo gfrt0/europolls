@@ -1,0 +1,1567 @@
+# Auto-generated from italgov's data/scripts/party_crosswalk/
+#
+# Built by layering:
+#   1. extend.py — Gemini-based (country, party_short) → partyfacts_id
+#      with confidence scores. Coverage of opposition + coalition parties.
+#   2. Party Facts external-parties.csv — base layer of historically
+#      recognized parties.
+#   3. WhoGov-minister-matched — high-signal entries derived from
+#      cabinet ministers' partyfacts_id in WhoGov v3.1.
+#
+# `source` values: gemini_{high,medium,low,no_match} for Gemini calls,
+# partyfacts_external/whogov_minister_match/europolls_harmonized for
+# the layered base. Use confidence + is_coalition to triage.
+
+mappings:
+- party_short: .N
+  partyfacts_id: 4630
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: .Nowoczesna
+  partyfacts_id: 4630
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Nowoczesna — The party short label '.Nowoczesna' is a direct match to the
+    Party Facts entry for 'Nowoczesna' (ID 4630), which also has the short label 'N'.
+- party_short: '1'
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: The party short label '1' is a generic placeholder and does not correspond
+    to any specific party in the provided Party Facts entries.
+- party_short: 1-perc
+  partyfacts_id: 2890
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: '2'
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: The party short label '2' does not correspond to any known party in the provided
+    Party Facts entries for Poland.
+- party_short: '3'
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: The party short label '3' does not correspond to any known party abbreviation
+    in the provided list for Poland.
+- party_short: '4'
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: The party short label '4' does not correspond to any of the provided Party
+    Facts entries for Poland.
+- party_short: '5'
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: The party short label '5' does not correspond to any known party in the provided
+    list, and there is no contextual information to suggest a match.
+- party_short: '6'
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: The party short label '6' does not correspond to any known party in the provided
+    Party Facts entries for Poland.
+- party_short: Agreement
+  partyfacts_id: 9025
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: AGROunia
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: AGROunia is a new party not present in the provided Party Facts entries.
+- party_short: ally
+  partyfacts_id: 3999
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: AndrzejDuda
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: Andrzej Duda is a politician, not a party, and there is no party in the provided
+    list that matches this label.
+- party_short: APP
+  partyfacts_id: 3699
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: AWS
+  partyfacts_id: 863
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: AWSP
+  partyfacts_id: 863
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: BBWR
+  partyfacts_id: 1681
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: BeataSzydło
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: Beata Szydło is a politician, not a party, and there is no clear party suffix
+    in the label to match to a Party Facts ID.
+- party_short: BMN
+  partyfacts_id: 4352
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: BS
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: The abbreviation 'BS' does not match any of the provided Party Facts entries
+    for Poland.
+- party_short: CD
+  partyfacts_id: 468
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Centrolew
+  partyfacts_id: 3999
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: ChD
+  partyfacts_id: 468
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: ChDSP
+  partyfacts_id: 468
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Civic Coalition
+  partyfacts_id: 9122
+  source: gemini_high
+  confidence: high
+  is_coalition: true
+  notes: Koalicja Obywatelska — The Party Facts entry for ID 9122 directly matches
+    the English name 'Civic Coalition' and the Polish name 'Koalicja Obywatelska',
+    which is a known coalition.
+- party_short: Civic Platform
+  partyfacts_id: 1117
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Platforma Obywatelska — The Party Facts entry for ID 1117 has the English
+    name 'Civic Platform' and a relevant active period.
+- party_short: CivicCoalition
+  partyfacts_id: 9122
+  source: gemini_high
+  confidence: high
+  is_coalition: true
+  notes: Koalicja Obywatelska — The partyfacts entry with ID 9122 has the English
+    name 'Civic Coalition' and the short label 'KO', which directly matches the provided
+    'CivicCoalition' label and the polling context suggests it is a current entity.
+- party_short: Confederatio...
+  partyfacts_id: 9026
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Confederation
+  partyfacts_id: 9026
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Konfederacja Wolność i Niepodległość — The partyfacts entry for 'Konfederacja
+    Wolność i Niepodległość' (Confederation Freedom and Independence) with short label
+    'Konf' is a direct and recent match for 'Confederation', and the polling data
+    aligns with its activity period.
+- party_short: CP
+  partyfacts_id: 8096
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Democratic Left Alliance
+  partyfacts_id: 57
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Sojusz Lewicy Demokratycznej — The partyfacts entry with ID 57 has the English
+    name 'Democratic Left Alliance', which is an exact match for the provided party-short
+    label.
+- party_short: DemocraticLeftAlliance
+  partyfacts_id: 57
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Sojusz Lewicy Demokratycznej — The English translation of 'Sojusz Lewicy
+    Demokratycznej' is 'Democratic Left Alliance', which is a direct match to the
+    provided short label.
+- party_short: DLA
+  partyfacts_id: 57
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Don't know/Neutral
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: The provided party label 'Don't know/Neutral' does not correspond to any
+    political party, but rather represents an undecided or neutral response in polls,
+    thus no match can be made.
+- party_short: D|W|U
+  partyfacts_id: 1566
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: etc
+  partyfacts_id: 1852
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: EUROPA+
+  partyfacts_id: 3999
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: EUROPAPLUS
+  partyfacts_id: 3999
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: FJN
+  partyfacts_id: 4473
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: IDP
+  partyfacts_id: 1608
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: IdP
+  partyfacts_id: 1608
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Ind.
+  partyfacts_id: 2888
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: indep
+  partyfacts_id: 2888
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: INDEPENDENT
+  partyfacts_id: 2888
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Independents & Local Gov. Activists
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: There is no Party Facts entry that semantically matches 'Independents & Local
+    Gov. Activists' among the provided candidates.
+- party_short: IP
+  partyfacts_id: 1608
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: JarosławKaczyński
+  partyfacts_id: 1565
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Prawo i Sprawiedliwość — Jarosław Kaczyński is a prominent leader of the
+    Law and Justice (PiS) party in Poland, making PiS the most appropriate match for
+    this label.
+- party_short: JG
+  partyfacts_id: 4475
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: K
+  partyfacts_id: 4631
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: K'15
+  partyfacts_id: 4631
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: K15
+  partyfacts_id: 4631
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: KacperPłażyński
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: The party short label 'KacperPłażyński' appears to be a candidate's name
+    and does not match any of the provided Party Facts entries for Poland.
+- party_short: KDR
+  partyfacts_id: 1192
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: KdR
+  partyfacts_id: 1192
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: KE
+  partyfacts_id: 3999
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: KKP
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: There is no direct or semantically similar match for 'KKP' among the provided
+    Party Facts entries for Poland.
+- party_short: KLD
+  partyfacts_id: 153
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: KNP
+  partyfacts_id: 4713
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: KO
+  partyfacts_id: 9122
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Konf
+  partyfacts_id: 9026
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Konfederacia
+  partyfacts_id: 4629
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Konfederacja
+  partyfacts_id: 9026
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: KORWIN
+  partyfacts_id: 4629
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: KORWiN
+  partyfacts_id: 4629
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: KorWiN
+  partyfacts_id: 4629
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: KP
+  partyfacts_id: 3999
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: KPEiR
+  partyfacts_id: 391
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: KPEiR-RP
+  partyfacts_id: 1534
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: KPEiRRP
+  partyfacts_id: 1534
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: KPN
+  partyfacts_id: 1615
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: KPN-O
+  partyfacts_id: 2890
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Kukiz
+  partyfacts_id: 4631
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Kukiz '15
+  partyfacts_id: 4631
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: KUKIZ 15
+  partyfacts_id: 4631
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: KUKIZ'15
+  partyfacts_id: 4631
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Kukiz'15
+  partyfacts_id: 4631
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Kukiz'15 (2015-2019)
+  partyfacts_id: 4631
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Kukiz15
+  partyfacts_id: 4631
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: KWiN
+  partyfacts_id: 9026
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: K’15
+  partyfacts_id: 4631
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Law and Justice
+  partyfacts_id: 1565
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Prawo i Sprawiedliwość — The party name 'Law and Justice' directly matches
+    the English name of Party Facts ID 1565, 'Prawo i Sprawiedliwość'.
+- party_short: Lewica
+  partyfacts_id: 3999
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: LEWICA RAZEM
+  partyfacts_id: 4871
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Lewica Razem
+  partyfacts_id: 4871
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: LIBERTAS
+  partyfacts_id: 739
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: LID
+  partyfacts_id: 1588
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: LiD
+  partyfacts_id: 1588
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: LP
+  partyfacts_id: 739
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: LPR
+  partyfacts_id: 1768
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: LPr
+  partyfacts_id: 1768
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: LR
+  partyfacts_id: 4871
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: MariuszBłaszczak
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: The provided party label 'MariuszBłaszczak' appears to be a candidate's name
+    rather than a party abbreviation, and no matching party is found in the Party
+    Facts entries.
+- party_short: MateuszMorawiecki
+  partyfacts_id: 1565
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Prawo i Sprawiedliwość — Mateusz Morawiecki is a prominent politician from
+    Law and Justice (PiS), and the polling context suggests this label refers to his
+    party.
+- party_short: Mean|Weighted arithmetic mean
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: The party short label 'Mean|Weighted arithmetic mean' is a statistical term
+    and does not correspond to any political party in the provided list.
+- party_short: MN
+  partyfacts_id: 1439
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: MNSO
+  partyfacts_id: 1439
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: N
+  partyfacts_id: 4630
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: NCD - BdP
+  partyfacts_id: 145
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: NCD-BdP
+  partyfacts_id: 145
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: NChD-BdP
+  partyfacts_id: 145
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: NCP
+  partyfacts_id: 6361
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Neither
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: The label 'Neither' indicates a voter preference for none of the listed parties,
+    and does not correspond to an actual political party.
+- party_short: Net approval
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: The party short label 'Net approval' does not correspond to any political
+    party, but rather to a polling metric.
+- party_short: NKWW
+  partyfacts_id: 1549
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: NL
+  partyfacts_id: 9349
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: None of the above
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: The label 'None of the above' indicates a protest vote or an option for voters
+    who do not support any of the listed parties, and thus does not correspond to
+    an actual political party.
+- party_short: Nonpartisan Local Gov. Activists
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: There is no Party Facts entry that semantically matches 'Nonpartisan Local
+    Gov. Activists' among the provided candidates for Poland.
+- party_short: NOWO
+  partyfacts_id: 4630
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Nowo
+  partyfacts_id: 4630
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: NOWOCZESNA
+  partyfacts_id: 4630
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Nowoczesna
+  partyfacts_id: 4630
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: NP.
+  partyfacts_id: 4713
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: NPJKM
+  partyfacts_id: 913
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: NPR
+  partyfacts_id: 4358
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: NSZZ
+  partyfacts_id: 767
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: NU
+  partyfacts_id: 4473
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: NZL
+  partyfacts_id: 6360
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: NZR
+  partyfacts_id: 7488
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: O(ZChN-KK)
+  partyfacts_id: 70
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Other
+  partyfacts_id: 1852
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Others/Indep.
+  partyfacts_id: 1852
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: OZN
+  partyfacts_id: 4472
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: P
+  partyfacts_id: 9025
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: P2050
+  partyfacts_id: 9027
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Partia X
+  partyfacts_id: 146
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: PatrykJaki
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: The party label 'PatrykJaki' appears to be a candidate's name and does not
+    directly match any of the provided Party Facts entries for Poland, nor does it
+    clearly correspond to a known party abbreviation.
+- party_short: PawełSzefernaker
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: The party short label 'PawełSzefernaker' appears to be a candidate's name
+    and does not match any of the provided Party Facts entries for Poland.
+- party_short: PBK
+  partyfacts_id: 4356
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: PC
+  partyfacts_id: 1649
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: PC/POC
+  partyfacts_id: 1649
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: PCD
+  partyfacts_id: 188
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: PChD
+  partyfacts_id: 188
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: PD
+  partyfacts_id: 1566
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: PIS
+  partyfacts_id: 1565
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: PiS
+  partyfacts_id: 1565
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: PJJ
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: The abbreviation 'PJJ' does not match any of the provided Party Facts entries
+    for Poland, and the vote shares are too low to suggest a major party that might
+    have a different abbreviation.
+- party_short: PJKM
+  partyfacts_id: 913
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: PJN
+  partyfacts_id: 41
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: PjN
+  partyfacts_id: 41
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: PL
+  partyfacts_id: 1266
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: PL2050
+  partyfacts_id: 9027
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: PO
+  partyfacts_id: 1117
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: POC
+  partyfacts_id: 1649
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Poland 2050
+  partyfacts_id: 9027
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Polska 2050 Szymona Holowni — The party 'Poland 2050' directly matches the
+    Party Facts entry for 'Polska 2050 Szymona Holowni' (id=9027), which is a direct
+    translation.
+- party_short: Poland2050
+  partyfacts_id: 9027
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Polska 2050 Szymona Holowni — The partyfacts entry 9027 'Polska 2050 Szymona
+    Holowni' directly matches the 'Poland2050' short label.
+- party_short: Polish Coali...
+  partyfacts_id: 3999
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Polish Coalition
+  partyfacts_id: 3999
+  source: gemini_high
+  confidence: high
+  is_coalition: true
+  notes: Koalicja Polska — The Party Facts entry with ID 3999 has the English name
+    'Polish Coalition' and the Polish name 'Koalicja Polska', which directly matches
+    the provided short label and is consistent with the polling data timeline.
+- party_short: Polish People's Party
+  partyfacts_id: 602
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Polskie Stronnictwo Ludowe — The English name 'Polish People's Party' directly
+    matches the Party Facts entry for ID 602, 'Polskie Stronnictwo Ludowe', and the
+    polling data falls within its active period.
+- party_short: PolishCoalition
+  partyfacts_id: 3999
+  source: gemini_high
+  confidence: high
+  is_coalition: true
+  notes: Koalicja Polska — The partyfacts entry for id 3999 has the English name 'Polish
+    Coalition' which is a direct match to the provided short label 'PolishCoalition'.
+- party_short: Polska 2050
+  partyfacts_id: 9027
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Polska 2050 Szymona Holowni — The party short label 'Polska 2050' directly
+    matches the 'PL2050' short label and 'Polska 2050 Szymona Holowni' name in the
+    candidate Party Facts entry with ID 9027.
+- party_short: PPG
+  partyfacts_id: 1535
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: PPP
+  partyfacts_id: 3699
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: PPPP
+  partyfacts_id: 464
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: PPR
+  partyfacts_id: 8228
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: PPS
+  partyfacts_id: 4354
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: PPSD
+  partyfacts_id: 8227
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: PR
+  partyfacts_id: 876
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: PRJG
+  partyfacts_id: 2992
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: PRON
+  partyfacts_id: 6154
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: PrRz
+  partyfacts_id: 876
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: PrzemysławCzarnek
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: The party short label 'PrzemysławCzarnek' appears to be a candidate's name
+    rather than a party abbreviation, and no matching party is found in the provided
+    list.
+- party_short: PR|A
+  partyfacts_id: 2992
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: PSChD
+  partyfacts_id: 8098
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: PSL
+  partyfacts_id: 602
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: PSL Piast
+  partyfacts_id: 4360
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: PSL-W
+  partyfacts_id: 4359
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: PSLPiast
+  partyfacts_id: 4360
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: PX
+  partyfacts_id: 146
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: PZ
+  partyfacts_id: 2890
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: PZL
+  partyfacts_id: 7489
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: PZPR
+  partyfacts_id: 1286
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: PZZ
+  partyfacts_id: 2890
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: RAS
+  partyfacts_id: 1430
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Razem
+  partyfacts_id: 4871
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: RAŚ
+  partyfacts_id: 1430
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: RdR
+  partyfacts_id: 1192
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: RN
+  partyfacts_id: 3224
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: ROP
+  partyfacts_id: 1712
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: RP
+  partyfacts_id: 731
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: RP / TR
+  partyfacts_id: 731
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: RSA
+  partyfacts_id: 2890
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: rzm
+  partyfacts_id: 4871
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: S
+  partyfacts_id: 767
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: S-O
+  partyfacts_id: 727
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Sam
+  partyfacts_id: 727
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: SAMOOBRONA RP
+  partyfacts_id: 727
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: SCh
+  partyfacts_id: 4357
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: SD
+  partyfacts_id: 919
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: SDBRP
+  partyfacts_id: 727
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: SDPL
+  partyfacts_id: 1328
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: SdPl
+  partyfacts_id: 1328
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: SDRP
+  partyfacts_id: 57
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: SdRP
+  partyfacts_id: 8224
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: SKL
+  partyfacts_id: 8766
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: SLD
+  partyfacts_id: 57
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: SLD — UP
+  partyfacts_id: 6183
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: SLD-UP
+  partyfacts_id: 6183
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: SLDUP
+  partyfacts_id: 6183
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: SN
+  partyfacts_id: 4353
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: SO
+  partyfacts_id: 727
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Soldr
+  partyfacts_id: 767
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Solidarity
+  partyfacts_id: 767
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: SoPr
+  partyfacts_id: 923
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: SP
+  partyfacts_id: 328
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: SP Ind
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: The abbreviation 'SP Ind' does not directly match any of the provided Party
+    Facts entries, and the 'Ind' suffix suggests an independent candidate or a party
+    not listed.
+- party_short: SPN
+  partyfacts_id: 8225
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Spr
+  partyfacts_id: 7356
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Spring
+  partyfacts_id: 7356
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Wiosna — The partyfacts entry for ID 7356 has 'Wiosna' as its name and 'Spring'
+    as its English name, which is a direct match for the provided short label.
+- party_short: SR
+  partyfacts_id: 4353
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: SRP
+  partyfacts_id: 727
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: SrP
+  partyfacts_id: 727
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: TD
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: The abbreviation 'TD' does not match any of the provided Party Facts entries
+    for Poland.
+- party_short: The Left
+  partyfacts_id: 3999
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: There is One Poland
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: The party 'There is One Poland' does not appear to have a direct match in
+    the provided Party Facts entries for Poland.
+- party_short: TobiaszBocheński
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: The label 'TobiaszBocheński' appears to be a candidate's name, not a party
+    abbreviation, and there is no party in the provided list that matches this name
+    or a clear party suffix.
+- party_short: TR
+  partyfacts_id: 731
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Twój Ruch
+  partyfacts_id: 731
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: UD
+  partyfacts_id: 1046
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: UED
+  partyfacts_id: 2890
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: UG
+  partyfacts_id: 4474
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: United Right
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: The 'United Right' is a coalition in Poland, but there is no direct Party
+    Facts ID for this specific coalition in the provided list.
+- party_short: UnitedRight
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: The provided Party Facts entries do not contain a party that directly matches
+    'UnitedRight', which is likely a coalition, and no dominant member can be identified
+    from the list.
+- party_short: UP
+  partyfacts_id: 1104
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: UPR
+  partyfacts_id: 283
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: UPR|KNP
+  partyfacts_id: 283
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: UW
+  partyfacts_id: 8268
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: UW-PD
+  partyfacts_id: 1566
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: UWPD
+  partyfacts_id: 1566
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: WAK
+  partyfacts_id: 1458
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: WIO
+  partyfacts_id: 7356
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: WIOSNA
+  partyfacts_id: 7356
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Wiosna
+  partyfacts_id: 7356
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Wiosnia
+  partyfacts_id: 7356
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: WiP
+  partyfacts_id: 913
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: X
+  partyfacts_id: 146
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: 'Yes'
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: The party short label 'Yes' does not match any of the provided Party Facts
+    entries for Poland.
+- party_short: Your Movement
+  partyfacts_id: 731
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Ruch Palikota — The English translation of Party Facts ID 731 'Ruch Palikota'
+    is 'Palikot's Movement', which is a direct match for 'Your Movement'.
+- party_short: ZbigniewBogucki
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: The party short label 'ZbigniewBogucki' appears to be a candidate's name
+    and does not match any of the provided Party Facts entries for Poland.
+- party_short: ZCH-N
+  partyfacts_id: 70
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: ZCHN
+  partyfacts_id: 70
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: ZChN
+  partyfacts_id: 70
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: ZChN/WAK
+  partyfacts_id: 1458
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: ZL
+  partyfacts_id: 9091
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: ZLN
+  partyfacts_id: 4355
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: ZRP
+  partyfacts_id: 4629
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: ZSL
+  partyfacts_id: 929
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: ППР
+  partyfacts_id: 8228
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''

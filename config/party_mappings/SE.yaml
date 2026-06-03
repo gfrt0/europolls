@@ -1,0 +1,957 @@
+# Auto-generated from italgov's data/scripts/party_crosswalk/
+#
+# Built by layering:
+#   1. extend.py — Gemini-based (country, party_short) → partyfacts_id
+#      with confidence scores. Coverage of opposition + coalition parties.
+#   2. Party Facts external-parties.csv — base layer of historically
+#      recognized parties.
+#   3. WhoGov-minister-matched — high-signal entries derived from
+#      cabinet ministers' partyfacts_id in WhoGov v3.1.
+#
+# `source` values: gemini_{high,medium,low,no_match} for Gemini calls,
+# partyfacts_external/whogov_minister_match/europolls_harmonized for
+# the layered base. Use confidence + is_coalition to triage.
+
+mappings:
+- party_short: Against
+  partyfacts_id: 1887
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Other — The label 'Against' likely refers to a generic 'Other' category for
+    parties not explicitly listed, which aligns with Party Facts ID 1887.
+- party_short: AGR
+  partyfacts_id: 199
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Annie Lööf (C)
+  partyfacts_id: 199
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Centerpartiet — The party short label 'C' clearly refers to Centerpartiet,
+    and Annie Lööf was a prominent leader of this party.
+- party_short: AV / H / HP / M
+  partyfacts_id: 690
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: B
+  partyfacts_id: 199
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: B/C
+  partyfacts_id: 199
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: BC
+  partyfacts_id: 199
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: BF
+  partyfacts_id: 199
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: BF-CP
+  partyfacts_id: 199
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: BF/CP
+  partyfacts_id: 199
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: C
+  partyfacts_id: 199
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: c
+  partyfacts_id: 199
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: CD
+  partyfacts_id: 651
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: CENT
+  partyfacts_id: 199
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: COM
+  partyfacts_id: 830
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: COMM
+  partyfacts_id: 830
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Communist
+  partyfacts_id: 830
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Communists
+  partyfacts_id: 830
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: CONS
+  partyfacts_id: 690
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: CP
+  partyfacts_id: 199
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: D
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: The abbreviation 'D' does not directly match any of the provided Party Facts
+    entries for Sweden, and there is no clear contextual evidence to link it to a
+    specific party.
+- party_short: Ebba Busch (KD)
+  partyfacts_id: 651
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Kristdemokraterna — The label 'Ebba Busch (KD)' clearly indicates the Christian
+    Democrats (KD), which matches Party Facts ID 651.
+- party_short: etc
+  partyfacts_id: 1887
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: F]
+  partyfacts_id: 1274
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: FF
+  partyfacts_id: 8718
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: FH
+  partyfacts_id: 2090
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: FI
+  partyfacts_id: 1240
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Fi
+  partyfacts_id: 1240
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: fi
+  partyfacts_id: 1240
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: FL / FF
+  partyfacts_id: 4651
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: FL/FF
+  partyfacts_id: 4651
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: For
+  partyfacts_id: 1240
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Feministiskt initiativ — The party short label 'For' is a clear abbreviation
+    of 'Feministiskt initiativ' (Feminist Initiative), which has the short label 'Fi'
+    and ID 1240 in the provided Party Facts entries.
+- party_short: FP
+  partyfacts_id: 1274
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Fp
+  partyfacts_id: 1274
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Liberalerna — The party 'Liberalerna' (formerly Folkpartiet liberalerna,
+    abbreviated Fp) is the direct predecessor and current iteration of the party that
+    used the 'Fp' abbreviation during the specified polling period.
+- party_short: fp
+  partyfacts_id: 1274
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: FPL
+  partyfacts_id: 1274
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Fpl / L
+  partyfacts_id: 1274
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Fri
+  partyfacts_id: 2088
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: G
+  partyfacts_id: 456
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Green
+  partyfacts_id: 456
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: GRONA
+  partyfacts_id: 456
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Gustav Fridolin (MP)
+  partyfacts_id: 456
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Miljöpartiet de Gröna — The party short label 'MP' directly matches the Party
+    Facts entry for 'Miljöpartiet de Gröna', and the polling context confirms its
+    relevance.
+- party_short: H
+  partyfacts_id: 690
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: H/M
+  partyfacts_id: 690
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Helena Nanne (M)
+  partyfacts_id: 690
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Moderate Coalition Party — The 'M' in the party short label clearly indicates
+    the 'Moderate Coalition Party' (Moderata Samlingspartiet), which is a direct match
+    to Party Facts ID 690.
+- party_short: HM
+  partyfacts_id: 690
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: HP
+  partyfacts_id: 8720
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: indep
+  partyfacts_id: 2934
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: INDEPENDENT
+  partyfacts_id: 2934
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Isabella Lövin (MP)
+  partyfacts_id: 456
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Miljöpartiet de Gröna — The party short label 'MP' directly matches the Party
+    Facts entry for 'Miljöpartiet de Gröna', and Isabella Lövin is a prominent member
+    of this party.
+- party_short: Jan Björklund (L)
+  partyfacts_id: 1274
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Liberalerna — The party short label 'L' directly matches the Party Facts
+    entry for 'Liberalerna' (Liberals), and Jan Björklund was a prominent leader of
+    this party.
+- party_short: Jimmie Åkesson (SD)
+  partyfacts_id: 409
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: "Sverigedemokraterna — The party short label 'SD' directly matches the Party\
+    \ Facts entry for 'Sverigedemokraterna' (Sweden Democrats), and the name 'Jimmie\
+    \ \x19kesson' is a prominent leader of this party."
+- party_short: JL
+  partyfacts_id: 1093
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Jl
+  partyfacts_id: 1093
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Johan Pehrson (L)
+  partyfacts_id: 1274
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Liberalerna — The party short label 'L' directly matches the Party Facts
+    entry for 'Liberalerna' (Liberals), and the name 'Johan Pehrson' is a known leader
+    of this party.
+- party_short: Jonas Sjöstedt (V)
+  partyfacts_id: 830
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Vanstrepartiet — The party short label 'V' directly matches the short label
+    of 'Vanstrepartiet' (Left Party) and the name 'Jonas Sjöstedt' is a prominent
+    figure of this party.
+- party_short: JR
+  partyfacts_id: 1909
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: K
+  partyfacts_id: 830
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Katrin Stjernfeldt Jammeh (S)
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: The partyfacts list does not contain a party with the short label 'S' that
+    corresponds to the Social Democrats, which is implied by the candidate's name
+    and the 'S' abbreviation.
+- party_short: KD
+  partyfacts_id: 651
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Kd
+  partyfacts_id: 651
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: kd
+  partyfacts_id: 651
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: KD / KDS
+  partyfacts_id: 651
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: KDS
+  partyfacts_id: 651
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: KO
+  partyfacts_id: 690
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: KP
+  partyfacts_id: 830
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: L
+  partyfacts_id: 1274
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: LB
+  partyfacts_id: 8171
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Left
+  partyfacts_id: 830
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: LI
+  partyfacts_id: 1274
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: LIB
+  partyfacts_id: 1274
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Liberal
+  partyfacts_id: 1274
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Lmp
+  partyfacts_id: 4339
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: LP
+  partyfacts_id: 4339
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: LS
+  partyfacts_id: 4651
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: LS/FL
+  partyfacts_id: 4651
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: M
+  partyfacts_id: 690
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: m
+  partyfacts_id: 690
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: M+C+L+KD
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: The label 'M+C+L+KD' represents a coalition of multiple parties, and there
+    is no single dominant party or a Party Facts ID for this specific coalition in
+    the provided list.
+- party_short: Magdalena Andersson (S)
+  partyfacts_id: 487
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Socialdemocratistiska — The '(S)' in the label strongly indicates the Social
+    Democrats, and Magdalena Andersson is a prominent leader of this party.
+- party_short: MbS
+  partyfacts_id: 1633
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: MOD
+  partyfacts_id: 690
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Mod
+  partyfacts_id: 690
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Moderate
+  partyfacts_id: 690
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: MP
+  partyfacts_id: 456
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Mp
+  partyfacts_id: 456
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Miljöpartiet de Gröna — The party short label 'Mp' directly matches the Party
+    Facts entry for 'Miljöpartiet de Gröna' (Green Ecology Party) with ID 456, and
+    the polling data falls within its active period.
+- party_short: mp
+  partyfacts_id: 456
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: MPG
+  partyfacts_id: 456
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: MSP
+  partyfacts_id: 690
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Muharrem Demirok (C)
+  partyfacts_id: 199
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Centerpartiet — The party short label 'Muharrem Demirok (C)' clearly indicates
+    the 'Centerpartiet' (Centre Party) due to the 'C' abbreviation, and Muharrem Demirok
+    is a prominent figure associated with this party.
+- party_short: MUP
+  partyfacts_id: 690
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Märta Stenevi (MP)
+  partyfacts_id: 456
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Miljöpartiet de Gröna — The abbreviation 'MP' in the label directly matches
+    the 'short' label of 'Miljöpartiet de Gröna' (Green Ecology Party) in the Party
+    Facts data, and the polling data is recent.
+- party_short: ND
+  partyfacts_id: 343
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: NF
+  partyfacts_id: 8172
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: NN
+  partyfacts_id: 2934
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Nooshi Dadgostar (V)
+  partyfacts_id: 830
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Vanstrepartiet — The 'V' in the party short label directly matches the short
+    label of 'Vanstrepartiet' (Left Party), and the polling data is consistent with
+    a contemporary party.
+- party_short: NP
+  partyfacts_id: 4790
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: NP-AV
+  partyfacts_id: 4790
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Nyamko Sabuni (L)
+  partyfacts_id: 1274
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Liberalerna — The label 'Nyamko Sabuni (L)' clearly indicates the party 'L'
+    (Liberalerna), and Nyamko Sabuni was the leader of the Liberalerna party during
+    the specified polling period.
+- party_short: NYD
+  partyfacts_id: 343
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: NyD
+  partyfacts_id: 343
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: NYDEM
+  partyfacts_id: 343
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Oth.|Others
+  partyfacts_id: 1887
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Other — The party short label 'Oth.|Others' directly corresponds to the Party
+    Facts entry with short label 'Other' and name '-'. This is a common way to categorize
+    smaller parties or those not explicitly listed.
+- party_short: OTHER
+  partyfacts_id: 1887
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Other
+  partyfacts_id: 1887
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Others
+  partyfacts_id: 1887
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Parties
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: The label 'Parties' is too generic to match to a specific party ID.
+- party_short: Per Bolund (MP)
+  partyfacts_id: 456
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Miljöpartiet de Gröna — The label 'Per Bolund (MP)' clearly indicates 'Miljöpartiet
+    de Gröna' (Green Ecology Party) due to the 'MP' abbreviation, and Per Bolund is
+    a prominent figure in that party.
+- party_short: Percentage
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: The party short label 'Percentage' is a generic term and does not correspond
+    to any specific political party in the provided list.
+- party_short: PIRAT
+  partyfacts_id: 1485
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: PP
+  partyfacts_id: 1485
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Pr
+  partyfacts_id: 2087
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: S
+  partyfacts_id: 487
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: s
+  partyfacts_id: 487
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: S+MP+V
+  partyfacts_id: 4022
+  source: gemini_high
+  confidence: high
+  is_coalition: true
+  notes: Red–green alliance — The label 'S+MP+V' directly corresponds to the 'Red–green
+    alliance' (id=4022) which is a coalition of the Social Democrats (S), Green Party
+    (MP), and Left Party (V).
+- party_short: S/SAP
+  partyfacts_id: 487
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: SAP
+  partyfacts_id: 487
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: SD
+  partyfacts_id: 409
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Sd
+  partyfacts_id: 409
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: sd
+  partyfacts_id: 409
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: SD (populist since 2001)
+  partyfacts_id: 409
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: SDA
+  partyfacts_id: 487
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: SdAP
+  partyfacts_id: 487
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Seats
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: The party short label 'Seats' does not correspond to any known political
+    party in the provided Party Facts entries for Sweden.
+- party_short: Shut down existing power plants immediately
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: The party label 'Shut down existing power plants immediately' does not correspond
+    to any known political party in Sweden, and it is likely a protest vote or a very
+    minor, unlisted party.
+- party_short: Shut down existing power plants when their lifespan ends
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: The provided party label is a policy statement, not a party name or abbreviation,
+    and does not match any of the candidate Party Facts entries.
+- party_short: SJ
+  partyfacts_id: 2936
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: SKP-H
+  partyfacts_id: 2084
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: SLP
+  partyfacts_id: 1960
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: SOCD
+  partyfacts_id: 487
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: SoL
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: No Party Facts entry for Sweden matches 'SoL' or any similar abbreviation,
+    and the polling context does not provide enough information to infer a match.
+- party_short: SP
+  partyfacts_id: 1959
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: SPI
+  partyfacts_id: 1530
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: SSV
+  partyfacts_id: 4053
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: SSV-21
+  partyfacts_id: 4053
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Stefan Löfven (S)
+  partyfacts_id: 487
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Socialdemocratistiska — The party short label 'S' strongly suggests a match
+    with 'Socialdemocratistiska' (Social Democrats), and Stefan Löfven was a prominent
+    leader of this party.
+- party_short: SV
+  partyfacts_id: 2936
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: SW
+  partyfacts_id: 409
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Sweden Democrats
+  partyfacts_id: 409
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Ulf Kristersson (M)
+  partyfacts_id: 690
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Moderate Coalition Party — The 'M' in the label 'Ulf Kristersson (M)' strongly
+    suggests the Moderate Coalition Party, and Ulf Kristersson is the current leader
+    of this party.
+- party_short: V
+  partyfacts_id: 830
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: v
+  partyfacts_id: 830
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: V (VPK)
+  partyfacts_id: 830
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: V/SKP
+  partyfacts_id: 830
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: VK
+  partyfacts_id: 830
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: VP
+  partyfacts_id: 830
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: VSP
+  partyfacts_id: 2936
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: ZE
+  partyfacts_id: 199
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''

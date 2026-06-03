@@ -1,0 +1,987 @@
+# Auto-generated from italgov's data/scripts/party_crosswalk/
+#
+# Built by layering:
+#   1. extend.py — Gemini-based (country, party_short) → partyfacts_id
+#      with confidence scores. Coverage of opposition + coalition parties.
+#   2. Party Facts external-parties.csv — base layer of historically
+#      recognized parties.
+#   3. WhoGov-minister-matched — high-signal entries derived from
+#      cabinet ministers' partyfacts_id in WhoGov v3.1.
+#
+# `source` values: gemini_{high,medium,low,no_match} for Gemini calls,
+# partyfacts_external/whogov_minister_match/europolls_harmonized for
+# the layered base. Use confidence + is_coalition to triage.
+
+mappings:
+- party_short: 1-perc
+  partyfacts_id: 2591
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: AFA
+  partyfacts_id: 599
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: ally
+  partyfacts_id: 8805
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: ALO
+  partyfacts_id: 666
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: ALÖ
+  partyfacts_id: 666
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Association ...
+  partyfacts_id: 3892
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Austrian People's Party
+  partyfacts_id: 1329
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Österreichische Volkspartei — The Party Facts entry with ID 1329 directly
+    translates to 'Austrian People's Party' in English, matching the provided short
+    label exactly.
+- party_short: BD
+  partyfacts_id: 6167
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: BIER
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: The party 'BIER' (Bierpartei) is a relatively new party in Austria and is
+    not present in the provided Party Facts entries.
+- party_short: Bierlein
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: The 'Bierlein' label likely refers to a candidate or a temporary list, and
+    there is no direct match in the provided Party Facts entries for Austria.
+- party_short: BZO
+  partyfacts_id: 599
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: BZOE
+  partyfacts_id: 599
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: BZÖ
+  partyfacts_id: 599
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Communist Party of Austria
+  partyfacts_id: 996
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Kommunistische Partei Österreichs – KPÖ — The Party Facts entry for ID 996,
+    'Kommunistische Partei Österreichs – KPÖ', directly translates to 'Communist Party
+    of Austria' and is a clear semantic match.
+- party_short: CS
+  partyfacts_id: 3678
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: CSA
+  partyfacts_id: 2589
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: DD
+  partyfacts_id: 3679
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: DFP
+  partyfacts_id: 346
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: DG
+  partyfacts_id: 1659
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: DNA
+  partyfacts_id: 9810
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: DNP
+  partyfacts_id: 1935
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: DNSAP
+  partyfacts_id: 1936
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Don't know/no answer
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: The provided label 'Don't know/no answer' does not correspond to any political
+    party, but rather indicates an undecided or non-responsive voter segment.
+- party_short: DP
+  partyfacts_id: 1935
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: DU
+  partyfacts_id: 1500
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: DV
+  partyfacts_id: 6169
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: DVP
+  partyfacts_id: 6169
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Einheitsliste
+  partyfacts_id: 8805
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: etc
+  partyfacts_id: 1857
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: EU-STOP
+  partyfacts_id: 3892
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: FP
+  partyfacts_id: 8223
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: FPO
+  partyfacts_id: 463
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: FPOE
+  partyfacts_id: 463
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: FPÖ
+  partyfacts_id: 463
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: FRANK
+  partyfacts_id: 1971
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Freedom Party of Austria
+  partyfacts_id: 463
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Freiheitliche Partei Österreichs — The English name 'Austrian Freedom Party'
+    for Party Facts ID 463 is a direct match for 'Freedom Party of Austria'.
+- party_short: FRITZ
+  partyfacts_id: 439
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Fritz
+  partyfacts_id: 439
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: G!LT
+  partyfacts_id: 6138
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Liste Roland Düringer — Meine Stimme GILT — The partyfacts entry with short
+    label 'GILT' and name 'Liste Roland Düringer — Meine Stimme GILT' is a direct
+    and strong match for 'G!LT', with the exclamation mark likely being a stylistic
+    variation.
+- party_short: G!lt
+  partyfacts_id: 6138
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: GA
+  partyfacts_id: 1659
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: GAL
+  partyfacts_id: 1659
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: GCCP
+  partyfacts_id: 7496
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: GDVP
+  partyfacts_id: 1917
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: GdVP
+  partyfacts_id: 1917
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: GFOP
+  partyfacts_id: 6140
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: GILT
+  partyfacts_id: 6138
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: GLCP
+  partyfacts_id: 7377
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: GREEN
+  partyfacts_id: 1659
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: GreenAT
+  partyfacts_id: 1659
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Greens
+  partyfacts_id: 1659
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Die Grünen — The partyfacts entry with short label 'GRÜNE' and English name
+    'The Greens' is a direct and strong match for 'Greens'.
+- party_short: Gru
+  partyfacts_id: 1659
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: GRUENE
+  partyfacts_id: 1659
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Gruene
+  partyfacts_id: 1659
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: GRUNE
+  partyfacts_id: 1659
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: GRUNEN
+  partyfacts_id: 1659
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: GRÜNE
+  partyfacts_id: 1659
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Grüne
+  partyfacts_id: 1659
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: GV
+  partyfacts_id: 1917
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: HB
+  partyfacts_id: 3304
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: HC
+  partyfacts_id: 9023
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Hofer/StracheFPÖ
+  partyfacts_id: 463
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Freiheitliche Partei Österreichs — The label 'Hofer/StracheFPÖ' clearly indicates
+    the 'Freiheitliche Partei Österreichs' (FPÖ), with Hofer and Strache being prominent
+    figures within the party during the polling period.
+- party_short: HoferFPÖ
+  partyfacts_id: 463
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Freiheitliche Partei Österreichs — The 'HoferFPÖ' label clearly indicates
+    the 'Freiheitliche Partei Österreichs' (FPÖ), with 'Hofer' likely referring to
+    Norbert Hofer, a prominent figure within the party.
+- party_short: INDEPENDENT
+  partyfacts_id: 2589
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: independent
+  partyfacts_id: 2589
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: JETZT
+  partyfacts_id: 6137
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Jetzt
+  partyfacts_id: 6137
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Jetzt – Liste PILZ
+  partyfacts_id: 6137
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: KB
+  partyfacts_id: 6142
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: KEINE
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: The party short label 'KEINE' translates to 'NONE' in German, indicating
+    that it represents 'None of the above' or 'No party' rather than a specific political
+    party.
+- party_short: KicklFPÖ
+  partyfacts_id: 463
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Freiheitliche Partei Österreichs — The 'KicklFPÖ' label clearly refers to
+    the 'Freiheitliche Partei Österreichs' (FPÖ), with 'Kickl' likely indicating a
+    leader or faction within the party, not a separate entity.
+- party_short: KoglerGrüne
+  partyfacts_id: 1659
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Die Grünen — The label 'KoglerGrüne' strongly suggests a connection to 'Die
+    Grünen' (The Greens), likely referring to Werner Kogler, a prominent figure in
+    the Austrian Green Party.
+- party_short: KPO
+  partyfacts_id: 996
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: KPOE
+  partyfacts_id: 996
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: KPÖ
+  partyfacts_id: 996
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: KurzÖVP
+  partyfacts_id: 1329
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Österreichische Volkspartei — The 'KurzÖVP' label clearly refers to the Austrian
+    People's Party (ÖVP) during the leadership of Sebastian Kurz, which is represented
+    by Party Facts ID 1329.
+- party_short: L
+  partyfacts_id: 1916
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: LB
+  partyfacts_id: 1916
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: LF
+  partyfacts_id: 605
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: LIB
+  partyfacts_id: 605
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: LIF
+  partyfacts_id: 605
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: LiF
+  partyfacts_id: 605
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: LMP
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: There is no Party Facts entry that matches 'LMP' among the provided candidates
+    for Austria.
+- party_short: MARTIN
+  partyfacts_id: 1708
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Martin
+  partyfacts_id: 1708
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Meinl-Reisinger/StrolzNEOS
+  partyfacts_id: 1970
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: NEOS – Das Neue &Ouml;sterreich — The label 'Meinl-Reisinger/StrolzNEOS'
+    clearly indicates NEOS, with 'Meinl-Reisinger' and 'Strolz' likely referring to
+    prominent figures within the party.
+- party_short: Meinl-ReisingerNEOS
+  partyfacts_id: 1970
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: NEOS – Das Neue &Ouml;sterreich — The party short label 'Meinl-ReisingerNEOS'
+    clearly indicates NEOS, and Beate Meinl-Reisinger is a prominent figure within
+    the party.
+- party_short: MFG
+  partyfacts_id: 9022
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: N
+  partyfacts_id: 1814
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: NDP
+  partyfacts_id: 6168
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: NehammerÖVP
+  partyfacts_id: 1329
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Österreichische Volkspartei — The label 'NehammerÖVP' clearly refers to the
+    'Österreichische Volkspartei' (Austrian People's Party), with 'Nehammer' likely
+    indicating the current leader.
+- party_short: NEIN
+  partyfacts_id: 1678
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Nein
+  partyfacts_id: 1678
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: NEOS
+  partyfacts_id: 1970
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: NEOs
+  partyfacts_id: 1970
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: NEOS (Austria)
+  partyfacts_id: 1970
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: NEOS – Das Neue Österreich — The party short label 'NEOS' directly matches
+    the Party Facts entry for 'NEOS – Das Neue Österreich'.
+- party_short: 'NN '
+  partyfacts_id: 2589
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: NSDAP
+  partyfacts_id: 1936
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: NSS
+  partyfacts_id: 7379
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: NSS/M
+  partyfacts_id: 7378
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: NWB
+  partyfacts_id: 6235
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: OEVP
+  partyfacts_id: 1329
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Other/None
+  partyfacts_id: 1857
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: other — The 'Other/None' label directly corresponds to the Party Facts entry
+    for 'other' (id=1857), which is used for miscellaneous parties or votes not otherwise
+    specified.
+- party_short: OVP
+  partyfacts_id: 1329
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: PCP
+  partyfacts_id: 7380
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: PILZ
+  partyfacts_id: 6137
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Pilz
+  partyfacts_id: 6137
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: PIRATEN
+  partyfacts_id: 2591
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Pirates
+  partyfacts_id: 2591
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: 1 percent — The Party Facts entry with ID 2591 has 'Piratenpartei' as its
+    English name, which directly translates to 'Pirate Party' and matches the 'Pirates'
+    label.
+- party_short: REKOS
+  partyfacts_id: 2991
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Rendi-Wagner/KernSPÖ
+  partyfacts_id: 1384
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Sozialdemokratische Partei Österreichs — The label 'Rendi-Wagner/KernSPÖ'
+    clearly refers to the Social Democratic Party of Austria (SPÖ), with Rendi-Wagner
+    and Kern being prominent leaders of the party during the specified period.
+- party_short: Rendi-WagnerSPÖ
+  partyfacts_id: 1384
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Sozialdemokratische Partei Österreichs — The party short label 'Rendi-WagnerSPÖ'
+    clearly indicates the 'Sozialdemokratische Partei Österreichs' (SPÖ), with Rendi-Wagner
+    being a prominent leader during the polling period.
+- party_short: RSZML
+  partyfacts_id: 7712
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: SBP
+  partyfacts_id: 6141
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: SchallenbergÖVP
+  partyfacts_id: 1329
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Österreichische Volkspartei — The 'ÖVP' in 'SchallenbergÖVP' clearly refers
+    to the Österreichische Volkspartei (Austrian People's Party), and Schallenberg
+    was a prominent figure associated with the party during the polling period.
+- party_short: SCP
+  partyfacts_id: 7705
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: SDAP
+  partyfacts_id: 1384
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Social Democratic Party of Austria
+  partyfacts_id: 1384
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Sozialdemokratische Partei Österreichs — The Party Facts entry for ID 1384
+    directly matches the English name 'Social Democratic Party of Austria' and has
+    a short label 'SPO' which is a common abbreviation for this party.
+- party_short: SPO
+  partyfacts_id: 1384
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: SPOE
+  partyfacts_id: 1384
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: SPÖ
+  partyfacts_id: 1384
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: SPÖ–FPÖ
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: This is a coalition of two parties, SP&O and FP&O, and there is no single
+    Party Facts ID for this specific coalition.
+- party_short: SPÖ–Grüne
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: This is a coalition of two parties, SP&O and Grüne, and there is no single
+    Party Facts ID for this specific coalition.
+- party_short: SPÖ–Grüne–NEOS
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: This is a coalition of three distinct parties (SPÖ, Grüne, NEOS) and does
+    not represent a single Party Facts entry.
+- party_short: StracheHC
+  partyfacts_id: 9023
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Team HC Strache – Allianz f&uuml;r &Ouml;sterreich — The party short label
+    'StracheHC' directly matches 'HC' in 'Team HC Strache – Allianz f&uuml;r &Ouml;sterreich',
+    and the polling context aligns with the party's activity in 2020.
+- party_short: STRONACH
+  partyfacts_id: 1971
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Stronach
+  partyfacts_id: 1971
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: T
+  partyfacts_id: 1934
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: TEAM STRONACH
+  partyfacts_id: 1971
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Team Stronach
+  partyfacts_id: 1971
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: TeamStronach
+  partyfacts_id: 1971
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: The Greens (Austria)
+  partyfacts_id: 1659
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Die Grünen — The Party Facts entry for ID 1659, 'Die Grünen', has an English
+    name 'The Greens', which is a direct match for 'The Greens (Austria)'.
+- party_short: TS
+  partyfacts_id: 1971
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: UNDPYRP
+  partyfacts_id: 7706
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: UV
+  partyfacts_id: 6139
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: V / DP
+  partyfacts_id: 8222
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: VdU
+  partyfacts_id: 1710
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: VF
+  partyfacts_id: 6044
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: VGO
+  partyfacts_id: 1170
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: VGO/ALO
+  partyfacts_id: 1659
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: VGÖ
+  partyfacts_id: 1170
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: WB
+  partyfacts_id: 6235
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: WdU
+  partyfacts_id: 1710
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: ÖVP
+  partyfacts_id: 1329
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: ÖVP alone
+  partyfacts_id: 1329
+  source: gemini_high
+  confidence: high
+  is_coalition: false
+  notes: Österreichische Volkspartei — The label 'ÖVP alone' clearly refers to the
+    Österreichische Volkspartei (ÖVP), which is present in the candidate list with
+    ID 1329.
+- party_short: ÖVP Kurz
+  partyfacts_id: 1329
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: ÖVP–FPÖ
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: The label 'ÖVP–FPÖ' clearly indicates a coalition of two parties, ÖVP and
+    FPÖ, which are both present in the candidate list, but there is no single Party
+    Facts ID for this coalition.
+- party_short: ÖVP–Grüne
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: The label 'ÖVP–Grüne' indicates a coalition between the Austrian People's
+    Party (ÖVP) and The Greens (Grüne), which is not a single party in the Party Facts
+    database.
+- party_short: ÖVP–Grüne–NEOS
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: This label represents a coalition of three distinct parties (ÖVP, Grüne,
+    NEOS) and does not correspond to a single Party Facts ID.
+- party_short: ÖVP–NEOS
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: The label 'ÖVP–NEOS' indicates a coalition of two distinct parties, ÖVP and
+    NEOS, and there is no single Party Facts ID for this specific coalition.
+- party_short: ÖVP–SPÖ
+  partyfacts_id: null
+  source: gemini_no_match
+  confidence: null
+  is_coalition: false
+  notes: The label 'ÖVP–SPÖ' clearly indicates a coalition or alliance between the
+    Austrian People's Party (ÖVP) and the Social Democratic Party of Austria (SPÖ),
+    which is not a single party in the Party Facts list.
+- party_short: ČSSD
+  partyfacts_id: 7711
+  source: partyfacts_external
+  confidence: null
+  is_coalition: false
+  notes: ''
