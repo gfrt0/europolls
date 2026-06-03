@@ -272,11 +272,12 @@ mappings:
   notes: ''
 - party_short: HDSSBHKS
   partyfacts_id: null
-  source: gemini_no_match
-  confidence: null
-  is_coalition: false
-  notes: The abbreviation 'HDSSBHKS' appears to be a coalition of 'HDSSB' and 'HKS',
-    but there is no single Party Facts ID that represents this specific coalition.
+  source: verified_not_in_pf
+  confidence: high
+  is_coalition: true
+  notes: 'HDSSB + HKS electoral coalition (Croatian Democratic Alliance of Slavonia
+    and Baranja + Croatian Conservative Party). Reported as a single bloc. No
+    coalition-level PF id.'
 - party_short: HDZ
   partyfacts_id: 1431
   source: partyfacts_external
@@ -593,11 +594,12 @@ mappings:
   notes: ''
 - party_short: IDSPGSRI
   partyfacts_id: null
-  source: gemini_no_match
-  confidence: null
-  is_coalition: false
-  notes: The abbreviation 'IDSPGSRI' does not clearly match any of the provided Party
-    Facts entries for Croatia, and it is likely a coalition or a party not listed.
+  source: verified_not_in_pf
+  confidence: high
+  is_coalition: true
+  notes: 'IDS + PGS + RI electoral coalition (Istrian Democratic Assembly +
+    Primorje-Gorski Kotar Alliance + Rijeka Independent List). Regionalist
+    bloc, reported as a single column. No coalition-level PF id.'
 - party_short: Ind-IG
   partyfacts_id: 2523
   source: partyfacts_external

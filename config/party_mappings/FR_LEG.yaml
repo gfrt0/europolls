@@ -864,12 +864,13 @@ mappings:
 
 - party_short: DVC
   partyfacts_id: null
-  source: gemini_no_match
+  source: null
   confidence: null
   is_coalition: false
-  notes: The abbreviation 'DVC' does not directly match any of the provided Party
-    Facts entries for France, and there is no clear indication of a common party suffix
-    or a known coalition that would correspond to this abbreviation.
+  notes: "Divers centre (Miscellaneous centre) — French Ministry of the Interior
+    residual category for centrist independent candidates. Not a party."
+  drop: true
+  drop_reason: others
 - party_short: DVD
   partyfacts_id: 1776
   source: gemini_high
@@ -1065,11 +1066,13 @@ mappings:
     is a prominent party in France, with 'FI' being a common abbreviation for it.
 - party_short: First round vote
   partyfacts_id: null
-  source: gemini_no_match
+  source: null
   confidence: null
   is_coalition: false
-  notes: The label 'First round vote' is a generic polling term indicating the total
-    vote share in the first round of an election, not a specific political party.
+  notes: 'Wikitext column-group header (colspan="2" "First round vote") mis-parsed
+    as a column. Not a party.'
+  drop: true
+  drop_reason: parse_artifact
 - party_short: Florence MauryMoDem
   partyfacts_id: 496
   source: gemini_high
@@ -3107,12 +3110,14 @@ mappings:
     the polling context dates.
 - party_short: REG
   partyfacts_id: null
-  source: gemini_no_match
+  source: null
   confidence: null
   is_coalition: false
-  notes: The abbreviation 'REG' does not directly match any of the provided Party
-    Facts entries, and there is no clear indication of a regional party in the list
-    that would correspond to this abbreviation.
+  notes: "Régionalistes (Regionalism in France) — Ministry of the Interior residual
+    category for regionalist candidates (Corsican, Breton, etc., outside named
+    parties). Not a single party."
+  drop: true
+  drop_reason: others
 - party_short: Renaud LagravePS
   partyfacts_id: 1478
   source: gemini_high

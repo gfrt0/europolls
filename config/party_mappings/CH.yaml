@@ -770,12 +770,13 @@ mappings:
     Party Facts ID 1006.
 - party_short: Grüne+1FDP−1
   partyfacts_id: null
-  source: gemini_no_match
+  source: null
   confidence: null
   is_coalition: false
-  notes: The label 'Grüne+1FDP−1' indicates a coalition or aggregate of parties, but
-    it is not a direct match to a single party in the provided list, and the '+1'
-    and '-1' suggest a dynamic or calculated aggregate rather than a fixed coalition.
+  notes: 'Federal Council seat-delta column header (Greens +1, FDP −1 vs prior
+    composition). Not a party.'
+  drop: true
+  drop_reason: parse_artifact
 - party_short: Grüne+1GLP+1SP−1,FDP−1
   partyfacts_id: null
   source: null
@@ -1126,12 +1127,13 @@ mappings:
   notes: ''
 - party_short: Magicformula
   partyfacts_id: null
-  source: gemini_no_match
+  source: null
   confidence: null
   is_coalition: false
-  notes: The party label 'Magicformula' does not match any of the provided Party Facts
-    entries for Switzerland, and there is no obvious abbreviation or name similarity
-    to suggest a match.
+  notes: "'Magic formula' (Zauberformel) Federal Council composition column
+    (2-2-2-1 partisan split). Not a party."
+  drop: true
+  drop_reason: parse_artifact
 - party_short: Maillard
   partyfacts_id: null
   source: gemini_no_match
