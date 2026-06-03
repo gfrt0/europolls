@@ -6,12 +6,12 @@
 # columns from satisfaction polls are intentionally left alone.
 
 aliases:
-  "Austrian People's Party":        "ÖVP"
-  "Social Democratic Party of Austria": "SPÖ"
-  "Freedom Party of Austria":       "FPÖ"
-  "The Greens (Austria)":           "Grüne"
-  "NEOS (Austria)":                 "NEOS"
-  "Communist Party of Austria":     "KPÖ"
+  "Austrian People's Party":        "Austrian People's Party"
+  "Social Democratic Party of Austria": "Social Democratic Party of Austria"
+  "Freedom Party of Austria":       "Freedom Party of Austria"
+  "The Greens (Austria)":           "The Greens — The Green Alternative"
+  "NEOS (Austria)":                 "NEOS — The New Austria"
+  "Communist Party of Austria":     "Communist Party of Austria"
 
 # Leader+party concatenations from chancellor-preference satisfaction polls
 # (e.g. 'KurzÖVP' = Kurz-as-candidate via the ÖVP). Distinct from voting

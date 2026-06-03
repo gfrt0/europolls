@@ -260,7 +260,7 @@ names:
     name_native: Íslandshreyfingin — lifandi land
     name_short: IL
   126:
-    name: other left
+    name: Other Left
     name_native: divers gauche
     name_short: d-g
   129:
@@ -808,7 +808,7 @@ names:
     name_native: Det norske Arbeiderparti
     name_short: DNA
   452:
-    name: other far-right
+    name: Other Far-Right
     name_native: extrême droite
     name_short: exd
   456:
@@ -2784,7 +2784,7 @@ names:
     name_native: Partido da Democracia Cristã
     name_short: PDC
   1594:
-    name: other far-left
+    name: Other Far-Left
     name_native: extrême gauche
     name_short: exg
   1595:
@@ -3104,7 +3104,7 @@ names:
     name_native: Green Party-Comhaontas Glas
     name_short: Greens
   1776:
-    name: other right
+    name: Other Right
     name_native: divers droite
     name_short: d-d
   1778:
@@ -3208,92 +3208,92 @@ names:
     name_native: Nationaal-Socialistische Beweging in Nederland
     name_short: NSB
   1834:
-    name: other
-    name_native: other
+    name: Other
+    name_native: Other
     name_short: etc
   1835:
-    name: other
-    name_native: other
+    name: Other
+    name_native: Other
     name_short: etc
   1837:
-    name: other
-    name_native: other
+    name: Other
+    name_native: Other
     name_short: etc
   1838:
-    name: other
-    name_native: other
+    name: Other
+    name_native: Other
     name_short: etc
   1839:
-    name: other
-    name_native: other
+    name: Other
+    name_native: Other
     name_short: etc
   1840:
-    name: other
-    name_native: other
+    name: Other
+    name_native: Other
     name_short: etc
   1841:
-    name: other
-    name_native: other
+    name: Other
+    name_native: Other
     name_short: etc
   1842:
-    name: other
-    name_native: other
+    name: Other
+    name_native: Other
     name_short: etc
   1843:
-    name: other
-    name_native: other
+    name: Other
+    name_native: Other
     name_short: etc
   1844:
-    name: other
-    name_native: other
+    name: Other
+    name_native: Other
     name_short: etc
   1846:
-    name: other
-    name_native: other
+    name: Other
+    name_native: Other
     name_short: etc
   1847:
-    name: other
-    name_native: other
+    name: Other
+    name_native: Other
     name_short: etc
   1848:
-    name: other
-    name_native: other
+    name: Other
+    name_native: Other
     name_short: etc
   1850:
-    name: other
-    name_native: other
+    name: Other
+    name_native: Other
     name_short: etc
   1852:
-    name: other
-    name_native: other
+    name: Other
+    name_native: Other
     name_short: etc
   1853:
-    name: other
-    name_native: other
+    name: Other
+    name_native: Other
     name_short: etc
   1854:
-    name: other
-    name_native: other
+    name: Other
+    name_native: Other
     name_short: etc
   1855:
-    name: other
-    name_native: other
+    name: Other
+    name_native: Other
     name_short: etc
   1856:
-    name: other
-    name_native: other
+    name: Other
+    name_native: Other
     name_short: etc
   1857:
-    name: other
-    name_native: other
+    name: Other
+    name_native: Other
     name_short: etc
   1858:
-    name: other
-    name_native: other
+    name: Other
+    name_native: Other
     name_short: etc
   1859:
-    name: other
-    name_native: other
+    name: Other
+    name_native: Other
     name_short: etc
   1861:
     name: Communist Party of Malta
@@ -3316,16 +3316,16 @@ names:
     name_native: Unabhängige Sozialdemokratische Partei Deutschlands - USPD
     name_short: USPD
   1885:
-    name: other
-    name_native: other
+    name: Other
+    name_native: Other
     name_short: etc
   1886:
-    name: other
-    name_native: other
+    name: Other
+    name_native: Other
     name_short: etc
   1887:
-    name: other
-    name_native: other
+    name: Other
+    name_native: Other
     name_short: etc
   1888:
     name: New Reformed State Party
@@ -3356,12 +3356,12 @@ names:
     name_native: Sociaal Democratische Arbeiders Partij
     name_short: SDAP
   1895:
-    name: other
-    name_native: other
+    name: Other
+    name_native: Other
     name_short: etc
   1898:
-    name: other
-    name_native: other
+    name: Other
+    name_native: Other
     name_short: etc
   1900:
     name: National Socialist Workers’ Party of Denmark
@@ -3512,8 +3512,8 @@ names:
     name_native: Miljøpartiet De Grønne
     name_short: MDG
   1964:
-    name: other
-    name_native: other
+    name: Other
+    name_native: Other
     name_short: etc
   1965:
     name: NO2EU — Yes to Democracy
@@ -3568,8 +3568,8 @@ names:
     name_native: Suyuz na Demokratichniti Sili — Liberali
     name_short: SDS — L
   2027:
-    name: other
-    name_native: other
+    name: Other
+    name_native: Other
     name_short: etc
   2028:
     name: Croatian Peasant's People's Party
@@ -4084,20 +4084,20 @@ names:
     name_native: Partido Carlista
     name_short: PC
   2567:
-    name: independent
-    name_native: independent
+    name: Independent
+    name_native: Independent
     name_short: indep
   2589:
-    name: independent
-    name_native: independent
+    name: Independent
+    name_native: Independent
     name_short: indep
   2591:
     name: 1 percent
     name_native: 1 percent
     name_short: 1-perc
   2607:
-    name: independent
-    name_native: independent
+    name: Independent
+    name_native: Independent
     name_short: indep
   2608:
     name: unknown
@@ -4108,32 +4108,32 @@ names:
     name_native: 1 percent
     name_short: 1-perc
   2633:
-    name: independent
-    name_native: independent
+    name: Independent
+    name_native: Independent
     name_short: indep
   2635:
     name: 1 percent
     name_native: 1 percent
     name_short: 1-perc
   2650:
-    name: independent
-    name_native: independent
+    name: Independent
+    name_native: Independent
     name_short: indep
   2651:
     name: unknown
     name_native: unknown
     name_short: unknown
   2652:
-    name: independent
-    name_native: independent
+    name: Independent
+    name_native: Independent
     name_short: indep
   2654:
     name: 1 percent
     name_native: 1 percent
     name_short: 1-perc
   2655:
-    name: independent
-    name_native: independent
+    name: Independent
+    name_native: Independent
     name_short: indep
   2656:
     name: unknown
@@ -4144,8 +4144,8 @@ names:
     name_native: 1 percent
     name_short: 1-perc
   2658:
-    name: independent
-    name_native: independent
+    name: Independent
+    name_native: Independent
     name_short: indep
   2660:
     name: 1 percent
@@ -4160,32 +4160,32 @@ names:
     name_native: 1 percent
     name_short: 1-perc
   2685:
-    name: independent
-    name_native: independent
+    name: Independent
+    name_native: Independent
     name_short: indep
   2687:
     name: 1 percent
     name_native: 1 percent
     name_short: 1-perc
   2688:
-    name: independent
-    name_native: independent
+    name: Independent
+    name_native: Independent
     name_short: indep
   2689:
     name: unknown
     name_native: unknown
     name_short: unknown
   2700:
-    name: independent
-    name_native: independent
+    name: Independent
+    name_native: Independent
     name_short: indep
   2702:
     name: 1 percent
     name_native: 1 percent
     name_short: 1-perc
   2708:
-    name: independent
-    name_native: independent
+    name: Independent
+    name_native: Independent
     name_short: indep
   2709:
     name: unknown
@@ -4196,16 +4196,16 @@ names:
     name_native: 1 percent
     name_short: 1-perc
   2719:
-    name: independent
-    name_native: independent
+    name: Independent
+    name_native: Independent
     name_short: indep
   2721:
     name: 1 percent
     name_native: 1 percent
     name_short: 1-perc
   2722:
-    name: independent
-    name_native: independent
+    name: Independent
+    name_native: Independent
     name_short: indep
   2723:
     name: unknown
@@ -4216,40 +4216,40 @@ names:
     name_native: 1 percent
     name_short: 1-perc
   2735:
-    name: independent
-    name_native: independent
+    name: Independent
+    name_native: Independent
     name_short: indep
   2737:
     name: 1 percent
     name_native: 1 percent
     name_short: 1-perc
   2766:
-    name: independent
-    name_native: independent
+    name: Independent
+    name_native: Independent
     name_short: indep
   2768:
     name: 1 percent
     name_native: 1 percent
     name_short: 1-perc
   2778:
-    name: independent
-    name_native: independent
+    name: Independent
+    name_native: Independent
     name_short: indep
   2780:
-    name: independent
-    name_native: independent
+    name: Independent
+    name_native: Independent
     name_short: indep
   2798:
-    name: independent
-    name_native: independent
+    name: Independent
+    name_native: Independent
     name_short: indep
   2800:
     name: 1 percent
     name_native: 1 percent
     name_short: 1-perc
   2839:
-    name: independent
-    name_native: independent
+    name: Independent
+    name_native: Independent
     name_short: indep
   2840:
     name: unknown
@@ -4260,8 +4260,8 @@ names:
     name_native: 1 percent
     name_short: 1-perc
   2863:
-    name: independent
-    name_native: independent
+    name: Independent
+    name_native: Independent
     name_short: indep
   2864:
     name: unknown
@@ -4272,32 +4272,32 @@ names:
     name_native: 1 percent
     name_short: 1-perc
   2888:
-    name: independent
-    name_native: independent
+    name: Independent
+    name_native: Independent
     name_short: indep
   2890:
     name: 1 percent
     name_native: 1 percent
     name_short: 1-perc
   2891:
-    name: independent
-    name_native: independent
+    name: Independent
+    name_native: Independent
     name_short: indep
   2893:
     name: 1 percent
     name_native: 1 percent
     name_short: 1-perc
   2894:
-    name: independent
-    name_native: independent
+    name: Independent
+    name_native: Independent
     name_short: indep
   2895:
     name: 1 percent
     name_native: 1 percent
     name_short: 1-perc
   2916:
-    name: independent
-    name_native: independent
+    name: Independent
+    name_native: Independent
     name_short: indep
   2917:
     name: unknown
@@ -4308,24 +4308,24 @@ names:
     name_native: 1 percent
     name_short: 1-perc
   2919:
-    name: independent
-    name_native: independent
+    name: Independent
+    name_native: Independent
     name_short: indep
   2921:
     name: 1 percent
     name_native: 1 percent
     name_short: 1-perc
   2927:
-    name: independent
-    name_native: independent
+    name: Independent
+    name_native: Independent
     name_short: indep
   2928:
     name: unknown
     name_native: unknown
     name_short: unknown
   2934:
-    name: independent
-    name_native: independent
+    name: Independent
+    name_native: Independent
     name_short: indep
   2936:
     name: 1 percent
@@ -4340,8 +4340,8 @@ names:
     name_native: 1 percent
     name_short: 1-perc
   2964:
-    name: independent
-    name_native: independent
+    name: Independent
+    name_native: Independent
     name_short: indep
   2966:
     name: 1 percent
@@ -6996,7 +6996,7 @@ names:
     name_native: Independent Community And Health Concern
     name_short: ICHC
   8657:
-    name: other greens
+    name: Other Greens
     name_native: divers ecologistes
     name_short: d-eco
   8718:
@@ -7356,7 +7356,7 @@ names:
     name_native: Agir, la droite constructive
     name_short: Agir
   9133:
-    name: other centre
+    name: Other Centre
     name_native: divers centre
     name_short: d-centre
   9134:

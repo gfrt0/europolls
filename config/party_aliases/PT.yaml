@@ -4,10 +4,10 @@
 aliases:
   "PSD/CDS":      "PSD–CDS"           # 2015 pre-electoral PSD+CDS coalition
   "PSD/CDSIL":    "PSD–CDS–IL"        # three-party simulation
-  "CDS–PP":       "CDS"
-  "PassosCoelho": "PSD"
-  "JoséSócrates": "PS"
-  "FerreiraLeite": "PSD"
+  "CDS–PP":       "Democratic and Social Center / People's Party"
+  "PassosCoelho": "Popular Democratic Party / Social Democratic Party"
+  "JoséSócrates": "Socialist Party"
+  "FerreiraLeite": "Popular Democratic Party / Social Democratic Party"
 
 drop_regex:
   - "'s cabinet$"           # 'António Costa's cabinet', etc. — approval polls

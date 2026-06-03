@@ -3,9 +3,9 @@
 # PVDA-PTB and PTB-PVDA are the same joint Walloon/Flemish list.
 
 aliases:
-  "cd&v":          "CD&V"
-  "NVA":           "N-VA"
-  "OpenVld":       "Open Vld"
-  "sp.a":          "Vooruit"
-  "PTB-PVDA":      "PVDA-PTB"
-  "Vlaams Belang": "VB"
+  "cd&v":          "Christian Democrats and Flemish"
+  "NVA":           "New Flemish Alliance"
+  "OpenVld":       "Party of Liberty and Progress — Open Flemish Liberals and Democrats"
+  "sp.a":          "Socialist Party Differently — Forward"
+  "PTB-PVDA":      "Workers' Party of Belgium"
+  "Vlaams Belang": "Flemish Block / Interest"

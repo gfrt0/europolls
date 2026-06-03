@@ -77,13 +77,24 @@ def main() -> None:
         s = str(v).strip()
         return s or None
 
+    def _titlecase_residual(s: str | None) -> str | None:
+        """PF stores residual-bucket entries as lowercase 'other', 'other
+        left', 'independent', etc. They read like real labels in charts —
+        title-case so they don't look like leftover sentences."""
+        if not s:
+            return s
+        sl = s.lower()
+        if sl == s and (sl.startswith("other") or sl.startswith("indep")):
+            return s.title()
+        return s
+
     for _, r in sub.iterrows():
         pf_id = int(r["partyfacts_id"])
         # name_english is the most consumer-friendly; fall back to
         # name (native) when absent. name_short is included for chart
         # ticks (compact label).
-        name_english = _str(r.get("name_english"))
-        name = _str(r.get("name"))
+        name_english = _titlecase_residual(_str(r.get("name_english")))
+        name = _titlecase_residual(_str(r.get("name")))
         name_short = _str(r.get("name_short"))
         # display = name_english if present, else name (native), else
         # name_short, else null.

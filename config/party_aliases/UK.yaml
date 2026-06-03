@@ -2,10 +2,10 @@
 # same successor party (Brexit Party → Reform UK in 2021).
 
 aliases:
-  "Green":  "Grn"
-  "RB":     "Brx"
-  "Reform": "Brx"
-  "Ref":    "Brx"
+  "Green":  "Green Party of England and Wales"
+  "RB":     "Brexit Party"
+  "Reform": "Brexit Party"
+  "Ref":    "Brexit Party"
 
 # Leader-approval columns that leak into the vote-intention tables on
 # Wikipedia's UK polling pages. Not vote shares.

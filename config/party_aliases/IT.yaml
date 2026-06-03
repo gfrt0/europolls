@@ -16,16 +16,16 @@
 #               kept as its own label for now.
 
 aliases:
-  "LN":                    "Lega"
-  "UDC":                   "UdC"
-  "Five Star Movement":    "M5S"
-  "Italy. Common Good":    "PD"           # 2013 Bersani PD-led list
-  "Ulivo/PD":              "PD"           # 2007-08 Olive Tree → PD transition
-  "Ulivo":                 "PD"           # Olive Tree (1995-2007) predecessor
-  "With Monti for Italy":  "SC"           # 2013 Monti list = Civic Choice
-  "Civil Revolution":      "RC"           # 2013 Ingroia list (partyfacts 2277)
-  "SEL/SI":                "SI"           # SEL→SI transition pair
-  "Centre-right coalition": "CDX"          # alt label for the CDX coalition
-  "Centre-right":          "CDX"
-  "Centre-left":           "CSX"
-  "casa delle libertà":    "CdL"           # 2001-2008 Berlusconi coalition
+  "LN":                    "North League"
+  "UDC":                   "Union of Christian and Centre Democrats"
+  "Five Star Movement":    "Five Star Movement"
+  "Italy. Common Good":    "Democratic Party"           # 2013 Bersani PD-led list
+  "Ulivo/PD":              "Democratic Party"           # 2007-08 Olive Tree → PD transition
+  "Ulivo":                 "Democratic Party"           # Olive Tree (1995-2007) predecessor
+  "With Monti for Italy":  "Civic Choice"           # 2013 Monti list = Civic Choice
+  "Civil Revolution":      "Civil Revolution"           # 2013 Ingroia list (partyfacts 2277)
+  "SEL/SI":                "Italian Left"           # SEL→SI transition pair
+  "Centre-right coalition": "Centre-right Coalition"          # alt label for the CDX coalition
+  "Centre-right":          "Centre-right Coalition"
+  "Centre-left":           "Centre-left coalition"
+  "casa delle libertà":    "House of Freedom"           # 2001-2008 Berlusconi coalition

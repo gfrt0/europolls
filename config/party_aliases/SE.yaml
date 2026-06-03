@@ -3,10 +3,10 @@
 # but we encode the canonical form explicitly for stability.
 
 aliases:
-  "Sd":  "SD"
-  "Mp":  "MP"
-  "Fp":  "L"     # Folkpartiet renamed to Liberalerna in 2015
-  "Kd":  "KD"
+  "Sd":  "Sweden Democrats"
+  "Mp":  "Greens"
+  "Fp":  "Liberal People's Party / The Liberals"     # Folkpartiet renamed to Liberalerna in 2015
+  "Kd":  "Christian Democrats"
 
 # Leader-approval columns ('Ulf Kristersson (M)' etc.) and meta-aggregate
 # columns ('Parties', 'Above threshold', 'Overall', 'Percentage', 'Seats').

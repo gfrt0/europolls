@@ -6,10 +6,10 @@
 # wide-table view but keeps them in the long view for completeness.
 
 aliases:
-  "Die Linke":     "Linke"
-  "Grünen":        "Grüne"
-  "CDU/CSU":       "Union"
-  "Free Voters":   "FW"
+  "Die Linke":     "The Left"
+  "Grünen":        "Alliance 90 / Greens"
+  "CDU/CSU":       "Christian Democratic Union / Christian Social Union"
+  "Free Voters":   "Free Voters"
 
   # --- Coalition simulations (folded to press shorthand) ---
   "SPD Grüne FDP":    "Ampel"           # SPD–Grüne–FDP traffic-light coalition
