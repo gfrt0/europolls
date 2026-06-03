@@ -379,12 +379,11 @@ mappings:
   notes: ''
 - party_short: GL/PvdA
   partyfacts_id: null
-  source: gemini_no_match
-  confidence: null
+  source: verified_not_in_pf
+  confidence: high
   is_coalition: false
-  notes: GL/PvdA is a coalition of GroenLinks (GL) and Partij van de Arbeid (PvdA),
-    which are both present in the candidate list, but there is no single Party Facts
-    ID for this specific coalition.
+  notes: 'Wikipedia article: ''GroenLinks–Labour Party''. Verified absent from Party Facts (no matching entry in core or external datasets). PF may add an id when next refreshed.'
+
 - party_short: GPV
   partyfacts_id: 1602
   source: partyfacts_external

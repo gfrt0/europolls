@@ -248,12 +248,12 @@ mappings:
   is_coalition: false
   notes: ''
 - party_short: DIXA
-  partyfacts_id: null
-  source: gemini_no_match
-  confidence: null
+  partyfacts_id: 471
+  source: manual_review
+  confidence: high
   is_coalition: false
-  notes: No party in the candidate list has a short label or name that closely matches
-    'DIXA', and the polling context does not provide further clues.
+  notes: 'Dimiourgia Xana (Recreate Greece), 2012-. PF id 471 — confirmed via Wikipedia
+    wikilink ([[Recreate Greece|DIXA]]) → PF core entry.'
 - party_short: DKEL
   partyfacts_id: 4582
   source: partyfacts_external
@@ -268,11 +268,11 @@ mappings:
   notes: ''
 - party_short: DPK
   partyfacts_id: null
-  source: gemini_no_match
-  confidence: null
+  source: verified_not_in_pf
+  confidence: high
   is_coalition: false
-  notes: No party in the provided list has an abbreviation or name that closely matches
-    'DPK'.
+  notes: 'Wikipedia article: ''Movement for Democracy (Greece)''. Verified absent from Party Facts (no matching entry in core or external datasets). PF may add an id when next refreshed.'
+
 - party_short: DR
   partyfacts_id: 648
   source: partyfacts_external
@@ -331,11 +331,11 @@ mappings:
   notes: ''
 - party_short: ED
   partyfacts_id: null
-  source: gemini_no_match
-  confidence: null
+  source: verified_not_in_pf
+  confidence: high
   is_coalition: false
-  notes: No Party Facts entry for GR has 'ED' as a short label, and the provided polling
-    data does not offer enough context to infer a match.
+  notes: 'Wikipedia article: ''National Creation''. Verified absent from Party Facts (no matching entry in core or external datasets). PF may add an id when next refreshed.'
+
 - party_short: EDA
   partyfacts_id: 4157
   source: partyfacts_external
@@ -404,11 +404,11 @@ mappings:
   notes: ''
 - party_short: EKE
   partyfacts_id: null
-  source: gemini_no_match
-  confidence: null
+  source: verified_not_in_pf
+  confidence: high
   is_coalition: false
-  notes: No party in the provided list has an abbreviation or name that closely matches
-    'EKE', and the polling data does not provide enough context to infer a match.
+  notes: 'Wikipedia article: ''National Party – Greeks''. Verified absent from Party Facts (no matching entry in core or external datasets). PF may add an id when next refreshed.'
+
 - party_short: EL
   partyfacts_id: 7347
   source: partyfacts_external
@@ -1206,12 +1206,11 @@ mappings:
   notes: ''
 - party_short: PARMAP
   partyfacts_id: null
-  source: gemini_no_match
-  confidence: null
+  source: verified_not_in_pf
+  confidence: high
   is_coalition: false
-  notes: The provided party short label 'PARMAP' does not semantically match any of
-    the candidate Party Facts entries for Greece, and the polling context does not
-    offer enough information to infer a match.
+  notes: 'Wikipedia article: ''Panhellenic Citizen Chariot''. Verified absent from Party Facts (no matching entry in core or external datasets). PF may add an id when next refreshed.'
+
 - party_short: PASOK
   partyfacts_id: 1468
   source: partyfacts_external

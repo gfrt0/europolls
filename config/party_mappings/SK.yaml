@@ -124,13 +124,12 @@ mappings:
   notes: ''
 - party_short: Democrats
   partyfacts_id: null
-  source: gemini_no_match
-  confidence: null
+  source: verified_not_in_pf
+  confidence: high
   is_coalition: false
-  notes: There is no clear match for 'Democrats' among the provided Party Facts entries,
-    as the term 'Democrats' is too generic and could refer to several parties with
-    'Democratic' in their name, but none are a direct match for just 'Democrats' and
-    the polling dates are recent while the 'Democratic Party' (id=983) is from 1990.
+  notes: Demokrati (2023-, splinter from OĽaNO led by Eduard Heger). Not yet in Party
+    Facts (PF SK 'Democratic Party' id 983 is the 1990-1998 party, a different
+    organization).
 - party_short: DEÚS
   partyfacts_id: 6629
   source: partyfacts_external
@@ -233,11 +232,11 @@ mappings:
     Party Facts entries for Slovakia.
 - party_short: Gov.
   partyfacts_id: null
-  source: gemini_no_match
-  confidence: null
-  is_coalition: false
-  notes: The label 'Gov.' is too generic to match any specific party in the provided
-    list, and likely refers to the incumbent government rather than a single party.
+  source: verified_not_in_pf
+  confidence: high
+  is_coalition: true
+  notes: Government-coalition aggregate column (incumbent cabinet, not a single party).
+    No single PF id; flagged as coalition so downstream consumers can filter.
 - party_short: Hlas
   partyfacts_id: 9071
   source: gemini_high
@@ -544,10 +543,11 @@ mappings:
   notes: ''
 - party_short: MF
   partyfacts_id: null
-  source: gemini_no_match
-  confidence: null
+  source: verified_not_in_pf
+  confidence: high
   is_coalition: false
-  notes: There is no Party Facts entry that matches the abbreviation 'MF' for Slovakia.
+  notes: 'Wikipedia article: ''Hungarian Forum''. Verified absent from Party Facts (no matching entry in core or external datasets). PF may add an id when next refreshed.'
+
 - party_short: MF-FS
   partyfacts_id: 2918
   source: partyfacts_external
@@ -1143,11 +1143,11 @@ mappings:
   notes: ''
 - party_short: Slovakia
   partyfacts_id: null
-  source: gemini_no_match
-  confidence: null
+  source: verified_not_in_pf
+  confidence: high
   is_coalition: false
-  notes: The party short label 'Slovakia' is too generic and does not match any specific
-    party in the provided Party Facts entries.
+  notes: 'Wikipedia article: ''Slovakia (political party)''. Verified absent from Party Facts (no matching entry in core or external datasets). PF may add an id when next refreshed.'
+
 - party_short: Slovenska narodna strana
   partyfacts_id: 730
   source: partyfacts_external
@@ -1258,12 +1258,13 @@ mappings:
   is_coalition: false
   notes: ''
 - party_short: SMK–MKP
-  partyfacts_id: null
-  source: gemini_no_match
-  confidence: null
+  partyfacts_id: 349
+  source: manual_review
+  confidence: high
   is_coalition: false
-  notes: The provided Party Facts entries do not contain a direct match for 'SMK–MKP',
-    which appears to be a Hungarian Coalition party not explicitly listed.
+  notes: 'Strana maďarskej koalície / Magyar Koalíció Pártja (Party of the Hungarian
+    Coalition / Hungarian Community), PF id 349 — confirmed via PF reverse lookup
+    (euandi name_short ''SMKMKP'' matches).'
 - party_short: SNP
   partyfacts_id: 730
   source: partyfacts_external

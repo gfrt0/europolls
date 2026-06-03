@@ -167,11 +167,11 @@ mappings:
   notes: ''
 - party_short: EM
   partyfacts_id: null
-  source: gemini_no_match
-  confidence: null
+  source: verified_not_in_pf
+  confidence: high
   is_coalition: false
-  notes: No party in the provided list has 'EM' as a short label or a similar name
-    that would suggest a match.
+  notes: 'Wikipedia article: ''United for Hungary''. Verified absent from Party Facts (no matching entry in core or external datasets). PF may add an id when next refreshed.'
+
 - party_short: EP
   partyfacts_id: 5126
   source: partyfacts_external

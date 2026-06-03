@@ -1960,11 +1960,12 @@ mappings:
   notes: ''
 - party_short: Sumar
   partyfacts_id: null
-  source: gemini_no_match
-  confidence: null
+  source: verified_not_in_pf
+  confidence: high
   is_coalition: false
-  notes: Sumar is a new political platform founded in 2022, and it is not present
-    in the provided Party Facts entries.
+  notes: 'Sumar (Movimiento Sumar) — left-wing platform founded by Yolanda Díaz, 2023-.
+    Verified absent from partyfacts.herokuapp.com/data/partycodes/?country=ESP as
+    of 2026-06; most recent Spanish entry is ''Se Acabó La Fiesta'' (2024).'
 - party_short: TE
   partyfacts_id: 2538
   source: partyfacts_external

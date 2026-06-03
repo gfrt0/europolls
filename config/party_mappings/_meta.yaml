@@ -1,0 +1,86 @@
+# Cross-country meta-label drop list.
+#
+# Applied to EVERY country in harmonize / build_all's concat step BEFORE
+# the per-country config/party_mappings/{CC}.yaml. Rows whose
+# party_short matches an entry here are flagged with is_dropped_meta=1
+# in data/processed/polls_long.csv — they stay in the long file so
+# nothing is silently dropped, but downstream consumers should
+# filter `is_dropped_meta == 1` before computing vote shares.
+#
+# Categories below are documentation only; the harmonize loader treats
+# everything under `mappings:` as `drop: true`.
+
+mappings:
+
+  # --- Don't know / no opinion / undecided ---
+  "Don't know":                       { drop: true, drop_reason: dont_know }
+  "Don'tknow":                        { drop: true, drop_reason: dont_know }
+  "Don't Know":                       { drop: true, drop_reason: dont_know }
+  "Don't  Know":                      { drop: true, drop_reason: dont_know }
+  "Don't  know":                      { drop: true, drop_reason: dont_know }
+  "Don't know/no answer":             { drop: true, drop_reason: dont_know }
+  "Don't know/Neutral":               { drop: true, drop_reason: dont_know }
+  "DK":                               { drop: true, drop_reason: dont_know }
+  "No opinion":                       { drop: true, drop_reason: dont_know }
+  "Noopinion":                        { drop: true, drop_reason: dont_know }
+  "NO|No Opinion":                    { drop: true, drop_reason: dont_know }
+  "Neither":                          { drop: true, drop_reason: dont_know }
+  "N/B/NO|Neither/Both/No opinion":   { drop: true, drop_reason: dont_know }
+  "Not sure":                         { drop: true, drop_reason: dont_know }
+  "Undecided":                        { drop: true, drop_reason: undecided }
+  "Und.":                             { drop: true, drop_reason: undecided }
+  "Undecided/No answer":              { drop: true, drop_reason: undecided }
+  "Certain undecided turnout":        { drop: true, drop_reason: undecided }
+
+  # --- Abstention / would-not-vote / refused / spoiled ---
+  "Abstention":                       { drop: true, drop_reason: abstention }
+  "Abs.|Abstention":                  { drop: true, drop_reason: abstention }
+  "Abs.|Abstention/blank/null vote/don't know": { drop: true, drop_reason: abstention }
+  "Won't vote":                       { drop: true, drop_reason: abstention }
+  "Won't Vote":                       { drop: true, drop_reason: abstention }
+  "Not vote":                         { drop: true, drop_reason: abstention }
+  "Abst.":                            { drop: true, drop_reason: abstention }   # SI variant
+  "NOTA":                             { drop: true, drop_reason: abstention }   # BG: 'None of the Above' ballot option
+  "None of the above":                { drop: true, drop_reason: abstention }   # BG variant
+  "None of these":                    { drop: true, drop_reason: abstention }   # UK
+  "Neither / None":                   { drop: true, drop_reason: abstention }   # MT
+  "No vote":                          { drop: true, drop_reason: abstention }
+  "Notvoting":                        { drop: true, drop_reason: abstention }
+  "Would not vote":                   { drop: true, drop_reason: abstention }
+  "Would not vote/refused":           { drop: true, drop_reason: abstention }
+  "Refused":                          { drop: true, drop_reason: abstention }
+  "Noreply":                          { drop: true, drop_reason: abstention }
+  "No reply":                         { drop: true, drop_reason: abstention }
+
+  # --- "Others" residual bucket ---
+  "Others":                           { drop: true, drop_reason: others }
+  "Other":                            { drop: true, drop_reason: others }
+  "Oth.":                             { drop: true, drop_reason: others }
+  "Oth.|Others":                      { drop: true, drop_reason: others }
+  "Others/Abroad":                    { drop: true, drop_reason: others }
+  "Others /Don't know":               { drop: true, drop_reason: others }
+  "O|Other":                          { drop: true, drop_reason: others }
+  "O|Others":                         { drop: true, drop_reason: others }
+  "O":                                { drop: true, drop_reason: others }
+  "Others / None":                    { drop: true, drop_reason: others }   # BG
+  "DIV":                              { drop: true, drop_reason: others }   # FR_LEG: 'Divers' (others)
+  "O/I|Others/IndependentsThis column includes figures for Independents 4 Change and Aontú when available.": { drop: true, drop_reason: others }   # IE: long, escaped Wikipedia footnote
+  "Blocs":                            { drop: true, drop_reason: total }    # NO / DK: bloc-totals aggregate
+
+  # --- Approval / cabinet-rating columns (NOT voting intention) ---
+  # Mixed in by Wikipedia editors who place approval-rating tables
+  # next to vote-share tables. Flagged drop so consumers don't average
+  # approval % into vote share. Possible future improvement: skip
+  # approval tables at parse time so they never reach polls_long.
+  "Approve":                          { drop: true, drop_reason: approval }
+  "Disapprove":                       { drop: true, drop_reason: approval }
+  "Approval":                         { drop: true, drop_reason: approval }
+  "Disapproval":                      { drop: true, drop_reason: approval }
+  "Net":                              { drop: true, drop_reason: approval }  # PT/HU = net approval; CH Sotomo uses it as a coalition aggregate (treated as meta)
+  "Net approval":                     { drop: true, drop_reason: approval }
+
+  # --- Survey meta-stats (not vote share at all) ---
+  "Resp.|Response rate":              { drop: true, drop_reason: response_rate }
+  "Total":                            { drop: true, drop_reason: total }   # BG: coalition total = sum of components, redundant
+  "Coalitions":                       { drop: true, drop_reason: total }   # IT: aggregate coalition vote, redundant with individual rows
+  "Lead":                             { drop: true, drop_reason: lead }    # derived first-place lead in pp, not a vote share

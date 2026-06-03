@@ -80,7 +80,17 @@ One row per poll. Meta columns first, then one column per `party_short`, sorted 
 
 ### Harmonized format — `data/interim/harmonized/{COUNTRY}_long_harmonized.csv`
 
-Long format augmented with `partyfacts_id` from [Party Facts](https://partyfacts.herokuapp.com/) (where available) — enables joins to ParlGov, MARPOR, PopuList, CHES, and similar datasets. Currently populated for IT only; other countries fall through with empty `partyfacts_id`.
+Long format augmented with `partyfacts_id` from [Party Facts](https://partyfacts.herokuapp.com/) — enables joins to ParlGov, MARPOR, PopuList, CHES, and similar datasets. Covers all 32 countries via `config/party_mappings/{CC}.yaml`; **~96% of voting-intention poll rows carry a `partyfacts_id`**, with provenance in `partyfacts_id_source` / `partyfacts_id_confidence` / `partyfacts_id_notes`. The same four columns are also joined onto the canonical `data/processed/polls_long.csv` so downstream consumers don't need to re-apply the mapping. See [`scripts/PARTY_CROSSWALK.md`](scripts/PARTY_CROSSWALK.md) for how the per-country YAMLs were built.
+
+Two further columns mark non-voting-intention rows that survive the canonical long file:
+
+- `is_dropped_meta` (0/1) — set on rows whose `party_short` is a meta-label (Don't know, Others, Abstention, Undecided buckets) per [`config/party_mappings/_meta.yaml`](config/party_mappings/_meta.yaml). Filter `is_dropped_meta == 0` to keep only real-party voting-intention rows.
+- `dropped_meta_reason` — the bucket (`others` / `dont_know` / `undecided` / `abstention`) when flagged.
+
+Approval-rating columns (`Approve` / `Disapprove` / `Net` / `Lead`), survey-meta stats (`Resp.|Response rate`), and redundant coalition totals (BG `Total`, IT `Coalitions`) are pruned entirely at the concat step — they are not voting-intention signal. Coalition aggregate rows (IT CDX/CSX, DK Blocs, DE multi-party blocs flagged at parse time) are collapsed when the same poll already lists the component parties; bloc labels that are reported as single observables (IT AVS, PL UnitedRight) are preserved.
+
+`partyfacts_id_source` distinguishes confirmed-absences from uncovered cases:
+`partyfacts_external` / `whogov_minister_match` / `hand_curated` / `manual_review` / `gemini_*` for matches; `verified_not_in_pf` when a hand check confirms Party Facts has no record (e.g. ES Sumar, IT AVS); `gemini_no_match` for auto-build no-matches that warrant periodic re-verification.
 
 ## Validation
 
@@ -144,7 +154,6 @@ The presentation layer (chart and tables on the [live site](https://gfrt0.github
 
 - **`<ref>`-footnote URL extraction.** The current `source_url` column captures the poll's external link only when Wikipedia writes inline `[url Pollster]` markup (~69% of rows). Articles that cite via `<ref name="...">{{cite web|url=...}}</ref>` footnotes — notably ES, LV, IE (0%), and partially GR/NL/FI — lose their citations because the parser strips `<ref>` blocks as HTML tags before URL extraction. Adding a pre-strip pass that finds `<ref>` adjacent to the pollster cell and pulls URLs from the citation template would meaningfully bump coverage.
 - Long-tail wide-parties curation across the newly-added Central/Eastern European and Baltic countries — the lists are first-pass guesses that haven't been hand-validated.
-- Cross-dataset joins beyond Italy: `partyfacts_id` mapping files for the other 31 countries (`config/party_mappings/{CC}.yaml`).
 - Twelve fallback cycles still produce zero rows because the election article uses chart-only polling sections, transposed party-row layouts, or no polling section at all — see the per-cycle list at the end of `docs/ADDING_A_COUNTRY.md`. Most need either a different data source or a structural parser change.
 
 ## Citation

@@ -832,12 +832,11 @@ mappings:
   notes: ''
 - party_short: RB
   partyfacts_id: null
-  source: gemini_no_match
-  confidence: null
+  source: verified_not_in_pf
+  confidence: high
   is_coalition: false
-  notes: The abbreviation 'RB' does not clearly match any of the provided Party Facts
-    entries for the UK, and the polling data does not offer enough context to infer
-    a match.
+  notes: 'Wikipedia article: ''Restore Britain''. Verified absent from Party Facts (no matching entry in core or external datasets). PF may add an id when next refreshed.'
+
 - party_short: Referendum
   partyfacts_id: 825
   source: partyfacts_external

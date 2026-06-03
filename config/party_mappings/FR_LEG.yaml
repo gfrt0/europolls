@@ -857,11 +857,11 @@ mappings:
     candidate list, and the polling context falls within its active years.
 - party_short: DSV
   partyfacts_id: null
-  source: gemini_no_match
-  confidence: null
+  source: verified_not_in_pf
+  confidence: high
   is_coalition: false
-  notes: The abbreviation 'DSV' does not match any of the provided Party Facts entries
-    for France, and there is no clear indication of a dominant party or a coalition.
+  notes: 'Wikipedia article: ''Sovereigntist Right (French politics)''. Verified absent from Party Facts (no matching entry in core or external datasets). PF may add an id when next refreshed.'
+
 - party_short: DVC
   partyfacts_id: null
   source: gemini_no_match
@@ -2055,12 +2055,11 @@ mappings:
     aligns with the polling context dates.
 - party_short: LE
   partyfacts_id: null
-  source: gemini_no_match
-  confidence: null
+  source: verified_not_in_pf
+  confidence: high
   is_coalition: false
-  notes: The abbreviation 'LE' does not directly match any of the provided Party Facts
-    entries for France, and there is no clear indication of a common party name or
-    abbreviation that 'LE' would represent in the given context.
+  notes: 'Wikipedia article: ''The Ecologists (political party)''. Verified absent from Party Facts (no matching entry in core or external datasets). PF may add an id when next refreshed.'
+
 - party_short: Left
   partyfacts_id: null
   source: gemini_no_match
@@ -3456,11 +3455,11 @@ mappings:
     PS (ID 1478) is a direct match.
 - party_short: UDC
   partyfacts_id: null
-  source: gemini_no_match
-  confidence: null
+  source: verified_not_in_pf
+  confidence: high
   is_coalition: false
-  notes: No direct match for 'UDC' in the provided Party Facts entries for France,
-    and it does not appear to be a common abbreviation for any of the listed parties.
+  notes: 'Wikipedia article: ''Union of the Right and Centre''. Verified absent from Party Facts (no matching entry in core or external datasets). PF may add an id when next refreshed.'
+
 - party_short: UDI
   partyfacts_id: 3229
   source: gemini_high

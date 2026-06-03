@@ -391,12 +391,11 @@ mappings:
   notes: ''
 - party_short: M10
   partyfacts_id: null
-  source: gemini_no_match
-  confidence: null
+  source: verified_not_in_pf
+  confidence: high
   is_coalition: false
-  notes: The party abbreviation 'M10' does not directly match any of the provided
-    Party Facts entries for Romania, and the polling context does not offer enough
-    information to infer a match.
+  notes: 'Wikipedia article: ''The Right Alternative / M10''. Verified absent from Party Facts (no matching entry in core or external datasets). PF may add an id when next refreshed.'
+
 - party_short: MER
   partyfacts_id: 1511
   source: partyfacts_external
@@ -839,11 +838,11 @@ mappings:
     often associated with the party's founder, Victor Ponta.
 - party_short: POT
   partyfacts_id: null
-  source: gemini_no_match
-  confidence: null
+  source: verified_not_in_pf
+  confidence: high
   is_coalition: false
-  notes: There is no party in the provided Party Facts entries that matches the abbreviation
-    'POT'.
+  notes: 'Wikipedia article: ''Party of Young People''. Verified absent from Party Facts (no matching entry in core or external datasets). PF may add an id when next refreshed.'
+
 - party_short: PP
   partyfacts_id: 5449
   source: partyfacts_external
@@ -1215,12 +1214,11 @@ mappings:
     active party with 'AUR' in its short label, making it the most direct match.
 - party_short: SOS
   partyfacts_id: null
-  source: gemini_no_match
-  confidence: null
+  source: verified_not_in_pf
+  confidence: high
   is_coalition: false
-  notes: The party abbreviation 'SOS' does not appear in the provided list of candidate
-    Party Facts entries for Romania, and there is no obvious semantic match or historical
-    continuity with any of the listed parties.
+  notes: 'Wikipedia article: ''S.O.S. Romania''. Verified absent from Party Facts (no matching entry in core or external datasets). PF may add an id when next refreshed.'
+
 - party_short: UDM / UDMR / UNDR
   partyfacts_id: 1105
   source: partyfacts_external

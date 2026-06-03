@@ -508,12 +508,12 @@ mappings:
   notes: ''
 - party_short: M+C+L+KD
   partyfacts_id: null
-  source: gemini_no_match
-  confidence: null
-  is_coalition: false
-  notes: The label 'M+C+L+KD' represents a coalition of multiple parties, and there
-    is no single dominant party or a Party Facts ID for this specific coalition in
-    the provided list.
+  source: verified_not_in_pf
+  confidence: high
+  is_coalition: true
+  notes: Tidö coalition bloc (Moderates + Centre + Liberals + ChristianDemocrats)
+    used as a pre-election aggregate. No single dominant member; Party Facts has no
+    coalition-level id for this bloc.
 - party_short: Magdalena Andersson (S)
   partyfacts_id: 487
   source: gemini_high

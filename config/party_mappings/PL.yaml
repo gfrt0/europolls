@@ -138,11 +138,11 @@ mappings:
   notes: ''
 - party_short: BS
   partyfacts_id: null
-  source: gemini_no_match
-  confidence: null
+  source: verified_not_in_pf
+  confidence: high
   is_coalition: false
-  notes: The abbreviation 'BS' does not match any of the provided Party Facts entries
-    for Poland.
+  notes: 'Wikipedia article: ''Bezpartyjni Samorządowcy''. Verified absent from Party Facts (no matching entry in core or external datasets). PF may add an id when next refreshed.'
+
 - party_short: CD
   partyfacts_id: 468
   source: partyfacts_external
@@ -373,11 +373,11 @@ mappings:
   notes: ''
 - party_short: KKP
   partyfacts_id: null
-  source: gemini_no_match
-  confidence: null
+  source: verified_not_in_pf
+  confidence: high
   is_coalition: false
-  notes: There is no direct or semantically similar match for 'KKP' among the provided
-    Party Facts entries for Poland.
+  notes: 'Wikipedia article: ''Confederation of the Polish Crown''. Verified absent from Party Facts (no matching entry in core or external datasets). PF may add an id when next refreshed.'
+
 - party_short: KLD
   partyfacts_id: 153
   source: partyfacts_external
@@ -690,11 +690,11 @@ mappings:
     an actual political party.
 - party_short: Nonpartisan Local Gov. Activists
   partyfacts_id: null
-  source: gemini_no_match
-  confidence: null
+  source: verified_not_in_pf
+  confidence: high
   is_coalition: false
-  notes: There is no Party Facts entry that semantically matches 'Nonpartisan Local
-    Gov. Activists' among the provided candidates for Poland.
+  notes: 'Wikipedia article: ''Nonpartisan Local Government Activists''. Verified absent from Party Facts (no matching entry in core or external datasets). PF may add an id when next refreshed.'
+
 - party_short: NOWO
   partyfacts_id: 4630
   source: partyfacts_external
@@ -868,12 +868,11 @@ mappings:
   notes: ''
 - party_short: PJJ
   partyfacts_id: null
-  source: gemini_no_match
-  confidence: null
+  source: verified_not_in_pf
+  confidence: high
   is_coalition: false
-  notes: The abbreviation 'PJJ' does not match any of the provided Party Facts entries
-    for Poland, and the vote shares are too low to suggest a major party that might
-    have a different abbreviation.
+  notes: 'Wikipedia article: ''There is One Poland''. Verified absent from Party Facts (no matching entry in core or external datasets). PF may add an id when next refreshed.'
+
 - party_short: PJKM
   partyfacts_id: 913
   source: partyfacts_external
@@ -1341,11 +1340,11 @@ mappings:
   notes: ''
 - party_short: TD
   partyfacts_id: null
-  source: gemini_no_match
-  confidence: null
+  source: verified_not_in_pf
+  confidence: high
   is_coalition: false
-  notes: The abbreviation 'TD' does not match any of the provided Party Facts entries
-    for Poland.
+  notes: 'Wikipedia article: ''Third Way (Poland)''. Verified absent from Party Facts (no matching entry in core or external datasets). PF may add an id when next refreshed.'
+
 - party_short: The Left
   partyfacts_id: 3999
   source: partyfacts_external
@@ -1399,19 +1398,20 @@ mappings:
   notes: ''
 - party_short: United Right
   partyfacts_id: null
-  source: gemini_no_match
-  confidence: null
-  is_coalition: false
-  notes: The 'United Right' is a coalition in Poland, but there is no direct Party
-    Facts ID for this specific coalition in the provided list.
+  source: verified_not_in_pf
+  confidence: high
+  is_coalition: true
+  notes: Zjednoczona Prawica / United Right coalition (2014-2023) led by PiS. Party
+    Facts has no coalition-level id; not mapped to PiS (pf 1565) as proxy because
+    that would silently inflate PiS support on downstream joins. Components
+    PiS (1565) + Solidarna Polska (328) + Porozumienie.
 - party_short: UnitedRight
   partyfacts_id: null
-  source: gemini_no_match
-  confidence: null
-  is_coalition: false
-  notes: The provided Party Facts entries do not contain a party that directly matches
-    'UnitedRight', which is likely a coalition, and no dominant member can be identified
-    from the list.
+  source: verified_not_in_pf
+  confidence: high
+  is_coalition: true
+  notes: Same as 'United Right' — PiS-led coalition reported as single bloc; PF has
+    no coalition-level id, no proxy mapping (would overcount PiS).
 - party_short: UP
   partyfacts_id: 1104
   source: partyfacts_external

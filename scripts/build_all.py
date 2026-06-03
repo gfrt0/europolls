@@ -5,7 +5,9 @@ Steps (each idempotent):
              config/countries.yaml, saving to data/raw/{COUNTRY}/{CYCLE}/
   2. parse  — extract long-format poll-party rows to data/interim/
   3. pivot  — produce wide CSVs in data/processed/{COUNTRY}_polls_wide.csv
-  4. concat — concatenate all long CSVs into data/processed/polls_long.csv
+  4. concat — concatenate all long CSVs into data/processed/polls_long.csv,
+              joining config/party_mappings/{COUNTRY}.yaml to add
+              partyfacts_id + provenance columns
   5. harmonize — for every country with a config/party_mappings/{COUNTRY}.yaml,
                  produce a harmonized long CSV in data/interim/harmonized/
 
@@ -25,13 +27,12 @@ import pandas as pd
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-from europolls import fetch as fetch_mod    # noqa: E402
-from europolls import parse as parse_mod    # noqa: E402
-from europolls import pivot_wide            # noqa: E402
 from europolls import harmonize             # noqa: E402
 
 
 def step_fetch() -> None:
+    from europolls import fetch as fetch_mod
+    from europolls import parse as parse_mod
     for country, cfg in parse_mod.COUNTRY_CONFIG.items():
         cycles = list(cfg["cycles"].keys())
         try:
@@ -41,6 +42,7 @@ def step_fetch() -> None:
 
 
 def step_parse() -> None:
+    from europolls import parse as parse_mod
     for country in parse_mod.COUNTRY_CONFIG:
         try:
             parse_mod.run_country(country)
@@ -51,6 +53,8 @@ def step_parse() -> None:
 
 
 def step_pivot() -> None:
+    from europolls import parse as parse_mod
+    from europolls import pivot_wide
     for country in parse_mod.COUNTRY_CONFIG:
         try:
             pivot_wide.pivot_one(country)
@@ -60,7 +64,12 @@ def step_pivot() -> None:
 
 def step_concat_long() -> None:
     interim = ROOT / "data" / "interim"
-    files = sorted(p for p in interim.glob("*.csv") if p.is_file())
+    # Match {COUNTRY}_{CYCLE}.csv (country = 2-6 alphabetic) — avoids
+    # picking up audit/report CSVs that other scripts drop in interim/.
+    import re
+    pattern = re.compile(r"^[A-Z][A-Z_]{1,5}_.+\.csv$")
+    files = sorted(p for p in interim.glob("*.csv")
+                   if p.is_file() and pattern.match(p.name))
     if not files:
         print("  no interim CSVs to concatenate")
         return
@@ -73,10 +82,118 @@ def step_concat_long() -> None:
     long = _dedup_polls(long)
     dropped = raw_count - len(long)
 
+    long = _attach_partyfacts(long)
+
     out = ROOT / "data" / "processed" / "polls_long.csv"
     long.to_csv(out, index=False)
     print(f"  wrote {len(long):,} rows × {len(long.columns)} cols "
           f"(deduped {dropped:,} of {raw_count:,}) -> {out.relative_to(ROOT)}")
+
+
+def _attach_partyfacts(long: pd.DataFrame) -> pd.DataFrame:
+    """Join per-country party_mappings YAMLs onto the long frame.
+
+    Adds partyfacts_id, partyfacts_id_source, partyfacts_id_confidence,
+    partyfacts_id_notes, is_dropped_meta, dropped_meta_reason. ORs the YAML
+    is_coalition flag onto the parse-time value.
+
+    Two-stage drop semantics:
+      * `drop: true`  → row stays in polls_long but flagged
+                        ``is_dropped_meta = 1``.
+      * `hard_drop: true` (in addition to drop) → row removed entirely
+                        (currently: Resp.|Response rate).
+      * Special-case BG ``Total`` → removed only when the same poll has
+                        any non-meta party_short row alongside it (i.e.
+                        the components are present and Total is
+                        redundant).
+    """
+    mappings = harmonize.load_all_mappings()
+    rows = []
+    for country, m in mappings.items():
+        for short, entry in m.items():
+            rows.append({
+                "country": country,
+                "party_short": short,
+                "partyfacts_id": entry["partyfacts_id"],
+                "partyfacts_id_source": entry["source"],
+                "partyfacts_id_confidence": entry["confidence"],
+                "partyfacts_id_notes": entry["notes"] or None,
+                "_yaml_is_coalition": entry["is_coalition"],
+                "_yaml_drop": entry["drop"],
+                "_yaml_drop_reason": entry["drop_reason"] or None,
+            })
+    if not rows:
+        return long
+    pf = pd.DataFrame(rows)
+    merged = long.merge(pf, on=["country", "party_short"], how="left")
+
+    yaml_coal = merged["_yaml_is_coalition"].fillna(False).astype(bool)
+    parse_coal = merged["is_coalition"].fillna(False).astype(bool)
+    # Preserve the parse-time flag — used by _apply_hard_drops to decide
+    # which rows are aggregates reported alongside their components and
+    # therefore safe to collapse. The merged column ORs parse + YAML for
+    # downstream consumers (taxonomic 'is this a coalition?').
+    merged["_parse_is_coalition"] = parse_coal
+    merged["is_coalition"] = parse_coal | yaml_coal
+
+    is_drop = merged["_yaml_drop"].fillna(False).astype(bool)
+    merged["is_dropped_meta"] = is_drop.astype("Int64")
+    merged["dropped_meta_reason"] = merged["_yaml_drop_reason"]
+    # Drop columns that map to a real party_short while still keeping
+    # provenance columns empty (a dropped meta row has no PF id).
+    merged.loc[is_drop, ["partyfacts_id", "partyfacts_id_source",
+                        "partyfacts_id_confidence", "partyfacts_id_notes"]] = pd.NA
+
+    merged = merged.drop(columns=["_yaml_is_coalition", "_yaml_drop",
+                                  "_yaml_drop_reason"])
+
+    before = len(merged)
+    merged = _apply_hard_drops(merged)
+    after = len(merged)
+    if before != after:
+        print(f"  hard-dropped {before - after:,} meta rows")
+    return merged
+
+
+# Non-voting-intention drop_reasons: always remove from polls_long.csv.
+# (approval / disapproval / lead / response_rate / total are not party
+# vote-share signal.)
+HARD_DROP_REASONS = {"approval", "lead", "response_rate", "total"}
+
+
+def _apply_hard_drops(merged: pd.DataFrame) -> pd.DataFrame:
+    """Prune polls_long to single-party voting-intention rows.
+
+    Three rules:
+      1. Drop rows whose YAML drop_reason is in HARD_DROP_REASONS
+         (approval / lead / response_rate / total).
+      2. Drop is_coalition=True rows when the same poll already has at
+         least one single-party voting-intention row (non-coalition,
+         not flagged is_dropped_meta). Polls with only coalition rows
+         (e.g. DK Red/Blue bloc-only polls) are kept.
+    """
+    reason = merged["dropped_meta_reason"]
+    hard_reason = reason.isin(HARD_DROP_REASONS)
+
+    poll_key = ["country", "polldate_mid", "pollster", "wiki_revid"]
+    is_drop = merged["is_dropped_meta"].fillna(0).astype(bool)
+    # Collapse uses parse-time flag only — bloc labels (AVS, UnitedRight)
+    # are taxonomically coalitions but reported as single observables in
+    # the poll table, so YAML-only is_coalition must not trigger collapse.
+    is_coal_for_collapse = merged["_parse_is_coalition"].fillna(False).astype(bool)
+    is_coal_any = merged["is_coalition"].fillna(False).astype(bool)
+
+    single_party = (~is_coal_any) & (~is_drop) & (~hard_reason) & merged["party_short"].notna()
+    polls_with_singles = merged.loc[single_party, poll_key].drop_duplicates()
+    polls_with_singles["_has_singles"] = True
+
+    keyed = merged.merge(polls_with_singles, on=poll_key, how="left")
+    has_singles = keyed["_has_singles"].fillna(False).astype(bool).to_numpy()
+    coal_redundant = is_coal_for_collapse.to_numpy(dtype=bool) & has_singles
+
+    drop_mask = hard_reason.to_numpy(dtype=bool) | coal_redundant
+    out = merged.loc[~drop_mask].reset_index(drop=True)
+    return out.drop(columns=["_parse_is_coalition"])
 
 
 def _dedup_polls(long: pd.DataFrame) -> pd.DataFrame:

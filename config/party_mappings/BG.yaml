@@ -574,13 +574,13 @@ mappings:
     alliance in Bulgaria, with GERB being the dominant party, and SDS (Union of Democratic
     Forces) being a junior partner. The provided Party Facts ID for GERB is 760.
 - party_short: GERB—SDS
-  partyfacts_id: null
-  source: gemini_no_match
-  confidence: null
+  partyfacts_id: 760
+  source: manual_review
+  confidence: high
   is_coalition: false
-  notes: The label 'GERB—SDS' represents a coalition of two parties, GERB and SDS,
-    which are both present in the Party Facts list, but there is no single Party Facts
-    ID for this specific coalition.
+  notes: 'GERB-SDS electoral coalition (recognized in PF as a single entity, id 760
+    — confirmed via poppa name_short ''GERB-SDS''). Reported as a single bloc in
+    polls.'
 - party_short: GN
   partyfacts_id: 2024
   source: partyfacts_external
@@ -695,13 +695,12 @@ mappings:
     se! Balgariya' (Stand up! Bulgaria), which is represented by Party Facts ID 8991
     'IS' (Izpravi se!).
 - party_short: ISMV
-  partyfacts_id: null
-  source: gemini_no_match
-  confidence: null
+  partyfacts_id: 8991
+  source: manual_review
+  confidence: high
   is_coalition: false
-  notes: The abbreviation 'ISMV' does not closely match any of the provided Party
-    Facts entries for Bulgaria, and the polling data does not offer further clues
-    for a match.
+  notes: Izpravi se! Mutri van! ('Stand Up! Mafia Out!'), PF id 8991 — confirmed via
+    PF reverse lookup against ess/prtc name_english.
 - party_short: ITN
   partyfacts_id: 8992
   source: partyfacts_external
@@ -1218,10 +1217,11 @@ mappings:
   notes: ''
 - party_short: SB
   partyfacts_id: null
-  source: gemini_no_match
-  confidence: null
+  source: verified_not_in_pf
+  confidence: high
   is_coalition: false
-  notes: No Party Facts entry for Bulgaria matches the abbreviation 'SB'.
+  notes: 'Wikipedia article: ''Blue Bulgaria''. Verified absent from Party Facts (no matching entry in core or external datasets). PF may add an id when next refreshed.'
+
 - party_short: SBG
   partyfacts_id: null
   source: gemini_no_match

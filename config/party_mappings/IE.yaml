@@ -425,11 +425,11 @@ mappings:
   notes: ''
 - party_short: II
   partyfacts_id: null
-  source: gemini_no_match
-  confidence: null
+  source: verified_not_in_pf
+  confidence: high
   is_coalition: false
-  notes: The abbreviation 'II' does not match any of the provided Party Facts entries
-    for Ireland, and there is no obvious semantic connection to any existing party.
+  notes: 'Wikipedia article: ''Independent Ireland''. Verified absent from Party Facts (no matching entry in core or external datasets). PF may add an id when next refreshed.'
+
 - party_short: IND-Cdem
   partyfacts_id: 2735
   source: partyfacts_external

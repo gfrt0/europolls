@@ -817,13 +817,12 @@ mappings:
   is_coalition: false
   notes: ''
 - party_short: OpenVld
-  partyfacts_id: null
-  source: gemini_no_match
-  confidence: null
+  partyfacts_id: 49
+  source: manual_review
+  confidence: high
   is_coalition: false
-  notes: The party 'OpenVld' is not present in the provided Party Facts entries, and
-    there is no clear predecessor or dominant member of a coalition that matches this
-    abbreviation.
+  notes: Open Vlaamse Liberalen en Democraten (Open Flemish Liberals and Democrats),
+    PF id 49 — case-only alias of openVLD (which the same YAML already maps to 49).
 - party_short: openVLD
   partyfacts_id: 49
   source: partyfacts_external

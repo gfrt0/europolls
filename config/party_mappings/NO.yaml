@@ -274,12 +274,11 @@ mappings:
   notes: ''
 - party_short: INP
   partyfacts_id: null
-  source: gemini_no_match
-  confidence: null
+  source: verified_not_in_pf
+  confidence: high
   is_coalition: false
-  notes: The abbreviation 'INP' does not appear in the provided list of candidate
-    Party Facts entries for Norway, and there are no obvious close matches or continuity
-    links.
+  notes: 'Wikipedia article: ''Industry and Business Party''. Verified absent from Party Facts (no matching entry in core or external datasets). PF may add an id when next refreshed.'
+
 - party_short: KFP
   partyfacts_id: 705
   source: partyfacts_external

@@ -769,13 +769,13 @@ mappings:
   is_coalition: false
   notes: ''
 - party_short: P
-  partyfacts_id: null
-  source: gemini_no_match
-  confidence: null
+  partyfacts_id: 7338
+  source: manual_review
+  confidence: high
   is_coalition: false
-  notes: There is no party in the provided list with the short label 'P' that aligns
-    with the polling data, and no other party has 'P' as a common abbreviation or
-    initial.
+  notes: 'Stram Kurs (Hard Line), Rasmus Paludan''s party 2017- (single-letter ballot
+    code ''P''). PF id 7338 — confirmed via Wikipedia wikilink ([[Hard Line (political
+    party)|P]]) cross-referenced to PF core entry.'
 - party_short: Pape PoulsenC
   partyfacts_id: 536
   source: gemini_high

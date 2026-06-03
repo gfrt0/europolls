@@ -396,13 +396,12 @@ mappings:
   is_coalition: false
   notes: ''
 - party_short: L/TDA
-  partyfacts_id: null
-  source: gemini_no_match
-  confidence: null
+  partyfacts_id: 3225
+  source: manual_review
+  confidence: high
   is_coalition: false
-  notes: The abbreviation 'L/TDA' does not directly match any of the provided Party
-    Facts entries for Portugal, and there is no clear indication of a dominant party
-    within a coalition from the given options.
+  notes: LIVRE / Tempo de Avançar electoral list (LIVRE-led) — PF id 3225 (same as
+    standalone 'LIVRE' already mapped in this file).
 - party_short: LIVRE
   partyfacts_id: 3225
   source: partyfacts_external

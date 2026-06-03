@@ -65,11 +65,11 @@ mappings:
   notes: ''
 - party_short: BIER
   partyfacts_id: null
-  source: gemini_no_match
-  confidence: null
+  source: verified_not_in_pf
+  confidence: high
   is_coalition: false
-  notes: The party 'BIER' (Bierpartei) is a relatively new party in Austria and is
-    not present in the provided Party Facts entries.
+  notes: 'Wikipedia article: ''The Beer Party (Austria)''. Verified absent from Party Facts (no matching entry in core or external datasets). PF may add an id when next refreshed.'
+
 - party_short: Bierlein
   partyfacts_id: null
   source: gemini_no_match

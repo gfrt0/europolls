@@ -587,12 +587,11 @@ mappings:
   notes: ''
 - party_short: LEV 21
   partyfacts_id: null
-  source: gemini_no_match
-  confidence: null
+  source: verified_not_in_pf
+  confidence: high
   is_coalition: false
-  notes: The party 'LEV 21' does not appear in the provided Party Facts entries for
-    Czechia, and there is no clear semantic match or a party with a similar name or
-    abbreviation.
+  notes: 'Wikipedia article: ''National Socialists – 21st Century Left''. Verified absent from Party Facts (no matching entry in core or external datasets). PF may add an id when next refreshed.'
+
 - party_short: LEV21
   partyfacts_id: 2657
   source: partyfacts_external
@@ -925,12 +924,12 @@ mappings:
   is_coalition: false
   notes: ''
 - party_short: PSH
-  partyfacts_id: null
-  source: gemini_no_match
-  confidence: null
+  partyfacts_id: 9002
+  source: manual_review
+  confidence: high
   is_coalition: false
-  notes: No Party Facts entry for CZ has 'PSH' as a short label or a similar name,
-    and the polling context does not provide enough information to infer a match.
+  notes: Přísaha (Oath), Robert Šlachta's party 2021-. PF id 9002 — confirmed via
+    Wikipedia wikilink ([[Přísaha|PSH]]) → PF core entry.
 - party_short: Přísaha
   partyfacts_id: 9002
   source: gemini_high
@@ -971,12 +970,13 @@ mappings:
   is_coalition: false
   notes: ''
 - party_short: S
-  partyfacts_id: null
-  source: gemini_no_match
-  confidence: null
+  partyfacts_id: 254
+  source: manual_review
+  confidence: high
   is_coalition: false
-  notes: The provided Party Facts entries do not contain a party with the short label
-    'S' that aligns with the polling data.
+  notes: 'Strana svobodných občanů (Party of Free Citizens, Svobodní), 2009-. PF id
+    254 — confirmed via Wikipedia wikilink ([[Svobodní|S]]) → PF core ''Party of
+    Free Citizens''.'
 - party_short: S - JB
   partyfacts_id: 293
   source: partyfacts_external

@@ -20,6 +20,8 @@ mappings:
   Lega:       { partyfacts_id: 1221, notes: "Lega Nord/Lega per Salvini Premier — same party as LN" }
   LN:         { partyfacts_id: 1221, notes: "Lega Nord — same partyfacts_id as Lega" }
   "+E":       { partyfacts_id: 6155, notes: "More Europe, 2017-" }
+  "+Eu":      { partyfacts_id: 6155, source: manual_review, notes: "alias for +E (More Europe), used in 2018 polling tables" }
+  "I":        { partyfacts_id: 7671, source: manual_review, notes: "Insieme (Together) 2017-2018 — PSI+Verdi+Area Civica list, PF id 7671" }
   IV:         { partyfacts_id: 8641, notes: "Italia Viva, 2019-" }
   A:          { partyfacts_id: 9082, notes: "Azione, 2019-" }
   UdC:        { partyfacts_id: 1758, notes: "Union of Christian and Centre Democrats (UDC, 2002-)" }
@@ -55,15 +57,15 @@ mappings:
   IPdL_old:   { partyfacts_id: 365,  notes: "alias of PdL" }
   "SEL/SI":   { partyfacts_id: 7031, notes: "SEL→SI transition pair, keyed to SEL" }
   "PdL/FI":   { partyfacts_id: 365,  notes: "PdL→FI transition pair, keyed to PdL" }
-  "C!":       { partyfacts_id: null, notes: "Coraggio Italia, 2021 — not yet in Party Facts" }
+  "C!":       { partyfacts_id: null, source: verified_not_in_pf, notes: "Coraggio Italia, 2021 — Party Facts only has technical 'alliance'/'1-perc' placeholder ids" }
   IC:         { partyfacts_id: null, notes: "Impegno Civico, 2022 — Di Maio splinter — not yet in Party Facts" }
-  MDP:        { partyfacts_id: null, notes: "Articolo 1-MDP precursor (2017); Article 1 took over — could map to 8361" }
+  MDP:        { partyfacts_id: 8361, source: manual_review, notes: "Articolo Uno / MDP, 2017- (PF wikipedia source links MDP → Articolo Uno id 8361)" }
   "A–IV":     { partyfacts_id: 9082, notes: "Azione+IV 2022 list, keyed to Action" }
   "+E–A":     { partyfacts_id: 6155, notes: "+Europa+Azione 2022 list, keyed to +E" }
   "CP/AP":    { partyfacts_id: 7670, notes: "Popular Civic / Alternativa Popolare" }
   CP:         { partyfacts_id: 7670, notes: "Popular Civic List, 2017-2019" }
-  NcI:        { partyfacts_id: null, notes: "Noi con l'Italia / Us with Italy 2017 — not yet linked" }
-  AVS:        { partyfacts_id: null, notes: "Greens-Left Alliance, 2022 — new coalition (EV+SI), not yet linked" }
+  NcI:        { partyfacts_id: 9141, source: manual_review, notes: "Noi con l'Italia, 2017-2023 (PF core id 9141)" }
+  AVS:        { partyfacts_id: null, source: verified_not_in_pf, notes: "Alleanza Verdi-Sinistra, 2022- (EV+SI electoral alliance reported as single bloc; PF only has technical 'alliance' placeholder, no real id)" }
 
   # Full-name aliases (Wikipedia inconsistently uses full English names)
   "Five Star Movement":   { partyfacts_id: 2046 }
@@ -79,8 +81,8 @@ mappings:
   CD:                     { partyfacts_id: 2278, notes: "Democratic Centre, 2013-" }
   SUE:                    { partyfacts_id: null }
   Libertà:                { partyfacts_id: null }
-  LD:                     { partyfacts_id: null, notes: "ambiguous" }
-  SA:                     { partyfacts_id: null }
+  LD:                     { partyfacts_id: 8188, source: manual_review, notes: "La Destra (Storace, 2007-2017), PF id 8188 — matches IT 2007-2008 polling rows" }
+  SA:                     { partyfacts_id: null, source: verified_not_in_pf, notes: "Sinistra Arcobaleno 2008 electoral alliance (PRC+PdCI+Verdi+SD); PF only has SI 1212 which is post-2009 successor — not the same entity" }
   PLD:                    { partyfacts_id: null }
   VTR:                    { partyfacts_id: null }
   Vita:                   { partyfacts_id: null }
@@ -100,10 +102,5 @@ mappings:
   Unione:                    { partyfacts_id: 1372, coalition: true, notes: "L'Unione, 2004-2008" }
   Coalitions:                { partyfacts_id: null, coalition: true, notes: "generic coalition aggregator column" }
 
-  # Meta / sentinel columns (definitely not parties)
-  Others:        { drop: true, notes: "long-tail aggregate" }
-  "Oth.":        { drop: true }
-  "Others/Abroad": { drop: true }
-  Lead:          { drop: true }
-  Approve:       { drop: true }
-  "Don't know":  { drop: true }
+  # Meta / sentinel columns: covered by config/party_mappings/_meta.yaml
+  # (Others / Oth. / Others/Abroad / Lead / Approve / Don't know / etc.)
