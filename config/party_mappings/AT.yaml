@@ -905,10 +905,12 @@ mappings:
   drop_reason: approval
 - party_short: ÖVP–Grüne
   partyfacts_id: null
-  source: gemini_no_match
+  source: null
   confidence: null
   is_coalition: false
-  notes: The label 'ÖVP–Grüne' indicates a coalition between the Austrian People's Party (ÖVP) and The Greens (Grüne), which is not a single party in the Party Facts database.
+  notes: ÖVP+Greens coalition-preference column.
+  drop: true
+  drop_reason: approval
 - party_short: ÖVP–Grüne–NEOS
   partyfacts_id: null
   source: null
@@ -919,10 +921,12 @@ mappings:
   drop_reason: approval
 - party_short: ÖVP–NEOS
   partyfacts_id: null
-  source: gemini_no_match
+  source: null
   confidence: null
   is_coalition: false
-  notes: The label 'ÖVP–NEOS' indicates a coalition of two distinct parties, ÖVP and NEOS, and there is no single Party Facts ID for this specific coalition.
+  notes: ÖVP+NEOS coalition-preference column.
+  drop: true
+  drop_reason: approval
 - party_short: ÖVP–SPÖ
   partyfacts_id: null
   source: null

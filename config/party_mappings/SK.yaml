@@ -93,11 +93,12 @@ mappings:
   notes: ''
 - party_short: Bihariová
   partyfacts_id: null
-  source: gemini_no_match
+  source: null
   confidence: null
   is_coalition: false
-  notes: The party label 'Bihariová' refers to a candidate, not a party, and there
-    is no clear party affiliation in the provided Party Facts entries.
+  notes: '''Bihariová'' — politician/leader-rating column. Not party vote intention.'
+  drop: true
+  drop_reason: individual_candidate
 - party_short: CDM
   partyfacts_id: 63
   source: partyfacts_external
@@ -127,9 +128,7 @@ mappings:
   source: verified_not_in_pf
   confidence: high
   is_coalition: false
-  notes: Demokrati (2023-, splinter from OĽaNO led by Eduard Heger). Not yet in Party
-    Facts (PF SK 'Democratic Party' id 983 is the 1990-1998 party, a different
-    organization).
+  notes: Demokrati (2023-, splinter from OĽaNO led by Eduard Heger). Not yet in Party Facts (PF SK 'Democratic Party' id 983 is the 1990-1998 party, a different organization).
 - party_short: DEÚS
   partyfacts_id: 6629
   source: partyfacts_external
@@ -213,38 +212,33 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Smer – Sociálna Demokracia — Robert Fico is the leader of Smer – Sociálna
-    Demokracia, and the poll share aligns with the party's performance.
+  notes: Smer – Sociálna Demokracia — Robert Fico is the leader of Smer – Sociálna Demokracia, and the poll share aligns with the party's performance.
 - party_short: For the People
   partyfacts_id: 8394
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Za ľudí — The English translation of 'Za ľudí' is 'For the People', and the
-    party's active years (2020-2020) align with the polling data (2019-2019), indicating
-    a strong match for a newly formed party.
+  notes: Za ľudí — The English translation of 'Za ľudí' is 'For the People', and the party's active years (2020-2020) align with the polling data (2019-2019), indicating a strong match for a newly formed party.
 - party_short: Forró
   partyfacts_id: null
-  source: gemini_no_match
+  source: null
   confidence: null
   is_coalition: false
-  notes: The party short label 'Forró' does not semantically match any of the provided
-    Party Facts entries for Slovakia.
+  notes: '''Forró'' — politician/leader-rating column. Not party vote intention.'
+  drop: true
+  drop_reason: individual_candidate
 - party_short: Gov.
   partyfacts_id: null
   source: verified_not_in_pf
   confidence: high
   is_coalition: true
-  notes: Government-coalition aggregate column (incumbent cabinet, not a single party).
-    No single PF id; flagged as coalition so downstream consumers can filter.
+  notes: Government-coalition aggregate column (incumbent cabinet, not a single party). No single PF id; flagged as coalition so downstream consumers can filter.
 - party_short: Hlas
   partyfacts_id: 9071
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Hlas - sociálna demokracia — The party short label 'Hlas' directly matches
-    'HLAS-SD' in the candidate Party Facts entries, which is a very strong indicator
-    of a match.
+  notes: Hlas - sociálna demokracia — The party short label 'Hlas' directly matches 'HLAS-SD' in the candidate Party Facts entries, which is a very strong indicator of a match.
 - party_short: HLAS-SD
   partyfacts_id: 9071
   source: partyfacts_external
@@ -268,17 +262,13 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Maďarskej koalície – Magyar koalíció — The 'Hungarian Alliance' is a direct
-    translation and likely a successor or continuous entity of the 'Hungarian Coalition'
-    (Maďarskej koalície – Magyar koalíció), which has a matching Party Facts ID.
+  notes: Maďarskej koalície – Magyar koalíció — The 'Hungarian Alliance' is a direct translation and likely a successor or continuous entity of the 'Hungarian Coalition' (Maďarskej koalície – Magyar koalíció), which has a matching Party Facts ID.
 - party_short: HungarianAlliance
   partyfacts_id: 349
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Maďarskej koalície – Magyar koalíció — The party short label 'HungarianAlliance'
-    directly translates to 'Hungarian Coalition', which is a perfect match for Party
-    Facts ID 349, 'Maďarskej koalície – Magyar koalíció'.
+  notes: Maďarskej koalície – Magyar koalíció — The party short label 'HungarianAlliance' directly translates to 'Hungarian Coalition', which is a perfect match for Party Facts ID 349, 'Maďarskej koalície – Magyar koalíció'.
 - party_short: HZD
   partyfacts_id: 2133
   source: partyfacts_external
@@ -350,40 +340,33 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Sme Rodina – Boris Kollár — The party 'Sme Rodina – Boris Kollár' directly
-    includes 'Kollár' in its name, making it a direct and strong match.
+  notes: Sme Rodina – Boris Kollár — The party 'Sme Rodina – Boris Kollár' directly includes 'Kollár' in its name, making it a direct and strong match.
 - party_short: KorčokParty
   partyfacts_id: null
-  source: gemini_no_match
+  source: null
   confidence: null
   is_coalition: false
-  notes: The party 'KorčokParty' is not found in the provided Party Facts entries
-    for Slovakia, and likely refers to a candidate-specific label rather than an established
-    party.
+  notes: Ivan Korčok (SK presidential candidate 2024). Not party vote intention.
+  drop: true
+  drop_reason: individual_candidate
 - party_short: Kotleba
   partyfacts_id: 656
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Kotleba – ıudová strana Naše Slovensko — The party short label 'Kotleba'
-    directly matches the beginning of the Party Facts entry 'Kotleba – ıudová strana
-    Naše Slovensko'.
+  notes: Kotleba – ıudová strana Naše Slovensko — The party short label 'Kotleba' directly matches the beginning of the Party Facts entry 'Kotleba – ıudová strana Naše Slovensko'.
 - party_short: Kotleba–ĽSNS
   partyfacts_id: 656
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Kotleba – Ľudová strana Naše Slovensko — The party short label 'Kotleba–ĽSNS'
-    directly matches the 'short' label 'ĽSNS' and the 'name' 'Kotleba – Ľudová strana
-    Naše Slovensko' for Party Facts ID 656.
+  notes: Kotleba – Ľudová strana Naše Slovensko — The party short label 'Kotleba–ĽSNS' directly matches the 'short' label 'ĽSNS' and the 'name' 'Kotleba – Ľudová strana Naše Slovensko' for Party Facts ID 656.
 - party_short: Kotlebovci–ĽSNS
   partyfacts_id: 656
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Kotleba – Ĵudová strana Naše Slovensko — The party short label 'Kotlebovci–ĴSNS'
-    directly matches the 'short' and 'name' fields of Party Facts ID 656, which is
-    'Kotleba – Ĵudová strana Naše Slovensko'.
+  notes: Kotleba – Ĵudová strana Naše Slovensko — The party short label 'Kotlebovci–ĴSNS' directly matches the 'short' and 'name' fields of Party Facts ID 656, which is 'Kotleba – Ĵudová strana Naše Slovensko'.
 - party_short: Krestanska unia
   partyfacts_id: 7360
   source: partyfacts_external
@@ -431,9 +414,7 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Kresťanská únia — The abbreviation 'KÚ' directly matches the short label
-    'KU' for 'Kresťanská únia' (Christian Union) in the candidate list, and the polling
-    data is recent.
+  notes: Kresťanská únia — The abbreviation 'KÚ' directly matches the short label 'KU' for 'Kresťanská únia' (Christian Union) in the candidate list, and the polling data is recent.
 - party_short: L'S-HZDS
   partyfacts_id: 560
   source: partyfacts_external
@@ -517,24 +498,21 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Most-Híd — The party short label 'M-H' is a direct match to the Party Facts
-    entry for 'Most-Híd' (id=258), which also aligns with the polling dates.
+  notes: Most-Híd — The party short label 'M-H' is a direct match to the Party Facts entry for 'Most-Híd' (id=258), which also aligns with the polling dates.
 - party_short: Majerský
   partyfacts_id: null
-  source: gemini_no_match
+  source: null
   confidence: null
   is_coalition: false
-  notes: The party short label 'Majerský' appears to be a candidate's name and does
-    not directly match any of the provided Party Facts entries for Slovakia, nor does
-    it clearly correspond to a known party abbreviation.
+  notes: '''Majerský'' — politician/leader-rating column. Not party vote intention.'
+  drop: true
+  drop_reason: individual_candidate
 - party_short: Matovič
   partyfacts_id: 2130
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Obycajní ludia a nezávislé osobnosti — Igor Matovič is the leader of the
-    OĽaNO party, and the short label 'Matovič' is commonly used to refer to his party
-    in Slovak politics.
+  notes: Obycajní ludia a nezávislé osobnosti — Igor Matovič is the leader of the OĽaNO party, and the short label 'Matovič' is commonly used to refer to his party in Slovak politics.
 - party_short: MDS
   partyfacts_id: 560
   source: partyfacts_external
@@ -547,7 +525,6 @@ mappings:
   confidence: high
   is_coalition: false
   notes: 'Wikipedia article: ''Hungarian Forum''. Verified absent from Party Facts (no matching entry in core or external datasets). PF may add an id when next refreshed.'
-
 - party_short: MF-FS
   partyfacts_id: 2918
   source: partyfacts_external
@@ -601,9 +578,7 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: true
-  notes: Maďarskej koalície – Magyar koalíció — MKÖ–MKS is a Hungarian coalition,
-    and Party Facts ID 349, 'Maďarskej koalície – Magyar koalíció', directly translates
-    to 'Hungarian Coalition', making it a strong semantic match.
+  notes: Maďarskej koalície – Magyar koalíció — MKÖ–MKS is a Hungarian coalition, and Party Facts ID 349, 'Maďarskej koalície – Magyar koalíció', directly translates to 'Hungarian Coalition', making it a strong semantic match.
 - party_short: Modrí
   partyfacts_id: null
   source: verified_not_in_pf
@@ -663,8 +638,7 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Most-Híd — The party short label 'Most–Híd' directly matches the Party Facts
-    entry with short label 'MH' and name 'Most-Híd'.
+  notes: Most-Híd — The party short label 'Most–Híd' directly matches the Party Facts entry with short label 'MH' and name 'Most-Híd'.
 - party_short: MS
   partyfacts_id: 3221
   source: partyfacts_external
@@ -784,11 +758,7 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: ostatne strany — The polling context shows 'Opp.' consistently receiving
-    very high vote shares (99%, 93%, 67%, 77%, 81%), which strongly suggests it represents
-    'Other' or 'Opposition' as a collective category rather than a single party. The
-    Party Facts entry for 'Other' (id=1855) is the most appropriate match for this
-    type of aggregate polling data.
+  notes: ostatne strany — The polling context shows 'Opp.' consistently receiving very high vote shares (99%, 93%, 67%, 77%, 81%), which strongly suggests it represents 'Other' or 'Opposition' as a collective category rather than a single party. The Party Facts entry for 'Other' (id=1855) is the most appropriate match for this type of aggregate polling data.
 - party_short: Other
   partyfacts_id: 1855
   source: partyfacts_external
@@ -824,10 +794,7 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: true
-  notes: Obycajni ludia a nezavisle osobnosti — The party short label 'OķaNO andFriends'
-    directly references 'OķaNO', which matches Party Facts ID 2130, and the 'andFriends'
-    indicates a coalition, making it a high confidence match for the dominant party
-    in a coalition.
+  notes: Obycajni ludia a nezavisle osobnosti — The party short label 'OķaNO andFriends' directly references 'OķaNO', which matches Party Facts ID 2130, and the 'andFriends' indicates a coalition, making it a high confidence match for the dominant party in a coalition.
 - party_short: PaS
   partyfacts_id: 3208
   source: partyfacts_external
@@ -851,8 +818,7 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Hlas - sociálna demokracia — The party 'Hlas - sociálna demokracia' is led
-    by Peter Pellegrini, making 'Pellegrini' a direct reference to this party.
+  notes: Hlas - sociálna demokracia — The party 'Hlas - sociálna demokracia' is led by Peter Pellegrini, making 'Pellegrini' a direct reference to this party.
 - party_short: PRAVO
   partyfacts_id: 3208
   source: partyfacts_external
@@ -888,8 +854,7 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Za ľudí — Veronika Remišová is the leader of the 'Za ľudí' party, and the
-    polling context suggests this refers to her party.
+  notes: Za ľudí — Veronika Remišová is the leader of the 'Za ľudí' party, and the polling context suggests this refers to her party.
 - party_short: REP
   partyfacts_id: 9072
   source: partyfacts_external
@@ -901,9 +866,7 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Republika — The party short label 'Republic' directly matches the English
-    name 'Republic' and the short label 'REP' of Party Facts ID 9072, 'Republika',
-    which is a recent party (2023-2023).
+  notes: Republika — The party short label 'Republic' directly matches the English name 'Republic' and the short label 'REP' of Party Facts ID 9072, 'Republika', which is a recent party (2023-2023).
 - party_short: Republika
   partyfacts_id: 9072
   source: partyfacts_external
@@ -951,9 +914,7 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Sloboda a solidarita — The abbreviation 'SASKA' is a common colloquial or
-    slightly misspelled form of 'SaS', which stands for 'Sloboda a solidarita' (Freedom
-    and Solidarity), and the polling data aligns with this party's performance.
+  notes: Sloboda a solidarita — The abbreviation 'SASKA' is a common colloquial or slightly misspelled form of 'SaS', which stands for 'Sloboda a solidarita' (Freedom and Solidarity), and the polling data aligns with this party's performance.
 - party_short: SD
   partyfacts_id: 2131
   source: partyfacts_external
@@ -1146,7 +1107,6 @@ mappings:
   confidence: high
   is_coalition: false
   notes: 'Wikipedia article: ''Slovakia (political party)''. Verified absent from Party Facts (no matching entry in core or external datasets). PF may add an id when next refreshed.'
-
 - party_short: Slovenska narodna strana
   partyfacts_id: 730
   source: partyfacts_external
@@ -1224,8 +1184,7 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Smer – Sociálna Demokracia — The party short label 'Smer–SD' is an exact
-    match for the Party Facts entry with ID 311, 'Smer – SD'.
+  notes: Smer – Sociálna Demokracia — The party short label 'Smer–SD' is an exact match for the Party Facts entry with ID 311, 'Smer – SD'.
 - party_short: SMK
   partyfacts_id: 349
   source: partyfacts_external
@@ -1261,9 +1220,7 @@ mappings:
   source: manual_review
   confidence: high
   is_coalition: false
-  notes: 'Strana maďarskej koalície / Magyar Koalíció Pártja (Party of the Hungarian
-    Coalition / Hungarian Community), PF id 349 — confirmed via PF reverse lookup
-    (euandi name_short ''SMKMKP'' matches).'
+  notes: Strana maďarskej koalície / Magyar Koalíció Pártja (Party of the Hungarian Coalition / Hungarian Community), PF id 349 — confirmed via PF reverse lookup (euandi name_short 'SMKMKP' matches).
 - party_short: SNP
   partyfacts_id: 730
   source: partyfacts_external
@@ -1347,9 +1304,7 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Sloboda a solidarita — Richard Sulík is the leader of the 'Sloboda a solidarita'
-    (SaS) party, and it is common for parties to be referred to by their leader's
-    name in polling contexts.
+  notes: Sloboda a solidarita — Richard Sulík is the leader of the 'Sloboda a solidarita' (SaS) party, and it is common for parties to be referred to by their leader's name in polling contexts.
 - party_short: SV
   partyfacts_id: 205
   source: partyfacts_external
@@ -1403,9 +1358,7 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Republika — Milan Uhrík is the leader of the 'Republika' party, which was
-    founded in 2021 and is a successor to 'Kotleba – Ľudová strana Naše Slovensko'
-    (ĽSNS).
+  notes: Republika — Milan Uhrík is the leader of the 'Republika' party, which was founded in 2021 and is a successor to 'Kotleba – Ľudová strana Naše Slovensko' (ĽSNS).
 - party_short: V
   partyfacts_id: 8643
   source: partyfacts_external
@@ -1435,8 +1388,7 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Sme Rodina – Boris Kollár — The English translation of Party Facts ID 4873
-    is 'We are family', which is a direct match to the provided party-short label.
+  notes: Sme Rodina – Boris Kollár — The English translation of Party Facts ID 4873 is 'We are family', which is a direct match to the provided party-short label.
 - party_short: Z-NS
   partyfacts_id: 9612
   source: partyfacts_external
@@ -1460,8 +1412,7 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Za ľudí — The party short label 'Za ľudí' directly matches the Party Facts
-    entry with ID 8394, name 'Za ľudí', and the correct country and time frame.
+  notes: Za ľudí — The party short label 'Za ľudí' directly matches the Party Facts entry with ID 8394, name 'Za ľudí', and the correct country and time frame.
 - party_short: ZAL
   partyfacts_id: 8394
   source: partyfacts_external
@@ -1509,7 +1460,7 @@ mappings:
   source: verified_not_in_pf
   confidence: high
   is_coalition: false
-  notes: 'Magyar Szövetség / Maďarské spojenie (Hungarian Alliance, SK successor to SMK), 2021-. Not in Party Facts (SMK-MKP 349 is the dissolved predecessor).'
+  notes: Magyar Szövetség / Maďarské spojenie (Hungarian Alliance, SK successor to SMK), 2021-. Not in Party Facts (SMK-MKP 349 is the dissolved predecessor).
 - party_short: ĽS-HZDS
   partyfacts_id: 560
   source: partyfacts_external

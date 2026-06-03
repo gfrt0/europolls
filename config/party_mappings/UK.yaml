@@ -69,10 +69,10 @@ mappings:
   notes: ''
 - party_short: AWP
   partyfacts_id: null
-  source: gemini_no_match
-  confidence: null
+  source: verified_not_in_pf
+  confidence: high
   is_coalition: false
-  notes: The abbreviation 'AWP' does not match any of the provided Party Facts entries for the UK, and the 2019 general election vote share of 1.1% suggests it is a distinct, albeit minor, party not listed.
+  notes: UK small party. Not in Party Facts.
 - party_short: BGPV
   partyfacts_id: null
   source: null
@@ -403,10 +403,10 @@ mappings:
   notes: Green Party of England and Wales — The abbreviation 'Grn' strongly suggests 'Green' and the Green Party of England and Wales (GPEW) is the most fitting candidate, with polling data aligning with its presence.
 - party_short: GYF
   partyfacts_id: null
-  source: gemini_no_match
-  confidence: null
+  source: verified_not_in_pf
+  confidence: high
   is_coalition: false
-  notes: The abbreviation 'GYF' does not match any of the provided Party Facts entries for the UK, and there is no obvious phonetic or semantic similarity to suggest a match.
+  notes: UK small party. Not in Party Facts.
 - party_short: HRL
   partyfacts_id: 3680
   source: partyfacts_external
@@ -511,10 +511,12 @@ mappings:
   notes: ''
 - party_short: Law(Ind)
   partyfacts_id: null
-  source: gemini_no_match
+  source: null
   confidence: null
   is_coalition: false
-  notes: The label 'Law(Ind)' likely refers to an independent candidate named Law, which does not correspond to a specific party in the provided Party Facts list.
+  notes: UK Independent candidate 'Law'. Not party vote intention.
+  drop: true
+  drop_reason: individual_candidate
 - party_short: LD
   partyfacts_id: 1388
   source: partyfacts_external
@@ -607,10 +609,12 @@ mappings:
   notes: ''
 - party_short: Majority / lead
   partyfacts_id: null
-  source: gemini_no_match
+  source: null
   confidence: null
   is_coalition: false
-  notes: The label 'Majority / lead' does not refer to a specific political party but rather to a polling outcome or a general political status, and thus cannot be matched to a Party Facts ID.
+  notes: Wikitext column 'Majority / lead'. Not a party.
+  drop: true
+  drop_reason: parse_artifact
 - party_short: Milton(Ind)
   partyfacts_id: 2964
   source: gemini_high
@@ -895,10 +899,10 @@ mappings:
   notes: ''
 - party_short: SNP / PC
   partyfacts_id: null
-  source: gemini_no_match
-  confidence: null
+  source: verified_not_in_pf
+  confidence: high
   is_coalition: false
-  notes: This is a coalition of two parties, SNP and Plaid Cymru, and there is no single Party Facts ID for this specific coalition.
+  notes: SNP + Plaid Cymru combined column. No PF coalition id.
 - party_short: SNP-PC
   partyfacts_id: 986
   source: partyfacts_external
@@ -907,10 +911,12 @@ mappings:
   notes: ''
 - party_short: Spk
   partyfacts_id: null
-  source: gemini_no_match
+  source: null
   confidence: null
   is_coalition: false
-  notes: The abbreviation 'Spk' does not match any of the provided Party Facts entries for the UK, and there is no obvious phonetic or semantic similarity to suggest a match.
+  notes: UK 'Speaker' column. Not a vote-intention party.
+  drop: true
+  drop_reason: parse_artifact
 - party_short: SSP
   partyfacts_id: 2966
   source: partyfacts_external

@@ -363,10 +363,12 @@ mappings:
   notes: ''
 - party_short: Katrin Stjernfeldt Jammeh (S)
   partyfacts_id: null
-  source: gemini_no_match
+  source: null
   confidence: null
   is_coalition: false
-  notes: The partyfacts list does not contain a party with the short label 'S' that corresponds to the Social Democrats, which is implied by the candidate's name and the 'S' abbreviation.
+  notes: Swedish politician Katrin Stjernfeldt Jammeh (S). Not party vote intention.
+  drop: true
+  drop_reason: individual_candidate
 - party_short: KD
   partyfacts_id: 651
   source: partyfacts_external
@@ -651,10 +653,12 @@ mappings:
   notes: ''
 - party_short: Parties
   partyfacts_id: null
-  source: gemini_no_match
+  source: null
   confidence: null
   is_coalition: false
-  notes: The label 'Parties' is too generic to match to a specific party ID.
+  notes: Wikitext group-header 'Parties' mis-parsed as a column.
+  drop: true
+  drop_reason: parse_artifact
 - party_short: Per Bolund (MP)
   partyfacts_id: 456
   source: gemini_high
@@ -663,10 +667,12 @@ mappings:
   notes: Miljöpartiet de Gröna — The label 'Per Bolund (MP)' clearly indicates 'Miljöpartiet de Gröna' (Green Ecology Party) due to the 'MP' abbreviation, and Per Bolund is a prominent figure in that party.
 - party_short: Percentage
   partyfacts_id: null
-  source: gemini_no_match
+  source: null
   confidence: null
   is_coalition: false
-  notes: The party short label 'Percentage' is a generic term and does not correspond to any specific political party in the provided list.
+  notes: Wikitext header 'Percentage' mis-parsed as a column.
+  drop: true
+  drop_reason: parse_artifact
 - party_short: PIRAT
   partyfacts_id: 1485
   source: partyfacts_external
@@ -753,22 +759,28 @@ mappings:
   notes: ''
 - party_short: Seats
   partyfacts_id: null
-  source: gemini_no_match
+  source: null
   confidence: null
   is_coalition: false
-  notes: The party short label 'Seats' does not correspond to any known political party in the provided Party Facts entries for Sweden.
+  notes: Wikitext header 'Seats' mis-parsed as a column.
+  drop: true
+  drop_reason: parse_artifact
 - party_short: Shut down existing power plants immediately
   partyfacts_id: null
-  source: gemini_no_match
+  source: null
   confidence: null
   is_coalition: false
-  notes: The party label 'Shut down existing power plants immediately' does not correspond to any known political party in Sweden, and it is likely a protest vote or a very minor, unlisted party.
+  notes: Referendum-question column, not a party.
+  drop: true
+  drop_reason: parse_artifact
 - party_short: Shut down existing power plants when their lifespan ends
   partyfacts_id: null
-  source: gemini_no_match
+  source: null
   confidence: null
   is_coalition: false
-  notes: The provided party label is a policy statement, not a party name or abbreviation, and does not match any of the candidate Party Facts entries.
+  notes: Referendum-question column, not a party.
+  drop: true
+  drop_reason: parse_artifact
 - party_short: SJ
   partyfacts_id: 2936
   source: partyfacts_external

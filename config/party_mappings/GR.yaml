@@ -252,8 +252,7 @@ mappings:
   source: manual_review
   confidence: high
   is_coalition: false
-  notes: 'Dimiourgia Xana (Recreate Greece), 2012-. PF id 471 — confirmed via Wikipedia
-    wikilink ([[Recreate Greece|DIXA]]) → PF core entry.'
+  notes: Dimiourgia Xana (Recreate Greece), 2012-. PF id 471 — confirmed via Wikipedia wikilink ([[Recreate Greece|DIXA]]) → PF core entry.
 - party_short: DKEL
   partyfacts_id: 4582
   source: partyfacts_external
@@ -272,7 +271,6 @@ mappings:
   confidence: high
   is_coalition: false
   notes: 'Wikipedia article: ''Movement for Democracy (Greece)''. Verified absent from Party Facts (no matching entry in core or external datasets). PF may add an id when next refreshed.'
-
 - party_short: DR
   partyfacts_id: 648
   source: partyfacts_external
@@ -290,9 +288,7 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Drasi – Fileleytheri Symmachia — The party 'Drassi' is a direct match to
-    'Drasi – Fileleytheri Symmachia' (ID 1130) which existed during the polling period
-    and has a similar name.
+  notes: Drasi – Fileleytheri Symmachia — The party 'Drassi' is a direct match to 'Drasi – Fileleytheri Symmachia' (ID 1130) which existed during the polling period and has a similar name.
 - party_short: DSKE
   partyfacts_id: 7113
   source: partyfacts_external
@@ -335,7 +331,6 @@ mappings:
   confidence: high
   is_coalition: false
   notes: 'Wikipedia article: ''National Creation''. Verified absent from Party Facts (no matching entry in core or external datasets). PF may add an id when next refreshed.'
-
 - party_short: EDA
   partyfacts_id: 4157
   source: partyfacts_external
@@ -408,7 +403,6 @@ mappings:
   confidence: high
   is_coalition: false
   notes: 'Wikipedia article: ''National Party – Greeks''. Verified absent from Party Facts (no matching entry in core or external datasets). PF may add an id when next refreshed.'
-
 - party_short: EL
   partyfacts_id: 7347
   source: partyfacts_external
@@ -421,7 +415,6 @@ mappings:
   confidence: high
   is_coalition: false
   notes: 'Wikipedia article: ''Hellenic Left Alignment''. Verified absent from Party Facts (no matching entry in core or external datasets). PF may add an id when next refreshed.'
-
 - party_short: ELK
   partyfacts_id: 4575
   source: partyfacts_external
@@ -446,7 +439,6 @@ mappings:
   confidence: high
   is_coalition: false
   notes: 'Wikipedia article: ''Hope for Democracy''. Verified absent from Party Facts (no matching entry in core or external datasets). PF may add an id when next refreshed.'
-
 - party_short: EM
   partyfacts_id: 2710
   source: partyfacts_external
@@ -695,11 +687,12 @@ mappings:
   notes: ''
 - party_short: Karystianou
   partyfacts_id: null
-  source: gemini_no_match
+  source: null
   confidence: null
   is_coalition: false
-  notes: The party 'Karystianou' does not appear in the provided list of Party Facts
-    entries for Greece, and it is likely a new or very minor party not yet cataloged.
+  notes: '''Karystianou'' — politician/leader-rating column. Not party vote intention.'
+  drop: true
+  drop_reason: individual_candidate
 - party_short: KDS
   partyfacts_id: 1030
   source: partyfacts_external
@@ -759,10 +752,7 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Kinima Dimokraton Sosialiston — The party short label 'Kinima' directly matches
-    the Greek word 'Kinima' in 'Kinima Dimokraton Sosialiston' (Movement of Democratic
-    Socialists), and the party's active years (2015-2015) align with the polling context
-    (2015).
+  notes: Kinima Dimokraton Sosialiston — The party short label 'Kinima' directly matches the Greek word 'Kinima' in 'Kinima Dimokraton Sosialiston' (Movement of Democratic Socialists), and the party's active years (2015-2015) align with the polling context (2015).
 - party_short: KKE
   partyfacts_id: 48
   source: partyfacts_external
@@ -984,9 +974,7 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Métopo Evropaikís Realistikís Anypakoís — The party short label 'M25' is
-    a direct match to 'MeRA25' in the candidate list, which is the common abbreviation
-    for 'Métopo Evropaikís Realistikís Anypakoís'.
+  notes: Métopo Evropaikís Realistikís Anypakoís — The party short label 'M25' is a direct match to 'MeRA25' in the candidate list, which is the common abbreviation for 'Métopo Evropaikís Realistikís Anypakoís'.
 - party_short: MEA
   partyfacts_id: 4578
   source: partyfacts_external
@@ -1028,9 +1016,7 @@ mappings:
   source: manual_review
   confidence: high
   is_coalition: false
-  notes: 'Néa Aristerá (New Left), 2023-, PF id 9316. Note: pandas default
-    read_csv treats the string ''NA'' as NaN, so downstream consumers must use
-    keep_default_na=False, na_values=[""].'
+  notes: 'Néa Aristerá (New Left), 2023-, PF id 9316. Note: pandas default read_csv treats the string ''NA'' as NaN, so downstream consumers must use keep_default_na=False, na_values=[""].'
 - party_short: NAP
   partyfacts_id: 7117
   source: partyfacts_external
@@ -1217,7 +1203,6 @@ mappings:
   confidence: high
   is_coalition: false
   notes: 'Wikipedia article: ''Panhellenic Citizen Chariot''. Verified absent from Party Facts (no matching entry in core or external datasets). PF may add an id when next refreshed.'
-
 - party_short: PASOK
   partyfacts_id: 1468
   source: partyfacts_external
@@ -1379,9 +1364,7 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Sparti&aacute;tes — The short label 'Sp' from Party Facts ID 9129 is a very
-    close match to 'SP', and the party 'Sparti&aacute;tes' is a recent party, aligning
-    with the recent poll data.
+  notes: Sparti&aacute;tes — The short label 'Sp' from Party Facts ID 9129 is a very close match to 'SP', and the party 'Sparti&aacute;tes' is a recent party, aligning with the recent poll data.
 - party_short: Sp
   partyfacts_id: 9129
   source: partyfacts_external
@@ -1393,9 +1376,7 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Spartiátes — The 'Sp.' abbreviation directly matches the 'Sp' short label
-    for 'Spartiátes' (Spartans) in the candidate list, and the polling data aligns
-    with its recent electoral performance.
+  notes: Spartiátes — The 'Sp.' abbreviation directly matches the 'Sp' short label for 'Spartiátes' (Spartans) in the candidate list, and the polling data aligns with its recent electoral performance.
 - party_short: SPA
   partyfacts_id: 9129
   source: partyfacts_external
@@ -1491,9 +1472,7 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Synaspismós Rizospastikís Aristerás/SYRIZA — Alexis Tsipras was the leader
-    of SYRIZA, and the polling context suggests a party rather than an individual,
-    making SYRIZA the most appropriate match.
+  notes: Synaspismós Rizospastikís Aristerás/SYRIZA — Alexis Tsipras was the leader of SYRIZA, and the polling context suggests a party rather than an individual, making SYRIZA the most appropriate match.
 - party_short: UL
   partyfacts_id: 4157
   source: partyfacts_external

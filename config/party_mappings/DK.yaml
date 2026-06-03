@@ -81,10 +81,12 @@ mappings:
   notes: There is no party in the provided list that matches 'Blue' or any common Danish political party associated with 'Blue' as a short label.
 - party_short: Blue   (V+O+I+C+K)
   partyfacts_id: null
-  source: gemini_no_match
+  source: null
   confidence: null
   is_coalition: false
-  notes: The label 'Blue (V+O+I+C+K)' represents a coalition of multiple parties, and there is no single dominant party or direct match in the provided Party Facts entries.
+  notes: Danish 'Blue bloc' aggregate column. Not a party.
+  drop: true
+  drop_reason: parse_artifact
 - party_short: Bo
   partyfacts_id: 1901
   source: partyfacts_external
@@ -99,10 +101,12 @@ mappings:
   notes: ''
 - party_short: Carsten NielsenB
   partyfacts_id: null
-  source: gemini_no_match
+  source: null
   confidence: null
   is_coalition: false
-  notes: The party short label 'Carsten NielsenB' does not match any of the provided Party Facts entries, even after attempting to strip a potential candidate name.
+  notes: '''Carsten NielsenB'' — politician/leader-rating column. Not party vote intention.'
+  drop: true
+  drop_reason: individual_candidate
 - party_short: CC
   partyfacts_id: 1676
   source: partyfacts_external
@@ -483,10 +487,12 @@ mappings:
   notes: ''
 - party_short: KarlsmoseK
   partyfacts_id: null
-  source: gemini_no_match
+  source: null
   confidence: null
   is_coalition: false
-  notes: The party abbreviation 'KarlsmoseK' does not match any of the provided Party Facts entries, and appears to be a candidate-specific label rather than a recognized party.
+  notes: Danish candidate Karlsmose (K). Not party vote intention.
+  drop: true
+  drop_reason: individual_candidate
 - party_short: KD
   partyfacts_id: 53
   source: partyfacts_external
@@ -711,10 +717,12 @@ mappings:
   notes: ''
 - party_short: Olsen DyhrF
   partyfacts_id: null
-  source: gemini_no_match
+  source: null
   confidence: null
   is_coalition: false
-  notes: The party abbreviation 'Olsen DyhrF' does not match any of the provided Party Facts entries for Denmark, even after considering potential candidate name prefixes.
+  notes: '''Olsen DyhrF'' — politician/leader-rating column. Not party vote intention.'
+  drop: true
+  drop_reason: individual_candidate
 - party_short: Opposition
   partyfacts_id: null
   source: null
@@ -779,16 +787,20 @@ mappings:
   notes: "Enhedslisten - De R\x18d-Gr\x18nne — The party 'Enhedslisten - De R\x18d-Gr\x18nne' (Red-Green Unity List) directly translates to 'Red-Green' and is the most plausible match for 'Red' in the context of Danish politics, especially given the polling data from 2018-2019."
 - party_short: Red   (A+B+F+Ø)
   partyfacts_id: null
-  source: gemini_no_match
+  source: null
   confidence: null
   is_coalition: false
-  notes: The label 'Red (A+B+F+Ø)' clearly indicates a coalition of multiple parties, and there is no single dominant party ID that represents this specific coalition in the provided Party Facts list.
+  notes: Danish 'Red bloc' aggregate column.
+  drop: true
+  drop_reason: parse_artifact
 - party_short: Red   (A+B+F+Ø+Å)
   partyfacts_id: null
-  source: gemini_no_match
+  source: null
   confidence: null
   is_coalition: false
-  notes: The label 'Red (A+B+F+Ø+Å)' clearly indicates a coalition of multiple parties, and there is no single dominant party among the listed Party Facts entries that represents this specific 'Red' coalition.
+  notes: Danish 'Red bloc' aggregate column (incl Å).
+  drop: true
+  drop_reason: parse_artifact
 - party_short: Red-Green Alliance (Ø)
   partyfacts_id: 1527
   source: gemini_high
@@ -833,10 +845,12 @@ mappings:
   notes: ''
 - party_short: RosenkildeÅ
   partyfacts_id: null
-  source: gemini_no_match
+  source: null
   confidence: null
   is_coalition: false
-  notes: The party abbreviation 'RosenkildeÅ' does not match any of the provided Party Facts entries for Denmark, and appears to be a candidate name rather than a party.
+  notes: Danish candidate Rosenkilde (Å).
+  drop: true
+  drop_reason: individual_candidate
 - party_short: RP
   partyfacts_id: 1204
   source: partyfacts_external
@@ -1013,10 +1027,12 @@ mappings:
   notes: ''
 - party_short: VanopslaghI
   partyfacts_id: null
-  source: gemini_no_match
+  source: null
   confidence: null
   is_coalition: false
-  notes: The party label 'VanopslaghI' appears to be a candidate-party combination, but the party suffix 'I' does not match any known Party Facts ID for Denmark, and there is no clear dominant party to match.
+  notes: Danish candidate Vanopslagh (I = Liberal Alliance).
+  drop: true
+  drop_reason: individual_candidate
 - party_short: Venstre (V)
   partyfacts_id: 1204
   source: gemini_high
@@ -1031,10 +1047,12 @@ mappings:
   notes: Nye Borgerlige — The 'VermundD' abbreviation likely refers to Pernille Vermund, the leader of Nye Borgerlige (The New Right), similar to how candidate names are appended to party abbreviations in other contexts.
 - party_short: VilladsenØ
   partyfacts_id: null
-  source: gemini_no_match
+  source: null
   confidence: null
   is_coalition: false
-  notes: The party 'VilladsenØ' is not found in the provided Party Facts entries for Denmark, and appears to be a new or independent entity.
+  notes: Danish candidate Villadsen (Ø = Enhedslisten).
+  drop: true
+  drop_reason: individual_candidate
 - party_short: VS
   partyfacts_id: 1136
   source: partyfacts_external

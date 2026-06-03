@@ -45,10 +45,10 @@ mappings:
   notes: ''
 - party_short: Avion
   partyfacts_id: null
-  source: gemini_no_match
-  confidence: null
+  source: verified_not_in_pf
+  confidence: high
   is_coalition: false
-  notes: The party abbreviation 'Avion' does not match any of the provided Party Facts entries for Slovenia, and there is no obvious semantic or phonetic similarity to suggest a match.
+  notes: Slovenian 'Avion' small party. Not in Party Facts.
 - party_short: AČZS
   partyfacts_id: 1494
   source: manual_review
@@ -201,10 +201,12 @@ mappings:
   notes: ''
 - party_short: Klemen Boštjančič
   partyfacts_id: null
-  source: gemini_no_match
+  source: null
   confidence: null
   is_coalition: false
-  notes: Klemen Boštjančič is an individual's name, not a party, and there is no party in the provided list that matches this name or suggests a candidate-party pairing.
+  notes: Slovenian politician Klemen Boštjančič.
+  drop: true
+  drop_reason: individual_candidate
 - party_short: Konkretno
   partyfacts_id: 9068
   source: partyfacts_external
@@ -357,16 +359,20 @@ mappings:
   notes: ''
 - party_short: Matjaž Han
   partyfacts_id: null
-  source: gemini_no_match
+  source: null
   confidence: null
   is_coalition: false
-  notes: The party short label 'Matjaž Han' appears to be a candidate's name rather than a party abbreviation, and there is no party in the provided list that matches this name or a clear party abbreviation within it.
+  notes: Slovenian politician Matjaž Han (SD).
+  drop: true
+  drop_reason: individual_candidate
 - party_short: Matjaž Nemec
   partyfacts_id: null
-  source: gemini_no_match
+  source: null
   confidence: null
   is_coalition: false
-  notes: Matjaž Nemec is a candidate name, not a party abbreviation, and there is no clear party suffix to match in the provided list.
+  notes: Slovenian politician Matjaž Nemec (SD).
+  drop: true
+  drop_reason: individual_candidate
 - party_short: MI!
   partyfacts_id: null
   source: verified_not_in_pf
@@ -393,10 +399,12 @@ mappings:
   notes: ''
 - party_short: Nataša Pirc Musar
   partyfacts_id: null
-  source: gemini_no_match
+  source: null
   confidence: null
   is_coalition: false
-  notes: Nataša Pirc Musar is a candidate's name, not a party, and there is no clear party affiliation in the provided list that matches her name or a known party she represents.
+  notes: Slovenian President Nataša Pirc Musar.
+  drop: true
+  drop_reason: individual_candidate
 - party_short: ND
   partyfacts_id: 9070
   source: partyfacts_external
@@ -899,10 +907,12 @@ mappings:
   notes: VESNA – zelena stranka — The party short label 'Vesna' directly matches the Party Facts entry 'VESNA' for 'VESNA – zelena stranka'.
 - party_short: Vladimir Prebilič
   partyfacts_id: null
-  source: gemini_no_match
+  source: null
   confidence: null
   is_coalition: false
-  notes: The party short label 'Vladimir Prebilič' refers to an individual candidate and does not match any existing party in the provided Party Facts entries for Slovenia.
+  notes: Slovenian politician Vladimir Prebilič.
+  drop: true
+  drop_reason: individual_candidate
 - party_short: Won't Answer
   partyfacts_id: null
   source: gemini_no_match

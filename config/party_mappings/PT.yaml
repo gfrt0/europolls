@@ -359,10 +359,12 @@ mappings:
   drop_reason: individual_candidate
 - party_short: Jorge Moreira da Silva
   partyfacts_id: null
-  source: gemini_no_match
+  source: null
   confidence: null
   is_coalition: false
-  notes: The label 'Jorge Moreira da Silva' refers to an individual candidate, not a party, and there is no clear party affiliation indicated or implied by the provided Party Facts entries.
+  notes: Portuguese politician Jorge Moreira da Silva.
+  drop: true
+  drop_reason: individual_candidate
 - party_short: José Luís Carneiro
   partyfacts_id: null
   source: null
@@ -421,10 +423,12 @@ mappings:
   drop_reason: individual_candidate
 - party_short: Mariana Vieira da Silva
   partyfacts_id: null
-  source: gemini_no_match
+  source: null
   confidence: null
   is_coalition: false
-  notes: The party short label 'Mariana Vieira da Silva' appears to be a candidate's name and does not directly match any of the provided Party Facts entries for Portugal.
+  notes: Portuguese politician Mariana Vieira da Silva (PS).
+  drop: true
+  drop_reason: individual_candidate
 - party_short: Marta Temido
   partyfacts_id: null
   source: null

@@ -255,10 +255,10 @@ mappings:
   notes: Beweging DENK — The partyfacts entry with ID 5856 has the short label 'DENK' and the name 'Beweging DENK', which is a direct and strong match for 'Denk'.
 - party_short: DNA
   partyfacts_id: null
-  source: gemini_no_match
-  confidence: null
+  source: verified_not_in_pf
+  confidence: high
   is_coalition: false
-  notes: The abbreviation 'DNA' does not match any of the provided Party Facts entries for the Netherlands.
+  notes: Dutch 'DNA' small party. Not in Party Facts.
 - party_short: DS
   partyfacts_id: 921
   source: partyfacts_external

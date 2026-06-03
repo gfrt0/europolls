@@ -1761,10 +1761,12 @@ mappings:
   notes: PSOE+Podemos+Ciudadanos coalition-preference column. No PF coalition-level id.
 - party_short: PSOEPP
   partyfacts_id: null
-  source: gemini_no_match
+  source: null
   confidence: null
   is_coalition: false
-  notes: The abbreviation 'PSOEPP' appears to be a combination of 'PSOE' and 'PP', indicating a potential coalition or joint list that is not explicitly listed in the provided Party Facts entries.
+  notes: PSOE+PP grand-coalition preference column.
+  drop: true
+  drop_reason: approval
 - party_short: PSOEUP
   partyfacts_id: 1338
   source: gemini_high

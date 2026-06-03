@@ -89,10 +89,12 @@ mappings:
   notes: ''
 - party_short: Casey
   partyfacts_id: null
-  source: gemini_no_match
+  source: null
   confidence: null
   is_coalition: false
-  notes: The party short label 'Casey' appears to refer to an independent candidate Peter Casey, not a political party listed in the provided Party Facts entries.
+  notes: '''Casey'' — politician/leader-rating column. Not party vote intention.'
+  drop: true
+  drop_reason: individual_candidate
 - party_short: CATHOLIC DEMOCRATS
   partyfacts_id: 2053
   source: partyfacts_external
@@ -161,10 +163,12 @@ mappings:
   notes: ''
 - party_short: Cronin
   partyfacts_id: null
-  source: gemini_no_match
+  source: null
   confidence: null
   is_coalition: false
-  notes: The party short label 'Cronin' does not match any of the provided Party Facts entries, and there is no clear indication of it being a candidate's name combined with a party abbreviation.
+  notes: '''Cronin'' — politician/leader-rating column. Not party vote intention.'
+  drop: true
+  drop_reason: individual_candidate
 - party_short: Cubbard
   partyfacts_id: null
   source: null
@@ -653,16 +657,20 @@ mappings:
   notes: ''
 - party_short: O'Donnell
   partyfacts_id: null
-  source: gemini_no_match
+  source: null
   confidence: null
   is_coalition: false
-  notes: The party label 'O'Donnell' likely refers to an independent candidate or a very small, localized party not present in the provided Party Facts list.
+  notes: Irish candidate O'Donnell.
+  drop: true
+  drop_reason: individual_candidate
 - party_short: O'Leary
   partyfacts_id: null
-  source: gemini_no_match
+  source: null
   confidence: null
   is_coalition: false
-  notes: The party label 'O'Leary' does not correspond to any of the provided Party Facts entries for Ireland, and likely refers to an independent candidate or a very minor party not listed.
+  notes: Irish candidate O'Leary.
+  drop: true
+  drop_reason: individual_candidate
 - party_short: O/I|Others/IndependentsThe figure for "Others and Independents" is the remainder when all others are removed. As with all such calculations, the figure shown may be slightly inaccurate due to rounding effects.
   partyfacts_id: 1885
   source: gemini_high

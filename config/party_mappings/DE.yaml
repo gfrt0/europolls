@@ -453,10 +453,12 @@ mappings:
   notes: ''
 - party_short: Fischer
   partyfacts_id: null
-  source: gemini_no_match
+  source: null
   confidence: null
   is_coalition: false
-  notes: The label 'Fischer' likely refers to a candidate's name rather than a party abbreviation, and there is no party in the provided list that matches this label.
+  notes: '''Fischer'' — politician/leader-rating column. Not party vote intention.'
+  drop: true
+  drop_reason: individual_candidate
 - party_short: FKP-DRP
   partyfacts_id: 2076
   source: partyfacts_external
@@ -977,28 +979,36 @@ mappings:
   notes: This is a coalition of two distinct parties, SPD and Grüne, and there is no single Party Facts ID that represents this specific coalition.
 - party_short: SPD Grüne FDP
   partyfacts_id: null
-  source: gemini_no_match
+  source: null
   confidence: null
   is_coalition: false
-  notes: The label 'SPD Grüne FDP' represents a coalition of three distinct parties, and there is no single Party Facts ID that represents this specific coalition.
+  notes: SPD+Grüne+FDP coalition preference. Not vote intention.
+  drop: true
+  drop_reason: approval
 - party_short: SPD Grüne Linke
   partyfacts_id: null
-  source: gemini_no_match
+  source: null
   confidence: null
   is_coalition: false
-  notes: 'The label ''SPD Grüne Linke'' clearly indicates a coalition of three distinct parties: SPD, Grüne, and Linke, which is not represented by a single Party Facts ID.'
+  notes: SPD+Grüne+Linke coalition preference.
+  drop: true
+  drop_reason: approval
 - party_short: SPD Union
   partyfacts_id: null
-  source: gemini_no_match
+  source: null
   confidence: null
   is_coalition: false
-  notes: The label 'SPD Union' refers to a coalition of two parties, SPD and Union (CDU/CSU), and no single Party Facts ID represents this specific coalition.
+  notes: SPD+Union (GroKo) coalition preference.
+  drop: true
+  drop_reason: approval
 - party_short: SPD Union FDP
   partyfacts_id: null
-  source: gemini_no_match
+  source: null
   confidence: null
   is_coalition: false
-  notes: The label 'SPD Union FDP' represents a combination of three distinct parties (SPD, CDU/CSU, FDP) and does not correspond to a single Party Facts ID, even as a dominant member of a coalition.
+  notes: SPD+Union+FDP coalition preference.
+  drop: true
+  drop_reason: approval
 - party_short: SPD/GREENS
   partyfacts_id: null
   source: null
@@ -1017,10 +1027,12 @@ mappings:
   drop_reason: approval
 - party_short: SPDGrüneLinke
   partyfacts_id: null
-  source: gemini_no_match
+  source: null
   confidence: null
   is_coalition: false
-  notes: The label 'SPDGrüneLinke' represents a coalition of three distinct parties (SPD, Greens, and Linke), which is not directly matched by a single Party Facts ID.
+  notes: SPD+Grüne+Linke coalition preference (concatenated form).
+  drop: true
+  drop_reason: approval
 - party_short: SSW
   partyfacts_id: 50
   source: partyfacts_external
@@ -1083,16 +1095,20 @@ mappings:
   notes: ''
 - party_short: Union Grüne FDP
   partyfacts_id: null
-  source: gemini_no_match
+  source: null
   confidence: null
   is_coalition: false
-  notes: The label 'Union Grüne FDP' clearly indicates a coalition of multiple parties (CDU/CSU, Greens, FDP) rather than a single party, and there is no single dominant party to map to.
+  notes: Union+Grüne+FDP coalition preference.
+  drop: true
+  drop_reason: approval
 - party_short: UnionAfD
   partyfacts_id: null
-  source: gemini_no_match
+  source: null
   confidence: null
   is_coalition: false
-  notes: The label 'UnionAfD' appears to be a coalition or aggregate of 'Union' (CDU/CSU) and 'AfD', but there is no single Party Facts ID for this specific combination, and no dominant member can be identified without further context.
+  notes: Union+AfD coalition preference.
+  drop: true
+  drop_reason: approval
 - party_short: UnionFDP
   partyfacts_id: null
   source: gemini_no_match
@@ -1115,10 +1131,12 @@ mappings:
   notes: Christlich Demokratische Union / Christlich Soziale Union — UnionSPD is a common abbreviation for the CDU/CSU (Union) and SPD coalition in Germany, and Party Facts ID 211 represents the CDU/CSU alliance.
 - party_short: UnionSPDGrüne
   partyfacts_id: null
-  source: gemini_no_match
+  source: null
   confidence: null
   is_coalition: false
-  notes: The label 'UnionSPDGrüne' clearly indicates a coalition of multiple parties (Union, SPD, and Grüne), which is not represented by a single Party Facts ID in the provided list.
+  notes: Union+SPD+Grüne coalition preference.
+  drop: true
+  drop_reason: approval
 - party_short: UnionSPDLinke
   partyfacts_id: null
   source: gemini_no_match

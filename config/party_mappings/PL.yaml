@@ -131,10 +131,12 @@ mappings:
   notes: ''
 - party_short: BeataSzydło
   partyfacts_id: null
-  source: gemini_no_match
+  source: null
   confidence: null
   is_coalition: false
-  notes: Beata Szydło is a politician, not a party, and there is no clear party suffix in the label to match to a Party Facts ID.
+  notes: Polish politician Beata Szydło (PiS, ex-PM).
+  drop: true
+  drop_reason: individual_candidate
 - party_short: BMN
   partyfacts_id: 4352
   source: partyfacts_external
@@ -335,10 +337,12 @@ mappings:
   notes: ''
 - party_short: KacperPłażyński
   partyfacts_id: null
-  source: gemini_no_match
+  source: null
   confidence: null
   is_coalition: false
-  notes: The party short label 'KacperPłażyński' appears to be a candidate's name and does not match any of the provided Party Facts entries for Poland.
+  notes: Polish PiS politician Kacper Płażyński.
+  drop: true
+  drop_reason: individual_candidate
 - party_short: KDR
   partyfacts_id: 1192
   source: partyfacts_external
@@ -791,10 +795,12 @@ mappings:
   drop_reason: individual_candidate
 - party_short: PawełSzefernaker
   partyfacts_id: null
-  source: gemini_no_match
+  source: null
   confidence: null
   is_coalition: false
-  notes: The party short label 'PawełSzefernaker' appears to be a candidate's name and does not match any of the provided Party Facts entries for Poland.
+  notes: Polish PiS politician Paweł Szefernaker.
+  drop: true
+  drop_reason: individual_candidate
 - party_short: PBK
   partyfacts_id: 4356
   source: partyfacts_external

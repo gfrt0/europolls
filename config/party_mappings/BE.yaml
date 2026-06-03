@@ -132,9 +132,7 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Christen-Democratisch en Vlaams — The partyfacts entry 604 'CD/V' with name
-    'Christen-Democratisch en Vlaams' directly matches the provided short label 'cd&v'
-    and the full name, indicating a high confidence match.
+  notes: Christen-Democratisch en Vlaams — The partyfacts entry 604 'CD/V' with name 'Christen-Democratisch en Vlaams' directly matches the provided short label 'cd&v' and the full name, indicating a high confidence match.
 - party_short: CD&V N-VA
   partyfacts_id: 756
   source: partyfacts_external
@@ -158,9 +156,7 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Christen-Democratisch en Vlaams — The party short label 'cd&vEPP' directly
-    matches 'CD/V' and 'CVP|CD&V' in the Party Facts entries, which stands for 'Christen-Democratisch
-    en Vlaams', and the EPP suffix indicates its European affiliation.
+  notes: Christen-Democratisch en Vlaams — The party short label 'cd&vEPP' directly matches 'CD/V' and 'CVP|CD&V' in the Party Facts entries, which stands for 'Christen-Democratisch en Vlaams', and the EPP suffix indicates its European affiliation.
 - party_short: CD+NVA
   partyfacts_id: 756
   source: partyfacts_external
@@ -208,9 +204,7 @@ mappings:
   source: gemini_no_match
   confidence: null
   is_coalition: false
-  notes: The label 'Coalitions' indicates an aggregate of multiple parties, and there
-    is no single dominant party in the provided Party Facts list that represents this
-    general term.
+  notes: The label 'Coalitions' indicates an aggregate of multiple parties, and there is no single dominant party in the provided Party Facts list that represents this general term.
 - party_short: COMM
   partyfacts_id: 302
   source: partyfacts_external
@@ -324,10 +318,7 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Front Démocratique des Francophones | DéFI — The partyfacts entry for ID
-    698 explicitly includes 'DéFI' as an alternative name for 'Front Démocratique
-    des Francophones', which is a direct match for 'DéFINI' given the context of a
-    party abbreviation.
+  notes: Front Démocratique des Francophones | DéFI — The partyfacts entry for ID 698 explicitly includes 'DéFI' as an alternative name for 'Front Démocratique des Francophones', which is a direct match for 'DéFINI' given the context of a party abbreviation.
 - party_short: E
   partyfacts_id: 1563
   source: partyfacts_external
@@ -357,9 +348,7 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Écologistes Confédérés pour l'organisation de luttes originales — The party
-    short label 'EcoloG/EFA' strongly suggests a connection to 'Ecolo', which is present
-    in the candidate list with ID 1563 and a matching time frame.
+  notes: Écologistes Confédérés pour l'organisation de luttes originales — The party short label 'EcoloG/EFA' strongly suggests a connection to 'Ecolo', which is present in the candidate list with ID 1563 and a matching time frame.
 - party_short: Ecologist
   partyfacts_id: 1563
   source: partyfacts_external
@@ -515,10 +504,7 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Agalev – Groen — The party short label 'GroenG/EFA' strongly suggests a match
-    with 'Agalev – Groen' (ID 528), which is the Flemish Green party, and 'EFA' likely
-    refers to the European Free Alliance, a European political party that Groen is
-    a member of.
+  notes: Agalev – Groen — The party short label 'GroenG/EFA' strongly suggests a match with 'Agalev – Groen' (ID 528), which is the Flemish Green party, and 'EFA' likely refers to the European Free Alliance, a European political party that Groen is a member of.
 - party_short: ICAT
   partyfacts_id: 2608
   source: partyfacts_external
@@ -533,11 +519,12 @@ mappings:
   notes: ''
 - party_short: Ideologies
   partyfacts_id: null
-  source: gemini_no_match
+  source: null
   confidence: null
   is_coalition: false
-  notes: The party short label 'Ideologies' does not correspond to any known political
-    party in the provided Party Facts entries for Belgium.
+  notes: Wikitext column group header 'Ideologies'. Not a party.
+  drop: true
+  drop_reason: parse_artifact
 - party_short: INDEPENDENT
   partyfacts_id: 2607
   source: partyfacts_external
@@ -630,11 +617,12 @@ mappings:
   notes: ''
 - party_short: LEEPP
   partyfacts_id: null
-  source: gemini_no_match
+  source: null
   confidence: null
   is_coalition: false
-  notes: No party in the provided list or common Belgian political landscape matches
-    'LEEPP'.
+  notes: Belgian liberal+ECR group affiliation column. Not vote intention.
+  drop: true
+  drop_reason: approval
 - party_short: LIB
   partyfacts_id: 275
   source: partyfacts_external
@@ -706,16 +694,13 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Mouvement Réformateur — MRRenew is a clear abbreviation for Mouvement Réformateur,
-    which is present in the candidate list with ID 789, and the polling data aligns
-    with its activity period.
+  notes: Mouvement Réformateur — MRRenew is a clear abbreviation for Mouvement Réformateur, which is present in the candidate list with ID 789, and the polling data aligns with its activity period.
 - party_short: MR–FDF
   partyfacts_id: 789
   source: gemini_high
   confidence: high
   is_coalition: true
-  notes: Mouvement Réformateur — MR and FDF were in an alliance, with MR being the
-    dominant party, and the polling data aligns with MR's performance.
+  notes: Mouvement Réformateur — MR and FDF were in an alliance, with MR being the dominant party, and the polling data aligns with MR's performance.
 - party_short: N-VA
   partyfacts_id: 36
   source: partyfacts_external
@@ -763,10 +748,7 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: true
-  notes: Christen-Democratisch & Vlaams / Nieuw-Vlaams Alliantie — The 'NVAECR' abbreviation
-    strongly suggests a coalition between N-VA (Nieuw-Vlaamse Alliantie) and ECR (European
-    Conservatives and Reformists), and Party Facts ID 756 represents a historical
-    coalition including N-VA.
+  notes: Christen-Democratisch & Vlaams / Nieuw-Vlaams Alliantie — The 'NVAECR' abbreviation strongly suggests a coalition between N-VA (Nieuw-Vlaamse Alliantie) and ECR (European Conservatives and Reformists), and Party Facts ID 756 represents a historical coalition including N-VA.
 - party_short: O-VLD
   partyfacts_id: 49
   source: partyfacts_external
@@ -787,11 +769,12 @@ mappings:
   notes: ''
 - party_short: Open VldRenew
   partyfacts_id: null
-  source: gemini_no_match
+  source: null
   confidence: null
   is_coalition: false
-  notes: The party 'Open VldRenew' is not found in the provided Party Facts entries,
-    and appears to be a new or renamed party not yet listed.
+  notes: Open Vld + Renew group coalition column.
+  drop: true
+  drop_reason: approval
 - party_short: Open-VLD
   partyfacts_id: 49
   source: partyfacts_external
@@ -821,8 +804,7 @@ mappings:
   source: manual_review
   confidence: high
   is_coalition: false
-  notes: Open Vlaamse Liberalen en Democraten (Open Flemish Liberals and Democrats),
-    PF id 49 — case-only alias of openVLD (which the same YAML already maps to 49).
+  notes: Open Vlaamse Liberalen en Democraten (Open Flemish Liberals and Democrats), PF id 49 — case-only alias of openVLD (which the same YAML already maps to 49).
 - party_short: openVLD
   partyfacts_id: 49
   source: partyfacts_external
@@ -1053,10 +1035,12 @@ mappings:
   notes: ''
 - party_short: PSS&D
   partyfacts_id: null
-  source: gemini_no_match
+  source: null
   confidence: null
   is_coalition: false
-  notes: No party in the provided list closely matches 'PSS&D'.
+  notes: PS + S&D group coalition column.
+  drop: true
+  drop_reason: approval
 - party_short: PTB
   partyfacts_id: 1753
   source: partyfacts_external
@@ -1068,9 +1052,7 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Partij van de Arbeid – Parti du Travail de Belgique — The party short label
-    'PTB-PVDA' is a direct match to the 'PVDA/PTB' short label of Party Facts ID 1753,
-    which represents the Workers' Party of Belgium.
+  notes: Partij van de Arbeid – Parti du Travail de Belgique — The party short label 'PTB-PVDA' is a direct match to the 'PVDA/PTB' short label of Party Facts ID 1753, which represents the Workers' Party of Belgium.
 - party_short: PTB-PvdA
   partyfacts_id: 1753
   source: partyfacts_external
@@ -1088,9 +1070,7 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Partij van de Arbeid – Parti du Travail de Belgique — The party short label
-    'PTBLeft' strongly matches 'PVDA/PTB' which is the Workers' Party of Belgium,
-    a left-wing party, and the polling data aligns with its performance.
+  notes: Partij van de Arbeid – Parti du Travail de Belgique — The party short label 'PTBLeft' strongly matches 'PVDA/PTB' which is the Workers' Party of Belgium, a left-wing party, and the polling data aligns with its performance.
 - party_short: PVDA
   partyfacts_id: 1753
   source: partyfacts_external
@@ -1108,8 +1088,7 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Partij van de Arbeid – Parti du Travail de Belgique — The partyfacts entry
-    1753 'PVDA/PTB' is a direct and strong match for 'PVDA-PTB'.
+  notes: Partij van de Arbeid – Parti du Travail de Belgique — The partyfacts entry 1753 'PVDA/PTB' is a direct and strong match for 'PVDA-PTB'.
 - party_short: PVDA/PTB
   partyfacts_id: 1753
   source: partyfacts_external
@@ -1121,10 +1100,7 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Partij van de Arbeid – Parti du Travail de Belgique — The party short label
-    'PVDALeft' is a clear abbreviation of 'Partij van de Arbeid' (Workers' Party)
-    and the 'Left' suffix further confirms the match with 'PVDA/PTB' (Workers' Party
-    of Belgium).
+  notes: Partij van de Arbeid – Parti du Travail de Belgique — The party short label 'PVDALeft' is a clear abbreviation of 'Partij van de Arbeid' (Workers' Party) and the 'Left' suffix further confirms the match with 'PVDA/PTB' (Workers' Party of Belgium).
 - party_short: PVV
   partyfacts_id: 49
   source: partyfacts_external
@@ -1376,9 +1352,7 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: true
-  notes: Socialistische Partij Anders - Spirit — The label 'SP–A' directly matches
-    the short label 'sp.a-SPIRIT' for Party Facts ID 1586, which was active during
-    the polling period, indicating a coalition.
+  notes: Socialistische Partij Anders - Spirit — The label 'SP–A' directly matches the short label 'sp.a-SPIRIT' for Party Facts ID 1586, which was active during the polling period, indicating a coalition.
 - party_short: tech
   partyfacts_id: 3002
   source: partyfacts_external
@@ -1426,9 +1400,7 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Vlaams Blok — The 'VBID' abbreviation strongly suggests 'Vlaams Belang',
-    which is the successor to 'Vlaams Blok' (ID 1968), and the vote shares are consistent
-    with this party's performance.
+  notes: Vlaams Blok — The 'VBID' abbreviation strongly suggests 'Vlaams Belang', which is the successor to 'Vlaams Blok' (ID 1968), and the vote shares are consistent with this party's performance.
 - party_short: VIVANT
   partyfacts_id: 76
   source: partyfacts_external
@@ -1485,12 +1457,12 @@ mappings:
   notes: ''
 - party_short: VooruitS&D
   partyfacts_id: null
-  source: gemini_no_match
+  source: null
   confidence: null
   is_coalition: false
-  notes: The party 'Vooruit' is a recent rebranding of 'sp.a' (Socialistische Partij
-    Anders), which is not directly present in the provided Party Facts entries, and
-    'S&D' refers to a European parliamentary group, not a national party.
+  notes: Vooruit + S&D group coalition column.
+  drop: true
+  drop_reason: approval
 - party_short: VU
   partyfacts_id: 1424
   source: partyfacts_external
