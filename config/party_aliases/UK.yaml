@@ -1,9 +1,10 @@
-# United Kingdom — Greens appear as Grn / Green; Reform/Brexit/RB are the
+# United Kingdom — Greens appear as Grn / Green; Reform/Brexit are the
 # same successor party (Brexit Party → Reform UK in 2021).
 
 aliases:
   "Green":  "Green Party of England and Wales"
-  "RB":     "Brexit Party"
+  # RB intentionally NOT aliased — RB = Restore Britain, a distinct small
+  # UK party (verified_not_in_pf in config/party_mappings/UK.yaml).
   "Reform": "Brexit Party"
   "Ref":    "Brexit Party"
 

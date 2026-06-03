@@ -104,7 +104,7 @@ mappings:
   is_coalition: false
   notes: 'Nikos Christodoulides, 2023 Cyprus presidential election candidate (Independent backed by DIKO+EDEK+DIPA+KA). Not a party — single-candidate poll column.'
   drop: true
-  drop_reason: presidential_candidate
+  drop_reason: individual_candidate
 - party_short: ChristofidesNW
   partyfacts_id: null
   source: null
@@ -112,7 +112,7 @@ mappings:
   is_coalition: false
   notes: 'Christofides (New Wave), 2023 Cyprus presidential election candidate. Not a party.'
   drop: true
-  drop_reason: presidential_candidate
+  drop_reason: individual_candidate
 - party_short: ChristouELAM
   partyfacts_id: 1013
   source: gemini_high
@@ -128,7 +128,7 @@ mappings:
   is_coalition: false
   notes: 'Colocassides, 2023 Cyprus presidential election Independent candidate. Not a party.'
   drop: true
-  drop_reason: presidential_candidate
+  drop_reason: individual_candidate
 - party_short: CTP
   partyfacts_id: 6109
   source: partyfacts_external
@@ -148,7 +148,7 @@ mappings:
   is_coalition: false
   notes: 'Demetriades (FFC-backed Independent), 2023 Cyprus presidential election candidate. Not a party.'
   drop: true
-  drop_reason: presidential_candidate
+  drop_reason: individual_candidate
 - party_short: Democratic P...
   partyfacts_id: 3920
   source: partyfacts_external
@@ -254,7 +254,7 @@ mappings:
   is_coalition: false
   notes: 'Eliades, 2023 Cyprus presidential election Independent candidate. Not a party.'
   drop: true
-  drop_reason: presidential_candidate
+  drop_reason: individual_candidate
 - party_short: Eniaion
   partyfacts_id: 4894
   source: partyfacts_external
@@ -533,7 +533,7 @@ mappings:
   is_coalition: false
   notes: 'Protopapas, Cyprus presidential election Independent candidate. Not a party.'
   drop: true
-  drop_reason: presidential_candidate
+  drop_reason: individual_candidate
 - party_short: SOLIDARITY
   partyfacts_id: 4883
   source: partyfacts_external

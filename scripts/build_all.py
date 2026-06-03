@@ -217,7 +217,7 @@ def _attach_canonical_name(merged: pd.DataFrame) -> pd.DataFrame:
 # are not party-level voting-intention signal.)
 HARD_DROP_REASONS = {
     "approval", "lead", "response_rate", "total",
-    "presidential_candidate", "parse_artifact",
+    "individual_candidate", "parse_artifact",
 }
 
 

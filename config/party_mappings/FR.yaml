@@ -212,7 +212,7 @@ mappings:
   is_coalition: false
   notes: 'Christine Boutin (Parti Chrétien-Démocrate), 2012 French presidential election candidate.'
   drop: true
-  drop_reason: presidential_candidate
+  drop_reason: individual_candidate
 - party_short: BovéSE
   partyfacts_id: null
   source: null
@@ -220,7 +220,7 @@ mappings:
   is_coalition: false
   notes: 'José Bové, 2007 French presidential election candidate (Sans Étiquette / ecologist). Single-candidate column.'
   drop: true
-  drop_reason: presidential_candidate
+  drop_reason: individual_candidate
 - party_short: BraouezecPCF
   partyfacts_id: 1251
   source: gemini_high
@@ -280,7 +280,7 @@ mappings:
   is_coalition: false
   notes: 'Jacques Cheminade (Solidarité et Progrès), 2012/2017 French presidential election candidate.'
   drop: true
-  drop_reason: presidential_candidate
+  drop_reason: individual_candidate
 - party_short: ChevènementMRC
   partyfacts_id: 3156
   source: gemini_high
@@ -887,7 +887,7 @@ mappings:
   is_coalition: false
   notes: 'Nicolas Hulot, 2012 French presidential primary candidate (Sans Étiquette).'
   drop: true
-  drop_reason: presidential_candidate
+  drop_reason: individual_candidate
 - party_short: IND
   partyfacts_id: 1629
   source: partyfacts_external
@@ -1060,7 +1060,7 @@ mappings:
   is_coalition: false
   notes: 'Jean Lassalle (Résistons!), 2017 French presidential election candidate.'
   drop: true
-  drop_reason: presidential_candidate
+  drop_reason: individual_candidate
 - party_short: LCR
   partyfacts_id: 1506
   source: partyfacts_external
@@ -1114,7 +1114,7 @@ mappings:
   is_coalition: false
   notes: 'Corinne Lepage (Cap21), 2012 French presidential election candidate.'
   drop: true
-  drop_reason: presidential_candidate
+  drop_reason: individual_candidate
 - party_short: LES VERTS
   partyfacts_id: 1108
   source: partyfacts_external
@@ -1999,7 +1999,7 @@ mappings:
   is_coalition: false
   notes: 'Gérard Schivardi (Parti des Travailleurs), 2007 French presidential election candidate.'
   drop: true
-  drop_reason: presidential_candidate
+  drop_reason: individual_candidate
 - party_short: SE
   partyfacts_id: 2688
   source: whogov_minister_match

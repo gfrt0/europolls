@@ -52,7 +52,7 @@ OUT_COLS = [
 # for the same poll) is applied only at the concat step.
 HARD_DROP_REASONS = {
     "approval", "lead", "response_rate", "total",
-    "presidential_candidate", "parse_artifact",
+    "individual_candidate", "parse_artifact",
 }
 
 

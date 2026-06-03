@@ -66,23 +66,23 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: other — The party short label 'All 3/O|Other' directly matches the Party
-    Facts entry for 'other' (id=1853).
+  notes: other — The party short label 'All 3/O|Other' directly matches the Party Facts entry for 'other' (id=1853).
 - party_short: André Ventura
-  partyfacts_id: 8182
-  source: gemini_high
-  confidence: high
+  partyfacts_id: null
+  source: null
+  confidence: null
   is_coalition: false
-  notes: Chega — André Ventura is the leader of the Chega party (ID 8182), and the
-    vote shares are consistent with a party rather than a personal vote.
+  notes: Portuguese politician 'André Ventura' — leader-rating / candidate-recognition column, not party vote intention.
+  drop: true
+  drop_reason: individual_candidate
 - party_short: António Costa
-  partyfacts_id: 655
-  source: gemini_high
-  confidence: high
+  partyfacts_id: null
+  source: null
+  confidence: null
   is_coalition: false
-  notes: Partido Socialista — António Costa is a prominent leader of the Socialist
-    Party (PS) in Portugal, and the high vote shares in the polls are consistent with
-    the PS's performance.
+  notes: Portuguese politician 'António Costa' — leader-rating / candidate-recognition column, not party vote intention.
+  drop: true
+  drop_reason: individual_candidate
 - party_short: AP
   partyfacts_id: 5939
   source: partyfacts_external
@@ -124,7 +124,7 @@ mappings:
   source: null
   confidence: null
   is_coalition: false
-  notes: 'Approval-poll column (''Both approve and disapprove''). Not vote intention.'
+  notes: Approval-poll column ('Both approve and disapprove'). Not vote intention.
   drop: true
   drop_reason: approval
 - party_short: Both/O|Other
@@ -132,8 +132,7 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: other — The party short label 'Both/O|Other' directly corresponds to the
-    Party Facts entry for 'other' with ID 1853.
+  notes: other — The party short label 'Both/O|Other' directly corresponds to the Party Facts entry for 'other' with ID 1853.
 - party_short: C-Basta!
   partyfacts_id: 4000
   source: partyfacts_external
@@ -141,13 +140,13 @@ mappings:
   is_coalition: false
   notes: ''
 - party_short: Catarina Martins
-  partyfacts_id: 1310
-  source: gemini_high
-  confidence: high
+  partyfacts_id: null
+  source: null
+  confidence: null
   is_coalition: false
-  notes: Bloco de Esquerda — Catarina Martins was a prominent leader of Bloco de Esquerda
-    (Left Bloc) in Portugal, and the polling context suggests this refers to the party
-    she represented.
+  notes: Portuguese politician 'Catarina Martins' — leader-rating / candidate-recognition column, not party vote intention.
+  drop: true
+  drop_reason: individual_candidate
 - party_short: CDS
   partyfacts_id: 1308
   source: partyfacts_external
@@ -243,15 +242,13 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Partido Socialista — The polling context shows 'Costa' with high vote shares
-    in 2014-2015, which aligns with António Costa, then leader of the Socialist Party
-    (PS), who became Prime Minister in 2015.
+  notes: Partido Socialista — The polling context shows 'Costa' with high vote shares in 2014-2015, which aligns with António Costa, then leader of the Socialist Party (PS), who became Prime Minister in 2015.
 - party_short: Debate com Rui Rocha na CNN, Fev.2024 (53539434166) (cropped) (cropped)
   partyfacts_id: null
   source: null
   confidence: null
   is_coalition: false
-  notes: 'Wikipedia image-file caption mis-parsed as a column header. Not a party.'
+  notes: Wikipedia image-file caption mis-parsed as a column header. Not a party.
   drop: true
   drop_reason: parse_artifact
 - party_short: DI
@@ -267,13 +264,13 @@ mappings:
   is_coalition: false
   notes: ''
 - party_short: Duarte Cordeiro
-  partyfacts_id: 655
-  source: gemini_high
-  confidence: high
+  partyfacts_id: null
+  source: null
+  confidence: null
   is_coalition: false
-  notes: Partido Socialista — Duarte Cordeiro is a prominent member of the Socialist
-    Party (PS) in Portugal, and the polling context suggests this is a candidate-party
-    pairing.
+  notes: Portuguese politician 'Duarte Cordeiro' — leader-rating / candidate-recognition column, not party vote intention.
+  drop: true
+  drop_reason: individual_candidate
 - party_short: etc
   partyfacts_id: 1853
   source: partyfacts_external
@@ -281,20 +278,21 @@ mappings:
   is_coalition: false
   notes: ''
 - party_short: Fernando Medina
-  partyfacts_id: 655
-  source: gemini_high
-  confidence: high
+  partyfacts_id: null
+  source: null
+  confidence: null
   is_coalition: false
-  notes: Partido Socialista — Fernando Medina is a prominent politician from the Socialist
-    Party (PS) in Portugal, and the polling context suggests this refers to his party.
+  notes: Portuguese politician 'Fernando Medina' — leader-rating / candidate-recognition column, not party vote intention.
+  drop: true
+  drop_reason: individual_candidate
 - party_short: FerreiraLeite
   partyfacts_id: null
   source: null
   confidence: null
   is_coalition: false
-  notes: 'Manuela Ferreira Leite (PSD leader 2008-2010) — leader-rating column. Not vote intention.'
+  notes: Manuela Ferreira Leite (PSD leader 2008-2010) — leader-rating column. Not vote intention.
   drop: true
-  drop_reason: presidential_candidate
+  drop_reason: individual_candidate
 - party_short: FRS
   partyfacts_id: 657
   source: partyfacts_external
@@ -339,12 +337,12 @@ mappings:
   notes: ''
 - party_short: Inês Sousa Real
   partyfacts_id: null
-  source: gemini_no_match
+  source: null
   confidence: null
   is_coalition: false
-  notes: The label 'Inés Sousa Real' refers to a candidate, not a party, and there
-    is no clear party abbreviation to extract or match to the provided Party Facts
-    entries.
+  notes: Portuguese politician 'Inês Sousa Real' — leader-rating / candidate-recognition column, not party vote intention.
+  drop: true
+  drop_reason: individual_candidate
 - party_short: ISD
   partyfacts_id: 35
   source: partyfacts_external
@@ -356,40 +354,35 @@ mappings:
   source: gemini_no_match
   confidence: null
   is_coalition: false
-  notes: Jerónimo de Sousa is a candidate's name, not a party abbreviation, and no
-    party in the list directly corresponds to this name or a party he is known to
-    lead that is present in the list.
+  notes: Jerónimo de Sousa is a candidate's name, not a party abbreviation, and no party in the list directly corresponds to this name or a party he is known to lead that is present in the list.
 - party_short: Jorge Moreira da Silva
   partyfacts_id: null
   source: gemini_no_match
   confidence: null
   is_coalition: false
-  notes: The label 'Jorge Moreira da Silva' refers to an individual candidate, not
-    a party, and there is no clear party affiliation indicated or implied by the provided
-    Party Facts entries.
+  notes: The label 'Jorge Moreira da Silva' refers to an individual candidate, not a party, and there is no clear party affiliation indicated or implied by the provided Party Facts entries.
 - party_short: José Luís Carneiro
-  partyfacts_id: 655
-  source: gemini_high
-  confidence: high
+  partyfacts_id: null
+  source: null
+  confidence: null
   is_coalition: false
-  notes: Partido Socialista — José Luís Carneiro is a prominent member of the Socialist
-    Party (PS) in Portugal, and the polling context suggests this refers to the party
-    rather than an independent candidate.
+  notes: Portuguese politician 'José Luís Carneiro' — leader-rating / candidate-recognition column, not party vote intention.
+  drop: true
+  drop_reason: individual_candidate
 - party_short: JoséSócrates
-  partyfacts_id: 655
-  source: gemini_high
-  confidence: high
+  partyfacts_id: null
+  source: null
+  confidence: null
   is_coalition: false
-  notes: Partido Socialista — José Sócrates was a prominent leader of the Socialist
-    Party (PS) in Portugal during the period of the polls, making it highly likely
-    that 'JoséSócrates' refers to the PS.
+  notes: Portuguese politician 'JoséSócrates' — leader-rating / candidate-recognition column, not party vote intention.
+  drop: true
+  drop_reason: individual_candidate
 - party_short: João Cotrim de Figueiredo
   partyfacts_id: 8640
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Iniciativa Liberal — João Cotrim de Figueiredo is a prominent leader of Iniciativa
-    Liberal (IL) in Portugal, and the polling data aligns with IL's performance.
+  notes: Iniciativa Liberal — João Cotrim de Figueiredo is a prominent leader of Iniciativa Liberal (IL) in Portugal, and the polling data aligns with IL's performance.
 - party_short: L
   partyfacts_id: 3225
   source: partyfacts_external
@@ -401,8 +394,7 @@ mappings:
   source: manual_review
   confidence: high
   is_coalition: false
-  notes: LIVRE / Tempo de Avançar electoral list (LIVRE-led) — PF id 3225 (same as
-    standalone 'LIVRE' already mapped in this file).
+  notes: LIVRE / Tempo de Avançar electoral list (LIVRE-led) — PF id 3225 (same as standalone 'LIVRE' already mapped in this file).
 - party_short: LIVRE
   partyfacts_id: 3225
   source: partyfacts_external
@@ -410,34 +402,35 @@ mappings:
   is_coalition: false
   notes: ''
 - party_short: Luís Montenegro
-  partyfacts_id: 1359
-  source: gemini_high
-  confidence: high
+  partyfacts_id: null
+  source: null
+  confidence: null
   is_coalition: false
-  notes: Partido Social Democrata — Luís Montenegro is the current leader of the Social
-    Democratic Party (PSD) in Portugal, and the polling data aligns with typical PSD
-    vote shares.
+  notes: Portuguese politician 'Luís Montenegro' — leader-rating / candidate-recognition column, not party vote intention.
+  drop: true
+  drop_reason: individual_candidate
 - party_short: Mariana Mortágua
-  partyfacts_id: 1310
-  source: gemini_high
-  confidence: high
+  partyfacts_id: null
+  source: null
+  confidence: null
   is_coalition: false
-  notes: Bloco de Esquerda — Mariana Mortágua is a prominent leader of Bloco de Esquerda
-    (BE) in Portugal, and the polling data aligns with BE's typical performance.
+  notes: Portuguese politician 'Mariana Mortágua' — leader-rating / candidate-recognition column, not party vote intention.
+  drop: true
+  drop_reason: individual_candidate
 - party_short: Mariana Vieira da Silva
   partyfacts_id: null
   source: gemini_no_match
   confidence: null
   is_coalition: false
-  notes: The party short label 'Mariana Vieira da Silva' appears to be a candidate's
-    name and does not directly match any of the provided Party Facts entries for Portugal.
+  notes: The party short label 'Mariana Vieira da Silva' appears to be a candidate's name and does not directly match any of the provided Party Facts entries for Portugal.
 - party_short: Marta Temido
   partyfacts_id: null
-  source: gemini_no_match
+  source: null
   confidence: null
   is_coalition: false
-  notes: Marta Temido is a candidate's name, not a party abbreviation, and no party
-    in the provided list directly corresponds to this name.
+  notes: Portuguese politician 'Marta Temido' — leader-rating / candidate-recognition column, not party vote intention.
+  drop: true
+  drop_reason: individual_candidate
 - party_short: MAS
   partyfacts_id: 2893
   source: partyfacts_external
@@ -497,9 +490,7 @@ mappings:
   source: gemini_no_match
   confidence: null
   is_coalition: false
-  notes: The provided party label 'N/B/NO|Neither/Both/No opinion' indicates a non-political
-    response option in polls, not a political party, and therefore does not match
-    any of the Party Facts entries.
+  notes: The provided party label 'N/B/NO|Neither/Both/No opinion' indicates a non-political response option in polls, not a political party, and therefore does not match any of the Party Facts entries.
 - party_short: NC
   partyfacts_id: 7358
   source: partyfacts_external
@@ -511,16 +502,13 @@ mappings:
   source: gemini_no_match
   confidence: null
   is_coalition: false
-  notes: The label 'Neither' indicates a non-party option, such as 'none of the above'
-    or 'blank/invalid vote', and does not correspond to any political party in the
-    provided list.
+  notes: The label 'Neither' indicates a non-party option, such as 'none of the above' or 'blank/invalid vote', and does not correspond to any political party in the provided list.
 - party_short: Net
   partyfacts_id: null
   source: gemini_no_match
   confidence: null
   is_coalition: false
-  notes: The party short label 'Net' does not semantically match any of the provided
-    Party Facts entries for Portugal.
+  notes: The party short label 'Net' does not semantically match any of the provided Party Facts entries for Portugal.
 - party_short: NN
   partyfacts_id: 2891
   source: partyfacts_external
@@ -532,47 +520,39 @@ mappings:
   source: gemini_no_match
   confidence: null
   is_coalition: false
-  notes: The label 'No opinion' does not correspond to any political party, but rather
-    indicates a survey response category.
+  notes: The label 'No opinion' does not correspond to any political party, but rather indicates a survey response category.
 - party_short: Noopinion
   partyfacts_id: null
   source: gemini_no_match
   confidence: null
   is_coalition: false
-  notes: The party short label 'Noopinion' does not correspond to any political party,
-    but rather indicates a lack of opinion or a 'none of the above' option in polling
-    data.
+  notes: The party short label 'Noopinion' does not correspond to any political party, but rather indicates a lack of opinion or a 'none of the above' option in polling data.
 - party_short: NO|No Opinion
   partyfacts_id: null
   source: gemini_no_match
   confidence: null
   is_coalition: false
-  notes: The label 'NO|No Opinion' refers to a polling category for respondents who
-    have no opinion, not a political party.
+  notes: The label 'NO|No Opinion' refers to a polling category for respondents who have no opinion, not a political party.
 - party_short: Nuno Melo
-  partyfacts_id: 1308
-  source: gemini_high
-  confidence: high
+  partyfacts_id: null
+  source: null
+  confidence: null
   is_coalition: false
-  notes: Centro Democrático Social-Partido Popular — Nuno Melo is a prominent politician
-    from the CDS-PP party in Portugal, and the polling context suggests this refers
-    to his party.
+  notes: Portuguese politician 'Nuno Melo' — leader-rating / candidate-recognition column, not party vote intention.
+  drop: true
+  drop_reason: individual_candidate
 - party_short: N|Neither
   partyfacts_id: 3074
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: technical — The party short label 'N|Neither' directly corresponds to the
-    'technical' entry in Party Facts, which is described as 'Votou em branco/ nulo'
-    (blank/null vote), indicating a non-party option.
+  notes: technical — The party short label 'N|Neither' directly corresponds to the 'technical' entry in Party Facts, which is described as 'Votou em branco/ nulo' (blank/null vote), indicating a non-party option.
 - party_short: N|None
   partyfacts_id: null
   source: gemini_no_match
   confidence: null
   is_coalition: false
-  notes: The party short label 'N|None' indicates a 'None of the above' or 'No party'
-    option, which does not correspond to any political party in the provided Party
-    Facts list.
+  notes: The party short label 'N|None' indicates a 'None of the above' or 'No party' option, which does not correspond to any political party in the provided Party Facts list.
 - party_short: Os Verdes
   partyfacts_id: 886
   source: partyfacts_external
@@ -584,16 +564,13 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: other — The label 'O|Other' directly corresponds to the Party Facts entry
-    for 'other' (id=1853).
+  notes: other — The label 'O|Other' directly corresponds to the Party Facts entry for 'other' (id=1853).
 - party_short: O|Others
   partyfacts_id: 1853
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: other — The party short label 'O|Others' directly corresponds to the Party
-    Facts entry for 'other' (id=1853), which is a generic category for miscellaneous
-    parties.
+  notes: other — The party short label 'O|Others' directly corresponds to the Party Facts entry for 'other' (id=1853), which is a generic category for miscellaneous parties.
 - party_short: P.H.
   partyfacts_id: 8269
   source: partyfacts_external
@@ -613,20 +590,21 @@ mappings:
   is_coalition: false
   notes: ''
 - party_short: PassosCoelho
-  partyfacts_id: 5939
-  source: gemini_high
-  confidence: high
-  is_coalition: true
-  notes: "Portugal \x13 Frente — PassosCoelho refers to Pedro Passos Coelho, who led\
-    \ the 'Portugal \x13 Frente' (P\x13F) coalition, which included the PSD and CDS-PP,\
-    \ during the period of the polls."
-- party_short: Paulo Raimundo
   partyfacts_id: null
-  source: gemini_no_match
+  source: null
   confidence: null
   is_coalition: false
-  notes: The label 'Paulo Raimundo' refers to a candidate, not a party, and there
-    is no clear party abbreviation or name to match in the provided list.
+  notes: Portuguese politician 'PassosCoelho' — leader-rating / candidate-recognition column, not party vote intention.
+  drop: true
+  drop_reason: individual_candidate
+- party_short: Paulo Raimundo
+  partyfacts_id: null
+  source: null
+  confidence: null
+  is_coalition: false
+  notes: Portuguese politician 'Paulo Raimundo' — leader-rating / candidate-recognition column, not party vote intention.
+  drop: true
+  drop_reason: individual_candidate
 - party_short: PC
   partyfacts_id: 6310
   source: partyfacts_external
@@ -700,29 +678,29 @@ mappings:
   is_coalition: false
   notes: ''
 - party_short: Pedro Nuno Santos
-  partyfacts_id: 655
-  source: gemini_high
-  confidence: high
-  is_coalition: false
-  notes: Partido Socialista — Pedro Nuno Santos is a prominent leader of the Socialist
-    Party (PS) in Portugal, and the polling data aligns with typical PS performance,
-    indicating the label refers to the party through its leader.
-- party_short: Pedro Passos Coelho
-  partyfacts_id: 1359
-  source: gemini_high
-  confidence: high
-  is_coalition: false
-  notes: Partido Social Democrata — Pedro Passos Coelho was the leader of the Social
-    Democratic Party (PSD) during the period of the polls, and the polling data likely
-    refers to the party he led.
-- party_short: Pedro Santana Lopes
   partyfacts_id: null
-  source: gemini_no_match
+  source: null
   confidence: null
   is_coalition: false
-  notes: Pedro Santana Lopes is a politician, not a party, and there is no clear party
-    affiliation indicated or implied by the provided data to match him to a Party
-    Facts ID.
+  notes: Portuguese politician 'Pedro Nuno Santos' — leader-rating / candidate-recognition column, not party vote intention.
+  drop: true
+  drop_reason: individual_candidate
+- party_short: Pedro Passos Coelho
+  partyfacts_id: null
+  source: null
+  confidence: null
+  is_coalition: false
+  notes: Portuguese politician 'Pedro Passos Coelho' — leader-rating / candidate-recognition column, not party vote intention.
+  drop: true
+  drop_reason: individual_candidate
+- party_short: Pedro Santana Lopes
+  partyfacts_id: null
+  source: null
+  confidence: null
+  is_coalition: false
+  notes: Portuguese politician 'Pedro Santana Lopes' — leader-rating / candidate-recognition column, not party vote intention.
+  drop: true
+  drop_reason: individual_candidate
 - party_short: PEV
   partyfacts_id: 886
   source: partyfacts_external
@@ -884,9 +862,7 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Partido Social Democrata — The party short label 'PSD' directly matches the
-    'Partido Social Democrata' (ID 1359), and the parenthetical 'Paulo Rangel' likely
-    refers to a candidate or leader within that party, not a separate entity or coalition.
+  notes: Partido Social Democrata — The party short label 'PSD' directly matches the 'Partido Social Democrata' (ID 1359), and the parenthetical 'Paulo Rangel' likely refers to a candidate or leader within that party, not a separate entity or coalition.
 - party_short: PSD - CDS-PP
   partyfacts_id: 5939
   source: partyfacts_external
@@ -898,9 +874,7 @@ mappings:
   source: gemini_no_match
   confidence: null
   is_coalition: false
-  notes: The label 'PSD/CDS' represents a coalition of the Social Democratic Party
-    (PSD) and the Social Democratic Center-Popular Party (CDS-PP), but there is no
-    single Party Facts ID for this specific coalition.
+  notes: The label 'PSD/CDS' represents a coalition of the Social Democratic Party (PSD) and the Social Democratic Center-Popular Party (CDS-PP), but there is no single Party Facts ID for this specific coalition.
 - party_short: PSN
   partyfacts_id: 181
   source: partyfacts_external
@@ -938,21 +912,21 @@ mappings:
   is_coalition: false
   notes: ''
 - party_short: Rui Rio
-  partyfacts_id: 1359
-  source: gemini_high
-  confidence: high
+  partyfacts_id: null
+  source: null
+  confidence: null
   is_coalition: false
-  notes: Partido Social Democrata — Rui Rio was the leader of the Social Democratic
-    Party (PSD) during the period of the provided polls, making the label a reference
-    to the party he led.
+  notes: Portuguese politician 'Rui Rio' — leader-rating / candidate-recognition column, not party vote intention.
+  drop: true
+  drop_reason: individual_candidate
 - party_short: Rui Tavares
-  partyfacts_id: 3225
-  source: gemini_high
-  confidence: high
+  partyfacts_id: null
+  source: null
+  confidence: null
   is_coalition: false
-  notes: Livre – Liberdade, Esquerda, Europa e Ecologia — Rui Tavares is a prominent
-    figure and founder of the LIVRE party in Portugal, making the 'L' (Livre) Party
-    Facts ID the most appropriate match.
+  notes: Portuguese politician 'Rui Tavares' — leader-rating / candidate-recognition column, not party vote intention.
+  drop: true
+  drop_reason: individual_candidate
 - party_short: SD
   partyfacts_id: 1359
   source: partyfacts_external
@@ -964,8 +938,7 @@ mappings:
   source: gemini_no_match
   confidence: null
   is_coalition: false
-  notes: The party short label 'Seguro' does not match any of the provided Party Facts
-    entries for Portugal.
+  notes: The party short label 'Seguro' does not match any of the provided Party Facts entries for Portugal.
 - party_short: SOC
   partyfacts_id: 655
   source: partyfacts_external
@@ -1010,8 +983,9 @@ mappings:
   notes: ''
 - party_short: Élvio Sousa
   partyfacts_id: null
-  source: gemini_no_match
+  source: null
   confidence: null
   is_coalition: false
-  notes: The party short label 'Élvio Sousa' appears to be a candidate's name rather
-    than a party abbreviation, and there is no matching party in the provided list.
+  notes: Portuguese politician 'Élvio Sousa' — leader-rating / candidate-recognition column, not party vote intention.
+  drop: true
+  drop_reason: individual_candidate
