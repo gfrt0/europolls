@@ -17,16 +17,92 @@ EXTLINK_RE = re.compile(r"\[https?://\S+\s+([^\]]+)\]")
 EXTLINK_FULL_RE = re.compile(r"\[(https?://\S+)\s+([^\]]+)\]")
 
 
-def extract_external_url(cell: str) -> str | None:
+REF_CITE_URL_RE = re.compile(
+    # Match a citation template inside any <ref>. Covers:
+    #   {{cite web | url=... |  ... }}    (most common)
+    #   {{Cite news | url=...}}           (alt template)
+    #   {{Citation | url=...}}            (DK uses this)
+    #   {{webarchive | url=...}}          (BE common, links to web.archive.org)
+    # — tolerates whitespace, case-insensitive on the template name and
+    # the url= parameter.
+    r"<ref[^>]*>[\s\S]*?\{\{\s*(?:cite\s+\w+|citation|webarchive)\b"
+    r"[^}]*?\burl\s*=\s*(https?://[^\s|}]+)",
+    re.IGNORECASE,
+)
+
+REF_BRACKETED_URL_RE = re.compile(
+    # `<ref>[https://... optional display text]</ref>` — BE / DK fallback.
+    # The URL stops at any whitespace OR the closing bracket so we don't
+    # grab `]</ref>` into the captured group.
+    r"<ref[^>]*>\s*\[\s*(https?://[^\s\]]+)",
+    re.IGNORECASE,
+)
+
+REF_BARE_URL_RE = re.compile(
+    # `<ref>https://...</ref>` — bare URL inside ref (DK old articles).
+    r"<ref[^>]*>\s*(https?://\S+?)(?=[\s<|}\]])",
+    re.IGNORECASE,
+)
+
+
+SELF_CLOSING_REF_RE = re.compile(
+    r'<ref\s+name\s*=\s*"?([^"\s/>]+)"?\s*/>',
+    re.IGNORECASE,
+)
+NAMED_REF_RE = re.compile(
+    r'<ref\s+name\s*=\s*"?([^"\s>]+)"?\s*>([\s\S]+?)</ref>',
+    re.IGNORECASE,
+)
+
+
+def build_ref_name_index(article_text: str) -> dict[str, str]:
+    """Scan a whole article for named ``<ref name="X">...</ref>`` blocks
+    and return ``{name: url}`` so self-closing refs ``<ref name="X"/>``
+    can be resolved back to their URL.
+
+    Belgian polling tables (and other articles that repeat the same
+    citation across many rows) use the named-ref pattern heavily — without
+    this index ~99% of BE rows lose their URL.
+    """
+    out: dict[str, str] = {}
+    for m in NAMED_REF_RE.finditer(article_text):
+        name, body = m.group(1), m.group(2)
+        for pat in (EXTLINK_FULL_RE, REF_CITE_URL_RE,
+                    REF_BRACKETED_URL_RE, REF_BARE_URL_RE):
+            inner = pat.search('<ref>' + body + '</ref>') or pat.search(body)
+            if inner:
+                out[name] = inner.group(1)
+                break
+    return out
+
+
+def extract_external_url(cell: str, ref_index: dict[str, str] | None = None) -> str | None:
     """Pull the first external URL from a wikitext cell.
 
-    Cells like ``[https://example.com/poll SWG]`` carry the source-of-record
-    URL for the poll. Returns the URL or None if none found.
+    Tries, in order:
+      1. Inline link: ``[https://example.com/poll SWG]`` (covers ~69% of
+         poll rows directly in the cell).
+      2. ``<ref>{{cite web|url=...}}</ref>`` and variants (cite news /
+         citation / webarchive — covers ES / IE / LV / GR / SK / UK).
+      3. ``<ref>[https://...]</ref>`` bracketed external link (BE / DK).
+      4. ``<ref>https://...</ref>`` bare URL (DK old articles).
+      5. ``<ref name="X"/>`` self-closing ref resolved via ``ref_index``
+         (BE / NL — pre-built from the full article).
+
+    Returns the URL or None.
     """
     if not cell:
         return None
-    m = EXTLINK_FULL_RE.search(cell)
-    return m.group(1) if m else None
+    for pat in (EXTLINK_FULL_RE, REF_CITE_URL_RE,
+                REF_BRACKETED_URL_RE, REF_BARE_URL_RE):
+        m = pat.search(cell)
+        if m:
+            return m.group(1)
+    if ref_index:
+        m = SELF_CLOSING_REF_RE.search(cell)
+        if m and m.group(1) in ref_index:
+            return ref_index[m.group(1)]
+    return None
 STYLE_PREFIX_RE = re.compile(r"^[^|]*\|\s*")  # strip `style="..."|` cell prefix
 
 

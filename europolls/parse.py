@@ -19,7 +19,7 @@ import wikitextparser as wtp
 
 from europolls.lib import (
     parse_share, parse_sample, parse_fieldwork,
-    strip_wikitext, extract_external_url,
+    strip_wikitext, extract_external_url, build_ref_name_index,
 )
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -332,6 +332,10 @@ def _polling_section_spans(wikitext: str) -> list[tuple[int, int]]:
 def parse_cycle(country: str, cycle: str, default_year: int, coalition_lc: set[str]) -> list[dict]:
     cycle_dir = RAW_ROOT / country / cycle
     wikitext = (cycle_dir / "article.wikitext").read_text()
+    # Pre-index named refs once per article so self-closing
+    # `<ref name="X"/>` calls inside individual cells can be resolved
+    # back to their URL.
+    ref_index = build_ref_name_index(wikitext)
     src_meta = json.loads((cycle_dir / "source.json").read_text())
     article_title = src_meta["title"]
     article_revid = src_meta["revid"]
@@ -389,7 +393,25 @@ def parse_cycle(country: str, cycle: str, default_year: int, coalition_lc: set[s
                 continue
             pollster_raw = row[i_pollster] if i_pollster >= 0 else ""
             pollster = strip_wikitext(pollster_raw)
-            source_url = extract_external_url(pollster_raw)
+            source_url = extract_external_url(pollster_raw, ref_index)
+            # BE / some NL tables: pollster cell carries the firm name
+            # while an adjacent "Commissioner" cell carries the source
+            # citation. Fall back to scanning row cells beyond the meta
+            # columns (date + sample) for a URL when the pollster cell
+            # didn't carry one.
+            if not source_url:
+                meta_idxs = {i_pollster, i_admin, i_sample}
+                for j, neighbour in enumerate(row):
+                    if j in meta_idxs or j == i_pollster:
+                        continue
+                    if not neighbour or len(neighbour) > 800:
+                        continue   # vote-share cells are short; meta cells longer
+                    if "<ref" not in neighbour and "http" not in neighbour:
+                        continue
+                    cand = extract_external_url(neighbour, ref_index)
+                    if cand:
+                        source_url = cand
+                        break
             if not pollster:
                 skipped_rows += 1
                 continue
