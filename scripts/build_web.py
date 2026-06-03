@@ -389,29 +389,69 @@ def main() -> None:
 
     # Party names lookup for tooltips, also re-keyed to party_canonical.
     # Sources, in priority order:
-    #   1. party_names.yaml (existing hand-curated rich names by party_short),
-    #      remapped via dominant_short_per_canonical;
-    #   2. PF's display name (already the canonical key itself when partyfacts_
-    #      id is present — no extra lookup needed for that case).
+    #   1. party_names.yaml — hand-curated rich names by party_short,
+    #      remapped to canonical via dominant_short_per_canonical;
+    #   2. PF's name_native (the party's native-language name) when the
+    #      YAML has no entry — covers everything mapped to a PF id;
+    #   3. fall through (no tooltip) for parties without a YAML entry
+    #      and without a PF id.
     # Country-specific entries win over the _generic block.
     if PARTY_NAMES_YAML.exists():
         names_raw = yaml.safe_load(PARTY_NAMES_YAML.read_text()) or {}
         generic = names_raw.pop("_generic", {}) or {}
+        # Load PF native names keyed by pf_id.
+        pf_names_path = ROOT / "config" / "partyfacts_names.yaml"
+        pf_names = {}
+        if pf_names_path.exists():
+            pf_doc = yaml.safe_load(pf_names_path.read_text()) or {}
+            pf_names = {int(k): v for k, v in (pf_doc.get("names") or {}).items()}
+        # Build canonical → pf_id per country (from the per-country YAMLs).
+        canonical_to_pf: dict[str, dict[str, int]] = {}
+        for path in sorted((ROOT / "config" / "party_mappings").glob("*.yaml")):
+            if path.stem.startswith("_"):
+                continue
+            doc = yaml.safe_load(path.read_text()) or {}
+            entries = doc.get("mappings") or []
+            if isinstance(entries, dict):
+                entries = [{"party_short": k, **(v or {})} for k, v in entries.items()]
+            cc_map = canonical_to_pf.setdefault(path.stem, {})
+            for entry in entries:
+                if not isinstance(entry, dict):
+                    continue
+                pf = entry.get("partyfacts_id")
+                if pf is None:
+                    continue
+                pf_int = int(pf)
+                # canonical name = pf's display name
+                canon = pf_names.get(pf_int, {}).get("name")
+                if canon:
+                    cc_map[canon] = pf_int
+
         names_out: dict[str, dict[str, str]] = {}
         for cc, dominant in dominant_short_per_canonical.items():
             short_to_canon = {short: canon for canon, short in dominant.items() if short}
             curated_for_country = names_raw.get(cc) or {}
-            merged = {}
-            # Generic entries: keys here are typically meta labels (Others,
-            # Don't know, Neither, Abstain) which were filtered upstream,
-            # so they likely never appear. Apply anyway as a safety net.
+            merged: dict[str, str] = {}
+            # Generic entries: keys here are typically meta labels which
+            # were filtered upstream, so they likely never appear. Apply
+            # anyway as a safety net.
             for short, full in generic.items():
                 canon = short_to_canon.get(short, short)
                 merged[canon] = full
-            # Country-specific overrides.
+            # Country-specific YAML overrides.
             for short, full in curated_for_country.items():
                 canon = short_to_canon.get(short, short)
                 merged[canon] = full
+            # PF-id-backed fallback for canonicals not covered by the YAML.
+            for canon, pf_int in canonical_to_pf.get(cc, {}).items():
+                if canon in merged:
+                    continue
+                native = pf_names.get(pf_int, {}).get("name_native")
+                if native and native != canon:
+                    # 'Native (English)' style matches the YAML convention.
+                    merged[canon] = f"{native} ({canon})"
+                elif native:
+                    merged[canon] = native
             names_out[cc] = merged
         (WEB / "party_names.json").write_text(json.dumps(names_out))
         print(f"wrote party_names.json ({len(names_out)} countries, "

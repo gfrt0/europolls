@@ -458,7 +458,9 @@ function renderPlot() {
     margin: { l: 38, r: 14, t: 8, b: 36 },
     xaxis: { type: "date", showgrid: false },
     yaxis: { title: "% vote intention", range: [0, yMax], gridcolor: "#eee" },
-    legend: { orientation: "h", yanchor: "bottom", y: 1.02, xanchor: "right", x: 1, font: { size: 11 } },
+    // Party-chip row above the chart serves as the legend already; the
+    // Plotly built-in legend would just duplicate it.
+    showlegend: false,
     hovermode: "closest",
     plot_bgcolor: "#fff",
     paper_bgcolor: "#fff",
