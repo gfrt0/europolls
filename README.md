@@ -98,6 +98,11 @@ Approval-rating columns (`Approve` / `Disapprove` / `Net` / `Lead`), survey-meta
 > ```
 > R / Stata / DuckDB don't have this issue out of the box.
 
+**`partyfacts_name` + `party_canonical`** give a stable cross-row aggregation key:
+
+- `partyfacts_name` is PF's canonical English name (falls back to native / short) for rows that carry a `partyfacts_id`. Looked up from [`config/partyfacts_names.yaml`](config/partyfacts_names.yaml) — a slim repo-committed PF id → name lookup that you regenerate with `python scripts/build_partyfacts_names.py` whenever a fresh PF snapshot lands.
+- `party_canonical` = `partyfacts_name` when present, otherwise the row's `party_short`. This is the column to group by when you want IT `Lega` + `LN` (different shorts, same `partyfacts_id=1221`) to collapse to one series — ES `Sumar` and IT `AVS` (no PF id, real party) stay as themselves rather than disappearing.
+
 ## Validation
 
 The Italian scrape was validated against the official Italian government poll register (via ondata's [liberiamoli-tutti](https://github.com/ondata/liberiamoli-tutti/tree/main/italian_polls) mirror of sondaggipoliticoelettorali.it):

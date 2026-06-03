@@ -168,6 +168,46 @@ def _attach_partyfacts(long: pd.DataFrame) -> pd.DataFrame:
     after = len(merged)
     if before != after:
         print(f"  hard-dropped {before - after:,} meta rows")
+
+    merged = _attach_canonical_name(merged)
+    return merged
+
+
+def _attach_canonical_name(merged: pd.DataFrame) -> pd.DataFrame:
+    """Add partyfacts_name + party_canonical columns.
+
+    ``partyfacts_name`` is PF's English name (falls back to native /
+    name_short) for rows that carry a ``partyfacts_id``. Looked up from
+    ``config/partyfacts_names.yaml`` (slim, repo-committed lookup; see
+    ``scripts/build_partyfacts_names.py``).
+
+    ``party_canonical`` is the **stable aggregation key** for downstream
+    charts and joins: ``partyfacts_name`` when present, else
+    ``party_short``. Lega + LN (both pf_id 1221) collapse to one
+    canonical line; AVS (no PF id) stays as ``"AVS"``.
+    """
+    names_path = ROOT / "config" / "partyfacts_names.yaml"
+    if not names_path.exists():
+        # Pipeline can run without the lookup; degrade gracefully.
+        merged["partyfacts_name"] = pd.NA
+        merged["party_canonical"] = merged["party_short"]
+        return merged
+
+    with names_path.open() as f:
+        import yaml
+        data = yaml.safe_load(f) or {}
+    name_by_id: dict[int, str] = {
+        int(k): (v.get("name") or "")
+        for k, v in (data.get("names") or {}).items()
+    }
+    merged["partyfacts_name"] = (
+        merged["partyfacts_id"]
+        .map(lambda v: name_by_id.get(int(v)) if pd.notna(v) else None)
+    )
+    merged["party_canonical"] = merged["partyfacts_name"].where(
+        merged["partyfacts_name"].notna() & (merged["partyfacts_name"] != ""),
+        merged["party_short"],
+    )
     return merged
 
 
