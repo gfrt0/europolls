@@ -170,7 +170,7 @@ The presentation layer (chart and tables on the [live site](https://gfrt0.github
 - **Sub-10-row gemini_no_match tail.** 530 rows / 186 pairs after the wikilink + reverse-lookup + PT/FR_LEG candidate cleanup. Mostly micro-parties below the threshold where individual investigation pays off; diminishing returns.
 - **`europolls_party_id` namespace.** Stable identifier for parties not in PF (Sumar, AVS, etc.). `party_canonical` falls back to `party_short` today, which is fine for in-country joins but ambiguous across countries (every country has a `Lab`, `PSD`, etc.). A namespaced fallback (e.g. `EU:IT:AVS`) would make cross-country joins safer.
 - Long-tail wide-parties curation across the newly-added Central/Eastern European and Baltic countries — the lists are first-pass guesses that haven't been hand-validated.
-- Twelve fallback cycles still produce zero rows because the election article uses chart-only polling sections, transposed party-row layouts, or no polling section at all — see the per-cycle list at the end of `docs/ADDING_A_COUNTRY.md`. Most need either a different data source or a structural parser change.
+- Five fallback cycles (LT 2012, LT 2016, NL 2010, NO 2013, SK 2012) contain real polling wikitables in transposed orientation (parties as rows, dates/pollsters as columns) — see [#9](https://github.com/gfrt0/europolls/issues/9). The remaining seven of the twelve historical-fallback cycles have no polling section to recover (CY 2011, CZ 2025, LV 2011 / 2014, NO 2005, RO 2024, SE 2010); they need an upstream Wikipedia article.
 
 ## Citation
 
