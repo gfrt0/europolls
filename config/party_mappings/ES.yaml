@@ -33,12 +33,10 @@ mappings:
   notes: ''
 - party_short: Adelante Andalucía (2021)
   partyfacts_id: null
-  source: gemini_no_match
-  confidence: null
+  source: verified_not_in_pf
+  confidence: high
   is_coalition: false
-  notes: Adelante Andalucía (2021) is a regional party in Andalusia, and there is
-    no direct match or clear dominant member in the provided Party Facts entries for
-    Spain.
+  notes: 'Adelante Andalucía (2021-), Andalusian left coalition (Anticapitalistas-led splinter from the 2018 Podemos-IU bloc). Not in Party Facts.'
 - party_short: Ag
   partyfacts_id: 4599
   source: partyfacts_external
@@ -65,11 +63,10 @@ mappings:
   notes: ''
 - party_short: Aliança.cat
   partyfacts_id: null
-  source: gemini_no_match
-  confidence: null
+  source: verified_not_in_pf
+  confidence: high
   is_coalition: false
-  notes: The party 'Aliança.cat' is a new party formed in 2024 and is not present
-    in the provided Party Facts entries.
+  notes: 'Aliança Catalana (Catalan Alliance), 2020-. Wikipedia article: ''Catalan Alliance''. Not in Party Facts.'
 - party_short: ally
   partyfacts_id: 4019
   source: partyfacts_external
@@ -1588,27 +1585,22 @@ mappings:
     making ID 441 the best match.
 - party_short: PPCsVox
   partyfacts_id: null
-  source: gemini_no_match
-  confidence: null
-  is_coalition: false
-  notes: The label 'PPCsVox' appears to be a coalition or alliance of 'PP' (Partido
-    Popular) and 'Vox', but no single Party Facts ID represents this specific combination.
+  source: verified_not_in_pf
+  confidence: high
+  is_coalition: true
+  notes: 'PP+Ciudadanos+Vox right-bloc coalition-preference column. No PF coalition id.'
 - party_short: PPPSOE
   partyfacts_id: null
-  source: gemini_no_match
-  confidence: null
-  is_coalition: false
-  notes: The abbreviation 'PPPSOE' appears to be a concatenation of 'PP' (Partido
-    Popular) and 'PSOE' (Partido Socialista Obrero Español), which are two distinct
-    and often opposing parties, making it an unlikely single party or a standard coalition,
-    thus no direct match is found.
+  source: verified_not_in_pf
+  confidence: high
+  is_coalition: true
+  notes: 'PP+PSOE Grand Coalition preference column. No PF coalition id.'
 - party_short: PPPSOEC's
   partyfacts_id: null
-  source: gemini_no_match
-  confidence: null
-  is_coalition: false
-  notes: The provided party short label 'PPPSOEC's' does not clearly match any single
-    party or a dominant party within a coalition from the given Party Facts entries.
+  source: verified_not_in_pf
+  confidence: high
+  is_coalition: true
+  notes: 'PP+PSOE+Ciudadanos coalition-preference column. No PF coalition id.'
 - party_short: PPPSOECs
   partyfacts_id: null
   source: gemini_no_match
@@ -1831,11 +1823,10 @@ mappings:
     party in Spain.
 - party_short: PSOEPodemos
   partyfacts_id: null
-  source: gemini_no_match
-  confidence: null
-  is_coalition: false
-  notes: This is a clear coalition of PSOE and Podemos, but there is no single Party
-    Facts ID that represents this specific coalition.
+  source: verified_not_in_pf
+  confidence: high
+  is_coalition: true
+  notes: 'PSOE+Podemos coalition-preference column (not vote intention for a single party). No PF coalition id.'
 - party_short: PSOEPodemosC's
   partyfacts_id: null
   source: gemini_no_match

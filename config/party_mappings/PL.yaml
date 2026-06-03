@@ -305,11 +305,10 @@ mappings:
   notes: ''
 - party_short: Independents & Local Gov. Activists
   partyfacts_id: null
-  source: gemini_no_match
-  confidence: null
+  source: verified_not_in_pf
+  confidence: high
   is_coalition: false
-  notes: There is no Party Facts entry that semantically matches 'Independents & Local
-    Gov. Activists' among the provided candidates.
+  notes: 'Bezpartyjni Samorządowcy (Nonpartisan Local Government Activists). Wikipedia article: ''Nonpartisan Local Government Activists''. Not in Party Facts.'
 - party_short: IP
   partyfacts_id: 1608
   source: partyfacts_external
@@ -876,11 +875,11 @@ mappings:
   notes: 'Wikipedia article: ''There is One Poland''. Verified absent from Party Facts (no matching entry in core or external datasets). PF may add an id when next refreshed.'
 
 - party_short: PJKM
-  partyfacts_id: 913
-  source: partyfacts_external
-  confidence: null
+  partyfacts_id: null
+  source: verified_not_in_pf
+  confidence: high
   is_coalition: false
-  notes: ''
+  notes: 'Jest Jedna Polska (There is One Poland), short-lived 2024 PL list. Not in Party Facts.'
 - party_short: PJN
   partyfacts_id: 41
   source: partyfacts_external
@@ -1355,11 +1354,11 @@ mappings:
   notes: ''
 - party_short: There is One Poland
   partyfacts_id: null
-  source: gemini_no_match
-  confidence: null
+  source: verified_not_in_pf
+  confidence: high
   is_coalition: false
-  notes: The party 'There is One Poland' does not appear to have a direct match in
-    the provided Party Facts entries for Poland.
+  notes: 'Jest Jedna Polska (There is One Poland), short-lived 2024 PL electoral
+    list. Not in Party Facts.'
 - party_short: TobiaszBocheński
   partyfacts_id: null
   source: gemini_no_match

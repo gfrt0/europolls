@@ -778,12 +778,12 @@ mappings:
     and '-1' suggest a dynamic or calculated aggregate rather than a fixed coalition.
 - party_short: Grüne+1GLP+1SP−1,FDP−1
   partyfacts_id: null
-  source: gemini_no_match
+  source: null
   confidence: null
   is_coalition: false
-  notes: The party short label 'Grüne+1GLP+1SP−1,FDP−1' indicates a complex coalition
-    or aggregate of multiple parties with vote share adjustments, which does not directly
-    map to a single Party Facts ID.
+  notes: 'Seat-change-vs-last-election column header. Not a party.'
+  drop: true
+  drop_reason: parse_artifact
 - party_short: Grüne+1SP−1
   partyfacts_id: 1006
   source: gemini_high
@@ -1281,11 +1281,12 @@ mappings:
     Facts entries for Switzerland.
 - party_short: 'No'
   partyfacts_id: null
-  source: gemini_no_match
+  source: null
   confidence: null
   is_coalition: false
-  notes: The party short label 'No' does not correspond to any of the provided candidate
-    Party Facts entries for Switzerland.
+  notes: 'Referendum-style poll ''No'' column. Not party vote intention.'
+  drop: true
+  drop_reason: approval
 - party_short: NoGLP
   partyfacts_id: null
   source: gemini_no_match
@@ -1310,12 +1311,12 @@ mappings:
     to suggest a match.
 - party_short: Notspecified
   partyfacts_id: null
-  source: gemini_no_match
+  source: null
   confidence: null
   is_coalition: false
-  notes: The party label 'Notspecified' clearly indicates that the party was not specified
-    in the poll, and therefore cannot be matched to any specific party in the Party
-    Facts database.
+  notes: 'Wikitext fallback for cells without a clear party label. Not a party.'
+  drop: true
+  drop_reason: parse_artifact
 - party_short: Nussbaumer
   partyfacts_id: null
   source: gemini_no_match
@@ -1906,11 +1907,12 @@ mappings:
     vote shares are consistent with a major party.
 - party_short: 'Yes'
   partyfacts_id: null
-  source: gemini_no_match
+  source: null
   confidence: null
   is_coalition: false
-  notes: The party short label 'Yes' does not match any of the provided Party Facts
-    entries for Switzerland.
+  notes: 'Referendum-style poll ''Yes'' column. Not party vote intention.'
+  drop: true
+  drop_reason: approval
 - party_short: Zopfi
   partyfacts_id: null
   source: gemini_no_match

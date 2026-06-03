@@ -752,11 +752,12 @@ mappings:
     Facts entries for Denmark, even after considering potential candidate name prefixes.
 - party_short: Opposition
   partyfacts_id: null
-  source: gemini_no_match
+  source: null
   confidence: null
   is_coalition: false
-  notes: The label 'Opposition' is a generic political term and does not correspond
-    to any specific party in the provided list.
+  notes: 'Government-vs-opposition aggregate column. Not a single party.'
+  drop: true
+  drop_reason: total
 - party_short: Other / Don't Know
   partyfacts_id: 1858
   source: gemini_high

@@ -606,11 +606,10 @@ mappings:
     to 'Hungarian Coalition', making it a strong semantic match.
 - party_short: Modrí
   partyfacts_id: null
-  source: gemini_no_match
-  confidence: null
+  source: verified_not_in_pf
+  confidence: high
   is_coalition: false
-  notes: The party 'Modrí' (meaning 'Blues' in Slovak) is a new political party established
-    in 2023 and is not present in the provided Party Facts entries.
+  notes: 'Modrí (Blues), Slovak right-liberal party 2023-. Wikipedia article: ''Modrí''. Not in Party Facts.'
 - party_short: MOS
   partyfacts_id: 2284
   source: partyfacts_external
@@ -1507,11 +1506,10 @@ mappings:
   notes: ''
 - party_short: Ö-S
   partyfacts_id: null
-  source: gemini_no_match
-  confidence: null
+  source: verified_not_in_pf
+  confidence: high
   is_coalition: false
-  notes: There is no Party Facts entry that semantically matches the abbreviation
-    'Ö-S'.
+  notes: 'Magyar Szövetség / Maďarské spojenie (Hungarian Alliance, SK successor to SMK), 2021-. Not in Party Facts (SMK-MKP 349 is the dissolved predecessor).'
 - party_short: ĽS-HZDS
   partyfacts_id: 560
   source: partyfacts_external

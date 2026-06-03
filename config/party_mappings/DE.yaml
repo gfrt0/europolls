@@ -737,11 +737,12 @@ mappings:
   notes: ''
 - party_short: Lean
   partyfacts_id: null
-  source: gemini_no_match
+  source: null
   confidence: null
   is_coalition: false
-  notes: The party abbreviation 'Lean' does not match any of the provided Party Facts
-    entries for Germany.
+  notes: 'Seat-projection forecast probability category. Not vote intention.'
+  drop: true
+  drop_reason: total
 - party_short: Left
   partyfacts_id: 1545
   source: partyfacts_external
@@ -750,11 +751,12 @@ mappings:
   notes: ''
 - party_short: Likely
   partyfacts_id: null
-  source: gemini_no_match
+  source: null
   confidence: null
   is_coalition: false
-  notes: The party short label 'Likely' does not correspond to any known political
-    party in the provided list for Germany.
+  notes: 'Seat-projection forecast probability category. Not vote intention.'
+  drop: true
+  drop_reason: total
 - party_short: LINKE
   partyfacts_id: 1545
   source: partyfacts_external
@@ -954,11 +956,12 @@ mappings:
   notes: ''
 - party_short: Safe
   partyfacts_id: null
-  source: gemini_no_match
+  source: null
   confidence: null
   is_coalition: false
-  notes: The party abbreviation 'Safe' does not semantically match any of the provided
-    Party Facts entries for Germany.
+  notes: 'Seat-projection forecast probability category (election.de tables). Not vote intention.'
+  drop: true
+  drop_reason: total
 - party_short: Schil
   partyfacts_id: 2702
   source: partyfacts_external

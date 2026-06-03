@@ -950,13 +950,13 @@ mappings:
   is_coalition: false
   notes: ''
 - party_short: P
-  partyfacts_id: null
-  source: gemini_no_match
-  confidence: null
+  partyfacts_id: 3115
+  source: manual_review
+  confidence: high
   is_coalition: false
-  notes: The abbreviation 'P' does not clearly match any of the provided Party Facts
-    entries, and the polling data does not offer enough context to infer a specific
-    party.
+  notes: Párbeszéd Magyarországért (Dialogue for Hungary), 2013-, PF id 3115.
+    Single-letter ballot label 'P'; confirmed via raw wikitext context grep
+    surfacing Párbeszéd alongside Jobbik and DK in 2018-2022 polls.
 - party_short: PDP
   partyfacts_id: 7256
   source: partyfacts_external

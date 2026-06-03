@@ -384,9 +384,7 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Eesti Konservatiivne Rahvaerakond — The abbreviation 'ERK' is a very close
-    match to 'EKRE' (Conservative People's Party of Estonia), with only one letter
-    difference, and the polling data suggests a currently active party.
+  notes: Eesti Konservatiivne Rahvaerakond — The abbreviation 'ERK' is a very close match to 'EKRE' (Conservative People's Party of Estonia), with only one letter difference, and the polling data suggests a currently active party.
 - party_short: ERKL
   partyfacts_id: 2679
   source: partyfacts_external
@@ -542,51 +540,43 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Eestimaa Ühendatud Rahvapartei — The short label 'EÜVP' is an exact match
-    for Party Facts ID 18, 'Eestimaa Ühendatud Rahvapartei'.
+  notes: Eestimaa Ühendatud Rahvapartei — The short label 'EÜVP' is an exact match for Party Facts ID 18, 'Eestimaa Ühendatud Rahvapartei'.
 - party_short: Gov.|Government parties (Kesk, Conservative, Isamaa)
   partyfacts_id: null
   source: verified_not_in_pf
   confidence: high
   is_coalition: true
-  notes: Estonian government-coalition aggregate (Kesk + Conservative + Isamaa). No
-    single dominant member; PF has no coalition-level id. Flagged is_coalition for
-    downstream filtering.
+  notes: Estonian government-coalition aggregate (Kesk + Conservative + Isamaa). No single dominant member; PF has no coalition-level id. Flagged is_coalition for downstream filtering.
 - party_short: Gov.|Government parties (Kesk, EKRE, Isamaa)
   partyfacts_id: null
   source: verified_not_in_pf
   confidence: high
   is_coalition: true
-  notes: Estonian government-coalition aggregate (Kesk + EKRE + Isamaa). No PF
-    coalition-level id.
+  notes: Estonian government-coalition aggregate (Kesk + EKRE + Isamaa). No PF coalition-level id.
 - party_short: Gov.|Government parties (Reform and E200)
   partyfacts_id: null
   source: verified_not_in_pf
   confidence: high
   is_coalition: true
-  notes: Estonian government-coalition aggregate (Reform + E200). No PF
-    coalition-level id.
+  notes: Estonian government-coalition aggregate (Reform + E200). No PF coalition-level id.
 - party_short: Gov.|Government parties (Reform, E200, and SDE)
   partyfacts_id: null
   source: verified_not_in_pf
   confidence: high
   is_coalition: true
-  notes: Estonian government-coalition aggregate (Reform + E200 + SDE). No PF
-    coalition-level id.
+  notes: Estonian government-coalition aggregate (Reform + E200 + SDE). No PF coalition-level id.
 - party_short: Gov.|Government parties (Reform, Isamaa, and SDE)
   partyfacts_id: null
   source: verified_not_in_pf
   confidence: high
   is_coalition: true
-  notes: Estonian government-coalition aggregate (Reform + Isamaa + SDE). No PF
-    coalition-level id.
+  notes: Estonian government-coalition aggregate (Reform + Isamaa + SDE). No PF coalition-level id.
 - party_short: Gov.|Government parties (Reform, Kesk)
   partyfacts_id: null
   source: verified_not_in_pf
   confidence: high
   is_coalition: true
-  notes: Estonian government-coalition aggregate (Reform + Kesk). No PF
-    coalition-level id.
+  notes: Estonian government-coalition aggregate (Reform + Kesk). No PF coalition-level id.
 - party_short: Green
   partyfacts_id: 1040
   source: partyfacts_external
@@ -598,9 +588,7 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Erakond Eestimaa Rohelise — The party 'Erakond Eestimaa Rohelise' (Estonian
-    Greens) directly matches the 'Greens' label and its activity period aligns with
-    the polling data.
+  notes: Erakond Eestimaa Rohelise — The party 'Erakond Eestimaa Rohelise' (Estonian Greens) directly matches the 'Greens' label and its activity period aligns with the polling data.
 - party_short: I
   partyfacts_id: 779
   source: partyfacts_external
@@ -817,7 +805,6 @@ mappings:
   confidence: high
   is_coalition: false
   notes: 'Wikipedia article: ''Together (Estonian political party)''. Verified absent from Party Facts (no matching entry in core or external datasets). PF may add an id when next refreshed.'
-
 - party_short: KP
   partyfacts_id: 18
   source: partyfacts_external
@@ -878,53 +865,42 @@ mappings:
   confidence: null
   is_coalition: false
   notes: ''
-- party_short: Opp.|Non-government parties (Conservative, Isamaa, Social Democratic,
-    Estonia 200 and Green)
+- party_short: Opp.|Non-government parties (Conservative, Isamaa, Social Democratic, Estonia 200 and Green)
   partyfacts_id: null
-  source: gemini_no_match
-  confidence: null
-  is_coalition: false
-  notes: This label represents an aggregate of multiple non-government parties, not
-    a single party, so no direct Party Facts ID match is appropriate.
+  source: verified_not_in_pf
+  confidence: high
+  is_coalition: true
+  notes: Estonian opposition aggregate column (Opp.|Non-government parties (Conservative, Isamaa, Social Democratic, Estonia 200 and Green)). No single PF coalition id.
 - party_short: Opp.|Non-government parties (Conservative, Kesk, Estonia 200 and Green)
   partyfacts_id: null
-  source: gemini_no_match
-  confidence: null
-  is_coalition: false
-  notes: The label represents an aggregate of multiple non-government parties, not
-    a single party, and there is no dominant member to map to.
-- party_short: Opp.|Non-government parties (Conservative, Kesk, Estonia 200, Parem
-    and Green)
+  source: verified_not_in_pf
+  confidence: high
+  is_coalition: true
+  notes: Estonian opposition aggregate column (Opp.|Non-government parties (Conservative, Kesk, Estonia 200 and Green)). No single PF coalition id.
+- party_short: Opp.|Non-government parties (Conservative, Kesk, Estonia 200, Parem and Green)
   partyfacts_id: null
-  source: gemini_no_match
-  confidence: null
-  is_coalition: false
-  notes: This label represents an aggregate of multiple non-government parties, not
-    a single party, and thus does not match any individual Party Facts ID.
-- party_short: Opp.|Non-government parties (EKRE, Kesk, Isamaa, Parem, and Green)
-    and others
+  source: verified_not_in_pf
+  confidence: high
+  is_coalition: true
+  notes: Estonian opposition aggregate column (Opp.|Non-government parties (Conservative, Kesk, Estonia 200, Parem and Green)). No single PF coalition id.
+- party_short: Opp.|Non-government parties (EKRE, Kesk, Isamaa, Parem, and Green) and others
   partyfacts_id: null
-  source: gemini_no_match
-  confidence: null
-  is_coalition: false
-  notes: This label represents a coalition of multiple non-government parties, not
-    a single party, and therefore does not match any single Party Facts ID.
-- party_short: Opp.|Non-government parties (EKRE, Kesk, SDE, Isamaa, Parem, and Green)
-    and others
+  source: verified_not_in_pf
+  confidence: high
+  is_coalition: true
+  notes: Estonian opposition aggregate column (Opp.|Non-government parties (EKRE, Kesk, Isamaa, Parem, and Green) and others). No single PF coalition id.
+- party_short: Opp.|Non-government parties (EKRE, Kesk, SDE, Isamaa, Parem, and Green) and others
   partyfacts_id: null
-  source: gemini_no_match
-  confidence: null
-  is_coalition: false
-  notes: This label represents an aggregate of multiple opposition parties, not a
-    single party, and thus does not match any single Party Facts ID.
-- party_short: Opp.|Opposition parties (Reform, Social Democratic, Estonia 200, Green
-    and Estonian Free)
+  source: verified_not_in_pf
+  confidence: high
+  is_coalition: true
+  notes: Estonian opposition aggregate column (Opp.|Non-government parties (EKRE, Kesk, SDE, Isamaa, Parem, and Green) and others). No single PF coalition id.
+- party_short: Opp.|Opposition parties (Reform, Social Democratic, Estonia 200, Green and Estonian Free)
   partyfacts_id: null
-  source: gemini_no_match
-  confidence: null
-  is_coalition: false
-  notes: The label refers to a coalition of multiple parties, and there is no single
-    dominant party to match to a Party Facts ID.
+  source: verified_not_in_pf
+  confidence: high
+  is_coalition: true
+  notes: Estonian opposition aggregate column (Opp.|Opposition parties (Reform, Social Democratic, Estonia 200, Green and Estonian Free)). No single PF coalition id.
 - party_short: Other
   partyfacts_id: 1840
   source: partyfacts_external
@@ -954,9 +930,7 @@ mappings:
   source: manual_review
   confidence: high
   is_coalition: false
-  notes: Parempoolsed (Right-wingers) — PF id 83 (originally 1995 party; manifesto
-    dataset links the 2022 revival 'Vabariiklaste ja Konservatiivide Rahvaerakond
-    Parempoolsed' to the same id).
+  notes: Parempoolsed (Right-wingers) — PF id 83 (originally 1995 party; manifesto dataset links the 2022 revival 'Vabariiklaste ja Konservatiivide Rahvaerakond Parempoolsed' to the same id).
 - party_short: Parempool
   partyfacts_id: 83
   source: partyfacts_external
@@ -1268,7 +1242,4 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Vabariiklaste ja Konservatiivide Rahvaerakond — The abbreviation 'VL' is
-    a direct match for 'Vabariiklaste ja Konservatiivide Rahvaerakond' (People's Party
-    of Republicans and Conservatives) with short label 'VKR', which is a very close
-    phonetic and orthographic match to 'VL'.
+  notes: Vabariiklaste ja Konservatiivide Rahvaerakond — The abbreviation 'VL' is a direct match for 'Vabariiklaste ja Konservatiivide Rahvaerakond' (People's Party of Republicans and Conservatives) with short label 'VKR', which is a very close phonetic and orthographic match to 'VL'.

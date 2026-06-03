@@ -650,11 +650,10 @@ mappings:
   notes: ''
 - party_short: Motorists for Themselves
   partyfacts_id: null
-  source: gemini_no_match
-  confidence: null
+  source: verified_not_in_pf
+  confidence: high
   is_coalition: false
-  notes: There is no party in the provided Party Facts entries that semantically matches
-    'Motorists for Themselves'.
+  notes: 'Motoristé sobě (Motorists for Themselves), 2024-. Standalone party; PF ''Přísaha a Motoristé'' (9002) is the 2024-EU-election coalition with Přísaha, a separate entity. Standalone not in PF.'
 - party_short: Ne
   partyfacts_id: 1425
   source: partyfacts_external
@@ -946,11 +945,10 @@ mappings:
     and the polling data aligns with the party's activity period.
 - party_short: REAL
   partyfacts_id: null
-  source: gemini_no_match
-  confidence: null
+  source: verified_not_in_pf
+  confidence: high
   is_coalition: false
-  notes: The party abbreviation 'REAL' does not match any of the provided Party Facts
-    entries for the Czech Republic.
+  notes: 'Realisté (Realists), Czech right-liberal party 2018-. Not in Party Facts.'
 - party_short: RMS
   partyfacts_id: 972
   source: partyfacts_external
@@ -1334,12 +1332,10 @@ mappings:
   notes: ''
 - party_short: TOP 09STAN
   partyfacts_id: null
-  source: gemini_no_match
-  confidence: null
-  is_coalition: false
-  notes: The label 'TOP 09STAN' represents a coalition of 'TOP 09' (Tradice Odpovědnost
-    Prosperita 09) and 'STAN' (Starostové a nezávislí), which is not directly represented
-    by a single Party Facts ID in the provided list.
+  source: verified_not_in_pf
+  confidence: high
+  is_coalition: true
+  notes: 'TOP 09 + STAN electoral coalition (Mayors and Independents + TOP 09). Reported as a single bloc. Components: TOP 09 (pf 223), STAN (pf 1707). No coalition-level id in PF.'
 - party_short: TOP 9.00
   partyfacts_id: 223
   source: partyfacts_external

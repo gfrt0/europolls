@@ -121,11 +121,12 @@ mappings:
   notes: ''
 - party_short: Both
   partyfacts_id: null
-  source: gemini_no_match
+  source: null
   confidence: null
   is_coalition: false
-  notes: The party short label 'Both' does not match any of the provided Party Facts
-    entries for Portugal.
+  notes: 'Approval-poll column (''Both approve and disapprove''). Not vote intention.'
+  drop: true
+  drop_reason: approval
 - party_short: Both/O|Other
   partyfacts_id: 1853
   source: gemini_high
@@ -247,11 +248,12 @@ mappings:
     (PS), who became Prime Minister in 2015.
 - party_short: Debate com Rui Rocha na CNN, Fev.2024 (53539434166) (cropped) (cropped)
   partyfacts_id: null
-  source: gemini_no_match
+  source: null
   confidence: null
   is_coalition: false
-  notes: The provided party short label is a description of an event and not a party
-    abbreviation, therefore no match can be made.
+  notes: 'Wikipedia image-file caption mis-parsed as a column header. Not a party.'
+  drop: true
+  drop_reason: parse_artifact
 - party_short: DI
   partyfacts_id: 387
   source: partyfacts_external
@@ -287,13 +289,12 @@ mappings:
     Party (PS) in Portugal, and the polling context suggests this refers to his party.
 - party_short: FerreiraLeite
   partyfacts_id: null
-  source: gemini_no_match
+  source: null
   confidence: null
   is_coalition: false
-  notes: The label 'FerreiraLeite' refers to a candidate, Manuela Ferreira Leite,
-    who was the leader of the Social Democratic Party (PSD) during the specified period,
-    but the label itself does not directly correspond to a party abbreviation in the
-    provided list.
+  notes: 'Manuela Ferreira Leite (PSD leader 2008-2010) — leader-rating column. Not vote intention.'
+  drop: true
+  drop_reason: presidential_candidate
 - party_short: FRS
   partyfacts_id: 657
   source: partyfacts_external

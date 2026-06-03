@@ -248,13 +248,12 @@ mappings:
   is_coalition: false
   notes: ''
 - party_short: G
-  partyfacts_id: null
-  source: gemini_no_match
-  confidence: null
+  partyfacts_id: 457
+  source: manual_review
+  confidence: high
   is_coalition: false
-  notes: The party short label 'G' does not match any of the provided Party Facts
-    entries for Iceland, and the polling context does not provide enough information
-    to infer a match.
+  notes: Vinstrihreyfingin – grænt framboð (Left-Green Movement), 1999-, PF id 457.
+    Single-letter ballot label 'G' (Icelandic 'G' for græn = green).
 - party_short: GRAEN
   partyfacts_id: 457
   source: partyfacts_external

@@ -595,12 +595,12 @@ mappings:
     party facts entries.
 - party_short: Marginof error
   partyfacts_id: null
-  source: gemini_no_match
+  source: null
   confidence: null
   is_coalition: false
-  notes: The party short label 'Marginof error' does not correspond to any known political
-    party in the provided Party Facts entries for Ireland; it appears to be a polling
-    artifact.
+  notes: 'Wikitext column header ''Margin of error'' mis-parsed as a party label. Not a party.'
+  drop: true
+  drop_reason: parse_artifact
 - party_short: McConnell
   partyfacts_id: null
   source: gemini_no_match
