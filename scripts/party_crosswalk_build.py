@@ -9,14 +9,20 @@ Sources (in priority order):
   3. europolls' own existing IT.yaml (kept as the highest-priority source
      for IT so we don't regress that file).
 
+Hand-curated entries already present in the target YAML are PRESERVED on
+rerun: any entry with ``source`` in HAND_SOURCES or with ``drop: true``
+survives untouched. This lets you re-run the auto pipeline against a
+fresher PF / Gemini snapshot without losing the manual classification
+work documented in entry ``notes:`` fields. IT.yaml and any YAML named
+with a leading underscore (``_meta.yaml``) are skipped entirely.
+
 Output:
-  data/processed/party_mappings_for_europolls/{COUNTRY}.yaml
+  config/party_mappings/{COUNTRY}.yaml
 
 Each mapping carries `partyfacts_id`, `confidence` (high/medium/low/null),
 `source` (gemini_high|gemini_medium|gemini_low|partyfacts_external|whogov_
-minister_match|europolls_harmonized), `is_coalition` (bool), and a `notes`
-field with provenance / reasoning. Format compatible with europolls'
-existing config/party_mappings/IT.yaml schema.
+minister_match|manual_review|verified_not_in_pf|europolls_harmonized),
+`is_coalition` (bool), and a `notes` field with provenance / reasoning.
 """
 from __future__ import annotations
 
@@ -30,6 +36,21 @@ GEMINI_CSV = REPO / "data" / "interim" / "polls_crosswalk_gemini.csv"
 BASE_CSV = REPO / "data" / "interim" / "party_crosswalk_seed.csv"
 EXTENDED_CSV = REPO / "data" / "interim" / "polls_partyfacts_crosswalk_extended.csv"
 DEST_DIR = REPO / "config" / "party_mappings"
+
+# Entries with these `source` values were placed by hand (or by a
+# follow-up audit script) and represent judgment work the auto pipeline
+# cannot reproduce. They are preserved on every rebuild.
+HAND_SOURCES = frozenset({
+    "manual_review",
+    "verified_not_in_pf",
+    "hand_curated",
+    "europolls_harmonized",
+})
+
+# YAMLs to skip entirely. IT.yaml uses a different dict-of-mappings
+# shape predating this pipeline; _meta.yaml is the global meta-label
+# drop list, not a country.
+SKIP_STEMS = frozenset({"IT", "_meta"})
 
 
 def main() -> int:
@@ -102,14 +123,80 @@ def main() -> int:
               "# the layered base. Use confidence + is_coalition to triage.\n\n")
 
     for country in sorted(by_country):
-        rows = sorted(by_country[country], key=lambda r: r["party_short"].lower())
+        if country in SKIP_STEMS:
+            continue
+        auto_rows = by_country[country]
         fp = DEST_DIR / f"{country}.yaml"
-        body = yaml.safe_dump({"mappings": rows}, sort_keys=False,
+        merged_rows, n_preserved = _merge_with_existing(fp, auto_rows)
+        merged_rows.sort(key=lambda r: r["party_short"].lower())
+        body = yaml.safe_dump({"mappings": merged_rows}, sort_keys=False,
                               allow_unicode=True, default_flow_style=False)
         fp.write_text(header + body)
-        n_mapped = sum(1 for r in rows if r["partyfacts_id"] is not None)
-        print(f"  {country}: {len(rows)} pairs ({n_mapped} mapped) → {fp.relative_to(REPO)}")
+        n_mapped = sum(1 for r in merged_rows if r["partyfacts_id"] is not None)
+        print(f"  {country}: {len(merged_rows)} pairs "
+              f"({n_mapped} mapped, {n_preserved} hand-curated preserved) "
+              f"→ {fp.relative_to(REPO)}")
     return 0
+
+
+def _is_hand_entry(entry: dict) -> bool:
+    """An entry is preserved across rebuilds when:
+
+      * its ``source`` is in HAND_SOURCES (manual_review, verified_not_in_pf,
+        hand_curated, europolls_harmonized), OR
+      * it carries ``drop: true`` (an explicit hard/soft drop with a
+        ``drop_reason`` recorded in the notes).
+    """
+    if entry.get("drop"):
+        return True
+    return str(entry.get("source") or "") in HAND_SOURCES
+
+
+def _merge_with_existing(path: Path, auto_rows: list[dict]) -> tuple[list[dict], int]:
+    """Load any hand-curated entries from ``path`` and overlay them on
+    top of the auto-generated rows. Hand entries fully replace any
+    colliding ``party_short`` from the auto layer; new hand-only entries
+    are appended.
+
+    Returns ``(merged_rows, n_preserved)`` where ``n_preserved`` is the
+    count of hand entries kept.
+    """
+    if not path.exists():
+        return list(auto_rows), 0
+    try:
+        loaded = yaml.safe_load(path.read_text()) or {}
+    except yaml.YAMLError as e:
+        print(f"  ! could not parse existing {path.name}: {e}; rewriting from auto")
+        return list(auto_rows), 0
+    existing = loaded.get("mappings")
+    if not isinstance(existing, list):
+        return list(auto_rows), 0
+
+    hand_by_short: dict[str, dict] = {}
+    for entry in existing:
+        if not isinstance(entry, dict):
+            continue
+        short = entry.get("party_short")
+        if short is None:
+            continue
+        if _is_hand_entry(entry):
+            hand_by_short[short] = entry
+
+    out: list[dict] = []
+    seen: set[str] = set()
+    for row in auto_rows:
+        short = row["party_short"]
+        if short in hand_by_short:
+            out.append(hand_by_short[short])
+        else:
+            out.append(row)
+        seen.add(short)
+    # Hand entries with no auto counterpart (e.g. _meta-driven labels
+    # the auto pipeline never saw) get appended.
+    for short, entry in hand_by_short.items():
+        if short not in seen:
+            out.append(entry)
+    return out, len(hand_by_short)
 
 
 if __name__ == "__main__":

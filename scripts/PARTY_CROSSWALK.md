@@ -64,22 +64,65 @@ curl -o data/raw/partyfacts/external-parties.csv \
 python scripts/party_crosswalk_extend.py \
     --project YOUR_GCP_PROJECT --location us-central1
 
-# 4. Build per-country YAMLs.
+# 4. Build per-country YAMLs (hand-curated entries preserved — see below).
 python scripts/party_crosswalk_build.py
 ```
 
 Cost: ~$2 for full 32-country sweep (Gemini 2.5 Flash on Vertex).
 
+## Hand-curated layer (preserved across rebuilds)
+
+Coverage above the auto-pipeline baseline (~88% of poll rows) is
+contributed by a hand-curated layer that lives inside the same per-country
+YAMLs. `party_crosswalk_build.py` **preserves** any entry whose
+``source`` is one of
+
+  - ``manual_review`` — hand-mapped to a PF id (e.g. after a PF
+    reverse-lookup or Wikipedia-wikilink disambiguation pass);
+  - ``verified_not_in_pf`` — hand check confirmed Party Facts has no
+    matching entry (notes carry the canonical name / Wikipedia article);
+  - ``hand_curated`` — placed directly in the YAML without a corresponding
+    auto-pipeline run (IT.yaml predates the pipeline);
+  - ``europolls_harmonized`` — legacy.
+
+Plus any entry carrying ``drop: true`` (with a ``drop_reason`` —
+meta labels, parse artifacts, approval/lead/presidential-candidate
+columns, etc.). These are protected so re-running the auto pipeline
+against a fresher PF snapshot does not regress manual classification work.
+
+Two YAMLs are skipped entirely: ``IT.yaml`` (hand-curated dict shape
+predating this pipeline) and ``_meta.yaml`` (global meta-label drop list).
+
+### Tooling for the hand-curated pass
+
+These scripts produce ranked candidate CSVs / markdown reports that
+compress an unmapped (country, party_short) tail into a triage-friendly
+form:
+
+  - ``scripts/pf_reverse_lookup.py`` — per-country fuzzy match against
+    PF (length-aware scoring, technical-placeholder filtered).
+  - ``scripts/disambiguate_via_wikilinks.py`` — extracts
+    ``[[Article|short]]`` patterns from raw Wikipedia wikitext, cross-
+    references PF's ``wikipedia`` column for direct id hits.
+  - ``scripts/grep_unmapped_context.py`` — surfaces surrounding wikitext
+    context + sample source URLs for each unmapped pair.
+
+Audit output lands in ``data/interim/audit/`` (gitignored from the
+canonical long file glob).
+
 ## Caveats
 
   - `is_coalition: true` rows point at the dominant member's
-    partyfacts_id — lossy approximation. Downstream consumers should
-    expand or flag-filter these.
+    partyfacts_id when that mapping is opted into — lossy approximation.
+    Downstream consumers should expand or flag-filter these. The
+    europolls hand layer deliberately does NOT add dominant-member
+    proxies (e.g. PL UnitedRight stays null + is_coalition rather than
+    mapping to PiS, to prevent silent overcounting on downstream joins).
   - `source: gemini_*` entries should be spot-checked. They're high-
     recall but Gemini can hallucinate matches when the candidate list
     is sparse (especially for very new parties).
-  - `IT.yaml` was hand-curated before this auto-pipeline existed. Diff
-    against an auto-generated version before any overwrite.
+  - `IT.yaml` was hand-curated before this auto-pipeline existed and is
+    skipped by `party_crosswalk_build.py` entirely.
 
 ## Provenance
 
