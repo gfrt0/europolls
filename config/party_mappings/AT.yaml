@@ -531,11 +531,11 @@ mappings:
   notes: ''
 - party_short: LMP
   partyfacts_id: null
-  source: gemini_no_match
-  confidence: null
+  source: verified_not_in_pf
+  confidence: high
   is_coalition: false
-  notes: There is no Party Facts entry that matches 'LMP' among the provided candidates
-    for Austria.
+  notes: 'Wikipedia article: ''Madeleine Petrovic List''. Verified absent from Party Facts (no matching entry in core or external datasets). PF may add an id when next refreshed.'
+
 - party_short: MARTIN
   partyfacts_id: 1708
   source: partyfacts_external

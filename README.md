@@ -92,6 +92,12 @@ Approval-rating columns (`Approve` / `Disapprove` / `Net` / `Lead`), survey-meta
 `partyfacts_id_source` distinguishes confirmed-absences from uncovered cases:
 `partyfacts_external` / `whogov_minister_match` / `hand_curated` / `manual_review` / `gemini_*` for matches; `verified_not_in_pf` when a hand check confirms Party Facts has no record (e.g. ES Sumar, IT AVS); `gemini_no_match` for auto-build no-matches that warrant periodic re-verification.
 
+> **pandas gotcha.** `polls_long.csv` contains real party labels that pandas' default `read_csv` interprets as NaN (notably GR `NA` = New Left, 418 rows). Read with:
+> ```python
+> pd.read_csv("polls_long.csv", keep_default_na=False, na_values=[""])
+> ```
+> R / Stata / DuckDB don't have this issue out of the box.
+
 ## Validation
 
 The Italian scrape was validated against the official Italian government poll register (via ondata's [liberiamoli-tutti](https://github.com/ondata/liberiamoli-tutti/tree/main/italian_polls) mirror of sondaggipoliticoelettorali.it):

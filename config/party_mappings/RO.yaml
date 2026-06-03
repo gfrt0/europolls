@@ -1198,12 +1198,11 @@ mappings:
   notes: ''
 - party_short: SENS
   partyfacts_id: null
-  source: gemini_no_match
-  confidence: null
+  source: verified_not_in_pf
+  confidence: high
   is_coalition: false
-  notes: The party abbreviation 'SENS' does not match any of the provided Party Facts
-    entries for Romania, and the polling context does not provide enough information
-    to infer a match.
+  notes: 'Wikipedia article: ''Health Education Nature Sustainability Party''. Verified absent from Party Facts (no matching entry in core or external datasets). PF may add an id when next refreshed.'
+
 - party_short: SimionAUR
   partyfacts_id: 8983
   source: gemini_high

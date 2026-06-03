@@ -26,7 +26,8 @@ KEY_COLS = [
 def pivot_one(country: str) -> None:
     frames = []
     for path in sorted(IN_DIR.glob(f"{country}_*.csv")):
-        frames.append(pd.read_csv(path, low_memory=False))
+        frames.append(pd.read_csv(path, low_memory=False,
+                                  keep_default_na=False, na_values=[""]))
     if not frames:
         print(f"  {country}: no input files in {IN_DIR}")
         return

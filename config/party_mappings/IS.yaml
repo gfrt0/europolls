@@ -830,12 +830,11 @@ mappings:
   notes: ''
 - party_short: Y
   partyfacts_id: null
-  source: gemini_no_match
-  confidence: null
+  source: verified_not_in_pf
+  confidence: high
   is_coalition: false
-  notes: The party abbreviation 'Y' does not match any of the provided Party Facts
-    entries for Iceland, and the polling data does not offer enough context to infer
-    a match.
+  notes: 'Wikipedia article: ''Responsible Future (Iceland)''. Verified absent from Party Facts (no matching entry in core or external datasets). PF may add an id when next refreshed.'
+
 - party_short: Þ
   partyfacts_id: 2048
   source: partyfacts_external

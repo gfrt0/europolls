@@ -69,11 +69,11 @@ mappings:
   notes: ''
 - party_short: APB
   partyfacts_id: null
-  source: gemini_no_match
-  confidence: null
+  source: verified_not_in_pf
+  confidence: high
   is_coalition: false
-  notes: There is no Party Facts entry that matches 'APB' and the polling data does
-    not provide enough context to infer a match.
+  notes: 'Wikipedia article: ''Alliance for the Future (Czech Republic)''. Verified absent from Party Facts (no matching entry in core or external datasets). PF may add an id when next refreshed.'
+
 - party_short: AR/RP
   partyfacts_id: 1657
   source: partyfacts_external
@@ -402,11 +402,11 @@ mappings:
   notes: ''
 - party_short: HV
   partyfacts_id: null
-  source: gemini_no_match
-  confidence: null
+  source: verified_not_in_pf
+  confidence: high
   is_coalition: false
-  notes: There is no Party Facts entry that closely matches 'HV' based on the provided
-    list and polling context.
+  notes: 'Wikipedia article: ''Head Up – Electoral Bloc''. Verified absent from Party Facts (no matching entry in core or external datasets). PF may add an id when next refreshed.'
+
 - party_short: HZDS
   partyfacts_id: 6305
   source: partyfacts_external

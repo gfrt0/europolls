@@ -37,11 +37,11 @@ mappings:
     the polling data.
 - party_short: AEI
   partyfacts_id: null
-  source: gemini_no_match
-  confidence: null
+  source: verified_not_in_pf
+  confidence: high
   is_coalition: false
-  notes: The abbreviation 'AEI' does not match any of the provided Party Facts entries
-    for France, and there is no obvious semantic connection to existing parties.
+  notes: 'Wikipedia article: ''Independent Ecological Alliance''. Verified absent from Party Facts (no matching entry in core or external datasets). PF may add an id when next refreshed.'
+
 - party_short: Agnès LangevineEELV
   partyfacts_id: 5650
   source: gemini_high

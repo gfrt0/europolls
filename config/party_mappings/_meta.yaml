@@ -44,6 +44,18 @@ mappings:
   "None of the above":                { drop: true, drop_reason: abstention }   # BG variant
   "None of these":                    { drop: true, drop_reason: abstention }   # UK
   "Neither / None":                   { drop: true, drop_reason: abstention }   # MT
+  "KEINE":                            { drop: true, drop_reason: abstention }   # AT: 'None of the Above'
+  # --- Person-as-label (approval/leader-rating columns mis-parsed as parties) ---
+  "Seguro":                           { drop: true, drop_reason: approval }     # PT António José Seguro
+  "Inês Sousa Real":                  { drop: true, drop_reason: approval }     # PT (party leader)
+  "Paulo Raimundo":                   { drop: true, drop_reason: approval }     # PT (party leader)
+  "Pringle":                          { drop: true, drop_reason: approval }     # IE Thomas Pringle
+  "Connolly":                         { drop: true, drop_reason: approval }     # IE Catherine Connolly
+  "Grealish":                         { drop: true, drop_reason: approval }     # IE Noel Grealish
+  "Fodor":                            { drop: true, drop_reason: approval }     # HU Gábor Fodor
+  # --- Cabinet / government aggregate ---
+  "Government":                       { drop: true, drop_reason: total }        # DK cabinet aggregate
+  "Cabinet of Denmark":               { drop: true, drop_reason: total }
   "No vote":                          { drop: true, drop_reason: abstention }
   "Notvoting":                        { drop: true, drop_reason: abstention }
   "Would not vote":                   { drop: true, drop_reason: abstention }

@@ -33,11 +33,11 @@ mappings:
   notes: ''
 - party_short: Alba
   partyfacts_id: null
-  source: gemini_no_match
-  confidence: null
+  source: verified_not_in_pf
+  confidence: high
   is_coalition: false
-  notes: The 'Alba' party is not present in the provided list of Party Facts entries
-    for the UK.
+  notes: 'Wikipedia article: ''Alba Party''. Verified absent from Party Facts (no matching entry in core or external datasets). PF may add an id when next refreshed.'
+
 - party_short: All
   partyfacts_id: 1477
   source: partyfacts_external
@@ -1064,9 +1064,7 @@ mappings:
     in the UK context given its historical presence.
 - party_short: YP
   partyfacts_id: null
-  source: gemini_no_match
-  confidence: null
+  source: verified_not_in_pf
+  confidence: high
   is_coalition: false
-  notes: The abbreviation 'YP' does not match any of the provided Party Facts entries
-    for the UK, and there is no obvious party name that 'YP' would abbreviate to among
-    the candidates.
+  notes: 'Wikipedia article: ''Your Party (UK)''. Verified absent from Party Facts (no matching entry in core or external datasets). PF may add an id when next refreshed.'

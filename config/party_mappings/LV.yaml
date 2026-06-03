@@ -38,12 +38,13 @@ mappings:
   is_coalition: false
   notes: ''
 - party_short: AL
-  partyfacts_id: null
-  source: gemini_no_match
-  confidence: null
+  partyfacts_id: 6356
+  source: manual_review
+  confidence: high
   is_coalition: false
-  notes: No party in the provided list has 'AL' as its short label or a clear abbreviation
-    that could be 'AL'.
+  notes: 'Kam pieder valsts? — Par cilvēcīgu Latviju (Who owns the state? — For a
+    Humane Latvia), 2016-. PF id 6356. Confirmed via Wikipedia wikilink
+    ([[For a Humane Latvia|AL]]) → PF core.'
 - party_short: ally
   partyfacts_id: 3965
   source: partyfacts_external

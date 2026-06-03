@@ -443,11 +443,13 @@ mappings:
   is_coalition: false
   notes: ''
 - party_short: IA
-  partyfacts_id: null
-  source: gemini_no_match
-  confidence: null
+  partyfacts_id: 5531
+  source: manual_review
+  confidence: high
   is_coalition: false
-  notes: There is no Party Facts entry that matches 'IA' for Denmark.
+  notes: Inuit Ataqatigiit (Community of the People), Greenlandic socialist party
+    1976-. PF id 5531 (PF country=GRL but the party holds seats in the Danish
+    Folketing, hence DK polling coverage). Confirmed via Wikipedia wikilink.
 - party_short: indep
   partyfacts_id: 2658
   source: partyfacts_external

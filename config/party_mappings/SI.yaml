@@ -55,13 +55,13 @@ mappings:
     entries for Slovenia, and there is no obvious semantic or phonetic similarity
     to suggest a match.
 - party_short: AČZS
-  partyfacts_id: null
-  source: gemini_no_match
-  confidence: null
+  partyfacts_id: 1494
+  source: manual_review
+  confidence: high
   is_coalition: false
-  notes: The abbreviation 'AČZS' does not closely match any of the provided Party
-    Facts entries for Slovenia, and there is no clear semantic or phonetic similarity
-    to suggest a match.
+  notes: 'Andrej Čuš in Zeleni Slovenije (Andrej Čuš and Greens of Slovenia) — PF
+    id 1494 (Zeleni Slovenije / Greens of Slovenia, 1990-). Confirmed via Wikipedia
+    wikilink ([[Andrej Čuš and Greens of Slovenia|AČZS]]) → PF name_other.'
 - party_short: Concretely
   partyfacts_id: 9068
   source: partyfacts_external
@@ -476,10 +476,11 @@ mappings:
   notes: ''
 - party_short: NSF
   partyfacts_id: null
-  source: gemini_no_match
-  confidence: null
+  source: verified_not_in_pf
+  confidence: high
   is_coalition: false
-  notes: There is no Party Facts entry that closely matches 'NSF' for Slovenia.
+  notes: 'Wikipedia article: ''NSi, SLS, FOKUS (electoral coalition)''. Verified absent from Party Facts (no matching entry in core or external datasets). PF may add an id when next refreshed.'
+
 - party_short: NSI
   partyfacts_id: 1618
   source: partyfacts_external
@@ -599,10 +600,11 @@ mappings:
   notes: ''
 - party_short: PVP
   partyfacts_id: null
-  source: gemini_no_match
-  confidence: null
+  source: verified_not_in_pf
+  confidence: high
   is_coalition: false
-  notes: No Party Facts entry for Slovenia matches the abbreviation 'PVP'.
+  notes: 'Wikipedia article: ''Prerod''. Verified absent from Party Facts (no matching entry in core or external datasets). PF may add an id when next refreshed.'
+
 - party_short: RES
   partyfacts_id: 9069
   source: gemini_high

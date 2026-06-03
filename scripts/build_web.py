@@ -144,7 +144,8 @@ def load_meta_aliases() -> dict[str, str]:
 def main() -> None:
     if not LONG_CSV.exists():
         raise SystemExit(f"missing {LONG_CSV.relative_to(ROOT)}; run scripts/build_all.py first")
-    df = pd.read_csv(LONG_CSV, low_memory=False)
+    df = pd.read_csv(LONG_CSV, low_memory=False,
+                     keep_default_na=False, na_values=[""])
     print(f"loaded {len(df):,} long rows, {df['country'].nunique()} countries")
 
     # Trim to web-relevant columns + drop dateless rows (the page is time-axis-keyed).

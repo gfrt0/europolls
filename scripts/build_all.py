@@ -73,7 +73,13 @@ def step_concat_long() -> None:
     if not files:
         print("  no interim CSVs to concatenate")
         return
-    dfs = [pd.read_csv(p, low_memory=False) for p in files]
+    # NB: keep_default_na=False so the literal party_short "NA"
+    # (Greek 'New Left', GR_current 273 rows) is not silently turned
+    # into pandas NaN. We then re-introduce only the empty string as
+    # null for numeric-coerced columns later if needed.
+    dfs = [pd.read_csv(p, low_memory=False, keep_default_na=False,
+                       na_values=[""])
+           for p in files]
     long = pd.concat(dfs, ignore_index=True)
     if "_table_idx" in long.columns:
         long = long.drop(columns=["_table_idx"])
@@ -81,6 +87,16 @@ def step_concat_long() -> None:
     raw_count = len(long)
     long = _dedup_polls(long)
     dropped = raw_count - len(long)
+
+    # Drop rows where the parser captured a vote_share but no
+    # party_short — without a party label the row cannot be joined
+    # downstream. Concentrated in GR_current / SI / LV / DE_current /
+    # CH 2023 tables with non-standard column-header markup; see
+    # europolls/parse.py for the upstream root cause.
+    n_null_short = int(long["party_short"].isna().sum())
+    if n_null_short:
+        long = long[long["party_short"].notna()].copy()
+        print(f"  dropped {n_null_short:,} rows with null party_short")
 
     long = _attach_partyfacts(long)
 

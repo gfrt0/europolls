@@ -208,11 +208,11 @@ mappings:
   notes: ''
 - party_short: Fokus
   partyfacts_id: null
-  source: gemini_no_match
-  confidence: null
+  source: verified_not_in_pf
+  confidence: high
   is_coalition: false
-  notes: The party 'Fokus' is a new party in Luxembourg, founded in 2022, and is not
-    present in the provided Party Facts entries.
+  notes: 'Wikipedia article: ''Fokus (Luxembourg)''. Verified absent from Party Facts (no matching entry in core or external datasets). PF may add an id when next refreshed.'
+
 - party_short: FV
   partyfacts_id: 2400
   source: partyfacts_external

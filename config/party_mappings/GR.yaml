@@ -417,11 +417,11 @@ mappings:
   notes: ''
 - party_short: ELAS
   partyfacts_id: null
-  source: gemini_no_match
-  confidence: null
+  source: verified_not_in_pf
+  confidence: high
   is_coalition: false
-  notes: The abbreviation 'ELAS' does not match any of the provided Party Facts entries
-    for Greece, and there is no obvious semantic connection to existing parties.
+  notes: 'Wikipedia article: ''Hellenic Left Alignment''. Verified absent from Party Facts (no matching entry in core or external datasets). PF may add an id when next refreshed.'
+
 - party_short: ELK
   partyfacts_id: 4575
   source: partyfacts_external
@@ -442,12 +442,11 @@ mappings:
   notes: ''
 - party_short: ELPIDA
   partyfacts_id: null
-  source: gemini_no_match
-  confidence: null
+  source: verified_not_in_pf
+  confidence: high
   is_coalition: false
-  notes: The party abbreviation 'ELPIDA' does not directly match any of the provided
-    Party Facts entries for Greece, and there is no clear partial match or indication
-    of a renamed party.
+  notes: 'Wikipedia article: ''Hope for Democracy''. Verified absent from Party Facts (no matching entry in core or external datasets). PF may add an id when next refreshed.'
+
 - party_short: EM
   partyfacts_id: 2710
   source: partyfacts_external
