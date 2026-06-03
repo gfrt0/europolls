@@ -1,106 +1,520 @@
-# Italian party_short → partyfacts_id mapping.
+# Italian party_short → partyfacts_id mapping (hand-curated layer).
 #
-# Built from inspecting the Wikipedia polling-table column headers in
-# data/interim/wiki_polls/IT_*.csv against data/raw/partyfacts/core-parties.csv.
-# Coverage ~95% of poll-party rows by observation count; long-tail entries
-# without a partyfacts_id are left as null.
+# Originally built from Wikipedia polling-table column headers in
+# data/interim/IT_*.csv vs data/raw/partyfacts/core-parties.csv.
+# Now in the same list-of-entries shape as the auto-generated YAMLs
+# so scripts/party_crosswalk_build.py can co-process IT on rebuild;
+# all entries carry source=hand_curated or source=verified_not_in_pf
+# so they survive untouched when the auto pipeline reruns.
 #
-# `coalition: true` flags coalition aggregate columns (CDX, CSX, etc.) so they
-# pivot separately from individual-party columns downstream.
+# is_coalition: true flags coalition aggregate columns (CDX, CSX,
+# CdL, Unione) so they pivot separately downstream and are collapsed
+# only when component party rows appear alongside in the same poll.
 #
-# `notes` is free text — disambiguation, vintage cutoffs, etc.
+# notes is free text: disambiguation, vintage cutoffs, etc.
 
 mappings:
-
-  # Top mass: major parties
-  M5S:        { partyfacts_id: 2046, notes: "Five Star Movement, 2009-" }
-  PD:         { partyfacts_id: 802,  notes: "Democratic Party, 2007-" }
-  FdI:        { partyfacts_id: 2280, notes: "Brothers of Italy, 2013-" }
-  FI:         { partyfacts_id: 8058, notes: "Forza Italia (2013-); earlier-era FI is pf=1626 but post-2013 polls dominate" }
-  Lega:       { partyfacts_id: 1221, notes: "Lega Nord/Lega per Salvini Premier — same party as LN" }
-  LN:         { partyfacts_id: 1221, notes: "Lega Nord — same partyfacts_id as Lega" }
-  "+E":       { partyfacts_id: 6155, notes: "More Europe, 2017-" }
-  "+Eu":      { partyfacts_id: 6155, source: manual_review, notes: "alias for +E (More Europe), used in 2018 polling tables" }
-  "I":        { partyfacts_id: 7671, source: manual_review, notes: "Insieme (Together) 2017-2018 — PSI+Verdi+Area Civica list, PF id 7671" }
-  IV:         { partyfacts_id: 8641, notes: "Italia Viva, 2019-" }
-  A:          { partyfacts_id: 9082, notes: "Azione, 2019-" }
-  UdC:        { partyfacts_id: 1758, notes: "Union of Christian and Centre Democrats (UDC, 2002-)" }
-  UDC:        { partyfacts_id: 1758, notes: "Same as UdC" }
-  SEL:        { partyfacts_id: 7031, notes: "Left Ecology Freedom, 2009-2016" }
-  LeU:        { partyfacts_id: 8246, notes: "Free and Equals, 2017-" }
-  EV:         { partyfacts_id: 9110, notes: "Green Europe / Europa Verde, 2019-" }
-  PdL:        { partyfacts_id: 365,  notes: "People of Freedom, 2009-2013" }
-  SI:         { partyfacts_id: 1212, notes: "Italian Left / Sinistra Italiana, 2009-" }
-  IdV:        { partyfacts_id: 768,  notes: "Italy of Values, 2001-" }
-  NM:         { partyfacts_id: 9513, notes: "Us Moderates, 2022-" }
-  FLI:        { partyfacts_id: 1179, notes: "Future and Freedom for Italy" }
-  Italexit:   { partyfacts_id: 9081, notes: "Italexit per l'Italia, 2020-" }
-  NCD:        { partyfacts_id: 2052, notes: "New Centre-Right, 2013-2017" }
-  SC:         { partyfacts_id: 2281, notes: "Civic Choice, 2013-" }
-  AP:         { partyfacts_id: 9090, notes: "Popular Alternative (2017-) — NCD successor under Alfano; not the 1994 'Alleanza dei Progressisti'" }
-  "Art.1":    { partyfacts_id: 8361, notes: "Article One, 2017-" }
-  PaP:        { partyfacts_id: 8247, notes: "Power to the People, 2017-" }
-  RC:         { partyfacts_id: 2277, notes: "Civil Revolution (2013); for pre-2013 polls labeled RC see PRC below" }
-  PRC:        { partyfacts_id: 1404, notes: "Communist Refoundation, 1992-" }
-  PdCI:       { partyfacts_id: 1635, notes: "Party of Italian Communists, 2001-2014" }
-  FdV:        { partyfacts_id: 851,  notes: "Federation of the Greens" }
-  AN:         { partyfacts_id: 813,  notes: "National Alliance, 1994-2009" }
-  SVP:        { partyfacts_id: 1369, notes: "South Tyrol People's Party" }
-  "SVP–PATT": { partyfacts_id: 1369, notes: "South Tyrol + Trentino autonomists — keyed to SVP" }
-  ISP:        { partyfacts_id: 9127, notes: "Sovereign and Popular Italy, 2022-" }
-  CPI:        { partyfacts_id: 8244, notes: "CasaPound Italy" }
-  Ulivo:      { partyfacts_id: 1737, notes: "The Olive Tree coalition, 1995-2007" }
-  "Ulivo/PD": { partyfacts_id: 1737, notes: "Olive Tree mapped during 2007-08 PD transition" }
-  PSI:        { partyfacts_id: 742,  notes: "Italian Socialist Party" }
-  DS:         { partyfacts_id: 878,  notes: "Democrats of the Left, 1998-2007" }
-  AP_old:     { partyfacts_id: 8053, notes: "(reference) Alliance of Progressives 1994-1995 — NOT the post-2017 AP" }
-  IPdL_old:   { partyfacts_id: 365,  notes: "alias of PdL" }
-  "SEL/SI":   { partyfacts_id: 7031, notes: "SEL→SI transition pair, keyed to SEL" }
-  "PdL/FI":   { partyfacts_id: 365,  notes: "PdL→FI transition pair, keyed to PdL" }
-  "C!":       { partyfacts_id: null, source: verified_not_in_pf, notes: "Coraggio Italia, 2021 — Party Facts only has technical 'alliance'/'1-perc' placeholder ids" }
-  IC:         { partyfacts_id: null, notes: "Impegno Civico, 2022 — Di Maio splinter — not yet in Party Facts" }
-  MDP:        { partyfacts_id: 8361, source: manual_review, notes: "Articolo Uno / MDP, 2017- (PF wikipedia source links MDP → Articolo Uno id 8361)" }
-  "A–IV":     { partyfacts_id: 9082, notes: "Azione+IV 2022 list, keyed to Action" }
-  "+E–A":     { partyfacts_id: 6155, notes: "+Europa+Azione 2022 list, keyed to +E" }
-  "CP/AP":    { partyfacts_id: 7670, notes: "Popular Civic / Alternativa Popolare" }
-  CP:         { partyfacts_id: 7670, notes: "Popular Civic List, 2017-2019" }
-  NcI:        { partyfacts_id: 9141, source: manual_review, notes: "Noi con l'Italia, 2017-2023 (PF core id 9141)" }
-  AVS:        { partyfacts_id: null, source: verified_not_in_pf, notes: "Alleanza Verdi-Sinistra, 2022- (EV+SI electoral alliance reported as single bloc; PF only has technical 'alliance' placeholder, no real id)" }
-
-  # Full-name aliases (Wikipedia inconsistently uses full English names)
-  "Five Star Movement":   { partyfacts_id: 2046 }
-  "Civil Revolution":     { partyfacts_id: 2277 }
-  "Italy. Common Good":   { partyfacts_id: 8057, notes: "2013 Bersani PD-led list" }
-  "With Monti for Italy": { partyfacts_id: 2281, notes: "2013 Monti list, contained Civic Choice" }
-  UP:                     { partyfacts_id: 9081, notes: "Popular Union 2022 — TBD; tentative mapping to Italexit's UP affiliate, NEEDS VERIFICATION" }
-  DSP:                    { partyfacts_id: null, notes: "Sovereign Popular Democracy 2022 — not in Party Facts" }
-  PTD:                    { partyfacts_id: null, notes: "TBD identifier" }
-  FN:                     { partyfacts_id: null, notes: "Forza Nuova or Fratelli's Friedmann-flag faction" }
-  CI:                     { partyfacts_id: null, notes: "ambiguous: Coraggio Italia or Centro Italiano" }
-  ScN:                    { partyfacts_id: null }
-  CD:                     { partyfacts_id: 2278, notes: "Democratic Centre, 2013-" }
-  SUE:                    { partyfacts_id: null }
-  Libertà:                { partyfacts_id: null }
-  LD:                     { partyfacts_id: 8188, source: manual_review, notes: "La Destra (Storace, 2007-2017), PF id 8188 — matches IT 2007-2008 polling rows" }
-  SA:                     { partyfacts_id: null, source: verified_not_in_pf, notes: "Sinistra Arcobaleno 2008 electoral alliance (PRC+PdCI+Verdi+SD); PF only has SI 1212 which is post-2009 successor — not the same entity" }
-  PLD:                    { partyfacts_id: null }
-  VTR:                    { partyfacts_id: null }
-  Vita:                   { partyfacts_id: null }
-  ApI:                    { partyfacts_id: null, notes: "Alliance for Italy 2009-2014" }
-  PC:                     { partyfacts_id: null, notes: "ambiguous" }
-  PCI:                    { partyfacts_id: 34,   notes: "Italian Communist Party 1921-1991 (historical mentions)" }
-  SCN:                    { partyfacts_id: null }
-
-  # Coalitions
-  CDX:                       { partyfacts_id: 8056, coalition: true, notes: "Centre-right coalition (CCD)" }
-  CSX:                       { partyfacts_id: 7777, coalition: true, notes: "Centre-left coalition (CLC)" }
-  "Centre-right":            { partyfacts_id: 8056, coalition: true }
-  "Centre-left":             { partyfacts_id: 7777, coalition: true }
-  "Centre-right coalition":  { partyfacts_id: 8056, coalition: true }
-  "Centre-left coalition":   { partyfacts_id: 7777, coalition: true }
-  CdL:                       { partyfacts_id: 6241, coalition: true, notes: "House of Freedom, 2000-2008" }
-  Unione:                    { partyfacts_id: 1372, coalition: true, notes: "L'Unione, 2004-2008" }
-  Coalitions:                { partyfacts_id: null, coalition: true, notes: "generic coalition aggregator column" }
-
-  # Meta / sentinel columns: covered by config/party_mappings/_meta.yaml
-  # (Others / Oth. / Others/Abroad / Lead / Approve / Don't know / etc.)
+- party_short: +E
+  partyfacts_id: 6155
+  source: hand_curated
+  confidence: null
+  is_coalition: false
+  notes: More Europe, 2017-
+- party_short: +Eu
+  partyfacts_id: 6155
+  source: manual_review
+  confidence: null
+  is_coalition: false
+  notes: alias for +E (More Europe), used in 2018 polling tables
+- party_short: +E–A
+  partyfacts_id: 6155
+  source: hand_curated
+  confidence: null
+  is_coalition: false
+  notes: +Europa+Azione 2022 list, keyed to +E
+- party_short: A
+  partyfacts_id: 9082
+  source: hand_curated
+  confidence: null
+  is_coalition: false
+  notes: Azione, 2019-
+- party_short: AN
+  partyfacts_id: 813
+  source: hand_curated
+  confidence: null
+  is_coalition: false
+  notes: National Alliance, 1994-2009
+- party_short: AP
+  partyfacts_id: 9090
+  source: hand_curated
+  confidence: null
+  is_coalition: false
+  notes: Popular Alternative (2017-) — NCD successor under Alfano; not the 1994 'Alleanza dei Progressisti'
+- party_short: AP_old
+  partyfacts_id: 8053
+  source: hand_curated
+  confidence: null
+  is_coalition: false
+  notes: (reference) Alliance of Progressives 1994-1995 — NOT the post-2017 AP
+- party_short: ApI
+  partyfacts_id: null
+  source: hand_curated
+  confidence: null
+  is_coalition: false
+  notes: Alliance for Italy 2009-2014
+- party_short: Art.1
+  partyfacts_id: 8361
+  source: hand_curated
+  confidence: null
+  is_coalition: false
+  notes: Article One, 2017-
+- party_short: AVS
+  partyfacts_id: null
+  source: verified_not_in_pf
+  confidence: null
+  is_coalition: false
+  notes: Alleanza Verdi-Sinistra, 2022- (EV+SI electoral alliance reported as single bloc; PF only has technical 'alliance' placeholder, no real id)
+- party_short: A–IV
+  partyfacts_id: 9082
+  source: hand_curated
+  confidence: null
+  is_coalition: false
+  notes: Azione+IV 2022 list, keyed to Action
+- party_short: C!
+  partyfacts_id: null
+  source: verified_not_in_pf
+  confidence: null
+  is_coalition: false
+  notes: Coraggio Italia, 2021 — Party Facts only has technical 'alliance'/'1-perc' placeholder ids
+- party_short: CD
+  partyfacts_id: 2278
+  source: hand_curated
+  confidence: null
+  is_coalition: false
+  notes: Democratic Centre, 2013-
+- party_short: CdL
+  partyfacts_id: 6241
+  source: hand_curated
+  confidence: null
+  is_coalition: true
+  notes: House of Freedom, 2000-2008
+- party_short: CDX
+  partyfacts_id: 8056
+  source: hand_curated
+  confidence: null
+  is_coalition: true
+  notes: Centre-right coalition (CCD)
+- party_short: Centre-left
+  partyfacts_id: 7777
+  source: hand_curated
+  confidence: null
+  is_coalition: true
+  notes: ''
+- party_short: Centre-left coalition
+  partyfacts_id: 7777
+  source: hand_curated
+  confidence: null
+  is_coalition: true
+  notes: ''
+- party_short: Centre-right
+  partyfacts_id: 8056
+  source: hand_curated
+  confidence: null
+  is_coalition: true
+  notes: ''
+- party_short: Centre-right coalition
+  partyfacts_id: 8056
+  source: hand_curated
+  confidence: null
+  is_coalition: true
+  notes: ''
+- party_short: CI
+  partyfacts_id: null
+  source: hand_curated
+  confidence: null
+  is_coalition: false
+  notes: 'ambiguous: Coraggio Italia or Centro Italiano'
+- party_short: Civil Revolution
+  partyfacts_id: 2277
+  source: hand_curated
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: Coalitions
+  partyfacts_id: null
+  source: hand_curated
+  confidence: null
+  is_coalition: true
+  notes: generic coalition aggregator column
+- party_short: CP
+  partyfacts_id: 7670
+  source: hand_curated
+  confidence: null
+  is_coalition: false
+  notes: Popular Civic List, 2017-2019
+- party_short: CP/AP
+  partyfacts_id: 7670
+  source: hand_curated
+  confidence: null
+  is_coalition: false
+  notes: Popular Civic / Alternativa Popolare
+- party_short: CPI
+  partyfacts_id: 8244
+  source: hand_curated
+  confidence: null
+  is_coalition: false
+  notes: CasaPound Italy
+- party_short: CSX
+  partyfacts_id: 7777
+  source: hand_curated
+  confidence: null
+  is_coalition: true
+  notes: Centre-left coalition (CLC)
+- party_short: DS
+  partyfacts_id: 878
+  source: hand_curated
+  confidence: null
+  is_coalition: false
+  notes: Democrats of the Left, 1998-2007
+- party_short: DSP
+  partyfacts_id: null
+  source: verified_not_in_pf
+  confidence: null
+  is_coalition: false
+  notes: Sovereign Popular Democracy 2022 — not in Party Facts
+- party_short: EV
+  partyfacts_id: 9110
+  source: hand_curated
+  confidence: null
+  is_coalition: false
+  notes: Green Europe / Europa Verde, 2019-
+- party_short: FdI
+  partyfacts_id: 2280
+  source: hand_curated
+  confidence: null
+  is_coalition: false
+  notes: Brothers of Italy, 2013-
+- party_short: FdV
+  partyfacts_id: 851
+  source: hand_curated
+  confidence: null
+  is_coalition: false
+  notes: Federation of the Greens
+- party_short: FI
+  partyfacts_id: 8058
+  source: hand_curated
+  confidence: null
+  is_coalition: false
+  notes: Forza Italia (2013-); earlier-era FI is pf=1626 but post-2013 polls dominate
+- party_short: Five Star Movement
+  partyfacts_id: 2046
+  source: hand_curated
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: FLI
+  partyfacts_id: 1179
+  source: hand_curated
+  confidence: null
+  is_coalition: false
+  notes: Future and Freedom for Italy
+- party_short: FN
+  partyfacts_id: null
+  source: hand_curated
+  confidence: null
+  is_coalition: false
+  notes: Forza Nuova or Fratelli's Friedmann-flag faction
+- party_short: I
+  partyfacts_id: 7671
+  source: manual_review
+  confidence: null
+  is_coalition: false
+  notes: Insieme (Together) 2017-2018 — PSI+Verdi+Area Civica list, PF id 7671
+- party_short: IC
+  partyfacts_id: null
+  source: verified_not_in_pf
+  confidence: null
+  is_coalition: false
+  notes: Impegno Civico, 2022 — Di Maio splinter — not yet in Party Facts
+- party_short: IdV
+  partyfacts_id: 768
+  source: hand_curated
+  confidence: null
+  is_coalition: false
+  notes: Italy of Values, 2001-
+- party_short: IPdL_old
+  partyfacts_id: 365
+  source: hand_curated
+  confidence: null
+  is_coalition: false
+  notes: alias of PdL
+- party_short: ISP
+  partyfacts_id: 9127
+  source: hand_curated
+  confidence: null
+  is_coalition: false
+  notes: Sovereign and Popular Italy, 2022-
+- party_short: Italexit
+  partyfacts_id: 9081
+  source: hand_curated
+  confidence: null
+  is_coalition: false
+  notes: Italexit per l'Italia, 2020-
+- party_short: Italy. Common Good
+  partyfacts_id: 8057
+  source: hand_curated
+  confidence: null
+  is_coalition: false
+  notes: 2013 Bersani PD-led list
+- party_short: IV
+  partyfacts_id: 8641
+  source: hand_curated
+  confidence: null
+  is_coalition: false
+  notes: Italia Viva, 2019-
+- party_short: LD
+  partyfacts_id: 8188
+  source: manual_review
+  confidence: null
+  is_coalition: false
+  notes: La Destra (Storace, 2007-2017), PF id 8188 — matches IT 2007-2008 polling rows
+- party_short: Lega
+  partyfacts_id: 1221
+  source: hand_curated
+  confidence: null
+  is_coalition: false
+  notes: Lega Nord/Lega per Salvini Premier — same party as LN
+- party_short: LeU
+  partyfacts_id: 8246
+  source: hand_curated
+  confidence: null
+  is_coalition: false
+  notes: Free and Equals, 2017-
+- party_short: Libertà
+  partyfacts_id: null
+  source: hand_curated
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: LN
+  partyfacts_id: 1221
+  source: hand_curated
+  confidence: null
+  is_coalition: false
+  notes: Lega Nord — same partyfacts_id as Lega
+- party_short: M5S
+  partyfacts_id: 2046
+  source: hand_curated
+  confidence: null
+  is_coalition: false
+  notes: Five Star Movement, 2009-
+- party_short: MDP
+  partyfacts_id: 8361
+  source: manual_review
+  confidence: null
+  is_coalition: false
+  notes: Articolo Uno / MDP, 2017- (PF wikipedia source links MDP → Articolo Uno id 8361)
+- party_short: NCD
+  partyfacts_id: 2052
+  source: hand_curated
+  confidence: null
+  is_coalition: false
+  notes: New Centre-Right, 2013-2017
+- party_short: NcI
+  partyfacts_id: 9141
+  source: manual_review
+  confidence: null
+  is_coalition: false
+  notes: Noi con l'Italia, 2017-2023 (PF core id 9141)
+- party_short: NM
+  partyfacts_id: 9513
+  source: hand_curated
+  confidence: null
+  is_coalition: false
+  notes: Us Moderates, 2022-
+- party_short: PaP
+  partyfacts_id: 8247
+  source: hand_curated
+  confidence: null
+  is_coalition: false
+  notes: Power to the People, 2017-
+- party_short: PC
+  partyfacts_id: null
+  source: hand_curated
+  confidence: null
+  is_coalition: false
+  notes: ambiguous
+- party_short: PCI
+  partyfacts_id: 34
+  source: hand_curated
+  confidence: null
+  is_coalition: false
+  notes: Italian Communist Party 1921-1991 (historical mentions)
+- party_short: PD
+  partyfacts_id: 802
+  source: hand_curated
+  confidence: null
+  is_coalition: false
+  notes: Democratic Party, 2007-
+- party_short: PdCI
+  partyfacts_id: 1635
+  source: hand_curated
+  confidence: null
+  is_coalition: false
+  notes: Party of Italian Communists, 2001-2014
+- party_short: PdL
+  partyfacts_id: 365
+  source: hand_curated
+  confidence: null
+  is_coalition: false
+  notes: People of Freedom, 2009-2013
+- party_short: PdL/FI
+  partyfacts_id: 365
+  source: hand_curated
+  confidence: null
+  is_coalition: false
+  notes: PdL→FI transition pair, keyed to PdL
+- party_short: PLD
+  partyfacts_id: null
+  source: hand_curated
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: PRC
+  partyfacts_id: 1404
+  source: hand_curated
+  confidence: null
+  is_coalition: false
+  notes: Communist Refoundation, 1992-
+- party_short: PSI
+  partyfacts_id: 742
+  source: hand_curated
+  confidence: null
+  is_coalition: false
+  notes: Italian Socialist Party
+- party_short: PTD
+  partyfacts_id: null
+  source: hand_curated
+  confidence: null
+  is_coalition: false
+  notes: TBD identifier
+- party_short: RC
+  partyfacts_id: 2277
+  source: hand_curated
+  confidence: null
+  is_coalition: false
+  notes: Civil Revolution (2013); for pre-2013 polls labeled RC see PRC below
+- party_short: SA
+  partyfacts_id: null
+  source: verified_not_in_pf
+  confidence: null
+  is_coalition: false
+  notes: Sinistra Arcobaleno 2008 electoral alliance (PRC+PdCI+Verdi+SD); PF only has SI 1212 which is post-2009 successor — not the same entity
+- party_short: SC
+  partyfacts_id: 2281
+  source: hand_curated
+  confidence: null
+  is_coalition: false
+  notes: Civic Choice, 2013-
+- party_short: ScN
+  partyfacts_id: null
+  source: hand_curated
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: SCN
+  partyfacts_id: null
+  source: hand_curated
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: SEL
+  partyfacts_id: 7031
+  source: hand_curated
+  confidence: null
+  is_coalition: false
+  notes: Left Ecology Freedom, 2009-2016
+- party_short: SEL/SI
+  partyfacts_id: 7031
+  source: hand_curated
+  confidence: null
+  is_coalition: false
+  notes: SEL→SI transition pair, keyed to SEL
+- party_short: SI
+  partyfacts_id: 1212
+  source: hand_curated
+  confidence: null
+  is_coalition: false
+  notes: Italian Left / Sinistra Italiana, 2009-
+- party_short: SUE
+  partyfacts_id: null
+  source: hand_curated
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: SVP
+  partyfacts_id: 1369
+  source: hand_curated
+  confidence: null
+  is_coalition: false
+  notes: South Tyrol People's Party
+- party_short: SVP–PATT
+  partyfacts_id: 1369
+  source: hand_curated
+  confidence: null
+  is_coalition: false
+  notes: South Tyrol + Trentino autonomists — keyed to SVP
+- party_short: UdC
+  partyfacts_id: 1758
+  source: hand_curated
+  confidence: null
+  is_coalition: false
+  notes: Union of Christian and Centre Democrats (UDC, 2002-)
+- party_short: UDC
+  partyfacts_id: 1758
+  source: hand_curated
+  confidence: null
+  is_coalition: false
+  notes: Same as UdC
+- party_short: Ulivo
+  partyfacts_id: 1737
+  source: hand_curated
+  confidence: null
+  is_coalition: false
+  notes: The Olive Tree coalition, 1995-2007
+- party_short: Ulivo/PD
+  partyfacts_id: 1737
+  source: hand_curated
+  confidence: null
+  is_coalition: false
+  notes: Olive Tree mapped during 2007-08 PD transition
+- party_short: Unione
+  partyfacts_id: 1372
+  source: hand_curated
+  confidence: null
+  is_coalition: true
+  notes: L'Unione, 2004-2008
+- party_short: UP
+  partyfacts_id: 9081
+  source: hand_curated
+  confidence: null
+  is_coalition: false
+  notes: Popular Union 2022 — TBD; tentative mapping to Italexit's UP affiliate, NEEDS VERIFICATION
+- party_short: Vita
+  partyfacts_id: null
+  source: hand_curated
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: VTR
+  partyfacts_id: null
+  source: hand_curated
+  confidence: null
+  is_coalition: false
+  notes: ''
+- party_short: With Monti for Italy
+  partyfacts_id: 2281
+  source: hand_curated
+  confidence: null
+  is_coalition: false
+  notes: 2013 Monti list, contained Civic Choice

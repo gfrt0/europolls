@@ -47,10 +47,13 @@ HAND_SOURCES = frozenset({
     "europolls_harmonized",
 })
 
-# YAMLs to skip entirely. IT.yaml uses a different dict-of-mappings
-# shape predating this pipeline; _meta.yaml is the global meta-label
-# drop list, not a country.
-SKIP_STEMS = frozenset({"IT", "_meta"})
+# YAMLs to skip entirely. _meta.yaml is the global meta-label drop
+# list, not a country. IT.yaml previously used a dict-of-mappings
+# shape predating this pipeline; as of the rebuild-preserve commit it
+# was converted to the standard list shape with source=hand_curated /
+# verified_not_in_pf on every entry, so it co-processes through the
+# normal merge path without losing the historical hand curation.
+SKIP_STEMS = frozenset({"_meta"})
 
 
 def main() -> int:
