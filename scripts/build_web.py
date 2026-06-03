@@ -148,10 +148,31 @@ def main() -> None:
                      keep_default_na=False, na_values=[""])
     print(f"loaded {len(df):,} long rows, {df['country'].nunique()} countries")
 
+    # Trim to voting-intention rows: build_all already removes hard-drop
+    # categories (approval/lead/response_rate/total/presidential_candidate
+    # /parse_artifact); filter the remaining flag-only meta (others / dont_
+    # know / undecided / abstention buckets) so the chart shows party
+    # shares only.
+    if "is_dropped_meta" in df.columns:
+        before = len(df)
+        df = df[df["is_dropped_meta"].fillna(0).astype(int) == 0]
+        print(f"  filtered {before - len(df):,} meta rows (is_dropped_meta=1)")
+
     # Trim to web-relevant columns + drop dateless rows (the page is time-axis-keyed).
     df = df.dropna(subset=["polldate_mid"])
     df = df[df["vote_share"].notna()]
     df["sample_size"] = pd.to_numeric(df["sample_size"], errors="coerce").astype("Int64")
+
+    # Fall back to party_short for any row without a party_canonical
+    # (build_all sets canonical=short when no partyfacts_name resolved,
+    # but older CSVs and missing partyfacts_names.yaml degrade safely).
+    if "party_canonical" not in df.columns:
+        df["party_canonical"] = df["party_short"]
+    else:
+        df["party_canonical"] = df["party_canonical"].where(
+            df["party_canonical"].notna() & (df["party_canonical"] != ""),
+            df["party_short"],
+        )
 
     # Normalize pollster names (strip commissioner/parenthetical suffixes).
     df["pollster"] = df["pollster"].apply(normalize_pollster)
@@ -168,42 +189,73 @@ def main() -> None:
 
     countries_summary = []
     meta_aliases = load_meta_aliases()
+    # Re-keyed lookups: canonical → hex / canonical → display name.
+    # Built incrementally per country from the existing party_short-keyed
+    # YAMLs (colors.yaml, party_names.yaml) by mapping each canonical to
+    # its most-observed party_short variant.
+    colors_canonical: dict[str, dict[str, str]] = {}
+    dominant_short_per_canonical: dict[str, dict[str, str]] = {}
     for country, sub in df.groupby("country"):
         sub = sub.copy()
-        # Cross-country meta-label normalization first (Don't know / Abstain /
-        # Others / Neither) so per-country case-collapsing doesn't fragment them.
+        # Cross-country meta-label normalization first (defensive — most of
+        # these are already filtered as is_dropped_meta=1 upstream, but the
+        # alias map catches anything that slipped through).
         if meta_aliases:
-            sub["party_short"] = sub["party_short"].map(lambda v: meta_aliases.get(v, v))
-        # Normalize party_short variants within the country.
-        sub["party_short"] = normalize_party_shorts(sub["party_short"])
-        # Apply per-country manual alias map (e.g. 'Freedom Party of Austria'→'FPÖ').
+            sub["party_canonical"] = sub["party_canonical"].map(
+                lambda v: meta_aliases.get(v, v))
+        # Normalize residual variants within the country (case folding etc.).
+        sub["party_canonical"] = normalize_party_shorts(sub["party_canonical"])
+        # Per-country manual alias map as a safety net for parties without
+        # a partyfacts_id (the PF mapping already handles the well-covered
+        # majority).
         country_aliases = load_party_aliases(country)
         if country_aliases:
-            sub["party_short"] = sub["party_short"].map(lambda v: country_aliases.get(v, v))
-        # Drop rows whose party_short matches the country's drop list — used for
-        # leader-approval columns, cabinet-rating columns, and other non-vote-
-        # intention labels that leak into Wikipedia's polling tables.
+            sub["party_canonical"] = sub["party_canonical"].map(
+                lambda v: country_aliases.get(v, v))
         drop_exact, drop_regex = load_party_drops(country)
         if drop_exact:
-            sub = sub[~sub["party_short"].isin(drop_exact)]
+            sub = sub[~sub["party_canonical"].isin(drop_exact)]
         for rx in drop_regex:
-            sub = sub[~sub["party_short"].astype(str).str.contains(rx, regex=True, na=False)]
-        # Flag coalition aggregates per countries.yaml. parse.py applies this
-        # to raw labels at parse time (only effective when build_all.py reruns);
-        # we re-apply here against the post-alias canonical names so the flag
-        # is consistent regardless of which step ran last.
+            sub = sub[~sub["party_canonical"].astype(str).str.contains(rx, regex=True, na=False)]
+
+        # For each canonical name, find the most-observed party_short
+        # variant — used to re-key colors.yaml / party_names.yaml below.
+        dominant = (
+            sub.groupby("party_canonical")["party_short"]
+            .agg(lambda s: s.value_counts().idxmax() if len(s) else None)
+            .to_dict()
+        )
+        dominant_short_per_canonical[country] = dominant
+        # Materialize per-country canonical-keyed colors by looking up the
+        # dominant variant in colors.yaml.
+        country_colors = colors_raw.get(country) or {}
+        colors_canonical[country] = {
+            canon: country_colors[short]
+            for canon, short in dominant.items()
+            if short in country_colors
+        }
+        # Flag coalition aggregates per countries.yaml. coalition_shorts is
+        # keyed by party_short; mask on the raw short, then OR onto
+        # is_coalition (which is already populated by build_all.py from the
+        # parse-time flag + YAML is_coalition).
         coal_shorts = set(countries_cfg.get(country, {}).get("coalition_shorts") or [])
         coal_shorts_lc = {str(s).lower() for s in coal_shorts}
         if coal_shorts_lc:
             mask = sub["party_short"].astype(str).str.lower().isin(coal_shorts_lc)
             sub.loc[mask, "is_coalition"] = True
 
+        # Map any party_short → its canonical (lookup built above) so curated
+        # countries.yaml entries (still party_short-keyed) translate.
+        short_to_canon = {
+            short: canon for canon, short in dominant.items() if short
+        }
+
         # Compute summary: n polls, date span, top parties by observation count.
         n_polls = len(sub.drop_duplicates(["polldate_mid", "pollster"]))
         span_start = sub["polldate_mid"].min()
         span_end = sub["polldate_mid"].max()
         parties = (sub[~sub["is_coalition"].fillna(False)]
-                   .groupby("party_short").size()
+                   .groupby("party_canonical").size()
                    .sort_values(ascending=False))
         top_parties = parties.head(10).index.tolist()
 
@@ -217,12 +269,14 @@ def main() -> None:
         #      buckets, concatenated coalition names ('UnionSPDGrüne'), etc.
         #  (c) cap at the top 14 by mean share so the wide table stays readable.
         non_coal = sub[~sub["is_coalition"].fillna(False)]
-        stats = non_coal.groupby("party_short")["vote_share"].agg(["count", "mean"])
+        stats = non_coal.groupby("party_canonical")["vote_share"].agg(["count", "mean"])
 
         # Use the curated per-country wide_parties from countries.yaml when
         # present (most countries). Falls back to the heuristic below for any
-        # country that doesn't have an entry.
-        curated = countries_cfg.get(country, {}).get("wide_parties")
+        # country that doesn't have an entry. countries.yaml is still party_
+        # short-keyed; translate to canonical via the dominant-variant map.
+        curated_raw = countries_cfg.get(country, {}).get("wide_parties")
+        curated = [short_to_canon.get(p, p) for p in curated_raw] if curated_raw else None
         if curated:
             available = set(stats.index)
             wide_parties = [p for p in curated if p in available]
@@ -296,51 +350,68 @@ def main() -> None:
                 "wide_parties": wide_parties,
             })
 
-        # Per-country file: compact column names to keep the JSON small
-        # (browser-loaded, no gzip guarantee). Drop source_url/wiki_url to
-        # keep payload tight — users can hit the CSV release for full data.
+        # Per-country file: compact column names to keep the JSON small.
+        # `k` is now the canonical party key (PF name when mapped, else
+        # party_short). Lega + LN collapse via PF id 1221, etc.
         keep = sub[[
             "polldate_mid", "pollster", "sample_size",
-            "party_short", "is_coalition", "vote_share",
+            "party_canonical", "is_coalition", "vote_share",
         ]].copy()
-        # After normalization, the same (poll, party) may appear twice if two
-        # variant labels were folded. Collapse with mean.
+        # After PF mapping + aliases, the same (poll, canonical) may appear
+        # twice if two variant shorts mapped to the same canonical. Collapse
+        # with mean.
         keep = (keep
                 .groupby(["polldate_mid", "pollster", "sample_size",
-                          "party_short", "is_coalition"], as_index=False, dropna=False)
+                          "party_canonical", "is_coalition"], as_index=False, dropna=False)
                 ["vote_share"].mean())
         keep["polldate_mid"] = pd.to_datetime(keep["polldate_mid"]).dt.strftime("%Y-%m-%d")
         keep["is_coalition"] = keep["is_coalition"].fillna(False).astype(bool)
         keep["sample_size"] = keep["sample_size"].astype(object).where(keep["sample_size"].notna(), None)
-        # Rename to single-char keys.
         compact = keep.rename(columns={
-            "polldate_mid": "d",
-            "pollster":     "p",
-            "sample_size":  "n",
-            "party_short":  "k",
-            "is_coalition": "c",
-            "vote_share":   "v",
+            "polldate_mid":     "d",
+            "pollster":         "p",
+            "sample_size":      "n",
+            "party_canonical":  "k",
+            "is_coalition":     "c",
+            "vote_share":       "v",
         })
         out_path = WEB / f"polls_{country}.json"
         compact.to_json(out_path, orient="records", date_format=None, indent=None)
         size_kb = out_path.stat().st_size / 1024
         print(f"  {country:<8}  {len(compact):>6,} party-poll rows  → polls_{country}.json ({size_kb:.0f} KB)")
 
-    # Index + colors.
+    # Index + colors. Colors are now keyed by party_canonical, computed
+    # per country by mapping each canonical to its most-observed party_
+    # short variant and looking that up in colors.yaml.
     countries_summary.sort(key=lambda r: -r["n_polls"])
     (WEB / "countries.json").write_text(json.dumps(countries_summary, indent=2))
-    (WEB / "colors.json").write_text(json.dumps(colors_raw, indent=2))
+    (WEB / "colors.json").write_text(json.dumps(colors_canonical, indent=2))
 
-    # Party names lookup for tooltips. Merges _generic (Others / Don't know /
-    # Abstain / Neither) into every country, with country-specific entries
-    # winning if a key collides.
+    # Party names lookup for tooltips, also re-keyed to party_canonical.
+    # Sources, in priority order:
+    #   1. party_names.yaml (existing hand-curated rich names by party_short),
+    #      remapped via dominant_short_per_canonical;
+    #   2. PF's display name (already the canonical key itself when partyfacts_
+    #      id is present — no extra lookup needed for that case).
+    # Country-specific entries win over the _generic block.
     if PARTY_NAMES_YAML.exists():
         names_raw = yaml.safe_load(PARTY_NAMES_YAML.read_text()) or {}
         generic = names_raw.pop("_generic", {}) or {}
-        names_out = {}
-        for cc, mapping in names_raw.items():
-            merged = dict(generic)
-            merged.update(mapping or {})
+        names_out: dict[str, dict[str, str]] = {}
+        for cc, dominant in dominant_short_per_canonical.items():
+            short_to_canon = {short: canon for canon, short in dominant.items() if short}
+            curated_for_country = names_raw.get(cc) or {}
+            merged = {}
+            # Generic entries: keys here are typically meta labels (Others,
+            # Don't know, Neither, Abstain) which were filtered upstream,
+            # so they likely never appear. Apply anyway as a safety net.
+            for short, full in generic.items():
+                canon = short_to_canon.get(short, short)
+                merged[canon] = full
+            # Country-specific overrides.
+            for short, full in curated_for_country.items():
+                canon = short_to_canon.get(short, short)
+                merged[canon] = full
             names_out[cc] = merged
         (WEB / "party_names.json").write_text(json.dumps(names_out))
         print(f"wrote party_names.json ({len(names_out)} countries, "
