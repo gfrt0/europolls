@@ -220,10 +220,14 @@ mappings:
   notes: Future and Freedom for Italy
 - party_short: FN
   partyfacts_id: null
-  source: hand_curated
-  confidence: null
+  source: verified_not_in_pf
+  confidence: high
   is_coalition: false
-  notes: Forza Nuova or Fratelli's Friedmann-flag faction
+  notes: 'Futuro Nazionale (National Future), 2026- splinter from FdI. Wikipedia
+    wikilink [[National Future|FN]]; AGI press 2026-05-28 ''vola Futuro
+    Nazionale''. Too new for Party Facts. NB: 2007-2014 IT party Forza Nuova
+    is also abbreviated FN historically; if pre-2026 polls reappear with this
+    label, disambiguate by year.'
 - party_short: I
   partyfacts_id: 7671
   source: manual_review
