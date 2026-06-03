@@ -767,11 +767,11 @@ mappings:
   notes: ''
 - party_short: EV
   partyfacts_id: null
-  source: gemini_no_match
-  confidence: null
+  source: verified_not_in_pf
+  confidence: high
   is_coalition: false
-  notes: No party in the provided list has 'EV' as a short label or a similar name
-    that would suggest a match.
+  notes: 'España Vaciada / Empty Spain (Revuelta de la España Vaciada), 2023-. Not
+    in Party Facts. Confirmed via wikitext: [[File:Revuelta de la España Vaciada.png|link=Empty Spain|EV]].'
 - party_short: FAC
   partyfacts_id: 9087
   source: partyfacts_external
@@ -1221,11 +1221,13 @@ mappings:
   notes: ''
 - party_short: NA+
   partyfacts_id: null
-  source: gemini_no_match
-  confidence: null
-  is_coalition: false
-  notes: NA+ is a coalition of UPN, PP, and Cs, which is not directly represented
-    in the Party Facts list provided.
+  source: verified_not_in_pf
+  confidence: high
+  is_coalition: true
+  notes: Navarra Suma (NA+) electoral coalition of UPN + PP + Ciudadanos for Navarra,
+    2019-. PF has no coalition-level id; dominant member UPN (pf 722) is recoverable
+    via the YAML notes but not exposed in partyfacts_id to avoid silently
+    overcounting UPN on downstream joins.
 - party_short: Na+
   partyfacts_id: 4019
   source: partyfacts_external

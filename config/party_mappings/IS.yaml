@@ -666,12 +666,13 @@ mappings:
   is_coalition: false
   notes: ''
 - party_short: T
-  partyfacts_id: null
-  source: gemini_no_match
-  confidence: null
+  partyfacts_id: 2518
+  source: manual_review
+  confidence: high
   is_coalition: false
-  notes: There is no party in the provided Party Facts list with the short label 'T'
-    that aligns with the polling data.
+  notes: Dögun (Dawn — Organization of justice, fairness and democracy), 2012-. PF
+    id 2518. Single-letter ballot code 'T'. Confirmed via raw wikitext context grep
+    showing '[[Dawn (Iceland)|Dawn]] (T list)'.
 - party_short: TA
   partyfacts_id: 1396
   source: partyfacts_external

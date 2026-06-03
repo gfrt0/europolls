@@ -172,9 +172,13 @@ def _attach_partyfacts(long: pd.DataFrame) -> pd.DataFrame:
 
 
 # Non-voting-intention drop_reasons: always remove from polls_long.csv.
-# (approval / disapproval / lead / response_rate / total are not party
-# vote-share signal.)
-HARD_DROP_REASONS = {"approval", "lead", "response_rate", "total"}
+# (approval / disapproval / lead / response_rate / total / coalition
+# preference / parser artifacts / single-presidential-candidate columns
+# are not party-level voting-intention signal.)
+HARD_DROP_REASONS = {
+    "approval", "lead", "response_rate", "total",
+    "presidential_candidate", "parse_artifact",
+}
 
 
 def _apply_hard_drops(merged: pd.DataFrame) -> pd.DataFrame:

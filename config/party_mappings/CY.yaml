@@ -99,19 +99,20 @@ mappings:
   notes: ''
 - party_short: ChristodoulidesIndependent-DIKO, EDEK, DIPA, KA
   partyfacts_id: null
-  source: gemini_no_match
+  source: null
   confidence: null
   is_coalition: false
-  notes: This is a coalition supporting an independent candidate, and no single Party
-    Facts ID represents this specific alliance.
+  notes: 'Nikos Christodoulides, 2023 Cyprus presidential election candidate (Independent backed by DIKO+EDEK+DIPA+KA). Not a party — single-candidate poll column.'
+  drop: true
+  drop_reason: presidential_candidate
 - party_short: ChristofidesNW
   partyfacts_id: null
-  source: gemini_no_match
+  source: null
   confidence: null
   is_coalition: false
-  notes: The party abbreviation 'ChristofidesNW' does not match any of the provided
-    Party Facts entries for Cyprus, and likely refers to a candidate or a new political
-    formation not yet in the database.
+  notes: 'Christofides (New Wave), 2023 Cyprus presidential election candidate. Not a party.'
+  drop: true
+  drop_reason: presidential_candidate
 - party_short: ChristouELAM
   partyfacts_id: 1013
   source: gemini_high
@@ -122,11 +123,12 @@ mappings:
     to a leader or prominent figure.
 - party_short: ColocassidesIndependent
   partyfacts_id: null
-  source: gemini_no_match
+  source: null
   confidence: null
   is_coalition: false
-  notes: The party 'ColocassidesIndependent' appears to be an independent candidate
-    or a new party not present in the provided Party Facts entries.
+  notes: 'Colocassides, 2023 Cyprus presidential election Independent candidate. Not a party.'
+  drop: true
+  drop_reason: presidential_candidate
 - party_short: CTP
   partyfacts_id: 6109
   source: partyfacts_external
@@ -141,12 +143,12 @@ mappings:
   notes: ''
 - party_short: DemetriadesIndependent-FFC
   partyfacts_id: null
-  source: gemini_no_match
+  source: null
   confidence: null
   is_coalition: false
-  notes: The party short label 'DemetriadesIndependent-FFC' indicates an independent
-    candidate or a new party, and there is no direct match in the provided Party Facts
-    entries.
+  notes: 'Demetriades (FFC-backed Independent), 2023 Cyprus presidential election candidate. Not a party.'
+  drop: true
+  drop_reason: presidential_candidate
 - party_short: Democratic P...
   partyfacts_id: 3920
   source: partyfacts_external
@@ -247,11 +249,12 @@ mappings:
   notes: ''
 - party_short: EliadesIndependent
   partyfacts_id: null
-  source: gemini_no_match
+  source: null
   confidence: null
   is_coalition: false
-  notes: The label 'EliadesIndependent' suggests an independent candidate named Eliades,
-    which does not match any of the provided Party Facts entries for established parties.
+  notes: 'Eliades, 2023 Cyprus presidential election Independent candidate. Not a party.'
+  drop: true
+  drop_reason: presidential_candidate
 - party_short: Eniaion
   partyfacts_id: 4894
   source: partyfacts_external
@@ -525,12 +528,12 @@ mappings:
   notes: ''
 - party_short: ProtopapasIndependent
   partyfacts_id: null
-  source: gemini_no_match
+  source: null
   confidence: null
   is_coalition: false
-  notes: The label 'ProtopapasIndependent' clearly indicates an independent candidate,
-    and there is no Party Facts entry for 'Independent' or 'Protopapas' in the provided
-    list for Cyprus.
+  notes: 'Protopapas, Cyprus presidential election Independent candidate. Not a party.'
+  drop: true
+  drop_reason: presidential_candidate
 - party_short: SOLIDARITY
   partyfacts_id: 4883
   source: partyfacts_external

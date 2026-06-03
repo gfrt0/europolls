@@ -419,11 +419,12 @@ mappings:
   notes: ''
 - party_short: Parties
   partyfacts_id: null
-  source: gemini_no_match
+  source: null
   confidence: null
   is_coalition: false
-  notes: The label 'Parties' is too generic and does not correspond to any specific
-    party in the provided list.
+  notes: 'Wikitext header ''! colspan="2"| Parties'' grouping row mis-parsed as a single column. Not a party.'
+  drop: true
+  drop_reason: parse_artifact
 - party_short: PF
   partyfacts_id: 2865
   source: partyfacts_external

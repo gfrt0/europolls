@@ -82,10 +82,12 @@ mappings:
   notes: ''
 - party_short: AGROunia
   partyfacts_id: null
-  source: gemini_no_match
-  confidence: null
+  source: verified_not_in_pf
+  confidence: high
   is_coalition: false
-  notes: AGROunia is a new party not present in the provided Party Facts entries.
+  notes: AGROunia (Michał Kołodziejczak's agrarian-populist movement, 2018-2023;
+    merged into Civic Coalition for 2023 election). Wikipedia article 'AGROunia';
+    not in Party Facts.
 - party_short: ally
   partyfacts_id: 3999
   source: partyfacts_external

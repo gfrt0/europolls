@@ -608,6 +608,14 @@ mappings:
   confidence: null
   is_coalition: false
   notes: ''
+- party_short: NA
+  partyfacts_id: 7619
+  source: manual_review
+  confidence: high
+  is_coalition: false
+  notes: 'Nacionālā apvienība (National Alliance), 2011-, PF id 7619. Note: pandas
+    default read_csv treats the string ''NA'' as NaN, so downstream consumers must
+    use keep_default_na=False, na_values=[""].'
 - party_short: NA!
   partyfacts_id: 7619
   source: partyfacts_external

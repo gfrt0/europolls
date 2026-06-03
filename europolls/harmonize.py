@@ -50,7 +50,10 @@ OUT_COLS = [
 # (kept in sync with scripts.build_all.HARD_DROP_REASONS).
 # Coalition collapsing (drop coalition rows when single-party rows exist
 # for the same poll) is applied only at the concat step.
-HARD_DROP_REASONS = {"approval", "lead", "response_rate", "total"}
+HARD_DROP_REASONS = {
+    "approval", "lead", "response_rate", "total",
+    "presidential_candidate", "parse_artifact",
+}
 
 
 def _normalize_entry(entry: dict) -> dict:
