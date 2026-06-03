@@ -174,7 +174,7 @@ def _attach_partyfacts(long: pd.DataFrame) -> pd.DataFrame:
 
 
 def _attach_canonical_name(merged: pd.DataFrame) -> pd.DataFrame:
-    """Add partyfacts_name + party_canonical columns.
+    """Add partyfacts_name + party_canonical + europolls_party_id columns.
 
     ``partyfacts_name`` is PF's English name (falls back to native /
     name_short) for rows that carry a ``partyfacts_id``. Looked up from
@@ -185,6 +185,12 @@ def _attach_canonical_name(merged: pd.DataFrame) -> pd.DataFrame:
     charts and joins: ``partyfacts_name`` when present, else
     ``party_short``. Lega + LN (both pf_id 1221) collapse to one
     canonical line; AVS (no PF id) stays as ``"AVS"``.
+
+    ``europolls_party_id`` is a **stable cross-poll identifier** that
+    never collides with PF's namespace: ``str(partyfacts_id)`` when
+    present, else ``"EU:{country}:{party_short}"``. Use this column
+    instead of ``party_short`` when joining the dataset across
+    countries (where a bare ``Lab`` or ``PSD`` is ambiguous).
     """
     names_path = ROOT / "config" / "partyfacts_names.yaml"
     if not names_path.exists():
@@ -207,6 +213,16 @@ def _attach_canonical_name(merged: pd.DataFrame) -> pd.DataFrame:
     merged["party_canonical"] = merged["partyfacts_name"].where(
         merged["partyfacts_name"].notna() & (merged["partyfacts_name"] != ""),
         merged["party_short"],
+    )
+
+    # europolls_party_id: PF id as string when present, else namespaced
+    # fallback. Never collides with PF, never ambiguous across countries.
+    has_pf = merged["partyfacts_id"].notna()
+    merged["europolls_party_id"] = (
+        merged["partyfacts_id"]
+        .map(lambda v: str(int(v)) if pd.notna(v) else None)
+        .where(has_pf, "EU:" + merged["country"].astype(str)
+                            + ":" + merged["party_short"].astype(str))
     )
     return merged
 
