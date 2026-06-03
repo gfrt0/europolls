@@ -73,7 +73,6 @@ mappings:
   confidence: high
   is_coalition: false
   notes: 'Wikipedia article: ''Alliance for the Future (Czech Republic)''. Verified absent from Party Facts (no matching entry in core or external datasets). PF may add an id when next refreshed.'
-
 - party_short: AR/RP
   partyfacts_id: 1657
   source: partyfacts_external
@@ -202,11 +201,12 @@ mappings:
   notes: ''
 - party_short: Cyril Svoboda
   partyfacts_id: null
-  source: gemini_no_match
+  source: null
   confidence: null
   is_coalition: false
-  notes: The label 'Cyril Svoboda' refers to a candidate, not a party, and there is
-    no clear party suffix to match to a Party Facts ID.
+  notes: Individual Candidate column for 'Cyril Svoboda'. Not party vote intention.
+  drop: true
+  drop_reason: individual_candidate
 - party_short: CZOS
   partyfacts_id: 5611
   source: partyfacts_external
@@ -326,8 +326,7 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: true
-  notes: The government — The label 'Govt.+ sup.' directly translates to 'The government'
-    and the Party Facts entry 3015 is explicitly named 'The government'.
+  notes: The government — The label 'Govt.+ sup.' directly translates to 'The government' and the Party Facts entry 3015 is explicitly named 'The government'.
 - party_short: Green
   partyfacts_id: 1554
   source: partyfacts_external
@@ -406,7 +405,6 @@ mappings:
   confidence: high
   is_coalition: false
   notes: 'Wikipedia article: ''Head Up – Electoral Bloc''. Verified absent from Party Facts (no matching entry in core or external datasets). PF may add an id when next refreshed.'
-
 - party_short: HZDS
   partyfacts_id: 6305
   source: partyfacts_external
@@ -430,9 +428,7 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Česká strana sociálně demokratická — Jiří Paroubek was the leader of the
-    Czech Social Democratic Party (ČSSD) during the specified period, and the poll
-    numbers align with ČSSD's performance at that time.
+  notes: Česká strana sociálně demokratická — Jiří Paroubek was the leader of the Czech Social Democratic Party (ČSSD) during the specified period, and the poll numbers align with ČSSD's performance at that time.
 - party_short: KAN
   partyfacts_id: 2142
   source: partyfacts_external
@@ -444,9 +440,7 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Tradice Odpovēdnost Prosperita 09 — Karel Schwarzenberg was the leader and
-    presidential candidate of TOP 09, and the polling data aligns with TOP 09's performance
-    around 2010.
+  notes: Tradice Odpovēdnost Prosperita 09 — Karel Schwarzenberg was the leader and presidential candidate of TOP 09, and the polling data aligns with TOP 09's performance around 2010.
 - party_short: KDH
   partyfacts_id: 824
   source: partyfacts_external
@@ -518,10 +512,7 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Křesťanská a demokratická unie – Československá strana lidová — The abbreviation
-    'KDUČSL' is a direct match for the Party Facts entry 'KDU-CSL' (Křesťanská a demokratická
-    unie – Československá strana lidová), which is the full name of the Christian
-    Democratic Union – Czechoslovak People's Party.
+  notes: Křesťanská a demokratická unie – Československá strana lidová — The abbreviation 'KDUČSL' is a direct match for the Party Facts entry 'KDU-CSL' (Křesťanská a demokratická unie – Československá strana lidová), which is the full name of the Christian Democratic Union – Czechoslovak People's Party.
 - party_short: KDU–CSL
   partyfacts_id: 676
   source: partyfacts_external
@@ -539,10 +530,7 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Křesťansk&aacute; a demokratick&aacute; unie – Ĉeskoslovensk&aacute; strana
-    lidov&aacute; — The partyfacts entry with ID 676, 'KDU-CSL', is a direct and high-confidence
-    match for 'KDU–āSL', with the name 'Křesťansk&aacute; a demokratick&aacute; unie
-    – Ĉeskoslovensk&aacute; strana lidov&aacute;'.
+  notes: Křesťansk&aacute; a demokratick&aacute; unie – Ĉeskoslovensk&aacute; strana lidov&aacute; — The partyfacts entry with ID 676, 'KDU-CSL', is a direct and high-confidence match for 'KDU–āSL', with the name 'Křesťansk&aacute; a demokratick&aacute; unie – Ĉeskoslovensk&aacute; strana lidov&aacute;'.
 - party_short: KSC
   partyfacts_id: 1041
   source: partyfacts_external
@@ -591,7 +579,6 @@ mappings:
   confidence: high
   is_coalition: false
   notes: 'Wikipedia article: ''National Socialists – 21st Century Left''. Verified absent from Party Facts (no matching entry in core or external datasets). PF may add an id when next refreshed.'
-
 - party_short: LEV21
   partyfacts_id: 2657
   source: partyfacts_external
@@ -633,15 +620,15 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Strana práv občanů – Zemanovci — Miloš Zeman is the namesake of the 'Strana
-    práv občanů – Zemanovci' party, making it a direct and strong match.
+  notes: Strana práv občanů – Zemanovci — Miloš Zeman is the namesake of the 'Strana práv občanů – Zemanovci' party, making it a direct and strong match.
 - party_short: Mirek Topolánek
   partyfacts_id: null
-  source: gemini_no_match
+  source: null
   confidence: null
   is_coalition: false
-  notes: Mirek Topolánek is a candidate's name, not a party abbreviation, and there
-    is no clear party suffix to match to a Party Facts ID.
+  notes: Individual Candidate column for 'Mirek Topolánek'. Not party vote intention.
+  drop: true
+  drop_reason: individual_candidate
 - party_short: MORSL/HSD-SMS
   partyfacts_id: 952
   source: partyfacts_external
@@ -653,7 +640,7 @@ mappings:
   source: verified_not_in_pf
   confidence: high
   is_coalition: false
-  notes: 'Motoristé sobě (Motorists for Themselves), 2024-. Standalone party; PF ''Přísaha a Motoristé'' (9002) is the 2024-EU-election coalition with Přísaha, a separate entity. Standalone not in PF.'
+  notes: Motoristé sobě (Motorists for Themselves), 2024-. Standalone party; PF 'Přísaha a Motoristé' (9002) is the 2024-EU-election coalition with Přísaha, a separate entity. Standalone not in PF.
 - party_short: Ne
   partyfacts_id: 1425
   source: partyfacts_external
@@ -767,9 +754,7 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Strana zelených — Ondřej Liška was the leader of Strana zelených (Green Party)
-    during the period of the polls, and it is common for candidate names to be used
-    as party labels in polls.
+  notes: Strana zelených — Ondřej Liška was the leader of Strana zelených (Green Party) during the period of the polls, and it is common for candidate names to be used as party labels in polls.
 - party_short: ONH
   partyfacts_id: 1838
   source: partyfacts_external
@@ -781,8 +766,7 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: other — The abbreviation 'Opp.' is a generic term for 'Opposition' and does
-    not refer to a specific party, thus it is best matched to the 'other' category.
+  notes: other — The abbreviation 'Opp.' is a generic term for 'Opposition' and does not refer to a specific party, thus it is best matched to the 'other' category.
 - party_short: Other
   partyfacts_id: 1838
   source: partyfacts_external
@@ -800,8 +784,7 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: other — The label 'others' directly corresponds to the Party Facts entry
-    for 'other' (id=1838), which is a generic category for miscellaneous parties.
+  notes: other — The label 'others' directly corresponds to the Party Facts entry for 'other' (id=1838), which is a generic category for miscellaneous parties.
 - party_short: Others/Indep.
   partyfacts_id: 1838
   source: partyfacts_external
@@ -810,12 +793,10 @@ mappings:
   notes: ''
 - party_short: Our Czechia
   partyfacts_id: null
-  source: gemini_no_match
-  confidence: null
+  source: verified_not_in_pf
+  confidence: high
   is_coalition: false
-  notes: The party label 'Our Czechia' does not semantically match any of the provided
-    Party Facts entries for Czechia, and there is no similar-sounding party name or
-    abbreviation.
+  notes: Naše Česko (Our Czechia), 2024- new Czech party (SPD splinter). Not in Party Facts.
 - party_short: P
   partyfacts_id: 9002
   source: partyfacts_external
@@ -845,9 +826,7 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Občanská demokratická strana — Petr Nečas was the leader of the Civic Democratic
-    Party (ODS) during the period of the polls, and the poll results align with ODS's
-    performance at that time.
+  notes: Občanská demokratická strana — Petr Nečas was the leader of the Civic Democratic Party (ODS) during the period of the polls, and the poll results align with ODS's performance at that time.
 - party_short: PI
   partyfacts_id: 2047
   source: partyfacts_external
@@ -889,9 +868,7 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Česká pirátská strana — The party short label 'PIRÁTI' directly matches the
-    'Piráti' short label of the 'Česká pirátská strana' (Czech Pirate Party) in the
-    candidate list, and the polling data falls within its active period.
+  notes: Česká pirátská strana — The party short label 'PIRÁTI' directly matches the 'Piráti' short label of the 'Česká pirátská strana' (Czech Pirate Party) in the candidate list, and the polling data falls within its active period.
 - party_short: Piráti
   partyfacts_id: 2047
   source: partyfacts_external
@@ -927,28 +904,25 @@ mappings:
   source: manual_review
   confidence: high
   is_coalition: false
-  notes: Přísaha (Oath), Robert Šlachta's party 2021-. PF id 9002 — confirmed via
-    Wikipedia wikilink ([[Přísaha|PSH]]) → PF core entry.
+  notes: Přísaha (Oath), Robert Šlachta's party 2021-. PF id 9002 — confirmed via Wikipedia wikilink ([[Přísaha|PSH]]) → PF core entry.
 - party_short: Přísaha
   partyfacts_id: 9002
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Přísaha — The party short label 'Přísaha' directly matches the Party Facts
-    entry with ID 9002, which also has 'Přísaha' as its name.
+  notes: Přísaha — The party short label 'Přísaha' directly matches the Party Facts entry with ID 9002, which also has 'Přísaha' as its name.
 - party_short: Radek John
   partyfacts_id: 1202
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Věci veřejné — Radek John was the leader of Věci veřejné (Public Affairs),
-    and the polling data aligns with the party's activity period.
+  notes: Věci veřejné — Radek John was the leader of Věci veřejné (Public Affairs), and the polling data aligns with the party's activity period.
 - party_short: REAL
   partyfacts_id: null
   source: verified_not_in_pf
   confidence: high
   is_coalition: false
-  notes: 'Realisté (Realists), Czech right-liberal party 2018-. Not in Party Facts.'
+  notes: Realisté (Realists), Czech right-liberal party 2018-. Not in Party Facts.
 - party_short: RMS
   partyfacts_id: 972
   source: partyfacts_external
@@ -972,9 +946,7 @@ mappings:
   source: manual_review
   confidence: high
   is_coalition: false
-  notes: 'Strana svobodných občanů (Party of Free Citizens, Svobodní), 2009-. PF id
-    254 — confirmed via Wikipedia wikilink ([[Svobodní|S]]) → PF core ''Party of
-    Free Citizens''.'
+  notes: Strana svobodných občanů (Party of Free Citizens, Svobodní), 2009-. PF id 254 — confirmed via Wikipedia wikilink ([[Svobodní|S]]) → PF core 'Party of Free Citizens'.
 - party_short: S - JB
   partyfacts_id: 293
   source: partyfacts_external
@@ -1094,9 +1066,7 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Česká strana sociálně demokratická — SOCDEM is a common abbreviation for
-    the Czech Social Democratic Party, which is represented by Party Facts ID 5236
-    (Česká strana sociálně demokratická).
+  notes: Česká strana sociálně demokratická — SOCDEM is a common abbreviation for the Czech Social Democratic Party, which is represented by Party Facts ID 5236 (Česká strana sociálně demokratická).
 - party_short: SPD
   partyfacts_id: 6125
   source: partyfacts_external
@@ -1198,8 +1168,7 @@ mappings:
   source: gemini_no_match
   confidence: null
   is_coalition: false
-  notes: The party 'Stačilo!' is not present in the provided list of Party Facts entries
-    for the Czech Republic.
+  notes: The party 'Stačilo!' is not present in the provided list of Party Facts entries for the Czech Republic.
 - party_short: STRANA ZELENYCH
   partyfacts_id: 1554
   source: partyfacts_external
@@ -1241,9 +1210,7 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Strana svobodných obcanu — The party 'SVOBODNÍ' directly translates to 'Free'
-    or 'Party of Free Citizens', which strongly matches 'Strana svobodných obcanu'
-    (Party of Free Citizens) with short label 'SSO' and ID 254.
+  notes: Strana svobodných obcanu — The party 'SVOBODNÍ' directly translates to 'Free' or 'Party of Free Citizens', which strongly matches 'Strana svobodných obcanu' (Party of Free Citizens) with short label 'SSO' and ID 254.
 - party_short: Svobodní
   partyfacts_id: 254
   source: partyfacts_external
@@ -1303,9 +1270,7 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Trikolóra — The party short label 'T' directly matches 'Tri' for 'Trikolóra'
-    (Tricolour Citizens' Movement) in the candidate list, and the polling data falls
-    within its active period.
+  notes: Trikolóra — The party short label 'T' directly matches 'Tri' for 'Trikolóra' (Tricolour Citizens' Movement) in the candidate list, and the polling data falls within its active period.
 - party_short: T+S
   partyfacts_id: 3921
   source: partyfacts_external
@@ -1425,9 +1390,7 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Komunistická strana Cech a Moravy — Vojtěch Filip was the leader of the Communist
-    Party of Bohemia and Moravia (KSČM) during the period of the polls, making it
-    highly likely that 'Vojtěch Filip' refers to his party.
+  notes: Komunistická strana Cech a Moravy — Vojtěch Filip was the leader of the Communist Party of Bohemia and Moravia (KSČM) during the period of the polls, making it highly likely that 'Vojtěch Filip' refers to his party.
 - party_short: VPN
   partyfacts_id: 6305
   source: partyfacts_external
@@ -1451,17 +1414,13 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Strana zelených — The abbreviation 'Z' is a direct and common short form
-    for 'Strana zelených' (Green Party) in Czech politics, and the polling data aligns
-    with its historical performance.
+  notes: Strana zelených — The abbreviation 'Z' is a direct and common short form for 'Strana zelených' (Green Party) in Czech politics, and the polling data aligns with its historical performance.
 - party_short: ZELENÍ
   partyfacts_id: 1554
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Strana zelených — The party short label 'ZELENÍ' directly translates to 'Greens'
-    and matches the Party Facts entry for 'Strana zelených' (Green Party) with ID
-    1554, which is active during the polling period.
+  notes: Strana zelených — The party short label 'ZELENÍ' directly translates to 'Greens' and matches the Party Facts entry for 'Strana zelených' (Green Party) with ID 1554, which is active during the polling period.
 - party_short: Zelení
   partyfacts_id: 1554
   source: partyfacts_external
@@ -1473,9 +1432,7 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Úsvit přímé demokracie Tomia Okamury — The party short label 'ÚSVIT' directly
-    matches the short label 'Úsvit' for Party Facts ID 2049, 'Úsvit přímé demokracie
-    Tomia Okamury'.
+  notes: Úsvit přímé demokracie Tomia Okamury — The party short label 'ÚSVIT' directly matches the short label 'Úsvit' for Party Facts ID 2049, 'Úsvit přímé demokracie Tomia Okamury'.
 - party_short: Úsvit
   partyfacts_id: 2049
   source: partyfacts_external
@@ -1487,10 +1444,7 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Úsvit přímé demokracie Tomia Okamury — The party short label 'ÚSVIT(VV)'
-    strongly suggests a connection to 'Úsvit přímé demokracie Tomia Okamury' (Úsvit)
-    and 'Věci veřejné' (VV), with 'Úsvit' being the primary match given the polling
-    context dates.
+  notes: Úsvit přímé demokracie Tomia Okamury — The party short label 'ÚSVIT(VV)' strongly suggests a connection to 'Úsvit přímé demokracie Tomia Okamury' (Úsvit) and 'Věci veřejné' (VV), with 'Úsvit' being the primary match given the polling context dates.
 - party_short: ČMSS
   partyfacts_id: 952
   source: partyfacts_external

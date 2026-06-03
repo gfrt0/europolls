@@ -42,10 +42,7 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: true
-  notes: Pobal Roimh Bhrabús/Dlúthphairtíocht — The label 'AAA -PBP' directly corresponds
-    to the 'Solidarity–People Before Profit' (Pobal Roimh Bhrabús/Dlúthphairtíocht)
-    alliance, which includes the Anti-Austerity Alliance (AAA) and People Before Profit
-    (PBP).
+  notes: Pobal Roimh Bhrabús/Dlúthphairtíocht — The label 'AAA -PBP' directly corresponds to the 'Solidarity–People Before Profit' (Pobal Roimh Bhrabús/Dlúthphairtíocht) alliance, which includes the Anti-Austerity Alliance (AAA) and People Before Profit (PBP).
 - party_short: AAA / S
   partyfacts_id: 8242
   source: partyfacts_external
@@ -57,10 +54,7 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: true
-  notes: Pobal Roimh Bhrabús/Dlúthphairtíocht — The abbreviation 'AAA-PBP' directly
-    corresponds to the 'Pobal Roimh Bhrabús/Dlúthphairtíocht' (Solidarity–People Before
-    Profit) party, which is a coalition of the Anti-Austerity Alliance (AAA) and People
-    Before Profit (PBP).
+  notes: Pobal Roimh Bhrabús/Dlúthphairtíocht — The abbreviation 'AAA-PBP' directly corresponds to the 'Pobal Roimh Bhrabús/Dlúthphairtíocht' (Solidarity–People Before Profit) party, which is a coalition of the Anti-Austerity Alliance (AAA) and People Before Profit (PBP).
 - party_short: AHB
   partyfacts_id: 1316
   source: partyfacts_external
@@ -96,8 +90,7 @@ mappings:
   source: gemini_no_match
   confidence: null
   is_coalition: false
-  notes: The party short label 'Casey' appears to refer to an independent candidate
-    Peter Casey, not a political party listed in the provided Party Facts entries.
+  notes: The party short label 'Casey' appears to refer to an independent candidate Peter Casey, not a political party listed in the provided Party Facts entries.
 - party_short: CATHOLIC DEMOCRATS
   partyfacts_id: 2053
   source: partyfacts_external
@@ -157,9 +150,7 @@ mappings:
   source: gemini_no_match
   confidence: null
   is_coalition: false
-  notes: The party label 'Connolly' does not directly match any of the provided Party
-    Facts entries for Ireland, and it is likely a candidate's name rather than a party
-    abbreviation, but no party is clearly associated with it in the provided context.
+  notes: The party label 'Connolly' does not directly match any of the provided Party Facts entries for Ireland, and it is likely a candidate's name rather than a party abbreviation, but no party is clearly associated with it in the provided context.
 - party_short: CP
   partyfacts_id: 521
   source: partyfacts_external
@@ -171,24 +162,19 @@ mappings:
   source: gemini_no_match
   confidence: null
   is_coalition: false
-  notes: The party short label 'Cronin' does not match any of the provided Party Facts
-    entries, and there is no clear indication of it being a candidate's name combined
-    with a party abbreviation.
+  notes: The party short label 'Cronin' does not match any of the provided Party Facts entries, and there is no clear indication of it being a candidate's name combined with a party abbreviation.
 - party_short: Cubbard
   partyfacts_id: null
   source: gemini_no_match
   confidence: null
   is_coalition: false
-  notes: The party 'Cubbard' does not appear in the provided list of Party Facts entries
-    for Ireland, and there are no obvious semantic matches or abbreviations that would
-    link it to an existing party.
+  notes: The party 'Cubbard' does not appear in the provided list of Party Facts entries for Ireland, and there are no obvious semantic matches or abbreviations that would link it to an existing party.
 - party_short: D Healy-Rae
   partyfacts_id: null
   source: gemini_no_match
   confidence: null
   is_coalition: false
-  notes: The party label 'D Healy-Rae' refers to an independent candidate, not a political
-    party listed in the provided Party Facts entries.
+  notes: The party label 'D Healy-Rae' refers to an independent candidate, not a political party listed in the provided Party Facts entries.
 - party_short: D-PRB
   partyfacts_id: 3954
   source: partyfacts_external
@@ -200,8 +186,7 @@ mappings:
   source: gemini_no_match
   confidence: null
   is_coalition: false
-  notes: D. Healy-Rae refers to Danny Healy-Rae, an independent politician, not a
-    party listed in Party Facts.
+  notes: D. Healy-Rae refers to Danny Healy-Rae, an independent politician, not a party listed in Party Facts.
 - party_short: DDI
   partyfacts_id: 3209
   source: partyfacts_external
@@ -279,16 +264,13 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Fianna Fail — The party short label 'Fianna Fáil' directly matches the Party
-    Facts entry for 'Fianna Fail' (ID 1055), which is a clear and unambiguous match.
+  notes: Fianna Fail — The party short label 'Fianna Fáil' directly matches the Party Facts entry for 'Fianna Fail' (ID 1055), which is a clear and unambiguous match.
 - party_short: Fine Gael
   partyfacts_id: 1288
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Fine Gael — The party short label 'Fine Gael' directly matches the name of
-    Party Facts entry 1288, 'Fine Gael', which is a strong indicator of a correct
-    match.
+  notes: Fine Gael — The party short label 'Fine Gael' directly matches the name of Party Facts entry 1288, 'Fine Gael', which is a strong indicator of a correct match.
 - party_short: FP
   partyfacts_id: 2292
   source: partyfacts_external
@@ -318,8 +300,7 @@ mappings:
   source: gemini_no_match
   confidence: null
   is_coalition: false
-  notes: The party short label 'Grealish' appears to refer to an independent candidate
-    or a very small local party not present in the provided Party Facts list.
+  notes: The party short label 'Grealish' appears to refer to an independent candidate or a very small local party not present in the provided Party Facts list.
 - party_short: GREEN
   partyfacts_id: 1775
   source: partyfacts_external
@@ -337,8 +318,7 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Greens — The partyfacts entry with short label 'GREEN' and name 'Greens'
-    is a direct and strong semantic match for 'Green Party'.
+  notes: Greens — The partyfacts entry with short label 'GREEN' and name 'Greens' is a direct and strong semantic match for 'Green Party'.
 - party_short: GREENS
   partyfacts_id: 1775
   source: partyfacts_external
@@ -429,7 +409,6 @@ mappings:
   confidence: high
   is_coalition: false
   notes: 'Wikipedia article: ''Independent Ireland''. Verified absent from Party Facts (no matching entry in core or external datasets). PF may add an id when next refreshed.'
-
 - party_short: IND-Cdem
   partyfacts_id: 2735
   source: partyfacts_external
@@ -471,8 +450,7 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: true
-  notes: Others — The label 'Ind./Others' directly corresponds to the Party Facts
-    entry 'Others' which explicitly includes independents.
+  notes: Others — The label 'Ind./Others' directly corresponds to the Party Facts entry 'Others' which explicitly includes independents.
 - party_short: Ind4C
   partyfacts_id: 8181
   source: partyfacts_external
@@ -544,8 +522,7 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Labour — The short label 'LAB' and name 'Labour' in Party Facts ID 562 is
-    a direct and strong match for 'Labour Party'.
+  notes: Labour — The short label 'LAB' and name 'Labour' in Party Facts ID 562 is a direct and strong match for 'Labour Party'.
 - party_short: LB
   partyfacts_id: 562
   source: partyfacts_external
@@ -554,11 +531,12 @@ mappings:
   notes: ''
 - party_short: Leo Varadkar
   partyfacts_id: null
-  source: gemini_no_match
+  source: null
   confidence: null
   is_coalition: false
-  notes: Leo Varadkar is a person, not a party, and there is no party in the provided
-    list that matches this label.
+  notes: Individual Candidate column for 'Leo Varadkar'. Not party vote intention.
+  drop: true
+  drop_reason: individual_candidate
 - party_short: LIB
   partyfacts_id: 880
   source: partyfacts_external
@@ -582,23 +560,19 @@ mappings:
   source: gemini_no_match
   confidence: null
   is_coalition: false
-  notes: The party label 'M Healy-Rae' refers to an independent candidate, Michael
-    Healy-Rae, and does not correspond to any of the listed Party Facts entries for
-    established parties.
+  notes: The party label 'M Healy-Rae' refers to an independent candidate, Michael Healy-Rae, and does not correspond to any of the listed Party Facts entries for established parties.
 - party_short: M. Healy-Rae
   partyfacts_id: null
   source: gemini_no_match
   confidence: null
   is_coalition: false
-  notes: The label 'M. Healy-Rae' refers to an individual candidate, Michael Healy-Rae,
-    who is an independent politician, and does not correspond to any of the listed
-    party facts entries.
+  notes: The label 'M. Healy-Rae' refers to an individual candidate, Michael Healy-Rae, who is an independent politician, and does not correspond to any of the listed party facts entries.
 - party_short: Marginof error
   partyfacts_id: null
   source: null
   confidence: null
   is_coalition: false
-  notes: 'Wikitext column header ''Margin of error'' mis-parsed as a party label. Not a party.'
+  notes: Wikitext column header 'Margin of error' mis-parsed as a party label. Not a party.
   drop: true
   drop_reason: parse_artifact
 - party_short: McConnell
@@ -606,15 +580,15 @@ mappings:
   source: gemini_no_match
   confidence: null
   is_coalition: false
-  notes: The label 'McConnell' appears to be a candidate's name and does not correspond
-    to any party in the provided Party Facts list for Ireland.
+  notes: The label 'McConnell' appears to be a candidate's name and does not correspond to any party in the provided Party Facts list for Ireland.
 - party_short: Micheál Martin
   partyfacts_id: null
-  source: gemini_no_match
+  source: null
   confidence: null
   is_coalition: false
-  notes: Micheál Martin is a person, not a party, and there is no clear party abbreviation
-    to extract or match from the provided context.
+  notes: Individual Candidate column for 'Micheál Martin'. Not party vote intention.
+  drop: true
+  drop_reason: individual_candidate
 - party_short: NC
   partyfacts_id: 8179
   source: partyfacts_external
@@ -668,45 +642,31 @@ mappings:
   source: gemini_no_match
   confidence: null
   is_coalition: false
-  notes: The party label 'O'Donnell' likely refers to an independent candidate or
-    a very small, localized party not present in the provided Party Facts list.
+  notes: The party label 'O'Donnell' likely refers to an independent candidate or a very small, localized party not present in the provided Party Facts list.
 - party_short: O'Leary
   partyfacts_id: null
   source: gemini_no_match
   confidence: null
   is_coalition: false
-  notes: The party label 'O'Leary' does not correspond to any of the provided Party
-    Facts entries for Ireland, and likely refers to an independent candidate or a
-    very minor party not listed.
-- party_short: O/I|Others/IndependentsThe figure for "Others and Independents" is
-    the remainder when all others are removed. As with all such calculations, the
-    figure shown may be slightly inaccurate due to rounding effects.
+  notes: The party label 'O'Leary' does not correspond to any of the provided Party Facts entries for Ireland, and likely refers to an independent candidate or a very minor party not listed.
+- party_short: O/I|Others/IndependentsThe figure for "Others and Independents" is the remainder when all others are removed. As with all such calculations, the figure shown may be slightly inaccurate due to rounding effects.
   partyfacts_id: 1885
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Others — The provided party short label explicitly refers to 'Others/Independents',
-    which directly matches the Party Facts entry for 'Others' (id=1885) with the English
-    name 'Others and independents'.
-- party_short: O/I|Others/IndependentsThe figure for 'Others/Independents' is the
-    remainder when all others are removed. As with all such calculations, the figure
-    shown may be slightly inaccurate due to rounding effects.
+  notes: Others — The provided party short label explicitly refers to 'Others/Independents', which directly matches the Party Facts entry for 'Others' (id=1885) with the English name 'Others and independents'.
+- party_short: O/I|Others/IndependentsThe figure for 'Others/Independents' is the remainder when all others are removed. As with all such calculations, the figure shown may be slightly inaccurate due to rounding effects.
   partyfacts_id: 1885
   source: gemini_high
   confidence: high
   is_coalition: true
-  notes: Others — The label 'Others/Independents' directly matches the Party Facts
-    entry for 'Others' (id=1885), which represents a collective of various smaller
-    parties and independents.
-- party_short: O/I|Others/IndependentsThis column includes figures for Independents
-    4 Change and Aontú when available.
+  notes: Others — The label 'Others/Independents' directly matches the Party Facts entry for 'Others' (id=1885), which represents a collective of various smaller parties and independents.
+- party_short: O/I|Others/IndependentsThis column includes figures for Independents 4 Change and Aontú when available.
   partyfacts_id: null
   source: gemini_no_match
   confidence: null
   is_coalition: false
-  notes: The label explicitly states 'Others/Independents' and includes multiple parties,
-    indicating it is an aggregate of various independent and smaller parties, not
-    a single party with a Party Facts ID.
+  notes: The label explicitly states 'Others/Independents' and includes multiple parties, indicating it is an aggregate of various independent and smaller parties, not a single party with a Party Facts ID.
 - party_short: Others
   partyfacts_id: 1885
   source: partyfacts_external
@@ -724,8 +684,7 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Others — The Party Facts entry 'Others' (ID 1885) with the English name 'Others
-    and independents' is a direct and strong semantic match for 'Others/Independents'.
+  notes: Others — The Party Facts entry 'Others' (ID 1885) with the English name 'Others and independents' is a direct and strong semantic match for 'Others/Independents'.
 - party_short: P.D.
   partyfacts_id: 924
   source: partyfacts_external
@@ -779,8 +738,7 @@ mappings:
   source: gemini_no_match
   confidence: null
   is_coalition: false
-  notes: There is no Party Facts entry that matches 'Pringle' in the provided list
-    for Ireland.
+  notes: There is no Party Facts entry that matches 'Pringle' in the provided list for Ireland.
 - party_short: Ren
   partyfacts_id: 4869
   source: partyfacts_external
@@ -858,8 +816,7 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Sinn Féin — The party 'Sinn Féin' directly matches Party Facts ID 2507, which
-    has the same name and a relevant time period.
+  notes: Sinn Féin — The party 'Sinn Féin' directly matches Party Facts ID 2507, which has the same name and a relevant time period.
 - party_short: SLP
   partyfacts_id: 8646
   source: partyfacts_external
@@ -901,9 +858,7 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: true
-  notes: Pobal Roimh Bhrabùs/Dlúthphairtíocht — The abbreviation 'S–PBP' directly
-    matches 'Solidarity–People Before Profit' (Pobal Roimh Bhrabùs/Dlúthphairtíocht)
-    which is a coalition, and the polling data aligns with its activity period.
+  notes: Pobal Roimh Bhrabùs/Dlúthphairtíocht — The abbreviation 'S–PBP' directly matches 'Solidarity–People Before Profit' (Pobal Roimh Bhrabùs/Dlúthphairtíocht) which is a coalition, and the polling data aligns with its activity period.
 - party_short: U
   partyfacts_id: 7273
   source: partyfacts_external

@@ -46,6 +46,7 @@ mappings:
   "None ofthe above":                 { drop: true, drop_reason: abstention }   # BG typo variant
   "None of these":                    { drop: true, drop_reason: abstention }   # UK
   "Neither / None":                   { drop: true, drop_reason: abstention }   # MT
+  "Won't Answer":                     { drop: true, drop_reason: abstention }   # SI
   "KEINE":                            { drop: true, drop_reason: abstention }   # AT: 'None of the Above'
   # --- Person-as-label (approval/leader-rating columns mis-parsed as parties) ---
   "Seguro":                           { drop: true, drop_reason: approval }     # PT António José Seguro

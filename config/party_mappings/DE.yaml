@@ -24,9 +24,7 @@ mappings:
   source: gemini_no_match
   confidence: null
   is_coalition: false
-  notes: The label 'Abs.|Abstention' refers to abstentions or 'none of the above'
-    votes, which is not a political party and therefore cannot be matched to a Party
-    Facts ID.
+  notes: The label 'Abs.|Abstention' refers to abstentions or 'none of the above' votes, which is not a political party and therefore cannot be matched to a Party Facts ID.
 - party_short: ADF
   partyfacts_id: 1723
   source: partyfacts_external
@@ -200,7 +198,7 @@ mappings:
   source: null
   confidence: null
   is_coalition: false
-  notes: 'Coalition-wish poll column (CDU/CSU+FDP coalition preference, not vote intention).'
+  notes: Coalition-wish poll column (CDU/CSU+FDP coalition preference, not vote intention).
   drop: true
   drop_reason: approval
 - party_short: CDU/CSU/GREENS
@@ -208,7 +206,7 @@ mappings:
   source: null
   confidence: null
   is_coalition: false
-  notes: 'Coalition-wish poll column (Black-Green preference, not vote intention).'
+  notes: Coalition-wish poll column (Black-Green preference, not vote intention).
   drop: true
   drop_reason: approval
 - party_short: CDU/CSU/SPD
@@ -216,7 +214,7 @@ mappings:
   source: null
   confidence: null
   is_coalition: false
-  notes: 'Coalition-wish poll column (Grand Coalition preference, not vote intention).'
+  notes: Coalition-wish poll column (Grand Coalition preference, not vote intention).
   drop: true
   drop_reason: approval
 - party_short: CDUCSU
@@ -308,8 +306,7 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: PDS | Die Linke — The party 'Die Linke' is explicitly mentioned as part of
-    'PDS | Die Linke' (ID 1545), which is a direct and strong match.
+  notes: PDS | Die Linke — The party 'Die Linke' is explicitly mentioned as part of 'PDS | Die Linke' (ID 1545), which is a direct and strong match.
 - party_short: DIE PARTEI
   partyfacts_id: 6126
   source: partyfacts_external
@@ -369,8 +366,7 @@ mappings:
   source: gemini_no_match
   confidence: null
   is_coalition: false
-  notes: The party-short label 'Don't Know' does not correspond to any political party
-    and is a common response in polls for undecided voters.
+  notes: The party-short label 'Don't Know' does not correspond to any political party and is a common response in polls for undecided voters.
 - party_short: DP
   partyfacts_id: 1502
   source: partyfacts_external
@@ -460,8 +456,7 @@ mappings:
   source: gemini_no_match
   confidence: null
   is_coalition: false
-  notes: The label 'Fischer' likely refers to a candidate's name rather than a party
-    abbreviation, and there is no party in the provided list that matches this label.
+  notes: The label 'Fischer' likely refers to a candidate's name rather than a party abbreviation, and there is no party in the provided list that matches this label.
 - party_short: FKP-DRP
   partyfacts_id: 2076
   source: partyfacts_external
@@ -485,8 +480,7 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Freie Wähler — The party 'Freie Wähler' (Free Voters) with ID 1090 directly
-    matches the 'Free Voters' label and has a relevant time frame.
+  notes: Freie Wähler — The party 'Freie Wähler' (Free Voters) with ID 1090 directly matches the 'Free Voters' label and has a relevant time frame.
 - party_short: FREIE WAHLER
   partyfacts_id: 1090
   source: partyfacts_external
@@ -528,9 +522,7 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Sozialdemokratische Partei Deutschlands — Sigmar Gabriel was a prominent
-    leader of the SPD during the specified polling period, making 'Gabriel' a likely
-    shorthand for the SPD in German polls.
+  notes: Sozialdemokratische Partei Deutschlands — Sigmar Gabriel was a prominent leader of the SPD during the specified polling period, making 'Gabriel' a likely shorthand for the SPD in German polls.
 - party_short: GB-BHE
   partyfacts_id: 1010
   source: partyfacts_external
@@ -662,9 +654,7 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Bündnis 90 / Die Grünen — The party short label 'Grünen' is a direct and
-    common abbreviation for 'Bündnis 90 / Die Grünen', and the polling data falls
-    within the party's active years.
+  notes: Bündnis 90 / Die Grünen — The party short label 'Grünen' is a direct and common abbreviation for 'Bündnis 90 / Die Grünen', and the polling data falls within the party's active years.
 - party_short: Gršne
   partyfacts_id: 10
   source: partyfacts_external
@@ -700,9 +690,7 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Sozialdemokratische Partei Deutschlands — The 'KlingbeilSPD' label clearly
-    indicates the 'SPD' (Sozialdemokratische Partei Deutschlands) as the core party,
-    with 'Klingbeil' likely referring to a prominent figure within the party.
+  notes: Sozialdemokratische Partei Deutschlands — The 'KlingbeilSPD' label clearly indicates the 'SPD' (Sozialdemokratische Partei Deutschlands) as the core party, with 'Klingbeil' likely referring to a prominent figure within the party.
 - party_short: KPD
   partyfacts_id: 1135
   source: partyfacts_external
@@ -720,9 +708,7 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Bündnis 90 / Die Grünen — Renate Künast is a prominent German politician
-    from Alliance 90/The Greens, and the polling context of 27% in 2011 aligns with
-    the party's performance around that time.
+  notes: Bündnis 90 / Die Grünen — Renate Künast is a prominent German politician from Alliance 90/The Greens, and the polling context of 27% in 2011 aligns with the party's performance around that time.
 - party_short: L-PDS
   partyfacts_id: 86
   source: partyfacts_external
@@ -740,7 +726,7 @@ mappings:
   source: null
   confidence: null
   is_coalition: false
-  notes: 'Seat-projection forecast probability category. Not vote intention.'
+  notes: Seat-projection forecast probability category. Not vote intention.
   drop: true
   drop_reason: total
 - party_short: Left
@@ -754,7 +740,7 @@ mappings:
   source: null
   confidence: null
   is_coalition: false
-  notes: 'Seat-projection forecast probability category. Not vote intention.'
+  notes: Seat-projection forecast probability category. Not vote intention.
   drop: true
   drop_reason: total
 - party_short: LINKE
@@ -771,11 +757,12 @@ mappings:
   notes: ''
 - party_short: Liste Palmer
   partyfacts_id: null
-  source: gemini_no_match
+  source: null
   confidence: null
   is_coalition: false
-  notes: The party 'Liste Palmer' is a local political list associated with Boris
-    Palmer, not a national party in the provided Party Facts list.
+  notes: Individual Candidate column for 'Liste Palmer'. Not party vote intention.
+  drop: true
+  drop_reason: individual_candidate
 - party_short: LKR
   partyfacts_id: 2702
   source: partyfacts_external
@@ -799,17 +786,13 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: true
-  notes: Christlich Demokratische Union / Christlich Soziale Union — Merkel was the
-    leader of the CDU and Chancellor of Germany, so 'Merkel' in a polling context
-    refers to the CDU/CSU alliance.
+  notes: Christlich Demokratische Union / Christlich Soziale Union — Merkel was the leader of the CDU and Chancellor of Germany, so 'Merkel' in a polling context refers to the CDU/CSU alliance.
 - party_short: MerzUnion
   partyfacts_id: 211
   source: gemini_high
   confidence: high
   is_coalition: true
-  notes: Christlich Demokratische Union / Christlich Soziale Union — 'MerzUnion' refers
-    to the CDU/CSU alliance, led by Friedrich Merz, which is represented by Party
-    Facts ID 211.
+  notes: Christlich Demokratische Union / Christlich Soziale Union — 'MerzUnion' refers to the CDU/CSU alliance, led by Friedrich Merz, which is represented by Party Facts ID 211.
 - party_short: MLPD
   partyfacts_id: 2702
   source: partyfacts_external
@@ -959,7 +942,7 @@ mappings:
   source: null
   confidence: null
   is_coalition: false
-  notes: 'Seat-projection forecast probability category (election.de tables). Not vote intention.'
+  notes: Seat-projection forecast probability category (election.de tables). Not vote intention.
   drop: true
   drop_reason: total
 - party_short: Schil
@@ -985,52 +968,43 @@ mappings:
   source: gemini_no_match
   confidence: null
   is_coalition: false
-  notes: The label 'SPD FDP' represents a combination of two distinct parties, SPD
-    and FDP, indicating a coalition rather than a single party, and there is no single
-    dominant party to match.
+  notes: The label 'SPD FDP' represents a combination of two distinct parties, SPD and FDP, indicating a coalition rather than a single party, and there is no single dominant party to match.
 - party_short: SPD Grüne
   partyfacts_id: null
   source: gemini_no_match
   confidence: null
   is_coalition: false
-  notes: This is a coalition of two distinct parties, SPD and Grüne, and there is
-    no single Party Facts ID that represents this specific coalition.
+  notes: This is a coalition of two distinct parties, SPD and Grüne, and there is no single Party Facts ID that represents this specific coalition.
 - party_short: SPD Grüne FDP
   partyfacts_id: null
   source: gemini_no_match
   confidence: null
   is_coalition: false
-  notes: The label 'SPD Grüne FDP' represents a coalition of three distinct parties,
-    and there is no single Party Facts ID that represents this specific coalition.
+  notes: The label 'SPD Grüne FDP' represents a coalition of three distinct parties, and there is no single Party Facts ID that represents this specific coalition.
 - party_short: SPD Grüne Linke
   partyfacts_id: null
   source: gemini_no_match
   confidence: null
   is_coalition: false
-  notes: 'The label ''SPD Grüne Linke'' clearly indicates a coalition of three distinct
-    parties: SPD, Grüne, and Linke, which is not represented by a single Party Facts
-    ID.'
+  notes: 'The label ''SPD Grüne Linke'' clearly indicates a coalition of three distinct parties: SPD, Grüne, and Linke, which is not represented by a single Party Facts ID.'
 - party_short: SPD Union
   partyfacts_id: null
   source: gemini_no_match
   confidence: null
   is_coalition: false
-  notes: The label 'SPD Union' refers to a coalition of two parties, SPD and Union
-    (CDU/CSU), and no single Party Facts ID represents this specific coalition.
+  notes: The label 'SPD Union' refers to a coalition of two parties, SPD and Union (CDU/CSU), and no single Party Facts ID represents this specific coalition.
 - party_short: SPD Union FDP
   partyfacts_id: null
   source: gemini_no_match
   confidence: null
   is_coalition: false
-  notes: The label 'SPD Union FDP' represents a combination of three distinct parties
-    (SPD, CDU/CSU, FDP) and does not correspond to a single Party Facts ID, even as
-    a dominant member of a coalition.
+  notes: The label 'SPD Union FDP' represents a combination of three distinct parties (SPD, CDU/CSU, FDP) and does not correspond to a single Party Facts ID, even as a dominant member of a coalition.
 - party_short: SPD/GREENS
   partyfacts_id: null
   source: null
   confidence: null
   is_coalition: false
-  notes: 'Coalition-wish poll column (Red-Green preference, not vote intention).'
+  notes: Coalition-wish poll column (Red-Green preference, not vote intention).
   drop: true
   drop_reason: approval
 - party_short: SPD/GREENS/LINKE
@@ -1038,7 +1012,7 @@ mappings:
   source: null
   confidence: null
   is_coalition: false
-  notes: 'Coalition-wish poll column (Red-Red-Green preference, not vote intention).'
+  notes: Coalition-wish poll column (Red-Red-Green preference, not vote intention).
   drop: true
   drop_reason: approval
 - party_short: SPDGrüneLinke
@@ -1046,9 +1020,7 @@ mappings:
   source: gemini_no_match
   confidence: null
   is_coalition: false
-  notes: The label 'SPDGrüneLinke' represents a coalition of three distinct parties
-    (SPD, Greens, and Linke), which is not directly matched by a single Party Facts
-    ID.
+  notes: The label 'SPDGrüneLinke' represents a coalition of three distinct parties (SPD, Greens, and Linke), which is not directly matched by a single Party Facts ID.
 - party_short: SSW
   partyfacts_id: 50
   source: partyfacts_external
@@ -1060,24 +1032,19 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Sozialdemokratische Partei Deutschlands — Peer Steinbrück was the lead candidate
-    for the SPD in the 2013 German federal election, and the poll results align with
-    typical SPD performance during that period.
+  notes: Sozialdemokratische Partei Deutschlands — Peer Steinbrück was the lead candidate for the SPD in the 2013 German federal election, and the poll results align with typical SPD performance during that period.
 - party_short: Steinmeier
   partyfacts_id: 383
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Sozialdemokratische Partei Deutschlands — Frank-Walter Steinmeier is a prominent
-    member of the SPD, and the polling context aligns with SPD's historical performance.
+  notes: Sozialdemokratische Partei Deutschlands — Frank-Walter Steinmeier is a prominent member of the SPD, and the polling context aligns with SPD's historical performance.
 - party_short: The Left
   partyfacts_id: 1545
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: PDS | Die Linke — The party label 'The Left' directly translates to 'Die
-    Linke' in German, and Party Facts ID 1545 explicitly includes 'Die Linke' in its
-    name and English translation, covering the relevant time period.
+  notes: PDS | Die Linke — The party label 'The Left' directly translates to 'Die Linke' in German, and Party Facts ID 1545 explicitly includes 'Die Linke' in its name and English translation, covering the relevant time period.
 - party_short: Tier
   partyfacts_id: 749
   source: partyfacts_external
@@ -1107,9 +1074,7 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Bündnis 90 / Die Grünen — Jürgen Trittin was a prominent politician of Bündnis
-    90 / Die Grünen, and the polling context date of 2011-04-19 aligns with his active
-    period within the party.
+  notes: Bündnis 90 / Die Grünen — Jürgen Trittin was a prominent politician of Bündnis 90 / Die Grünen, and the polling context date of 2011-04-19 aligns with his active period within the party.
 - party_short: Union
   partyfacts_id: 211
   source: partyfacts_external
@@ -1121,57 +1086,45 @@ mappings:
   source: gemini_no_match
   confidence: null
   is_coalition: false
-  notes: The label 'Union Grüne FDP' clearly indicates a coalition of multiple parties
-    (CDU/CSU, Greens, FDP) rather than a single party, and there is no single dominant
-    party to map to.
+  notes: The label 'Union Grüne FDP' clearly indicates a coalition of multiple parties (CDU/CSU, Greens, FDP) rather than a single party, and there is no single dominant party to map to.
 - party_short: UnionAfD
   partyfacts_id: null
   source: gemini_no_match
   confidence: null
   is_coalition: false
-  notes: The label 'UnionAfD' appears to be a coalition or aggregate of 'Union' (CDU/CSU)
-    and 'AfD', but there is no single Party Facts ID for this specific combination,
-    and no dominant member can be identified without further context.
+  notes: The label 'UnionAfD' appears to be a coalition or aggregate of 'Union' (CDU/CSU) and 'AfD', but there is no single Party Facts ID for this specific combination, and no dominant member can be identified without further context.
 - party_short: UnionFDP
   partyfacts_id: null
   source: gemini_no_match
   confidence: null
   is_coalition: false
-  notes: The label 'UnionFDP' clearly indicates a coalition between 'Union' (CDU/CSU)
-    and 'FDP', but there is no single Party Facts ID for this specific coalition.
+  notes: The label 'UnionFDP' clearly indicates a coalition between 'Union' (CDU/CSU) and 'FDP', but there is no single Party Facts ID for this specific coalition.
 - party_short: UnionGrüne
   partyfacts_id: null
-  source: gemini_no_match
+  source: null
   confidence: null
   is_coalition: false
-  notes: The label 'UnionGrüne' suggests a coalition or aggregate of 'Union' (CDU/CSU)
-    and 'Grüne' (Alliance 90/The Greens), which is not a single party in the provided
-    list.
+  notes: Approval column for 'UnionGrüne'. Not party vote intention.
+  drop: true
+  drop_reason: approval
 - party_short: UnionSPD
   partyfacts_id: 211
   source: gemini_high
   confidence: high
   is_coalition: true
-  notes: Christlich Demokratische Union / Christlich Soziale Union — UnionSPD is a
-    common abbreviation for the CDU/CSU (Union) and SPD coalition in Germany, and
-    Party Facts ID 211 represents the CDU/CSU alliance.
+  notes: Christlich Demokratische Union / Christlich Soziale Union — UnionSPD is a common abbreviation for the CDU/CSU (Union) and SPD coalition in Germany, and Party Facts ID 211 represents the CDU/CSU alliance.
 - party_short: UnionSPDGrüne
   partyfacts_id: null
   source: gemini_no_match
   confidence: null
   is_coalition: false
-  notes: The label 'UnionSPDGrüne' clearly indicates a coalition of multiple parties
-    (Union, SPD, and Grüne), which is not represented by a single Party Facts ID in
-    the provided list.
+  notes: The label 'UnionSPDGrüne' clearly indicates a coalition of multiple parties (Union, SPD, and Grüne), which is not represented by a single Party Facts ID in the provided list.
 - party_short: UnionSPDLinke
   partyfacts_id: null
   source: gemini_no_match
   confidence: null
   is_coalition: false
-  notes: The party-short label 'UnionSPDLinke' appears to be a concatenation of multiple
-    party abbreviations (Union, SPD, Linke), indicating it represents a coalition
-    or aggregate of parties rather than a single party, and no single dominant party
-    can be identified from the provided list.
+  notes: The party-short label 'UnionSPDLinke' appears to be a concatenation of multiple party abbreviations (Union, SPD, Linke), indicating it represents a coalition or aggregate of parties rather than a single party, and no single dominant party can be identified from the provided list.
 - party_short: USPD
   partyfacts_id: 1884
   source: partyfacts_external
@@ -1201,10 +1154,7 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Alternative für Deutschland — The 'WeidelAfD' label clearly refers to the
-    'Alternative für Deutschland' (AfD) party, with 'Weidel' likely indicating a prominent
-    figure associated with the party, and the polling data aligns with AfD's recent
-    performance.
+  notes: Alternative für Deutschland — The 'WeidelAfD' label clearly refers to the 'Alternative für Deutschland' (AfD) party, with 'Weidel' likely indicating a prominent figure associated with the party, and the polling data aligns with AfD's recent performance.
 - party_short: WP
   partyfacts_id: 1828
   source: partyfacts_external

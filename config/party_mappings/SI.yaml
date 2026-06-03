@@ -18,9 +18,7 @@ mappings:
   source: gemini_no_match
   confidence: null
   is_coalition: false
-  notes: The abbreviation 'Abst.' likely stands for 'Abstention' or 'Abstain' and
-    does not correspond to a political party, therefore no match is found in the provided
-    Party Facts entries.
+  notes: The abbreviation 'Abst.' likely stands for 'Abstention' or 'Abstain' and does not correspond to a political party, therefore no match is found in the provided Party Facts entries.
 - party_short: ACZS
   partyfacts_id: 1494
   source: partyfacts_external
@@ -38,8 +36,7 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Zavezništvo Alenke Bratušek — The party short label 'Alenka Bratušek' directly
-    refers to the party 'Zavezništvo Alenke Bratušek' (Alliance of Alenka Bratusek).
+  notes: Zavezništvo Alenke Bratušek — The party short label 'Alenka Bratušek' directly refers to the party 'Zavezništvo Alenke Bratušek' (Alliance of Alenka Bratusek).
 - party_short: AS
   partyfacts_id: 1302
   source: partyfacts_external
@@ -51,17 +48,13 @@ mappings:
   source: gemini_no_match
   confidence: null
   is_coalition: false
-  notes: The party abbreviation 'Avion' does not match any of the provided Party Facts
-    entries for Slovenia, and there is no obvious semantic or phonetic similarity
-    to suggest a match.
+  notes: The party abbreviation 'Avion' does not match any of the provided Party Facts entries for Slovenia, and there is no obvious semantic or phonetic similarity to suggest a match.
 - party_short: AČZS
   partyfacts_id: 1494
   source: manual_review
   confidence: high
   is_coalition: false
-  notes: 'Andrej Čuš in Zeleni Slovenije (Andrej Čuš and Greens of Slovenia) — PF
-    id 1494 (Zeleni Slovenije / Greens of Slovenia, 1990-). Confirmed via Wikipedia
-    wikilink ([[Andrej Čuš and Greens of Slovenia|AČZS]]) → PF name_other.'
+  notes: Andrej Čuš in Zeleni Slovenije (Andrej Čuš and Greens of Slovenia) — PF id 1494 (Zeleni Slovenije / Greens of Slovenia, 1990-). Confirmed via Wikipedia wikilink ([[Andrej Čuš and Greens of Slovenia|AČZS]]) → PF name_other.
 - party_short: Concretely
   partyfacts_id: 9068
   source: partyfacts_external
@@ -79,9 +72,7 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: true
-  notes: DEMOS — The abbreviation 'DEM' strongly suggests 'DEMOS', which is listed
-    as a coalition in the Party Facts entries and aligns with the polling context
-    for a political entity in Slovenia.
+  notes: DEMOS — The abbreviation 'DEM' strongly suggests 'DEMOS', which is listed as a coalition in the Party Facts entries and aligns with the polling context for a political entity in Slovenia.
 - party_short: DESUS
   partyfacts_id: 467
   source: partyfacts_external
@@ -117,9 +108,7 @@ mappings:
   source: gemini_no_match
   confidence: null
   is_coalition: false
-  notes: The party short label 'Don't Know' indicates an undecided or 'none of the
-    above' option, which does not correspond to any specific political party in the
-    provided list.
+  notes: The party short label 'Don't Know' indicates an undecided or 'none of the above' option, which does not correspond to any specific political party in the provided list.
 - party_short: DS
   partyfacts_id: 1479
   source: partyfacts_external
@@ -185,9 +174,7 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Glas žensk Slovenije — The party short label 'GzS' directly matches the Party
-    Facts entry for 'Glas žensk Slovenije' (Voice of Slovenian women) with short label
-    'GZS' and the polling context dates are consistent with the party's activity period.
+  notes: Glas žensk Slovenije — The party short label 'GzS' directly matches the Party Facts entry for 'Glas žensk Slovenije' (Voice of Slovenian women) with short label 'GZS' and the polling context dates are consistent with the party's activity period.
 - party_short: I-JK
   partyfacts_id: 2919
   source: partyfacts_external
@@ -217,8 +204,7 @@ mappings:
   source: gemini_no_match
   confidence: null
   is_coalition: false
-  notes: Klemen Boštjančič is an individual's name, not a party, and there is no party
-    in the provided list that matches this name or suggests a candidate-party pairing.
+  notes: Klemen Boštjančič is an individual's name, not a party, and there is no party in the provided list that matches this name or suggests a candidate-party pairing.
 - party_short: Konkretno
   partyfacts_id: 9068
   source: partyfacts_external
@@ -320,23 +306,19 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Levica — Luka Mesec is a prominent leader of the Levica (The Left) party
-    in Slovenia, making it a direct and strong association.
+  notes: Levica — Luka Mesec is a prominent leader of the Levica (The Left) party in Slovenia, making it a direct and strong association.
 - party_short: LV
   partyfacts_id: 6131
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Levica — The abbreviation 'LV' is a direct match for 'Levica' (The Left)
-    in Slovenian, which has the Party Facts ID 6131.
+  notes: Levica — The abbreviation 'LV' is a direct match for 'Levica' (The Left) in Slovenian, which has the Party Facts ID 6131.
 - party_short: LZJ
   partyfacts_id: 1773
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Lista Zorana Jankovića – Pozitivna Slovenija — The short label 'LZJ' directly
-    matches the beginning of 'LZJ-PS' (Lista Zorana Jankovića – Pozitivna Slovenija),
-    and the polling context dates align with the party's activity period.
+  notes: Lista Zorana Jankovića – Pozitivna Slovenija — The short label 'LZJ' directly matches the beginning of 'LZJ-PS' (Lista Zorana Jankovića – Pozitivna Slovenija), and the polling context dates align with the party's activity period.
 - party_short: LZJ — PS
   partyfacts_id: 1773
   source: partyfacts_external
@@ -366,9 +348,7 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Lista Marjana Šarca — The party short label 'Marjan Šarec' directly refers
-    to 'Lista Marjana Šarca' (List of Marjan Sarec), which is a perfect match in the
-    Party Facts data.
+  notes: Lista Marjana Šarca — The party short label 'Marjan Šarec' directly refers to 'Lista Marjana Šarca' (List of Marjan Sarec), which is a perfect match in the Party Facts data.
 - party_short: MARJANA
   partyfacts_id: 6132
   source: partyfacts_external
@@ -380,23 +360,19 @@ mappings:
   source: gemini_no_match
   confidence: null
   is_coalition: false
-  notes: The party short label 'Matjaž Han' appears to be a candidate's name rather
-    than a party abbreviation, and there is no party in the provided list that matches
-    this name or a clear party abbreviation within it.
+  notes: The party short label 'Matjaž Han' appears to be a candidate's name rather than a party abbreviation, and there is no party in the provided list that matches this name or a clear party abbreviation within it.
 - party_short: Matjaž Nemec
   partyfacts_id: null
   source: gemini_no_match
   confidence: null
   is_coalition: false
-  notes: Matjaž Nemec is a candidate name, not a party abbreviation, and there is
-    no clear party suffix to match in the provided list.
+  notes: Matjaž Nemec is a candidate name, not a party abbreviation, and there is no clear party suffix to match in the provided list.
 - party_short: MI!
   partyfacts_id: null
   source: gemini_no_match
   confidence: null
   is_coalition: false
-  notes: The abbreviation 'MI!' does not semantically match any of the provided Party
-    Facts entries for Slovenia.
+  notes: The abbreviation 'MI!' does not semantically match any of the provided Party Facts entries for Slovenia.
 - party_short: N.SI
   partyfacts_id: 1618
   source: partyfacts_external
@@ -420,9 +396,7 @@ mappings:
   source: gemini_no_match
   confidence: null
   is_coalition: false
-  notes: Nataša Pirc Musar is a candidate's name, not a party, and there is no clear
-    party affiliation in the provided list that matches her name or a known party
-    she represents.
+  notes: Nataša Pirc Musar is a candidate's name, not a party, and there is no clear party affiliation in the provided list that matches her name or a known party she represents.
 - party_short: ND
   partyfacts_id: 9070
   source: partyfacts_external
@@ -446,16 +420,13 @@ mappings:
   source: gemini_no_match
   confidence: null
   is_coalition: false
-  notes: The party short label 'Not vote' indicates a non-voting option, which does
-    not correspond to any political party in the provided Party Facts entries.
+  notes: The party short label 'Not vote' indicates a non-voting option, which does not correspond to any political party in the provided Party Facts entries.
 - party_short: NP-DD
   partyfacts_id: 6133
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Dobra Drzava — The party short label 'NP-DD' likely refers to a coalition
-    or alliance where 'DD' stands for 'Dobra Drzava', which is present in the candidate
-    list with ID 6133.
+  notes: Dobra Drzava — The party short label 'NP-DD' likely refers to a coalition or alliance where 'DD' stands for 'Dobra Drzava', which is present in the candidate list with ID 6133.
 - party_short: NS
   partyfacts_id: 1618
   source: partyfacts_external
@@ -480,7 +451,6 @@ mappings:
   confidence: high
   is_coalition: false
   notes: 'Wikipedia article: ''NSi, SLS, FOKUS (electoral coalition)''. Verified absent from Party Facts (no matching entry in core or external datasets). PF may add an id when next refreshed.'
-
 - party_short: NSI
   partyfacts_id: 1618
   source: partyfacts_external
@@ -534,9 +504,7 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Piratska stranka Slovenije — The abbreviation 'PIR' strongly suggests 'Piratska
-    stranka Slovenije' (Slovenian Pirate Party), and the polling data aligns with
-    its activity period.
+  notes: Piratska stranka Slovenije — The abbreviation 'PIR' strongly suggests 'Piratska stranka Slovenije' (Slovenian Pirate Party), and the polling data aligns with its activity period.
 - party_short: Pirat
   partyfacts_id: 3099
   source: partyfacts_external
@@ -560,8 +528,7 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Povežimo se — The party short label 'POS' is a direct match to 'Pose' (Povežimo
-    se) in the candidate list, which is a very close abbreviation.
+  notes: Povežimo se — The party short label 'POS' is a direct match to 'Pose' (Povežimo se) in the candidate list, which is a very close abbreviation.
 - party_short: PoS
   partyfacts_id: 7363
   source: partyfacts_external
@@ -604,14 +571,12 @@ mappings:
   confidence: high
   is_coalition: false
   notes: 'Wikipedia article: ''Prerod''. Verified absent from Party Facts (no matching entry in core or external datasets). PF may add an id when next refreshed.'
-
 - party_short: RES
   partyfacts_id: 9069
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Resni.ca — The party short label 'RES' is a direct abbreviation of 'Resni.ca',
-    which is a candidate party in the provided list.
+  notes: Resni.ca — The party short label 'RES' is a direct abbreviation of 'Resni.ca', which is a candidate party in the provided list.
 - party_short: Res
   partyfacts_id: 9069
   source: partyfacts_external
@@ -629,9 +594,7 @@ mappings:
   source: gemini_low
   confidence: low
   is_coalition: false
-  notes: Gibanje Zdrava Družba — The party 'Gibanje Zdrava Družba' (Healthy Society
-    Movement) was founded by Robert Golob in 2022, making it a plausible match for
-    'Robert Golob' in recent polls, though the short label 'GZD' is not a direct match.
+  notes: Gibanje Zdrava Družba — The party 'Gibanje Zdrava Družba' (Healthy Society Movement) was founded by Robert Golob in 2022, making it a plausible match for 'Robert Golob' in recent polls, though the short label 'GZD' is not a direct match.
 - party_short: RS
   partyfacts_id: 2921
   source: partyfacts_external
@@ -793,9 +756,7 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Stranka mladih Slovenije — The 'SMS' part of the abbreviation strongly matches
-    'Stranka mladih Slovenije', and the '-Z' likely indicates a minor variation or
-    alliance not significant enough to be a separate party in Party Facts.
+  notes: Stranka mladih Slovenije — The 'SMS' part of the abbreviation strongly matches 'Stranka mladih Slovenije', and the '-Z' likely indicates a minor variation or alliance not significant enough to be a separate party in Party Facts.
 - party_short: SMS-ZELENI
   partyfacts_id: 1401
   source: partyfacts_external
@@ -888,11 +849,12 @@ mappings:
   notes: ''
 - party_short: Tanja Fajon
   partyfacts_id: null
-  source: gemini_no_match
+  source: null
   confidence: null
   is_coalition: false
-  notes: Tanja Fajon is a candidate's name, not a party abbreviation, and there is
-    no clear party suffix to match among the provided Party Facts entries.
+  notes: Individual Candidate column for 'Tanja Fajon'. Not party vote intention.
+  drop: true
+  drop_reason: individual_candidate
 - party_short: The Left
   partyfacts_id: 6131
   source: partyfacts_external
@@ -910,8 +872,7 @@ mappings:
   source: gemini_no_match
   confidence: null
   is_coalition: false
-  notes: The abbreviation 'Und.' does not semantically match any of the provided Party
-    Facts entries for Slovenia.
+  notes: The abbreviation 'Und.' does not semantically match any of the provided Party Facts entries for Slovenia.
 - party_short: V
   partyfacts_id: 3205
   source: partyfacts_external
@@ -935,31 +896,25 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: VESNA – zelena stranka — The party short label 'Vesna' directly matches the
-    Party Facts entry 'VESNA' for 'VESNA – zelena stranka'.
+  notes: VESNA – zelena stranka — The party short label 'Vesna' directly matches the Party Facts entry 'VESNA' for 'VESNA – zelena stranka'.
 - party_short: Vladimir Prebilič
   partyfacts_id: null
   source: gemini_no_match
   confidence: null
   is_coalition: false
-  notes: The party short label 'Vladimir Prebilič' refers to an individual candidate
-    and does not match any existing party in the provided Party Facts entries for
-    Slovenia.
+  notes: The party short label 'Vladimir Prebilič' refers to an individual candidate and does not match any existing party in the provided Party Facts entries for Slovenia.
 - party_short: Won't Answer
   partyfacts_id: null
   source: gemini_no_match
   confidence: null
   is_coalition: false
-  notes: The party short label 'Won't Answer' does not semantically match any of the
-    provided Party Facts entries for Slovenia.
+  notes: The party short label 'Won't Answer' does not semantically match any of the provided Party Facts entries for Slovenia.
 - party_short: Won't Vote
   partyfacts_id: null
   source: gemini_no_match
   confidence: null
   is_coalition: false
-  notes: The label "Won't Vote" refers to a category of voters who do not support
-    any specific party, rather than an actual political party, so there is no matching
-    Party Facts ID.
+  notes: The label "Won't Vote" refers to a category of voters who do not support any specific party, rather than an actual political party, so there is no matching Party Facts ID.
 - party_short: Z
   partyfacts_id: 474
   source: partyfacts_external
@@ -977,9 +932,7 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Demokratićna stranka upokojencev Slovenije — The abbreviation 'Z.DEJ' is
-    a common variant of 'DeSUS', which corresponds to Party Facts ID 467, 'Demokratićna
-    stranka upokojencev Slovenije'.
+  notes: Demokratićna stranka upokojencev Slovenije — The abbreviation 'Z.DEJ' is a common variant of 'DeSUS', which corresponds to Party Facts ID 467, 'Demokratićna stranka upokojencev Slovenije'.
 - party_short: ZAAB
   partyfacts_id: 3114
   source: partyfacts_external
@@ -1021,9 +974,7 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Združena desnica (NLS+GOD) — The abbreviation 'ZD' directly matches the short
-    label for 'Združena desnica (NLS+GOD)' and the polling data is consistent with
-    its active period.
+  notes: Združena desnica (NLS+GOD) — The abbreviation 'ZD' directly matches the short label for 'Združena desnica (NLS+GOD)' and the polling data is consistent with its active period.
 - party_short: Zd
   partyfacts_id: 4016
   source: partyfacts_external

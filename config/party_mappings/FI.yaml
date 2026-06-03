@@ -42,17 +42,13 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Ruotsalainen Kansanpuolue – Svenska Folkepartiet i Finland — Anna-Maja Henriksson
-    is a prominent politician and leader of the Swedish People's Party of Finland
-    (RKP-SFP), making ID 1229 the correct match.
+  notes: Ruotsalainen Kansanpuolue – Svenska Folkepartiet i Finland — Anna-Maja Henriksson is a prominent politician and leader of the Swedish People's Party of Finland (RKP-SFP), making ID 1229 the correct match.
 - party_short: Antti Rinne
   partyfacts_id: 1303
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Suomen Sosialidemokraattinen Puolue – Finlands Socialdemokratiska Parti —
-    Antti Rinne was the leader of the Social Democratic Party of Finland (SDP) during
-    the period of the polls, making the party label a reference to the SDP.
+  notes: Suomen Sosialidemokraattinen Puolue – Finlands Socialdemokratiska Parti — Antti Rinne was the leader of the Social Democratic Party of Finland (SDP) during the period of the polls, making the party label a reference to the SDP.
 - party_short: AS
   partyfacts_id: 1859
   source: partyfacts_external
@@ -190,9 +186,7 @@ mappings:
   source: gemini_no_match
   confidence: null
   is_coalition: false
-  notes: The label 'Gov.' likely refers to 'Government' or 'Governing Parties' as
-    an aggregate, not a single political party, and thus does not match any specific
-    party in the provided list.
+  notes: The label 'Gov.' likely refers to 'Government' or 'Governing Parties' as an aggregate, not a single political party, and thus does not match any specific party in the provided list.
 - party_short: GR
   partyfacts_id: 479
   source: partyfacts_external
@@ -237,19 +231,18 @@ mappings:
   notes: ''
 - party_short: Juha Sipilä
   partyfacts_id: null
-  source: gemini_no_match
+  source: null
   confidence: null
   is_coalition: false
-  notes: Juha Sipilä is a candidate's name, not a party abbreviation, and no party
-    in the provided list is clearly associated with this name in the given context.
+  notes: Individual Candidate column for 'Juha Sipilä'. Not party vote intention.
+  drop: true
+  drop_reason: individual_candidate
 - party_short: Jussi Halla-aho
   partyfacts_id: 1689
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Perussuomalaiset — Jussi Halla-aho is a prominent politician and former leader
-    of the Finns Party (Perussuomalaiset), and the polling data aligns with the party's
-    performance during his leadership.
+  notes: Perussuomalaiset — Jussi Halla-aho is a prominent politician and former leader of the Finns Party (Perussuomalaiset), and the polling data aligns with the party's performance during his leadership.
 - party_short: KD
   partyfacts_id: 703
   source: partyfacts_external
@@ -339,9 +332,7 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Vasemmistoliitto / Vänsterförbundet — Li Andersson is a prominent leader
-    of the Left Alliance (Vasemmistoliitto), and the polling data aligns with the
-    party's performance.
+  notes: Vasemmistoliitto / Vänsterförbundet — Li Andersson is a prominent leader of the Left Alliance (Vasemmistoliitto), and the polling data aligns with the party's performance.
 - party_short: LIB
   partyfacts_id: 249
   source: partyfacts_external
@@ -455,9 +446,7 @@ mappings:
   source: gemini_no_match
   confidence: null
   is_coalition: false
-  notes: The abbreviation 'Opp.' likely stands for 'Opposition' and represents an
-    aggregate of opposition parties, not a single party, and thus does not match any
-    specific party in the provided list.
+  notes: The abbreviation 'Opp.' likely stands for 'Opposition' and represents an aggregate of opposition parties, not a single party, and thus does not match any specific party in the provided list.
 - party_short: Other
   partyfacts_id: 1859
   source: partyfacts_external
@@ -484,12 +473,12 @@ mappings:
   notes: ''
 - party_short: Paavo Väyrynen
   partyfacts_id: null
-  source: gemini_no_match
+  source: null
   confidence: null
   is_coalition: false
-  notes: Paavo Väyrynen is a politician, not a party, and no party in the provided
-    list is directly associated with this name in a way that suggests a direct match
-    for the polling context.
+  notes: Individual Candidate column for 'Paavo Väyrynen'. Not party vote intention.
+  drop: true
+  drop_reason: individual_candidate
 - party_short: PDEM
   partyfacts_id: 1096
   source: partyfacts_external
@@ -501,17 +490,13 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Vihreä Liitto – Gröna Förbundet — Pekka Haavisto is a prominent politician
-    from the Green League (Vihreä Liitto) in Finland, and the polling context suggests
-    he is being used as a proxy for his party.
+  notes: Vihreä Liitto – Gröna Förbundet — Pekka Haavisto is a prominent politician from the Green League (Vihreä Liitto) in Finland, and the polling context suggests he is being used as a proxy for his party.
 - party_short: Petteri Orpo
   partyfacts_id: 495
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Kansallinen Kokoomus — Petteri Orpo is the current leader of the National
-    Coalition Party (Kansallinen Kokoomus) in Finland, and the polling data aligns
-    with the party's performance.
+  notes: Kansallinen Kokoomus — Petteri Orpo is the current leader of the National Coalition Party (Kansallinen Kokoomus) in Finland, and the polling data aligns with the party's performance.
 - party_short: PFP
   partyfacts_id: 1905
   source: partyfacts_external
@@ -625,17 +610,13 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Uusi vaihtoehto | Sininen tulevaisuus — Sampo Terho was a prominent figure
-    in the Blue Reform party (Sininen tulevaisuus), which is also known as New Alternative
-    (Uusi vaihtoehto).
+  notes: Uusi vaihtoehto | Sininen tulevaisuus — Sampo Terho was a prominent figure in the Blue Reform party (Sininen tulevaisuus), which is also known as New Alternative (Uusi vaihtoehto).
 - party_short: Sari Essayah
   partyfacts_id: 703
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Kristillisdemokraatit / Kristdemokraterna — Sari Essayah is a prominent politician
-    and former leader of the Christian Democrats (KD) in Finland, making KD the most
-    appropriate match.
+  notes: Kristillisdemokraatit / Kristdemokraterna — Sari Essayah is a prominent politician and former leader of the Christian Democrats (KD) in Finland, making KD the most appropriate match.
 - party_short: SDEM
   partyfacts_id: 1303
   source: partyfacts_external
@@ -833,17 +814,13 @@ mappings:
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Uusi vaihtoehto | Sininen tulevaisuus — Timo Soini was a prominent leader
-    of the True Finns (PS) and later founded Blue Reform (SIN/UV), which is listed
-    as id 5859 and active during the polling period.
+  notes: Uusi vaihtoehto | Sininen tulevaisuus — Timo Soini was a prominent leader of the True Finns (PS) and later founded Blue Reform (SIN/UV), which is listed as id 5859 and active during the polling period.
 - party_short: Touko Aalto
   partyfacts_id: 479
   source: gemini_high
   confidence: high
   is_coalition: false
-  notes: Vihreä Liitto – Gröna Förbundet — Touko Aalto was the leader of the Green
-    League (Vihreä Liitto) in Finland during the period of the polls, and it is common
-    for candidate names to be used as party labels in polls.
+  notes: Vihreä Liitto – Gröna Förbundet — Touko Aalto was the leader of the Green League (Vihreä Liitto) in Finland during the period of the polls, and it is common for candidate names to be used as party labels in polls.
 - party_short: TPSL
   partyfacts_id: 1164
   source: partyfacts_external
@@ -912,12 +889,12 @@ mappings:
   notes: ''
 - party_short: Ville Niinistö
   partyfacts_id: null
-  source: gemini_no_match
+  source: null
   confidence: null
   is_coalition: false
-  notes: The label 'Ville Niinistö' refers to a candidate, not a party, and there
-    is no clear party abbreviation to extract or match to the provided Party Facts
-    entries.
+  notes: Individual Candidate column for 'Ville Niinistö'. Not party vote intention.
+  drop: true
+  drop_reason: individual_candidate
 - party_short: VKK
   partyfacts_id: 2687
   source: partyfacts_external
