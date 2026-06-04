@@ -26,5 +26,8 @@ dist/
 # Session logs (per-machine notes)
 session_logs/
 
+# Claude Code per-project state (locks, transcripts)
+.claude/
+
 # Misc
 .DS_Store
