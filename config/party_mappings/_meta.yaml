@@ -58,6 +58,8 @@ mappings:
   "Connolly":                         { drop: true, drop_reason: approval }     # IE Catherine Connolly
   "Grealish":                         { drop: true, drop_reason: approval }     # IE Noel Grealish
   "Fodor":                            { drop: true, drop_reason: approval }     # HU Gábor Fodor
+  "Merkel":                           { drop: true, drop_reason: chancellor_preference }  # DE Kanzlerfrage (preferred-chancellor poll)
+  "Steinbrück":                       { drop: true, drop_reason: chancellor_preference }  # DE Kanzlerfrage (preferred-chancellor poll)
   # --- Cabinet / government aggregate ---
   "Government":                       { drop: true, drop_reason: total }        # DK cabinet aggregate
   "Cabinet of Denmark":               { drop: true, drop_reason: total }

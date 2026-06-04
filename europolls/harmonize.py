@@ -53,6 +53,7 @@ OUT_COLS = [
 HARD_DROP_REASONS = {
     "approval", "lead", "response_rate", "total",
     "individual_candidate", "parse_artifact",
+    "chancellor_preference",
 }
 
 

@@ -234,7 +234,16 @@ def _attach_canonical_name(merged: pd.DataFrame) -> pd.DataFrame:
 HARD_DROP_REASONS = {
     "approval", "lead", "response_rate", "total",
     "individual_candidate", "parse_artifact",
+    "chancellor_preference",
 }
+
+# Source-URL patterns whose rows are not vote-intention polls at all
+# (e.g. election.de's btw29 seat-forecast map publishes per-party seat
+# probabilities, not vote shares; values reach ~90%+). Match is a plain
+# substring on source_url.
+HARD_DROP_SOURCE_URL_SUBSTRINGS = (
+    "election.de/cgi-bin/showforecast",
+)
 
 
 def _apply_hard_drops(merged: pd.DataFrame) -> pd.DataFrame:
@@ -267,7 +276,12 @@ def _apply_hard_drops(merged: pd.DataFrame) -> pd.DataFrame:
     has_singles = keyed["_has_singles"].fillna(False).astype(bool).to_numpy()
     coal_redundant = is_coal_for_collapse.to_numpy(dtype=bool) & has_singles
 
-    drop_mask = hard_reason.to_numpy(dtype=bool) | coal_redundant
+    url = merged["source_url"].fillna("").astype(str)
+    url_drop = pd.Series(False, index=merged.index)
+    for sub in HARD_DROP_SOURCE_URL_SUBSTRINGS:
+        url_drop = url_drop | url.str.contains(sub, regex=False)
+
+    drop_mask = hard_reason.to_numpy(dtype=bool) | coal_redundant | url_drop.to_numpy(dtype=bool)
     out = merged.loc[~drop_mask].reset_index(drop=True)
     return out.drop(columns=["_parse_is_coalition"])
 

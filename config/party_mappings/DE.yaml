@@ -783,12 +783,6 @@ mappings:
   confidence: null
   is_coalition: false
   notes: ''
-- party_short: Merkel
-  partyfacts_id: 211
-  source: gemini_high
-  confidence: high
-  is_coalition: true
-  notes: Christlich Demokratische Union / Christlich Soziale Union — Merkel was the leader of the CDU and Chancellor of Germany, so 'Merkel' in a polling context refers to the CDU/CSU alliance.
 - party_short: MerzUnion
   partyfacts_id: 211
   source: gemini_high
@@ -1039,12 +1033,6 @@ mappings:
   confidence: null
   is_coalition: false
   notes: ''
-- party_short: Steinbrück
-  partyfacts_id: 383
-  source: gemini_high
-  confidence: high
-  is_coalition: false
-  notes: Sozialdemokratische Partei Deutschlands — Peer Steinbrück was the lead candidate for the SPD in the 2013 German federal election, and the poll results align with typical SPD performance during that period.
 - party_short: Steinmeier
   partyfacts_id: 383
   source: gemini_high
