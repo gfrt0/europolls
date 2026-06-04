@@ -1,6 +1,6 @@
 # Europolls
 
-A Wikipedia-direct opinion polling dataset covering **32 European countries** — the EU-27 plus the UK, Norway, Iceland, Switzerland, and Bulgaria's separate cycles.
+A Wikipedia-direct database of opinion polls covering **30 European countries** — the EU-27 minus Belgium, plus the UK, Norway, Iceland, and Switzerland — with France split into separate presidential and legislative cycles (31 country-codes in total).
 
 Europolls scrapes the per-country `Opinion polling for the X election` articles from English Wikipedia, parses the polling tables into long and wide formats, joins to a stable party identifier (`partyfacts_id`), and ships the result as a public, reproducible dataset.
 
@@ -12,42 +12,43 @@ Inspired by [Pitas (2023) Europepolls](https://arxiv.org/abs/2307.10022), which 
 
 ## Coverage
 
-32 countries, ~33k polls, ~296k party-poll observations.
+31 country-codes, ~33k unique polls, ~298k poll-party rows in the canonical long file (~278k after dropping non-voting-intention rows).
 
 | Country | Polls | Span | Top parties |
 |---|---|---|---|
-| UK (United Kingdom) | 5,143 | 2005–2026 | Con, Lab, LD, Grn |
-| IT (Italy) | 5,014 | 2005–2026 | PD, Lega, M5S, FdI |
-| DE (Germany) | 4,568 | 2009–2026 | SPD, Grüne, FDP, Linke, Union |
-| ES (Spain) | 2,883 | 2004–2026 | PSOE, PP, PNV, Vox, Cs |
-| PL (Poland) | 1,678 | 2005–2026 | PiS, KO, Konfederacja, Lewica |
-| GR (Greece) | 1,625 | 2007–2026 | SYRIZA, ND, KKE, PASOK |
-| NO (Norway) | 1,450 | 2009–2026 | FrP, KrF, H, SV, Sp |
-| SE (Sweden) | 1,113 | 2010–2024 | S, M, SD, C, V |
-| AT (Austria) | 978 | 2012–2026 | ÖVP, SPÖ, FPÖ, Grüne, NEOS |
-| FR (France) — presidential | 835 | 2002–2022 | Le Pen, Sarkozy, Macron, Mélenchon |
-| PT (Portugal) | 830 | 2005–2026 | PSD, PS, BE, CDU, CH |
-| DK (Denmark) | 823 | 2007–2031 | A, V, O, B, Ø |
-| EE (Estonia) | 684 | 2010–2026 | KE, RE, EKRE, SDE, E200 |
-| CZ (Czechia) | 650 | 2006–2026 | ANO, ODS, SPOLU, Piráti, STAN |
-| NL (Netherlands) | 641 | 2010–2026 | VVD, PVV, GL–PvdA, CDA, D66 |
-| HU (Hungary) | 559 | 2009–2026 | Fidesz, Tisza, DK, Jobbik |
-| SI (Slovenia) | 459 | 2011–2026 | SDS, SD, GS, Levica |
-| IE (Ireland) | 449 | 2011–2026 | FF, FG, SF, Lab, GP |
-| SK (Slovakia) | 392 | 2012–2026 | SMER-SD, PS, Hlas-SD, OĽaNO |
-| IS (Iceland) | 375 | 2007–2024 | D, B, S, V, P |
-| FI (Finland) | 360 | 2011–2026 | KESK, KOK, SDP, PS, VIHR |
-| BG (Bulgaria) | 270 | 2013–2024 | GERB, PP–DB, DPS, BSP, ITN |
-| LT (Lithuania) | 245 | 2016–2024 | LSDP, TS-LKD, LVŽS, LRLS |
-| FR_LEG (France) — legislative | 241 | 2002–2024 | RN, LFI, NFP, ENS, LR |
-| RO (Romania) | 168 | 2012–2026 | PSD, PNL, USR, AUR |
-| LV (Latvia) | 145 | 2014–2022 | JV, ZZS, Saskaņa, NA |
-| BE (Belgium) | 112 | 2007–2024 | N-VA, VB, CD&V, Vooruit, MR |
-| MT (Malta) | 110 | 2012–2022 | PL, PN, ADPD |
-| CY (Cyprus) | 71 | 2016–2023 | (presidential candidates) |
-| CH (Switzerland) | 55 | 2011–2023 | SVP, SP, FDP, Die Mitte |
-| HR (Croatia) | 48 | 2015–2016 | HDZ, SDP, Most |
-| LU (Luxembourg) | 20 | 2013–2023 | CSV, LSAP, DP |
+| UK (United Kingdom) | 5,246 | 2005–2026 | Con, Lab, LD, Grn |
+| IT (Italy) | 5,018 | 2005–2026 | PD, Lega, M5S, FdI |
+| DE (Germany) | 4,442 | 2009–2026 | SPD, Grüne, FDP, Linke, Union |
+| ES (Spain) | 2,915 | 2004–2026 | PSOE, PP, PNV, Vox, Cs |
+| PL (Poland) | 1,714 | 2005–2026 | PiS, KO, Konfederacja, Lewica |
+| GR (Greece) | 1,645 | 2007–2026 | SYRIZA, ND, KKE, PASOK |
+| NO (Norway) | 1,464 | 2009–2026 | FrP, KrF, H, SV, Sp |
+| SE (Sweden) | 1,182 | 2010–2024 | S, M, SD, C, V |
+| AT (Austria) | 987 | 2012–2026 | ÖVP, SPÖ, FPÖ, Grüne, NEOS |
+| DK (Denmark) | 847 | 2007–2031 | A, V, O, B, Ø |
+| FR (France) — presidential | 847 | 2002–2022 | Le Pen, Sarkozy, Macron, Mélenchon |
+| PT (Portugal) | 834 | 2005–2026 | PSD, PS, BE, CDU, CH |
+| CZ (Czechia) | 695 | 2006–2026 | ANO, ODS, SPOLU, Piráti, STAN |
+| EE (Estonia) | 690 | 2010–2026 | KE, RE, EKRE, SDE, E200 |
+| NL (Netherlands) | 650 | 2010–2026 | VVD, PVV, GL–PvdA, CDA, D66 |
+| HU (Hungary) | 575 | 2009–2026 | Fidesz, Tisza, DK, Jobbik |
+| SI (Slovenia) | 463 | 2011–2026 | SDS, SD, GS, Levica |
+| IE (Ireland) | 462 | 2011–2026 | FF, FG, SF, Lab, GP |
+| SK (Slovakia) | 397 | 2012–2026 | SMER-SD, PS, Hlas-SD, OĽaNO |
+| FI (Finland) | 378 | 2011–2026 | KESK, KOK, SDP, PS, VIHR |
+| IS (Iceland) | 377 | 2007–2024 | D, B, S, V, P |
+| BG (Bulgaria) | 283 | 2013–2024 | GERB, PP–DB, DPS, BSP, ITN |
+| FR_LEG (France) — legislative | 253 | 2002–2024 | RN, LFI, NFP, ENS, LR |
+| LT (Lithuania) | 246 | 2016–2024 | LSDP, TS-LKD, LVŽS, LRLS |
+| RO (Romania) | 173 | 2012–2026 | PSD, PNL, USR, AUR |
+| LV (Latvia) | 146 | 2014–2022 | JV, ZZS, Saskaņa, NA |
+| MT (Malta) | 111 | 2012–2022 | PL, PN, ADPD |
+| CY (Cyprus) | 72 | 2016–2023 | (presidential candidates) |
+| CH (Switzerland) | 61 | 2011–2023 | SVP, SP, FDP, Die Mitte |
+| HR (Croatia) | 49 | 2015–2016 | HDZ, SDP, Most |
+| LU (Luxembourg) | 21 | 2013–2023 | CSV, LSAP, DP |
+
+Belgium is not included. BE polling articles publish separate Flemish and Walloon subtables that the wikitable parser cannot disentangle cleanly — each party's series would alternate between its home-region value (~25%) and its non-home-region value (~2%). Region-aware parsing is a known TODO.
 
 A small number of older cycles (LV 2011/2014, NO 2005, NL 2010, SK 2012, etc.) produce no rows because the election article has no polling section, uses a chart-only / transposed layout, or otherwise can't be parsed by the wikitable-based pipeline. See `docs/ADDING_A_COUNTRY.md#known-patterns-and-pitfalls`.
 
@@ -80,14 +81,14 @@ One row per poll. Meta columns first, then one column per `party_short`, sorted 
 
 ### Harmonized format — `data/interim/harmonized/{COUNTRY}_long_harmonized.csv`
 
-Long format augmented with `partyfacts_id` from [Party Facts](https://partyfacts.herokuapp.com/) — enables joins to ParlGov, MARPOR, PopuList, CHES, and similar datasets. Covers all 32 countries via `config/party_mappings/{CC}.yaml`; **~96% of voting-intention poll rows carry a `partyfacts_id`**, with provenance in `partyfacts_id_source` / `partyfacts_id_confidence` / `partyfacts_id_notes`. The same four columns are also joined onto the canonical `data/processed/polls_long.csv` so downstream consumers don't need to re-apply the mapping. See [`scripts/PARTY_CROSSWALK.md`](scripts/PARTY_CROSSWALK.md) for how the per-country YAMLs were built.
+Long format augmented with `partyfacts_id` from [Party Facts](https://partyfacts.herokuapp.com/) — enables joins to ParlGov, MARPOR, PopuList, CHES, and similar datasets. Covers all 31 country-codes via `config/party_mappings/{CC}.yaml`; **97.1% of voting-intention poll rows carry a `partyfacts_id`**, with provenance in `partyfacts_id_source` / `partyfacts_id_confidence` / `partyfacts_id_notes`. The same four columns are also joined onto the canonical `data/processed/polls_long.csv` so downstream consumers don't need to re-apply the mapping. See [`scripts/PARTY_CROSSWALK.md`](scripts/PARTY_CROSSWALK.md) for how the per-country YAMLs were built.
 
 Two further columns mark non-voting-intention rows that survive the canonical long file:
 
 - `is_dropped_meta` (0/1) — set on rows whose `party_short` is a meta-label (Don't know, Others, Abstention, Undecided buckets) per [`config/party_mappings/_meta.yaml`](config/party_mappings/_meta.yaml). Filter `is_dropped_meta == 0` to keep only real-party voting-intention rows.
-- `dropped_meta_reason` — the bucket (`others` / `dont_know` / `undecided` / `abstention`) when flagged.
+- `dropped_meta_reason` — the bucket (`others` / `dont_know` / `undecided` / `abstention` / `approval` / `chancellor_preference` / `total` / `lead` / `response_rate`) when flagged.
 
-Approval-rating columns (`Approve` / `Disapprove` / `Net` / `Lead`), survey-meta stats (`Resp.|Response rate`), and redundant coalition totals (BG `Total`, IT `Coalitions`) are pruned entirely at the concat step — they are not voting-intention signal. Coalition aggregate rows (IT CDX/CSX, DK Blocs, DE multi-party blocs flagged at parse time) are collapsed when the same poll already lists the component parties; bloc labels that are reported as single observables (IT AVS, PL UnitedRight) are preserved.
+Approval-rating columns (`Approve` / `Disapprove` / `Net` / `Lead`), leader-preference items (DE `Merkel` / `Steinbrück` Kanzlerfrage columns), survey-meta stats (`Resp.|Response rate`), and redundant coalition totals (BG `Total`, IT `Coalitions`) are pruned entirely at the concat step — they are not voting-intention signal. Source-URL-keyed drops also remove non-vote-share publications such as election.de's seat-forecast map. Coalition aggregate rows (IT CDX/CSX, DK Blocs, DE multi-party blocs flagged at parse time) are collapsed when the same poll already lists the component parties; bloc labels that are reported as single observables (IT AVS, PL UnitedRight) are preserved.
 
 `partyfacts_id_source` distinguishes confirmed-absences from uncovered cases:
 `partyfacts_external` / `whogov_minister_match` / `hand_curated` / `manual_review` / `gemini_*` for matches; `verified_not_in_pf` when a hand check confirms Party Facts has no record (e.g. ES Sumar, IT AVS); `gemini_no_match` for auto-build no-matches that warrant periodic re-verification.

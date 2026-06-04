@@ -194,7 +194,7 @@
     <p>Built from English-Wikipedia "Opinion polling for the … election" articles. Each row carries (i) the source URL of the original poll publication as cited in the Wikipedia cell and (ii) a pinned <code>?oldid=&lt;revid&gt;</code> permalink to the Wikipedia revision. Polls inherit Wikipedia's CC-BY-SA 4.0 licence.</p>
 
     <h3>Coverage</h3>
-    <p>Italy, UK, Germany, Spain, Portugal span 2005–2026 densely. Smaller countries (NL, DK, FI, AT, IE, MT, LU) cover only their most recent 1–2 cycles. Greece covers all elections including the May/June pairs of 2012 and 2023. France presidential is candidate-keyed; French legislative is sparser. Cyprus has only the 2023 presidential cycle on EN Wikipedia. Belgium is excluded — Flemish/Walloon regional polls can't be cleanly combined.</p>
+    <p>31 countries, ~278k voting-intention poll-party observations. Italy, UK, Germany, Spain, Greece, Poland, Portugal span 2005–2026 densely. Norway, Netherlands, Sweden, Denmark, Czechia, Austria, Slovenia, Slovakia, Hungary, Estonia cover roughly 2010 onwards. France presidential is candidate-keyed and ends in 2022; French legislative is sparser. Smaller / single-cycle countries (Ireland, Finland, Iceland, Bulgaria, Lithuania, Latvia, Romania, Malta, Switzerland, Croatia, Cyprus, Luxembourg) cover only their most recent 1–2 cycles. Belgium is not included.</p>
 
     <h3>Validation</h3>
     <p>The Italian scrape was cross-checked against the official Italian government poll register (via the <a href="https://github.com/ondata/liberiamoli-tutti" target="_blank">ondata mirror</a> of sondaggipoliticoelettorali.it) on 2,523 overlapping (year-month × pollster × party) cells:</p>
@@ -207,16 +207,16 @@
     <p>The other countries have not been validated against an external source.</p>
 
     <h3>Reported quantity</h3>
-    <p>All values are voting-intention vote shares on valid votes (excluding "don't know" and blank/spoilt where Wikipedia reports them separately, those columns are renormalized to 100%). UK MRP polls reporting <em>seat</em> projections rather than vote shares are detected by their values exceeding 100% and dropped at parse time.</p>
+    <p>All values are voting-intention vote shares on valid votes (excluding "don't know" and blank/spoilt where Wikipedia reports them separately; those columns are renormalized to 100%). Non-vote-intention columns that Wikipedia editors sometimes place adjacent to the vote-share table are filtered out: approval / disapproval ratings, leader-preference items (e.g. the German Kanzlerfrage), seat or probability forecasts, "lead" margins, and residual "Others" buckets. Coalition-aggregate rows are dropped when the component-party rows are available for the same poll.</p>
 
     <h3>Smoothing</h3>
-    <p>The line on the chart is a 21-day rolling mean per party; the faded dots show individual polls. There is no model-based smoothing (no LOESS / Gaussian process). Series visibility can be toggled by clicking the party chips.</p>
+    <p>The line on the chart is a 21-day rolling mean per party; the faded dots show individual polls.</p>
 
     <h3>Party identities</h3>
-    <p>Each poll-party row carries a stable <a href="https://partyfacts.herokuapp.com/" target="_blank">Party Facts</a> id (~97% of voting-intention rows). Chart labels and aggregation are keyed by Party Facts' canonical English name for each party — so variant Wikipedia shorts that map to the same Party Facts id (e.g. Italy's <em>LN</em> and <em>Lega</em>) collapse onto one continuous chart line. Hover tooltips give the native-language name. Parties not yet in Party Facts (~3%; e.g. ES <em>Sumar</em>, IT <em>AVS</em>) fall back to their Wikipedia short label.</p>
+    <p>Each poll-party row carries a stable <a href="https://partyfacts.herokuapp.com/" target="_blank">Party Facts</a> id (97.1% of voting-intention rows). Chart labels and aggregation are keyed by Party Facts' canonical English name — so variant Wikipedia shorts that map to the same Party Facts id (e.g. Italy's <em>LN</em> and <em>Lega</em>) collapse onto one continuous chart line. Hover tooltips give the native-language name. Parties not yet in Party Facts (~2.9%; e.g. ES <em>Sumar</em>, IT <em>AVS</em>, PL <em>UnitedRight</em>) fall back to their Wikipedia short label and carry a stable <code>europolls_party_id</code> namespaced as <code>EU:{country}:{party_short}</code>.</p>
 
     <h3>Citation</h3>
-    <p>Forte, G. (2026). <em>Europolls: a Wikipedia-direct opinion polling dataset for the European Union and the United Kingdom</em>. <a href="https://github.com/gfrt0/europolls" target="_blank">github.com/gfrt0/europolls</a></p>
+    <p>Forte, G. (2026). <em>Europolls: a database of opinion polls</em>. <a href="https://github.com/gfrt0/europolls" target="_blank">github.com/gfrt0/europolls</a></p>
   </div>
 </div>
 
