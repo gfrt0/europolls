@@ -154,21 +154,18 @@ NL:
     "2012": 2012
     "2010": 2010
 
-BE:
-  title_for_cycle: "Opinion polling for the {cycle} Belgian federal election"
-  title_current:   "Opinion polling for the next Belgian federal election"
-  # BE polls publish heavy coalition + ideology aggregates because individual-
-  # party shares aren't meaningful in a 12+ party fragmented system.
-  coalition_shorts:
-    - "Coalitions"
-    - "Ideologies"
-  wide_parties: ["N-VA", VB, "CD&V", Vooruit, Groen, "Open Vld", MR, PS, Ecolo, cdH, "PVDA-PTB", LE]
-  cycles:
-    current: 2026
-    "2024": 2024
-    "2019": 2019
-    "2014": 2014
-    "2010": 2010
+# BE dropped from pipeline: Belgian polls publish separate Flemish and Walloon
+# subtables (effectively two distinct party systems) that the parser
+# concatenates as if they were national polls. Each party's series then
+# oscillates between its home-region value (~25%) and its non-home-region
+# value (~2%), producing ~50 large spurious "drops" per cycle. Fixing
+# cleanly requires region-tagging at parse time; dropped instead.
+# BE:
+#   title_for_cycle: "Opinion polling for the {cycle} Belgian federal election"
+#   title_current:   "Opinion polling for the next Belgian federal election"
+#   coalition_shorts: ["Coalitions", "Ideologies"]
+#   wide_parties: ["N-VA", VB, "CD&V", Vooruit, Groen, "Open Vld", MR, PS, Ecolo, cdH, "PVDA-PTB", LE]
+#   cycles: { current: 2026, "2024": 2024, "2019": 2019, "2014": 2014, "2010": 2010 }
 
 SE:
   title_for_cycle: "Opinion polling for the {cycle} Swedish general election"

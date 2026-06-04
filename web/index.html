@@ -194,7 +194,7 @@
     <p>Built from English-Wikipedia "Opinion polling for the … election" articles. Each row carries (i) the source URL of the original poll publication as cited in the Wikipedia cell and (ii) a pinned <code>?oldid=&lt;revid&gt;</code> permalink to the Wikipedia revision. Polls inherit Wikipedia's CC-BY-SA 4.0 licence.</p>
 
     <h3>Coverage</h3>
-    <p>Italy, UK, Germany, Spain, Portugal span 2005–2026 densely. Smaller countries (BE, NL, DK, FI, AT, IE, MT) cover only their most recent 1–2 cycles. Greece covers all elections including the May/June pairs of 2012 and 2023. France presidential is candidate-keyed; French legislative is sparser. Luxembourg has no Wikipedia polling article (LU tab is empty). Cyprus has only the 2023 presidential cycle on EN Wikipedia.</p>
+    <p>Italy, UK, Germany, Spain, Portugal span 2005–2026 densely. Smaller countries (NL, DK, FI, AT, IE, MT, LU) cover only their most recent 1–2 cycles. Greece covers all elections including the May/June pairs of 2012 and 2023. France presidential is candidate-keyed; French legislative is sparser. Cyprus has only the 2023 presidential cycle on EN Wikipedia. Belgium is excluded — Flemish/Walloon regional polls can't be cleanly combined.</p>
 
     <h3>Validation</h3>
     <p>The Italian scrape was cross-checked against the official Italian government poll register (via the <a href="https://github.com/ondata/liberiamoli-tutti" target="_blank">ondata mirror</a> of sondaggipoliticoelettorali.it) on 2,523 overlapping (year-month × pollster × party) cells:</p>
@@ -240,7 +240,7 @@ const COUNTRY_NAMES = {
   IT: "Italy", UK: "United Kingdom", DE: "Germany", ES: "Spain",
   GR: "Greece", SE: "Sweden", PT: "Portugal", FR: "France (pres.)",
   AT: "Austria", NL: "Netherlands", DK: "Denmark", FI: "Finland",
-  BE: "Belgium", FR_LEG: "France (legisl.)", IE: "Ireland", MT: "Malta",
+  LU: "Luxembourg", FR_LEG: "France (legisl.)", IE: "Ireland", MT: "Malta",
   CY: "Cyprus", NO: "Norway", IS: "Iceland",
   PL: "Poland", CZ: "Czechia", HU: "Hungary", RO: "Romania", SK: "Slovakia",
   SI: "Slovenia", HR: "Croatia", BG: "Bulgaria", CH: "Switzerland",
