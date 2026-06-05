@@ -1058,11 +1058,11 @@ mappings:
   is_coalition: false
   notes: ''
 - party_short: LR
-  partyfacts_id: 5857
-  source: whogov_minister_match
+  partyfacts_id: 8168
+  source: hand_curated
   confidence: null
   is_coalition: false
-  notes: ''
+  notes: Les Républicains. Fixed 2026-06-05 from 5857 (Renaissance/LREM) — that was a WhoGov minister-tag error that merged LR shares into LREM downstream. PF 8168 is the correct LR id (also used in FR_LEG.yaml).
 - party_short: LREM
   partyfacts_id: 5857
   source: whogov_minister_match
@@ -2223,3 +2223,99 @@ mappings:
   confidence: null
   is_coalition: false
   notes: ''
+- party_short: ENS
+  partyfacts_id: 5857
+  source: hand_curated
+  confidence: null
+  is_coalition: true
+  notes: Ensemble (2022– Macron alliance — Renaissance/LREM + MoDem + Horizons + Agir). Mapped to PF 5857 (Renaissance, the spine of the coalition); is_coalition flags it as aggregate so downstream collapse-when-components-present logic applies.
+- party_short: LE
+  partyfacts_id: 5650
+  source: hand_curated
+  confidence: null
+  is_coalition: false
+  notes: "Les Écologistes — 2023 rebrand of EELV (Europe Écologie Les Verts). Same legal entity, mapped to PF 5650 (EELV). Appears in 2024 French legislative polling data that the parser routed to FR.yaml."
+- party_short: UMP/NC
+  partyfacts_id: 1595
+  source: hand_curated
+  confidence: null
+  is_coalition: true
+  notes: UMP + Nouveau Centre joint label (pre-2012). UMP-led; mapped to PF 1595 (UMP).
+- party_short: LR (UXD)
+  partyfacts_id: 8168
+  source: hand_curated
+  confidence: null
+  is_coalition: true
+  notes: Les Républicains running under the 'Union de la droite et du centre' label (2024 EP). Mapped to PF 8168 (LR).
+- party_short: LR(CNI)
+  partyfacts_id: 8168
+  source: hand_curated
+  confidence: null
+  is_coalition: true
+  notes: Les Républicains alongside CNI (Centre national des indépendants et paysans). LR-led; mapped to PF 8168.
+- party_short: PS/PCF/LV
+  partyfacts_id: 1478
+  source: hand_curated
+  confidence: null
+  is_coalition: true
+  notes: Joint PS + PCF + Les Verts ticket. PS-spined; mapped to PF 1478 (Parti socialiste). Components in PF; downstream collapse applies.
+- party_short: NFP/DVG
+  partyfacts_id: 1478
+  source: hand_curated
+  confidence: null
+  is_coalition: true
+  notes: Nouveau Front Populaire (2024 left alliance — PS + LFI + EELV + PCF + Génération.s) with a 'divers gauche' tail. PS-spined for crosswalk purposes; mapped to PF 1478.
+- party_short: PS/LE
+  partyfacts_id: 1478
+  source: hand_curated
+  confidence: null
+  is_coalition: true
+  notes: PS-led joint ticket with another list ('LE', context-dependent). Mapped to PF 1478 (PS).
+- party_short: DVC
+  partyfacts_id: null
+  source: hand_curated
+  confidence: null
+  is_coalition: true
+  notes: "'Divers centre' — Interior Ministry residual bucket aggregating unaffiliated centrist locals. Not a single party. is_coalition + drop semantics handled per-pipeline; left without a PF id (parallel to DIV in FR_LEG)."
+  drop: true
+  drop_reason: others
+- party_short: Marine Le PenFN
+  partyfacts_id: null
+  source: hand_curated
+  confidence: null
+  is_coalition: false
+  notes: Parse artifact — candidate name 'Marine Le Pen' glued onto FN. Not a party-level vote intention.
+  drop: true
+  drop_reason: individual_candidate
+- party_short: Olivier FalorniDVG
+  partyfacts_id: null
+  source: hand_curated
+  confidence: null
+  is_coalition: false
+  notes: Parse artifact — candidate name 'Olivier Falorni' glued onto DVG (divers gauche). Constituency-level, not party-level.
+  drop: true
+  drop_reason: individual_candidate
+- party_short: François BayrouMoDem
+  partyfacts_id: null
+  source: hand_curated
+  confidence: null
+  is_coalition: false
+  notes: Parse artifact — candidate name 'François Bayrou' glued onto MoDem. Not party-level vote intention.
+  drop: true
+  drop_reason: individual_candidate
+- party_short: Nathalie ChabannePS
+  partyfacts_id: null
+  source: hand_curated
+  confidence: null
+  is_coalition: false
+  notes: Parse artifact — candidate name 'Nathalie Chabanne' glued onto PS. Constituency-level.
+  drop: true
+  drop_reason: individual_candidate
+- party_short: Ségolène RoyalPS–PRG
+  partyfacts_id: null
+  source: hand_curated
+  confidence: null
+  is_coalition: false
+  notes: Parse artifact — candidate name 'Ségolène Royal' glued onto PS–PRG joint ticket. Constituency-level.
+  drop: true
+  drop_reason: individual_candidate

@@ -85,6 +85,7 @@ mappings:
   "DIV":                              { drop: true, drop_reason: others }   # FR_LEG: 'Divers' (others)
   "O/I|Others/IndependentsThis column includes figures for Independents 4 Change and Aontú when available.": { drop: true, drop_reason: others }   # IE: long, escaped Wikipedia footnote
   "Blocs":                            { drop: true, drop_reason: total }    # NO / DK: bloc-totals aggregate
+  "First round vote":                 { drop: true, drop_reason: parse_artifact }   # FR presidential: column header, not a party
 
   # --- Approval / cabinet-rating columns (NOT voting intention) ---
   # Mixed in by Wikipedia editors who place approval-rating tables

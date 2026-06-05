@@ -1604,11 +1604,11 @@ mappings:
   is_coalition: false
   notes: Ligue communiste révolutionnaire — The partyfacts entry for id 1506 has the exact short label 'LCR' and the name 'Ligue communiste révolutionnaire', which aligns with the polling context dates.
 - party_short: LE
-  partyfacts_id: null
-  source: verified_not_in_pf
-  confidence: high
+  partyfacts_id: 5650
+  source: hand_curated
+  confidence: null
   is_coalition: false
-  notes: 'Wikipedia article: ''The Ecologists (political party)''. Verified absent from Party Facts (no matching entry in core or external datasets). PF may add an id when next refreshed.'
+  notes: "Les Écologistes — 2023 rebrand of EELV (Europe Écologie Les Verts). Same legal entity (same MPs, same statutes); mapped to PF 5650 (EELV). Updated 2026-06-05 from verified_not_in_pf — PF lacks a separate id for the rebrand but EELV's id covers the continuing party."
 - party_short: Left
   partyfacts_id: null
   source: null
@@ -2873,3 +2873,11 @@ mappings:
   confidence: high
   is_coalition: false
   notes: Union pour un mouvement populaire | Les Républicains — The label 'Étienne MourrutUMP' clearly indicates 'UMP' as the party, with 'Étienne Mourrut' being the candidate's name, and UMP (Union for a Popular Movement) is a direct match to Party Facts ID 1595.
+- party_short: Paul GiacobbiPRG–PS
+  partyfacts_id: null
+  source: hand_curated
+  confidence: null
+  is_coalition: false
+  notes: Parse artifact — candidate name 'Paul Giacobbi' glued onto PRG–PS joint ticket. Constituency-level, not party-level vote intention.
+  drop: true
+  drop_reason: individual_candidate
