@@ -102,8 +102,57 @@ COUNTRIES_YAML = ROOT / "config" / "countries.yaml"
 POLLSTER_ALIASES_YAML = ROOT / "config" / "pollster_aliases.yaml"
 PARTY_ALIASES_DIR = ROOT / "config" / "party_aliases"
 PARTY_NAMES_YAML = ROOT / "config" / "party_names.yaml"
+RAW_DIR = ROOT / "data" / "raw"
 WEB = ROOT / "web"
 WEB.mkdir(exist_ok=True)
+
+
+# Match `[[Target|Short]]` — a piped wikilink used in polling-table headers.
+# Excludes File:/Image:/Category: links (handled separately upstream). The
+# target may contain spaces and punctuation but not `|` or `]`.
+_WIKILINK_PIPED = re.compile(r"\[\[(?!File:|Image:|Category:)([^\[\]|]+)\|([^\[\]|]+)\]\]")
+
+
+def harvest_wiki_titles() -> dict[str, dict[str, str]]:
+    """Scan raw wikitext for every country and return {cc: {short: title}}.
+
+    For each piped wikilink ``[[Target|Short]]`` found anywhere in the raw
+    wikitext, count (short → target) occurrences per country and keep the
+    most frequent target as the display title. Later this is used as a
+    third-tier fallback for parties without a curated YAML entry and
+    without a Party Facts id — the Wikipedia article title is a
+    reasonable disambiguation for niche or brand-new parties.
+
+    We scan the full wikitext (not just header rows) because piped
+    wikilinks for a given short are consistent across body cells too, and
+    a global scan is more robust to header-detection edge cases.
+    """
+    if not RAW_DIR.exists():
+        return {}
+    per_country: dict[str, dict[str, Counter]] = {}
+    for cc_dir in sorted(RAW_DIR.iterdir()):
+        if not cc_dir.is_dir():
+            continue
+        cc = cc_dir.name
+        tally: dict[str, Counter] = {}
+        for wt in cc_dir.rglob("article.wikitext"):
+            try:
+                text = wt.read_text(encoding="utf-8", errors="replace")
+            except OSError:
+                continue
+            for m in _WIKILINK_PIPED.finditer(text):
+                target = m.group(1).strip()
+                short = m.group(2).strip()
+                if not target or not short:
+                    continue
+                # Drop shorts that are obviously non-party (contain markup or
+                # newlines) — the piped wikilink pattern is greedy on the RHS.
+                if any(ch in short for ch in "{}\n"):
+                    continue
+                tally.setdefault(short, Counter())[target] += 1
+        # Collapse each short to its most frequent target.
+        per_country[cc] = {s: c.most_common(1)[0][0] for s, c in tally.items()}
+    return per_country
 
 
 def load_pollster_aliases() -> dict[str, str]:
@@ -393,8 +442,10 @@ def main() -> None:
     #      remapped to canonical via dominant_short_per_canonical;
     #   2. PF's name_native (the party's native-language name) when the
     #      YAML has no entry — covers everything mapped to a PF id;
-    #   3. fall through (no tooltip) for parties without a YAML entry
-    #      and without a PF id.
+    #   3. Wikipedia article title harvested from `[[Target|Short]]`
+    #      wikilinks in the raw wikitext — catches parties too new /
+    #      niche for Party Facts and not yet in the curated YAML;
+    #   4. fall through (no tooltip) for parties none of the above cover.
     # Country-specific entries win over the _generic block.
     if PARTY_NAMES_YAML.exists():
         names_raw = yaml.safe_load(PARTY_NAMES_YAML.read_text()) or {}
@@ -427,21 +478,33 @@ def main() -> None:
                 if canon:
                     cc_map[canon] = pf_int
 
+        # Third-tier fallback source: {cc: {short: wiki_title}}.
+        wiki_titles_by_cc = harvest_wiki_titles()
+
         names_out: dict[str, dict[str, str]] = {}
+        # Parallel structure recording where each display name came from:
+        # 'curated' = party_names.yaml (hand-typed), 'pf' = partyfacts_names.yaml
+        # (Party Facts native name), 'wiki' = wikilink target from raw
+        # wikitext. Frontend can ignore this file; it is for audit and
+        # provenance display.
+        sources_out: dict[str, dict[str, str]] = {}
         for cc, dominant in dominant_short_per_canonical.items():
             short_to_canon = {short: canon for canon, short in dominant.items() if short}
             curated_for_country = names_raw.get(cc) or {}
             merged: dict[str, str] = {}
+            sources: dict[str, str] = {}
             # Generic entries: keys here are typically meta labels which
             # were filtered upstream, so they likely never appear. Apply
             # anyway as a safety net.
             for short, full in generic.items():
                 canon = short_to_canon.get(short, short)
                 merged[canon] = full
+                sources[canon] = "curated"
             # Country-specific YAML overrides.
             for short, full in curated_for_country.items():
                 canon = short_to_canon.get(short, short)
                 merged[canon] = full
+                sources[canon] = "curated"
             # PF-id-backed fallback for canonicals not covered by the YAML.
             for canon, pf_int in canonical_to_pf.get(cc, {}).items():
                 if canon in merged:
@@ -450,12 +513,27 @@ def main() -> None:
                 if native and native != canon:
                     # 'Native (English)' style matches the YAML convention.
                     merged[canon] = f"{native} ({canon})"
+                    sources[canon] = "pf"
                 elif native:
                     merged[canon] = native
+                    sources[canon] = "pf"
+            # Wikilink-target fallback for canonicals still uncovered.
+            wiki_short_to_title = wiki_titles_by_cc.get(cc, {})
+            for short, title in wiki_short_to_title.items():
+                canon = short_to_canon.get(short, short)
+                if canon in merged:
+                    continue
+                if title == canon or title == short:
+                    continue
+                merged[canon] = f"{title} ({canon})"
+                sources[canon] = "wiki"
             names_out[cc] = merged
+            sources_out[cc] = sources
         (WEB / "party_names.json").write_text(json.dumps(names_out))
+        (WEB / "party_name_sources.json").write_text(json.dumps(sources_out))
         print(f"wrote party_names.json ({len(names_out)} countries, "
               f"{sum(len(v) for v in names_out.values())} entries)")
+        print(f"wrote party_name_sources.json ({sum(len(v) for v in sources_out.values())} entries)")
 
     # Cache-buster: build identifier consumed by index.html so all JSON
     # asset URLs get a ?v=<build> suffix that changes every deploy. Prefer
