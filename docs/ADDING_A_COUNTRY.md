@@ -56,9 +56,6 @@ CC:
   # Optional. List of party_short labels that should be treated as coalition
   # aggregates rather than individual parties. Lower-case.
   coalition_shorts: []
-  # The wide-table column set. Curate this list AFTER a first parse pass
-  # (see Step 5). Sort by historical importance.
-  wide_parties: [PartyA, PartyB, PartyC]
   cycles:
     current: 2026                       # fallback year for "current" cycle
     "YYYY": YYYY                        # past elections; cycle_id = year string,
@@ -79,7 +76,6 @@ CC:
 NO:
   title_for_cycle: "Opinion polling for the {cycle} Norwegian parliamentary election"
   title_current:   "Opinion polling for the next Norwegian parliamentary election"
-  wide_parties: [Ap, H, FrP, Sp, SV, R, V, KrF, MDG, INP]
   cycles:
     current: 2029
     "2025": 2025
@@ -94,7 +90,6 @@ NO:
 PL:
   title_for_cycle: "Opinion polling for the {cycle} Polish parliamentary election"
   title_current:   "Opinion polling for the next Polish parliamentary election"
-  wide_parties: [PiS, KO, PO, Konfederacja, Lewica, "Polska2050", PSL, RP, Nowoczesna]
   cycles:
     current: 2027
     "2023": 2023
@@ -167,15 +162,7 @@ print(sub.groupby("party_short").size().sort_values(ascending=False).head(20))
 EOF
 ```
 
-Use this to **populate `wide_parties`**: pick the parties that show up consistently across cycles, in roughly seat-share order. Leave one-shot or seat-projection oddities out — they fall into the "Other" bucket automatically.
-
-Rule of thumb: 8–14 wide_parties per country is the sweet spot.
-
-For comparison:
-- DE has 8 (Union, SPD, Grüne, FDP, Linke, AfD, BSW, CSU)
-- IT has 21 (Italian parties churn more than most)
-- UK has 9 (two-party plus minor regional plus historical UKIP/BNP)
-- MT has 2 (PL/PN — the Maltese duopoly)
+Use this to sanity-check that party shorts look right and to add colors / display names for any that aren't already covered — see Steps 3 and 4. The web UI picks its default-visible party set automatically (top-6 by lifetime obs count ∪ top-6 by mean vote share in the last 365 days), so no per-country column list is needed.
 
 ---
 
@@ -226,11 +213,11 @@ The fetcher logs the fallback hop with a `↪` marker (vs `✓` for direct hits)
 ### Fallback contamination
 Election articles can host polling subsections for separate races (e.g. BG 2021-Nov has presidential polling for Rumen Radev inside the `Opinion polls` section). The parser carves out any subsection whose heading mentions `president` / `presidential`. If a similar pattern appears for other contests (regional, EP, etc.) on a country you're adding, surface it as a `drop:` entry in `config/party_aliases/{CC}.yaml`.
 
-### Wide-parties tweaking after the fact
-The `wide_parties` list lives in `config/countries.yaml` and is loaded fresh on every build. If a new party emerges (e.g. Germany's BSW in 2024, Portugal's CH), add it and re-deploy.
+### New parties appearing mid-cycle
+Nothing to configure. The default-visible set is recomputed on every build and mixes lifetime obs count with the last-365-days share ranking, so fast risers (BSW in DE 2024, CH in Portugal, etc.) surface without a code change. Users can also toggle any party on/off from the chart controls.
 
 ### Color exhaustion
-Most countries have ≤15 politically active parties. If your `wide_parties` list exceeds ~14, the table gets too wide for desktop screens. Tighten the list to the politically relevant ones; the rest still appears in the chart's party-toggle row.
+Add a hex for any new party in `config/party_colors.yaml`; parties without one get a deterministic hash-based fallback. Long-tail parties (dozens per country) still appear as togglable rows in the chart controls.
 
 ---
 
@@ -238,7 +225,7 @@ Most countries have ≤15 politically active parties. If your `wide_parties` lis
 
 | File | Purpose |
 |---|---|
-| `config/countries.yaml` | Per-country: Wikipedia title patterns, list of cycles, coalition labels (raw + post-alias), wide-table column set |
+| `config/countries.yaml` | Per-country: Wikipedia title patterns, list of cycles, coalition labels (raw + post-alias) |
 | `config/party_colors.yaml` | Per-country: party hex colors for the chart and the table dots |
 | `config/party_names.yaml` | Per-country: full party names used for the hover tooltips on the chart and tables |
 | `config/pollster_aliases.yaml` | Global pollster-name canonicalization (Techne → Tecnè, TNS Sofres → Kantar, etc.) plus footnote-marker stripping |

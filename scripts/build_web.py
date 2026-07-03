@@ -5,7 +5,7 @@ Reads:
   config/party_colors.yaml
 
 Writes:
-  web/countries.json           — index: [{code, n_polls, span_start, span_end, top_parties, default_parties, wide_parties}]
+  web/countries.json           — index: [{code, n_polls, span_start, span_end, top_parties, default_parties}]
   web/polls_{COUNTRY}.json     — array of poll-party objects, trimmed
   web/colors.json              — country → {party_short: hex}
 
@@ -293,12 +293,6 @@ def main() -> None:
             mask = sub["party_short"].astype(str).str.lower().isin(coal_shorts_lc)
             sub.loc[mask, "is_coalition"] = True
 
-        # Map any party_short → its canonical (lookup built above) so curated
-        # countries.yaml entries (still party_short-keyed) translate.
-        short_to_canon = {
-            short: canon for canon, short in dominant.items() if short
-        }
-
         # Compute summary: n polls, date span, top parties by observation count.
         n_polls = len(sub.drop_duplicates(["polldate_mid", "pollster"]))
         span_start = sub["polldate_mid"].min()
@@ -327,98 +321,15 @@ def main() -> None:
             if len(default_parties) >= 10:
                 break
 
-        # "Wide-table" parties — sustained vote-intention parties only.
-        # Filter heuristics:
-        #  (a) mean observed share ≥ 2% AND observed in ≥ 30 polls (filters one-shot
-        #      anomalies and parties only seen in single tables);
-        #  (b) drop entries that are obviously *not* vote intention — leader-approval
-        #      columns ('Theresa May', 'Merz'), meta-aggregates ('Coalitions',
-        #      'Voting intentions', 'Seat projections'), Don't-know / Not-sure
-        #      buckets, concatenated coalition names ('UnionSPDGrüne'), etc.
-        #  (c) cap at the top 14 by mean share so the wide table stays readable.
-        non_coal = sub[~sub["is_coalition"].fillna(False)]
-        stats = non_coal.groupby("party_canonical")["vote_share"].agg(["count", "mean"])
-
-        # Use the curated per-country wide_parties from countries.yaml when
-        # present (most countries). Falls back to the heuristic below for any
-        # country that doesn't have an entry. countries.yaml is still party_
-        # short-keyed; translate to canonical via the dominant-variant map.
-        curated_raw = countries_cfg.get(country, {}).get("wide_parties")
-        curated = [short_to_canon.get(p, p) for p in curated_raw] if curated_raw else None
-        if curated:
-            available = set(stats.index)
-            wide_parties = [p for p in curated if p in available]
-            countries_summary.append({
-                "code": country,
-                "n_polls": int(n_polls),
-                "n_party_obs": int(len(sub)),
-                "span_start": span_start,
-                "span_end": span_end,
-                "top_parties": top_parties,
-                "default_parties": default_parties,
-                "wide_parties": wide_parties,
-            })
-            # Skip the heuristic block (continue with per-country JSON write).
-            _skip_heuristic = True
-        else:
-            _skip_heuristic = False
-
-        # Single-token meta names we always drop.
-        META_DROP = {
-            "approve", "approval", "disapprove", "don't know", "dontknow",
-            "don't  know", "not sure", "no opinion", "none of these",
-            "none of the above", "none", "all", "voting intentions",
-            "coalitions", "ideologies", "blocs", "seat projections", "seats",
-            "percentage", "overall", "above threshold", "abs.", "abs",
-            "abstention", "would not vote", "would not vote/refused",
-            "refused", "lead", "margin", "others", "other", "oth.",
-            "others/abroad", "no reply", "noreply", "no vote", "novote",
-            "notvoting", "spoilt", "blank", "various", "uncertain",
-            "neither", "neither / none", "no opinion", "n|neither",
-            "no|no opinion", "o|other", "opp.", "gov.", "red", "blue",
-            "above", "below",
-        }
-        # Substring-flagged content that's never a vote-intention party.
-        DROP_SUBSTR = (
-            " coalition", "coalition ", "cabinet", "approval", "scenario",
-            "marginof error", "first round", "ideologies",
-        )
-        # Two-or-more space-separated Title-cased words = a person name.
-        PERSON_RE = re.compile(r"^[A-ZÅÄÖÜÉÈÊÁÍÓÚÑ][a-zåäöüéèêáíóúñ'\-]+(?:\s+[A-ZÅÄÖÜÉÈÊÁÍÓÚÑ][a-zåäöüéèêáíóúñ'\-\.]+)+$")
-        # Concatenated coalition names like UnionSPDGrüne, KurzÖVP, PSOECs.
-        CONCAT_RE = re.compile(r"^[A-ZÅÄÖÜ][a-zåäöüé]+[A-ZÅÄÖÜ].*$")
-
-        def _is_party(name: str) -> bool:
-            n = str(name).strip()
-            nl = n.lower()
-            if not n or len(n) > 25:        # extremely long strings are footnoted columns
-                return False
-            if nl in META_DROP: return False
-            if any(s in nl for s in DROP_SUBSTR): return False
-            if PERSON_RE.match(n): return False
-            if CONCAT_RE.match(n) and not any(c in n for c in "&-/+ "):
-                # 'UnionSPDGrüne' style; allow 'CDU/CSU' because of the /.
-                return False
-            if "(" in n or "%" in n: return False
-            return True
-
-        if not _skip_heuristic:
-            eligible = [p for p in stats.index
-                        if stats.loc[p, "mean"] >= 2.0
-                        and stats.loc[p, "count"] >= 30
-                        and _is_party(p)]
-            eligible.sort(key=lambda p: -stats.loc[p, "mean"])
-            wide_parties = eligible[:12]
-            countries_summary.append({
-                "code": country,
-                "n_polls": int(n_polls),
-                "n_party_obs": int(len(sub)),
-                "span_start": span_start,
-                "span_end": span_end,
-                "top_parties": top_parties,
-                "default_parties": default_parties,
-                "wide_parties": wide_parties,
-            })
+        countries_summary.append({
+            "code": country,
+            "n_polls": int(n_polls),
+            "n_party_obs": int(len(sub)),
+            "span_start": span_start,
+            "span_end": span_end,
+            "top_parties": top_parties,
+            "default_parties": default_parties,
+        })
 
         # Per-country file: compact column names to keep the JSON small.
         # `k` is now the canonical party key (PF name when mapped, else
