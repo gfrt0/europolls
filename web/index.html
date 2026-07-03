@@ -175,7 +175,6 @@
     <button id="view-long">Long (party-level)</button>
   </div>
   <input type="search" id="search" placeholder="filter pollster…">
-  <span class="loading" id="poll-count" style="padding:0;"></span>
 </div>
 
 <div id="table"></div>
@@ -348,26 +347,26 @@ async function selectCountry(code) {
   document.getElementById("country-info").innerHTML =
     `<span><b>${summary.n_polls.toLocaleString()}</b> polls</span>` +
     `<span><b>${summary.n_party_obs.toLocaleString()}</b> party-poll observations</span>` +
-    `<span><b>${summary.span_start}</b> → <b>${summary.span_end}</b></span>` +
-    `<span>top parties: ${summary.top_parties.slice(0, 8).join(", ")}</span>`;
+    `<span><b>${summary.span_start}</b> → <b>${summary.span_end}</b></span>`;
 
-  document.getElementById("poll-count").textContent = "loading…";
   STATE.polls = await fetch(`polls_${code}.json${STATE.cacheBust || ""}`).then(r => r.json());
-  STATE.wide = buildWide(STATE.polls, summary.wide_parties || []);
-  document.getElementById("poll-count").textContent =
-    `${STATE.wide.length.toLocaleString()} polls · ${STATE.polls.length.toLocaleString()} party-poll rows`;
 
-  // Default-visible parties: top 8 by obs count (excluding coalition aggregates).
+  // Cache party ordering by lifetime obs count (used by toggles and wide-table columns).
+  const counts = {};
+  for (const r of STATE.polls) { if (!r.c) counts[r.k] = (counts[r.k] || 0) + 1; }
+  STATE.partyOrder = Object.keys(counts).sort((a, b) => counts[b] - counts[a]);
+
   STATE.visibleParties = new Set(summary.default_parties || summary.top_parties.slice(0, 8));
-  renderToggles(summary);
+  STATE.wide = buildWide(STATE.polls, STATE.visibleParties);
+  renderToggles(counts);
   renderPlot();
   renderTable();
 }
 
 // Build wide-format poll rows: one row per unique (date, pollster) combo,
-// columns = the curated wide_parties + "Other" (sum of other parties' shares).
-function buildWide(polls, wideParties) {
-  const wideSet = new Set(wideParties);
+// columns = the currently visible parties + "Other" (sum of other parties' shares).
+function buildWide(polls, visibleParties) {
+  const wideSet = visibleParties instanceof Set ? visibleParties : new Set(visibleParties);
   const byPoll = new Map(); // key="date|pollster" -> row
   for (const r of polls) {
     if (r.c) continue; // skip coalition aggregates
@@ -394,17 +393,10 @@ function buildWide(polls, wideParties) {
   return out;
 }
 
-function renderToggles(summary) {
+function renderToggles(counts) {
   const wrap = document.getElementById("party-toggles");
   wrap.innerHTML = "";
-  // Collect all parties in this country sorted by obs count.
-  const counts = {};
-  for (const r of STATE.polls) {
-    if (r.c) continue;
-    counts[r.k] = (counts[r.k] || 0) + 1;
-  }
-  const sorted = Object.entries(counts).sort((a, b) => b[1] - a[1]);
-  for (const [party, n] of sorted) {
+  for (const party of STATE.partyOrder) {
     const el = document.createElement("span");
     el.className = "party-toggle" + (STATE.visibleParties.has(party) ? "" : " off");
     el.dataset.party = party;
@@ -415,7 +407,9 @@ function renderToggles(summary) {
       if (STATE.visibleParties.has(party)) STATE.visibleParties.delete(party);
       else STATE.visibleParties.add(party);
       el.classList.toggle("off");
+      STATE.wide = buildWide(STATE.polls, STATE.visibleParties);
       renderPlot();
+      if (STATE.view === "wide") renderTable();
     };
     wrap.appendChild(el);
   }
@@ -547,11 +541,10 @@ function renderLongTable() {
 }
 
 function renderWideTable() {
-  const summary = STATE.countries.find(c => c.code === STATE.country);
-  const wideParties = (summary.wide_parties || []);
+  const wideParties = STATE.partyOrder.filter(p => STATE.visibleParties.has(p));
   if (wideParties.length === 0) {
     document.getElementById("table").innerHTML =
-      "<div class='loading'>No curated wide-table parties for this country yet — switch to Long view.</div>";
+      "<div class='loading'>No parties selected — click a party toggle above to add columns.</div>";
     STATE.table = null;
     return;
   }
