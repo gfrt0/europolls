@@ -5,7 +5,7 @@ Reads:
   config/party_colors.yaml
 
 Writes:
-  web/countries.json           — index: [{code, n_polls, span_start, span_end, top_parties, wide_parties}]
+  web/countries.json           — index: [{code, n_polls, span_start, span_end, top_parties, default_parties, wide_parties}]
   web/polls_{COUNTRY}.json     — array of poll-party objects, trimmed
   web/colors.json              — country → {party_short: hex}
 
@@ -308,6 +308,25 @@ def main() -> None:
                    .sort_values(ascending=False))
         top_parties = parties.head(10).index.tolist()
 
+        # Default-visible parties on load: mix lifetime-popular with recently
+        # salient so fast risers (e.g. IT Fratelli d'Italia in 2022, or any new
+        # party that has only existed for a year) aren't hidden behind the
+        # cumulative top-8. Recent = last 365 days of the country's span,
+        # ranked by mean share among parties with ≥ 5 recent polls.
+        mid = pd.to_datetime(sub["polldate_mid"])
+        recent_cut = mid.max() - pd.Timedelta(days=365)
+        recent = sub[(~sub["is_coalition"].fillna(False)) &
+                     (mid >= recent_cut)]
+        recent_stats = recent.groupby("party_canonical")["vote_share"].agg(["count", "mean"])
+        recent_ranked = (recent_stats[recent_stats["count"] >= 5]
+                         .sort_values("mean", ascending=False).index.tolist())
+        default_parties = []
+        for p in top_parties[:6] + recent_ranked[:6]:
+            if p not in default_parties:
+                default_parties.append(p)
+            if len(default_parties) >= 10:
+                break
+
         # "Wide-table" parties — sustained vote-intention parties only.
         # Filter heuristics:
         #  (a) mean observed share ≥ 2% AND observed in ≥ 30 polls (filters one-shot
@@ -336,6 +355,7 @@ def main() -> None:
                 "span_start": span_start,
                 "span_end": span_end,
                 "top_parties": top_parties,
+                "default_parties": default_parties,
                 "wide_parties": wide_parties,
             })
             # Skip the heuristic block (continue with per-country JSON write).
@@ -396,6 +416,7 @@ def main() -> None:
                 "span_start": span_start,
                 "span_end": span_end,
                 "top_parties": top_parties,
+                "default_parties": default_parties,
                 "wide_parties": wide_parties,
             })
 

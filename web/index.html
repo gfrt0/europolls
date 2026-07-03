@@ -358,7 +358,7 @@ async function selectCountry(code) {
     `${STATE.wide.length.toLocaleString()} polls · ${STATE.polls.length.toLocaleString()} party-poll rows`;
 
   // Default-visible parties: top 8 by obs count (excluding coalition aggregates).
-  STATE.visibleParties = new Set(summary.top_parties.slice(0, 8));
+  STATE.visibleParties = new Set(summary.default_parties || summary.top_parties.slice(0, 8));
   renderToggles(summary);
   renderPlot();
   renderTable();
@@ -410,7 +410,7 @@ function renderToggles(summary) {
     el.dataset.party = party;
     const name = getPartyName(STATE.country, party);
     if (name) el.title = name;
-    el.innerHTML = `<span class="dot" style="background:${getColor(STATE.country, party)}"></span>${party} <span style="color:var(--muted)">${n}</span>`;
+    el.innerHTML = `<span class="dot" style="background:${getColor(STATE.country, party)}"></span>${party}`;
     el.onclick = () => {
       if (STATE.visibleParties.has(party)) STATE.visibleParties.delete(party);
       else STATE.visibleParties.add(party);

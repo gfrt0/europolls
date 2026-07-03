@@ -17,6 +17,16 @@
       "British National Party",
       "Change UK"
     ],
+    "default_parties": [
+      "Conservatives",
+      "Labour",
+      "Liberal Democrats",
+      "Green Party of England and Wales",
+      "United Kingdom Independence Party",
+      "Scottish National Party",
+      "YP",
+      "RB"
+    ],
     "wide_parties": [
       "Conservatives",
       "Labour",
@@ -47,6 +57,15 @@
       "Action",
       "Left Ecology Freedom",
       "Union of Christian and Centre Democrats"
+    ],
+    "default_parties": [
+      "Democratic Party",
+      "North League",
+      "Five Star Movement",
+      "Brothers of Italy",
+      "Forward Italy (2013)",
+      "More Europe",
+      "AVS"
     ],
     "wide_parties": [
       "Democratic Party",
@@ -89,6 +108,16 @@
       "Sahra Wagenknecht Alliance",
       "Christian Social Union"
     ],
+    "default_parties": [
+      "Social Democratic Party of Germany",
+      "Alliance 90 / Greens",
+      "Others",
+      "The Left",
+      "Free Democratic Party",
+      "Christian Democratic Union / Christian Social Union",
+      "Alternative for Germany",
+      "Christian Democratic Union"
+    ],
     "wide_parties": [
       "Christian Democratic Union / Christian Social Union",
       "Social Democratic Party of Germany",
@@ -117,6 +146,17 @@
       "Republican Left of Catalonia",
       "Galician Nationalist Block",
       "Together for Catalonia"
+    ],
+    "default_parties": [
+      "Spanish Socialist Workers Party",
+      "People's Alliance-Party / People's Party",
+      "Basque Nationalist Party",
+      "Voice",
+      "Citizens \u2014 Party of the Citizenry",
+      "Basque Country Unite",
+      "Sumar",
+      "We Can",
+      "The Party is Over"
     ],
     "wide_parties": [
       "People's Alliance-Party / People's Party",
@@ -154,6 +194,17 @@
       "Democratic Left Alliance",
       "Agreement"
     ],
+    "default_parties": [
+      "Confederation Freedom and Independence",
+      "alliance",
+      "Poland 2050",
+      "Kukiz'15",
+      "Law and Justice",
+      "Polish People's (Peasants') Party",
+      "Civic Coalition",
+      "KKP",
+      "[Left] Together"
+    ],
     "wide_parties": [
       "Law and Justice"
     ]
@@ -175,6 +226,17 @@
       "Independent Greeks",
       "Course of Freedom",
       "Democratic Left"
+    ],
+    "default_parties": [
+      "Coalition of the Radical Left",
+      "Communist Party of Greece",
+      "New Democracy",
+      "Panhellenic Socialist Movement",
+      "People\u2019s Association / Golden Dawn",
+      "Greek Solution",
+      "ELAS",
+      "ELPIDA",
+      "Course of Freedom"
     ],
     "wide_parties": [
       "New Democracy",
@@ -212,6 +274,16 @@
       "Green Party",
       "INP"
     ],
+    "default_parties": [
+      "Centre [Agrarian] Party",
+      "Christian Democratic Party",
+      "Conservative Party",
+      "Socialist Left Party",
+      "Liberal Party of Norway",
+      "Progress Party",
+      "Norwegian Labour Party",
+      "Red Party"
+    ],
     "wide_parties": [
       "Norwegian Labour Party",
       "Conservative Party",
@@ -243,6 +315,14 @@
       "Others",
       "Feminist Initiative"
     ],
+    "default_parties": [
+      "Greens",
+      "Farmers' League / Centre Party",
+      "Social Democrats / Social Democratic Workers' Party of Sweden",
+      "General Electoral League / The Right / Right Wing Party / Moderate Party",
+      "Christian Democrats",
+      "Left Party / Communist Party"
+    ],
     "wide_parties": [
       "Social Democrats / Social Democratic Workers' Party of Sweden",
       "General Electoral League / The Right / Right Wing Party / Moderate Party",
@@ -273,6 +353,14 @@
       "Others",
       "Alliance for the Future of Austria"
     ],
+    "default_parties": [
+      "Austrian People's Party",
+      "Social Democratic Party of Austria",
+      "Freedom Party of Austria",
+      "The Greens \u2014 The Green Alternative",
+      "NEOS \u2014 The New Austria",
+      "Communist Party of Austria"
+    ],
     "wide_parties": [
       "Austrian People's Party",
       "Social Democratic Party of Austria",
@@ -300,6 +388,16 @@
       "[New] Liberal Alliance",
       "Christian People's Party / Christian Democrats",
       "The New Right"
+    ],
+    "default_parties": [
+      "The Alternative",
+      "Red-Green Alliance",
+      "Conservative People's Party",
+      "Liberal Party",
+      "Danish Social-Liberal Party / Radical Liberal Party",
+      "Socialist Peoples Party",
+      "Danish Peoples Party",
+      "[New] Liberal Alliance"
     ],
     "wide_parties": [
       "The Alternative",
@@ -333,6 +431,18 @@
       "Enough",
       "Livre"
     ],
+    "default_parties": [
+      "Others",
+      "Socialist Party",
+      "Left Bloc",
+      "Unitary Democratic Coalition",
+      "Popular Democratic Party / Social Democratic Party",
+      "Democratic and Social Center / People's Party",
+      "Democratic Alliance",
+      "Enough",
+      "Liberal Initiative",
+      "Livre"
+    ],
     "wide_parties": [
       "Socialist Party",
       "Popular Democratic Party / Social Democratic Party",
@@ -362,6 +472,16 @@
       "The Republic Onwards! / Renaissance",
       "The Republicans"
     ],
+    "default_parties": [
+      "Socialist Party",
+      "National Front / National Rally",
+      "Union for a Popular Movement",
+      "Workers' Struggle",
+      "France Arise",
+      "New Anticapitalist Party",
+      "The Republic Onwards! / Renaissance",
+      "The Republicans"
+    ],
     "wide_parties": []
   },
   {
@@ -381,6 +501,15 @@
       "Pro Patria Union",
       "Estonian Free Party",
       "Koos"
+    ],
+    "default_parties": [
+      "Conservative People\u2019s Party",
+      "Estonian Centre Party",
+      "Social Democratic Party \u2014 Moderates",
+      "Estonian Greens",
+      "Estonia 200",
+      "National Coalition Party \"Pro Patria\"",
+      "Right-wingers"
     ],
     "wide_parties": [
       "Conservative People\u2019s Party",
@@ -407,6 +536,18 @@
       "Czech Pirate Party",
       "Freedom and Direct Democracy",
       "Party of Free Citizens"
+    ],
+    "default_parties": [
+      "Civic Democratic Party",
+      "Communist Party of Bohemia and Moravia",
+      "Czech Social Democratic Party",
+      "Christian Democratic Union / People's Party",
+      "Tradition Responsibility Prosperity 09",
+      "Green Party",
+      "Action of Dissatisfied Citizens",
+      "Mayors and Independents",
+      "Czech Pirate Party",
+      "Freedom and Direct Democracy"
     ],
     "wide_parties": [
       "Action of Dissatisfied Citizens",
@@ -435,6 +576,17 @@
       "Socialist Party",
       "50PLUS",
       "Labour"
+    ],
+    "default_parties": [
+      "Christian Democratic Appeal",
+      "Democrats 66",
+      "ChristianUnion",
+      "Party for the Animals",
+      "People's Party for Freedom and Democracy",
+      "Reformed Political Party",
+      "GL\u2013PvdA",
+      "Party for Freedom",
+      "Right Answer 2021"
     ],
     "wide_parties": [
       "People's Party for Freedom and Democracy",
@@ -474,6 +626,18 @@
       "Momentum Movement",
       "Our Homeland Movement"
     ],
+    "default_parties": [
+      "Others",
+      "Movement for a Better Hungary",
+      "Politics Can Be Different \u2014 LMP \u2013 Hungary's Green Party",
+      "Hungarian Socialist Party",
+      "Democratic Coalition",
+      "Fidesz \u2014 Hungarian Civic Alliance",
+      "TISZA",
+      "Fidesz \u2014 KDNP Party Alliance / Alliance of Hungarian Solidarity",
+      "Our Homeland Movement",
+      "Hungarian Two-tailed Dog Party"
+    ],
     "wide_parties": [
       "Democratic Coalition",
       "Movement for a Better Hungary",
@@ -498,6 +662,17 @@
       "Slovenian People's Party",
       "Party of Miro Cerar / Modern Center Party",
       "List of Marjan Sarec"
+    ],
+    "default_parties": [
+      "Social Democrats / United List of Social Democrats",
+      "Slovenian Democratic Party",
+      "Democratic Party of Retired People of Slovenia",
+      "New Slovenia \u2014 Christian People's Party",
+      "The Left",
+      "Slovenian National Party",
+      "Freedom Movement",
+      "NSF",
+      "Resni.ca"
     ],
     "wide_parties": [
       "Freedom Movement",
@@ -527,6 +702,16 @@
       "Aontu",
       "Others",
       "Independent Alliance"
+    ],
+    "default_parties": [
+      "Fine Gael (Familiy of the Irish)",
+      "Fianna Fail \u2014 The Republican Party",
+      "Sinn Fein (Provisional)",
+      "Labour Party",
+      "Green Party",
+      "Social Democrats",
+      "Others",
+      "II"
     ],
     "wide_parties": [
       "Fianna Fail \u2014 The Republican Party",
@@ -558,6 +743,18 @@
       "Progressive Slovakia",
       "Ordinary People and Independents"
     ],
+    "default_parties": [
+      "Party of the Hungarian Coalition / Party of the Hungarian Community",
+      "Direction \u2014 Social Democracy",
+      "Freedom and Solidarity",
+      "Christian Democratic Movement",
+      "Slovak National Party",
+      "We are family \u2014 Boris Kollar",
+      "Progressive Slovakia",
+      "Republic",
+      "Voice \u2013 Social Democracy",
+      "Slovakia"
+    ],
     "wide_parties": [
       "Progressive Slovakia",
       "Ordinary People and Independents",
@@ -583,6 +780,15 @@
       "Icelandic Socialist Party",
       "Social Democratic Party",
       "Dawn \u2014 Organization of justice, fairness and democracy"
+    ],
+    "default_parties": [
+      "Reform Party",
+      "Citizens' Movement",
+      "Social Democratic Alliance",
+      "Independence Party",
+      "Pirate Party of Iceland",
+      "Progressive Party",
+      "Centre Party"
     ],
     "wide_parties": [
       "Independence Party",
@@ -613,6 +819,16 @@
       "Others",
       "Movement Now"
     ],
+    "default_parties": [
+      "Social Democratic Party of Finland",
+      "National Coalition Party",
+      "Finns Party / True Finns",
+      "Green League",
+      "Christian Democrats / League",
+      "Swedish People's Party of Finland",
+      "Agrarian Union / Centre Party",
+      "Left Alliance"
+    ],
     "wide_parties": [
       "Agrarian Union / Centre Party",
       "National Coalition Party",
@@ -642,6 +858,16 @@
       "Coalition for Bulgaria \u2014 BSP for Bulgaria",
       "Will"
     ],
+    "default_parties": [
+      "Movement for Rights and Freedoms",
+      "There Is Such a People",
+      "Bulgarian Socialist Party",
+      "Others",
+      "Revival",
+      "Democratic Bulgaria",
+      "APS",
+      "Coalition for Bulgaria \u2014 BSP for Bulgaria"
+    ],
     "wide_parties": [
       "Movement for Rights and Freedoms",
       "Bulgarian Socialist Party",
@@ -667,6 +893,17 @@
       "Freedom Party",
       "Liberals' Movement of the Republic of Lithuania",
       "Order and Justice \u2014 Liberal Democratic Party"
+    ],
+    "default_parties": [
+      "Homeland Union \u2014 Lithuanian Christian Democrats",
+      "Lithuanian Farmers and Greens Union / Lithuanian Peasant Popular Union",
+      "Lithuanian Social Democratic Party",
+      "Labour Party",
+      "Election Action of Lithuania's Poles",
+      "Social Democratic Labour Party of Lithuania \u2014 Lithuanian Regions Party",
+      "Union of Democrats \"For Lithuania\"",
+      "PPNA",
+      "Lithuanian List"
     ],
     "wide_parties": [
       "Lithuanian Social Democratic Party",
@@ -694,6 +931,17 @@
       "The Republicans",
       "Other Left",
       "Workers' Struggle"
+    ],
+    "default_parties": [
+      "National Front / National Rally",
+      "Socialist Party",
+      "Union for a Popular Movement",
+      "New Democrats",
+      "Other Right",
+      "Democratic Movement",
+      "The Republic Onwards! / Renaissance",
+      "Unbowed France",
+      "Europe Ecology \u2014 The Greens"
     ],
     "wide_parties": [
       "Unbowed France",
@@ -726,6 +974,17 @@
       "Alliance for the Union of Romanians",
       "People's Party \u2014 Dan Diaconescu"
     ],
+    "default_parties": [
+      "National Liberal Party",
+      "Democratic Union of Hungarians in Romania / Democratic Alliance of Hungarians in Romania",
+      "Save Romania Union",
+      "People's Movement Party",
+      "Social Democratic Party",
+      "Alliance of Liberals and Democrats",
+      "People's Party \u2014 Dan Diaconescu",
+      "Alliance for the Union of Romanians",
+      "Romanian Socialist Democratic Party"
+    ],
     "wide_parties": [
       "Social Democratic Party",
       "National Liberal Party",
@@ -754,6 +1013,16 @@
       "The Progressive",
       "Development/For!"
     ],
+    "default_parties": [
+      "Green and Farmers' Union",
+      "National Alliance",
+      "Social Democratic Party \"Harmony\"",
+      "New Unity",
+      "Latvian Association of Regions",
+      "New Conservative Party",
+      "Development/For!",
+      "Christian Democratic Union / Farmers Union of Latvia"
+    ],
     "wide_parties": [
       "New Unity",
       "Green and Farmers' Union",
@@ -768,6 +1037,13 @@
     "span_start": "2012-01-07",
     "span_end": "2022-03-24",
     "top_parties": [
+      "Nationalist Party",
+      "Malta Labour Party",
+      "Democratic Alternative",
+      "Democratic Party",
+      "1 percent"
+    ],
+    "default_parties": [
       "Nationalist Party",
       "Malta Labour Party",
       "Democratic Alternative",
@@ -797,6 +1073,14 @@
       "Citizen's Alliance",
       "Generation Change"
     ],
+    "default_parties": [
+      "Democratic Rally",
+      "National Popular Front",
+      "Democratic Party",
+      "Movement for Social Democracy EDEK",
+      "Progressive Party of Working People",
+      "Ecological and Environmental Movement"
+    ],
     "wide_parties": []
   },
   {
@@ -816,6 +1100,16 @@
       "The Centre",
       "Conservative Democratic Party of Switzerland",
       "Catholic Conservative / Christian Democratic Peoples Party"
+    ],
+    "default_parties": [
+      "Green Liberal Party",
+      "Swiss People's Party",
+      "Green Party",
+      "Social Democratic Party of Switzerland",
+      "Radical Democratic Party",
+      "Protestant Peoples Party",
+      "The Centre",
+      "FDP.The Liberals"
     ],
     "wide_parties": [
       "Radical Democratic Party"
@@ -838,6 +1132,16 @@
       "Milan Bandic 365 \u2014 The Party of Labour and Solidarity",
       "Social Democratic Party of Croatia",
       "alliance"
+    ],
+    "default_parties": [
+      "Bridge of Independent Lists",
+      "Istrian Democratic Assembly",
+      "Human Shield",
+      "Croatian Democratic Union",
+      "Sustainable Development of Croatia",
+      "Croatian People's Party \u2014 Liberal Democrats",
+      "Social Democratic Party of Croatia",
+      "Milan Bandic 365 \u2014 The Party of Labour and Solidarity"
     ],
     "wide_parties": [
       "Croatian Democratic Union",
@@ -865,6 +1169,15 @@
       "Pirate Party Luxembourg",
       "Volt Luxembourg",
       "Fokus"
+    ],
+    "default_parties": [
+      "Democratic Party",
+      "Alternative Democratic Reform Party",
+      "Christian Social People's Party",
+      "Luxembourg Socialist Workers' Party",
+      "The Left",
+      "The Greens",
+      "Pirate Party Luxembourg"
     ],
     "wide_parties": []
   }
